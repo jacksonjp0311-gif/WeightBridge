@@ -1,0 +1,18 @@
+{
+  "base_sha256": "8927493285058e3987909878b470fe606598e47e336f8da2f61b296a923b245f",
+  "changes": [
+    {
+      "index": [
+        1
+      ],
+      "op": "set",
+      "tensor": "b",
+      "value": 0.0
+    }
+  ],
+  "evidence_ids": [
+    "synthetic-defect-001"
+  ],
+  "reason": "Remove an injected class-1 logit bias; synthetic defect hypothesis",
+  "schema": "weightbridge.patch.v1"
+}

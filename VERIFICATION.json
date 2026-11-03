@@ -1,0 +1,16 @@
+{
+  "schema": "weightbridge.verification.v1",
+  "tested_with": "Python 3.13.5, NumPy 2.3.5, pytest 9.0.2, safetensors 0.7.0",
+  "test_command": "PYTHONPATH=. pytest -q",
+  "test_result": "11 passed",
+  "demo_command": "PYTHONPATH=. python -m weightbridge demo --dir /mnt/data/weightbridge_demo_v0_1",
+  "demo_baseline_accuracy": 0.753,
+  "demo_candidate_accuracy": 0.9845,
+  "demo_gain_ci95": [0.2125, 0.2505],
+  "demo_only": true,
+  "ai_discovered_edit": false,
+  "real_llm_tested": false,
+  "pegasus_integrated": false,
+  "model_deployed": false,
+  "limitations": "Synthetic single-seed task with an intentionally injected class bias; this verifies toolkit behavior, not generic model learning, causal discovery or external validity"
+}

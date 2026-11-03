@@ -1,0 +1,30 @@
+{
+  "absolute_gain": 0.23150000000000004,
+  "base_sha256": "8927493285058e3987909878b470fe606598e47e336f8da2f61b296a923b245f",
+  "base_slices": {
+    "0": 0.506,
+    "1": 1.0
+  },
+  "baseline_accuracy": 0.753,
+  "candidate_accuracy": 0.9845,
+  "candidate_sha256": "c7ae018d3bc4cacf19ea05877973be6ae0d594040a498901a4e309da209c3efa",
+  "candidate_slices": {
+    "0": 0.984,
+    "1": 0.985
+  },
+  "gain_bootstrap_95_interval": [
+    0.21250000596046448,
+    0.25049999356269836
+  ],
+  "held_gate": false,
+  "holdout_n": 2000,
+  "holdout_seed": 813,
+  "minimum_slice_gain": -0.015000000000000013,
+  "note": "Toy classification only; does not establish LLM gains, real-world safety or statistical generality",
+  "proposed_gate": {
+    "gain_ci_lower_gt": 0.1,
+    "max_slice_regression": 0.03
+  },
+  "schema": "weightbridge.eval.v1",
+  "task": "synthetic two-class defect removal"
+}

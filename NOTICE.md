@@ -1,0 +1,1 @@
+This is original example code prepared for its recipient. No PEGASUS repository or active model was edited. External papers, logs, models and third-party code are not included. Set an explicit license before public distribution and review source/model/dataset licenses when integrating external examples.
