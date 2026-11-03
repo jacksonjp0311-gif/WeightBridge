@@ -1,0 +1,36 @@
+{
+  "protocol": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 61027,
+    "budget_units": 180,
+    "calibration_bins": 10,
+    "cheap_diagnosis_units": 8,
+    "conservative_radius_scale": 0.5,
+    "cost_weight": 0.006,
+    "harm_limit": 0.12,
+    "harm_weight": 2.0,
+    "minimum_diagnostic_samples": 10,
+    "preservation_threshold": 0.65,
+    "rows_per_mechanism": {
+      "calibration": 100,
+      "shift": 260,
+      "test": 260,
+      "train": 220
+    },
+    "schema": "weightbridge.anmc.synthetic_protocol.v1",
+    "seeds": {
+      "calibration": 61024,
+      "shift": 61026,
+      "test": 61025,
+      "train": 61023
+    },
+    "support_quantile": 0.98
+  },
+  "schema": "weightbridge.anmc.synthetic_freeze.v1",
+  "source_sha256": {
+    "experiments/phase_iiie/run_synthetic.py": "1968042c14f68bc01e2a56b0b301e4466c5911eedb6b292ca8b97982be7ec603",
+    "experiments/phase_iiie/synthetic_protocol.json": "c0ba4474a2cabe5b1b736b4d33c48fe6e402e9441e1c1c9abd2a0896f6888c21",
+    "experiments/phase_iiie/synthetic_tasks.py": "ac91a5334bce242d1bd118c4d3a214a096e27afa4446721027ea390b30c4c107",
+    "weightbridge/adaptation/meta_controller.py": "02ffd594df6cda5c63b2021297de3d5449dfadcf67553dd3aec6aaa430ddc9f7"
+  }
+}
