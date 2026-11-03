@@ -1,0 +1,14 @@
+{
+  "schema": "weightbridge.phase_iiic.stage_one_protocol.v1",
+  "family_priority": ["word-order", "date-order", "fraction-order"],
+  "protected_family": {"word-order": "fraction-order", "date-order": "word-order", "fraction-order": "date-order"},
+  "preservation_items_per_arm": 2,
+  "candidate_slots_per_arm": 1,
+  "radius": 0.25,
+  "layer": 23,
+  "max_entries": 65536,
+  "max_fraction": 0.00008,
+  "max_abs_delta": 8.0,
+  "worker_timeout_seconds": 480,
+  "gate": "Require both positive joint item gain and positive generated item gain on all four renderings, zero target regressions and preservation changes. Use the same gate on selection and independently sealed adaptation cases."
+}

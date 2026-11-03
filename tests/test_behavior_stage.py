@@ -62,3 +62,44 @@ def test_stage_runner_records_hold_without_opening_model_or_sealed_material(tmp_
     evidence = json.loads((out / "report.json").read_bytes())
     assert evidence["candidate_attempts"] == 0
     assert evidence["reasons"] == ["NO_AUTHORIZED_HEADROOM"]
+
+
+def test_completed_generation_report_binds_restartable_lineage(tmp_path):
+    import numpy as np
+
+    from experiments.phase_iiic.run_stage_one import _lineage_report
+    from weightbridge.adaptation.lineage import (
+        audit_lineage, init_lineage, record_lineage_decision, rollback_lineage,
+    )
+    from weightbridge.inspection.safetensors import load_checkpoint
+    from weightbridge.patches import apply_safetensors_patch
+
+    safetensors = pytest.importorskip("safetensors.numpy")
+    base = tmp_path / "base"
+    base.mkdir()
+    (base / "config.json").write_text('{"model_type":"qwen3_5"}', encoding="utf-8")
+    safetensors.save_file({"weight": np.zeros(2, dtype=np.float32)}, str(base / "model.safetensors"))
+    checkpoint = load_checkpoint(base)
+    base_sha = checkpoint.checkpoint_sha256()
+    work = tmp_path / "A"
+    lineage = work / "lineage"
+    init_lineage(lineage, base)
+    candidate = work / "candidate/model"
+    patch = {"schema": "weightbridge.patch.v1", "base_sha256": base_sha,
+             "tensor_sha256": {"weight": checkpoint.tensor_sha256("weight")},
+             "changes": [{"tensor": "weight", "index": [0], "op": "add", "value": 0.25}]}
+    policy = {"schema": "weightbridge.policy.v1", "allow_tensors": ["weight"],
+              "max_entries": 1, "max_fraction": 0.5, "max_abs_delta": 1.0}
+    receipt = apply_safetensors_patch(base, patch, policy, candidate)
+    target = [_row(f"target-{index}", "target", "target", 1, 1) for index in range(4)]
+    sentinel = _row("sentinel-0", "sentinel", "preservation", 0, 0)
+    before = target + [sentinel]
+    after = [{**row, "scored": 0, "generated": 0} for row in target] + [sentinel]
+    report, suite = _lineage_report(work, {"paired": before, "raw": [{"content_prompt": row["id"]} for row in before]},
+                                    {"paired": after}, receipt, "b" * 64)
+    record_lineage_decision(lineage, candidate, report, suite=suite, cycle_id="cycle-01",
+                            accept=compare_behavior_rows(before, after)["passed"], reason="Synthetic paired generation",
+                            expected_parent_sha256=base_sha)
+    assert audit_lineage(lineage)["head_sha256"] == receipt["candidate_sha256"]
+    assert rollback_lineage(lineage, base_sha, reason="Synthetic rollback")["head_sha256"] == base_sha
+    assert load_checkpoint(candidate).checkpoint_sha256() == receipt["candidate_sha256"]

@@ -23,6 +23,10 @@ Phase III-B adds the [Behavioral Interaction Compiler](docs/PHASE_III_B.md)
 for coordinated updates, task-aware preservation, and bounded mixed-curvature
 probes.
 
+Phase III-C tests whether a behavioral measurement is fit to optimize before
+compiling a real checkpoint edit. It compares scoring with completed
+generation under a frozen protocol. [Phase III-C study](docs/PHASE_III_C.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the
