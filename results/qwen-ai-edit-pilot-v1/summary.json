@@ -1,0 +1,142 @@
+{
+  "cases": [
+    {
+      "candidate_sha256": {
+        "guided": "c6bb966272e407082aa9c17830fa2787c61e367529e53c9571b7529319f2ad50"
+      },
+      "disposition": "FAIL",
+      "layer": 19,
+      "recovery": 1.0,
+      "sentinel_correct": {
+        "damaged": 12,
+        "guided": 13,
+        "pristine": 15,
+        "random": 12
+      },
+      "sentinel_flips_vs_damaged": {
+        "guided": 1,
+        "random": 0
+      },
+      "sentinel_flips_vs_pristine": {
+        "guided": 2,
+        "random": 3
+      },
+      "slot": 1,
+      "target_by_form": {
+        "paraphrase": {
+          "damaged": 12,
+          "guided": 12,
+          "pristine": 12,
+          "random": 12
+        },
+        "same": {
+          "damaged": 7,
+          "guided": 12,
+          "pristine": 12,
+          "random": 7
+        }
+      },
+      "target_correct": {
+        "damaged": 19,
+        "guided": 24,
+        "pristine": 24,
+        "random": 19
+      },
+      "target_loss": 5
+    },
+    {
+      "candidate_sha256": {
+        "guided": "d2501b83b5a7f7f96a01cc952733c6863553f9a95cdb067cc2432b4e48fc5b4e",
+        "random": "a309cb7bad1d7f9ea27d6d41f7794f60c8a18fc135687e7aa8006e46513a01cb"
+      },
+      "disposition": "FAIL",
+      "layer": 21,
+      "recovery": 0.5,
+      "sentinel_correct": {
+        "damaged": 15,
+        "guided": 14,
+        "pristine": 11,
+        "random": 13
+      },
+      "sentinel_flips_vs_damaged": {
+        "guided": 1,
+        "random": 2
+      },
+      "sentinel_flips_vs_pristine": {
+        "guided": 3,
+        "random": 2
+      },
+      "slot": 2,
+      "target_by_form": {
+        "paraphrase": {
+          "damaged": 11,
+          "guided": 10,
+          "pristine": 12,
+          "random": 12
+        },
+        "same": {
+          "damaged": 9,
+          "guided": 12,
+          "pristine": 12,
+          "random": 12
+        }
+      },
+      "target_correct": {
+        "damaged": 20,
+        "guided": 22,
+        "pristine": 24,
+        "random": 24
+      },
+      "target_loss": 4
+    },
+    {
+      "candidate_sha256": {
+        "guided": "d289d82de3cd23035aa7c0f99116c21428178b236b8995e9394033da52cc615c"
+      },
+      "disposition": "PASS",
+      "layer": 23,
+      "recovery": 1.0,
+      "sentinel_correct": {
+        "damaged": 13,
+        "guided": 13,
+        "pristine": 13,
+        "random": 13
+      },
+      "sentinel_flips_vs_damaged": {
+        "guided": 0,
+        "random": 0
+      },
+      "sentinel_flips_vs_pristine": {
+        "guided": 0,
+        "random": 0
+      },
+      "slot": 3,
+      "target_by_form": {
+        "paraphrase": {
+          "damaged": 12,
+          "guided": 12,
+          "pristine": 12,
+          "random": 12
+        },
+        "same": {
+          "damaged": 9,
+          "guided": 12,
+          "pristine": 12,
+          "random": 9
+        }
+      },
+      "target_correct": {
+        "damaged": 21,
+        "guided": 24,
+        "pristine": 24,
+        "random": 21
+      },
+      "target_loss": 3
+    }
+  ],
+  "complete": true,
+  "counts": {
+    "FAIL": 2,
+    "PASS": 1
+  }
+}

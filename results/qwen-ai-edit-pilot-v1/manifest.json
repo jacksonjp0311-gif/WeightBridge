@@ -1,0 +1,89 @@
+{
+  "candidate_evaluations_per_arm": 6,
+  "cases": [
+    {
+      "layer": 19,
+      "slot": 1
+    },
+    {
+      "layer": 21,
+      "slot": 2
+    },
+    {
+      "layer": 23,
+      "slot": 3
+    }
+  ],
+  "compiler": "Signed activation ridge fit on practice with sentinel weight 256",
+  "controller": "Pinned pristine Qwen, greedy selection over allowed letter tokens, practice feedback only",
+  "gate": {
+    "max_unrelated_flips_vs_pristine": 0,
+    "minimum_case_passes": 8,
+    "minimum_holdout_loss": 2,
+    "minimum_recovery": 0.5,
+    "require_no_paraphrase_regression_vs_damaged": true,
+    "require_strict_win_against_random": true
+  },
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "options": [
+    [
+      19,
+      0.03
+    ],
+    [
+      19,
+      0.07
+    ],
+    [
+      19,
+      0.15
+    ],
+    [
+      21,
+      0.03
+    ],
+    [
+      21,
+      0.07
+    ],
+    [
+      21,
+      0.15
+    ],
+    [
+      23,
+      0.03
+    ],
+    [
+      23,
+      0.07
+    ],
+    [
+      23,
+      0.15
+    ]
+  ],
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.19.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.23.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "schema": "weightbridge.qwen_ai_edit_pilot.v1",
+  "seed": 924132,
+  "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "source_sha256": {
+    "run_blind_qwen_repair.py": "00a50a42256a418c07adf6463b256ddcdd29e5ea37f894846605729e9643f8a3",
+    "run_qwen_ai_edit_pilot.py": "e89e666cc6b8dfc842264d3e691b5ab2b5da693620b5a2bc5fd0f33a03f52773",
+    "run_qwen_repair_cohort.py": "dd3d53445adc56ff49e4259c4b07b01fe9d8508ffaa8d6e43334f6afc7544ec7",
+    "run_qwen_wording_ablation.py": "b91028314c0c912e51aabdee3a79334bde29f86279c05a04d7d513b75dad50ac"
+  }
+}

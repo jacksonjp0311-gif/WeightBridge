@@ -23,6 +23,30 @@ existing [direct-proposal qualification](AGENT_TOOLS.md) tests a separate
 workflow where an AI writes its own patch. The [roadmap](ROADMAP.md) tracks
 the gates for exposing real checkpoints through MCP.
 
+## Results
+
+| Injected layer | Pristine | Damaged | AI-directed edit after reload | Matched random | Sentinel flips vs. pristine | Gate |
+|---|---:|---:|---:|---:|---:|---|
+| 19 | 24/24 | 19/24 | 24/24 | 19/24 | 2/16 | FAIL |
+| 21 | 24/24 | 20/24 | 22/24 | 24/24 | 3/16 | FAIL |
+| 23 | 24/24 | 21/24 | 24/24 | 21/24 | 0/16 | PASS |
+
+The passing case recovered all three lost target answers and preserved
+all 16 unrelated predictions relative to both pristine and damaged
+checkpoints. Its paraphrase split scored 12/12 before and after the edit.
+An independent run of the product evaluator reproduced the gain on the
+saved candidate. The 19th-layer case also recovered every lost target
+answer, but two sentinel predictions still differed from pristine.
+In the 21st-layer case, random scored higher on targets and the
+AI-directed edit lost one paraphrase answer. One of three cases cleared
+the gate. The result establishes a working constrained edit loop for one
+injected fault on this checkpoint.
+
+[Raw scores, controller decisions and patch receipts](../results/qwen-ai-edit-pilot-v1/)
+· [Product evaluation report](../results/qwen-ai-edit-pilot-v1/product-evaluation/report.json)
+
+## Replay
+
 Use the [pinned local Qwen checkpoint](QWEN_BLIND_REPAIR.md) and an inference
 Python environment. Use new scratch and evidence directories.
 

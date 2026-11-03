@@ -23,6 +23,14 @@ defect seeds, answer positions and wording. The [12-case Qwen cohort](QWEN_REPAI
 defines the frozen protocol and budget-matched comparison. A natural-failure
 trial needs a fresh protocol and a held-out generation benchmark.
 
+The [AI-directed CLI pilot](QWEN_AI_EDIT_PILOT.md) completed a bounded
+practice-feedback loop on three fresh Qwen faults. Qwen chose layers and
+strengths and the host fit each edit from practice activations. One saved
+candidate recovered all three lost targets and preserved all unrelated
+predictions after reload. One of three cases passed. The README documents
+the separate product evaluator for any compatible local Hugging Face
+candidate and host-owned forced-choice suite.
+
 ## Immediate next experiment
 
 The balanced 20-task protocol, fixed prompt, host policy, task assignments,

@@ -52,6 +52,11 @@ for measured compatibility.
    absolute delta per entry. The [patch and policy examples](#patch-contract)
    show the schema.
 
+   Ask the AI for one patch grounded in the inspection report and practice
+   failures. Give it the allowed tensors and edit budget, and ask it to state
+   the expected behavior change in the patch's `reason`. Use practice scores
+   for iteration and freeze the chosen patch before opening the holdout.
+
    ```bash
    python -m weightbridge apply-hf --base ./base-model \
      --patch proposal.json --policy host-policy.json --out ./candidate-model
@@ -87,12 +92,17 @@ for measured compatibility.
 
 ## Replay a measured Qwen improvement
 
-With `.[inference,safetensors]` installed and the pinned
-Qwen3.5-0.8B checkpoint available locally, rebuild and evaluate the
-archived case 12 repair. The runner checks the rebuilt receipt hashes and
-compares every prediction with the archived run.
+Install the inference extras and use the pinned Qwen3.5-0.8B checkpoint.
+If you already have that revision locally, pass its directory to
+`--pristine`. The replay checks the rebuilt receipt hashes and compares
+every prediction with archived case 12.
 
 ```bash
+python -m pip install -e ".[inference,safetensors]"
+hf download Qwen/Qwen3.5-0.8B config.json chat_template.jinja tokenizer.json \
+  tokenizer_config.json preprocessor_config.json model.safetensors.index.json \
+  model.safetensors-00001-of-00001.safetensors \
+  --revision 2fc06364715b967f1860aea9cf38778875588b17 --local-dir ./qwen35-base
 python experiments/original_weight_edits/replay_hf_edit_demo.py \
   --pristine ./qwen35-base --out ./qwen-edit-demo
 ```
@@ -101,12 +111,17 @@ The replay scores **12/24 → 22/24** on targets, with zero changes on
 16 sentinels. Use a new output directory and roughly 4 GB of scratch
 space for the two checkpoint copies. [Pinned model and case evidence](docs/QWEN_WORDING_ABLATION.md) · [Replay report](results/hf-edit-demo/report.json)
 
+Pass `--example ai-pilot` with a fresh output directory to replay the
+AI-selected repair that scored **21/24 → 24/24** on targets and preserved
+all 16 sentinel predictions. [AI pilot evidence](docs/QWEN_AI_EDIT_PILOT.md)
+
 ## Measured results
 
 | Workflow | Result |
 |---|---|
 | Deterministic search on real Qwen weights | Guided candidates beat matched random search in 11 of 12 cases. Five passed all per-case requirements. The cohort threshold was eight. [Cohort report](docs/QWEN_REPAIR_COHORT.md) |
 | Practice wording on real Qwen weights | One candidate took fresh paraphrase accuracy from 6/12 to 12/12 after reload while preserving all 16 unrelated predictions. The three-wording arm passed 2/12 cases. [Wording study](docs/QWEN_WORDING_ABLATION.md) |
+| AI-directed selection on real Qwen weights | Qwen chose which bounded edits to try. One saved finalist improved held-out targets from 21/24 to 24/24 with all 16 unrelated predictions preserved. One of three cases passed the full gate. [Pilot and receipts](docs/QWEN_AI_EDIT_PILOT.md) |
 | AI edit selection | One Codex pilot independently found a blinded toy repair. Qwen chose successful solver-proposed edits in 19/20 toy cases. The formal benchmark for AI-proposed edits has its own gate. [Agent tools](docs/AGENT_TOOLS.md) · [Roadmap](docs/ROADMAP.md) |
 
 <details>

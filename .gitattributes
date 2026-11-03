@@ -33,6 +33,7 @@
 /experiments/original_weight_edits/run_qwen_ai_edit_pilot.py text eol=lf
 /benchmarks/configs/qwen_ai_edit_pilot_v*.json text eol=lf
 /results/qwen-ai-edit-pilot-*/**/*.json text eol=lf
+/results/qwen-ai-edit-pilot-*/product-evaluation/*.json -text whitespace=cr-at-eol
 /results/hf-edit-demo/*.json -text
 /results/wb-dq/**/*.json text eol=lf
 /results/wb-dq/**/*.jsonl text eol=lf
