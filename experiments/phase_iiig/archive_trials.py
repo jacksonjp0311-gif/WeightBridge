@@ -129,8 +129,11 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
     return report, files
 
 
-def archive(material, runs, out, *, followup=False):
-    if followup:
+def archive(material, runs, out, *, followup=False, scaling=False):
+    if scaling:
+        from experiments.phase_iiig.roster_scaling import PROTOCOL as protocol_path, load_split as read_split
+        from experiments.phase_iiig.run_scaling import _sources as source_hashes
+    elif followup:
         from experiments.phase_iiig.roster_followup import PROTOCOL as protocol_path, load_split as read_split
         from experiments.phase_iiig.run_followup import _sources as source_hashes
     else:
@@ -158,13 +161,13 @@ def archive(material, runs, out, *, followup=False):
         reports[model] = report
         paths.update({f"{model}/{name}": path for name, path in files.items()})
     if set(reports) != set(config["checkpoints"]):
-        raise ValueError("Archive needs both locked model reports")
+        raise ValueError("Archive needs every predeclared model report")
     lock_hashes = {model: file_hash(paths[f"{model}/candidate-lock.json"]) for model in reports}
     for model, report in reports.items():
         if report["hidden_opened"]:
             independent = _read(paths[f"{model}/independent-lock.json"])
             if independent["both_candidate_locks"] != lock_hashes:
-                raise ValueError("Hidden evaluation does not bind both candidate locks")
+                raise ValueError("Hidden evaluation does not bind every candidate lock")
     splits = ["practice", "selection"]
     if any(report["hidden_opened"] for report in reports.values()):
         splits.append("hidden")
@@ -191,9 +194,15 @@ def archive(material, runs, out, *, followup=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    for field in ("material", "qwen", "smollm2", "out"):
+    for field in ("material", "qwen", "out"):
         parser.add_argument(f"--{field}", type=Path, required=True)
-    parser.add_argument("--followup", action="store_true")
+    parser.add_argument("--smollm2", type=Path)
+    version = parser.add_mutually_exclusive_group()
+    version.add_argument("--followup", action="store_true")
+    version.add_argument("--scaling", action="store_true")
     args = parser.parse_args()
-    result = archive(args.material, (args.qwen, args.smollm2), args.out, followup=args.followup)
+    if args.scaling == (args.smollm2 is not None):
+        parser.error("Use --smollm2 for the two-model trials and omit it for --scaling")
+    runs = (args.qwen,) if args.scaling else (args.qwen, args.smollm2)
+    result = archive(args.material, runs, args.out, followup=args.followup, scaling=args.scaling)
     print(json.dumps(result["models"], indent=2))

@@ -1,5 +1,8 @@
 """Exercise the admission and exact behavioral acceptance gates."""
 
+import json
+from types import SimpleNamespace
+
 import pytest
 
 from experiments.phase_iiig import run_trial
@@ -64,3 +67,52 @@ def test_hidden_worker_refuses_missing_joint_lock_before_reading_roster(tmp_path
     with pytest.raises(ValueError, match="requires an immutable candidate lock"):
         run_trial._worker(tmp_path, "base", tmp_path, "hidden", "addition", tmp_path / "out.json",
                           file_hash(manifest), None, None)
+
+
+@pytest.mark.parametrize("winner_qualifies", [True, False])
+def test_finish_only_accepts_preselected_winner_and_replays_rollback(tmp_path, monkeypatch, winner_qualifies):
+    def write(path, value):
+        path.write_text(json.dumps(value), encoding="utf-8")
+
+    out, peer, material = (tmp_path / name for name in ("local", "peer", "material"))
+    for directory in (out, peer, material):
+        directory.mkdir()
+    write(material / "manifest.json", {})
+    manifest_sha = file_hash(material / "manifest.json")
+    config = run_trial._json(run_trial.PROTOCOL)
+    qwen_sha = config["checkpoints"]["qwen"]
+    sources = {"script": "digest"}
+    monkeypatch.setattr(run_trial, "_sources", lambda: sources)
+    monkeypatch.setattr(run_trial, "load_checkpoint", lambda _: SimpleNamespace(checkpoint_sha256=lambda: qwen_sha))
+    candidates = {"constrained": {}, "gradient": {}}
+    common = {"manifest_sha256": manifest_sha, "source_sha256": sources}
+    lock = {**common, "model": "qwen", "base_sha256": qwen_sha, "family": "addition",
+            "winner": "constrained", "eligible": {"constrained": "c", "gradient": "g"},
+            "candidates": candidates}
+    write(out / "candidate-lock.json", lock)
+    write(peer / "candidate-lock.json", {**common, "model": "smollm2", "base_sha256": config["checkpoints"]["smollm2"]})
+    write(out / "preparation.json", {"model": "qwen", "winner": "constrained", "candidates": candidates,
+                                     "selected_family": "addition", "single_cycle": "FAIL",
+                                     "resources": {"wall_seconds": 0, "host_cpu_seconds": 0, "peak_rss_bytes": 0}})
+    base = [
+        *item("a", "addition", "target", "17", ["18", "18"]),
+        *item("b", "addition", "target", "19", ["20", "20"]),
+        *item("copy", "copy", "preserve", "7", ["7", "7"]),
+    ]
+    winner = [{**row, "exact": row["answer"]} if winner_qualifies or row["item"] == "a" else row for row in base]
+    alternative = [{**row, "exact": row["answer"]} for row in base]
+    calls = []
+
+    def verifier(path, expected, material, split, family, output, manifest_sha, timeout, seal):
+        assert split == "hidden" and family == "addition"
+        assert run_trial._json(seal)["both_candidate_locks"] == {
+            "qwen": file_hash(out / "candidate-lock.json"), "smollm2": file_hash(peer / "candidate-lock.json")}
+        calls.append(output.stem)
+        rows = {qwen_sha: base, "c": winner, "g": alternative}[expected]
+        return {"measurement": {"rows": rows}}
+
+    monkeypatch.setattr(run_trial, "_independent", verifier)
+    report = run_trial.finish(tmp_path, material, out, peer)
+    assert report["candidates"]["gradient"]["hidden"]["disposition"] == "PASS"
+    assert report["single_cycle"] == ("PASS" if winner_qualifies else "FAIL")
+    assert ("restart" in calls) == ("rollback" in calls) == winner_qualifies
