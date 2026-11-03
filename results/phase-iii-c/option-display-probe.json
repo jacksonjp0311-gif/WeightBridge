@@ -1,0 +1,2469 @@
+{
+  "bootstrap": {
+    "interval": 0.95,
+    "replicates": 4000,
+    "seed": 2026110317,
+    "unit": "underlying_question"
+  },
+  "bullets_minus_labels": {
+    "generation": {
+      "accuracy_difference": 0.3333333333333333,
+      "question_cluster_interval": [
+        0.16666666666666666,
+        0.5
+      ]
+    },
+    "mean": {
+      "accuracy_difference": 0.0,
+      "question_cluster_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "sum": {
+      "accuracy_difference": 0.0,
+      "question_cluster_interval": [
+        -0.16666666666666666,
+        0.16666666666666666
+      ]
+    }
+  },
+  "generation": {
+    "batch_size": 8,
+    "max_new_tokens": 12,
+    "require_eos_for_correctness": true
+  },
+  "hypothesis": "Removing visible labels may improve completed content responses under the same instruction.",
+  "inference": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 160
+  },
+  "material_manifest_sha256": "2d97e4498d5b722e8dce71220a6778758c2ede281db000f5377f26b8639ca901",
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "per_item": {
+    "bullets": {
+      "generation": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            null,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "fraction-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            1,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": true
+        }
+      },
+      "mean": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "date-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            0,
+            0
+          ],
+          "correct_presentations": 2,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": true
+        }
+      },
+      "sum": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            0,
+            0
+          ],
+          "correct_presentations": 2,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": true
+        }
+      }
+    },
+    "labels": {
+      "generation": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            null,
+            null
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        }
+      },
+      "mean": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "date-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            0,
+            0
+          ],
+          "correct_presentations": 2,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "word-order",
+          "same_option_in_both_orders": true
+        }
+      },
+      "sum": {
+        "practice/date-order/a742a49abbfa1c64": {
+          "chosen_option_ids": [
+            1,
+            0
+          ],
+          "correct_presentations": 1,
+          "family": "date-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/date-order/e3e1075fce4f7853": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "date-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/748e6ba03c84f911": {
+          "chosen_option_ids": [
+            0,
+            0
+          ],
+          "correct_presentations": 2,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/fraction-order/bb95b5df7c3bc030": {
+          "chosen_option_ids": [
+            1,
+            1
+          ],
+          "correct_presentations": 0,
+          "family": "fraction-order",
+          "same_option_in_both_orders": true
+        },
+        "practice/word-order/6e37a95f8b92d86a": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        },
+        "practice/word-order/8919a313a0447321": {
+          "chosen_option_ids": [
+            0,
+            1
+          ],
+          "correct_presentations": 1,
+          "family": "word-order",
+          "same_option_in_both_orders": false
+        }
+      }
+    }
+  },
+  "practice_sha256": "ce77c9ba656f74a3bbf24a560c8d4a8bec5019b8d2b434ad716b3fd7cee85a40",
+  "presentations_per_display": 12,
+  "protocol_sha256": "3ba8015af5926225c3053452120d33504cac3be9849f999fec3cf4043fe909f1",
+  "resources": {
+    "bullets": {
+      "generation": {
+        "batched_decode_steps": 23,
+        "generate_batches": 2,
+        "generated_examples": 12,
+        "padded_prompt_token_positions": 712
+      },
+      "scoring": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1560
+      }
+    },
+    "cpu_seconds": 291.234375,
+    "labels": {
+      "generation": {
+        "batched_decode_steps": 24,
+        "generate_batches": 2,
+        "generated_examples": 12,
+        "padded_prompt_token_positions": 736
+      },
+      "scoring": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1608
+      }
+    },
+    "model_loads": 1,
+    "peak_rss_bytes": 6536130560,
+    "wall_seconds": 64.46753590001026
+  },
+  "rows": [
+    {
+      "aliases": [
+        [
+          "fnhksrmnn"
+        ],
+        [
+          "fnhkstkoo"
+        ]
+      ],
+      "answers": [
+        "fnhksrmnn",
+        "fnhkstkoo"
+      ],
+      "content_prompt": "Which string comes earlier in alphabetical order?\nA. fnhksrmnn\nB. fnhkstkoo\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 5,
+              "eos_log_probability": -0.12460899353027344,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.1566791534423828,
+              "prefix_tokens": 50,
+              "sum_log_probability": -0.7833957672119141,
+              "terminated_sum_log_probability": -0.9080047607421875
+            },
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.06859588623046875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.26216888427734375,
+              "prefix_tokens": 50,
+              "sum_log_probability": -1.048675537109375,
+              "terminated_sum_log_probability": -1.1172714233398438
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 0,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              8556,
+              71,
+              2699,
+              8454,
+              7136,
+              248046
+            ],
+            "parsed_position": 0,
+            "prefix_tokens": 50,
+            "stop_reason": "eos",
+            "text": "fnhksrmnn"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.20926666259765625,
+              "position": 0,
+              "scores": [
+                -0.9080047607421875,
+                -1.1172714233398438
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.10548973083496094,
+              "position": 0,
+              "scores": [
+                -0.1566791534423828,
+                -0.26216888427734375
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.26527976989746094,
+              "position": 0,
+              "scores": [
+                -0.7833957672119141,
+                -1.048675537109375
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\n- fnhksrmnn\n- fnhkstkoo\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 5,
+              "eos_log_probability": -0.2697620391845703,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.4330463409423828,
+              "prefix_tokens": 52,
+              "sum_log_probability": -2.165231704711914,
+              "terminated_sum_log_probability": -2.4349937438964844
+            },
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.12611770629882812,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.7166872024536133,
+              "prefix_tokens": 52,
+              "sum_log_probability": -2.866748809814453,
+              "terminated_sum_log_probability": -2.9928665161132812
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              32,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 52,
+            "stop_reason": "eos",
+            "text": "A"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.5578727722167969,
+              "position": 0,
+              "scores": [
+                -2.4349937438964844,
+                -2.9928665161132812
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.28364086151123047,
+              "position": 0,
+              "scores": [
+                -0.4330463409423828,
+                -0.7166872024536133
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.7015171051025391,
+              "position": 0,
+              "scores": [
+                -2.165231704711914,
+                -2.866748809814453
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\nA. fnhksrmnn\nB. fnhkstkoo\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "word-order",
+      "id": "practice/word-order/6e37a95f8b92d86a/p0-o0",
+      "item_id": "practice/word-order/6e37a95f8b92d86a",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which string comes earlier in alphabetical order?\nA. fnhksrmnn\nB. fnhkstkoo\nReply with only the label A or B.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "fnhkstkoo"
+        ],
+        [
+          "fnhksrmnn"
+        ]
+      ],
+      "answers": [
+        "fnhkstkoo",
+        "fnhksrmnn"
+      ],
+      "content_prompt": "Which string comes earlier in alphabetical order?\nA. fnhkstkoo\nB. fnhksrmnn\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.267059326171875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.13254833221435547,
+              "prefix_tokens": 50,
+              "sum_log_probability": -0.5301933288574219,
+              "terminated_sum_log_probability": -0.7972526550292969
+            },
+            {
+              "answer_tokens": 5,
+              "eos_log_probability": -0.049060821533203125,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.3472709655761719,
+              "prefix_tokens": 50,
+              "sum_log_probability": -1.7363548278808594,
+              "terminated_sum_log_probability": -1.7854156494140625
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 0,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              8556,
+              82558,
+              72742,
+              2537,
+              248046
+            ],
+            "parsed_position": 0,
+            "prefix_tokens": 50,
+            "stop_reason": "eos",
+            "text": "fnhkstkoo"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.9881629943847656,
+              "position": 0,
+              "scores": [
+                -0.7972526550292969,
+                -1.7854156494140625
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.2147226333618164,
+              "position": 0,
+              "scores": [
+                -0.13254833221435547,
+                -0.3472709655761719
+              ]
+            },
+            "sum": {
+              "correct_margin": -1.2061614990234375,
+              "position": 0,
+              "scores": [
+                -0.5301933288574219,
+                -1.7363548278808594
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\n- fnhkstkoo\n- fnhksrmnn\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.36762237548828125,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5297021865844727,
+              "prefix_tokens": 52,
+              "sum_log_probability": -2.1188087463378906,
+              "terminated_sum_log_probability": -2.486431121826172
+            },
+            {
+              "answer_tokens": 5,
+              "eos_log_probability": -0.09627723693847656,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.6350566744804382,
+              "prefix_tokens": 52,
+              "sum_log_probability": -3.175283432006836,
+              "terminated_sum_log_probability": -3.2715606689453125
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              32,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 52,
+            "stop_reason": "eos",
+            "text": "A"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.7851295471191406,
+              "position": 0,
+              "scores": [
+                -2.486431121826172,
+                -3.2715606689453125
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.10535448789596558,
+              "position": 0,
+              "scores": [
+                -0.5297021865844727,
+                -0.6350566744804382
+              ]
+            },
+            "sum": {
+              "correct_margin": -1.0564746856689453,
+              "position": 0,
+              "scores": [
+                -2.1188087463378906,
+                -3.175283432006836
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\nA. fnhkstkoo\nB. fnhksrmnn\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "word-order",
+      "id": "practice/word-order/6e37a95f8b92d86a/p0-o1",
+      "item_id": "practice/word-order/6e37a95f8b92d86a",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which string comes earlier in alphabetical order?\nA. fnhkstkoo\nB. fnhksrmnn\nReply with only the label A or B.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "ebuzcbek"
+        ],
+        [
+          "ebuzclauaoe"
+        ]
+      ],
+      "answers": [
+        "ebuzcbek",
+        "ebuzclauaoe"
+      ],
+      "content_prompt": "Which string comes earlier in alphabetical order?\nX. ebuzcbek\nY. ebuzclauaoe\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.2335052490234375,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.3461570739746094,
+              "prefix_tokens": 51,
+              "sum_log_probability": -1.3846282958984375,
+              "terminated_sum_log_probability": -1.618133544921875
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.06317138671875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.0932709351181984,
+              "prefix_tokens": 51,
+              "sum_log_probability": -0.5596256256103516,
+              "terminated_sum_log_probability": -0.6227970123291016
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              2967,
+              5032,
+              549,
+              2770,
+              3331,
+              68,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 51,
+            "stop_reason": "eos",
+            "text": "ebuzclauaoe"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.9953365325927734,
+              "position": 1,
+              "scores": [
+                -1.618133544921875,
+                -0.6227970123291016
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.252886138856411,
+              "position": 1,
+              "scores": [
+                -0.3461570739746094,
+                -0.0932709351181984
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.8250026702880859,
+              "position": 1,
+              "scores": [
+                -1.3846282958984375,
+                -0.5596256256103516
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\n- ebuzcbek\n- ebuzclauaoe\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.5195846557617188,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.6959209442138672,
+              "prefix_tokens": 53,
+              "sum_log_probability": -2.7836837768554688,
+              "terminated_sum_log_probability": -3.3032684326171875
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.22524452209472656,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5957498550415039,
+              "prefix_tokens": 53,
+              "sum_log_probability": -3.5744991302490234,
+              "terminated_sum_log_probability": -3.79974365234375
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              56,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 53,
+            "stop_reason": "eos",
+            "text": "Y"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.4964752197265625,
+              "position": 0,
+              "scores": [
+                -3.3032684326171875,
+                -3.79974365234375
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.10017108917236328,
+              "position": 1,
+              "scores": [
+                -0.6959209442138672,
+                -0.5957498550415039
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.7908153533935547,
+              "position": 0,
+              "scores": [
+                -2.7836837768554688,
+                -3.5744991302490234
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\nX. ebuzcbek\nY. ebuzclauaoe\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "word-order",
+      "id": "practice/word-order/8919a313a0447321/p0-o0",
+      "item_id": "practice/word-order/8919a313a0447321",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which string comes earlier in alphabetical order?\nX. ebuzcbek\nY. ebuzclauaoe\nReply with only the label X or Y.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "ebuzclauaoe"
+        ],
+        [
+          "ebuzcbek"
+        ]
+      ],
+      "answers": [
+        "ebuzclauaoe",
+        "ebuzcbek"
+      ],
+      "content_prompt": "Which string comes earlier in alphabetical order?\nX. ebuzclauaoe\nY. ebuzcbek\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.34793663024902344,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.07703685760498047,
+              "prefix_tokens": 51,
+              "sum_log_probability": -0.4622211456298828,
+              "terminated_sum_log_probability": -0.8101577758789062
+            },
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.08954811096191406,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.43756103515625,
+              "prefix_tokens": 51,
+              "sum_log_probability": -1.750244140625,
+              "terminated_sum_log_probability": -1.839792251586914
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 0,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              2967,
+              5032,
+              549,
+              2770,
+              3331,
+              68,
+              248046
+            ],
+            "parsed_position": 0,
+            "prefix_tokens": 51,
+            "stop_reason": "eos",
+            "text": "ebuzclauaoe"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -1.0296344757080078,
+              "position": 0,
+              "scores": [
+                -0.8101577758789062,
+                -1.839792251586914
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.36052417755126953,
+              "position": 0,
+              "scores": [
+                -0.07703685760498047,
+                -0.43756103515625
+              ]
+            },
+            "sum": {
+              "correct_margin": -1.2880229949951172,
+              "position": 0,
+              "scores": [
+                -0.4622211456298828,
+                -1.750244140625
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\n- ebuzclauaoe\n- ebuzcbek\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.6459980010986328,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.546886146068573,
+              "prefix_tokens": 53,
+              "sum_log_probability": -3.2813167572021484,
+              "terminated_sum_log_probability": -3.9273147583007812
+            },
+            {
+              "answer_tokens": 4,
+              "eos_log_probability": -0.1632709503173828,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -1.1581578254699707,
+              "prefix_tokens": 53,
+              "sum_log_probability": -4.632631301879883,
+              "terminated_sum_log_probability": -4.795902252197266
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              56,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 53,
+            "stop_reason": "eos",
+            "text": "Y"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.8685874938964844,
+              "position": 0,
+              "scores": [
+                -3.9273147583007812,
+                -4.795902252197266
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.6112716794013977,
+              "position": 0,
+              "scores": [
+                -0.546886146068573,
+                -1.1581578254699707
+              ]
+            },
+            "sum": {
+              "correct_margin": -1.3513145446777344,
+              "position": 0,
+              "scores": [
+                -3.2813167572021484,
+                -4.632631301879883
+              ]
+            }
+          },
+          "prompt": "Which string comes earlier in alphabetical order?\nX. ebuzclauaoe\nY. ebuzcbek\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "word-order",
+      "id": "practice/word-order/8919a313a0447321/p0-o1",
+      "item_id": "practice/word-order/8919a313a0447321",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which string comes earlier in alphabetical order?\nX. ebuzclauaoe\nY. ebuzcbek\nReply with only the label X or Y.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "31 May 2260",
+          "May 31, 2260",
+          "2260-05-31"
+        ],
+        [
+          "17 October 2260",
+          "October 17, 2260",
+          "2260-10-17"
+        ]
+      ],
+      "answers": [
+        "31 May 2260",
+        "17 October 2260"
+      ],
+      "content_prompt": "Which event occurs on the earlier calendar date?\nA. 31 May 2260\nB. 17 October 2260\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.03456878662109375,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.16883182525634766,
+              "prefix_tokens": 60,
+              "sum_log_probability": -1.3506546020507812,
+              "terminated_sum_log_probability": -1.385223388671875
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.008676528930664062,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.07030224800109863,
+              "prefix_tokens": 60,
+              "sum_log_probability": -0.5624179840087891,
+              "terminated_sum_log_probability": -0.5710945129394531
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              22,
+              6324,
+              220,
+              17,
+              17,
+              21,
+              15,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 60,
+            "stop_reason": "eos",
+            "text": "17 October 2260"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.8141288757324219,
+              "position": 1,
+              "scores": [
+                -1.385223388671875,
+                -0.5710945129394531
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.09852957725524902,
+              "position": 1,
+              "scores": [
+                -0.16883182525634766,
+                -0.07030224800109863
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.7882366180419922,
+              "position": 1,
+              "scores": [
+                -1.3506546020507812,
+                -0.5624179840087891
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\n- 31 May 2260\n- 17 October 2260\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.0626678466796875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5801517963409424,
+              "prefix_tokens": 62,
+              "sum_log_probability": -4.641214370727539,
+              "terminated_sum_log_probability": -4.703882217407227
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.023637771606445312,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.4934821128845215,
+              "prefix_tokens": 62,
+              "sum_log_probability": -3.947856903076172,
+              "terminated_sum_log_probability": -3.971494674682617
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              32,
+              13,
+              220,
+              18,
+              16,
+              3114,
+              220,
+              17,
+              17,
+              21,
+              15,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 62,
+            "stop_reason": "eos",
+            "text": "A. 31 May 2260"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.7323875427246094,
+              "position": 1,
+              "scores": [
+                -4.703882217407227,
+                -3.971494674682617
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.0866696834564209,
+              "position": 1,
+              "scores": [
+                -0.5801517963409424,
+                -0.4934821128845215
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.6933574676513672,
+              "position": 1,
+              "scores": [
+                -4.641214370727539,
+                -3.947856903076172
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\nA. 31 May 2260\nB. 17 October 2260\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "date-order",
+      "id": "practice/date-order/a742a49abbfa1c64/p0-o0",
+      "item_id": "practice/date-order/a742a49abbfa1c64",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which event occurs on the earlier calendar date?\nA. 31 May 2260\nB. 17 October 2260\nReply with only the label A or B.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "17 October 2260",
+          "October 17, 2260",
+          "2260-10-17"
+        ],
+        [
+          "31 May 2260",
+          "May 31, 2260",
+          "2260-05-31"
+        ]
+      ],
+      "answers": [
+        "17 October 2260",
+        "31 May 2260"
+      ],
+      "content_prompt": "Which event occurs on the earlier calendar date?\nA. 17 October 2260\nB. 31 May 2260\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.02350616455078125,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.15323281288146973,
+              "prefix_tokens": 60,
+              "sum_log_probability": -1.2258625030517578,
+              "terminated_sum_log_probability": -1.249368667602539
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.0074481964111328125,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.0720069408416748,
+              "prefix_tokens": 60,
+              "sum_log_probability": -0.5760555267333984,
+              "terminated_sum_log_probability": -0.5835037231445312
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              18,
+              16,
+              3114,
+              220,
+              17,
+              17,
+              21,
+              15,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 60,
+            "stop_reason": "eos",
+            "text": "31 May 2260"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.6658649444580078,
+              "position": 1,
+              "scores": [
+                -1.249368667602539,
+                -0.5835037231445312
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.08122587203979492,
+              "position": 1,
+              "scores": [
+                -0.15323281288146973,
+                -0.0720069408416748
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.6498069763183594,
+              "position": 1,
+              "scores": [
+                -1.2258625030517578,
+                -0.5760555267333984
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\n- 17 October 2260\n- 31 May 2260\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.041294097900390625,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5680422782897949,
+              "prefix_tokens": 62,
+              "sum_log_probability": -4.544338226318359,
+              "terminated_sum_log_probability": -4.58563232421875
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.0158538818359375,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5141746997833252,
+              "prefix_tokens": 62,
+              "sum_log_probability": -4.113397598266602,
+              "terminated_sum_log_probability": -4.129251480102539
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              32,
+              13,
+              220,
+              16,
+              22,
+              6324,
+              220,
+              17,
+              17,
+              21,
+              15,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 62,
+            "stop_reason": "eos",
+            "text": "A. 17 October 2260"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.45638084411621094,
+              "position": 1,
+              "scores": [
+                -4.58563232421875,
+                -4.129251480102539
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.05386757850646973,
+              "position": 1,
+              "scores": [
+                -0.5680422782897949,
+                -0.5141746997833252
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.4309406280517578,
+              "position": 1,
+              "scores": [
+                -4.544338226318359,
+                -4.113397598266602
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\nA. 17 October 2260\nB. 31 May 2260\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "date-order",
+      "id": "practice/date-order/a742a49abbfa1c64/p0-o1",
+      "item_id": "practice/date-order/a742a49abbfa1c64",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which event occurs on the earlier calendar date?\nA. 17 October 2260\nB. 31 May 2260\nReply with only the label A or B.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "March 8, 2220",
+          "8 March 2220",
+          "2220-03-08"
+        ],
+        [
+          "July 24, 2220",
+          "24 July 2220",
+          "2220-07-24"
+        ]
+      ],
+      "answers": [
+        "March 8, 2220",
+        "July 24, 2220"
+      ],
+      "content_prompt": "Which event occurs on the earlier calendar date?\nX. March 8, 2220\nY. July 24, 2220\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 9,
+              "eos_log_probability": -0.2277507781982422,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.13824017345905304,
+              "prefix_tokens": 61,
+              "sum_log_probability": -1.244161605834961,
+              "terminated_sum_log_probability": -1.4719123840332031
+            },
+            {
+              "answer_tokens": 10,
+              "eos_log_probability": -0.024293899536132812,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.05391712114214897,
+              "prefix_tokens": 61,
+              "sum_log_probability": -0.5391712188720703,
+              "terminated_sum_log_probability": -0.5634651184082031
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              27499,
+              220,
+              17,
+              19,
+              11,
+              220,
+              17,
+              17,
+              17,
+              15,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 61,
+            "stop_reason": "eos",
+            "text": "July 24, 2220"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.908447265625,
+              "position": 1,
+              "scores": [
+                -1.4719123840332031,
+                -0.5634651184082031
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.08432305231690407,
+              "position": 1,
+              "scores": [
+                -0.13824017345905304,
+                -0.05391712114214897
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.7049903869628906,
+              "position": 1,
+              "scores": [
+                -1.244161605834961,
+                -0.5391712188720703
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\n- March 8, 2220\n- July 24, 2220\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 9,
+              "eos_log_probability": -0.4832878112792969,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5265369415283203,
+              "prefix_tokens": 63,
+              "sum_log_probability": -4.738832473754883,
+              "terminated_sum_log_probability": -5.22212028503418
+            },
+            {
+              "answer_tokens": 10,
+              "eos_log_probability": -0.035579681396484375,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.4374557435512543,
+              "prefix_tokens": 63,
+              "sum_log_probability": -4.3745574951171875,
+              "terminated_sum_log_probability": -4.410137176513672
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              56,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 63,
+            "stop_reason": "eos",
+            "text": "Y"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.8119831085205078,
+              "position": 1,
+              "scores": [
+                -5.22212028503418,
+                -4.410137176513672
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.08908119797706604,
+              "position": 1,
+              "scores": [
+                -0.5265369415283203,
+                -0.4374557435512543
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.3642749786376953,
+              "position": 1,
+              "scores": [
+                -4.738832473754883,
+                -4.3745574951171875
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\nX. March 8, 2220\nY. July 24, 2220\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "date-order",
+      "id": "practice/date-order/e3e1075fce4f7853/p0-o0",
+      "item_id": "practice/date-order/e3e1075fce4f7853",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which event occurs on the earlier calendar date?\nX. March 8, 2220\nY. July 24, 2220\nReply with only the label X or Y.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "July 24, 2220",
+          "24 July 2220",
+          "2220-07-24"
+        ],
+        [
+          "March 8, 2220",
+          "8 March 2220",
+          "2220-03-08"
+        ]
+      ],
+      "answers": [
+        "July 24, 2220",
+        "March 8, 2220"
+      ],
+      "content_prompt": "Which event occurs on the earlier calendar date?\nX. July 24, 2220\nY. March 8, 2220\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 10,
+              "eos_log_probability": -0.2182750701904297,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.09009113162755966,
+              "prefix_tokens": 61,
+              "sum_log_probability": -0.9009113311767578,
+              "terminated_sum_log_probability": -1.1191864013671875
+            },
+            {
+              "answer_tokens": 9,
+              "eos_log_probability": -0.032016754150390625,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.09124374389648438,
+              "prefix_tokens": 61,
+              "sum_log_probability": -0.8211936950683594,
+              "terminated_sum_log_probability": -0.85321044921875
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              26631,
+              220,
+              23,
+              11,
+              220,
+              17,
+              17,
+              17,
+              15,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 61,
+            "stop_reason": "eos",
+            "text": "March 8, 2220"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 0.2659759521484375,
+              "position": 1,
+              "scores": [
+                -1.1191864013671875,
+                -0.85321044921875
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.0011526122689247131,
+              "position": 0,
+              "scores": [
+                -0.09009113162755966,
+                -0.09124374389648438
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.07971763610839844,
+              "position": 1,
+              "scores": [
+                -0.9009113311767578,
+                -0.8211936950683594
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\n- July 24, 2220\n- March 8, 2220\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 10,
+              "eos_log_probability": -0.3334617614746094,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.4357542097568512,
+              "prefix_tokens": 63,
+              "sum_log_probability": -4.357542037963867,
+              "terminated_sum_log_probability": -4.691003799438477
+            },
+            {
+              "answer_tokens": 9,
+              "eos_log_probability": -0.06078338623046875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5490798950195312,
+              "prefix_tokens": 63,
+              "sum_log_probability": -4.941719055175781,
+              "terminated_sum_log_probability": -5.00250244140625
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              56,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 63,
+            "stop_reason": "eos",
+            "text": "Y"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -0.31149864196777344,
+              "position": 0,
+              "scores": [
+                -4.691003799438477,
+                -5.00250244140625
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.11332568526268005,
+              "position": 0,
+              "scores": [
+                -0.4357542097568512,
+                -0.5490798950195312
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.5841770172119141,
+              "position": 0,
+              "scores": [
+                -4.357542037963867,
+                -4.941719055175781
+              ]
+            }
+          },
+          "prompt": "Which event occurs on the earlier calendar date?\nX. July 24, 2220\nY. March 8, 2220\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "date-order",
+      "id": "practice/date-order/e3e1075fce4f7853/p0-o1",
+      "item_id": "practice/date-order/e3e1075fce4f7853",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which event occurs on the earlier calendar date?\nX. July 24, 2220\nY. March 8, 2220\nReply with only the label X or Y.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "313/95"
+        ],
+        [
+          "1098/334",
+          "549/167"
+        ]
+      ],
+      "answers": [
+        "313/95",
+        "1098/334"
+      ],
+      "content_prompt": "Which fraction represents the larger number?\nA. 313/95\nB. 1098/334\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -2.3686599731445312,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.29092058539390564,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.745523452758789,
+              "terminated_sum_log_probability": -4.11418342590332
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.36420249938964844,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.10733795166015625,
+              "prefix_tokens": 56,
+              "sum_log_probability": -0.85870361328125,
+              "terminated_sum_log_probability": -1.2229061126708984
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              15,
+              24,
+              23,
+              14,
+              18,
+              18,
+              19,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 56,
+            "stop_reason": "eos",
+            "text": "1098/334"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -2.891277313232422,
+              "position": 1,
+              "scores": [
+                -4.11418342590332,
+                -1.2229061126708984
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.1835826337337494,
+              "position": 1,
+              "scores": [
+                -0.29092058539390564,
+                -0.10733795166015625
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.8868198394775391,
+              "position": 1,
+              "scores": [
+                -1.745523452758789,
+                -0.85870361328125
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\n- 313/95\n- 1098/334\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -2.8058853149414062,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5446491241455078,
+              "prefix_tokens": 58,
+              "sum_log_probability": -3.267894744873047,
+              "terminated_sum_log_probability": -6.073780059814453
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.9956893920898438,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.37737560272216797,
+              "prefix_tokens": 58,
+              "sum_log_probability": -3.0190048217773438,
+              "terminated_sum_log_probability": -4.0146942138671875
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              32,
+              13,
+              220,
+              18,
+              16,
+              18,
+              14,
+              24,
+              20,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 58,
+            "stop_reason": "eos",
+            "text": "A. 313/95"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -2.0590858459472656,
+              "position": 1,
+              "scores": [
+                -6.073780059814453,
+                -4.0146942138671875
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.16727352142333984,
+              "position": 1,
+              "scores": [
+                -0.5446491241455078,
+                -0.37737560272216797
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.24888992309570312,
+              "position": 1,
+              "scores": [
+                -3.267894744873047,
+                -3.0190048217773438
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\nA. 313/95\nB. 1098/334\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "fraction-order",
+      "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o0",
+      "item_id": "practice/fraction-order/bb95b5df7c3bc030",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which fraction represents the larger number?\nA. 313/95\nB. 1098/334\nReply with only the label A or B.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "1098/334",
+          "549/167"
+        ],
+        [
+          "313/95"
+        ]
+      ],
+      "answers": [
+        "1098/334",
+        "313/95"
+      ],
+      "content_prompt": "Which fraction represents the larger number?\nA. 1098/334\nB. 313/95\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -3.0134735107421875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.12768793106079102,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.0215034484863281,
+              "terminated_sum_log_probability": -4.034976959228516
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.4358711242675781,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.27572283148765564,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.654336929321289,
+              "terminated_sum_log_probability": -2.090208053588867
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              15,
+              24,
+              23,
+              14,
+              18,
+              18,
+              19,
+              835,
+              220,
+              18,
+              16
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 56,
+            "stop_reason": "token_budget",
+            "text": "1098/334 > 31"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 1.9447689056396484,
+              "position": 1,
+              "scores": [
+                -4.034976959228516,
+                -2.090208053588867
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.14803490042686462,
+              "position": 0,
+              "scores": [
+                -0.12768793106079102,
+                -0.27572283148765564
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.6328334808349609,
+              "position": 0,
+              "scores": [
+                -1.0215034484863281,
+                -1.654336929321289
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\n- 1098/334\n- 313/95\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -3.0260238647460938,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.3122127056121826,
+              "prefix_tokens": 58,
+              "sum_log_probability": -2.497701644897461,
+              "terminated_sum_log_probability": -5.523725509643555
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.7837715148925781,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.5575873255729675,
+              "prefix_tokens": 58,
+              "sum_log_probability": -3.3455238342285156,
+              "terminated_sum_log_probability": -4.129295349121094
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              32,
+              13,
+              220,
+              16,
+              15,
+              24,
+              23,
+              14,
+              18,
+              18,
+              19,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 58,
+            "stop_reason": "eos",
+            "text": "A. 1098/334"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 1.394430160522461,
+              "position": 1,
+              "scores": [
+                -5.523725509643555,
+                -4.129295349121094
+              ]
+            },
+            "mean": {
+              "correct_margin": -0.2453746199607849,
+              "position": 0,
+              "scores": [
+                -0.3122127056121826,
+                -0.5575873255729675
+              ]
+            },
+            "sum": {
+              "correct_margin": -0.8478221893310547,
+              "position": 0,
+              "scores": [
+                -2.497701644897461,
+                -3.3455238342285156
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\nA. 1098/334\nB. 313/95\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "fraction-order",
+      "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o1",
+      "item_id": "practice/fraction-order/bb95b5df7c3bc030",
+      "labels": [
+        "A",
+        "B"
+      ],
+      "letter_prompt": "Which fraction represents the larger number?\nA. 1098/334\nB. 313/95\nReply with only the label A or B.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "1198/330",
+          "599/165"
+        ],
+        [
+          "275/76"
+        ]
+      ],
+      "answers": [
+        "1198/330",
+        "275/76"
+      ],
+      "content_prompt": "Which fraction represents the larger number?\nX. 1198/330\nY. 275/76\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 0,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -2.747234344482422,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.1295030117034912,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.0360240936279297,
+              "terminated_sum_log_probability": -3.7832584381103516
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.29445838928222656,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.25631842017173767,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.5379104614257812,
+              "terminated_sum_log_probability": -1.8323688507080078
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              16,
+              24,
+              23,
+              14,
+              18,
+              18,
+              15,
+              835,
+              220,
+              17,
+              22
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 56,
+            "stop_reason": "token_budget",
+            "text": "1198/330 > 27"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -1.9508895874023438,
+              "position": 1,
+              "scores": [
+                -3.7832584381103516,
+                -1.8323688507080078
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.12681540846824646,
+              "position": 0,
+              "scores": [
+                -0.1295030117034912,
+                -0.25631842017173767
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.5018863677978516,
+              "position": 0,
+              "scores": [
+                -1.0360240936279297,
+                -1.5379104614257812
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\n- 1198/330\n- 275/76\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -2.6404781341552734,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.2494814395904541,
+              "prefix_tokens": 58,
+              "sum_log_probability": -1.9958515167236328,
+              "terminated_sum_log_probability": -4.636329650878906
+            },
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -0.376678466796875,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.4504782259464264,
+              "prefix_tokens": 58,
+              "sum_log_probability": -2.702869415283203,
+              "terminated_sum_log_probability": -3.079547882080078
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              16,
+              24,
+              23,
+              14,
+              18,
+              18,
+              15,
+              835,
+              220,
+              17,
+              22
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 58,
+            "stop_reason": "token_budget",
+            "text": "1198/330 > 27"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": -1.5567817687988281,
+              "position": 1,
+              "scores": [
+                -4.636329650878906,
+                -3.079547882080078
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.2009967863559723,
+              "position": 0,
+              "scores": [
+                -0.2494814395904541,
+                -0.4504782259464264
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.7070178985595703,
+              "position": 0,
+              "scores": [
+                -1.9958515167236328,
+                -2.702869415283203
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\nX. 1198/330\nY. 275/76\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "fraction-order",
+      "id": "practice/fraction-order/748e6ba03c84f911/p0-o0",
+      "item_id": "practice/fraction-order/748e6ba03c84f911",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which fraction represents the larger number?\nX. 1198/330\nY. 275/76\nReply with only the label X or Y.",
+      "order": [
+        0,
+        1
+      ],
+      "paraphrase": 0
+    },
+    {
+      "aliases": [
+        [
+          "275/76"
+        ],
+        [
+          "1198/330",
+          "599/165"
+        ]
+      ],
+      "answers": [
+        "275/76",
+        "1198/330"
+      ],
+      "content_prompt": "Which fraction represents the larger number?\nX. 275/76\nY. 1198/330\nReply with only the exact answer text of the correct option, without its label.",
+      "correct_position": 1,
+      "displays": {
+        "bullets": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -1.939361572265625,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.29289117455482483,
+              "prefix_tokens": 56,
+              "sum_log_probability": -1.7573471069335938,
+              "terminated_sum_log_probability": -3.6967086791992188
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.2690258026123047,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.11563992500305176,
+              "prefix_tokens": 56,
+              "sum_log_probability": -0.9251194000244141,
+              "terminated_sum_log_probability": -1.1941452026367188
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": 1,
+            "exact_label_shaped_output": false,
+            "generated_token_ids": [
+              16,
+              16,
+              24,
+              23,
+              14,
+              18,
+              18,
+              15,
+              248046
+            ],
+            "parsed_position": 1,
+            "prefix_tokens": 56,
+            "stop_reason": "eos",
+            "text": "1198/330"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 2.5025634765625,
+              "position": 1,
+              "scores": [
+                -3.6967086791992188,
+                -1.1941452026367188
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.17725124955177307,
+              "position": 1,
+              "scores": [
+                -0.29289117455482483,
+                -0.11563992500305176
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.8322277069091797,
+              "position": 1,
+              "scores": [
+                -1.7573471069335938,
+                -0.9251194000244141
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\n- 275/76\n- 1198/330\nReply with only the exact answer text of the correct option, without its label."
+        },
+        "labels": {
+          "continuations": [
+            {
+              "answer_tokens": 6,
+              "eos_log_probability": -3.1712265014648438,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.43949827551841736,
+              "prefix_tokens": 58,
+              "sum_log_probability": -2.6369895935058594,
+              "terminated_sum_log_probability": -5.808216094970703
+            },
+            {
+              "answer_tokens": 8,
+              "eos_log_probability": -0.46657562255859375,
+              "joint_tokenization_matches": true,
+              "mean_log_probability": -0.2987947463989258,
+              "prefix_tokens": 58,
+              "sum_log_probability": -2.3903579711914062,
+              "terminated_sum_log_probability": -2.85693359375
+            }
+          ],
+          "generation": {
+            "completed_parsed_position": null,
+            "exact_label_shaped_output": true,
+            "generated_token_ids": [
+              56,
+              248046
+            ],
+            "parsed_position": null,
+            "prefix_tokens": 58,
+            "stop_reason": "eos",
+            "text": "Y"
+          },
+          "likelihood": {
+            "eos_sum": {
+              "correct_margin": 2.951282501220703,
+              "position": 1,
+              "scores": [
+                -5.808216094970703,
+                -2.85693359375
+              ]
+            },
+            "mean": {
+              "correct_margin": 0.14070352911949158,
+              "position": 1,
+              "scores": [
+                -0.43949827551841736,
+                -0.2987947463989258
+              ]
+            },
+            "sum": {
+              "correct_margin": 0.24663162231445312,
+              "position": 1,
+              "scores": [
+                -2.6369895935058594,
+                -2.3903579711914062
+              ]
+            }
+          },
+          "prompt": "Which fraction represents the larger number?\nX. 275/76\nY. 1198/330\nReply with only the exact answer text of the correct option, without its label."
+        }
+      },
+      "family": "fraction-order",
+      "id": "practice/fraction-order/748e6ba03c84f911/p0-o1",
+      "item_id": "practice/fraction-order/748e6ba03c84f911",
+      "labels": [
+        "X",
+        "Y"
+      ],
+      "letter_prompt": "Which fraction represents the larger number?\nX. 275/76\nY. 1198/330\nReply with only the label X or Y.",
+      "order": [
+        1,
+        0
+      ],
+      "paraphrase": 0
+    }
+  ],
+  "schema": "weightbridge.phase_iiic.option_display_probe.v1",
+  "scope": "exploratory frozen practice only",
+  "selection": "First two frozen practice items per family, both orders of the first paraphrase",
+  "source_sha256": {
+    "experiments/phase_iiic/probe_option_display.py": "7feef01deb7f6543764e87a709939c7809861cfa544a712c8d015ecabe6c0b4d",
+    "experiments/phase_iiic/run_measurement.py": "8974da8b27a46d99a79bca5e0bf9ed360411249c1dc4bbb42e9cac57ec6be4e6",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71"
+  },
+  "summaries": {
+    "bullets": {
+      "completed_and_parsed": 10,
+      "eos_completed": 10,
+      "exact_label_shaped_outputs": 0,
+      "generation": {
+        "both_orders_correct": 0,
+        "correct_presentations": 4,
+        "same_option_in_both_orders": 1
+      },
+      "label_output_counts": {},
+      "mean": {
+        "both_orders_correct": 1,
+        "correct_presentations": 4,
+        "same_option_in_both_orders": 4
+      },
+      "parsed": 10,
+      "sum": {
+        "both_orders_correct": 1,
+        "correct_presentations": 5,
+        "same_option_in_both_orders": 3
+      }
+    },
+    "labels": {
+      "completed_and_parsed": 0,
+      "eos_completed": 11,
+      "exact_label_shaped_outputs": 7,
+      "generation": {
+        "both_orders_correct": 0,
+        "correct_presentations": 0,
+        "same_option_in_both_orders": 0
+      },
+      "label_output_counts": {
+        "a": 2,
+        "y": 5
+      },
+      "mean": {
+        "both_orders_correct": 1,
+        "correct_presentations": 4,
+        "same_option_in_both_orders": 4
+      },
+      "parsed": 0,
+      "sum": {
+        "both_orders_correct": 1,
+        "correct_presentations": 5,
+        "same_option_in_both_orders": 3
+      }
+    }
+  },
+  "underlying_items": 6
+}

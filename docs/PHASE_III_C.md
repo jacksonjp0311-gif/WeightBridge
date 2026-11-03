@@ -67,3 +67,42 @@ gate. A gain requires new jointly correct items and a gain in completed
 generation across all four renderings, with no target regressions or
 preservation changes. This protocol is separate from five-cycle
 qualification. [Stage 1 protocol](../experiments/phase_iiic/stage_one_protocol.json)
+
+## Practice-only response diagnostics
+
+In the main practice factorial, letter instruction with letter scoring
+reached 23/48. The crossed letter instruction with mean content scoring
+reached 20/48. Content instruction reached 24/48 with letter scoring and
+21/48 with mean content scoring. The point estimate for the instruction
+effect was +1/48 at either representation, and mean content scoring was
+3/48 lower at either instruction. Mean content scoring was more stable
+across option orders, with 15/24 stable pairs compared with 1/24 for
+letter/letter. Only 3/12 underlying items were correct in all four
+content-mean presentations. Sum scored 23/48, with 1/12 correct in all
+four presentations. Both rules failed the frozen practice gate. The
+practice decision locked mean as the descriptive contender.
+
+Letter generation completed and parsed on 48/48 practice presentations
+and was correct on 23. Content generation reached EOS on 38/48. None
+matched the frozen parser. Of those 38 completed outputs, 26 were labels
+alone, nine were a label with its matching answer text, and three were
+other text. The separate format diagnosis does not change the gate.
+
+The option-display probe held the content instruction, questions and
+answers fixed and replaced only the visible option labels with bullets.
+On 12 presentations of six practice questions, completed parses rose
+from 0/12 to 10/12 and correct generated presentations from 0/12 to 4/12.
+No item was generated correctly in both orders under either display.
+Mean likelihood accuracy stayed 4/12 and summed likelihood stayed 5/12.
+The probe took 64.5 wall seconds and 291.2 CPU seconds.
+[Paired option-display evidence](../results/phase-iii-c/option-display-probe.json)
+
+The practice invariance probe found 8/12 changed label choices when the
+same examples switched from A/B to X/Y. Changing the printed date and
+fraction forms changed 0/8 mean content choices in that probe. The raw
+content choice agreed with a neutral no-question prompt on 10/12
+presentations. In a post-hoc reanalysis of those six questions, subtracting
+the neutral mean score raised correct presentations from 4/12 to 8/12 and
+both-order correctness from 1/6 to 4/6. This reuses the measured practice
+scores, so it does not provide independent confirmation or affect the
+frozen rule. [Neutral-prior reanalysis](../results/phase-iii-c/neutral-prior-analysis.json)
