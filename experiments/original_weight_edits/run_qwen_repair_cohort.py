@@ -21,9 +21,9 @@ from run_blind_qwen_repair import (
 
 SOURCE = Path(__file__).resolve()
 BACKEND = SOURCE.with_name("run_blind_qwen_repair.py")
-CONFIG = ROOT / "benchmarks/configs/qwen_repair_cohort_v1.json"
+CONFIG = ROOT / "benchmarks/configs/qwen_repair_cohort_v2.json"
 ARMS = ("guided", "random")
-SEED = 913883
+SEED = 914183
 STRENGTHS = (0.03, 0.07, 0.15)
 FAULT_STRENGTHS = (0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)
 SIZES = {"construction": (8, 8), "practice": (8, 16), "holdout": (24, 16)}
@@ -44,7 +44,7 @@ def protocol():
     cases = list(itertools.product(LAYERS, ("reversal", "one_position"), (0, 1)))
     order = np.random.default_rng(SEED).permutation(len(cases))
     return {
-        "schema": "weightbridge.qwen_repair_cohort.v1",
+        "schema": "weightbridge.qwen_repair_cohort.v2",
         "source_sha256": {p.name: digest(p) for p in (SOURCE, BACKEND)},
         "model_id": MODEL, "model_revision": REVISION, "shard_sha256": SHARD_SHA,
         "seed": SEED, "policy": policy(), "strengths": list(STRENGTHS),
@@ -74,7 +74,7 @@ def build_splits(slot):
     rng = np.random.default_rng(SEED + 1)
     total_target = sum(n for n, _ in SIZES.values())
     total_sentinel = sum(n for _, n in SIZES.values())
-    numeric = iter(rng.choice(2000 * 3000, 12 * total_target, replace=False)
+    numeric = iter(rng.choice(100 * 300, 12 * total_target, replace=False)
                    .reshape(12, total_target)[slot - 1])
     bank = [(kind, good, bad) for kind, good_words, bad_words in SENTINELS
             for good in good_words.split() for bad in bad_words.split()]
@@ -82,25 +82,25 @@ def build_splits(slot):
                     .reshape(12, total_sentinel)[slot - 1])
     labels_rng = np.random.default_rng(SEED + 10_000 + slot)
     sets = {}
-    suffix = "\nAnswer with A or B."
     for name, (n_target, n_sentinel) in SIZES.items():
         targets = []
         forms = (("same", n_target),) if name != "holdout" else (("same", n_target // 2), ("paraphrase", n_target // 2))
         for form, size in forms:
             for label in labels_rng.permutation(["A", "B"] * (size // 2)):
                 pair = int(next(numeric))
-                low, high = 3000 + pair // 3000, 6000 + pair % 3000
+                low, high = 400 + pair // 300, 600 + pair % 300
                 a, b = (high, low) if label == "A" else (low, high)
-                question = ("Which number is larger?" if form == "same" else
-                            "Between these two integers, pick the one with greater value.")
+                prompt = (f"Which integer is larger?\nA. {a}\nB. {b}\nAnswer with the letter A or B only."
+                          if form == "same" else
+                          f"Which number is larger, A) {a} or B) {b}? Answer with the letter of the larger number only.")
                 targets.append({"id": f"{slot:02d}-{name}-t{len(targets):02d}", "label": str(label),
-                                "form": form, "text": f"{question}\nA. {a}\nB. {b}" + suffix})
+                                "form": form, "text": prompt})
         unrelated = []
         for i, label in enumerate(labels_rng.permutation(["A", "B"] * (n_sentinel // 2))):
             kind, good, bad = bank[int(next(sentinel))]
             a, b = (good, bad) if label == "A" else (bad, good)
             unrelated.append({"id": f"{slot:02d}-{name}-s{i:02d}", "label": str(label),
-                              "text": f"Pick the option that names {kind}.\nA. {a}\nB. {b}" + suffix})
+                              "text": f"Pick the option that names {kind}.\nA. {a}\nB. {b}\nAnswer with A or B."})
         sets[name] = {"target": targets, "sentinel": unrelated}
     return sets
 

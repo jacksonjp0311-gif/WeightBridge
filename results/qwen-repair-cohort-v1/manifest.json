@@ -1,0 +1,152 @@
+{
+  "calibration": {
+    "max_unrelated_flips": 1,
+    "minimum_lost_targets": 2,
+    "minimum_pristine_correct": 6
+  },
+  "candidate_evaluations_per_arm": 9,
+  "cases": [
+    {
+      "fault": "reversal",
+      "layer": 23,
+      "replicate": 1,
+      "seed": 913984,
+      "slot": 1
+    },
+    {
+      "fault": "reversal",
+      "layer": 21,
+      "replicate": 1,
+      "seed": 913985,
+      "slot": 2
+    },
+    {
+      "fault": "one_position",
+      "layer": 23,
+      "replicate": 1,
+      "seed": 913986,
+      "slot": 3
+    },
+    {
+      "fault": "one_position",
+      "layer": 19,
+      "replicate": 0,
+      "seed": 913987,
+      "slot": 4
+    },
+    {
+      "fault": "one_position",
+      "layer": 23,
+      "replicate": 0,
+      "seed": 913988,
+      "slot": 5
+    },
+    {
+      "fault": "one_position",
+      "layer": 19,
+      "replicate": 1,
+      "seed": 913989,
+      "slot": 6
+    },
+    {
+      "fault": "reversal",
+      "layer": 19,
+      "replicate": 1,
+      "seed": 913990,
+      "slot": 7
+    },
+    {
+      "fault": "one_position",
+      "layer": 21,
+      "replicate": 0,
+      "seed": 913991,
+      "slot": 8
+    },
+    {
+      "fault": "reversal",
+      "layer": 23,
+      "replicate": 0,
+      "seed": 913992,
+      "slot": 9
+    },
+    {
+      "fault": "reversal",
+      "layer": 19,
+      "replicate": 0,
+      "seed": 913993,
+      "slot": 10
+    },
+    {
+      "fault": "reversal",
+      "layer": 21,
+      "replicate": 0,
+      "seed": 913994,
+      "slot": 11
+    },
+    {
+      "fault": "one_position",
+      "layer": 21,
+      "replicate": 1,
+      "seed": 913995,
+      "slot": 12
+    }
+  ],
+  "fault_strengths": [
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64,
+    1.28
+  ],
+  "gate": {
+    "max_unrelated_flips_vs_pristine": 0,
+    "minimum_case_passes": 8,
+    "minimum_holdout_loss": 2,
+    "minimum_recovery": 0.5,
+    "require_no_paraphrase_regression_vs_damaged": true,
+    "require_strict_win_against_random": true
+  },
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.19.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.23.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "schema": "weightbridge.qwen_repair_cohort.v1",
+  "seed": 913883,
+  "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "source_sha256": {
+    "run_blind_qwen_repair.py": "00a50a42256a418c07adf6463b256ddcdd29e5ea37f894846605729e9643f8a3",
+    "run_qwen_repair_cohort.py": "cf56e2dc28a1fa6c47fde61fc68f50c84bad6d8d25b871e7cca5c83f73b010cb"
+  },
+  "splits": {
+    "construction": [
+      8,
+      8
+    ],
+    "holdout": [
+      24,
+      16
+    ],
+    "practice": [
+      8,
+      16
+    ]
+  },
+  "strengths": [
+    0.03,
+    0.07,
+    0.15
+  ]
+}
