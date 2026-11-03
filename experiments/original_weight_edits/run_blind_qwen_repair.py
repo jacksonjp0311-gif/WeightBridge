@@ -27,12 +27,13 @@ MODEL = "Qwen/Qwen3.5-0.8B"
 REVISION = "2fc06364715b967f1860aea9cf38778875588b17"
 BASE_SHARD = "model.safetensors-00001-of-00001.safetensors"
 LAYERS = (19, 21, 23)
-WIDTH = 16
+WIDTH = 64
+SENTINEL_WEIGHT = 64.0
 BATCH = 8
 STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)
 FAULT_STRENGTHS = (*STRENGTHS, 2.56, 4.0)
-SPLIT_SEEDS = {"construction": 823005, "practice": 823006, "holdout": 823007}
-RANDOM_SEEDS = (813021, 813022, 813023)
+SPLIT_SEEDS = {"construction": 833005, "practice": 833006, "holdout": 833007}
+RANDOM_SEEDS = (833021, 833022, 833023)
 
 
 def timestamp():
@@ -61,13 +62,13 @@ def tensor_name(layer):
 def policy():
     return {
         "schema": "weightbridge.policy.v1", "allow_tensors": [tensor_name(i) for i in LAYERS],
-        "max_entries": WIDTH * 1024, "max_fraction": 0.00003, "max_abs_delta": 8.0,
+        "max_entries": WIDTH * 1024, "max_fraction": 0.00008, "max_abs_delta": 8.0,
         "max_tensor_bytes": 8 * 1024**2, "max_total_tensor_bytes": 8 * 1024**2,
     }
 
 
 def build_splits(seeds):
-    """Use disjoint numeric ranges and distinct unrelated examples per split."""
+    """Use common numeric ranges and disjoint examples across the three splits."""
     groups = (
         ("a color", ("red", "green", "blue", "yellow", "purple", "white", "black", "orange"),
          ("table", "spoon", "ladder", "chair", "clock", "pencil", "brick", "door")),
@@ -79,20 +80,23 @@ def build_splits(seeds):
          ("cup", "fork", "plate", "shirt", "flower", "guitar", "candle", "carpet")),
     )
     suffix = "\nAnswer with the letter A or B only."
-    sizes = {"construction": (8, 8), "practice": (12, 12), "holdout": (24, 32)}
+    sizes = {"construction": (12, 24), "practice": (12, 40), "holdout": (24, 32)}
+    shifts = {"construction": (0, 2), "practice": (1, 4), "holdout": (5, 7)}
     sets = {}
+    used_pairs = set()
     for split, (n_target, n_other) in sizes.items():
         rng = np.random.default_rng(seeds[split])
-        offset = 100 * list(sizes).index(split)
-        lows = rng.choice(np.arange(offset + 100, offset + 190), n_target, replace=False)
-        highs = rng.choice(np.arange(offset + 600, offset + 690), n_target, replace=False)
-        template = "Which integer is larger?\nA. {}\nB. {}"
-        target = [{"id": f"{split}-target-{i:02d}", "text": template.format(high, low) + suffix, "label": "A"}
-                  for i, (low, high) in enumerate(zip(lows, highs))]
+        target = []
+        while len(target) < n_target:
+            high, low = int(rng.integers(600, 900)), int(rng.integers(100, 400))
+            if (high, low) in used_pairs:
+                continue
+            used_pairs.add((high, low))
+            target.append({"id": f"{split}-target-{len(target):02d}",
+                           "text": f"Which integer is larger?\nA. {high}\nB. {low}" + suffix, "label": "A"})
         # Change the actual pairs by split. Balance A and B in every set.
-        shifts = {"construction": 2, "practice": 4, "holdout": 5}
-        bank = [(kind, good[j], bad[(j + shifts[split]) % len(bad)])
-                for kind, good, bad in groups for j in range(len(good))]
+        bank = [(kind, good[j], bad[(j + shift) % len(bad)])
+                for kind, good, bad in groups for shift in shifts[split] for j in range(len(good))]
         other = []
         for i, j in enumerate(rng.permutation(len(bank))[:n_other]):
             kind, good, bad = bank[j]
@@ -197,8 +201,9 @@ def features(activations, n_target):
     contrast = np.abs(x[:n_target].mean(axis=0) - x[n_target:].mean(axis=0)) / rms
     indices = np.argsort(-contrast, kind="stable")[:WIDTH].tolist()
     z = x[:, indices] / rms[indices]
-    desired = np.r_[np.ones(n_target), np.zeros(len(x) - n_target)]
-    v = np.linalg.solve(z.T @ z + np.eye(WIDTH), z.T @ desired) / rms[indices]
+    target, unrelated = z[:n_target], z[n_target:]
+    gram = target.T @ target + SENTINEL_WEIGHT * (unrelated.T @ unrelated) + np.eye(WIDTH)
+    v = np.linalg.solve(gram, target.sum(axis=0)) / rms[indices]
     return indices, v
 
 
@@ -253,13 +258,14 @@ def prepare(run, pristine, fault_seed):
         "model_id": MODEL, "model_revision": REVISION, "source_sha256": digest(Path(__file__)),
         "eligible_layers": list(LAYERS), "strengths": list(STRENGTHS),
         "fault_strengths": list(FAULT_STRENGTHS), "policy": policy(),
+        "activation_gate": {"columns": WIDTH, "sentinel_weight": SENTINEL_WEIGHT},
         "practice_seed": seeds["practice"], "random_control_seeds": list(RANDOM_SEEDS),
         "practice_sha256": digest(public / "practice.json"),
         "holdout_sha256": digest(sealed / "holdout.json"),
         "construction_sha256": digest(sealed / "construction.json"),
         "primary": "fraction of lost forced-choice holdout accuracy recovered",
         "minimum_recovery": 0.5, "max_unrelated_prediction_flips_vs_damaged": 0,
-        "minimum_calibration_accuracy_loss_count": 4,
+        "minimum_calibration_accuracy_loss_count": 6,
         "inference": "CPU BF16, 6 threads, left padding, no thinking, max 96 input tokens, A/B logits only",
     }
     write(public / "protocol.json", config)
@@ -269,7 +275,7 @@ def prepare(run, pristine, fault_seed):
     groups = sets["construction"]
     baseline, activation = measure(runner, groups, capture=(layer,))
     n = len(groups["target"])
-    if correct(baseline["target"]) < n - 1:
+    if correct(baseline["target"]) < n - 2:
         raise RuntimeError("HOLD: pristine calibration accuracy is below the frozen floor")
     indices, v = features(activation[layer], n)
     direction = -runner.direction()
@@ -287,7 +293,7 @@ def prepare(run, pristine, fault_seed):
         unrelated_flips = flips(baseline["sentinel"], scores["sentinel"])
         candidates.append({"strength": strength, "rounded_frobenius_norm": norm,
                            "target_loss": loss, "sentinel_flips": unrelated_flips, "rows": scores})
-        if loss >= 4 and unrelated_flips <= 1:
+        if loss >= config["minimum_calibration_accuracy_loss_count"] and unrelated_flips <= 1:
             accepted = delta
             break
     write(sealed / "calibration.json", {"pristine": baseline, "attempts": candidates,
