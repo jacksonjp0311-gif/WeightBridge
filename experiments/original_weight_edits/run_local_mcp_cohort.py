@@ -38,6 +38,12 @@ For evaluate_practice or finalize_candidate, arguments contain candidate_id (the
 For stop_without_candidate, arguments contain reason (a short explanation).
 Work from observed values. Evaluate each accepted candidate before deciding whether to finalize it."""
 
+FORM_GUIDE = """You use WeightBridge MCP through a patch form. The host calls get_diagnostic_report and evaluate_practice for you.
+The network computes h=tanh(x @ input_weight + hidden_bias), then logits=h @ output_weight + output_bias. Highest logit wins.
+Use the observed activation and logit differences to locate a single faulty scalar.
+Reply with only a JSON object with four keys: tensor (exact name), index (array of zero-based integers, one per tensor axis), delta (signed number to add), reason (short causal hypothesis).
+After seeing practice feedback you can propose another patch, return an object with just select (an evaluated candidate alias to finalize), or return an object with just stop (a reason)."""
+
 
 def write_json(path, value):
     with path.open("x", encoding="utf-8", newline="\n") as stream:
@@ -60,6 +66,18 @@ def decode_request(text):
             or not isinstance(request["tool"], str) or not isinstance(request["arguments"], dict)):
         raise ValueError("expected a single tool request with an arguments object")
     return request
+
+
+def form_request(text):
+    form = json.loads(text.strip().removeprefix("```json").removesuffix("```").strip())
+    if isinstance(form, dict):
+        if set(form) == {"tensor", "index", "delta", "reason"}:
+            return {"tool": "submit_patch", "arguments": form}
+        if set(form) == {"select"}:
+            return {"tool": "finalize_candidate", "arguments": {"candidate_id": form["select"]}}
+        if set(form) == {"stop"}:
+            return {"tool": "stop_without_candidate", "arguments": {"reason": form["stop"]}}
+    raise ValueError("expected a patch form, a selection, or a stop reason")
 
 
 def diagnostic_view(result):
@@ -99,7 +117,7 @@ def generate(tokenizer, model, messages):
     return tokenizer.decode(new_tokens, skip_special_tokens=True), prompt_tokens, len(new_tokens)
 
 
-def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt):
+def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt, mode):
     output = root / task_id
     lines = Queue()
     started = time.perf_counter()
@@ -139,6 +157,14 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
             if ready.get("ready") is not True:
                 raise RuntimeError(f"MCP broker did not initialize for {task_id}")
             allowed = {tool["name"] for tool in ready["tools"]}
+            if mode == "patch-form":
+                diagnostic = send({"tool": "get_diagnostic_report", "arguments": {}})
+                if not diagnostic.get("ok"):
+                    raise RuntimeError("host diagnostic call failed")
+                log({"host_call": "get_diagnostic_report"})
+                base_sha = diagnostic["result"]["base_sha256"]
+                messages[-1]["content"] = FORM_GUIDE + "\nPractice diagnostics:\n" + json.dumps(
+                    diagnostic_view(diagnostic["result"]), separators=(",", ":"))
             ended = False
             for turn in range(1, TURN_LIMIT + 1):
                 text, input_tokens, output_tokens = generate(tokenizer, model, messages)
@@ -146,7 +172,7 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                 log({"turn": turn, "raw_output": text, "input_tokens": input_tokens,
                      "output_tokens": output_tokens, "at_token_cap": output_tokens == TOKEN_LIMIT})
                 try:
-                    request = decode_request(text)
+                    request = form_request(text) if mode == "patch-form" else decode_request(text)
                     tool, arguments = request["tool"], request["arguments"]
                     if tool not in allowed:
                         raise ValueError("tool is not available")
@@ -183,6 +209,15 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                         alias = f"C{len(aliases) + 1}"
                         aliases[alias] = result["candidate_id"]
                         response = {"candidate_alias": alias, "next": "evaluate_practice"}
+                        if mode == "patch-form":
+                            evaluation = send({"tool": "evaluate_practice",
+                                               "arguments": {"candidate_id": aliases[alias]}})
+                            if not evaluation.get("ok"):
+                                raise RuntimeError("host practice evaluation failed")
+                            log({"host_call": "evaluate_practice", "candidate_alias": alias})
+                            response = {"candidate_alias": alias,
+                                        "practice_result": evaluation["result"]["result"],
+                                        "next": "Select an evaluated alias, propose a revision, or stop."}
                     if tool == "evaluate_practice":
                         response = {"practice_result": result["result"],
                                     "next": "Choose whether to finalize the evaluated alias or revise the diagnosis."}
@@ -219,6 +254,7 @@ def main():
                         help="fresh split seed offset, at least 20000, unique per study")
     parser.add_argument("--tasks", type=int, choices=range(1, 21), default=20,
                         metavar="1-20", help="execute a prefix of the frozen order")
+    parser.add_argument("--mode", choices=("tool-json", "patch-form"), default="tool-json")
     args = parser.parse_args()
     if args.seed_offset < 20_000:
         parser.error("--seed-offset must be at least 20000")
@@ -267,6 +303,7 @@ def main():
         "provider": "local-transformers", "model_id": MODEL_ID, "version": REVISION,
         "host_call_id": uuid.uuid4().hex, "checkpoint_files_sha256": checkpoint_files,
         "host_source_sha256": _file_sha256(SOURCE), "planned_task_prefix": args.tasks,
+        "interaction_mode": args.mode,
         "diagnostic_view": "first two failures per class rounded to three decimals; practice metrics and tensor summaries",
         "sampling": {"do_sample": False, "enable_thinking": False, "max_new_tokens": TOKEN_LIMIT,
                      "max_model_turns": TURN_LIMIT, "max_input_tokens": 16_384, "device": "cpu",
@@ -283,7 +320,7 @@ def main():
         for task_id in protocol["execution_order"][:args.tasks]:
             print(f"Starting {task_id}", flush=True)
             record = run_task(task_id, out, manifest, args.broker_python.resolve(strict=True),
-                              tokenizer, model, prompt)
+                              tokenizer, model, prompt, args.mode)
             records.append(record)
             print(f"Completed {task_id}", flush=True)
     except Exception as exc:
