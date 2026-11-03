@@ -119,6 +119,23 @@ The command copies and hashes the receipt beside the new protocol, verifies
 all bound sources and frozen settings, and refuses existing output paths. The
 operator-provided provenance remains an attestation, not cryptographic proof.
 
+## Generative endpoint adaptation
+
+Phase III-H separates conditional fitting scores from completed greedy
+behavior. Score and count correctness only after parsing the frozen first
+line. A comparison result must belong to the actual displayed options.
+Count target gain over underlying items, requiring every specified wording
+to pass. Count preservation losses over individual presentations so that
+losing one correct wording cannot be hidden by an item-level aggregate.
+
+Each effective dose first runs as a stored-precision live probe and must
+restore the parent tensor exactly. A no-op after rounding is not evidence
+of a failed behavioral intervention. The host screens practice generation
+before any materialization. Separate checkpoint workers own selection and
+hidden scoring. A hidden pass requires a previously locked finalist,
+hash-bound private material, exact reload and exact parent replay. See the
+[Phase III-H design](PHASE_III_H.md) and [frozen ablation](../experiments/phase_iiih/decimal_protocol.json).
+
 ## Published Experiment 8 protocol reference
 
 The authors report Qwen3.5-0.8B with thinking enabled; temperature 0.6, top-p

@@ -48,6 +48,11 @@ a repeatable negative-decimal comparison error on Qwen. Two fitted
 BF16 candidates passed a conditional practice check and failed after
 fresh greedy evaluation. [Phase III-G findings and replay](docs/PHASE_III_G.md)
 
+Phase III-H checks complete greedy answers before allowing a rounded probe
+to become a candidate checkpoint. The shared endpoint separates completion,
+output validity, semantic correctness and preservation. The Qwen and Llama
+runtime paths both use it. [Phase III-H findings and replay](docs/PHASE_III_H.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

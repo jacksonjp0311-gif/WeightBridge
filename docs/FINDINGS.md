@@ -448,3 +448,14 @@ includes zero. Multi-wording passed two of 12 cases and single wording
 passed one, short of eight for either arm. Their respective 14 and 13
 pristine sentinel prediction changes leave locality unresolved.
 [Ablation report and evidence](QWEN_WORDING_ABLATION.md)
+
+## Endpoint-aligned Qwen adaptation
+
+All six rounded BF16 probes reduced the conditional fitting loss. None
+improved the number of targets solved across both wordings. The smallest
+tested dose (realized norm about 0.025) regressed three previously correct
+responses even with corrected comparison rivals. Exact live rollback held
+on every probe. The real generation guard prevented materialization and
+the hidden roster remained unopened. A separate SmolLM2 replay verified
+the endpoint contract across runtime paths without claiming a model gain.
+[Phase III-H evidence and replay](PHASE_III_H.md)

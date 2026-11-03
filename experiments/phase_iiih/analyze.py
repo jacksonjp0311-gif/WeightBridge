@@ -4,9 +4,10 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import json
+from math import isclose
 from pathlib import Path
 
-from experiments.phase_iiih.run_decimal_endpoint import PROTOCOL, endpoint, read_json
+from experiments.phase_iiih.run_decimal_endpoint import PROTOCOL, endpoint, read_json, sources
 from weightbridge.adaptation.behavior_endpoint import compare_endpoint
 from weightbridge.core import file_hash
 
@@ -15,6 +16,8 @@ def replay(run: Path) -> list[dict]:
     report = read_json(run / "report.json")
     config = read_json(PROTOCOL)
     contract = endpoint(config)
+    if report["sources"] != sources():
+        raise ValueError("Archived endpoint source commitments differ")
     run_root = run.resolve()
     for name, digest in report["artifacts"].items():
         target = (run / name).resolve()
@@ -27,6 +30,7 @@ def replay(run: Path) -> list[dict]:
         if not path.exists():
             continue
         probes = read_json(path)
+        eligible, legacy_eligible = [], []
         for probe in probes["probes"]:
             row = {"branch": branch, "id": probe["id"], "dose": probe["dose"],
                    "changed_entries": probe["changed_entries"], "norm": probe["realized_update_norm"],
@@ -50,7 +54,30 @@ def replay(run: Path) -> list[dict]:
                             "mean_kl": probe.get("distribution", {}).get("mean_kl"),
                             "divergences": dict(Counter(event.get("parent_phase", "unclassified")
                                                         for event in probe["first_divergences"]))})
+                if row["mean_kl"] is not None:
+                    penalties = config["probe_design"]
+                    objective = (probe["margin"]["loss"] + penalties["kl_weight"] * row["mean_kl"]
+                                 + penalties["norm_weight"] * row["norm"]**2)
+                    if not isclose(objective, probe["distribution"]["objective"], rel_tol=1e-12):
+                        raise ValueError("Archived regularized objective differs")
+                if guard["passed"]:
+                    eligible.append(probe)
+                if row["legacy_margin_gate"]:
+                    legacy_eligible.append(probe)
             rows.append(row)
+        selections = {
+            "margin": max(legacy_eligible, key=lambda p: (p["margin"]["corrections"], -p["margin"]["loss"]),
+                          default={}).get("id"),
+            "endpoint": max(eligible, key=lambda p: (p["endpoint"]["guard"]["target_item_gain"],
+                                                     -p["realized_update_norm"]), default={}).get("id"),
+            "distribution": min(eligible, key=lambda p: p["distribution"]["objective"], default={}).get("id"),
+        }
+        if selections != probes["selected"]:
+            raise ValueError(f"Archived probe selections differ for {branch}")
+        expected = {"A": selections["margin"]} if branch == "legacy" else {
+            "B": selections["margin"], "C": selections["endpoint"], "D": selections["distribution"]}
+        if any(report["arms"][key] != value for key, value in expected.items()):
+            raise ValueError("Archived ablation does not match measured selections")
     return rows
 
 

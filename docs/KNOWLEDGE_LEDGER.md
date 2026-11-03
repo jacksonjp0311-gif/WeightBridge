@@ -6,6 +6,12 @@ per-run JSON, model receipts and raw generations are listed below. Corrections
 are appended and do not rewrite earlier records. The plotting runner
 canonicalizes only explicit supersession and duplicate measurement keys.
 
+Phase III-H appends one matched Qwen practice experiment and one SmolLM2
+engineering replay. The v6 audit derives new diagnostics from the archived
+generations and is not counted as a new model experiment. The Qwen probes
+all improved the conditional score and all regressed actual generation;
+none entered lineage. [Evidence, limitations and next experiment](PHASE_III_H.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |

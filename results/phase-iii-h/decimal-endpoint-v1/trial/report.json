@@ -1,0 +1,650 @@
+{
+  "arms": {
+    "A": "dose-3",
+    "B": null,
+    "C": null,
+    "D": null
+  },
+  "artifacts": {
+    "candidate-lock.json": "58cf227c792125e2f010391e401270798c497bc8cf4236e59635da7625bcab35",
+    "fit-corrected.json": "6a28f41322fce066c2b57231965ad14cb2d3e73fe92587bbb567c1f0e037b17b",
+    "fit-legacy.json": "6613ba00c0ab151477b088870926b21a4cb016037ef5e6bcafe8a97dca7b6bc0",
+    "practice.json": "ea9eb56ce4fa50cac7688274abf7d08cd3bfe3670b11eeab3249784abd508358",
+    "probes-corrected.json": "fb6f434ff350c5b9a01cc6e23461c236344402f90ff9120bb3a6a517d7339e53",
+    "probes-legacy.json": "ea2d78ba2e2f6db08393fe9a6edb1e1693f9fde735ecae297fc3fdf45b2fdcc1",
+    "verification/selection-base.json": "d78d28f75fe7e46c22f556e8f9bb741323ee9fb166f6d4402b13a0b2a2b7130f"
+  },
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "behavioral_qualification": "PASS",
+  "candidate_lock_sha256": "58cf227c792125e2f010391e401270798c497bc8cf4236e59635da7625bcab35",
+  "capabilities": {
+    "access_level": "editable_open_weight",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "capabilities": [
+      "compute_gradients",
+      "configure_runtime",
+      "evaluate_behavior",
+      "inspect_tensors",
+      "modify_weights",
+      "read_weights",
+      "reload_checkpoint",
+      "restore_original",
+      "save_checkpoint"
+    ],
+    "checkpoint_bytes": 1746942600,
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "editable_regions": [
+      {
+        "dtype": "BF16",
+        "layer_index": 0,
+        "module_name": "model.language_model.layers.0.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.0.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 1,
+        "module_name": "model.language_model.layers.1.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.1.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 2,
+        "module_name": "model.language_model.layers.2.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.2.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 3,
+        "module_name": "model.language_model.layers.3.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.3.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 4,
+        "module_name": "model.language_model.layers.4.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.4.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 5,
+        "module_name": "model.language_model.layers.5.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.5.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 6,
+        "module_name": "model.language_model.layers.6.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.6.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 7,
+        "module_name": "model.language_model.layers.7.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.7.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 8,
+        "module_name": "model.language_model.layers.8.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.8.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 9,
+        "module_name": "model.language_model.layers.9.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.9.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 10,
+        "module_name": "model.language_model.layers.10.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.10.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 11,
+        "module_name": "model.language_model.layers.11.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.11.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 12,
+        "module_name": "model.language_model.layers.12.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.12.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 13,
+        "module_name": "model.language_model.layers.13.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.13.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 14,
+        "module_name": "model.language_model.layers.14.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.14.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 15,
+        "module_name": "model.language_model.layers.15.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.15.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 16,
+        "module_name": "model.language_model.layers.16.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.16.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 17,
+        "module_name": "model.language_model.layers.17.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.17.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 18,
+        "module_name": "model.language_model.layers.18.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.18.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 19,
+        "module_name": "model.language_model.layers.19.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.19.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 20,
+        "module_name": "model.language_model.layers.20.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.20.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 21,
+        "module_name": "model.language_model.layers.21.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.21.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 22,
+        "module_name": "model.language_model.layers.22.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.22.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 23,
+        "module_name": "model.language_model.layers.23.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+      }
+    ],
+    "family": "qwen3_5",
+    "limitations": [],
+    "quantized": false,
+    "runtime": {
+      "backward_calls": 1,
+      "device": "cpu",
+      "forward_calls": 1,
+      "gradient_probe_tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+      "model_load_seconds": 4.99901690002298,
+      "peak_rss_bytes": 2391011328,
+      "probe_cpu_seconds": 1.4375,
+      "probe_wall_seconds": 0.2630226999754086,
+      "torch_version": "2.15.0+cpu",
+      "transformers_version": "5.22.1"
+    },
+    "schema": "weightbridge.model_capabilities.v1",
+    "serialization": "safetensors",
+    "storage_dtypes": [
+      "BF16",
+      "F32"
+    ],
+    "tokenizer_class": "Qwen3_5Tokenizer"
+  },
+  "hidden_opened": false,
+  "manifest_sha256": "e74c7057a714bf08ef8fa5fea0c410517a497f2580005bca1a0fbbf9b3e48da2",
+  "meta": {
+    "decision": {
+      "action": "hold",
+      "method": null,
+      "promotion_authority": false,
+      "reason": "surrogate_endpoint_mismatch",
+      "schema": "weightbridge.endpoint_meta_decision.v1"
+    },
+    "inputs": {
+      "behavior_gains_among_surrogate_improvements": 0,
+      "effective": 6,
+      "excessive_probes": 0,
+      "hash_and_reload_verified": false,
+      "independent_pass": null,
+      "measured": 6,
+      "practice_passes": 0,
+      "regressing_probes": 6,
+      "smaller_probe_authorized": false,
+      "surrogate_improvements": 6
+    }
+  },
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "constrained"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiih-endpoint-hidden-v1",
+      "limits": {
+        "max_backward_calls": 2,
+        "max_candidates": 3,
+        "max_forward_calls": 400,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 1,
+        "max_update_entries": 16384,
+        "max_update_norm": 0.35
+      },
+      "methods": [
+        "constrained"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiih-endpoint-practice-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 2,
+      "max_candidates": 3,
+      "max_forward_calls": 400,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.35
+    },
+    "max_columns": 16,
+    "method": "constrained",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "practice": {
+    "disposition": "PASS",
+    "excluded_repeatable_outputs": {},
+    "gates": {
+      "parse_rate": true,
+      "positive_controls": true,
+      "preservation_controls": true,
+      "repeatable_errors": true,
+      "solved_target": true
+    },
+    "parsed": [
+      48,
+      48
+    ],
+    "repeatable_errors": {
+      "endpoint-decimal/practice/larger-decimal/target/00": "-65.6214",
+      "endpoint-decimal/practice/larger-decimal/target/01": "-58.7582",
+      "endpoint-decimal/practice/larger-decimal/target/02": "-22.3",
+      "endpoint-decimal/practice/larger-decimal/target/03": "-86.7",
+      "endpoint-decimal/practice/larger-decimal/target/06": "-55.1"
+    },
+    "solved": {
+      "positive": [
+        "endpoint-decimal/practice/larger-decimal/positive/00",
+        "endpoint-decimal/practice/larger-decimal/positive/01",
+        "endpoint-decimal/practice/larger-decimal/positive/02",
+        "endpoint-decimal/practice/larger-decimal/positive/03"
+      ],
+      "preserve": [
+        "endpoint-decimal/practice/copy/preserve/00",
+        "endpoint-decimal/practice/copy/preserve/01",
+        "endpoint-decimal/practice/copy/preserve/02",
+        "endpoint-decimal/practice/copy/preserve/03"
+      ],
+      "target": [
+        "endpoint-decimal/practice/larger-decimal/target/04",
+        "endpoint-decimal/practice/larger-decimal/target/05",
+        "endpoint-decimal/practice/larger-decimal/target/07",
+        "endpoint-decimal/practice/larger-decimal/target/08",
+        "endpoint-decimal/practice/larger-decimal/target/09",
+        "endpoint-decimal/practice/larger-decimal/target/10",
+        "endpoint-decimal/practice/larger-decimal/target/11",
+        "endpoint-decimal/practice/larger-decimal/target/12",
+        "endpoint-decimal/practice/larger-decimal/target/13",
+        "endpoint-decimal/practice/larger-decimal/target/14",
+        "endpoint-decimal/practice/larger-decimal/target/15"
+      ]
+    }
+  },
+  "reason": "no_endpoint_qualified_probe",
+  "resources": {
+    "branches": {
+      "corrected": {
+        "backward_calls": 2,
+        "candidate_decode_steps": 216,
+        "candidate_probes": 3,
+        "cpu_seconds": 1127.71875,
+        "distribution_forward_calls": 4,
+        "endpoint_evaluations": 3,
+        "forward_calls": 40,
+        "peak_rss_bytes": 7230644224,
+        "total_forward_calls_including_decode": 260,
+        "total_numerical_forward_calls": 44,
+        "wall_seconds": 194.93942029995378
+      },
+      "legacy": {
+        "backward_calls": 2,
+        "candidate_decode_steps": 216,
+        "candidate_probes": 3,
+        "cpu_seconds": 1149.546875,
+        "distribution_forward_calls": 4,
+        "endpoint_evaluations": 3,
+        "forward_calls": 40,
+        "peak_rss_bytes": 7205552128,
+        "total_forward_calls_including_decode": 260,
+        "total_numerical_forward_calls": 44,
+        "wall_seconds": 199.7106182000134
+      }
+    },
+    "host": {
+      "cpu_seconds": 2429.296875,
+      "peak_rss_bytes": 7230644224,
+      "wall_seconds": 435.9905140000046
+    },
+    "independent_verifiers": {
+      "base": {
+        "cpu_seconds": 147.84375,
+        "peak_rss_bytes": 2565963776,
+        "wall_seconds": 38.088034499960486
+      }
+    }
+  },
+  "restoration": {
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "live_exact_by_branch": {
+      "corrected": true,
+      "legacy": true
+    }
+  },
+  "schema": "weightbridge.phase_iiih.endpoint_report.v1",
+  "selection_baseline_qualification": {
+    "disposition": "PASS",
+    "excluded_repeatable_outputs": {},
+    "gates": {
+      "parse_rate": true,
+      "positive_controls": true,
+      "preservation_controls": true,
+      "repeatable_errors": true,
+      "solved_target": true
+    },
+    "parsed": [
+      48,
+      48
+    ],
+    "repeatable_errors": {
+      "endpoint-decimal/selection/larger-decimal/target/00": "-53.5755",
+      "endpoint-decimal/selection/larger-decimal/target/01": "-11.8297",
+      "endpoint-decimal/selection/larger-decimal/target/02": "-78.6",
+      "endpoint-decimal/selection/larger-decimal/target/03": "-18.2",
+      "endpoint-decimal/selection/larger-decimal/target/04": "-29.4987",
+      "endpoint-decimal/selection/larger-decimal/target/06": "-31.9"
+    },
+    "solved": {
+      "positive": [
+        "endpoint-decimal/selection/larger-decimal/positive/00",
+        "endpoint-decimal/selection/larger-decimal/positive/01",
+        "endpoint-decimal/selection/larger-decimal/positive/02",
+        "endpoint-decimal/selection/larger-decimal/positive/03"
+      ],
+      "preserve": [
+        "endpoint-decimal/selection/copy/preserve/00",
+        "endpoint-decimal/selection/copy/preserve/01",
+        "endpoint-decimal/selection/copy/preserve/02",
+        "endpoint-decimal/selection/copy/preserve/03"
+      ],
+      "target": [
+        "endpoint-decimal/selection/larger-decimal/target/08",
+        "endpoint-decimal/selection/larger-decimal/target/09",
+        "endpoint-decimal/selection/larger-decimal/target/10",
+        "endpoint-decimal/selection/larger-decimal/target/11",
+        "endpoint-decimal/selection/larger-decimal/target/12",
+        "endpoint-decimal/selection/larger-decimal/target/13",
+        "endpoint-decimal/selection/larger-decimal/target/14",
+        "endpoint-decimal/selection/larger-decimal/target/15"
+      ]
+    }
+  },
+  "selection_winner": null,
+  "single_cycle": "HOLD",
+  "sources": {
+    "experiments/phase_iiif/run_matrix.py": "824d46f4696ae86440e1022b572842aa1ff9a06d7681f6c7cf076f22bd7ba698",
+    "experiments/phase_iiig/decimal_endpoint.py": "4d82a40becd745f70dc3bfc6cba112a82b199cebc53149bbedaf17a07c946eab",
+    "experiments/phase_iiig/endpoint.py": "a69df1e2f0809bd4e1ebdd2e19f752b5151bf6942d2f65f249e61241731c3ae7",
+    "experiments/phase_iiig/run_signed_decimal.py": "2d21d917efb5d40a5c91c49e8eae122f492598cb660e1622b6345dbdf0d11d01",
+    "experiments/phase_iiig/run_trial.py": "9941fa0d003f48a96ab98bde1bc6495853bd19b40f62efd1593cb3ba3ffce54a",
+    "experiments/phase_iiih/decimal_protocol.json": "79c85a25852b62dbc81f727bd0651afd32b2a0fb3a5c34e118eafcb3fbb8b8c1",
+    "experiments/phase_iiih/decimal_roster.py": "588625b27f8c302581417fd0c47d31c412fb6d411caa5ad4cb1dded0ac8c5ec2",
+    "experiments/phase_iiih/run_decimal_endpoint.py": "708fcdc40b12ecee0699cbbe0bcb43d3bf6442dc31d5ce4d02f50fcf38f3c59b",
+    "weightbridge/adaptation/behavior_endpoint.py": "0db02a3c30206434fb30c9f325729bbd817e45fe1c46b5f485df9f9cb5ace2d2",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+    "weightbridge/adaptation/endpoint_policy.py": "d33ec66722b70955b46528ee15d9e5c1a9f1ce26ca810ea94bae7f3592d28ffe",
+    "weightbridge/adaptation/endpoint_update.py": "c6c5038119435c9620619f2f5c124a03cdb668588b75ad3a31941195bb462a50",
+    "weightbridge/adaptation/meta_controller.py": "02ffd594df6cda5c63b2021297de3d5449dfadcf67553dd3aec6aaa430ddc9f7",
+    "weightbridge/adaptation/model_adapter.py": "fa844ed2eca8963391f23890edf7a5beb24fd0d729d86dc5405dadaf8bfda604",
+    "weightbridge/adaptation/universal_awl.py": "9c1dc7e19911d0ae01559427ff07624d2a63a7f4639b366522066911afa14a85",
+    "weightbridge/adaptation/universal_update.py": "0dd65c3af5381dc0dc2ae3d99dbc5fb95724d0eae96cc30ecb4f4de5bbd90a61",
+    "weightbridge/inference/huggingface.py": "a563b044166d203666821759a328a5ab679386e857ce4cf35957ab0a10b8d624",
+    "weightbridge/patches/huggingface.py": "ccc5f60b8075f8aa4b0e1f157826d2c9f2c7fcd2ee9df22a444c75417923dfd3"
+  },
+  "surrogate_fidelity": {
+    "behavior_improvements_given_surrogate_improvement": [
+      0,
+      6
+    ],
+    "limitation": "Doses share the parent, practice roster and two fitted directions. The interval assumes independence and is descriptive only.",
+    "pairs": [
+      {
+        "branch": "legacy",
+        "lost_validity": 0,
+        "practice_pass": false,
+        "probe": "dose-1",
+        "regressions": 3,
+        "surrogate_gain": 0.32562583684921265,
+        "target_item_gain": -1
+      },
+      {
+        "branch": "legacy",
+        "lost_validity": 2,
+        "practice_pass": false,
+        "probe": "dose-2",
+        "regressions": 8,
+        "surrogate_gain": 0.6174212098121643,
+        "target_item_gain": -1
+      },
+      {
+        "branch": "legacy",
+        "lost_validity": 27,
+        "practice_pass": false,
+        "probe": "dose-3",
+        "regressions": 25,
+        "surrogate_gain": 0.7141285538673401,
+        "target_item_gain": -8
+      },
+      {
+        "branch": "corrected",
+        "lost_validity": 0,
+        "practice_pass": false,
+        "probe": "dose-1",
+        "regressions": 3,
+        "surrogate_gain": 0.30824345350265503,
+        "target_item_gain": -1
+      },
+      {
+        "branch": "corrected",
+        "lost_validity": 2,
+        "practice_pass": false,
+        "probe": "dose-2",
+        "regressions": 9,
+        "surrogate_gain": 0.6218653619289398,
+        "target_item_gain": -2
+      },
+      {
+        "branch": "corrected",
+        "lost_validity": 32,
+        "practice_pass": false,
+        "probe": "dose-3",
+        "regressions": 28,
+        "surrogate_gain": 0.7335686236619949,
+        "target_item_gain": -9
+      }
+    ],
+    "wilson_95_descriptive": [
+      2.7755575615628914e-17,
+      0.3903342879021653
+    ]
+  }
+}

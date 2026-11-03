@@ -159,3 +159,13 @@ reload. The observed failure is scoped to the selected layer, fitting
 data, update limits and task. The two realized perturbation norms
 differed, so the study does not isolate a solver-only effect.
 [Phase III-G evidence](PHASE_III_G.md)
+
+The Phase III-H guard can reject a probe that degrades the real decoding
+endpoint, even when its fitted scores improve. Passing practice still does
+not establish generalization. Full-vocabulary KL in this pilot is measured
+on a few observed parent prefixes and only ranks measured eligible probes;
+it does not constrain the derivative fit or bound behavior on other inputs.
+The probe space covers selected columns of one affine module and cannot
+exclude useful updates in other regions. SmolLM2's replay establishes
+shared endpoint compatibility, not behavioral qualification.
+[Phase III-H evidence](PHASE_III_H.md)
