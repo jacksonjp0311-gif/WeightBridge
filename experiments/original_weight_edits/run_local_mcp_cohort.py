@@ -29,6 +29,7 @@ REVISION = "2fc06364715b967f1860aea9cf38778875588b17"
 TURN_LIMIT = 8
 TOKEN_LIMIT = 160
 THREADS = 6
+REPEAT_LIMIT = 3
 
 GUIDE = """Return one JSON object with keys tool (the tool name) and arguments (an object).
 First call get_diagnostic_report with empty arguments.
@@ -117,6 +118,14 @@ def generate(tokenizer, model, messages):
     return tokenizer.decode(new_tokens, skip_special_tokens=True), prompt_tokens, len(new_tokens)
 
 
+def check_output_path(path):
+    if os.name == "nt":
+        receipt = (path / "trial-00" / "candidates" / "sessions" / ("codex-" + "0" * 32)
+                   / ("candidate-" + "0" * 32 + ".npz.receipt.json"))
+        if len(str(receipt).encode("utf-16-le")) // 2 >= 260:
+            raise ValueError("candidate receipt exceeds the Windows path budget; use a short --out path")
+
+
 def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt, mode):
     output = root / task_id
     lines = Queue()
@@ -166,11 +175,19 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                 messages[-1]["content"] = FORM_GUIDE + "\nPractice diagnostics:\n" + json.dumps(
                     diagnostic_view(diagnostic["result"]), separators=(",", ":"))
             ended = False
+            last_output = None
+            repeats = 0
+            stop_reason = "model turn budget exhausted"
             for turn in range(1, TURN_LIMIT + 1):
                 text, input_tokens, output_tokens = generate(tokenizer, model, messages)
                 messages.append({"role": "assistant", "content": text})
                 log({"turn": turn, "raw_output": text, "input_tokens": input_tokens,
                      "output_tokens": output_tokens, "at_token_cap": output_tokens == TOKEN_LIMIT})
+                repeats = repeats + 1 if text == last_output else 1
+                last_output = text
+                if repeats == REPEAT_LIMIT:
+                    stop_reason = "model repeated the same response three times"
+                    break
                 try:
                     request = form_request(text) if mode == "patch-form" else decode_request(text)
                     tool, arguments = request["tool"], request["arguments"]
@@ -226,9 +243,9 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                                 "next": "Correct the request using the diagnostics. Do not repeat a rejected patch."}
                 messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
             if not ended:
-                log({"host_stop": "model turn budget exhausted"})
+                log({"host_stop": stop_reason})
                 response = send({"tool": "stop_without_candidate",
-                                 "arguments": {"reason": "Host model turn budget exhausted"}})
+                                 "arguments": {"reason": "Host stop: " + stop_reason}})
                 if response.get("experiment_complete") is not True:
                     raise RuntimeError("budget stop did not finalize the experiment")
             if proc.wait(timeout=30) != 0:
@@ -266,6 +283,7 @@ def main():
     out = args.out.resolve()
     if not out.is_relative_to(ROOT):
         parser.error("--out must be within the checkout for portable evidence paths")
+    check_output_path(out)
     model_path = args.model.resolve(strict=True)
     checkpoint_files = {path.name: _file_sha256(path) for path in sorted(model_path.iterdir())
                         if path.is_file()}
@@ -307,6 +325,7 @@ def main():
         "diagnostic_view": "first two failures per class rounded to three decimals; practice metrics and tensor summaries",
         "sampling": {"do_sample": False, "enable_thinking": False, "max_new_tokens": TOKEN_LIMIT,
                      "max_model_turns": TURN_LIMIT, "max_input_tokens": 16_384, "device": "cpu",
+                     "identical_response_stop": REPEAT_LIMIT,
                      "dtype": "bfloat16", "torch_threads": THREADS, "torch": version("torch"),
                      "transformers": version("transformers")},
     })

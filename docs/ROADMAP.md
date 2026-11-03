@@ -7,21 +7,19 @@
 | 1. Preserve and reproduce v0.1 | COMPLETE | Baseline commit `321547d`; 11 original tests passed; v0.1 demo rerun |
 | 2. Real-model inspection and patch reconstruction | COMPLETE for local safetensors/Qwen path | Sharded/unsharded inspection and host-policy patcher; p50c hashes match |
 | 3. Bounded original-versus-published benchmark | PARTIAL / HOLD | Small CPU smoke completed but truncated; published datasets/scores not run |
-| 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | One Codex MCP discovery; balanced v2 cohort protocol and evaluator implemented, but formal execution is HOLD pending pinned model identity and isolated MCP-only host |
+| 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | One Codex MCP discovery; pinned local Qwen host exercised in bounded synthetic trials; 20-task gate pending |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 
 ## Immediate next experiment
 
 The balanced 20-task protocol, fixed prompt, host policy, task assignments,
 source hashes, matched-control rule and stratified evaluator are implemented
-in `experiments/original_weight_edits/`. The current checked-in file is a
-template, not a runnable study: preflight marks it HOLD because this Codex
-host does not expose a verifiable provider model/version or sampling receipt,
-and the current agent context has repository access. Do not run the cohort
-from this workspace as if it were isolated. The formal study needs a fresh
-session for each task behind an MCP-only host with no filesystem, repository
-or network tools; then pin and freeze the identity, sampling configuration,
-prompt and hashes before the first task.
+in `experiments/original_weight_edits/`. The local Qwen host pins checkpoint
+and runtime identity, freezes the protocol and starts a new model context for
+each trial. The model receives the prompt and tool responses. A formal study
+needs a single frozen interaction mode and a fresh roster of splits, with all
+20 tasks completed. The four-task exploratory runs use distinct seed sets
+and have their own receipts.
 
 The gate remains at least 70% fully repaired holdouts, at most 5% regression
 among baseline-correct items, and at least a 20 percentage-point advantage

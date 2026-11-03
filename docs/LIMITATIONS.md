@@ -13,10 +13,10 @@
   every generation. Neither can support an accuracy or loop-reduction claim.
 - **Qwen AI-directed edit: HOLD.** The diagnostic agent was exercised only on
   the synthetic MLP. No Qwen patch was proposed by the agent or evaluated.
-- **LLM transfer: HOLD / INCONCLUSIVE.** One Codex session used the new MCP
-  tools to identify a hidden-bias defect and selected its exact one-value
-  correction. The candidate improved one in-distribution holdout, but only one
-  task was run; the four-mechanism, 20-instance transfer study is pending.
+- **LLM transfer: HOLD / INCONCLUSIVE.** One Codex session used MCP tools
+  to identify and repair a hidden-bias defect. The local Qwen host has also
+  been exercised in bounded exploratory trials. The four-mechanism,
+  20-instance transfer study is pending.
 - **Random Qwen control behavior: HOLD.** The control checkpoint has matching
   changed-value counts but was not run through inference.
 - **LoRA or language-model conventional baseline: HOLD.** The measured
@@ -110,12 +110,11 @@ the process must be contained against allocation spikes.
 - The MCP tools currently bind only a synthetic `ToyMLP` practice evaluator;
   real Hugging Face models still use the CLI, with no LLM-directed Qwen
   practice/evaluation loop. The MCP server is not an OS sandbox.
-- The v2 20-task cohort is a hashed template and preflight utility, not a
-  completed study. This host does not provide a verifiable provider model ID,
-  version, or reasoning-sampling receipt; the current Codex workspace also has
-  access to the task-generator source. A formal trial needs an isolated,
-  fresh-context-per-task MCP host with no filesystem, repository, or network
-  tools. The preflight is INCONCLUSIVE and contains no cohort measurements.
+- The v2 20-task cohort is pending. The local Transformers host records
+  checkpoint, tokenizer, sampling and runtime identity and uses a fresh
+  context per trial. The model's only action channel is the broker's MCP
+  interface. Bounded runs use separate protocols and seed rosters, so they
+  cannot be pooled into the registered cohort.
 - The host identity receipt and cohort records are content-hashed, not
   cryptographically signed or provider-attested. They make accidental or
   post-freeze changes detectable when the original protocol is retained, but

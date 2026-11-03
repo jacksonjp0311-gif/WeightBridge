@@ -5,3 +5,12 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+
+# Local MCP evidence files that embed machine-specific absolute paths.
+/results/original_weight_edits/local-qwen-mcp-*/**/host_session.json
+/results/original_weight_edits/local-qwen-mcp-*/**/*.npz.receipt.json
+/results/original_weight_edits/local-qwen-mcp-*/*.broker.stderr.txt
+/results/original_weight_edits/local-qwen-mcp-form-smoke/trial-09/agent_mcp_transcript.jsonl
+/results/wb-qf2/**/host_session.json
+/results/wb-qf2/**/*.npz.receipt.json
+/results/wb-qf2/*.broker.stderr.txt

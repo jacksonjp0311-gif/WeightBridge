@@ -125,8 +125,10 @@ The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 add
   submission, practice-only scoring and candidate finalization; one Codex
   session found the injected hidden-bias correction on a blinded toy task.
 - A hashed 20-task, four-mechanism LLM transfer protocol and stratified cohort
-  evaluator. The checked-in plan remains HOLD until an isolated host pins the
-  model identity/version and sampling configuration; no cohort results exist.
+  evaluator. A local Transformers host runs a pinned Qwen diagnostic model
+  against the MCP broker on toy weights, with a fresh context for each trial.
+  Bounded smoke results and the remaining transfer gate are tracked in
+  [the research progress record](docs/PROGRESS.md).
 
 Install the core tools and run the tests/demo:
 

@@ -110,6 +110,30 @@ protocol file with `weightbridge-freeze-mcp-cohort` (or
 every cohort; the command refuses to overwrite protocol or receipt files. Its
 identity provenance field is an operator statement, not a provider signature.
 
+The local Transformers host can use the pinned Qwen checkpoint as the
+diagnostic model. Run the host with an inference Python environment and pass
+the separate MCP-enabled Python executable to its broker. It verifies the
+base checkpoint hash, records the full local model file hashes and host code
+hash, and constructs a fresh model context for each trial. The model receives
+the frozen prompt and the practice-only MCP view. The host handles all file
+access and keeps post-finalization results out of the model context.
+
+```bash
+python experiments/original_weight_edits/run_local_mcp_cohort.py \
+  --model /path/to/pinned/qwen35-base \
+  --broker-python /path/to/mcp-enabled/python \
+  --tasks 4 --seed-offset 40000 --mode patch-form \
+  --out results/wb-qf2
+```
+
+Use a fresh output directory and a split-seed offset that does not overlap
+an existing run. The four-task prefix has one trial per defect mechanism.
+Use a short output path on Windows to leave room for candidate receipts.
+In `tool-json` mode, the model chooses each tool call. In `patch-form` mode,
+the host calls diagnostics and practice evaluation automatically, while the
+model supplies patch proposals and chooses whether to finalize an evaluated
+candidate. Treat the interaction modes as separate exploratory conditions.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

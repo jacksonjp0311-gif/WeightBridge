@@ -11,6 +11,7 @@ from experiments.original_weight_edits.run_mcp_agent_experiment import (
     make_blinded_task,
     make_random_control_patch,
 )
+from experiments.original_weight_edits.run_local_mcp_cohort import check_output_path
 from weightbridge.evaluation.mcp_cohort import (
     CohortProtocolError,
     MECHANISMS,
@@ -204,6 +205,13 @@ def test_manifest_rejects_unregistered_analysis_plan(tmp_path):
     protocol["protocol_sha256"] = _canonical_hash(protocol)
     errors = validate_protocol(protocol, root=tmp_path)
     assert "analysis plan differs from the preregistered stratified bootstrap" in errors
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows legacy path budget")
+def test_local_host_reserves_space_for_windows_candidate_receipts():
+    check_output_path(Path("C:/wb/results"))
+    with pytest.raises(ValueError, match="candidate receipt exceeds the Windows path budget"):
+        check_output_path(Path("C:/wb") / ("experiment-" * 18))
 
 
 def _write_template_for_freeze(tmp_path):
