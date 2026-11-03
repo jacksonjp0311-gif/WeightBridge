@@ -12,6 +12,12 @@ generations and is not counted as a new model experiment. The Qwen probes
 all improved the conditional score and all regressed actual generation;
 none entered lineage. [Evidence, limitations and next experiment](PHASE_III_H.md)
 
+Phase III-I adds one Qwen adaptation trial and one SmolLM2 portability
+run. Token-level and completed practice corrections coincided on the
+tested forks. Sampled margin preservation did not cover the three
+regressed presentations that blocked the strongest Qwen probe.
+[Evidence, limitations and next experiment](PHASE_III_I.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |

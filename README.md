@@ -53,6 +53,11 @@ to become a candidate checkpoint. The shared endpoint separates completion,
 output validity, semantic correctness and preservation. The Qwen and Llama
 runtime paths both use it. [Phase III-H findings and replay](docs/PHASE_III_H.md)
 
+Phase III-I traces the first divergent decision in an actual generated
+answer. It compares whole-answer fitting with fork losses, affine region
+selection, trajectory constraints, and a conventional Adam-trained adapter.
+[Phase III-I findings and replay](docs/PHASE_III_I.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

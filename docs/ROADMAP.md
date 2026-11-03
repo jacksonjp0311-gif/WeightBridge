@@ -17,6 +17,7 @@
 | Phase III-F. Model-agnostic adaptation | ENGINEERING PASS ON TWO FAMILIES / LEARNING HOLD | The shared intent compiled to distinct Qwen3.5 and Llama affine plans. Both passed materialization, fresh reload, and source restoration. See the [Phase III-F study](PHASE_III_F.md). |
 | Phase III-G. Behavioral qualification | QWEN QUALIFICATION PASS / SINGLE-CYCLE FAIL | Targeted negative-decimal errors replicated. Both fitted candidates failed fresh greedy selection and the hidden roster remained closed. See the [Phase III-G study](PHASE_III_G.md). |
 | Phase III-H. Endpoint-aligned adaptation | SHARED ENDPOINT PASS / SINGLE-CYCLE HOLD | All six Qwen probes lowered fitting loss and regressed actual responses. The guard rejected each before materialization. SmolLM2 independently replayed the shared endpoint and rollback. See the [Phase III-H study](PHASE_III_H.md). |
+| Phase III-I. Causal fork adaptation | PRACTICE GAINS / SINGLE-CYCLE HOLD | A trajectory-constrained Qwen update gained five targets across both wordings and regressed three previously correct responses. No update qualified for selection. The trained conventional merge exceeded its frozen cap. See the [Phase III-I study](PHASE_III_I.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

@@ -1,0 +1,449 @@
+{
+  "limitation": "Local aggregate directional witness; failure to cross does not prove infeasibility outside the tested direction, and crossing does not establish per-item or nonlinear correction",
+  "parent_mean_target_margin": -1.28125,
+  "parent_trajectories": [
+    {
+      "margins": [
+        1.625,
+        3.5,
+        0.375,
+        8.625,
+        6.25,
+        1.875
+      ],
+      "replay_argmax_ids": [
+        471,
+        19,
+        18,
+        13,
+        20,
+        198
+      ],
+      "token_ids": [
+        471,
+        19,
+        18,
+        13,
+        20,
+        198
+      ]
+    },
+    {
+      "margins": [
+        1.875,
+        3.75,
+        0.375,
+        8.25,
+        6.125,
+        1.75
+      ],
+      "replay_argmax_ids": [
+        471,
+        19,
+        18,
+        13,
+        20,
+        198
+      ],
+      "token_ids": [
+        471,
+        19,
+        18,
+        13,
+        20,
+        198
+      ]
+    },
+    {
+      "margins": [
+        5.125,
+        3.125,
+        6.375,
+        7.125,
+        3.5,
+        0.25
+      ],
+      "replay_argmax_ids": [
+        220,
+        17,
+        21,
+        13,
+        16,
+        198
+      ],
+      "token_ids": [
+        220,
+        17,
+        21,
+        13,
+        16,
+        198
+      ]
+    },
+    {
+      "margins": [
+        5.125,
+        3.5,
+        6.375,
+        7.0,
+        4.375,
+        0.875
+      ],
+      "replay_argmax_ids": [
+        220,
+        17,
+        21,
+        13,
+        16,
+        198
+      ],
+      "token_ids": [
+        220,
+        17,
+        21,
+        13,
+        16,
+        198
+      ]
+    },
+    {
+      "margins": [
+        4.125,
+        2.25,
+        7.375,
+        8.3125,
+        7.0,
+        1.125
+      ],
+      "replay_argmax_ids": [
+        220,
+        19,
+        19,
+        13,
+        23,
+        198
+      ],
+      "token_ids": [
+        220,
+        19,
+        19,
+        13,
+        23,
+        198
+      ]
+    },
+    {
+      "margins": [
+        4.75,
+        2.375,
+        7.5,
+        8.0,
+        7.5,
+        1.25
+      ],
+      "replay_argmax_ids": [
+        220,
+        19,
+        19,
+        13,
+        23,
+        198
+      ],
+      "token_ids": [
+        220,
+        19,
+        19,
+        13,
+        23,
+        198
+      ]
+    },
+    {
+      "margins": [
+        4.875,
+        5.375,
+        3.625,
+        9.0,
+        8.125,
+        6.625,
+        6.75,
+        9.5,
+        7.5,
+        7.75,
+        1.375
+      ],
+      "replay_argmax_ids": [
+        220,
+        19,
+        18,
+        22,
+        22,
+        13,
+        21,
+        23,
+        20,
+        21,
+        198
+      ],
+      "token_ids": [
+        220,
+        19,
+        18,
+        22,
+        22,
+        13,
+        21,
+        23,
+        20,
+        21,
+        198
+      ]
+    },
+    {
+      "margins": [
+        4.625,
+        5.125,
+        4.25,
+        9.4375,
+        8.25,
+        6.625,
+        7.125,
+        9.875,
+        7.375,
+        7.625,
+        1.375
+      ],
+      "replay_argmax_ids": [
+        220,
+        19,
+        18,
+        22,
+        22,
+        13,
+        21,
+        23,
+        20,
+        21,
+        198
+      ],
+      "token_ids": [
+        220,
+        19,
+        18,
+        22,
+        22,
+        13,
+        21,
+        23,
+        20,
+        21,
+        198
+      ]
+    }
+  ],
+  "protected_anchors": [
+    {
+      "margin": 0.25,
+      "position": 5,
+      "trajectory_index": 2
+    },
+    {
+      "margin": 0.5,
+      "position": 2,
+      "trajectory_index": 0
+    },
+    {
+      "margin": 0.375,
+      "position": 2,
+      "trajectory_index": 1
+    },
+    {
+      "margin": 0.875,
+      "position": 5,
+      "trajectory_index": 3
+    }
+  ],
+  "radius": 0.05,
+  "reason": "direction_selected",
+  "regions": [
+    {
+      "columns": [
+        5,
+        6,
+        40,
+        51,
+        147,
+        155,
+        188,
+        299,
+        411,
+        608,
+        696,
+        916,
+        1028,
+        1607,
+        2062,
+        2999
+      ],
+      "full_region_target_gradient_norm": 32.062221521410414,
+      "layer_index": 11,
+      "protected": {
+        "aggregate_margin_crossing_predicted": false,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": -0.7157057742121077,
+        "predicted_protected_margins": [
+          0.25000000000000017,
+          0.4999999999999998,
+          0.3749999999999998,
+          0.8750000000000004
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 0.5655442257878923,
+        "target_margin_gain_at_radius": 0.5655442257878923
+      },
+      "rank_one_output_factor_reachability": 0.7798120307658152,
+      "reason": "direction_available",
+      "sampled_constraint_rank": 4,
+      "selected_column_target_gradient_norm": 13.860344755327889,
+      "selectivity_score": 0.7245715813350009,
+      "tensor_name": "model.language_model.layers.11.mlp.down_proj.weight",
+      "unconstrained": {
+        "aggregate_margin_crossing_predicted": false,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": -0.5566784186649991,
+        "predicted_protected_margins": [
+          0.7086636730089123,
+          0.8082684862641678,
+          0.7888557437252723,
+          0.9891435649965832
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 0.7245715813350009,
+        "target_margin_gain_at_radius": 0.7245715813350009
+      }
+    },
+    {
+      "columns": [
+        1,
+        2,
+        3,
+        20,
+        79,
+        89,
+        131,
+        133,
+        142,
+        160,
+        166,
+        206,
+        222,
+        250,
+        266,
+        380
+      ],
+      "full_region_target_gradient_norm": 17.824941779665252,
+      "layer_index": 17,
+      "protected": {
+        "aggregate_margin_crossing_predicted": false,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": -0.7396330243051918,
+        "predicted_protected_margins": [
+          0.2499999999999999,
+          0.4999999999999999,
+          0.3749999999999999,
+          0.8749999999999999
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 0.5416169756948082,
+        "target_margin_gain_at_radius": 0.5416169756948082
+      },
+      "rank_one_output_factor_reachability": 0.9551225988532216,
+      "reason": "direction_available",
+      "sampled_constraint_rank": 4,
+      "selected_column_target_gradient_norm": 12.857792265048824,
+      "selectivity_score": 0.5677761806652234,
+      "tensor_name": "model.language_model.layers.17.mlp.down_proj.weight",
+      "unconstrained": {
+        "aggregate_margin_crossing_predicted": false,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": -0.7134738193347766,
+        "predicted_protected_margins": [
+          0.467856366503858,
+          0.5231137076006336,
+          0.4249092481009752,
+          1.0466169412463806
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 0.5677761806652234,
+        "target_margin_gain_at_radius": 0.5677761806652234
+      }
+    },
+    {
+      "columns": [
+        2,
+        9,
+        11,
+        22,
+        24,
+        26,
+        28,
+        43,
+        46,
+        57,
+        72,
+        84,
+        94,
+        104,
+        125,
+        557
+      ],
+      "full_region_target_gradient_norm": 70.73794885638257,
+      "layer_index": 23,
+      "protected": {
+        "aggregate_margin_crossing_predicted": true,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": 0.8207302544538777,
+        "predicted_protected_margins": [
+          0.25000000000000927,
+          0.4999999999999997,
+          0.37499999999999967,
+          0.8750000000000097
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 2.1019802544538777,
+        "target_margin_gain_at_radius": 2.1019802544538777
+      },
+      "rank_one_output_factor_reachability": 0.6375157510788986,
+      "reason": "direction_available",
+      "sampled_constraint_rank": 4,
+      "selected_column_target_gradient_norm": 49.526512864781296,
+      "selectivity_score": 3.282612763560923,
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+      "unconstrained": {
+        "aggregate_margin_crossing_predicted": true,
+        "feasible_radius": 0.05,
+        "predicted_mean_target_margin": 2.001362763560923,
+        "predicted_protected_margins": [
+          4.819785485295978,
+          0.41821974206537055,
+          0.2906757640251654,
+          5.705813410331963
+        ],
+        "sampled_constraints_satisfied_at_radius": true,
+        "target_margin_gain_at_feasible_radius": 3.282612763560923,
+        "target_margin_gain_at_radius": 3.282612763560923
+      }
+    }
+  ],
+  "resources": {
+    "backward_calls": 6,
+    "cpu_seconds": 70.046875,
+    "forward_calls": 3,
+    "peak_rss_bytes": 7172538368,
+    "shared_region_count": 3,
+    "wall_seconds": 13.699091600021347
+  },
+  "schema": "weightbridge.fork_region_scan.v1",
+  "selected_layer": 23,
+  "selection_rule": "Maximum predicted mean target margin gain along the raw rank-one direction within the radius and sampled preservation floor"
+}

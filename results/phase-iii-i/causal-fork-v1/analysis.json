@@ -1,0 +1,769 @@
+{
+  "schema": "weightbridge.phase_iiii.analysis.v1",
+  "single_cycle": "HOLD",
+  "source_checkpoint": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "report_sha256": "6cc58e8a21b5039e5445c2c6306e3d3eb538d909d7a91500f8331f55d522f3c1",
+  "arms": {
+    "A": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "realized_norm": 0.05002428111121717,
+      "changed_entries": 15879,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 20.765625,
+        "forward_calls": 2,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 3.5530136000015773
+      },
+      "training_resources": {
+        "backward_calls": 2,
+        "candidate_probes": 1,
+        "cpu_seconds": 562.78125,
+        "distribution_forward_calls": 0,
+        "endpoint_evaluations": 1,
+        "forward_calls": 16,
+        "peak_rss_bytes": 7172538368,
+        "total_numerical_forward_calls": 16,
+        "wall_seconds": 99.24542249995284
+      },
+      "endpoint_pass": false,
+      "target_item_gain": 1,
+      "repeated_items_corrected": 2,
+      "regressions": 4,
+      "lost_validity": 0,
+      "whole_answer_loss_gain": 0.5856674313545227,
+      "fork_loss_gain": 0.7629904747009277,
+      "accepted_next_tokens": 4,
+      "fork_count": 8,
+      "new_nonpositive_margins": 2,
+      "sampled_positions": 58,
+      "mean_kl": 0.004859608869838466,
+      "endpoint_decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        }
+      ]
+    },
+    "B": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "realized_norm": 0.05002295915759595,
+      "changed_entries": 15918,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 153.53125,
+        "forward_calls": 2,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 28.09640329994727
+      },
+      "training_resources": null,
+      "endpoint_pass": false,
+      "target_item_gain": 1,
+      "repeated_items_corrected": 2,
+      "regressions": 4,
+      "lost_validity": 0,
+      "whole_answer_loss_gain": null,
+      "fork_loss_gain": 1.0045750141143799,
+      "accepted_next_tokens": 5,
+      "fork_count": 8,
+      "new_nonpositive_margins": 0,
+      "sampled_positions": 58,
+      "mean_kl": 0.09537711589664731,
+      "endpoint_decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "C": {
+      "reason": "duplicate_stored_candidate",
+      "layer": 23,
+      "realized_norm": 0.05002295915759595,
+      "changed_entries": 15918,
+      "duplicate_of": "B",
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 3.3125,
+        "forward_calls": 0,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 2.4521144999889657
+      },
+      "training_resources": null
+    },
+    "D": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "realized_norm": 0.05002780776239382,
+      "changed_entries": 15761,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 152.671875,
+        "forward_calls": 2,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 28.062290500034578
+      },
+      "training_resources": null,
+      "endpoint_pass": false,
+      "target_item_gain": 5,
+      "repeated_items_corrected": 4,
+      "regressions": 3,
+      "lost_validity": 0,
+      "whole_answer_loss_gain": null,
+      "fork_loss_gain": 1.0584657192230225,
+      "accepted_next_tokens": 6,
+      "fork_count": 8,
+      "new_nonpositive_margins": 0,
+      "sampled_positions": 58,
+      "mean_kl": 0.02433015742298102,
+      "endpoint_decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "causal-fork-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "E": {
+      "reason": "realized_norm_exceeds_budget",
+      "layer": 23,
+      "realized_norm": 0.3864764251874927,
+      "changed_entries": 3280684,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 4.53125,
+        "forward_calls": 0,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 2.8464277000166476
+      },
+      "training_resources": {
+        "backward_calls": 16,
+        "cpu_seconds": 584.140625,
+        "forward_calls": 16,
+        "peak_rss_bytes": 7172538368,
+        "wall_seconds": 102.73072120000143
+      }
+    }
+  },
+  "winner": null,
+  "scan": {
+    "limitation": "Local aggregate directional witness; failure to cross does not prove infeasibility outside the tested direction, and crossing does not establish per-item or nonlinear correction",
+    "parent_mean_target_margin": -1.28125,
+    "parent_trajectories": [
+      {
+        "margins": [
+          1.625,
+          3.5,
+          0.375,
+          8.625,
+          6.25,
+          1.875
+        ],
+        "replay_argmax_ids": [
+          471,
+          19,
+          18,
+          13,
+          20,
+          198
+        ],
+        "token_ids": [
+          471,
+          19,
+          18,
+          13,
+          20,
+          198
+        ]
+      },
+      {
+        "margins": [
+          1.875,
+          3.75,
+          0.375,
+          8.25,
+          6.125,
+          1.75
+        ],
+        "replay_argmax_ids": [
+          471,
+          19,
+          18,
+          13,
+          20,
+          198
+        ],
+        "token_ids": [
+          471,
+          19,
+          18,
+          13,
+          20,
+          198
+        ]
+      },
+      {
+        "margins": [
+          5.125,
+          3.125,
+          6.375,
+          7.125,
+          3.5,
+          0.25
+        ],
+        "replay_argmax_ids": [
+          220,
+          17,
+          21,
+          13,
+          16,
+          198
+        ],
+        "token_ids": [
+          220,
+          17,
+          21,
+          13,
+          16,
+          198
+        ]
+      },
+      {
+        "margins": [
+          5.125,
+          3.5,
+          6.375,
+          7.0,
+          4.375,
+          0.875
+        ],
+        "replay_argmax_ids": [
+          220,
+          17,
+          21,
+          13,
+          16,
+          198
+        ],
+        "token_ids": [
+          220,
+          17,
+          21,
+          13,
+          16,
+          198
+        ]
+      },
+      {
+        "margins": [
+          4.125,
+          2.25,
+          7.375,
+          8.3125,
+          7.0,
+          1.125
+        ],
+        "replay_argmax_ids": [
+          220,
+          19,
+          19,
+          13,
+          23,
+          198
+        ],
+        "token_ids": [
+          220,
+          19,
+          19,
+          13,
+          23,
+          198
+        ]
+      },
+      {
+        "margins": [
+          4.75,
+          2.375,
+          7.5,
+          8.0,
+          7.5,
+          1.25
+        ],
+        "replay_argmax_ids": [
+          220,
+          19,
+          19,
+          13,
+          23,
+          198
+        ],
+        "token_ids": [
+          220,
+          19,
+          19,
+          13,
+          23,
+          198
+        ]
+      },
+      {
+        "margins": [
+          4.875,
+          5.375,
+          3.625,
+          9.0,
+          8.125,
+          6.625,
+          6.75,
+          9.5,
+          7.5,
+          7.75,
+          1.375
+        ],
+        "replay_argmax_ids": [
+          220,
+          19,
+          18,
+          22,
+          22,
+          13,
+          21,
+          23,
+          20,
+          21,
+          198
+        ],
+        "token_ids": [
+          220,
+          19,
+          18,
+          22,
+          22,
+          13,
+          21,
+          23,
+          20,
+          21,
+          198
+        ]
+      },
+      {
+        "margins": [
+          4.625,
+          5.125,
+          4.25,
+          9.4375,
+          8.25,
+          6.625,
+          7.125,
+          9.875,
+          7.375,
+          7.625,
+          1.375
+        ],
+        "replay_argmax_ids": [
+          220,
+          19,
+          18,
+          22,
+          22,
+          13,
+          21,
+          23,
+          20,
+          21,
+          198
+        ],
+        "token_ids": [
+          220,
+          19,
+          18,
+          22,
+          22,
+          13,
+          21,
+          23,
+          20,
+          21,
+          198
+        ]
+      }
+    ],
+    "protected_anchors": [
+      {
+        "margin": 0.25,
+        "position": 5,
+        "trajectory_index": 2
+      },
+      {
+        "margin": 0.5,
+        "position": 2,
+        "trajectory_index": 0
+      },
+      {
+        "margin": 0.375,
+        "position": 2,
+        "trajectory_index": 1
+      },
+      {
+        "margin": 0.875,
+        "position": 5,
+        "trajectory_index": 3
+      }
+    ],
+    "radius": 0.05,
+    "reason": "direction_selected",
+    "regions": [
+      {
+        "columns": [
+          5,
+          6,
+          40,
+          51,
+          147,
+          155,
+          188,
+          299,
+          411,
+          608,
+          696,
+          916,
+          1028,
+          1607,
+          2062,
+          2999
+        ],
+        "full_region_target_gradient_norm": 32.062221521410414,
+        "layer_index": 11,
+        "protected": {
+          "aggregate_margin_crossing_predicted": false,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": -0.7157057742121077,
+          "predicted_protected_margins": [
+            0.25000000000000017,
+            0.4999999999999998,
+            0.3749999999999998,
+            0.8750000000000004
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 0.5655442257878923,
+          "target_margin_gain_at_radius": 0.5655442257878923
+        },
+        "rank_one_output_factor_reachability": 0.7798120307658152,
+        "reason": "direction_available",
+        "sampled_constraint_rank": 4,
+        "selected_column_target_gradient_norm": 13.860344755327889,
+        "selectivity_score": 0.7245715813350009,
+        "tensor_name": "model.language_model.layers.11.mlp.down_proj.weight",
+        "unconstrained": {
+          "aggregate_margin_crossing_predicted": false,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": -0.5566784186649991,
+          "predicted_protected_margins": [
+            0.7086636730089123,
+            0.8082684862641678,
+            0.7888557437252723,
+            0.9891435649965832
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 0.7245715813350009,
+          "target_margin_gain_at_radius": 0.7245715813350009
+        }
+      },
+      {
+        "columns": [
+          1,
+          2,
+          3,
+          20,
+          79,
+          89,
+          131,
+          133,
+          142,
+          160,
+          166,
+          206,
+          222,
+          250,
+          266,
+          380
+        ],
+        "full_region_target_gradient_norm": 17.824941779665252,
+        "layer_index": 17,
+        "protected": {
+          "aggregate_margin_crossing_predicted": false,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": -0.7396330243051918,
+          "predicted_protected_margins": [
+            0.2499999999999999,
+            0.4999999999999999,
+            0.3749999999999999,
+            0.8749999999999999
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 0.5416169756948082,
+          "target_margin_gain_at_radius": 0.5416169756948082
+        },
+        "rank_one_output_factor_reachability": 0.9551225988532216,
+        "reason": "direction_available",
+        "sampled_constraint_rank": 4,
+        "selected_column_target_gradient_norm": 12.857792265048824,
+        "selectivity_score": 0.5677761806652234,
+        "tensor_name": "model.language_model.layers.17.mlp.down_proj.weight",
+        "unconstrained": {
+          "aggregate_margin_crossing_predicted": false,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": -0.7134738193347766,
+          "predicted_protected_margins": [
+            0.467856366503858,
+            0.5231137076006336,
+            0.4249092481009752,
+            1.0466169412463806
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 0.5677761806652234,
+          "target_margin_gain_at_radius": 0.5677761806652234
+        }
+      },
+      {
+        "columns": [
+          2,
+          9,
+          11,
+          22,
+          24,
+          26,
+          28,
+          43,
+          46,
+          57,
+          72,
+          84,
+          94,
+          104,
+          125,
+          557
+        ],
+        "full_region_target_gradient_norm": 70.73794885638257,
+        "layer_index": 23,
+        "protected": {
+          "aggregate_margin_crossing_predicted": true,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": 0.8207302544538777,
+          "predicted_protected_margins": [
+            0.25000000000000927,
+            0.4999999999999997,
+            0.37499999999999967,
+            0.8750000000000097
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 2.1019802544538777,
+          "target_margin_gain_at_radius": 2.1019802544538777
+        },
+        "rank_one_output_factor_reachability": 0.6375157510788986,
+        "reason": "direction_available",
+        "sampled_constraint_rank": 4,
+        "selected_column_target_gradient_norm": 49.526512864781296,
+        "selectivity_score": 3.282612763560923,
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+        "unconstrained": {
+          "aggregate_margin_crossing_predicted": true,
+          "feasible_radius": 0.05,
+          "predicted_mean_target_margin": 2.001362763560923,
+          "predicted_protected_margins": [
+            4.819785485295978,
+            0.41821974206537055,
+            0.2906757640251654,
+            5.705813410331963
+          ],
+          "sampled_constraints_satisfied_at_radius": true,
+          "target_margin_gain_at_feasible_radius": 3.282612763560923,
+          "target_margin_gain_at_radius": 3.282612763560923
+        }
+      }
+    ],
+    "resources": {
+      "backward_calls": 6,
+      "cpu_seconds": 70.046875,
+      "forward_calls": 3,
+      "peak_rss_bytes": 7172538368,
+      "shared_region_count": 3,
+      "wall_seconds": 13.699091600021347
+    },
+    "schema": "weightbridge.fork_region_scan.v1",
+    "selected_layer": 23,
+    "selection_rule": "Maximum predicted mean target margin gain along the raw rank-one direction within the radius and sampled preservation floor"
+  },
+  "fork_replay_status": {
+    "matched": 10
+  },
+  "fork_offsets": {
+    "5": 4,
+    "4": 4,
+    "1": 2
+  },
+  "target_item_gain_given_fork_loss_gain": [
+    3,
+    3
+  ],
+  "trial_resources": {
+    "host": {
+      "cpu_seconds": 1597.671875,
+      "peak_rss_bytes": 7172538368,
+      "wall_seconds": 305.00187819998246
+    },
+    "practice_parent": {
+      "cpu_seconds": 154.859375,
+      "peak_rss_bytes": 2573049856,
+      "wall_seconds": 39.54057129996363
+    }
+  },
+  "selection_resources": {
+    "base": {
+      "cpu_seconds": 157.21875,
+      "peak_rss_bytes": 2570248192,
+      "wall_seconds": 39.79716289998032
+    }
+  }
+}

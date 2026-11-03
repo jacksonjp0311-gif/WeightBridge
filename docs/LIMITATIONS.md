@@ -169,3 +169,12 @@ The probe space covers selected columns of one affine module and cannot
 exclude useful updates in other regions. SmolLM2's replay establishes
 shared endpoint compatibility, not behavioral qualification.
 [Phase III-H evidence](PHASE_III_H.md)
+
+Phase III-I's fork diagnostic is relative to a bounded set of verified
+answer surfaces. Uncached logits can disagree with the cached greedy path.
+The diagnostic excludes such cases from fitting. Sampled preservation
+gradients and average KL describe selected prefixes. Neither substitutes
+for the complete generation guard or independent evaluation. The regional
+scan estimates reachability along constructed directions in three affine
+regions. Other regions and update geometries remain untested by that scan.
+[Phase III-I evidence](PHASE_III_I.md)

@@ -459,3 +459,14 @@ on every probe. The real generation guard prevented materialization and
 the hidden roster remained unopened. A separate SmolLM2 replay verified
 the endpoint contract across runtime paths without claiming a model gain.
 [Phase III-H evidence and replay](PHASE_III_H.md)
+
+## Causal fork adaptation
+
+The trajectory-constrained Qwen update changed six of eight fitted
+greedy decisions to accepted tokens and raised completed practice scores
+from 9/16 to 14/16 across both wordings. Three previously correct
+presentations outside the sampled preservation trajectories regressed.
+The guard rejected the update and exact parent restoration passed. The
+layer scan chose the same region as the fixed baseline. The conventional
+LoRA merge exceeded its frozen norm cap before decoding. The held-out
+candidate outcome remains unmeasured. [Phase III-I evidence](PHASE_III_I.md)

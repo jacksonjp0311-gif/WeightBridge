@@ -1,0 +1,120 @@
+{
+  "diagnostics": {
+    "alpha_over_rank": 1.0,
+    "input_columns": 3584,
+    "layer_index": 23,
+    "learning_rate": 0.005,
+    "mean_token_nll_by_step": [
+      0.10319528449326754,
+      0.08422213885933161,
+      0.6712098121643066,
+      0.05667027784511447
+    ],
+    "method": "additive LoRA with AdamW",
+    "parent_restored_exactly": true,
+    "rank": 4,
+    "resources": {
+      "backward_calls": 16,
+      "cpu_seconds": 584.140625,
+      "forward_calls": 16,
+      "peak_rss_bytes": 7172538368,
+      "wall_seconds": 102.73072120000143
+    },
+    "schema": "weightbridge.fork_lora_training.v1",
+    "seed": 16379,
+    "steps": 4,
+    "trainable_parameters": 18432,
+    "training_rows": 32,
+    "training_tokens_per_step": 262,
+    "unrounded_merged_norm": 0.3855337782194985
+  },
+  "layer": 23,
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "gradient"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiii-fork-hidden-v1",
+      "limits": {
+        "max_backward_calls": 16,
+        "max_candidates": 1,
+        "max_forward_calls": 180,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 4,
+        "max_update_entries": 3670016,
+        "max_update_norm": 0.35
+      },
+      "methods": [
+        "gradient"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiii-fork-practice-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 16,
+      "max_candidates": 1,
+      "max_forward_calls": 180,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 4,
+      "max_update_entries": 3670016,
+      "max_update_norm": 0.35
+    },
+    "max_columns": 3584,
+    "method": "gradient",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "probe": {
+    "changed_entries": 3280684,
+    "dose": null,
+    "layer_index": 23,
+    "max_abs_delta": 0.001861572265625,
+    "method": "lora_adam",
+    "proposed_norm": 0.3855337782194985,
+    "rank": 4,
+    "realized_update_norm": 0.3864764251874927,
+    "reason": "realized_norm_exceeds_budget",
+    "resources": {
+      "backward_calls": 0,
+      "cpu_seconds": 4.53125,
+      "forward_calls": 0,
+      "peak_rss_bytes": 7172538368,
+      "wall_seconds": 2.8464277000166476
+    },
+    "restored_exactly": true,
+    "schema": "weightbridge.fork_probe.v1",
+    "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+    "touched_entries": 3670016
+  }
+}

@@ -47,3 +47,27 @@ def test_post_verification_policy_refuses_failed_replay_even_after_hidden_pass()
     assert decide_fork_action(**parameters, independent=verified).action == "record_verified"
     assert decide_fork_action(**parameters, independent={**verified, "restart_exact": False}).action == "hold"
     assert decide_fork_action(**parameters, independent={**verified, "lineage_event_sha256": None}).action == "hold"
+
+
+def test_finish_recomputes_lock_gate_before_launching_any_hidden_worker(tmp_path, monkeypatch):
+    config = verification._read(verification.PROTOCOL)
+    receipt = tmp_path / "checkpoints" / "A" / ".weightbridge_receipt.json"
+    receipt.parent.mkdir(parents=True)
+    receipt.write_text("{}", encoding="utf-8")
+    workers = tmp_path / "verification"
+    workers.mkdir()
+    reports = {}
+    for name in ("base", "A"):
+        path = workers / f"selection-{name}.json"
+        path.write_text("{}", encoding="utf-8")
+        reports[name] = file_hash(path)
+    lock = {"winner": "A", "winner_sha256": "candidate", "base_sha256": config["checkpoint_sha256"],
+            "selection": {"A": {"passed": True}}, "reports": reports,
+            "candidates": {"A": {"receipt_sha256": file_hash(receipt)}}}
+    monkeypatch.setattr(verification, "_check_lock", lambda *args: lock)
+    monkeypatch.setattr(verification, "_validate_report", lambda *args: {"measurement": {}})
+    monkeypatch.setattr(verification, "_paired", lambda *args: {"passed": False})
+    monkeypatch.setattr(verification, "_launch", lambda *_args, **_kwargs: pytest.fail("Opened hidden too early"))
+    with pytest.raises(ValueError, match="independently recomputed"):
+        verification.finish(tmp_path / "parent", MATERIAL, tmp_path, tmp_path / "private.json", "sha")
+    assert not (tmp_path / "independent-outcome.json").exists()
