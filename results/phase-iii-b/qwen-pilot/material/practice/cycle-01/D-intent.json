@@ -1,0 +1,18 @@
+{
+  "objective": "binary_choice_margin",
+  "optimize": {
+    "method": "bic_interaction",
+    "radius": 1.0
+  },
+  "preserve": [
+    "fraction-order",
+    "generic",
+    "word-order"
+  ],
+  "representation": "rank_one_slices",
+  "schema": "weightbridge.awl.v2",
+  "target": [
+    "model.language_model.layers.23.mlp.down_proj.weight",
+    "model.language_model.layers.21.mlp.down_proj.weight"
+  ]
+}

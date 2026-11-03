@@ -1,0 +1,15 @@
+{
+  "objective": "binary_choice_margin",
+  "optimize": {
+    "method": "activation_ridge",
+    "radius": 0.03
+  },
+  "preserve": [
+    "generic"
+  ],
+  "representation": "rank_one_slices",
+  "schema": "weightbridge.awl.v2",
+  "target": [
+    "model.language_model.layers.23.mlp.down_proj.weight"
+  ]
+}

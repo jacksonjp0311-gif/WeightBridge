@@ -126,3 +126,61 @@ guard kept a one-answer gain with zero preservation flips in one fixture and
 abstained in the other. It used the same probes and added zero model
 evaluations. This prototype did not participate in the frozen Qwen pilot.
 [Synthetic guard evidence](../results/phase-iii-b/synthetic/measured-probe-guard-v1.json)
+
+## Fresh Qwen ablation
+
+The frozen exploratory pilot used one date-order cycle with four underlying
+holdout items. Each item was evaluated in both answer orders and in both A/B
+and X/Y formats. The compiler fit on authorized practice only. Every arm had
+one candidate slot, 16 fitting rows, the same 65,536-coordinate limit and the
+same requested norm cap. The common practice screen had 20 rows. The host
+froze all six practice decisions before opening any cycle holdout. It scored
+rejected saved candidates for diagnosis after those decisions.
+
+| Method | Date practice | Practice target regressions / preservation flips | A/B holdout | A/B target regressions / sentinel flips | X/Y holdout |
+|---|---:|---:|---:|---:|---:|
+| A. Activation ridge | 4/8 → 4/8 | 0 / 0 | 4/8 → 4/8 | 0 / 0 | 6/8 → 6/8 |
+| B. Task-aware activation ridge | 4/8 → 4/8 | 0 / 0 | 4/8 → 4/8 | 0 / 1 | 6/8 → 6/8 |
+| C. First-order coordinated | 4/8 → 6/8 | 2 / 6 | 4/8 → 4/8 | 4 / 1 | 6/8 → 6/8 |
+| D. Mixed-curvature coordinated | 4/8 → 6/8 | 2 / 6 | 4/8 → 4/8 | 4 / 1 | 6/8 → 6/8 |
+| Matched random | 4/8 → 4/8 | 0 / 0 | 4/8 → 4/8 | 0 / 0 | 6/8 → 6/8 |
+| Two-step rank-one Adam | 4/8 → 4/8 | 0 / 1 | 4/8 → 4/8 | 0 / 1 | 6/8 → 6/8 |
+
+No candidate was eligible. Both coordinated edits switched every A/B target
+prediction from A to B, trading four corrections for four regressions. They
+left every X/Y prediction unchanged. The task-aware single-layer arm showed
+no improvement over activation ridge at these settings. The two-layer arm
+also changes the basis and objective, which prevents attributing its result
+to the extra layer alone. The deterministic first-choice control is Arm A
+under a one-candidate budget. Adam is a fixed-column gradient comparator.
+
+First order used 12 fitting forward batches and two backward batches. Mixed
+curvature used 20 forward batches and two backward batches. Both realized
+norms were about 1.0, with 64,556 and 63,282 stored values changed respectively.
+The mixed term reversed the selected layer 21 coefficient, with identical
+practice and holdout decisions. The parent objective was 1.040. The first-order
+and mixed surrogates predicted −0.972 and −0.924, outside the range of the
+nonnegative objective. Their measured rounded objectives were 0.817 and
+0.861. The measured scalar improvements still allowed per-example regressions.
+
+Every arm ended at the original checkpoint and scored 26/48 on the final
+suite of 12 underlying items. The pilot took 578.9 wall seconds and 1,246.1
+process CPU seconds across the host and compiler workers. Peak RSS in a
+single process was 2.44 GB. The two frozen five-cycle rosters remain unrun.
+At the pilot rate those rosters would take about 97 minutes before accounting
+for larger retention suites. This pilot used one roster, one target family,
+and a small number of correlated answer presentations. It gives a specific
+counterexample to the current objective and provides no evidence of cumulative
+learning or a mixed-curvature advantage on Qwen.
+[Qwen pilot archive](../results/phase-iii-b/qwen-pilot/)
+· [Per-candidate failure classifications](../results/phase-iii-b/qwen-pilot-feedback.json)
+
+The next experiment should first qualify a whole-answer measurement on fresh
+practice from all three task families. Then compare guarded measured selection
+with the existing soft objective using the same authorized preservation rows
+and probe budget. For the mixed-curvature comparison, give first order the
+same number of probes at additional axial radii. A positive result requires
+more accepted edits under the original independent retention and final gates.
+[Frozen design and reproduction](../experiments/phase_iiib/README.md)
+
+The inference environment passed 149 tests and skipped the optional MCP test.

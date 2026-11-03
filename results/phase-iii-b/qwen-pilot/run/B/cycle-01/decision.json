@@ -1,0 +1,499 @@
+{
+  "accepted": false,
+  "attempt": {
+    "arm": "B",
+    "candidate_attempts": 1,
+    "candidate_sha256": "ab58d11a8124a1c20695429d56c2384992bc2f8ecc156f99991eb77c4eda3aec",
+    "disposition": "PRACTICE_REJECTED",
+    "eligible": false,
+    "practice": {
+      "base_correct": 4,
+      "candidate_correct": 4,
+      "margin_groups": {
+        "date-order": {
+          "n": 8,
+          "prediction_flips": 0,
+          "raw_delta_mean": 0.015625,
+          "signed_delta_mean": 0.234375
+        },
+        "fraction-order": {
+          "n": 2,
+          "prediction_flips": 0,
+          "raw_delta_mean": 0.0,
+          "signed_delta_mean": 0.0
+        },
+        "generic": {
+          "n": 8,
+          "prediction_flips": 0,
+          "raw_delta_mean": 0.015625,
+          "signed_delta_mean": 0.015625
+        },
+        "word-order": {
+          "n": 2,
+          "prediction_flips": 0,
+          "raw_delta_mean": 0.0,
+          "signed_delta_mean": 0.0
+        }
+      },
+      "pairs": {
+        "base_resources": {
+          "backward_batches": 0,
+          "backward_examples": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 18.140625,
+          "forward_batches": 3,
+          "forward_examples": 20,
+          "forward_token_positions": 1048,
+          "forward_wall_seconds": 2.7042597999679856,
+          "peak_rss_bytes": 2368471040,
+          "wall_seconds": 4.955893900012597
+        },
+        "candidate_resources": {
+          "backward_batches": 0,
+          "backward_examples": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 17.796875,
+          "forward_batches": 3,
+          "forward_examples": 20,
+          "forward_token_positions": 1048,
+          "forward_wall_seconds": 2.6645130999968387,
+          "peak_rss_bytes": 2376966144,
+          "wall_seconds": 4.785286400001496
+        },
+        "sentinel": [
+          {
+            "answer_position": 0,
+            "base_margin": 2.5,
+            "base_prediction": "A",
+            "base_signed_margin": 2.5,
+            "candidate_margin": 2.5,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 2.5,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+            "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+            "label": "A",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 0.625,
+            "base_prediction": "A",
+            "base_signed_margin": -0.625,
+            "candidate_margin": 0.625,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -0.625,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+            "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+            "label": "B",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": -0.75,
+            "base_prediction": "B",
+            "base_signed_margin": 0.75,
+            "candidate_margin": -0.75,
+            "candidate_prediction": "B",
+            "candidate_signed_margin": 0.75,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+            "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+            "label": "B",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 0.25,
+            "base_prediction": "A",
+            "base_signed_margin": 0.25,
+            "candidate_margin": 0.25,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 0.25,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+            "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+            "label": "A",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 3.125,
+            "base_prediction": "A",
+            "base_signed_margin": 3.125,
+            "candidate_margin": 3.125,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 3.125,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+            "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+            "label": "A",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": -1.125,
+            "base_prediction": "B",
+            "base_signed_margin": 1.125,
+            "candidate_margin": -1.125,
+            "candidate_prediction": "B",
+            "candidate_signed_margin": 1.125,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+            "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+            "label": "B",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 0.125,
+            "base_prediction": "A",
+            "base_signed_margin": -0.125,
+            "candidate_margin": 0.125,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -0.125,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+            "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+            "label": "B",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 0.375,
+            "base_prediction": "A",
+            "base_signed_margin": 0.375,
+            "candidate_margin": 0.5,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 0.5,
+            "family": "generic",
+            "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+            "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+            "label": "A",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 2.125,
+            "base_prediction": "A",
+            "base_signed_margin": 2.125,
+            "candidate_margin": 2.125,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 2.125,
+            "family": "word-order",
+            "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+            "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+            "label": "A",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 1.625,
+            "base_prediction": "A",
+            "base_signed_margin": -1.625,
+            "candidate_margin": 1.625,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -1.625,
+            "family": "word-order",
+            "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+            "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+            "label": "B",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 0.25,
+            "base_prediction": "A",
+            "base_signed_margin": -0.25,
+            "candidate_margin": 0.25,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -0.25,
+            "family": "fraction-order",
+            "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+            "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+            "label": "B",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 0.625,
+            "base_prediction": "A",
+            "base_signed_margin": 0.625,
+            "candidate_margin": 0.625,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 0.625,
+            "family": "fraction-order",
+            "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+            "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+            "label": "A",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          }
+        ],
+        "target": [
+          {
+            "answer_position": 0,
+            "base_margin": 1.5,
+            "base_prediction": "A",
+            "base_signed_margin": 1.5,
+            "candidate_margin": 1.75,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 1.75,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+            "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+            "label": "A",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 1.5,
+            "base_prediction": "A",
+            "base_signed_margin": -1.5,
+            "candidate_margin": 1.25,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -1.25,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+            "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+            "label": "B",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 1.5,
+            "base_prediction": "A",
+            "base_signed_margin": -1.5,
+            "candidate_margin": 1.375,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -1.375,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+            "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+            "label": "B",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 1.5,
+            "base_prediction": "A",
+            "base_signed_margin": 1.5,
+            "candidate_margin": 1.75,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 1.75,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+            "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+            "label": "A",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 1.625,
+            "base_prediction": "A",
+            "base_signed_margin": 1.625,
+            "candidate_margin": 1.875,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 1.875,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/6541f3837415b56a/0",
+            "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+            "label": "A",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 1.5,
+            "base_prediction": "A",
+            "base_signed_margin": -1.5,
+            "candidate_margin": 1.25,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -1.25,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/6541f3837415b56a/1",
+            "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+            "label": "B",
+            "presentation": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "answer_position": 0,
+            "base_margin": 2.25,
+            "base_prediction": "A",
+            "base_signed_margin": -2.25,
+            "candidate_margin": 2.0,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": -2.0,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+            "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+            "label": "B",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "answer_position": 1,
+            "base_margin": 1.125,
+            "base_prediction": "A",
+            "base_signed_margin": 1.125,
+            "candidate_margin": 1.375,
+            "candidate_prediction": "A",
+            "candidate_signed_margin": 1.375,
+            "family": "date-order",
+            "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+            "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+            "label": "A",
+            "presentation": [
+              "B",
+              "A"
+            ]
+          }
+        ]
+      },
+      "sentinel_count": 12,
+      "sentinel_flips": 0,
+      "target_count": 8,
+      "target_gain": 0,
+      "target_regressions": 0
+    },
+    "practice_rows": 16,
+    "requested_norm": 0.6709670821336076,
+    "resources": {
+      "cpu_seconds": 72.03125,
+      "process_peak_rss_bytes": 2376966144,
+      "wall_seconds": 33.88529030000791
+    },
+    "scope": {
+      "changed": 62295,
+      "coordinates": 65536,
+      "norm": 0.6709348412195651,
+      "tensors": [
+        {
+          "changed": 62295,
+          "coordinates": 65536,
+          "dtype": "BF16",
+          "norm": 0.6709348412195651,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        }
+      ]
+    },
+    "synthesis": {
+      "backward_batches": 0,
+      "elapsed_seconds": 14.417517699999735,
+      "forward_batch_cap": 64,
+      "forward_batches": 2,
+      "method": "activation_ridge",
+      "preservation_families": [
+        "fraction-order",
+        "generic",
+        "word-order"
+      ],
+      "process_cpu_seconds": 25.46875,
+      "radius_semantics": "legacy_strength"
+    },
+    "unclipped_requested_norm": 0.6709670821336076
+  },
+  "cycle_id": "cycle-01",
+  "family": "date-order",
+  "head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "verification": {
+    "accepted_by_verifier": false,
+    "artifact_sha256": {
+      "ab": {
+        "report": "1916dd6883d3222852f0667b8dee0a1d4edd05e9f6d10c873c3f1dc99bc0def5",
+        "suite": "09b875ef7687265e1005d8dff73eac052cc69933cba83b4e94eac25cc301cb70"
+      },
+      "xy": {
+        "report": "b64cd2e1a3556ef647b0624de66cbe725f00afa7b86a5a9a268eb7296405d957",
+        "suite": "021277f7246e14990cdcf480f2167d8702934baf5968e51384a979ebd97107e7"
+      }
+    },
+    "formats": {
+      "ab": {
+        "base_correct": 4,
+        "candidate_correct": 4,
+        "parent_prior_mismatches": 0,
+        "prior_count": 0,
+        "prior_flips": 0,
+        "sentinel_count": 6,
+        "sentinel_flips": 1,
+        "target_count": 8,
+        "target_gain": 0,
+        "target_regressions": 0
+      },
+      "xy": {
+        "base_correct": 6,
+        "candidate_correct": 6,
+        "parent_prior_mismatches": 0,
+        "prior_count": 0,
+        "prior_flips": 0,
+        "sentinel_count": 6,
+        "sentinel_flips": 0,
+        "target_count": 8,
+        "target_gain": 0,
+        "target_regressions": 0
+      }
+    },
+    "resources": {
+      "cpu_seconds": 78.53125,
+      "process_peak_rss_bytes": 2401193984,
+      "wall_seconds": 37.45681429997785
+    }
+  }
+}

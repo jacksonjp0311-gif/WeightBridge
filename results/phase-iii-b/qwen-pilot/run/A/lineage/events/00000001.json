@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "path": "$STUDY_RUN\\A\\cycle-01\\model",
+    "sha256": "c7e5a364eef1327f1b52b579e7b92758ce26cc6b0a7385844fe28d8a037bf7ab"
+  },
+  "cycle_id": "cycle-01",
+  "event_sha256": "24019ed01196026dcbeec0f427029948c4076849c005e12d669c8e2c0a4c5613",
+  "kind": "REJECT",
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "previous_sha256": "c9f249de8e2b73956bc2933904a5ab0bf771403eae6773c5a2bb1f75dfa18e19",
+  "reason": "Practice gate rejected proposal",
+  "schema": "weightbridge.checkpoint_lineage_event.v1",
+  "sequence": 1,
+  "verification": {
+    "disposition": "FAIL",
+    "receipt": {
+      "path": "$STUDY_RUN\\A\\cycle-01\\model\\.weightbridge_receipt.json",
+      "sha256": "d8c3e061e168229d8109598207b91ea92b0529df58e54df37547430d65245d9d"
+    },
+    "report": {
+      "path": "$STUDY_RUN\\A\\cycle-01\\verify-ab.json",
+      "sha256": "2e93a369c5852d388f1a2547a2894203fc9dc9ff028e7167d6a202e1c75dbef2"
+    },
+    "sentinel_prediction_flips": 0,
+    "source_holdout": {
+      "path": "$FROZEN_MATERIAL\\sealed\\cycle-01-ab.json",
+      "sha256": "09b875ef7687265e1005d8dff73eac052cc69933cba83b4e94eac25cc301cb70"
+    },
+    "suite": {
+      "path": "$STUDY_RUN\\A\\cycle-01\\verify-suite-ab.json",
+      "sha256": "09b875ef7687265e1005d8dff73eac052cc69933cba83b4e94eac25cc301cb70"
+    },
+    "target_gain": 0
+  }
+}

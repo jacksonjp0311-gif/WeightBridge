@@ -1,0 +1,268 @@
+{
+  "arms": {
+    "A": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 0,
+          "preservation_flips_at_or_below_threshold": 0,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.15811388300841897,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "BUDGET_EXHAUSTED_WITHOUT_PRACTICE_GAIN"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "A": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": false
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 0.15811388300841897,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ],
+    "B": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 0,
+          "preservation_flips_at_or_below_threshold": 0,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.08164965809277261,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "UNRELATED_BEHAVIOR_CHANGE",
+          "BUDGET_EXHAUSTED_WITHOUT_PRACTICE_GAIN"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "A": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": false
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 0.15309310892394862,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ],
+    "C": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 4,
+          "preservation_flips_at_or_below_threshold": 2,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.6168877962205153,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "POOR_GENERALIZATION",
+          "TASK_FAMILY_PRACTICE_INTERFERENCE",
+          "UNRELATED_BEHAVIOR_CHANGE",
+          "MISLEADING_LOCAL_APPROXIMATION",
+          "UNANIMOUS_ANSWER_TOKEN_REVERSAL"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "B": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": true
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 3.4852367207981727,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ],
+    "D": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 4,
+          "preservation_flips_at_or_below_threshold": 2,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.6227607320158202,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "POOR_GENERALIZATION",
+          "TASK_FAMILY_PRACTICE_INTERFERENCE",
+          "UNRELATED_BEHAVIOR_CHANGE",
+          "MISLEADING_LOCAL_APPROXIMATION",
+          "UNANIMOUS_ANSWER_TOKEN_REVERSAL"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "B": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": true
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 3.5828366903893345,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ],
+    "adam": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 0,
+          "preservation_flips_at_or_below_threshold": 1,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.44329632065580776,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "UNRELATED_BEHAVIOR_CHANGE",
+          "BUDGET_EXHAUSTED_WITHOUT_PRACTICE_GAIN"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "A": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": false
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 0.3665719574653795,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ],
+    "random": [
+      {
+        "accepted": false,
+        "common_practice_parent_profile": {
+          "fragile_margin_threshold": 0.25,
+          "preservation_flips_above_threshold": 0,
+          "preservation_flips_at_or_below_threshold": 0,
+          "target_correct_above_threshold": 4,
+          "target_correct_fragile": 0,
+          "target_wrong": 4
+        },
+        "constant_margin_fraction": 0.12909944487358058,
+        "cycle_id": "cycle-01",
+        "diagnostic_codes": [
+          "BUDGET_EXHAUSTED_WITHOUT_PRACTICE_GAIN"
+        ],
+        "independent_target_choice_counts": {
+          "ab": {
+            "after": {
+              "A": 8
+            },
+            "before": {
+              "A": 8
+            },
+            "unanimous_token_reversal": false
+          },
+          "xy": {
+            "after": {
+              "X": 6,
+              "Y": 2
+            },
+            "before": {
+              "X": 6,
+              "Y": 2
+            },
+            "unanimous_token_reversal": false
+          }
+        },
+        "observed_common_practice_margin_rms": 0.04841229182759271,
+        "practice_disposition": "PRACTICE_REJECTED"
+      }
+    ]
+  },
+  "report_sha256": "61872906e15444d2b6aa612199ad1f4307d4674bc1486332e247d86039d4b597",
+  "schema": "weightbridge.phase_iiib.failure_analysis.v1"
+}

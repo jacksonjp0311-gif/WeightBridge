@@ -1,0 +1,203 @@
+{
+  "choices": [
+    "A",
+    "B"
+  ],
+  "schema": "weightbridge.hf_edit_suite.v1",
+  "sentinel": [
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+      "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+      "label": "A",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Which integer is greater?\nA. 700\nB. 534\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+      "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+      "label": "B",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Select the larger number.\nA. 534\nB. 700\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+      "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+      "label": "B",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Select the longer sequence of letters.\nB. aaqzxnkybw\nA. mdjkyvux\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+      "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+      "label": "A",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Which string has more letters?\nB. mdjkyvux\nA. aaqzxnkybw\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "word-order",
+      "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+      "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+      "label": "A",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Which string comes earlier in alphabetical order?\nA. tlhjat\nB. tlhjdr\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "word-order",
+      "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+      "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+      "label": "B",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Sort the two strings alphabetically and identify the one listed first.\nA. tlhjdr\nB. tlhjat\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "fraction-order",
+      "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+      "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+      "label": "B",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Compare these two ratios and select the greater one.\nB. 3/2\nA. 22/17\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "fraction-order",
+      "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+      "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+      "label": "A",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Which fraction has the larger value?\nB. 22/17\nA. 3/2\nReply with A or B only."
+    }
+  ],
+  "target": [
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+      "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+      "label": "A",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Which date is earlier on the calendar?\nA. 2052-10-05\nB. 2052-12-03\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+      "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+      "label": "B",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Pick the date that occurs first in chronological order.\nA. 2052-12-03\nB. 2052-10-05\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+      "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+      "label": "B",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Pick the date that occurs first in chronological order.\nB. 2085-03-08\nA. 2085-04-03\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+      "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+      "label": "A",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Which date is earlier on the calendar?\nB. 2085-04-03\nA. 2085-03-08\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/6541f3837415b56a/0",
+      "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+      "label": "A",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Which date is earlier on the calendar?\nA. 2089-01-08\nB. 2089-11-15\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/6541f3837415b56a/1",
+      "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+      "label": "B",
+      "presentation": [
+        "A",
+        "B"
+      ],
+      "text": "Pick the date that occurs first in chronological order.\nA. 2089-11-15\nB. 2089-01-08\nReply with A or B only."
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+      "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+      "label": "B",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Pick the date that occurs first in chronological order.\nB. 2046-02-03\nA. 2046-11-28\nReply with A or B only."
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+      "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+      "label": "A",
+      "presentation": [
+        "B",
+        "A"
+      ],
+      "text": "Which date is earlier on the calendar?\nB. 2046-11-28\nA. 2046-02-03\nReply with A or B only."
+    }
+  ]
+}

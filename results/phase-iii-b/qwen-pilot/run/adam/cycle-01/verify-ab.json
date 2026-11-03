@@ -1,0 +1,113 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "base_target_correct": 4,
+  "candidate_sha256": "4b9ac43508fcd4382c72860304014d7d3d8a1240f58bba02961ef16d87e0c802",
+  "candidate_target_correct": 4,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "disposition": "FAIL",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 1,
+  "receipt_sha256": "0dbb68870ad12dd968c8276b220f4a95b671be7b9ac874f80e0e8b4f31c73517",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/sentinel/8be693d88a240b10/0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "sealed/cycle-01/ab/sentinel/8be693d88a240b10/1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/sentinel/334483890b07a9c1/0",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/sentinel/334483890b07a9c1/1",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/sentinel/e83b6a68b71a03b4/0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "sealed/cycle-01/ab/sentinel/e83b6a68b71a03b4/1",
+      "label": "B"
+    }
+  ],
+  "sentinel_count": 6,
+  "sentinel_prediction_flips": 1,
+  "suite_sha256": "09b875ef7687265e1005d8dff73eac052cc69933cba83b4e94eac25cc301cb70",
+  "target": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/c90a84a4b9136082/0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/c90a84a4b9136082/1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/3557517ff1b98e3c/0",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/3557517ff1b98e3c/1",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/70d321d9ad2d7574/0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/70d321d9ad2d7574/1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/395bd9f7f05baf1d/0",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "sealed/cycle-01/ab/target/395bd9f7f05baf1d/1",
+      "label": "A"
+    }
+  ],
+  "target_corrections": 0,
+  "target_count": 8,
+  "target_gain": 0,
+  "target_regressions": 0
+}

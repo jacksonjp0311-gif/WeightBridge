@@ -10,6 +10,7 @@
 | 4. AI-directed diagnosis and candidate edit | REAL CLI PILOT COMPLETE / DIRECT TRANSFER FAIL | One passing real Qwen CLI case out of three. The frozen 20-task direct-proposal gate failed with zero finalized repairs. |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 | Phase III. Continual research adaptation | CONTROLLER IMPLEMENTED / MODEL QUALIFICATION FAIL | One of five natural Qwen cycles retained an edit. Final score fell from 18/24 to 15/24. See the [Phase III study](PHASE_III.md). |
+| Phase III-B. Behavioral Interaction Compiler | SYNTHETIC ADMISSION PASS / QWEN PILOT ZERO ACCEPTANCES | Mixed curvature helped constructed dormant cases. Both coordinated Qwen arms reversed every A/B date prediction with no net gain. See the [Phase III-B study](PHASE_III_B.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

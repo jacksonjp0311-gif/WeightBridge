@@ -1,0 +1,126 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "candidate_sha256": "48055a98cdd5345ec90ef8d6dd5532fb61e06ee4426f7615c6f700bf45f4f6c2",
+  "changed_entries": 63282,
+  "changes": [
+    {
+      "axis": "columns",
+      "indices": [
+        483,
+        74,
+        1431,
+        2000,
+        1931,
+        702,
+        619,
+        1923,
+        1129,
+        1137,
+        2619,
+        2488,
+        1492,
+        672,
+        47,
+        1878,
+        1117,
+        3172,
+        1979,
+        1531,
+        1884,
+        326,
+        3546,
+        2489,
+        2409,
+        1623,
+        134,
+        1656,
+        3436,
+        3555,
+        1708,
+        1495
+      ],
+      "op": "slice_add",
+      "parameter_updates": 32768,
+      "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+      "values_sha256": "f8aa48d1c144a95063415ba6afc63c3bbae71d4b3c53da3fb5fd01bce5d95ad8"
+    },
+    {
+      "axis": "columns",
+      "indices": [
+        424,
+        3122,
+        817,
+        516,
+        738,
+        351,
+        409,
+        1599,
+        2362,
+        2257,
+        2511,
+        2319,
+        374,
+        1808,
+        530,
+        2184,
+        1895,
+        444,
+        1978,
+        2855,
+        2517,
+        223,
+        970,
+        1536,
+        1922,
+        2390,
+        3360,
+        597,
+        1679,
+        2342,
+        111,
+        1135
+      ],
+      "op": "slice_add",
+      "parameter_updates": 32768,
+      "tensor": "model.language_model.layers.21.mlp.down_proj.weight",
+      "values_sha256": "57f1bbe3c5ba472c4964b18b46f8f9ef09ef86810ed8557891076a83a15dbea4"
+    }
+  ],
+  "evidence_ids": [
+    "practice-bic-mixed_curvature"
+  ],
+  "max_abs_delta": 0.09967041015625,
+  "note": "Candidate is isolated and has not been promoted or deployed",
+  "parameter_fraction_changed": 7.245155717747473e-05,
+  "patch_sha256": "18653afef7fddded29786189ea7135d0522880c7a074e22a07e4a2703395fcd9",
+  "policy_sha256": "f8e1d58b5b9f9665c769cd73590de0f048609c5a027c715b9dd1848a6ada75aa",
+  "schema": "weightbridge.receipt.v2",
+  "source_shards": [
+    "model.safetensors-00001-of-00001.safetensors"
+  ],
+  "status": "candidate_only_not_promoted",
+  "tensor_receipts": {
+    "model.language_model.layers.21.mlp.down_proj.weight": {
+      "base_sha256": "af9fa5ecc9556068d867a410180e79bb3b5ac93c05059b8c98fef526c4483d9c",
+      "bytes_changed": 33586,
+      "candidate_sha256": "de877e9dfcc8311eacda7404237a69c7ba8615c261fe9bab7c293a58d38441fb",
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        3584
+      ]
+    },
+    "model.language_model.layers.23.mlp.down_proj.weight": {
+      "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+      "bytes_changed": 43245,
+      "candidate_sha256": "a45b3b590bc09808c3a8fb8a1b1288c0a0f16b743601851563b47e19e930e8bf",
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        3584
+      ]
+    }
+  },
+  "total_parameters": 873438784,
+  "touched_entries": 65536
+}

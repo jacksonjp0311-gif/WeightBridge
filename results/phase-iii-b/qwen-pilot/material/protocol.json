@@ -1,0 +1,145 @@
+{
+  "artifacts": {
+    "practice/cycle-01/A-intent.json": "e99d1b5506d2430520cd9f2589d204c0dc5c305183f0184f80568f5009cef094",
+    "practice/cycle-01/B-intent.json": "2ce6aefb02993abf2d96932047cb2e8e551161f10f6834d41cc0fa15a8464b0b",
+    "practice/cycle-01/C-intent.json": "3bf83736528a23c82021ee9df8cf0f68ff0733fc25ba43da244c90c3b2ed3023",
+    "practice/cycle-01/D-intent.json": "1169bf95768809e54fc175b0ea6eb7a95da632b166d59f5fd5e3ea9f289e4892",
+    "practice/cycle-01/generic.json": "fc8028b6adb31d904a9ccc59038e9f882d34e400face6eec42139198d5047d13",
+    "practice/cycle-01/screen.json": "98d13a875080e9f136db0da0d6e3405c841c364a35764ee1993948eb0fa8a3fe",
+    "practice/cycle-01/task-aware.json": "3e1eb90d4dd4b13bb07074cff6573996221b3aba375f5a32d1892d71761333ff",
+    "sealed/cycle-01-ab.json": "09b875ef7687265e1005d8dff73eac052cc69933cba83b4e94eac25cc301cb70",
+    "sealed/cycle-01-xy.json": "021277f7246e14990cdcf480f2167d8702934baf5968e51384a979ebd97107e7",
+    "sealed/final-ab.json": "c0b847004b540d5dbbab8f12396ab2727736ad168fdcb8db9a75705af659f317",
+    "sealed/final-xy.json": "53c90513679cae7eb0a04607bfe96d3b6af5ec7ca9f08752986e48b360ba5d17"
+  },
+  "cycles": [
+    {
+      "family": "date-order",
+      "holdouts": {
+        "ab": "sealed/cycle-01-ab.json",
+        "xy": "sealed/cycle-01-xy.json"
+      },
+      "id": "cycle-01",
+      "intents": {
+        "A": "practice/cycle-01/A-intent.json",
+        "B": "practice/cycle-01/B-intent.json",
+        "C": "practice/cycle-01/C-intent.json",
+        "D": "practice/cycle-01/D-intent.json"
+      },
+      "practice": {
+        "aware": "practice/cycle-01/task-aware.json",
+        "generic": "practice/cycle-01/generic.json",
+        "screen": "practice/cycle-01/screen.json"
+      }
+    }
+  ],
+  "design": {
+    "acceptance": {
+      "max_cycle_sentinel_flips": 0,
+      "max_cycle_target_regressions": 0,
+      "max_final_sentinel_flips": 0,
+      "max_final_target_regressions": 0,
+      "max_prior_prediction_flips": 0,
+      "min_accepted_full_cycles": 3,
+      "min_cycle_ab_gain": 1,
+      "min_final_gain": 1,
+      "min_final_gain_over_strongest_full_baseline": 1
+    },
+    "candidate_budget_per_cycle": 1,
+    "choice_formats": {
+      "ab": [
+        "A",
+        "B"
+      ],
+      "xy": [
+        "X",
+        "Y"
+      ]
+    },
+    "controls": {
+      "adam_learning_rate": 0.01,
+      "adam_seed": 20261103,
+      "adam_steps": 2,
+      "deterministic": "First frozen Arm A proposal, identical to A under the one-slot budget.",
+      "gradient": "Adam on rank-one factors restricted to the first Arm A proposal's columns.",
+      "random_seed": 20261103
+    },
+    "cycles": [
+      "word-order",
+      "date-order",
+      "fraction-order",
+      "word-order",
+      "date-order"
+    ],
+    "families": [
+      "word-order",
+      "date-order",
+      "fraction-order"
+    ],
+    "final_sentinel_items": 3,
+    "final_target_items_per_family": 4,
+    "frob_cap": 1.0,
+    "full_rosters": [
+      "bic-qualification-v1-20261103-a",
+      "bic-qualification-v1-20261103-b"
+    ],
+    "holdout_sentinel_items": 3,
+    "holdout_target_items": 4,
+    "inference": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 16777216,
+    "methods": {
+      "A": "activation_ridge",
+      "B": "activation_ridge",
+      "C": "bic_first_order",
+      "D": "bic_interaction"
+    },
+    "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "pilot_cycles": [
+      "date-order"
+    ],
+    "pilot_roster": "bic-bounded-pilot-v1-20261103",
+    "practice_sentinel_items": 4,
+    "practice_target_items": 4,
+    "probe_batch_cap": 64,
+    "ridge_strength": 0.03,
+    "schema": "weightbridge.phase_iiib.qwen_design.v1",
+    "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+    "tensor_layers": [
+      23,
+      21
+    ]
+  },
+  "design_sha256": "f2d6b3d7d080771ba44c3e16f315b91c56ea9445bd10acbd622909078ac09b1a",
+  "final": {
+    "ab": "sealed/final-ab.json",
+    "xy": "sealed/final-xy.json"
+  },
+  "generator_sha256": "538f5b40e552315910171249745abe75857f35059212224aa657a6606c5c36e2",
+  "item_count": 32,
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.23.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 16777216,
+    "schema": "weightbridge.policy.v1"
+  },
+  "roster": "bic-bounded-pilot-v1-20261103",
+  "schema": "weightbridge.phase_iiib.qwen_protocol.v1",
+  "scope": "bounded-pilot"
+}
