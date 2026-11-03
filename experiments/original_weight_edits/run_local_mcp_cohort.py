@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from weightbridge.evaluation.freeze_cohort import freeze_protocol
 from weightbridge.evaluation.mcp_cohort import _canonical_hash, _file_sha256, _read_json, summarize_cohort
 from weightbridge.diagnostics.toy_mlp import ToyMLP
+from weightbridge.diagnostics.coordinate_search import disconnected_coordinate, stratified_proposals
 from weightbridge.provenance import peak_rss_bytes
 
 
@@ -31,6 +32,7 @@ TURN_LIMIT = 8
 TOKEN_LIMIT = 160
 THREADS = 6
 REPEAT_LIMIT = 3
+SEARCH_ARMS = ("advice", "reject", "search")
 
 GUIDE = """Return one JSON object with keys tool (the tool name) and arguments (an object).
 First call get_diagnostic_report with empty arguments.
@@ -128,7 +130,7 @@ def check_output_path(path):
 
 
 def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt, mode,
-             connectivity=None):
+             connectivity=None, strategy=None, task_seed=None):
     output = root / task_id
     lines = Queue()
     started = time.perf_counter()
@@ -136,6 +138,8 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
     aliases = {}
     base_sha = None
     diagnostic_shown = False
+    blocked = {}
+    best_alias = None
     messages = [{"role": "system", "content": prompt}, {"role": "user", "content": GUIDE}]
     events_path = root / f"{task_id}.model_turns.jsonl"
     with (root / f"{task_id}.broker.stderr.txt").open("x", encoding="utf-8") as stderr, \
@@ -180,24 +184,35 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     if _file_sha256(checkpoint) != base_sha:
                         raise RuntimeError("base checkpoint differs from the broker diagnostic")
                     view["logit_connectivity"] = ToyMLP.load(checkpoint).logit_connectivity()
+                    blocked = view["logit_connectivity"]["single_edits_with_no_logit_path"]
                 if connectivity is not None:
                     write_json(output / "diagnostics_sent.json", view)
                 messages[-1]["content"] = FORM_GUIDE + "\nPractice diagnostics:\n" + json.dumps(
                     view, separators=(",", ":"))
+                if strategy == "search":
+                    baseline_correct = best_correct = view["practice"]["correct"]
+                    proposals = list(stratified_proposals(
+                        view["tensors"], blocked, _read_json(protocol_path)["host_policy"], task_seed))
+                    if len(proposals) != TURN_LIMIT:
+                        raise RuntimeError("coordinate schedule must fill the frozen evaluation budget")
             ended = False
             last_output = None
             repeats = 0
             stop_reason = "model turn budget exhausted"
             for turn in range(1, TURN_LIMIT + 1):
-                text, input_tokens, output_tokens = generate(tokenizer, model, messages)
-                messages.append({"role": "assistant", "content": text})
-                log({"turn": turn, "raw_output": text, "input_tokens": input_tokens,
-                     "output_tokens": output_tokens, "at_token_cap": output_tokens == TOKEN_LIMIT})
-                repeats = repeats + 1 if text == last_output else 1
-                last_output = text
-                if repeats == REPEAT_LIMIT:
-                    stop_reason = "model repeated the same response three times"
-                    break
+                if strategy == "search":
+                    text = json.dumps(proposals[turn - 1])
+                    log({"turn": turn, "search_proposal": proposals[turn - 1]})
+                else:
+                    text, input_tokens, output_tokens = generate(tokenizer, model, messages)
+                    messages.append({"role": "assistant", "content": text})
+                    log({"turn": turn, "raw_output": text, "input_tokens": input_tokens,
+                         "output_tokens": output_tokens, "at_token_cap": output_tokens == TOKEN_LIMIT})
+                    repeats = repeats + 1 if text == last_output else 1
+                    last_output = text
+                    if repeats == REPEAT_LIMIT:
+                        stop_reason = "model repeated the same response three times"
+                        break
                 try:
                     request = form_request(text) if mode == "patch-form" else decode_request(text)
                     tool, arguments = request["tool"], request["arguments"]
@@ -206,6 +221,16 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     if tool == "submit_patch":
                         if set(arguments) != {"tensor", "index", "delta", "reason"} or not base_sha:
                             raise ValueError("provide tensor, index, delta and reason after diagnostics")
+                        if strategy == "reject" and disconnected_coordinate(
+                            blocked, arguments["tensor"], arguments["index"]
+                        ):
+                            log({"turn": turn, "host_rejection": "disconnected_coordinate",
+                                 "tensor": arguments["tensor"], "index": arguments["index"]})
+                            messages.append({"role": "user", "content": (
+                                "Rejected before practice evaluation. That coordinate has no path to "
+                                "the logits. Choose a different coordinate using the diagnostics."
+                            )})
+                            continue
                         request["arguments"] = {"patch": {
                             "schema": "weightbridge.patch.v1", "base_sha256": base_sha,
                             "reason": arguments["reason"], "evidence_ids": ["practice-diagnostics"],
@@ -217,6 +242,8 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                         arguments["candidate_id"] = aliases[candidate_id]
                     json.dumps(request, allow_nan=False)
                 except ValueError as exc:
+                    if strategy == "search":
+                        raise
                     log({"turn": turn, "transport_error": str(exc)})
                     messages.append({"role": "user", "content": "Invalid request. Use one JSON object in the specified format."})
                     continue
@@ -225,6 +252,8 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     ended = True
                     break
                 result = response.get("result")
+                if strategy == "search" and not response.get("ok"):
+                    raise RuntimeError("frozen coordinate proposal failed broker validation")
                 if response.get("ok") and isinstance(result, dict):
                     if tool == "get_diagnostic_report":
                         base_sha = result.get("base_sha256")
@@ -245,17 +274,30 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                             response = {"candidate_alias": alias,
                                         "practice_result": evaluation["result"]["result"],
                                         "next": "Select an evaluated alias, propose a revision, or stop."}
+                            if strategy == "search":
+                                correct = response["practice_result"]["correct"]
+                                if correct > best_correct:
+                                    best_correct, best_alias = correct, alias
                     if tool == "evaluate_practice":
                         response = {"practice_result": result["result"],
                                     "next": "Choose whether to finalize the evaluated alias or revise the diagnosis."}
                 if response.get("ok") is False:
                     response = {"error": str(response.get("error", ""))[:350],
                                 "next": "Correct the request using the diagnostics. Do not repeat a rejected patch."}
-                messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
+                if strategy != "search":
+                    messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
             if not ended:
-                log({"host_stop": stop_reason})
-                response = send({"tool": "stop_without_candidate",
-                                 "arguments": {"reason": "Host stop: " + stop_reason}})
+                if strategy == "search" and best_alias is not None:
+                    log({"search_selection": best_alias, "baseline_correct": baseline_correct,
+                         "selected_practice_correct": best_correct})
+                    response = send({"tool": "finalize_candidate",
+                                     "arguments": {"candidate_id": aliases[best_alias]}})
+                else:
+                    if strategy == "search":
+                        stop_reason = "no coordinate proposal improved practice accuracy"
+                    log({"host_stop": stop_reason})
+                    response = send({"tool": "stop_without_candidate",
+                                     "arguments": {"reason": "Host stop: " + stop_reason}})
                 if response.get("experiment_complete") is not True:
                     raise RuntimeError("budget stop did not finalize the experiment")
             if proc.wait(timeout=30) != 0:
@@ -284,11 +326,16 @@ def main():
     parser.add_argument("--mode", choices=("tool-json", "patch-form"), default="tool-json")
     parser.add_argument("--paired-connectivity", action="store_true",
                         help="compare control and connectivity views on identical fresh tasks")
+    parser.add_argument("--paired-search", action="store_true",
+                        help="compare advice, rejection, and coordinate search on identical fresh tasks")
     args = parser.parse_args()
     if args.seed_offset < 20_000:
         parser.error("--seed-offset must be at least 20000")
-    if args.paired_connectivity and args.mode != "patch-form":
-        parser.error("--paired-connectivity requires --mode patch-form")
+    if args.paired_connectivity and args.paired_search:
+        parser.error("select one paired experiment")
+    paired = args.paired_connectivity or args.paired_search
+    if paired and args.mode != "patch-form":
+        parser.error("paired experiments require --mode patch-form")
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     import torch
@@ -297,7 +344,12 @@ def main():
     out = args.out.resolve()
     if not out.is_relative_to(ROOT):
         parser.error("--out must be within the checkout for portable evidence paths")
-    arm_paths = {"control": out / "control", "probe": out / "probe"} if args.paired_connectivity else {"single": out}
+    if args.paired_search:
+        arm_paths = {arm: out / arm for arm in SEARCH_ARMS}
+    elif args.paired_connectivity:
+        arm_paths = {"control": out / "control", "probe": out / "probe"}
+    else:
+        arm_paths = {"single": out}
     for path in arm_paths.values():
         check_output_path(path)
     broker_python = args.broker_python.resolve(strict=True)
@@ -353,16 +405,30 @@ def main():
         if args.paired_connectivity:
             receipt["connectivity_probe"] = arm == "probe"
             receipt["toy_model_source_sha256"] = _file_sha256(ROOT / "weightbridge/diagnostics/toy_mlp.py")
+        if args.paired_search:
+            receipt.update(connectivity_probe=True, strategy=arm,
+                           toy_model_source_sha256=_file_sha256(ROOT / "weightbridge/diagnostics/toy_mlp.py"),
+                           search_source_sha256=_file_sha256(ROOT / "weightbridge/diagnostics/coordinate_search.py"))
+            if arm == "search":
+                receipt.pop("checkpoint_files_sha256")
+                receipt.update(provider="weightbridge-algorithm", model_id="stratified-coordinate-search",
+                               version="1", sampling={"schedule": "one eligible index per tensor, -3 then +3",
+                                                      "seed": "task split seed", "practice_evaluation_cap": TURN_LIMIT})
         write_json(receipt_path, receipt)
         manifest = path / "frozen_protocol.json"
         freeze_protocol(draft_path, receipt_path, manifest, cohort_id=(
-            f"{out.name}-{arm}" if args.paired_connectivity else out.name),
-            identity_provenance="Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task.")
+            f"{out.name}-{arm}" if paired else out.name),
+            identity_provenance=("Local deterministic search source and schedule were hashed."
+                                 if arm == "search" else
+                                 "Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task."))
         manifests[arm] = manifest
     schedule = []
     for index, task_id in enumerate(template["execution_order"][:args.tasks]):
         arms = list(arm_paths)
-        if index % 2:
+        if args.paired_search:
+            rotation = index % len(arms)
+            arms = arms[rotation:] + arms[:rotation]
+        elif index % 2:
             arms.reverse()
         schedule.extend({"task": task_id, "arm": arm} for arm in arms)
     if args.paired_connectivity:
@@ -376,6 +442,18 @@ def main():
             "protocol_sha256": {arm: _read_json(path)["protocol_sha256"]
                                 for arm, path in manifests.items()},
         })
+    if args.paired_search:
+        write_json(out / "paired_plan.json", {
+            "schema": "weightbridge.search_comparison.v1",
+            "seed_offset": args.seed_offset, "schedule": schedule,
+            "hypothesis": "Rejection increases tasks with a practice accuracy gain and beats coordinate search.",
+            "primary": "tasks with any accepted edit improving practice accuracy",
+            "secondary": ["practice prediction changes", "finalized holdout gains", "full holdout repairs",
+                          "proposal attempts", "practice evaluations", "CPU seconds"],
+            "max_practice_evaluations": TURN_LIMIT,
+            "protocol_sha256": {arm: _read_json(path)["protocol_sha256"]
+                                for arm, path in manifests.items()},
+        })
     records = {arm: [] for arm in arm_paths}
     failure = None
     try:
@@ -384,7 +462,8 @@ def main():
             print(f"Starting {arm} {task_id}", flush=True)
             record = run_task(task_id, arm_paths[arm], manifests[arm], broker_python,
                               tokenizer, model, prompt, args.mode,
-                              arm == "probe" if args.paired_connectivity else None)
+                              True if args.paired_search else arm == "probe" if args.paired_connectivity else None,
+                              strategy=arm if args.paired_search else None, task_seed=by_id[task_id]["seed"])
             records[arm].append(record)
             print(f"Completed {arm} {task_id}", flush=True)
     except Exception as exc:
@@ -398,13 +477,13 @@ def main():
                          "host_cpu_seconds": time.process_time() - started_cpu,
                          "host_peak_rss_bytes": peak_rss_bytes(), "completed_tasks": len(records[arm]),
                          "failure": failure}
-            if args.paired_connectivity:
+            if paired:
                 measured = [_read_json(path / f"{row['protocol_binding']['task_id']}.host_resources.json")
                             for row in records[arm]]
                 for field in ("wall_seconds", "host_cpu_seconds"):
                     resources[field] = sum(item[field] for item in measured)
             write_json(path / "host_resources.json", resources)
-        if args.paired_connectivity:
+        if paired:
             write_json(out / "host_resources.json", {
                 "wall_seconds": time.perf_counter() - started,
                 "host_cpu_seconds": time.process_time() - started_cpu,

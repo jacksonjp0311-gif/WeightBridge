@@ -257,13 +257,17 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
         disposition = "INCONCLUSIVE"
     wall = time.perf_counter() - started_wall
     cpu = time.process_time() - started_cpu
+    algorithm = protocol_binding is not None and protocol_binding["provider"] == "weightbridge-algorithm"
     record = {
         "schema": "weightbridge.experiment.v1", "experiment_id": experiment_id,
         "measurement_key": measurement_key,
-        "replicate_role": ("mcp_llm_cohort_v2" if protocol_binding is not None
+        "replicate_role": ("mcp_coordinate_search_baseline" if algorithm else
+                           "mcp_llm_cohort_v2" if protocol_binding is not None
                             else "single_instance_mcp_discovery_pilot"),
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "hypothesis": "An LLM using standard MCP tools can infer and propose a bounded repair from weight summaries and practice-only failures without receiving the correction.",
+        "hypothesis": ("A fixed coordinate schedule can find a bounded repair using practice scores."
+                       if algorithm else
+                       "An LLM using standard MCP tools can infer and propose a bounded repair from weight summaries and practice-only failures without receiving the correction."),
         "source_model": {"id": "synthetic-toy-mlp-blinded-single-weight-defect-v1",
                          "sha256": base_hash,
                          "tensor_sha256": {name: hashlib.sha256(value.tobytes()).hexdigest()
@@ -296,12 +300,12 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
                       "numpy_version": np.__version__, "mcp_sdk_version": version("mcp"),
                       "mcp_tool_calls": tool_calls,
                       "note": "AI token and MCP child-process resource use were not available from the host."},
-        "agent": {"type": "LLM-directed-MCP-tool-caller",
+        "agent": {"type": "deterministic-coordinate-search" if algorithm else "LLM-directed-MCP-tool-caller",
                   "model": (f"{protocol_binding['provider']}/{protocol_binding['model_id']}@{protocol_binding['version']}"
                             if protocol_binding is not None
                             else "Codex session; provider model ID and token meter unavailable"),
                   "tool_calls": tool_calls,
-                  "candidate_finalized": finalized is not None,
+                  "candidate_finalized": candidate_result is not None,
                   "mcp_transcript_sha256": file_hash(output / "agent_mcp_transcript.jsonl"),
                   "identity_verified": (protocol_binding.get("identity_verified", False)
                                         if protocol_binding is not None else False)},
@@ -310,7 +314,8 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
         "artifact_root": output.relative_to(ROOT).as_posix() if output.is_relative_to(ROOT) else str(output),
         "artifacts": _artifact_paths(output),
         "disposition": disposition,
-        "scientific_scope": "one AI-directed synthetic discovery pilot; not evidence of transfer, Qwen improvement, or general learning",
+        "scientific_scope": ("one synthetic coordinate search baseline trial" if algorithm else
+                             "one AI-directed synthetic discovery pilot; not evidence of transfer, Qwen improvement, or general learning"),
     }
     _write_json(output / "experiment_record.json", record)
     append_experiment(ROOT / "results" / "experiment_ledger.jsonl", record)

@@ -4,6 +4,7 @@
 /experiments/original_weight_edits/run_local_mcp_cohort.py text eol=lf
 /weightbridge/agents/mcp_server.py text eol=lf
 /weightbridge/diagnostics/toy_mlp.py text eol=lf
+/weightbridge/diagnostics/coordinate_search.py text eol=lf
 /weightbridge/evaluation/freeze_cohort.py text eol=lf
 /weightbridge/evaluation/mcp_cohort.py text eol=lf
 /results/original_weight_edits/local-qwen-mcp-smoke-comparison.json text eol=lf
@@ -13,4 +14,6 @@
 /results/wb-qf2/**/*.jsonl text eol=lf
 /results/wb-cx/**/*.json text eol=lf
 /results/wb-cx/**/*.jsonl text eol=lf
+/results/wb-sr/**/*.json text eol=lf
+/results/wb-sr/**/*.jsonl text eol=lf
 *.npz -text
