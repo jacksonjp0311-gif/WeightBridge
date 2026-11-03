@@ -71,11 +71,12 @@ class MethodSelector:
     cost_weight: float = .01
     curvature_threshold: float = .1
     disagreement_limit: float | None = None
+    preservation_threshold: float = .65
 
     def __post_init__(self):
         if (not 0 <= self.harm_limit <= 1
                 or not all(isfinite(value) and value >= 0 for value in
-                           (self.harm_weight, self.cost_weight, self.curvature_threshold))
+                           (self.harm_weight, self.cost_weight, self.curvature_threshold, self.preservation_threshold))
                 or self.disagreement_limit is not None
                 and (not isfinite(self.disagreement_limit) or self.disagreement_limit < 0)):
             raise ValueError("Invalid selector thresholds")
@@ -112,7 +113,8 @@ class MethodSelector:
         if not eligible:
             return AdmissionDecision(Action.HOLD, "no_supported_method_within_budget")
         if predictions is None:
-            preferred = 1 if evidence.preservation_risk else 0
+            preferred = 1 if (evidence.preservation_risk is not None
+                              and evidence.preservation_risk >= self.preservation_threshold) else 0
             index = preferred if preferred in eligible else eligible[0]
             return AdmissionDecision(Action(METHODS[index]), "practice_rule")
 
