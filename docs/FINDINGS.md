@@ -437,3 +437,14 @@ occur through downstream compensation in this setup. The results motivate
 a comparison that divides the same practice budget across several
 wordings and preserves new paraphrases for final evaluation.
 [Cohort protocol and evidence](QWEN_REPAIR_COHORT.md)
+
+## Qwen practice wording ablation
+
+Splitting the same practice examples and candidate budget across three
+wordings gained one answer on 132 fresh paraphrases relative to the
+single-wording control. Both improved over the damaged checkpoints, and
+both had one case with a paraphrase regression. The paired interval
+includes zero. Multi-wording passed two of 12 cases and single wording
+passed one, short of eight for either arm. Their respective 14 and 13
+pristine sentinel prediction changes leave locality unresolved.
+[Ablation report and evidence](QWEN_WORDING_ABLATION.md)

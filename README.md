@@ -13,6 +13,8 @@
 > recovery, regression measurements and replay commands.
 > The [12-case follow-up](docs/QWEN_REPAIR_COHORT.md) compares guided and
 > random search with equal practice budgets and measures transfer to paraphrases.
+> The [wording ablation](docs/QWEN_WORDING_ABLATION.md) tests whether
+> spreading that same budget across three wordings improves transfer.
 
 ## Historical v0.1 guide
 

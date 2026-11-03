@@ -194,3 +194,16 @@ the candidate budget fixed and compare single-wording with multi-wording
 practice, then evaluate on wording unseen by either arm. Test whether
 this reduces paraphrase regressions while preserving pristine sentinels.
 [Cohort evidence](QWEN_REPAIR_COHORT.md)
+
+### Varying practice wording
+
+**Intervention.** Both searches used the same number pairs, sentinels,
+patch limits, and nine candidate evaluations. One used a single template
+and the other used three. The evaluator tested two novel templates.
+
+**Result and interpretation.** Multi-wording beat single wording by one
+of 132 paraphrased answers and changed one more pristine sentinel
+prediction. Neither crossed the eight-case gate. A single clean transfer
+case shows feasibility, while the case-level comparison gives little
+evidence that this mix improves transfer on the tested faults.
+[Ablation evidence](QWEN_WORDING_ABLATION.md)

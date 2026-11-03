@@ -1,0 +1,499 @@
+{
+  "affected_parameters": {
+    "finalists_by_case": {
+      "10": {
+        "multi": {
+          "changed_entries": 64288,
+          "layer": 23,
+          "parameter_fraction_changed": 7.360332650399e-05
+        },
+        "random_single": {
+          "changed_entries": 64363,
+          "layer": 21,
+          "parameter_fraction_changed": 7.368919399851152e-05
+        },
+        "single": {
+          "changed_entries": 61218,
+          "layer": 23,
+          "parameter_fraction_changed": 7.00884837282426e-05
+        }
+      },
+      "11": {
+        "multi": {
+          "changed_entries": 63418,
+          "layer": 23,
+          "parameter_fraction_changed": 7.260726356754041e-05
+        },
+        "single": {
+          "changed_entries": 64100,
+          "layer": 23,
+          "parameter_fraction_changed": 7.338808531772273e-05
+        }
+      },
+      "12": {
+        "multi": {
+          "changed_entries": 63933,
+          "layer": 23,
+          "parameter_fraction_changed": 7.319688702992149e-05
+        },
+        "single": {
+          "changed_entries": 65272,
+          "layer": 23,
+          "parameter_fraction_changed": 7.47299080321123e-05
+        }
+      },
+      "2": {
+        "multi": {
+          "changed_entries": 64805,
+          "layer": 23,
+          "parameter_fraction_changed": 7.419523976622499e-05
+        },
+        "single": {
+          "changed_entries": 64887,
+          "layer": 23,
+          "parameter_fraction_changed": 7.428912156023518e-05
+        }
+      },
+      "3": {
+        "multi": {
+          "changed_entries": 64750,
+          "layer": 23,
+          "parameter_fraction_changed": 7.413227027024255e-05
+        },
+        "single": {
+          "changed_entries": 64913,
+          "layer": 23,
+          "parameter_fraction_changed": 7.431888895833597e-05
+        }
+      },
+      "4": {
+        "multi": {
+          "changed_entries": 62629,
+          "layer": 23,
+          "parameter_fraction_changed": 7.170393752517406e-05
+        },
+        "random_multi": {
+          "changed_entries": 65313,
+          "layer": 23,
+          "parameter_fraction_changed": 7.47768489291174e-05
+        },
+        "random_single": {
+          "changed_entries": 65464,
+          "layer": 21,
+          "parameter_fraction_changed": 7.494972881808739e-05
+        },
+        "single": {
+          "changed_entries": 62773,
+          "layer": 23,
+          "parameter_fraction_changed": 7.186880311465537e-05
+        }
+      },
+      "5": {
+        "multi": {
+          "changed_entries": 64898,
+          "layer": 23,
+          "parameter_fraction_changed": 7.430171545943167e-05
+        },
+        "random_single": {
+          "changed_entries": 64702,
+          "layer": 21,
+          "parameter_fraction_changed": 7.407731507374878e-05
+        },
+        "single": {
+          "changed_entries": 64748,
+          "layer": 23,
+          "parameter_fraction_changed": 7.412998047038864e-05
+        }
+      },
+      "6": {
+        "multi": {
+          "changed_entries": 65160,
+          "layer": 23,
+          "parameter_fraction_changed": 7.46016792402935e-05
+        },
+        "single": {
+          "changed_entries": 65112,
+          "layer": 23,
+          "parameter_fraction_changed": 7.454672404379973e-05
+        }
+      },
+      "7": {
+        "multi": {
+          "changed_entries": 65194,
+          "layer": 23,
+          "parameter_fraction_changed": 7.464060583780992e-05
+        },
+        "single": {
+          "changed_entries": 63846,
+          "layer": 23,
+          "parameter_fraction_changed": 7.309728073627653e-05
+        }
+      },
+      "8": {
+        "multi": {
+          "changed_entries": 64793,
+          "layer": 23,
+          "parameter_fraction_changed": 7.418150096710154e-05
+        },
+        "random_multi": {
+          "changed_entries": 65454,
+          "layer": 23,
+          "parameter_fraction_changed": 7.493827981881785e-05
+        },
+        "random_single": {
+          "changed_entries": 64627,
+          "layer": 21,
+          "parameter_fraction_changed": 7.399144757922725e-05
+        },
+        "single": {
+          "changed_entries": 63524,
+          "layer": 23,
+          "parameter_fraction_changed": 7.272862295979749e-05
+        }
+      },
+      "9": {
+        "multi": {
+          "changed_entries": 63612,
+          "layer": 23,
+          "parameter_fraction_changed": 7.28293741533694e-05
+        },
+        "random_multi": {
+          "changed_entries": 65055,
+          "layer": 21,
+          "parameter_fraction_changed": 7.448146474796337e-05
+        },
+        "random_single": {
+          "changed_entries": 65190,
+          "layer": 21,
+          "parameter_fraction_changed": 7.463602623810211e-05
+        },
+        "single": {
+          "changed_entries": 64541,
+          "layer": 23,
+          "parameter_fraction_changed": 7.389298618550925e-05
+        }
+      }
+    }
+  },
+  "artifact_root": "results/qwen-wording-ablation-v1",
+  "artifacts": [
+    "case-01/evaluator/calibration.json",
+    "case-01/evaluator/case.json",
+    "case-01/evaluator/construction.json",
+    "case-01/evaluator/hold.json",
+    "case-01/evaluator/holdout.json",
+    "case-01/evaluator/resources.json",
+    "case-01/public/multi.json",
+    "case-01/public/single.json",
+    "case-02/evaluation/resources.json",
+    "case-02/evaluation/scores.json",
+    "case-02/evaluation/summary.json",
+    "case-02/evaluator/calibration.json",
+    "case-02/evaluator/case.json",
+    "case-02/evaluator/construction.json",
+    "case-02/evaluator/fault_patch.json.gz",
+    "case-02/evaluator/fault_receipt.json",
+    "case-02/evaluator/holdout.json",
+    "case-02/evaluator/resources.json",
+    "case-02/public/input.json",
+    "case-02/public/multi.json",
+    "case-02/public/single.json",
+    "case-02/search/multi.json",
+    "case-02/search/multi_patch.json.gz",
+    "case-02/search/multi_receipt.json",
+    "case-02/search/resources.json",
+    "case-02/search/search_resources.json",
+    "case-02/search/single.json",
+    "case-02/search/single_patch.json.gz",
+    "case-02/search/single_receipt.json",
+    "case-03/evaluation/resources.json",
+    "case-03/evaluation/scores.json",
+    "case-03/evaluation/summary.json",
+    "case-03/evaluator/calibration.json",
+    "case-03/evaluator/case.json",
+    "case-03/evaluator/construction.json",
+    "case-03/evaluator/fault_patch.json.gz",
+    "case-03/evaluator/fault_receipt.json",
+    "case-03/evaluator/holdout.json",
+    "case-03/evaluator/resources.json",
+    "case-03/public/input.json",
+    "case-03/public/multi.json",
+    "case-03/public/single.json",
+    "case-03/search/multi.json",
+    "case-03/search/multi_patch.json.gz",
+    "case-03/search/multi_receipt.json",
+    "case-03/search/resources.json",
+    "case-03/search/search_resources.json",
+    "case-03/search/single.json",
+    "case-03/search/single_patch.json.gz",
+    "case-03/search/single_receipt.json",
+    "case-04/evaluation/resources.json",
+    "case-04/evaluation/scores.json",
+    "case-04/evaluation/summary.json",
+    "case-04/evaluator/calibration.json",
+    "case-04/evaluator/case.json",
+    "case-04/evaluator/construction.json",
+    "case-04/evaluator/fault_patch.json.gz",
+    "case-04/evaluator/fault_receipt.json",
+    "case-04/evaluator/holdout.json",
+    "case-04/evaluator/resources.json",
+    "case-04/public/input.json",
+    "case-04/public/multi.json",
+    "case-04/public/single.json",
+    "case-04/search/multi.json",
+    "case-04/search/multi_patch.json.gz",
+    "case-04/search/multi_receipt.json",
+    "case-04/search/random_multi_patch.json.gz",
+    "case-04/search/random_multi_receipt.json",
+    "case-04/search/random_single_patch.json.gz",
+    "case-04/search/random_single_receipt.json",
+    "case-04/search/resources.json",
+    "case-04/search/search_resources.json",
+    "case-04/search/single.json",
+    "case-04/search/single_patch.json.gz",
+    "case-04/search/single_receipt.json",
+    "case-05/evaluation/resources.json",
+    "case-05/evaluation/scores.json",
+    "case-05/evaluation/summary.json",
+    "case-05/evaluator/calibration.json",
+    "case-05/evaluator/case.json",
+    "case-05/evaluator/construction.json",
+    "case-05/evaluator/fault_patch.json.gz",
+    "case-05/evaluator/fault_receipt.json",
+    "case-05/evaluator/holdout.json",
+    "case-05/evaluator/resources.json",
+    "case-05/public/input.json",
+    "case-05/public/multi.json",
+    "case-05/public/single.json",
+    "case-05/search/multi.json",
+    "case-05/search/multi_patch.json.gz",
+    "case-05/search/multi_receipt.json",
+    "case-05/search/random_single_patch.json.gz",
+    "case-05/search/random_single_receipt.json",
+    "case-05/search/resources.json",
+    "case-05/search/search_resources.json",
+    "case-05/search/single.json",
+    "case-05/search/single_patch.json.gz",
+    "case-05/search/single_receipt.json",
+    "case-06/evaluation/resources.json",
+    "case-06/evaluation/scores.json",
+    "case-06/evaluation/summary.json",
+    "case-06/evaluator/calibration.json",
+    "case-06/evaluator/case.json",
+    "case-06/evaluator/construction.json",
+    "case-06/evaluator/fault_patch.json.gz",
+    "case-06/evaluator/fault_receipt.json",
+    "case-06/evaluator/holdout.json",
+    "case-06/evaluator/resources.json",
+    "case-06/public/input.json",
+    "case-06/public/multi.json",
+    "case-06/public/single.json",
+    "case-06/search/multi.json",
+    "case-06/search/multi_patch.json.gz",
+    "case-06/search/multi_receipt.json",
+    "case-06/search/resources.json",
+    "case-06/search/search_resources.json",
+    "case-06/search/single.json",
+    "case-06/search/single_patch.json.gz",
+    "case-06/search/single_receipt.json",
+    "case-07/evaluation/resources.json",
+    "case-07/evaluation/scores.json",
+    "case-07/evaluation/summary.json",
+    "case-07/evaluator/calibration.json",
+    "case-07/evaluator/case.json",
+    "case-07/evaluator/construction.json",
+    "case-07/evaluator/fault_patch.json.gz",
+    "case-07/evaluator/fault_receipt.json",
+    "case-07/evaluator/holdout.json",
+    "case-07/evaluator/resources.json",
+    "case-07/public/input.json",
+    "case-07/public/multi.json",
+    "case-07/public/single.json",
+    "case-07/search/multi.json",
+    "case-07/search/multi_patch.json.gz",
+    "case-07/search/multi_receipt.json",
+    "case-07/search/resources.json",
+    "case-07/search/search_resources.json",
+    "case-07/search/single.json",
+    "case-07/search/single_patch.json.gz",
+    "case-07/search/single_receipt.json",
+    "case-08/evaluation/resources.json",
+    "case-08/evaluation/scores.json",
+    "case-08/evaluation/summary.json",
+    "case-08/evaluator/calibration.json",
+    "case-08/evaluator/case.json",
+    "case-08/evaluator/construction.json",
+    "case-08/evaluator/fault_patch.json.gz",
+    "case-08/evaluator/fault_receipt.json",
+    "case-08/evaluator/holdout.json",
+    "case-08/evaluator/resources.json",
+    "case-08/public/input.json",
+    "case-08/public/multi.json",
+    "case-08/public/single.json",
+    "case-08/search/multi.json",
+    "case-08/search/multi_patch.json.gz",
+    "case-08/search/multi_receipt.json",
+    "case-08/search/random_multi_patch.json.gz",
+    "case-08/search/random_multi_receipt.json",
+    "case-08/search/random_single_patch.json.gz",
+    "case-08/search/random_single_receipt.json",
+    "case-08/search/resources.json",
+    "case-08/search/search_resources.json",
+    "case-08/search/single.json",
+    "case-08/search/single_patch.json.gz",
+    "case-08/search/single_receipt.json",
+    "case-09/evaluation/resources.json",
+    "case-09/evaluation/scores.json",
+    "case-09/evaluation/summary.json",
+    "case-09/evaluator/calibration.json",
+    "case-09/evaluator/case.json",
+    "case-09/evaluator/construction.json",
+    "case-09/evaluator/fault_patch.json.gz",
+    "case-09/evaluator/fault_receipt.json",
+    "case-09/evaluator/holdout.json",
+    "case-09/evaluator/resources.json",
+    "case-09/public/input.json",
+    "case-09/public/multi.json",
+    "case-09/public/single.json",
+    "case-09/search/multi.json",
+    "case-09/search/multi_patch.json.gz",
+    "case-09/search/multi_receipt.json",
+    "case-09/search/random_multi_patch.json.gz",
+    "case-09/search/random_multi_receipt.json",
+    "case-09/search/random_single_patch.json.gz",
+    "case-09/search/random_single_receipt.json",
+    "case-09/search/resources.json",
+    "case-09/search/search_resources.json",
+    "case-09/search/single.json",
+    "case-09/search/single_patch.json.gz",
+    "case-09/search/single_receipt.json",
+    "case-10/evaluation/resources.json",
+    "case-10/evaluation/scores.json",
+    "case-10/evaluation/summary.json",
+    "case-10/evaluator/calibration.json",
+    "case-10/evaluator/case.json",
+    "case-10/evaluator/construction.json",
+    "case-10/evaluator/fault_patch.json.gz",
+    "case-10/evaluator/fault_receipt.json",
+    "case-10/evaluator/holdout.json",
+    "case-10/evaluator/resources.json",
+    "case-10/public/input.json",
+    "case-10/public/multi.json",
+    "case-10/public/single.json",
+    "case-10/search/multi.json",
+    "case-10/search/multi_patch.json.gz",
+    "case-10/search/multi_receipt.json",
+    "case-10/search/random_single_patch.json.gz",
+    "case-10/search/random_single_receipt.json",
+    "case-10/search/resources.json",
+    "case-10/search/search_resources.json",
+    "case-10/search/single.json",
+    "case-10/search/single_patch.json.gz",
+    "case-10/search/single_receipt.json",
+    "case-11/evaluation/resources.json",
+    "case-11/evaluation/scores.json",
+    "case-11/evaluation/summary.json",
+    "case-11/evaluator/calibration.json",
+    "case-11/evaluator/case.json",
+    "case-11/evaluator/construction.json",
+    "case-11/evaluator/fault_patch.json.gz",
+    "case-11/evaluator/fault_receipt.json",
+    "case-11/evaluator/holdout.json",
+    "case-11/evaluator/resources.json",
+    "case-11/public/input.json",
+    "case-11/public/multi.json",
+    "case-11/public/single.json",
+    "case-11/search/multi.json",
+    "case-11/search/multi_patch.json.gz",
+    "case-11/search/multi_receipt.json",
+    "case-11/search/resources.json",
+    "case-11/search/search_resources.json",
+    "case-11/search/single.json",
+    "case-11/search/single_patch.json.gz",
+    "case-11/search/single_receipt.json",
+    "case-12/evaluation/resources.json",
+    "case-12/evaluation/scores.json",
+    "case-12/evaluation/summary.json",
+    "case-12/evaluator/calibration.json",
+    "case-12/evaluator/case.json",
+    "case-12/evaluator/construction.json",
+    "case-12/evaluator/fault_patch.json.gz",
+    "case-12/evaluator/fault_receipt.json",
+    "case-12/evaluator/holdout.json",
+    "case-12/evaluator/resources.json",
+    "case-12/public/input.json",
+    "case-12/public/multi.json",
+    "case-12/public/single.json",
+    "case-12/search/multi.json",
+    "case-12/search/multi_patch.json.gz",
+    "case-12/search/multi_receipt.json",
+    "case-12/search/resources.json",
+    "case-12/search/search_resources.json",
+    "case-12/search/single.json",
+    "case-12/search/single_patch.json.gz",
+    "case-12/search/single_receipt.json",
+    "manifest.json",
+    "summary.json"
+  ],
+  "disposition": "FAIL",
+  "evaluation": {
+    "counts": {
+      "multi": {
+        "FAIL": 8,
+        "HOLD_CALIBRATION": 1,
+        "HOLD_EXECUTION": 0,
+        "INCONCLUSIVE": 1,
+        "PARTIAL": 0,
+        "PASS": 2,
+        "UNRUN": 0
+      },
+      "single": {
+        "FAIL": 9,
+        "HOLD_CALIBRATION": 1,
+        "HOLD_EXECUTION": 0,
+        "INCONCLUSIVE": 1,
+        "PARTIAL": 0,
+        "PASS": 1,
+        "UNRUN": 0
+      }
+    },
+    "dataset": "Twelve frozen balanced A/B Qwen fault cases with two fresh paraphrase templates",
+    "paraphrase_regression_cases": {
+      "multi": 1,
+      "single": 1
+    },
+    "practice_test_separated": true,
+    "pristine_wording_probe": "results/qwen-wording-probe-v1.json",
+    "seed": 919426,
+    "summary": "summary.json"
+  },
+  "experiment_id": "qwen-wording-ablation-v1",
+  "hypothesis": "Multiple practice wordings improve paired paraphrase recovery without worsening locality at the fixed prompt and candidate budget.",
+  "measurement_key": "cd10218a07442cc1913d8c88f99678caa93e28f38486dd5edbde9868c0204c79",
+  "proposed_modification": "Practice-selected rank-one MLP column-slice additions with either one or three practice wordings.",
+  "resources": {
+    "candidate_forward_batches_by_arm": {
+      "multi": 297,
+      "random_multi": 297,
+      "random_single": 297,
+      "single": 297
+    },
+    "candidate_input_tokens_by_arm": {
+      "multi": 90162,
+      "random_multi": 90162,
+      "random_single": 88182,
+      "single": 88182
+    },
+    "cpu_seconds": 11069.203125,
+    "peak_rss_bytes": 2558447616,
+    "wall_seconds": 2907.9229330002563
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+  },
+  "timestamp_utc": "2026-11-03T12:56:22.670143+00:00"
+}

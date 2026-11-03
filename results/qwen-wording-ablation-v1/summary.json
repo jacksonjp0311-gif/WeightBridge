@@ -1,0 +1,1132 @@
+{
+  "cases": [
+    {
+      "fault": "one_position",
+      "layer": 21,
+      "reason": "no bounded fault met frozen construction calibration",
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 105.15625,
+        "peak_rss_bytes": 2352627712,
+        "wall_seconds": 30.177439899998717
+      },
+      "seed": 919527,
+      "slot": 1,
+      "status": "HOLD_CALIBRATION"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 23,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 0.7142857142857143,
+          "sentinel_correct": {
+            "damaged": 15,
+            "guided": 16,
+            "pristine": 15,
+            "random": 15
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 9,
+              "pristine": 10,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 11,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 20,
+            "pristine": 22,
+            "random": 15
+          },
+          "target_loss": 7
+        },
+        "single": {
+          "disposition": "PASS",
+          "recovery": 0.8571428571428571,
+          "sentinel_correct": {
+            "damaged": 15,
+            "guided": 15,
+            "pristine": 15,
+            "random": 15
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 0,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 10,
+              "pristine": 10,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 11,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 21,
+            "pristine": 22,
+            "random": 15
+          },
+          "target_loss": 7
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 956.125,
+        "peak_rss_bytes": 2558447616,
+        "wall_seconds": 242.11377519997768
+      },
+      "seed": 919528,
+      "slot": 2,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "one_position",
+      "layer": 23,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 1.0,
+          "sentinel_correct": {
+            "damaged": 12,
+            "guided": 12,
+            "pristine": 14,
+            "random": 12
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 2,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 2,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 10,
+              "guided": 12,
+              "pristine": 12,
+              "random": 10
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 16,
+            "guided": 24,
+            "pristine": 24,
+            "random": 16
+          },
+          "target_loss": 8
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 1.0,
+          "sentinel_correct": {
+            "damaged": 12,
+            "guided": 13,
+            "pristine": 14,
+            "random": 12
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 10,
+              "guided": 12,
+              "pristine": 12,
+              "random": 10
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 16,
+            "guided": 24,
+            "pristine": 24,
+            "random": 16
+          },
+          "target_loss": 8
+        }
+      },
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 961.109375,
+        "peak_rss_bytes": 2549850112,
+        "wall_seconds": 243.66181740001775
+      },
+      "seed": 919529,
+      "slot": 3,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "one_position",
+      "layer": 19,
+      "modes": {
+        "multi": {
+          "disposition": "PASS",
+          "recovery": 0.75,
+          "sentinel_correct": {
+            "damaged": 8,
+            "guided": 9,
+            "pristine": 9,
+            "random": 9
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 1
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 0,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 11,
+              "pristine": 12,
+              "random": 11
+            },
+            "same": {
+              "damaged": 9,
+              "guided": 12,
+              "pristine": 12,
+              "random": 9
+            }
+          },
+          "target_correct": {
+            "damaged": 20,
+            "guided": 23,
+            "pristine": 24,
+            "random": 20
+          },
+          "target_loss": 4
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.25,
+          "sentinel_correct": {
+            "damaged": 8,
+            "guided": 8,
+            "pristine": 9,
+            "random": 9
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 1
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 11,
+              "pristine": 12,
+              "random": 11
+            },
+            "same": {
+              "damaged": 9,
+              "guided": 10,
+              "pristine": 12,
+              "random": 12
+            }
+          },
+          "target_correct": {
+            "damaged": 20,
+            "guided": 21,
+            "pristine": 24,
+            "random": 23
+          },
+          "target_loss": 4
+        }
+      },
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 1064.125,
+        "peak_rss_bytes": 2552365056,
+        "wall_seconds": 294.72906790004345
+      },
+      "seed": 919530,
+      "slot": 4,
+      "status": "PASS"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 23,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 1.3333333333333333,
+          "sentinel_correct": {
+            "damaged": 12,
+            "guided": 11,
+            "pristine": 13,
+            "random": 12
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 2,
+            "random": 1
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 12,
+              "pristine": 11,
+              "random": 11
+            },
+            "same": {
+              "damaged": 9,
+              "guided": 12,
+              "pristine": 12,
+              "random": 9
+            }
+          },
+          "target_correct": {
+            "damaged": 20,
+            "guided": 24,
+            "pristine": 23,
+            "random": 20
+          },
+          "target_loss": 3
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 1.3333333333333333,
+          "sentinel_correct": {
+            "damaged": 12,
+            "guided": 12,
+            "pristine": 13,
+            "random": 12
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 1
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 12,
+              "pristine": 11,
+              "random": 11
+            },
+            "same": {
+              "damaged": 9,
+              "guided": 12,
+              "pristine": 12,
+              "random": 8
+            }
+          },
+          "target_correct": {
+            "damaged": 20,
+            "guided": 24,
+            "pristine": 23,
+            "random": 19
+          },
+          "target_loss": 3
+        }
+      },
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 1018.71875,
+        "peak_rss_bytes": 2551611392,
+        "wall_seconds": 268.9199985000887
+      },
+      "seed": 919531,
+      "slot": 5,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 19,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 0.4444444444444444,
+          "sentinel_correct": {
+            "damaged": 10,
+            "guided": 10,
+            "pristine": 11,
+            "random": 10
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 1
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 9,
+              "pristine": 12,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 10,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 19,
+            "pristine": 24,
+            "random": 15
+          },
+          "target_loss": 9
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.8888888888888888,
+          "sentinel_correct": {
+            "damaged": 10,
+            "guided": 9,
+            "pristine": 11,
+            "random": 10
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 2,
+            "random": 1
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 11,
+              "pristine": 12,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 23,
+            "pristine": 24,
+            "random": 15
+          },
+          "target_loss": 9
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 965.25,
+        "peak_rss_bytes": 2550468608,
+        "wall_seconds": 245.13594900001772
+      },
+      "seed": 919532,
+      "slot": 6,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 19,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 0.7777777777777778,
+          "sentinel_correct": {
+            "damaged": 11,
+            "guided": 10,
+            "pristine": 13,
+            "random": 11
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 3,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 3,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 10,
+              "pristine": 12,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 22,
+            "pristine": 24,
+            "random": 15
+          },
+          "target_loss": 9
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.6666666666666666,
+          "sentinel_correct": {
+            "damaged": 11,
+            "guided": 12,
+            "pristine": 13,
+            "random": 11
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 9,
+              "guided": 10,
+              "pristine": 12,
+              "random": 9
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 11,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 15,
+            "guided": 21,
+            "pristine": 24,
+            "random": 15
+          },
+          "target_loss": 9
+        }
+      },
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 959.328125,
+        "peak_rss_bytes": 2551914496,
+        "wall_seconds": 244.03967040008865
+      },
+      "seed": 919533,
+      "slot": 7,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 21,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 1.0,
+          "sentinel_correct": {
+            "damaged": 16,
+            "guided": 16,
+            "pristine": 13,
+            "random": 16
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 3,
+            "random": 3
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 10
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 12
+            }
+          },
+          "target_correct": {
+            "damaged": 12,
+            "guided": 24,
+            "pristine": 24,
+            "random": 22
+          },
+          "target_loss": 12
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.75,
+          "sentinel_correct": {
+            "damaged": 16,
+            "guided": 16,
+            "pristine": 13,
+            "random": 16
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 3,
+            "random": 3
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 6,
+              "guided": 9,
+              "pristine": 12,
+              "random": 7
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 7
+            }
+          },
+          "target_correct": {
+            "damaged": 12,
+            "guided": 21,
+            "pristine": 24,
+            "random": 14
+          },
+          "target_loss": 12
+        }
+      },
+      "replicate": 1,
+      "resources": {
+        "cpu_seconds": 1082.734375,
+        "peak_rss_bytes": 2550845440,
+        "wall_seconds": 296.69448519998696
+      },
+      "seed": 919534,
+      "slot": 8,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "one_position",
+      "layer": 23,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 0.5714285714285714,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 12,
+            "pristine": 11,
+            "random": 14
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 3,
+            "random": 1
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 3
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 10,
+              "guided": 9,
+              "pristine": 12,
+              "random": 10
+            },
+            "same": {
+              "damaged": 7,
+              "guided": 12,
+              "pristine": 12,
+              "random": 8
+            }
+          },
+          "target_correct": {
+            "damaged": 17,
+            "guided": 21,
+            "pristine": 24,
+            "random": 18
+          },
+          "target_loss": 7
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.5714285714285714,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 12,
+            "pristine": 11,
+            "random": 14
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 3,
+            "random": 1
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 3
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 10,
+              "guided": 9,
+              "pristine": 12,
+              "random": 9
+            },
+            "same": {
+              "damaged": 7,
+              "guided": 12,
+              "pristine": 12,
+              "random": 9
+            }
+          },
+          "target_correct": {
+            "damaged": 17,
+            "guided": 21,
+            "pristine": 24,
+            "random": 18
+          },
+          "target_loss": 7
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 1066.609375,
+        "peak_rss_bytes": 2550992896,
+        "wall_seconds": 294.2542280999478
+      },
+      "seed": 919535,
+      "slot": 9,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "one_position",
+      "layer": 19,
+      "modes": {
+        "multi": {
+          "disposition": "FAIL",
+          "recovery": 1.0,
+          "sentinel_correct": {
+            "damaged": 11,
+            "guided": 12,
+            "pristine": 13,
+            "random": 11
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 12,
+              "pristine": 11,
+              "random": 11
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 11,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 17,
+            "guided": 23,
+            "pristine": 23,
+            "random": 17
+          },
+          "target_loss": 6
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.5,
+          "sentinel_correct": {
+            "damaged": 11,
+            "guided": 11,
+            "pristine": 13,
+            "random": 11
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 2,
+            "random": 2
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 11,
+              "guided": 12,
+              "pristine": 11,
+              "random": 12
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 8,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 17,
+            "guided": 20,
+            "pristine": 23,
+            "random": 18
+          },
+          "target_loss": 6
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 1018.6875,
+        "peak_rss_bytes": 2550464512,
+        "wall_seconds": 271.0383539000177
+      },
+      "seed": 919536,
+      "slot": 10,
+      "status": "FAIL"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "reversal",
+      "layer": 21,
+      "modes": {
+        "multi": {
+          "disposition": "INCONCLUSIVE",
+          "recovery": 0.0,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 13,
+            "pristine": 13,
+            "random": 13
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 0,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 12,
+              "guided": 12,
+              "pristine": 12,
+              "random": 12
+            },
+            "same": {
+              "damaged": 11,
+              "guided": 11,
+              "pristine": 12,
+              "random": 11
+            }
+          },
+          "target_correct": {
+            "damaged": 23,
+            "guided": 23,
+            "pristine": 24,
+            "random": 23
+          },
+          "target_loss": 1
+        },
+        "single": {
+          "disposition": "INCONCLUSIVE",
+          "recovery": 0.0,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 13,
+            "pristine": 13,
+            "random": 13
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 0,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 12,
+              "guided": 12,
+              "pristine": 12,
+              "random": 12
+            },
+            "same": {
+              "damaged": 11,
+              "guided": 11,
+              "pristine": 12,
+              "random": 11
+            }
+          },
+          "target_correct": {
+            "damaged": 23,
+            "guided": 23,
+            "pristine": 24,
+            "random": 23
+          },
+          "target_loss": 1
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 927.25,
+        "peak_rss_bytes": 2549932032,
+        "wall_seconds": 237.88876539998455
+      },
+      "seed": 919537,
+      "slot": 11,
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "candidate_forward_batches": {
+        "multi": 27,
+        "random_multi": 27,
+        "random_single": 27,
+        "single": 27
+      },
+      "fault": "one_position",
+      "layer": 21,
+      "modes": {
+        "multi": {
+          "disposition": "PASS",
+          "recovery": 0.8333333333333334,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 13,
+            "pristine": 13,
+            "random": 13
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 0,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 0,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 6,
+              "guided": 12,
+              "pristine": 12,
+              "random": 6
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 10,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 12,
+            "guided": 22,
+            "pristine": 24,
+            "random": 12
+          },
+          "target_loss": 12
+        },
+        "single": {
+          "disposition": "FAIL",
+          "recovery": 0.6666666666666666,
+          "sentinel_correct": {
+            "damaged": 13,
+            "guided": 14,
+            "pristine": 13,
+            "random": 13
+          },
+          "sentinel_flips_vs_damaged": {
+            "guided": 1,
+            "random": 0
+          },
+          "sentinel_flips_vs_pristine": {
+            "guided": 1,
+            "random": 0
+          },
+          "target_by_form": {
+            "paraphrase": {
+              "damaged": 6,
+              "guided": 11,
+              "pristine": 12,
+              "random": 6
+            },
+            "same": {
+              "damaged": 6,
+              "guided": 9,
+              "pristine": 12,
+              "random": 6
+            }
+          },
+          "target_correct": {
+            "damaged": 12,
+            "guided": 20,
+            "pristine": 24,
+            "random": 12
+          },
+          "target_loss": 12
+        }
+      },
+      "replicate": 0,
+      "resources": {
+        "cpu_seconds": 944.109375,
+        "peak_rss_bytes": 2541498368,
+        "wall_seconds": 239.26938210008666
+      },
+      "seed": 919538,
+      "slot": 12,
+      "status": "PASS"
+    }
+  ],
+  "counts": {
+    "multi": {
+      "FAIL": 8,
+      "HOLD_CALIBRATION": 1,
+      "HOLD_EXECUTION": 0,
+      "INCONCLUSIVE": 1,
+      "PARTIAL": 0,
+      "PASS": 2,
+      "UNRUN": 0
+    },
+    "single": {
+      "FAIL": 9,
+      "HOLD_CALIBRATION": 1,
+      "HOLD_EXECUTION": 0,
+      "INCONCLUSIVE": 1,
+      "PARTIAL": 0,
+      "PASS": 1,
+      "UNRUN": 0
+    }
+  },
+  "disposition": "FAIL",
+  "dispositions": {
+    "multi": "FAIL",
+    "single": "FAIL"
+  }
+}

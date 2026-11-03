@@ -1,0 +1,132 @@
+{
+  "disposition": "PASS",
+  "modes": {
+    "multi": {
+      "disposition": "PASS",
+      "recovery": 0.8333333333333334,
+      "sentinel_correct": {
+        "damaged": 13,
+        "guided": 13,
+        "pristine": 13,
+        "random": 13
+      },
+      "sentinel_flips_vs_damaged": {
+        "guided": 0,
+        "random": 0
+      },
+      "sentinel_flips_vs_pristine": {
+        "guided": 0,
+        "random": 0
+      },
+      "target_by_form": {
+        "paraphrase": {
+          "damaged": 6,
+          "guided": 12,
+          "pristine": 12,
+          "random": 6
+        },
+        "same": {
+          "damaged": 6,
+          "guided": 10,
+          "pristine": 12,
+          "random": 6
+        }
+      },
+      "target_correct": {
+        "damaged": 12,
+        "guided": 22,
+        "pristine": 24,
+        "random": 12
+      },
+      "target_loss": 12
+    },
+    "single": {
+      "disposition": "FAIL",
+      "recovery": 0.6666666666666666,
+      "sentinel_correct": {
+        "damaged": 13,
+        "guided": 14,
+        "pristine": 13,
+        "random": 13
+      },
+      "sentinel_flips_vs_damaged": {
+        "guided": 1,
+        "random": 0
+      },
+      "sentinel_flips_vs_pristine": {
+        "guided": 1,
+        "random": 0
+      },
+      "target_by_form": {
+        "paraphrase": {
+          "damaged": 6,
+          "guided": 11,
+          "pristine": 12,
+          "random": 6
+        },
+        "same": {
+          "damaged": 6,
+          "guided": 9,
+          "pristine": 12,
+          "random": 6
+        }
+      },
+      "target_correct": {
+        "damaged": 12,
+        "guided": 20,
+        "pristine": 24,
+        "random": 12
+      },
+      "target_loss": 12
+    }
+  },
+  "resources": {
+    "damaged": {
+      "forward_batches": 5,
+      "input_tokens": 1600,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2366783488,
+      "prompt_examples": 40,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    },
+    "multi": {
+      "forward_batches": 8,
+      "input_tokens": 2508,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2440237056,
+      "prompt_examples": 64,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    },
+    "pristine": {
+      "forward_batches": 5,
+      "input_tokens": 1600,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2360311808,
+      "prompt_examples": 40,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    },
+    "single": {
+      "forward_batches": 8,
+      "input_tokens": 2488,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2403368960,
+      "prompt_examples": 64,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    }
+  },
+  "scores_sha256": "9bd23d3234baf3ba2b9710cf60a6ade51c95551a92fc366bcf668180505abff8",
+  "selected": {
+    "multi": 8,
+    "random_multi": null,
+    "random_single": null,
+    "single": 8
+  }
+}
