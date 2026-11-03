@@ -68,6 +68,25 @@ The seed-731 task was initially recorded twice. An append-only correction
 marks the first record as a duplicate replay; the canonical isolated run is
 retained with later isolated seeds 840 and 841.
 
+### Additional operational smoke: seed 842
+
+After the original three-run cohort was frozen, seed 842 exercised the same
+injected defect through the bounded diagnostic worker. It scored 32/64 at
+baseline and 64/64 after selecting `output_bias[1] += -4`; the matched random
+control scored 32/64. The worker used eight practice-evaluator calls, did not
+access the holdout, and spent zero model-generated tokens. This repeats the
+same defect family and does not establish transfer or LLM discovery. The
+ledger retains the run, while the three-run aggregate and its figures remain
+fixed to the original cohort.
+
+I also called the public `weightbridge inspect` and `weightbridge apply` CLI
+directly on that run's base and patch. The host policy allowed one scalar edit
+to `output_bias`, and the resulting candidate hash matched the worker's
+receipt. This was a patch-application replay only: the CLI replay did not
+score the holdout or create another behavioral measurement. See the
+[`seed-842 experiment record`](../results/original_weight_edits/run-20261103T035435Z/experiment_record.json)
+and [`CLI replay receipt`](../results/tool_interface_smoke/seed842_cli_application.json).
+
 ## Conventional optimizer and memory ablation
 
 Full-batch SGD on the same toy model, trained for 400 cross-entropy steps on

@@ -1,5 +1,5 @@
 {
-  "canonical_ledger_experiment_count": 13,
+  "canonical_ledger_experiment_count": 14,
   "cost_improvement_points": [
     {
       "accuracy_difference": 0.5,
@@ -37,7 +37,7 @@
       "label": "Qwen paired smoke"
     }
   ],
-  "generated_at_utc": "2026-11-03T03:33:46.888893+00:00",
+  "generated_at_utc": "2026-11-03T03:55:04.417537+00:00",
   "gradient_baseline": {
     "baseline_accuracy": 0.5,
     "candidate_accuracy": 1.0,
@@ -352,7 +352,7 @@
     "status": "PASS_REBUILD_ONLY"
   },
   "recorded_computation_totals": {
-    "cpu_seconds_sum_unique_experiment_records": 453.046875,
+    "cpu_seconds_sum_unique_experiment_records": 453.34375,
     "records": [
       {
         "cpu_seconds": 0.296875,
@@ -431,10 +431,16 @@
         "experiment_id": "qwen-original-reload-rollback-smoke-20261103",
         "peak_rss_bytes": 2275749888,
         "wall_seconds": 6.515019199985545
+      },
+      {
+        "cpu_seconds": 0.296875,
+        "experiment_id": "toy-discovery-20261103T035435Z-ddc5c385",
+        "peak_rss_bytes": 40792064,
+        "wall_seconds": 0.8234679999877699
       }
     ],
     "scope_note": "Sum of resource fields in canonical ledger experiment records only. It excludes unrecorded coding, development, test, reference-clone and dependency-download time; CPU and wall sums include non-comparable task runs.",
-    "wall_seconds_sum_unique_experiment_records": 204.23488559997548
+    "wall_seconds_sum_unique_experiment_records": 205.05835359996325
   },
   "regression_rates": [
     {

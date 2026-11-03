@@ -1,4 +1,15 @@
-# WeightBridge v0.1 — evidence-gated neural weight editing
+# WeightBridge — evidence-gated neural weight editing
+
+> **Current status (v0.2):** WeightBridge is an AI-callable local toolset for
+> inspecting model weights, validating proposed patches against host-owned
+> limits, and writing immutable candidate checkpoints. An AI with command-line
+> access can inspect JSON output, propose a patch, and call the patcher. The
+> included toy diagnostic worker is deterministic search code, not an LLM; no
+> LLM-discovered Qwen improvement has been demonstrated. See the v0.2 section
+> below for implemented capabilities and the evidence ledger for measured
+> results.
+
+## Historical v0.1 guide
 
 > This README preserves the original v0.1 guide. The v0.1 source and its verification artifacts remain in the first commit on `dev/weightbridge-v0.2`; the current additions are summarized in the v0.2 section at the end.
 
@@ -116,9 +127,9 @@ python experiments/original_weight_edits/run_toy_discovery.py --seed 842
 python experiments/memory_ablation/run_mwc_ablation.py
 ```
 
-The included toy run seeds are already present in the committed evidence
-ledger, so use a fresh seed for a new independent run (for example, `--seed
-842`). Historical outputs and hashes are preserved under `results/`; do not
+The included toy run seeds, including 842, are already present in the committed
+evidence ledger, so use a fresh seed for a new independent run (for example,
+`--seed 843`). Historical outputs and hashes are preserved under `results/`; do not
 re-label a replay as an independent sample.
 
 For optional local generation, install `.[inference]`; the runtime requires PyTorch and Transformers. The pinned Qwen model was tested on CPU. The CUDA/vLLM benchmark path used by the authors is unavailable in the measured environment.

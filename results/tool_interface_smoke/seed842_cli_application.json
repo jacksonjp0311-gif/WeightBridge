@@ -1,0 +1,34 @@
+{
+  "agent_type": "deterministic diagnostic search; not an LLM",
+  "candidate_persisted_for_replay": false,
+  "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+  "changed_entries": 1,
+  "changed_fraction": 0.08333333333333333,
+  "experiment_id": "toy-discovery-20261103T035435Z-ddc5c385",
+  "host_policy": {
+    "allow_tensors": [
+      "output_bias"
+    ],
+    "max_abs_delta": 5.0,
+    "max_entries": 1,
+    "max_fraction": 0.08333333333333333,
+    "schema": "weightbridge.policy.v1"
+  },
+  "inspection": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "tensor_count": 4,
+    "total_parameters": 12
+  },
+  "interpretation": "A local AI caller can invoke inspect and apply through the CLI; proposals are still constrained by the host policy.",
+  "matches_recorded_agent_candidate": true,
+  "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+  "recorded_at_utc": "2026-11-03T03:57:47.607815+00:00",
+  "schema": "weightbridge.tool_interface_smoke.v1",
+  "scope": "CLI interoperability replay only; no new behavioral score or independent experiment",
+  "scoring_performed_in_cli_replay": false,
+  "seed": 842,
+  "tools_exercised": [
+    "python -m weightbridge inspect",
+    "python -m weightbridge apply"
+  ]
+}
