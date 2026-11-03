@@ -1,0 +1,116 @@
+{
+  "schema": "weightbridge.phase_iiig.behavioral_adaptation.v4",
+  "checkpoints": {
+    "qwen": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8"
+  },
+  "seeds": {
+    "practice": "weightbridge-iiig-qwen-replication-practice-v4",
+    "selection": "weightbridge-iiig-qwen-replication-selection-v4"
+  },
+  "target_families": [
+    "multiplication"
+  ],
+  "roster_counts": {
+    "practice": {
+      "target": 30,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target": 42,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target": 30,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 600
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "answer": "one canonical decimal integer on the first completed line",
+    "completion": "newline or EOS within the generation budget",
+    "conditional_answer_prefix": " ",
+    "qualification_uses": "unrestricted deterministic greedy generation",
+    "selection_unit": "underlying item, with both fixed wordings"
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "family_lock": "Within each model choose among passing practice families by most repeatable errors, then most solved targets, then alphabetically. Selection can approve or hold the locked family and cannot switch it.",
+  "fitting_scope": "Use only practice. Include both wordings of the first eight stable wrong target items and first sixteen stable solved target items in frozen roster order, plus solved positive and copy controls. Use the observed wrong answer as contrast. The complete fitting roster has at most 64 presentations.",
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "multiplication",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 128,
+      "max_backward_calls": 4,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 65536,
+      "max_update_norm": 1.5,
+      "max_rank": 1,
+      "max_candidates": 2
+    },
+    "data": {
+      "practice": "iiig-qwen-replication-practice-v4",
+      "evaluation": "iiig-qwen-replication-hidden-v4"
+    },
+    "methods": [
+      "constrained",
+      "gradient"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "candidate_lock": "Reload all candidates for selection. Eligible candidates meet the parsing floor, improve at least one target item and preserve every correct baseline presentation. Lock the highest-gain eligible candidate, breaking ties by intent method order. Keep hidden closed for a model with no eligible candidate. Evaluate all its eligible arms on hidden but accept only the locked candidate.",
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "evaluation_scope": "After all declared participant plans and candidate receipts are locked, measure each admitted model on its locked target family, corresponding positive controls, and copy controls. Count correct items only when both wordings are correct. Preserve every baseline-correct target or control presentation. Keep controls separate from target gain.",
+  "eligible_families": {
+    "qwen": [
+      "multiplication"
+    ]
+  },
+  "followup_design": "Larger Qwen-only replication after the v3 practice gate passed and selection had one stable error. Qwen receives fresh 4-by-1, 4-by-3 and 5-by-2 operand-width tiers, distinct 12\u201327-by-2 positive controls and distinct five-digit copy controls. The twelve-token completion cap covers seven-digit products and framing. Admission, candidate selection and hidden acceptance thresholds are unchanged. SmolLM2 remains on its separate v2 HOLD.",
+  "fit_limits": {
+    "max_repeatable_error_items": 8,
+    "max_solved_target_items": 16,
+    "max_rows": 64
+  }
+}

@@ -82,3 +82,19 @@ were the last digit of the input. These rounds held before fitting.
 Their hidden rosters remain outside the public archive.
 [Arithmetic v1 evidence](../results/phase-iii-g/arithmetic-v1) ·
 [Model-specific v2 evidence](../results/phase-iii-g/arithmetic-v2)
+
+## Expanded multiplication qualification
+
+The Qwen-only v3 study drew fresh 18-item practice and selection
+populations across three multiplication width tiers. Practice passed
+with 52/52 parses, all eight positive and copy controls solved, 10/18
+target items solved, and three repeatable errors. Selection parsed
+51/52, solved all eight controls and 8/18 target items, and found only
+one repeatable error. The frozen two-error gate held fitting. The hidden
+population remained unopened.
+
+The v3 scope declared Qwen alone under eligible families. Its checkpoint
+table still contained the SmolLM2 hash, so the generic finalizer required
+an additional lock. The closure receipt records the already measured
+HOLD from the sole declared participant, with zero fits and no hidden
+access. The v3 protocol and original runner remain byte-identical.

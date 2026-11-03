@@ -129,8 +129,11 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
     return report, files
 
 
-def archive(material, runs, out, *, followup=False, scaling=False):
-    if scaling:
+def archive(material, runs, out, *, followup=False, scaling=False, replication=False):
+    if replication:
+        from experiments.phase_iiig.roster_replication import PROTOCOL as protocol_path, load_split as read_split
+        from experiments.phase_iiig.run_replication import _sources as source_hashes
+    elif scaling:
         from experiments.phase_iiig.roster_scaling import PROTOCOL as protocol_path, load_split as read_split
         from experiments.phase_iiig.run_scaling import _sources as source_hashes
     elif followup:
@@ -160,7 +163,8 @@ def archive(material, runs, out, *, followup=False, scaling=False):
             raise ValueError("Duplicate model in the trial matrix")
         reports[model] = report
         paths.update({f"{model}/{name}": path for name, path in files.items()})
-    if set(reports) != set(config["checkpoints"]):
+    declared = config.get("eligible_families", config["checkpoints"])
+    if set(reports) != set(declared):
         raise ValueError("Archive needs every predeclared model report")
     lock_hashes = {model: file_hash(paths[f"{model}/candidate-lock.json"]) for model in reports}
     for model, report in reports.items():
@@ -200,9 +204,12 @@ if __name__ == "__main__":
     version = parser.add_mutually_exclusive_group()
     version.add_argument("--followup", action="store_true")
     version.add_argument("--scaling", action="store_true")
+    version.add_argument("--replication", action="store_true")
     args = parser.parse_args()
-    if args.scaling == (args.smollm2 is not None):
-        parser.error("Use --smollm2 for the two-model trials and omit it for --scaling")
-    runs = (args.qwen,) if args.scaling else (args.qwen, args.smollm2)
-    result = archive(args.material, runs, args.out, followup=args.followup, scaling=args.scaling)
+    singleton = args.scaling or args.replication
+    if singleton == (args.smollm2 is not None):
+        parser.error("Use --smollm2 for the two-model trials and omit it for Qwen-only trials")
+    runs = (args.qwen,) if singleton else (args.qwen, args.smollm2)
+    result = archive(args.material, runs, args.out, followup=args.followup, scaling=args.scaling,
+                     replication=args.replication)
     print(json.dumps(result["models"], indent=2))

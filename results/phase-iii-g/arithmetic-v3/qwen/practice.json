@@ -1,0 +1,1565 @@
+{
+  "resources": {
+    "batched_decode_steps": 70,
+    "cpu_seconds": 133.296875,
+    "generate_batches": 7,
+    "generated_examples": 52,
+    "padded_prompt_token_positions": 4284,
+    "peak_rss_bytes": 2582913024,
+    "wall_seconds": 22.713895499997307
+  },
+  "rows": [
+    {
+      "answer": "6696",
+      "exact": "6696",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        21,
+        21,
+        24,
+        21,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/00/0",
+      "item": "scaling/practice/multiplication/target/00",
+      "operands": [
+        744,
+        9
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 744 * 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6696\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "6696",
+      "exact": "6696",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        21,
+        21,
+        24,
+        21,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/00/1",
+      "item": "scaling/practice/multiplication/target/00",
+      "operands": [
+        744,
+        9
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 744 * 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6696\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "245642",
+      "exact": "245422",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        19,
+        20,
+        19,
+        17,
+        17,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/01/0",
+      "item": "scaling/practice/multiplication/target/01",
+      "operands": [
+        467,
+        526
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 467 * 526\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 245422\nExpression:",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "245642",
+      "exact": "245002",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        19,
+        20,
+        15,
+        15,
+        17,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/01/1",
+      "item": "scaling/practice/multiplication/target/01",
+      "operands": [
+        467,
+        526
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 467 * 526\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 245002\nExpression:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "209534",
+      "exact": "209594",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        15,
+        24,
+        20,
+        24,
+        19,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/02/0",
+      "item": "scaling/practice/multiplication/target/02",
+      "operands": [
+        8059,
+        26
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 8059 * 26\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 209594\nExpression:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "209534",
+      "exact": "209994",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        15,
+        24,
+        24,
+        24,
+        19,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/02/1",
+      "item": "scaling/practice/multiplication/target/02",
+      "operands": [
+        8059,
+        26
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 8059 * 26\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 209994\nExpression:",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "2991",
+      "exact": "2991",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        24,
+        24,
+        16,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/03/0",
+      "item": "scaling/practice/multiplication/target/03",
+      "operands": [
+        997,
+        3
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 997 * 3\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2991\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "2991",
+      "exact": "2991",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        24,
+        24,
+        16,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/03/1",
+      "item": "scaling/practice/multiplication/target/03",
+      "operands": [
+        997,
+        3
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 997 * 3\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2991\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "541360",
+      "exact": "536000",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        18,
+        21,
+        15,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/04/0",
+      "item": "scaling/practice/multiplication/target/04",
+      "operands": [
+        670,
+        808
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 670 * 808\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 536000\nExpression:",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "541360",
+      "exact": "536000",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        18,
+        21,
+        15,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/04/1",
+      "item": "scaling/practice/multiplication/target/04",
+      "operands": [
+        670,
+        808
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 670 * 808\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 536000\nExpression:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "242928",
+      "exact": "242928",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        19,
+        17,
+        24,
+        17,
+        23,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/05/0",
+      "item": "scaling/practice/multiplication/target/05",
+      "operands": [
+        8676,
+        28
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 8676 * 28\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 242928\nExpression:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "242928",
+      "exact": "242928",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        19,
+        17,
+        24,
+        17,
+        23,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/05/1",
+      "item": "scaling/practice/multiplication/target/05",
+      "operands": [
+        8676,
+        28
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 8676 * 28\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 242928\nExpression:",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "6958",
+      "exact": "6958",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        21,
+        24,
+        20,
+        23,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/06/0",
+      "item": "scaling/practice/multiplication/target/06",
+      "operands": [
+        994,
+        7
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 994 * 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6958\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "6958",
+      "exact": "6958",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        21,
+        24,
+        20,
+        23,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/06/1",
+      "item": "scaling/practice/multiplication/target/06",
+      "operands": [
+        994,
+        7
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 994 * 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6958\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "71145",
+      "exact": "71305",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        22,
+        16,
+        18,
+        15,
+        20,
+        198,
+        9309,
+        25,
+        220
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/07/0",
+      "item": "scaling/practice/multiplication/target/07",
+      "operands": [
+        459,
+        155
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 459 * 155\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 71305\nExpression: ",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "71145",
+      "exact": "71085",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        22,
+        16,
+        15,
+        23,
+        20,
+        198,
+        9309,
+        25,
+        220
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/07/1",
+      "item": "scaling/practice/multiplication/target/07",
+      "operands": [
+        459,
+        155
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 459 * 155\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 71085\nExpression: ",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "133686",
+      "exact": "133686",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        18,
+        18,
+        21,
+        23,
+        21,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/08/0",
+      "item": "scaling/practice/multiplication/target/08",
+      "operands": [
+        7427,
+        18
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 7427 * 18\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 133686\nExpression:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "133686",
+      "exact": "133686",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        18,
+        18,
+        21,
+        23,
+        21,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/08/1",
+      "item": "scaling/practice/multiplication/target/08",
+      "operands": [
+        7427,
+        18
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 7427 * 18\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 133686\nExpression:",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "1984",
+      "exact": "1984",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        24,
+        23,
+        19,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/09/0",
+      "item": "scaling/practice/multiplication/target/09",
+      "operands": [
+        248,
+        8
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 248 * 8\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1984\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "1984",
+      "exact": "1984",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        24,
+        23,
+        19,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/09/1",
+      "item": "scaling/practice/multiplication/target/09",
+      "operands": [
+        248,
+        8
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 248 * 8\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1984\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "399840",
+      "exact": "398880",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        24,
+        23,
+        23,
+        23,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/10/0",
+      "item": "scaling/practice/multiplication/target/10",
+      "operands": [
+        840,
+        476
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 840 * 476\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 398880\nExpression:",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "399840",
+      "exact": "399840",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        24,
+        24,
+        23,
+        19,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/10/1",
+      "item": "scaling/practice/multiplication/target/10",
+      "operands": [
+        840,
+        476
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 840 * 476\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 399840\nExpression:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "51350",
+      "exact": "51350",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        16,
+        18,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/11/0",
+      "item": "scaling/practice/multiplication/target/11",
+      "operands": [
+        2054,
+        25
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 2054 * 25\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 51350\nExpression: ",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "51350",
+      "exact": "51350",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        16,
+        18,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/11/1",
+      "item": "scaling/practice/multiplication/target/11",
+      "operands": [
+        2054,
+        25
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 2054 * 25\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 51350\nExpression: ",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "2592",
+      "exact": "2592",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        20,
+        24,
+        17,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/12/0",
+      "item": "scaling/practice/multiplication/target/12",
+      "operands": [
+        648,
+        4
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 648 * 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2592\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "2592",
+      "exact": "2592",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        17,
+        20,
+        24,
+        17,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/12/1",
+      "item": "scaling/practice/multiplication/target/12",
+      "operands": [
+        648,
+        4
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 648 * 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2592\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "802716",
+      "exact": "800000",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        23,
+        15,
+        15,
+        15,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/13/0",
+      "item": "scaling/practice/multiplication/target/13",
+      "operands": [
+        906,
+        886
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 906 * 886\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 800000\nExpression:",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "802716",
+      "exact": "800000",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        23,
+        15,
+        15,
+        15,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/13/1",
+      "item": "scaling/practice/multiplication/target/13",
+      "operands": [
+        906,
+        886
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 906 * 886\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 800000\nExpression:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "323400",
+      "exact": "323400",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        17,
+        18,
+        19,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/14/0",
+      "item": "scaling/practice/multiplication/target/14",
+      "operands": [
+        5880,
+        55
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 5880 * 55\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 323400\nExpression:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "323400",
+      "exact": "323400",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        17,
+        18,
+        19,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/14/1",
+      "item": "scaling/practice/multiplication/target/14",
+      "operands": [
+        5880,
+        55
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 5880 * 55\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 323400\nExpression:",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "1050",
+      "exact": "1050",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        15,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/15/0",
+      "item": "scaling/practice/multiplication/target/15",
+      "operands": [
+        150,
+        7
+      ],
+      "prefix_tokens": 78,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 150 * 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1050\nExpression: 1",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "1050",
+      "exact": "1050",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        15,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/15/1",
+      "item": "scaling/practice/multiplication/target/15",
+      "operands": [
+        150,
+        7
+      ],
+      "prefix_tokens": 82,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 150 * 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1050\nExpression: 1",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "376662",
+      "exact": "376622",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        22,
+        21,
+        21,
+        17,
+        17,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/16/0",
+      "item": "scaling/practice/multiplication/target/16",
+      "operands": [
+        858,
+        439
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 858 * 439\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 376622\nExpression:",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "376662",
+      "exact": "376622",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        22,
+        21,
+        21,
+        17,
+        17,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/16/1",
+      "item": "scaling/practice/multiplication/target/16",
+      "operands": [
+        858,
+        439
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 858 * 439\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 376622\nExpression:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "150977",
+      "exact": "150000",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        20,
+        15,
+        15,
+        15,
+        15,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/17/0",
+      "item": "scaling/practice/multiplication/target/17",
+      "operands": [
+        1819,
+        83
+      ],
+      "prefix_tokens": 80,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 1819 * 83\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 150000\nExpression:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "150977",
+      "exact": "150197",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        16,
+        20,
+        15,
+        16,
+        24,
+        22,
+        198,
+        9309,
+        25
+      ],
+      "group": "target",
+      "id": "scaling/practice/multiplication/target/17/1",
+      "item": "scaling/practice/multiplication/target/17",
+      "operands": [
+        1819,
+        83
+      ],
+      "prefix_tokens": 84,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 1819 * 83\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 150197\nExpression:",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "33",
+      "exact": "33",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        18,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        15
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/00/0",
+      "item": "scaling/practice/multiplication/positive/00",
+      "operands": [
+        11,
+        3
+      ],
+      "prefix_tokens": 77,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 11 * 3\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 33\nExpression: 100",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "33",
+      "exact": "33",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        18,
+        18,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        348
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/00/1",
+      "item": "scaling/practice/multiplication/positive/00",
+      "operands": [
+        11,
+        3
+      ],
+      "prefix_tokens": 81,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 11 * 3\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 33\nExpression: 10 *",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "90",
+      "exact": "90",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        24,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        348
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/01/0",
+      "item": "scaling/practice/multiplication/positive/01",
+      "operands": [
+        10,
+        9
+      ],
+      "prefix_tokens": 77,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 10 * 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 90\nExpression: 10 *",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "90",
+      "exact": "90",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        24,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        348
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/01/1",
+      "item": "scaling/practice/multiplication/positive/01",
+      "operands": [
+        10,
+        9
+      ],
+      "prefix_tokens": 81,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 10 * 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 90\nExpression: 10 *",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "50",
+      "exact": "50",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        348
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/02/0",
+      "item": "scaling/practice/multiplication/positive/02",
+      "operands": [
+        10,
+        5
+      ],
+      "prefix_tokens": 77,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 10 * 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 50\nExpression: 10 *",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "50",
+      "exact": "50",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        15,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        348
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/02/1",
+      "item": "scaling/practice/multiplication/positive/02",
+      "operands": [
+        10,
+        5
+      ],
+      "prefix_tokens": 81,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 10 * 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 50\nExpression: 10 *",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "55",
+      "exact": "55",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        20,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        15
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/03/0",
+      "item": "scaling/practice/multiplication/positive/03",
+      "operands": [
+        11,
+        5
+      ],
+      "prefix_tokens": 77,
+      "prompt": "Multiply the integers. Write only decimal digits for the product.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 11 * 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 55\nExpression: 100",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "55",
+      "exact": "55",
+      "family": "multiplication",
+      "generated_token_ids": [
+        220,
+        20,
+        20,
+        198,
+        9309,
+        25,
+        220,
+        16,
+        15,
+        15
+      ],
+      "group": "positive",
+      "id": "scaling/practice/multiplication/positive/03/1",
+      "item": "scaling/practice/multiplication/positive/03",
+      "operands": [
+        11,
+        5
+      ],
+      "prefix_tokens": 81,
+      "prompt": "Find the exact product of each pair of factors. Use an integer without separators.\nExpression: 10 * 7\nAnswer: 70\nExpression: 112 * 3\nAnswer: 336\nExpression: 1040 * 12\nAnswer: 12480\nExpression: 11 * 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 55\nExpression: 100",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1243",
+      "exact": "1243",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        16,
+        17,
+        19,
+        18,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/00/0",
+      "item": "scaling/practice/copy/preserve/00",
+      "operands": [
+        1243
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 1243\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1243\nNumber: 1",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1243",
+      "exact": "1243",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        16,
+        17,
+        19,
+        18,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/00/1",
+      "item": "scaling/practice/copy/preserve/00",
+      "operands": [
+        1243
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 1243\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1243\nNumber: 1",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "7390",
+      "exact": "7390",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        22,
+        18,
+        24,
+        15,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/01/0",
+      "item": "scaling/practice/copy/preserve/01",
+      "operands": [
+        7390
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 7390\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7390\nNumber: 1",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "7390",
+      "exact": "7390",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        22,
+        18,
+        24,
+        15,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/01/1",
+      "item": "scaling/practice/copy/preserve/01",
+      "operands": [
+        7390
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 7390\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7390\nNumber: 1",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "4259",
+      "exact": "4259",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        19,
+        17,
+        20,
+        24,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/02/0",
+      "item": "scaling/practice/copy/preserve/02",
+      "operands": [
+        4259
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 4259\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4259\nNumber: 1",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "4259",
+      "exact": "4259",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        19,
+        17,
+        20,
+        24,
+        198,
+        2742,
+        25,
+        220,
+        16
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/02/1",
+      "item": "scaling/practice/copy/preserve/02",
+      "operands": [
+        4259
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 4259\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4259\nNumber: 1",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "5708",
+      "exact": "5708",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        20,
+        22,
+        15,
+        23,
+        198,
+        2742,
+        25,
+        220,
+        21
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/03/0",
+      "item": "scaling/practice/copy/preserve/03",
+      "operands": [
+        5708
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 5708\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5708\nNumber: 6",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "5708",
+      "exact": "5708",
+      "family": "copy",
+      "generated_token_ids": [
+        220,
+        20,
+        22,
+        15,
+        23,
+        198,
+        2742,
+        25,
+        220,
+        21
+      ],
+      "group": "preserve",
+      "id": "scaling/practice/copy/preserve/03/1",
+      "item": "scaling/practice/copy/preserve/03",
+      "operands": [
+        5708
+      ],
+      "prefix_tokens": 69,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 1398\nAnswer: 1398\nNumber: 2876\nAnswer: 2876\nNumber: 4791\nAnswer: 4791\nNumber: 5708\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5708\nNumber: 6",
+      "tier": null,
+      "wording": 1
+    }
+  ]
+}
