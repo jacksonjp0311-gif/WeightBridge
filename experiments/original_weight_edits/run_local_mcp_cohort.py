@@ -13,6 +13,8 @@ from threading import Thread
 import time
 import uuid
 
+import numpy as np
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
@@ -20,6 +22,7 @@ from weightbridge.evaluation.freeze_cohort import freeze_protocol
 from weightbridge.evaluation.mcp_cohort import _canonical_hash, _file_sha256, _read_json, summarize_cohort
 from weightbridge.diagnostics.toy_mlp import ToyMLP
 from weightbridge.diagnostics.coordinate_search import disconnected_coordinate, stratified_proposals
+from weightbridge.diagnostics.breakpoint_search import breakpoint_menu, rank_key
 from weightbridge.provenance import peak_rss_bytes
 
 
@@ -33,6 +36,7 @@ TOKEN_LIMIT = 160
 THREADS = 6
 REPEAT_LIMIT = 3
 SEARCH_ARMS = ("advice", "reject", "search")
+SOLVER_ARMS = ("guided", "solver")
 
 GUIDE = """Return one JSON object with keys tool (the tool name) and arguments (an object).
 First call get_diagnostic_report with empty arguments.
@@ -121,6 +125,34 @@ def generate(tokenizer, model, messages):
     return tokenizer.decode(new_tokens, skip_special_tokens=True), prompt_tokens, len(new_tokens)
 
 
+def choose_menu(tokenizer, model, prompt, options, menu):
+    """Score only the allowed one-token labels in one model forward pass."""
+    import torch
+
+    messages = [{"role": "system", "content": prompt}, {"role": "user", "content": (
+        "Choose one of the labeled weight edits from practice evidence. Prefer high practice accuracy, "
+        "a positive worst-case margin, and a small edit when outcomes are comparable. "
+        "You are choosing one candidate for independent evaluation. Reply with its label only.\n"
+        + json.dumps({"practice_n": menu["practice_n"], "baseline_correct": menu["baseline_correct"],
+                      "candidates": options}, separators=(",", ":"))
+    )}]
+    encoded = tokenizer.apply_chat_template(
+        messages, add_generation_prompt=True, enable_thinking=False,
+        tokenize=True, return_dict=True, return_tensors="pt",
+    )
+    labels = list(options)
+    tokens = [tokenizer.encode(label, add_special_tokens=False) for label in labels]
+    if any(len(token) != 1 for token in tokens):
+        raise RuntimeError("candidate labels must be single tokens")
+    with torch.inference_mode():
+        scores = model(**encoded, logits_to_keep=1).logits[0, -1, [token[0] for token in tokens]]
+    scores = scores.float().tolist()
+    return labels[max(range(len(labels)), key=scores.__getitem__)], {
+        "input_tokens": int(encoded["input_ids"].shape[1]),
+        "model_forwards": 1, "label_logits": dict(zip(labels, scores)),
+    }
+
+
 def check_output_path(path):
     if os.name == "nt":
         receipt = (path / "trial-00" / "candidates" / "sessions" / ("codex-" + "0" * 32)
@@ -140,6 +172,8 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
     diagnostic_shown = False
     blocked = {}
     best_alias = None
+    solver = strategy in SOLVER_ARMS
+    numerical = strategy == "search" or solver
     messages = [{"role": "system", "content": prompt}, {"role": "user", "content": GUIDE}]
     events_path = root / f"{task_id}.model_turns.jsonl"
     with (root / f"{task_id}.broker.stderr.txt").open("x", encoding="utf-8") as stderr, \
@@ -195,12 +229,40 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                         view["tensors"], blocked, _read_json(protocol_path)["host_policy"], task_seed))
                     if len(proposals) != TURN_LIMIT:
                         raise RuntimeError("coordinate schedule must fill the frozen evaluation budget")
+                if solver:
+                    with np.load(output / "practice.npz", allow_pickle=False) as practice:
+                        menu = breakpoint_menu(ToyMLP.load(output / "base.npz"), practice["features"],
+                                               practice["labels"], _read_json(protocol_path)["host_policy"])
+                    baseline_correct = best_correct = view["practice"]["correct"]
+                    if menu["baseline_correct"] != baseline_correct:
+                        raise RuntimeError("analytical baseline differs from broker practice score")
+                    order = np.random.default_rng(task_seed).permutation(len(menu["candidates"]))
+                    options = {chr(65 + i): menu["candidates"][int(j)] for i, j in enumerate(order)}
+                    label, selection = None, {"model_forwards": 0, "input_tokens": 0}
+                    if options:
+                        if strategy == "guided":
+                            label, selection = choose_menu(tokenizer, model, prompt, options, menu)
+                        else:
+                            label = min(options, key=lambda item: rank_key(options[item]))
+                    write_json(output / "solver_menu.json", {
+                        "baseline_correct": baseline_correct, "practice_n": menu["practice_n"],
+                        "analytical_deltas_scored": menu["analytical_deltas_scored"],
+                        "options": options, "selected_label": label, **selection,
+                    })
+                    proposals = []
+                    if label is not None:
+                        chosen = options[label]
+                        proposals.append({
+                            "tensor": chosen["tensor"], "index": chosen["index"], "delta": chosen["delta"],
+                            "reason": ("AI selected a practice-screened breakpoint candidate." if strategy == "guided"
+                                       else "Deterministic selector chose the top practice-screened breakpoint candidate."),
+                        })
             ended = False
             last_output = None
             repeats = 0
             stop_reason = "model turn budget exhausted"
-            for turn in range(1, TURN_LIMIT + 1):
-                if strategy == "search":
+            for turn in range(1, (len(proposals) if solver else TURN_LIMIT) + 1):
+                if numerical:
                     text = json.dumps(proposals[turn - 1])
                     log({"turn": turn, "search_proposal": proposals[turn - 1]})
                 else:
@@ -242,7 +304,7 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                         arguments["candidate_id"] = aliases[candidate_id]
                     json.dumps(request, allow_nan=False)
                 except ValueError as exc:
-                    if strategy == "search":
+                    if numerical:
                         raise
                     log({"turn": turn, "transport_error": str(exc)})
                     messages.append({"role": "user", "content": "Invalid request. Use one JSON object in the specified format."})
@@ -252,7 +314,7 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     ended = True
                     break
                 result = response.get("result")
-                if strategy == "search" and not response.get("ok"):
+                if numerical and not response.get("ok"):
                     raise RuntimeError("frozen coordinate proposal failed broker validation")
                 if response.get("ok") and isinstance(result, dict):
                     if tool == "get_diagnostic_report":
@@ -274,9 +336,12 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                             response = {"candidate_alias": alias,
                                         "practice_result": evaluation["result"]["result"],
                                         "next": "Select an evaluated alias, propose a revision, or stop."}
-                            if strategy == "search":
+                            if numerical:
                                 correct = response["practice_result"]["correct"]
-                                if correct > best_correct:
+                                if solver and correct != options[label]["practice_correct"]:
+                                    log({"verification_mismatch": correct,
+                                         "analytical_correct": options[label]["practice_correct"]})
+                                elif correct > best_correct:
                                     best_correct, best_alias = correct, alias
                     if tool == "evaluate_practice":
                         response = {"practice_result": result["result"],
@@ -284,16 +349,18 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                 if response.get("ok") is False:
                     response = {"error": str(response.get("error", ""))[:350],
                                 "next": "Correct the request using the diagnostics. Do not repeat a rejected patch."}
-                if strategy != "search":
+                if not numerical:
                     messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
             if not ended:
-                if strategy == "search" and best_alias is not None:
+                if numerical and best_alias is not None:
                     log({"search_selection": best_alias, "baseline_correct": baseline_correct,
                          "selected_practice_correct": best_correct})
                     response = send({"tool": "finalize_candidate",
                                      "arguments": {"candidate_id": aliases[best_alias]}})
                 else:
-                    if strategy == "search":
+                    if solver:
+                        stop_reason = "no selected breakpoint candidate verified an improvement"
+                    elif strategy == "search":
                         stop_reason = "no coordinate proposal improved practice accuracy"
                     log({"host_stop": stop_reason})
                     response = send({"tool": "stop_without_candidate",
@@ -328,12 +395,14 @@ def main():
                         help="compare control and connectivity views on identical fresh tasks")
     parser.add_argument("--paired-search", action="store_true",
                         help="compare advice, rejection, and coordinate search on identical fresh tasks")
+    parser.add_argument("--paired-solver", action="store_true",
+                        help="compare AI and deterministic selection from the same breakpoint menu")
     args = parser.parse_args()
     if args.seed_offset < 20_000:
         parser.error("--seed-offset must be at least 20000")
-    if args.paired_connectivity and args.paired_search:
+    if sum((args.paired_connectivity, args.paired_search, args.paired_solver)) > 1:
         parser.error("select one paired experiment")
-    paired = args.paired_connectivity or args.paired_search
+    paired = args.paired_connectivity or args.paired_search or args.paired_solver
     if paired and args.mode != "patch-form":
         parser.error("paired experiments require --mode patch-form")
     os.environ["HF_HUB_OFFLINE"] = "1"
@@ -346,6 +415,8 @@ def main():
         parser.error("--out must be within the checkout for portable evidence paths")
     if args.paired_search:
         arm_paths = {arm: out / arm for arm in SEARCH_ARMS}
+    elif args.paired_solver:
+        arm_paths = {arm: out / arm for arm in SOLVER_ARMS}
     elif args.paired_connectivity:
         arm_paths = {"control": out / "control", "probe": out / "probe"}
     else:
@@ -414,12 +485,26 @@ def main():
                 receipt.update(provider="weightbridge-algorithm", model_id="stratified-coordinate-search",
                                version="1", sampling={"schedule": "one eligible index per tensor, -3 then +3",
                                                       "seed": "task split seed", "practice_evaluation_cap": TURN_LIMIT})
+        if args.paired_solver:
+            receipt.update(connectivity_probe=True, strategy=arm, practice_evaluation_cap=1,
+                           toy_model_source_sha256=_file_sha256(ROOT / "weightbridge/diagnostics/toy_mlp.py"),
+                           search_source_sha256=_file_sha256(ROOT / "weightbridge/diagnostics/coordinate_search.py"),
+                           breakpoint_source_sha256=_file_sha256(ROOT / "weightbridge/diagnostics/breakpoint_search.py"))
+            if arm == "solver":
+                receipt.pop("checkpoint_files_sha256")
+                receipt.update(provider="weightbridge-algorithm", model_id="practice-breakpoint-selector",
+                               version="1", sampling={"selection": "best practice score, margin, then smallest edit"})
+            else:
+                receipt["sampling"] = {"selection": "argmax over the allowed label logits",
+                                       "model_forwards": 1, "device": "cpu", "dtype": "bfloat16",
+                                       "torch_threads": THREADS, "torch": version("torch"),
+                                       "transformers": version("transformers")}
         write_json(receipt_path, receipt)
         manifest = path / "frozen_protocol.json"
         freeze_protocol(draft_path, receipt_path, manifest, cohort_id=(
             f"{out.name}-{arm}" if paired else out.name),
             identity_provenance=("Local deterministic search source and schedule were hashed."
-                                 if arm == "search" else
+                                 if arm in ("search", "solver") else
                                  "Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task."))
         manifests[arm] = manifest
     schedule = []
@@ -454,6 +539,16 @@ def main():
             "protocol_sha256": {arm: _read_json(path)["protocol_sha256"]
                                 for arm, path in manifests.items()},
         })
+    if args.paired_solver:
+        write_json(out / "paired_plan.json", {
+            "schema": "weightbridge.solver_selection_comparison.v1",
+            "seed_offset": args.seed_offset, "schedule": schedule,
+            "hypothesis": "An AI can select a practice-supported candidate that improves a fresh holdout.",
+            "primary": "tasks with finalized positive holdout gain, paired with deterministic selection",
+            "practice_evaluation_cap": 1,
+            "protocol_sha256": {arm: _read_json(path)["protocol_sha256"]
+                                for arm, path in manifests.items()},
+        })
     records = {arm: [] for arm in arm_paths}
     failure = None
     try:
@@ -462,8 +557,10 @@ def main():
             print(f"Starting {arm} {task_id}", flush=True)
             record = run_task(task_id, arm_paths[arm], manifests[arm], broker_python,
                               tokenizer, model, prompt, args.mode,
-                              True if args.paired_search else arm == "probe" if args.paired_connectivity else None,
-                              strategy=arm if args.paired_search else None, task_seed=by_id[task_id]["seed"])
+                              True if args.paired_search or args.paired_solver else
+                              arm == "probe" if args.paired_connectivity else None,
+                              strategy=arm if args.paired_search or args.paired_solver else None,
+                              task_seed=by_id[task_id]["seed"])
             records[arm].append(record)
             print(f"Completed {arm} {task_id}", flush=True)
     except Exception as exc:
