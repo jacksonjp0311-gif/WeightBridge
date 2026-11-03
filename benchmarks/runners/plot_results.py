@@ -360,10 +360,41 @@ def _resource_figures(summary: dict[str, Any], outdir: Path) -> None:
     plt.close(fig)
 
 
+def _blind_qwen_figure(runs: list[dict[str, Any]], outdir: Path) -> None:
+    if not runs:
+        return
+    import matplotlib.pyplot as plt
+
+    fig, axes = plt.subplots(1, len(runs), figsize=(4 * len(runs), 4),
+                             sharey=True, constrained_layout=True, squeeze=False)
+    axes[0, 0].invert_yaxis()
+    for ax, run in zip(axes[0], runs):
+        scores = run["target_correct"]
+        names = ["pristine", "damaged", "repaired", *run["matched_random_controls"]]
+        labels = ["Pristine", "Damaged", "Reloaded repair", "Random 1", "Random 2", "Random 3"]
+        bars = ax.barh(labels, [scores[name] for name in names],
+                       color=["#64748b", "#a85542", "#197a70", "#a5aeba", "#a5aeba", "#a5aeba"])
+        ax.bar_label(bars, padding=3)
+        ax.set_xlim(0, run["target_n"] * 1.15)
+        ax.set_xlabel(f"Correct out of {run['target_n']} target prompts")
+        flips = run["sentinel_prediction_flips_vs_damaged"]
+        ax.set_title(f"{run['experiment_id'].rsplit('-', 1)[-1].upper()} · {run['disposition']}\n"
+                     f"{flips}/{run['sentinel_n']} unrelated predictions changed")
+    fig.suptitle("Blind Qwen checkpoint repair on held-out prompts")
+    fig.savefig(outdir / "qwen_blind_repair.png", dpi=160)
+    plt.close(fig)
+
+
 def build() -> dict[str, Any]:
     raw_records = load_ledger()
     experiments = canonical_experiments(raw_records)
     by_id = {item["experiment_id"]: item for item in experiments}
+    blind_qwen = []
+    for item in experiments:
+        if item["experiment_id"].startswith("qwen-blind-repair-") and "summary" in item["evaluation"]:
+            evidence = ROOT / item["artifact_root"] / item["evaluation"]["summary"]
+            blind_qwen.append({"experiment_id": item["experiment_id"], "raw_evidence": relative(evidence),
+                               **read_json(evidence)})
     # The seed-731 early records were duplicate replays; the ledger correction
     # excludes the first and one isolated replay is retained as historical only.
     toy = [item for item in experiments if item["experiment_id"] in {
@@ -551,6 +582,7 @@ def build() -> dict[str, Any]:
         "gradient_baseline": gradient,
         "qwen_smoke_64": qwen64,
         "qwen_smoke_256": qwen256,
+        "qwen_blind_repair": blind_qwen,
         "cost_improvement_points": cost_points,
         "regression_rates": regressions,
         "outcomes_over_time": outcomes,
@@ -572,6 +604,7 @@ def main() -> None:
     args.figures.mkdir(parents=True, exist_ok=True)
     _accuracy_figures(summary, args.figures)
     _qwen_figures(summary, args.figures)
+    _blind_qwen_figure(summary["qwen_blind_repair"], args.figures)
     _patch_figures(summary, args.figures)
     _mcp_agent_figures(summary, args.figures)
     _resource_figures(summary, args.figures)

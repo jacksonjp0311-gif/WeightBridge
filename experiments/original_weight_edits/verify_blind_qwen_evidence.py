@@ -3,8 +3,11 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import time
 
-from run_blind_qwen_repair import correct, digest, flips, mean_margin, read
+from run_blind_qwen_repair import (
+    Runner, correct, digest, flips, load_checkpoint, mean_margin, measure, read, tensor_name,
+)
 
 
 def require(condition, message):
@@ -32,6 +35,7 @@ def verify(root, frozen_source=None):
         require(digest(frozen_source) == protocol["source_sha256"], "frozen runner source differs")
     log = read(search / "search.json")
     summary = read(evaluation / "summary.json")
+    require(summary["practice_replay_exact"] is True, "persisted candidate did not replay practice scores")
     require(log["protocol_sha256"] == digest(public / "protocol.json"), "protocol hash mismatch")
     require(log["practice_sha256"] == protocol["practice_sha256"] == digest(public / "practice.json"),
             "practice hash mismatch")
@@ -45,6 +49,8 @@ def verify(root, frozen_source=None):
     require(all(not (a & b) for i, a in enumerate(partitions) for b in partitions[i + 1:]),
             "prompt overlap between frozen partitions")
     attempts = log["attempts"]
+    low_drift = protocol.get("practice_selection") == "minimum_sentinel_drift_at_half_best_target_gain"
+    drift_limit = protocol.get("max_practice_sentinel_margin_drift")
     require([(row["layer"], row["strength"]) for row in attempts] ==
             [(layer, strength) for layer in protocol["eligible_layers"] for strength in protocol["strengths"]],
             "practice grid does not match protocol")
@@ -57,9 +63,22 @@ def verify(root, frozen_source=None):
         sentinel = flips(log["baseline"]["sentinel"], row["rows"]["sentinel"])
         require((target, margin, sentinel) == (row["target_gain"], row["target_margin_gain"], row["sentinel_flips"]),
                 "stored practice aggregates differ from raw rows")
+        if low_drift or drift_limit is not None:
+            drift = sum(abs(a["margin"] - b["margin"])
+                        for a, b in zip(log["baseline"]["sentinel"], row["rows"]["sentinel"]))
+            require(drift == row["sentinel_margin_drift"], "stored sentinel drift differs from raw rows")
         if target > 0 and sentinel == 0:
             eligible.append((-target, row["rounded_frobenius_norm"], -margin, i))
-    require(bool(eligible) and min(eligible)[-1] == log["selected_attempt"], "repair did not follow practice selection")
+    require(bool(eligible), "no eligible repair candidate")
+    if low_drift:
+        best_gain = -min(eligible)[0]
+        eligible = [(attempts[key[-1]]["sentinel_margin_drift"], *key)
+                    for key in eligible if -2 * key[0] >= best_gain]
+    if drift_limit is not None:
+        eligible = [(key[0], attempts[key[-1]]["sentinel_margin_drift"], *key[1:])
+                    for key in eligible if attempts[key[-1]]["sentinel_margin_drift"] <= drift_limit]
+    require(bool(eligible) and min(eligible)[-1] == log["selected_attempt"],
+            "repair did not follow practice selection")
     fault = read(oracle / "fault_receipt.json")
     repair = read(search / "repair_receipt.json")
     require(fault["base_sha256"] == read(oracle / "calibration.json")["pristine_checkpoint_sha256"]
@@ -84,9 +103,11 @@ def verify(root, frozen_source=None):
     require(recovered == summary["lost_accuracy_recovered"]
             and unrelated == summary["sentinel_prediction_flips_vs_damaged"], "recovery summary differs")
     control_names = names[3:]
-    repair_norm = attempts[log["selected_attempt"]]["rounded_frobenius_norm"]
+    selected = attempts[log["selected_attempt"]]
+    repair_norm = selected["rounded_frobenius_norm"]
     repair_doc = read(search / "repair_patch.json")
     repair_slice = repair_doc["slices"][0]
+    require(repair_slice["tensor"] == tensor_name(selected["layer"]), "repair tensor differs from selected layer")
     check_receipt(repair_doc, repair, protocol)
     check_receipt(read(oracle / "fault_patch.json"), fault, protocol)
     for name in control_names:
@@ -108,9 +129,26 @@ def verify(root, frozen_source=None):
             "lost_accuracy_recovered": recovered}
 
 
+def replay_pristine(root, pristine):
+    """Load the pristine checkpoint independently after evaluating the repair."""
+    wall, cpu = time.perf_counter(), time.process_time()
+    original_hash = read(root / "evaluator" / "calibration.json")["pristine_checkpoint_sha256"]
+    require(load_checkpoint(pristine).checkpoint_sha256() == original_hash, "pristine checkpoint differs")
+    runner = Runner(pristine)
+    scores, _ = measure(runner, read(root / "evaluator" / "holdout.json"))
+    require(scores == read(root / "evaluation" / "pristine_scores.json"), "pristine scores did not replay")
+    return {"pristine_checkpoint_sha256": original_hash, "pristine_holdout_replayed": True,
+            "wall_seconds": time.perf_counter() - wall, "cpu_seconds": time.process_time() - cpu,
+            **runner.resources()}
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("evidence", type=Path)
     parser.add_argument("--frozen-source", type=Path)
+    parser.add_argument("--pristine", type=Path, help="reload the original model and replay its holdout scores")
     args = parser.parse_args()
-    print(json.dumps(verify(args.evidence, args.frozen_source), sort_keys=True))
+    result = verify(args.evidence, args.frozen_source)
+    if args.pristine is not None:
+        result["rollback"] = replay_pristine(args.evidence, args.pristine)
+    print(json.dumps(result, sort_keys=True))

@@ -22,7 +22,14 @@ and tries `ΔW = s u vᵀ`. Here `u` is the normalized difference
 of the answer-token output embedding vectors and `s` is one of eight frozen
 strengths. Selection maximizes target gain among candidates with zero practice
 sentinel flips. It breaks ties by smaller realized BF16 norm, then larger
-target margin gain.
+target margin gain. The low-drift trial uses `λ = 256` during search,
+keeps candidates with zero practice sentinel flips and at least half the
+largest eligible target gain, then minimizes the sum of absolute practice
+sentinel margin changes. It breaks ties using the initial ranking.
+The margin-budget trial instead maximizes practice target gain under a
+total drift budget of `0.25` across 40 practice sentinels and zero practice
+sentinel flips. It breaks ties by lower drift, smaller realized norm, then
+larger target margin gain.
 
 The evaluator independently loads the saved repair and verifies its practice
 scores. Held-out recovery is `(repair correct − damaged correct) / (pristine
@@ -63,6 +70,17 @@ a population-level estimate from a single damaged checkpoint.
   same-format holdout. The source-hash gate stopped the retired trial before
   search loaded a model. The replacement holdout has zero exact overlaps
   with both earlier scored holdouts.
+- [Sentinel-constrained trial FAIL](../results/qwen-blind-repair-v4/evaluation/summary.json).
+  The saved repair recovered 13/13 lost target answers and scored 24/24.
+  Random controls scored 10/24, 12/24 and 9/24. One unrelated prediction
+  changed from incorrect to correct, which failed exact preservation.
+  The [rollback replay](../results/qwen-blind-repair-v4/evaluation/rollback.json)
+  independently reloaded the pristine model and matched every recorded
+  prediction and answer-logit margin.
+- [Low-drift trial FAIL](../results/qwen-blind-repair-v5/evaluation/summary.json).
+  Pristine scored 23/24. Damaged and all three random controls scored 0/24.
+  The saved repair recovered 8/23 losses and changed zero of 32 unrelated
+  predictions. The recovery threshold remained at least 50%.
 
 ## Run or replay
 
@@ -77,12 +95,14 @@ Run the three stages in sequence and stop on a nonzero exit.
 $runner = 'experiments/original_weight_edits/run_blind_qwen_repair.py'
 $base = 'C:/path/to/pinned/Qwen3.5-0.8B'
 $run = Join-Path $env:TEMP 'weightbridge-blind-qwen-replay'
-python $runner prepare --run $run --pristine $base --fault-seed 919630
+python $runner prepare --run $run --pristine $base --fault-seed 919650
 python $runner search --public "$run/public" --out "$run/search"
 python $runner evaluate --run $run --pristine $base
 ```
 
-Use `e49dc82` for the sentinel-constrained trial with seed `919630`.
+Use `1264cb6` for the margin-budget trial with seed `919650`, `804c8d5` for
+the low-drift trial with seed `919643`, and `e49dc82` for
+the sentinel-constrained trial with seed `919630`.
 The first same-format trial used `f433517` and seed `919623`.
 The paraphrase trial used `1f3990c` and seed `919611`. The protocol binds the
 runner's exact source bytes. On Windows, use `git -c core.autocrlf=false
@@ -95,7 +115,8 @@ python experiments/original_weight_edits/verify_blind_qwen_evidence.py results/q
 ```
 
 Pass `--frozen-source` with the runner from the corresponding source commit
-to include its byte hash in the audit.
+to include its byte hash in the audit. Pass `--pristine` with the local
+model directory to re-evaluate the original checkpoint after using the repair.
 
 The evaluator writes raw per-prompt predictions, true-label logit margins and
 stage CPU, wall-time and peak RSS measurements. The evidence export contains

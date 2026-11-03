@@ -381,3 +381,30 @@ forwards and 11,407 input tokens. The original direct-proposal AI transfer
 study remains a separate held experiment. Qwen served as the selector
 in this study and the edited checkpoints were toy MLPs.
 [Confirmation and raw evidence](../results/wb-bf/comparison.json)
+
+## Blind weight repair on Qwen3.5-0.8B
+
+The search independently chose an edit from damaged-checkpoint activations
+and practice scores. It found the injected layer in both initial completed
+trials without receiving the pristine checkpoint or the injected patch. A
+separate evaluator loaded the saved repair and exactly replayed its practice
+scores. In the first same-format trial the edit recovered both held-out errors
+and outscored the three norm-matched random edits. It also changed three
+unrelated predictions, including one regression, so it failed the frozen
+locality gate. In the paraphrase trial the injected fault changed logit margins
+without reducing target accuracy, leaving no accuracy loss to recover.
+
+The sentinel-constrained follow-up recovered 13/13 lost target answers
+and beat the best random control by 12/24. Its layer 23 patch changed
+59,265 stored BF16 values over 64 columns. It introduced no new sentinel
+errors and corrected one existing sentinel error, so it still failed exact
+prediction preservation. Reloading the pristine checkpoint afterward
+reproduced every original recorded holdout prediction and margin.
+
+These are interventions on a full transformer checkpoint under a synthetic
+localized fault. They support a narrow behavioral recovery claim. The design
+uses one correct target answer position and related injection and repair
+families. It does not estimate transfer to arbitrary defects, alternative
+answer positions, or natural generation failures. The search was deterministic
+and did not use an LLM to formulate or select its patch.
+[Protocol and raw evidence](QWEN_BLIND_REPAIR.md)
