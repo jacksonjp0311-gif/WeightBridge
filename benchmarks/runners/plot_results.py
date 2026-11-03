@@ -437,12 +437,76 @@ def _repair_cohort_figure(cohort: dict[str, Any], outdir: Path) -> None:
     plt.close(fig)
 
 
+def _wording_ablation_summary(root: Path) -> dict[str, Any]:
+    evidence = root / "summary.json"
+    result = read_json(evidence)
+    cases = [root / f"case-{row['slot']:02d}" for row in result["cases"] if "modes" in row]
+    scores = [read_json(case / "evaluation/scores.json") for case in cases]
+    holdouts = [read_json(case / "evaluator/holdout.json") for case in cases]
+    arms = ("pristine", "damaged", "single", "multi", "random_single", "random_multi")
+    totals = {}
+    for form in ("same", "paraphrase", "comparison", "maximum"):
+        indices = [[i for i, row in enumerate(holdout["target"]) if form in (row["form"], row["wording"])]
+                   for holdout in holdouts]
+        totals[form] = {"n": sum(map(len, indices)),
+                        "correct": {arm: sum(score[arm]["target"][i]["correct"]
+                                             for score, group in zip(scores, indices) for i in group)
+                                    for arm in arms}}
+    comparison = None
+    wins = ties = losses = 0
+    if scores:
+        paired = {arm: [[row["correct"] for row, prompt in zip(score[arm]["target"], holdout["target"])
+                         if prompt["form"] == "paraphrase"] for score, holdout in zip(scores, holdouts)]
+                  for arm in ("single", "multi")}
+        comparison = paired_cluster_bootstrap(paired["single"], paired["multi"])
+        differences = [sum(a) - sum(b) for a, b in zip(paired["multi"], paired["single"])]
+        wins, ties, losses = (sum(d > 0 for d in differences), sum(d == 0 for d in differences),
+                              sum(d < 0 for d in differences))
+    locality = {
+        arm: {"prediction_flips": sum(a["prediction"] != b["prediction"] for score in scores
+                                      for a, b in zip(score["pristine"]["sentinel"], score[arm]["sentinel"])),
+              "correct_to_incorrect": sum(a["correct"] and not b["correct"] for score in scores
+                                          for a, b in zip(score["pristine"]["sentinel"], score[arm]["sentinel"]))}
+        for arm in arms if arm != "pristine"
+    }
+    return {**result, "raw_evidence": relative(evidence), "held_out_totals": totals,
+            "multi_minus_single_paraphrase": comparison,
+            "multi_paraphrase_wins_ties_losses": {"wins": wins, "ties": ties, "losses": losses},
+            "locality_vs_pristine": locality}
+
+
+def _wording_ablation_figure(result: dict[str, Any], outdir: Path) -> None:
+    rows = [row for row in result["cases"] if "modes" in row]
+    if not rows:
+        return
+    import matplotlib.pyplot as plt
+
+    x = np.arange(len(rows))
+    fig, axes = plt.subplots(2, 1, figsize=(10, 5.9), sharex=True, constrained_layout=True)
+    for mode, offset, color in (("single", -0.2, "#68778f"), ("multi", 0.2, "#197a70")):
+        forms = [r["modes"][mode]["target_by_form"]["paraphrase"] for r in rows]
+        flips = [r["modes"][mode]["sentinel_flips_vs_pristine"]["guided"] for r in rows]
+        axes[0].bar(x + offset, [f["guided"] - f["damaged"] for f in forms], width=0.38,
+                    label=f"{mode.title()} wording", color=color)
+        axes[1].bar(x + offset, flips, width=0.38, color=color)
+    axes[0].axhline(0, color="#333333", linewidth=0.8)
+    axes[0].set_ylabel("Fresh paraphrase answers gained")
+    axes[0].legend()
+    axes[1].set_ylabel("Sentinel flips vs pristine")
+    axes[1].set_xticks(x, [f"{r['slot']:02d}\nL{r['layer']}" for r in rows])
+    axes[1].set_xlabel("Case and injected layer")
+    fig.suptitle("Qwen repair with one vs. three practice wordings")
+    fig.savefig(outdir / "qwen_wording_ablation.png", dpi=160)
+    plt.close(fig)
+
+
 def build() -> dict[str, Any]:
     raw_records = load_ledger()
     experiments = canonical_experiments(raw_records)
     by_id = {item["experiment_id"]: item for item in experiments}
     blind_qwen = []
     qwen_repair_cohorts = []
+    qwen_wording_ablations = []
     for item in experiments:
         if item["experiment_id"].startswith("qwen-blind-repair-") and "summary" in item["evaluation"]:
             evidence = ROOT / item["artifact_root"] / item["evaluation"]["summary"]
@@ -451,6 +515,9 @@ def build() -> dict[str, Any]:
         if item["experiment_id"].startswith("qwen-repair-cohort-"):
             qwen_repair_cohorts.append({"experiment_id": item["experiment_id"],
                                         **_repair_cohort_summary(ROOT / item["artifact_root"])})
+        if item["experiment_id"].startswith("qwen-wording-ablation-"):
+            qwen_wording_ablations.append({"experiment_id": item["experiment_id"],
+                                          **_wording_ablation_summary(ROOT / item["artifact_root"])})
     # The seed-731 early records were duplicate replays; the ledger correction
     # excludes the first and one isolated replay is retained as historical only.
     toy = [item for item in experiments if item["experiment_id"] in {
@@ -640,6 +707,7 @@ def build() -> dict[str, Any]:
         "qwen_smoke_256": qwen256,
         "qwen_blind_repair": blind_qwen,
         "qwen_repair_cohorts": qwen_repair_cohorts,
+        "qwen_wording_ablations": qwen_wording_ablations,
         "cost_improvement_points": cost_points,
         "regression_rates": regressions,
         "outcomes_over_time": outcomes,
@@ -664,6 +732,8 @@ def main() -> None:
     _blind_qwen_figure(summary["qwen_blind_repair"], args.figures)
     if summary["qwen_repair_cohorts"]:
         _repair_cohort_figure(summary["qwen_repair_cohorts"][-1], args.figures)
+    if summary["qwen_wording_ablations"]:
+        _wording_ablation_figure(summary["qwen_wording_ablations"][-1], args.figures)
     _patch_figures(summary, args.figures)
     _mcp_agent_figures(summary, args.figures)
     _resource_figures(summary, args.figures)

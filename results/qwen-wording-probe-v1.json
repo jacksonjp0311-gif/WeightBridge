@@ -1,0 +1,1214 @@
+{
+  "resources": {
+    "forward_batches": 16,
+    "input_tokens": 4272,
+    "model_output_tokens_generated": 0,
+    "numpy": "2.5.4",
+    "peak_rss_bytes": 2387439616,
+    "prompt_examples": 96,
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "templates": {
+    "comparison": {
+      "prompts": [
+        {
+          "id": "comparison-0",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 630\nB. 500\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-1",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 502\nB. 649\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-2",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 668\nB. 504\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-3",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 506\nB. 687\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-4",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 706\nB. 508\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-5",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 510\nB. 725\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-6",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 744\nB. 512\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-7",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 514\nB. 763\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-8",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 782\nB. 516\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-9",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 518\nB. 801\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-10",
+          "label": "A",
+          "text": "Compare the values below. Which is the greater integer?\nA. 820\nB. 520\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "comparison-11",
+          "label": "B",
+          "text": "Compare the values below. Which is the greater integer?\nA. 522\nB. 839\nAnswer with the letter A or B only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "comparison-0",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-1",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "comparison-2",
+          "label": "A",
+          "margin": 0.25,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-3",
+          "label": "B",
+          "margin": 1.375,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "comparison-4",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-5",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "comparison-6",
+          "label": "A",
+          "margin": 0.0,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-7",
+          "label": "B",
+          "margin": 1.25,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "comparison-8",
+          "label": "A",
+          "margin": 0.25,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-9",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "comparison-10",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "comparison-11",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        }
+      ]
+    },
+    "greater": {
+      "prompts": [
+        {
+          "id": "greater-0",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 630\nB. 500\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-1",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 502\nB. 649\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-2",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 668\nB. 504\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-3",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 506\nB. 687\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-4",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 706\nB. 508\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-5",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 510\nB. 725\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-6",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 744\nB. 512\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-7",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 514\nB. 763\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-8",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 782\nB. 516\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-9",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 518\nB. 801\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-10",
+          "label": "A",
+          "text": "Which integer is greater?\nA. 820\nB. 520\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "greater-11",
+          "label": "B",
+          "text": "Which integer is greater?\nA. 522\nB. 839\nAnswer with the letter A or B only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "greater-0",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-1",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "greater-2",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-3",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "greater-4",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-5",
+          "label": "B",
+          "margin": 0.75,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "greater-6",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-7",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "greater-8",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-9",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "greater-10",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "greater-11",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        }
+      ]
+    },
+    "inline": {
+      "prompts": [
+        {
+          "id": "inline-0",
+          "label": "A",
+          "text": "Which number is larger, A) 630 or B) 500? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-1",
+          "label": "B",
+          "text": "Which number is larger, A) 502 or B) 649? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-2",
+          "label": "A",
+          "text": "Which number is larger, A) 668 or B) 504? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-3",
+          "label": "B",
+          "text": "Which number is larger, A) 506 or B) 687? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-4",
+          "label": "A",
+          "text": "Which number is larger, A) 706 or B) 508? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-5",
+          "label": "B",
+          "text": "Which number is larger, A) 510 or B) 725? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-6",
+          "label": "A",
+          "text": "Which number is larger, A) 744 or B) 512? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-7",
+          "label": "B",
+          "text": "Which number is larger, A) 514 or B) 763? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-8",
+          "label": "A",
+          "text": "Which number is larger, A) 782 or B) 516? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-9",
+          "label": "B",
+          "text": "Which number is larger, A) 518 or B) 801? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-10",
+          "label": "A",
+          "text": "Which number is larger, A) 820 or B) 520? Answer with the letter of the larger number only."
+        },
+        {
+          "id": "inline-11",
+          "label": "B",
+          "text": "Which number is larger, A) 522 or B) 839? Answer with the letter of the larger number only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "inline-0",
+          "label": "A",
+          "margin": 0.625,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline-1",
+          "label": "B",
+          "margin": 0.0,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-2",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-3",
+          "label": "B",
+          "margin": 0.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "inline-4",
+          "label": "A",
+          "margin": 0.75,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-5",
+          "label": "B",
+          "margin": 0.375,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "inline-6",
+          "label": "A",
+          "margin": 0.625,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-7",
+          "label": "B",
+          "margin": 0.25,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "inline-8",
+          "label": "A",
+          "margin": 0.625,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline-9",
+          "label": "B",
+          "margin": 0.0,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-10",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline-11",
+          "label": "B",
+          "margin": 0.25,
+          "prediction": "B"
+        }
+      ]
+    },
+    "inline_comparison": {
+      "prompts": [
+        {
+          "id": "inline_comparison-0",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 630 or B) 500? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-1",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 502 or B) 649? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-2",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 668 or B) 504? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-3",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 506 or B) 687? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-4",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 706 or B) 508? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-5",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 510 or B) 725? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-6",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 744 or B) 512? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-7",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 514 or B) 763? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-8",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 782 or B) 516? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-9",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 518 or B) 801? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-10",
+          "label": "A",
+          "text": "Of the following integers, which has the greater value, A) 820 or B) 520? Reply with the letter of the greater integer only."
+        },
+        {
+          "id": "inline_comparison-11",
+          "label": "B",
+          "text": "Of the following integers, which has the greater value, A) 522 or B) 839? Reply with the letter of the greater integer only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "inline_comparison-0",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-1",
+          "label": "B",
+          "margin": -0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline_comparison-2",
+          "label": "A",
+          "margin": 1.125,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-3",
+          "label": "B",
+          "margin": -0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline_comparison-4",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-5",
+          "label": "B",
+          "margin": -0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline_comparison-6",
+          "label": "A",
+          "margin": 0.75,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-7",
+          "label": "B",
+          "margin": -0.25,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline_comparison-8",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-9",
+          "label": "B",
+          "margin": -0.25,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "inline_comparison-10",
+          "label": "A",
+          "margin": 0.625,
+          "prediction": "A"
+        },
+        {
+          "correct": false,
+          "id": "inline_comparison-11",
+          "label": "B",
+          "margin": -0.125,
+          "prediction": "A"
+        }
+      ]
+    },
+    "larger_brackets": {
+      "prompts": [
+        {
+          "id": "larger_brackets-0",
+          "label": "A",
+          "text": "Identify the larger of (630) and (500). Choose A for (630) or B for (500). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-1",
+          "label": "B",
+          "text": "Identify the larger of (502) and (649). Choose A for (502) or B for (649). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-2",
+          "label": "A",
+          "text": "Identify the larger of (668) and (504). Choose A for (668) or B for (504). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-3",
+          "label": "B",
+          "text": "Identify the larger of (506) and (687). Choose A for (506) or B for (687). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-4",
+          "label": "A",
+          "text": "Identify the larger of (706) and (508). Choose A for (706) or B for (508). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-5",
+          "label": "B",
+          "text": "Identify the larger of (510) and (725). Choose A for (510) or B for (725). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-6",
+          "label": "A",
+          "text": "Identify the larger of (744) and (512). Choose A for (744) or B for (512). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-7",
+          "label": "B",
+          "text": "Identify the larger of (514) and (763). Choose A for (514) or B for (763). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-8",
+          "label": "A",
+          "text": "Identify the larger of (782) and (516). Choose A for (782) or B for (516). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-9",
+          "label": "B",
+          "text": "Identify the larger of (518) and (801). Choose A for (518) or B for (801). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-10",
+          "label": "A",
+          "text": "Identify the larger of (820) and (520). Choose A for (820) or B for (520). Reply with the option letter only."
+        },
+        {
+          "id": "larger_brackets-11",
+          "label": "B",
+          "text": "Identify the larger of (522) and (839). Choose A for (522) or B for (839). Reply with the option letter only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "larger_brackets-0",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-1",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-2",
+          "label": "A",
+          "margin": 0.75,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-3",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-4",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-5",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-6",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-7",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-8",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-9",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-10",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_brackets-11",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        }
+      ]
+    },
+    "larger_value": {
+      "prompts": [
+        {
+          "id": "larger_value-0",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 630\nB. 500\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-1",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 502\nB. 649\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-2",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 668\nB. 504\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-3",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 506\nB. 687\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-4",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 706\nB. 508\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-5",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 510\nB. 725\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-6",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 744\nB. 512\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-7",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 514\nB. 763\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-8",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 782\nB. 516\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-9",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 518\nB. 801\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-10",
+          "label": "A",
+          "text": "Which option has the larger numerical value?\nA. 820\nB. 520\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "larger_value-11",
+          "label": "B",
+          "text": "Which option has the larger numerical value?\nA. 522\nB. 839\nAnswer with the letter A or B only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "larger_value-0",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-1",
+          "label": "B",
+          "margin": 0.5,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-2",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-3",
+          "label": "B",
+          "margin": 0.75,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-4",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-5",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-6",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-7",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-8",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-9",
+          "label": "B",
+          "margin": 0.5,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-10",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "larger_value-11",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        }
+      ]
+    },
+    "maximum": {
+      "prompts": [
+        {
+          "id": "maximum-0",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 630\nB. 500\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-1",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 502\nB. 649\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-2",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 668\nB. 504\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-3",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 506\nB. 687\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-4",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 706\nB. 508\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-5",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 510\nB. 725\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-6",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 744\nB. 512\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-7",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 514\nB. 763\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-8",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 782\nB. 516\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-9",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 518\nB. 801\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-10",
+          "label": "A",
+          "text": "Pick the maximum of these two integers.\nA. 820\nB. 520\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "maximum-11",
+          "label": "B",
+          "text": "Pick the maximum of these two integers.\nA. 522\nB. 839\nAnswer with the letter A or B only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "maximum-0",
+          "label": "A",
+          "margin": 1.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-1",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "maximum-2",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-3",
+          "label": "B",
+          "margin": 1.25,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "maximum-4",
+          "label": "A",
+          "margin": 0.75,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-5",
+          "label": "B",
+          "margin": 1.25,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "maximum-6",
+          "label": "A",
+          "margin": 0.75,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-7",
+          "label": "B",
+          "margin": 1.25,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "maximum-8",
+          "label": "A",
+          "margin": 0.875,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-9",
+          "label": "B",
+          "margin": 0.75,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "maximum-10",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "maximum-11",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        }
+      ]
+    },
+    "standard": {
+      "prompts": [
+        {
+          "id": "standard-0",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 630\nB. 500\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-1",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 502\nB. 649\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-2",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 668\nB. 504\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-3",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 506\nB. 687\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-4",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 706\nB. 508\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-5",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 510\nB. 725\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-6",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 744\nB. 512\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-7",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 514\nB. 763\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-8",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 782\nB. 516\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-9",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 518\nB. 801\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-10",
+          "label": "A",
+          "text": "Which integer is larger?\nA. 820\nB. 520\nAnswer with the letter A or B only."
+        },
+        {
+          "id": "standard-11",
+          "label": "B",
+          "text": "Which integer is larger?\nA. 522\nB. 839\nAnswer with the letter A or B only."
+        }
+      ],
+      "scores": [
+        {
+          "correct": true,
+          "id": "standard-0",
+          "label": "A",
+          "margin": 0.5,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-1",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "standard-2",
+          "label": "A",
+          "margin": 0.25,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-3",
+          "label": "B",
+          "margin": 1.0,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "standard-4",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-5",
+          "label": "B",
+          "margin": 0.875,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "standard-6",
+          "label": "A",
+          "margin": 0.125,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-7",
+          "label": "B",
+          "margin": 1.125,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "standard-8",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-9",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "B"
+        },
+        {
+          "correct": true,
+          "id": "standard-10",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A"
+        },
+        {
+          "correct": true,
+          "id": "standard-11",
+          "label": "B",
+          "margin": 0.75,
+          "prediction": "B"
+        }
+      ]
+    }
+  }
+}
