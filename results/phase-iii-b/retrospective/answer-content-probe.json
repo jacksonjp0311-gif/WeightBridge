@@ -1,0 +1,642 @@
+{
+  "ab_baseline": {
+    "accuracy": 0.6,
+    "both_orders_correct": 2,
+    "both_orders_wrong": 0,
+    "collapsed": false,
+    "correct": 12,
+    "item_count": 10,
+    "labels": {
+      "A": 10,
+      "B": 10
+    },
+    "minority_prediction_count": 2,
+    "order_consistency": 0.2,
+    "predictions": {
+      "A": 18,
+      "B": 2
+    },
+    "rows": 20
+  },
+  "ab_calibration_sha256": "12ca65999bd7084ed6e2d57a571a680bc444b40890514881d03ab778b77ca30d",
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "by_family": {
+    "date-order": {
+      "accuracy": 1.0,
+      "both_orders_correct": 4,
+      "both_orders_wrong": 0,
+      "collapsed": false,
+      "correct": 8,
+      "item_count": 4,
+      "labels": {
+        "first": 4,
+        "second": 4
+      },
+      "minority_prediction_count": 4,
+      "order_consistency": 1.0,
+      "predictions": {
+        "first": 4,
+        "second": 4
+      },
+      "rows": 8
+    },
+    "fraction-order": {
+      "accuracy": 0.5,
+      "both_orders_correct": 0,
+      "both_orders_wrong": 0,
+      "collapsed": true,
+      "correct": 1,
+      "item_count": 1,
+      "labels": {
+        "first": 1,
+        "second": 1
+      },
+      "minority_prediction_count": 0,
+      "order_consistency": 0.0,
+      "predictions": {
+        "first": 0,
+        "second": 2
+      },
+      "rows": 2
+    },
+    "generic": {
+      "accuracy": 0.875,
+      "both_orders_correct": 3,
+      "both_orders_wrong": 0,
+      "collapsed": false,
+      "correct": 7,
+      "item_count": 4,
+      "labels": {
+        "first": 4,
+        "second": 4
+      },
+      "minority_prediction_count": 3,
+      "order_consistency": 0.75,
+      "predictions": {
+        "first": 5,
+        "second": 3
+      },
+      "rows": 8
+    },
+    "word-order": {
+      "accuracy": 1.0,
+      "both_orders_correct": 1,
+      "both_orders_wrong": 0,
+      "collapsed": false,
+      "correct": 2,
+      "item_count": 1,
+      "labels": {
+        "first": 1,
+        "second": 1
+      },
+      "minority_prediction_count": 1,
+      "order_consistency": 1.0,
+      "predictions": {
+        "first": 1,
+        "second": 1
+      },
+      "rows": 2
+    }
+  },
+  "checks": {
+    "accuracy": true,
+    "accuracy_gain_over_ab": true,
+    "consistency_gain_over_ab": true,
+    "order_consistency": true,
+    "position_balance": true
+  },
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "joint_tokenization_mismatches": 0,
+  "length_caveat": "Mean log probability can favor a longer option with predictable suffixes. Sum scores favor shorter options. No stop token is scored.",
+  "length_normalization_changes": 1,
+  "mean_log_probability": {
+    "accuracy": 0.9,
+    "both_orders_correct": 8,
+    "both_orders_wrong": 0,
+    "collapsed": false,
+    "correct": 18,
+    "item_count": 10,
+    "labels": {
+      "first": 10,
+      "second": 10
+    },
+    "minority_prediction_count": 10,
+    "order_consistency": 0.8,
+    "predictions": {
+      "first": 10,
+      "second": 10
+    },
+    "rows": 20
+  },
+  "paired_predictions": [
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+      "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.033538818359375,
+          "sum_log_probability": -0.33538818359375
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.17095164954662323,
+          "sum_log_probability": -1.7095165252685547
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+      "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.3380332887172699,
+          "sum_log_probability": -3.3803329467773438
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.012607574462890625,
+          "sum_log_probability": -0.12607574462890625
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+      "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.03164100646972656,
+          "sum_log_probability": -0.3164100646972656
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.2315916121006012,
+          "sum_log_probability": -2.315916061401367
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+      "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.2672721743583679,
+          "sum_log_probability": -2.6727218627929688
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.016356850042939186,
+          "sum_log_probability": -0.16356849670410156
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/6541f3837415b56a/0",
+      "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.030567169189453125,
+          "sum_log_probability": -0.30567169189453125
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.1800086945295334,
+          "sum_log_probability": -1.8000869750976562
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/6541f3837415b56a/1",
+      "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.21132107079029083,
+          "sum_log_probability": -2.113210678100586
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.023801039904356003,
+          "sum_log_probability": -0.23801040649414062
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+      "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.031035423278808594,
+          "sum_log_probability": -0.31035423278808594
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.19324588775634766,
+          "sum_log_probability": -1.9324588775634766
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "date-order",
+      "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+      "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.21335411071777344,
+          "sum_log_probability": -2.1335411071777344
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.025753211230039597,
+          "sum_log_probability": -0.25753211975097656
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+      "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.3597126007080078,
+          "sum_log_probability": -1.0791378021240234
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.5277697443962097,
+          "sum_log_probability": -1.5833091735839844
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+      "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.9325453639030457,
+          "sum_log_probability": -2.797636032104492
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.19770050048828125,
+          "sum_log_probability": -0.5931015014648438
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+      "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 6,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.09008089452981949,
+          "sum_log_probability": -0.5404853820800781
+        },
+        {
+          "answer_tokens": 5,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.3857646882534027,
+          "sum_log_probability": -1.928823471069336
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+      "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 5,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.20205573737621307,
+          "sum_log_probability": -1.0102787017822266
+        },
+        {
+          "answer_tokens": 6,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.1301136016845703,
+          "sum_log_probability": -0.7806816101074219
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+      "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.38784852623939514,
+          "sum_log_probability": -1.1635456085205078
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.5138988494873047,
+          "sum_log_probability": -1.541696548461914
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+      "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -1.2701168060302734,
+          "sum_log_probability": -3.8103504180908203
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.11986223608255386,
+          "sum_log_probability": -0.3595867156982422
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+      "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.14153710007667542,
+          "sum_log_probability": -1.4153709411621094
+        },
+        {
+          "answer_tokens": 7,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.305022656917572,
+          "sum_log_probability": -2.1351585388183594
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "generic",
+      "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+      "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 7,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.04085350036621094,
+          "sum_log_probability": -0.28597450256347656
+        },
+        {
+          "answer_tokens": 10,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.29592227935791016,
+          "sum_log_probability": -2.9592227935791016
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 0,
+      "family": "word-order",
+      "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+      "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.21308071911334991,
+          "sum_log_probability": -0.6392421722412109
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.3369312286376953,
+          "sum_log_probability": -1.010793685913086
+        }
+      ],
+      "prediction": "first",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "word-order",
+      "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+      "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.30536651611328125,
+          "sum_log_probability": -0.9160995483398438
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.263812392950058,
+          "sum_log_probability": -0.7914371490478516
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    },
+    {
+      "answer_position": 0,
+      "family": "fraction-order",
+      "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+      "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+      "label": "first",
+      "options": [
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.41755929589271545,
+          "sum_log_probability": -1.2526779174804688
+        },
+        {
+          "answer_tokens": 5,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.2713901400566101,
+          "sum_log_probability": -1.3569507598876953
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "first"
+    },
+    {
+      "answer_position": 1,
+      "family": "fraction-order",
+      "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+      "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+      "label": "second",
+      "options": [
+        {
+          "answer_tokens": 5,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.33785247802734375,
+          "sum_log_probability": -1.6892623901367188
+        },
+        {
+          "answer_tokens": 3,
+          "joint_tokenization_matches": true,
+          "mean_log_probability": -0.3339672088623047,
+          "sum_log_probability": -1.001901626586914
+        }
+      ],
+      "prediction": "second",
+      "sum_score_prediction": "second"
+    }
+  ],
+  "practice_gate_passed": true,
+  "practice_screen_sha256": "98d13a875080e9f136db0da0d6e3405c841c364a35764ee1993948eb0fa8a3fe",
+  "protocol_sha256": "c51fc00201738c735d0f3944fdb2c2c27eae440384aaa6cf5d6156cfeb7bbb8d",
+  "resources": {
+    "cpu_seconds": 174.59375,
+    "forward_batches": 5,
+    "forward_examples": 40,
+    "model_loads": 1,
+    "padded_input_token_positions": 2456,
+    "peak_rss_bytes": 6529167360,
+    "wall_seconds": 42.936498299997766
+  },
+  "rows_with_unequal_answer_lengths": 6,
+  "rule": {
+    "minimum_accuracy": 0.6,
+    "minimum_order_consistency": 0.6,
+    "minimum_predicted_position_share": 0.25,
+    "primary_score": "mean log probability per answer token",
+    "requires_strict_accuracy_and_consistency_gain_over_ab": true
+  },
+  "schema": "weightbridge.phase_iiib.answer_content_probe.v1",
+  "scope": "Unedited pinned Qwen and frozen practice only. Changing the requested response also changes the prompt.",
+  "source_sha256": "6d03d7ee530e98e3a79152016e9d53094a9d0f118589ecfbdf8fa6a58d76f39b",
+  "sum_log_probability": {
+    "accuracy": 0.95,
+    "both_orders_correct": 9,
+    "both_orders_wrong": 0,
+    "collapsed": false,
+    "correct": 19,
+    "item_count": 10,
+    "labels": {
+      "first": 10,
+      "second": 10
+    },
+    "minority_prediction_count": 9,
+    "order_consistency": 0.9,
+    "predictions": {
+      "first": 11,
+      "second": 9
+    },
+    "rows": 20
+  },
+  "tokenization": "Every answer is appended as separately encoded tokens after the unchanged chat prefix."
+}

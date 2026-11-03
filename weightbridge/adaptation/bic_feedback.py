@@ -6,6 +6,7 @@ def classify_candidate(
     prior_prediction_flips=None, sentinel_flips=None, expected_objective_delta=None,
     measured_objective_delta=None, solver_disposition=None, budget_exhausted=False,
     norm_cap_exceeded=False, behavior_unchanged=False, global_bias_fraction=None,
+    objective_floor_violated=False, prior_practice_prediction_flips=0,
 ):
     """Return evidence labels, without making a causal diagnosis from a score."""
     codes = []
@@ -20,12 +21,15 @@ def classify_candidate(
         codes.append("POOR_GENERALIZATION")
     if (prior_prediction_flips or 0) > 0:
         codes.append("CROSS_TASK_INTERFERENCE")
+    if prior_practice_prediction_flips > 0:
+        codes.append("TASK_FAMILY_PRACTICE_INTERFERENCE")
     if (sentinel_flips or 0) > 0:
         codes.append("UNRELATED_BEHAVIOR_CHANGE")
     if norm_cap_exceeded:
         codes.append("PARAMETER_DISTURBANCE_CAP")
-    if (expected_objective_delta is not None and measured_objective_delta is not None
-            and expected_objective_delta < -1e-9 and measured_objective_delta > 1e-9):
+    if (objective_floor_violated
+            or (expected_objective_delta is not None and measured_objective_delta is not None
+                and expected_objective_delta < -1e-9 and measured_objective_delta > 1e-9)):
         codes.append("MISLEADING_LOCAL_APPROXIMATION")
     if global_bias_fraction is not None and global_bias_fraction >= 0.9:
         codes.append("DOMINANT_CONSTANT_MARGIN_SHIFT")

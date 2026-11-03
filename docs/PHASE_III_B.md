@@ -103,3 +103,26 @@ token changed across prompt sets. The calibration used 18 forward batches,
 32.9 wall seconds and 118.8 process CPU seconds. Renaming the answer tokens
 alone did not produce a reliable behavioral measurement.
 [Practice-only choice calibration](../results/phase-iii-b/retrospective/choice-calibration.json)
+
+An exploratory probe kept the two actual answer strings in the prompt and
+scored the model's likelihood of each full answer. The length-normalized
+rule scored 18/20 and chose the same answer content in 8/10 paired variants.
+Raw summed likelihood reached 19/20 and 9/10. Length normalization changed
+one decision, and the single fraction item still failed the normalized
+consistency check. This probe changed both the instruction and the scoring
+rule. It used practice data only, five forward batches, 42.9 wall seconds,
+174.6 process CPU seconds and 6.53 GB peak RSS.
+[Whole-answer practice probe](../results/phase-iii-b/retrospective/answer-content-probe.json)
+
+## Measured probe guard
+
+A follow-up prototype selects only among already measured practice probes.
+It requires a lower observed objective, preserves every prior prediction,
+and forbids regressions on previously correct target rows. The host can also
+require a positive target gain. It abstains when no evaluated point qualifies.
+In two synthetic fixtures with eight measured probes each, selection by the
+soft loss gained one answer while flipping two preservation predictions. The
+guard kept a one-answer gain with zero preservation flips in one fixture and
+abstained in the other. It used the same probes and added zero model
+evaluations. This prototype did not participate in the frozen Qwen pilot.
+[Synthetic guard evidence](../results/phase-iii-b/synthetic/measured-probe-guard-v1.json)
