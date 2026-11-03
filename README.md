@@ -99,7 +99,7 @@ python experiments/original_weight_edits/replay_hf_edit_demo.py \
 
 The replay scores **12/24 → 22/24** on targets, with zero changes on
 16 sentinels. Use a new output directory and roughly 4 GB of scratch
-space for the two checkpoint copies. [Pinned model and case evidence](docs/QWEN_WORDING_ABLATION.md)
+space for the two checkpoint copies. [Pinned model and case evidence](docs/QWEN_WORDING_ABLATION.md) · [Replay report](results/hf-edit-demo/report.json)
 
 ## Measured results
 
