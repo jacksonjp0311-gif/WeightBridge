@@ -1,0 +1,22 @@
+{
+  "schema": "weightbridge.phase_iiif.digit_screen.v1",
+  "scope": "Practice-only qualification of a new deterministic digit endpoint",
+  "checkpoints": {
+    "qwen": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "smollm2": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a"
+  },
+  "target": [[12, 17], [24, 19], [53, 26], [67, 28], [89, 16], [91, 83], [76, 65], [38, 84]],
+  "preservation": [0, 2, 6, 9],
+  "target_templates": [
+    "Last digit of the product.\n12*13=6\n17*14=8\n{a}*{b}=",
+    "Product modulo 10.\n(12,13):6\n(17,14):8\n({a},{b}):"
+  ],
+  "preservation_templates": [
+    "Copy the digit.\n4:4\n7:7\n{digit}:",
+    "Echo one digit.\nInput 4 => 4\nInput 7 => 7\nInput {digit} =>"
+  ],
+  "inference": {"device": "cpu", "dtype": "auto", "cpu_threads": 4, "batch_size": 8, "max_input_tokens": 96,
+                "max_new_tokens": 1, "max_memory_bytes": 10737418240},
+  "qualification": {"min_ranker_stability": 0.75, "min_exact_parse_rate": 0.75, "min_ranker_generation_agreement": 0.75,
+                    "min_solved_target_items": 2, "min_persistent_target_errors": 2, "min_solved_preservation_items": 2}
+}

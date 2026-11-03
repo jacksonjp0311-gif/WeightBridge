@@ -1,0 +1,24 @@
+{
+  "schema": "weightbridge.phase_iiif.matrix.v1",
+  "practice_seed": "weightbridge-phase-iiif-parity-sign-v1",
+  "roster_counts_per_split": {"parity": 8, "sign": 4},
+  "inference": {"device": "cpu", "dtype": "auto", "cpu_threads": 6, "batch_size": 8, "max_input_tokens": 96, "max_new_tokens": 6, "worker_timeout_seconds": 600},
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {"family": "parity", "metric": "exact_answer", "min_gain": 1},
+    "preserve": ["sign"],
+    "risk": {"max_regressions": 0, "max_harm_probability": 0.12},
+    "limits": {"max_forward_calls": 64, "max_backward_calls": 12, "max_memory_bytes": 10737418240, "max_update_entries": 65536, "max_update_norm": 0.25, "max_rank": 1, "max_candidates": 2},
+    "data": {"practice": "parity-sign-practice-v1", "evaluation": "parity-sign-evaluation-v1"},
+    "methods": ["constrained", "gradient"],
+    "verify": {"fresh_evaluation": true, "checkpoint_reload": true, "compare_baselines": true, "persistent": true}
+  },
+  "engineering_method": "direct_low_rank",
+  "qualification": {
+    "min_ranker_paraphrase_stability": 0.75,
+    "min_exact_parse_rate": 0.75,
+    "min_ranker_generation_agreement": 0.75,
+    "min_solved_preservation_items": 2,
+    "min_persistent_target_errors": 2
+  }
+}

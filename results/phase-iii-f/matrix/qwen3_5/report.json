@@ -1,0 +1,623 @@
+{
+  "artifacts": {
+    "candidate-lock.json": "da1725d6a42f5c1b469c57bc86c38a6c8750d46b7f81ff58a3925422d87d0fb8",
+    "execution.json": "f63a9a47797539d385a1cd49152ca4ca594065867ce1459b2968ba677ca38187",
+    "patches/direct_low_rank-policy.json": "16ea6448e04b873c013038d8b8f2bca61e530accf9eb74f7926aec2667e79401",
+    "patches/direct_low_rank-receipt.json": "f9591d58b9767186dbd3082bd0163267b6ec6ffef06dafd431a495aff864bfac",
+    "patches/direct_low_rank.json": "b3ba0faa205c4acaa0cc43edb2720a98b30e06a9a3a7ece59163f31b19bf8960",
+    "practice.json": "3d039a939586944bb07597ab740dad8cb137934b7ee620cd5127ec4307d79f0d",
+    "verification/base.json": "26198c84c95548ced3fd5cd7c62dd689859c1f56518af4fe0c95b0f1d1689391",
+    "verification/direct_low_rank.json": "169d8294e27f97f4a938df9c6c7cf64d016fa9f17a69f70cf3cf90f49000fb4b",
+    "verification/rollback.json": "0caeb63b7ffd926ec4c8610aff51daab947304e68edfbc5d16a204eae5ed2bf4"
+  },
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "baseline_resources": {
+    "cpu_seconds": 61.21875,
+    "peak_rss_bytes": 2509557760,
+    "wall_seconds": 23.192793000023812
+  },
+  "baseline_summary": {
+    "parity": {
+      "exact_correct_items": 0,
+      "exact_correct_presentations": 8,
+      "exact_parsed": 16,
+      "items": 8,
+      "presentations": 16,
+      "ranker_correct_items": 1,
+      "ranker_correct_presentations": 9
+    },
+    "sign": {
+      "exact_correct_items": 3,
+      "exact_correct_presentations": 7,
+      "exact_parsed": 8,
+      "items": 4,
+      "presentations": 8,
+      "ranker_correct_items": 3,
+      "ranker_correct_presentations": 7
+    }
+  },
+  "candidates": {
+    "constrained": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    },
+    "direct_low_rank": {
+      "candidate": {
+        "checkpoint_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+        "max_abs_stored_delta": 0.03125,
+        "receipt": {
+          "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+          "candidate_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+          "changed_entries": 2,
+          "changes": [
+            {
+              "axis": "columns",
+              "indices": [
+                0,
+                1
+              ],
+              "op": "slice_set",
+              "parameter_updates": 2048,
+              "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+              "values_sha256": "53180e334140b5b8d91d46ad99eafe10340bdb73c7f296a5a38b376393c67c7e"
+            }
+          ],
+          "evidence_ids": [],
+          "max_abs_delta": 0.03125,
+          "note": "Candidate is isolated and has not been promoted or deployed",
+          "parameter_fraction_changed": 2.2897998539071058e-09,
+          "patch_sha256": "137f0e85787d08300fac52b5d97c200a733023d24db01b26cec7b4411152c762",
+          "policy_sha256": "4844f2ec8c8698eb11e2829934a8d15f3ccb092a5bce3071d6eaaf92fd7a0de6",
+          "schema": "weightbridge.receipt.v2",
+          "source_shards": [
+            "model.safetensors-00001-of-00001.safetensors"
+          ],
+          "status": "candidate_only_not_promoted",
+          "tensor_receipts": {
+            "model.language_model.layers.23.mlp.down_proj.weight": {
+              "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+              "bytes_changed": 4,
+              "candidate_sha256": "a3266e78e82b0b6eee26d07b3104cdb6e038a190f97c9faf61460191f96189e5",
+              "dtype": "BF16",
+              "shape": [
+                1024,
+                3584
+              ]
+            }
+          },
+          "total_parameters": 873438784,
+          "touched_entries": 2048
+        },
+        "verified_changed_entries": 2,
+        "verified_update_norm": 0.03494538875143396
+      },
+      "disposition": "CANDIDATE",
+      "fit": {
+        "backward_calls": 0,
+        "candidate_probes": 0,
+        "changed_entries": 2,
+        "cpu_seconds": 3.375,
+        "forward_calls": 0,
+        "max_abs_delta": 0.03125,
+        "method": "direct_low_rank",
+        "peak_rss_bytes": 2527862784,
+        "planned_rank": 1,
+        "realized_update_norm": 0.03494538875143396,
+        "reason": "engineering_probe",
+        "schema": "weightbridge.universal_update.v1",
+        "source_dtype": "BF16",
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+        "touched_entries": 2048,
+        "wall_seconds": 2.48617170000216
+      },
+      "plan": {
+        "architecture": "Qwen3_5ForConditionalGeneration",
+        "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "eligible_methods": [
+          "direct_low_rank"
+        ],
+        "family": "qwen3_5",
+        "intent": {
+          "evaluation_data_id": "parity-sign-evaluation-v1",
+          "limits": {
+            "max_backward_calls": 12,
+            "max_candidates": 2,
+            "max_forward_calls": 64,
+            "max_memory_bytes": 10737418240,
+            "max_rank": 1,
+            "max_update_entries": 65536,
+            "max_update_norm": 0.25
+          },
+          "methods": [
+            "direct_low_rank"
+          ],
+          "objective": {
+            "family": "parity",
+            "metric": "exact_answer",
+            "min_gain": 1
+          },
+          "practice_data_id": "parity-sign-practice-v1",
+          "preserve": [
+            "sign"
+          ],
+          "risk": {
+            "max_harm_probability": 0.12,
+            "max_regressions": 0
+          },
+          "verify": {
+            "checkpoint_reload": true,
+            "compare_baselines": true,
+            "fresh_evaluation": true,
+            "persistent": true
+          }
+        },
+        "limits": {
+          "max_backward_calls": 12,
+          "max_candidates": 2,
+          "max_forward_calls": 64,
+          "max_memory_bytes": 10737418240,
+          "max_rank": 1,
+          "max_update_entries": 65536,
+          "max_update_norm": 0.25
+        },
+        "max_columns": 64,
+        "method": "direct_low_rank",
+        "region": {
+          "dtype": "BF16",
+          "layer_index": 23,
+          "module_name": "model.language_model.layers.23.mlp.down_proj",
+          "role": "ffn_output",
+          "shape": [
+            1024,
+            3584
+          ],
+          "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "schema": "weightbridge.execution_plan.v1"
+      },
+      "resources": {
+        "fit_cpu_seconds": 3.375,
+        "fit_wall_seconds": 2.4886409000027925,
+        "peak_rss_bytes": 2527862784
+      }
+    },
+    "gradient": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    }
+  },
+  "comparison": {
+    "direct_low_rank": {
+      "behavior_gate": "FAIL",
+      "disposition": "ENGINEERING_ONLY",
+      "exact_item_gain": 0,
+      "exact_regressions": [],
+      "preservation_changes": [],
+      "ranker_item_gain": 0,
+      "ranker_regressions": [],
+      "summary": {
+        "parity": {
+          "exact_correct_items": 0,
+          "exact_correct_presentations": 8,
+          "exact_parsed": 16,
+          "items": 8,
+          "presentations": 16,
+          "ranker_correct_items": 1,
+          "ranker_correct_presentations": 9
+        },
+        "sign": {
+          "exact_correct_items": 3,
+          "exact_correct_presentations": 7,
+          "exact_parsed": 8,
+          "items": 4,
+          "presentations": 8,
+          "ranker_correct_items": 3,
+          "ranker_correct_presentations": 7
+        }
+      },
+      "worker_resources": {
+        "cpu_seconds": 64.640625,
+        "peak_rss_bytes": 2505310208,
+        "wall_seconds": 23.331719600013457
+      }
+    }
+  },
+  "contract": {
+    "access_level": "editable_open_weight",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "capabilities": [
+      "compute_gradients",
+      "configure_runtime",
+      "evaluate_behavior",
+      "inspect_tensors",
+      "modify_weights",
+      "read_weights",
+      "reload_checkpoint",
+      "restore_original",
+      "save_checkpoint"
+    ],
+    "checkpoint_bytes": 1746942600,
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "editable_regions": [
+      {
+        "dtype": "BF16",
+        "layer_index": 0,
+        "module_name": "model.language_model.layers.0.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.0.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 1,
+        "module_name": "model.language_model.layers.1.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.1.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 2,
+        "module_name": "model.language_model.layers.2.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.2.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 3,
+        "module_name": "model.language_model.layers.3.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.3.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 4,
+        "module_name": "model.language_model.layers.4.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.4.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 5,
+        "module_name": "model.language_model.layers.5.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.5.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 6,
+        "module_name": "model.language_model.layers.6.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.6.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 7,
+        "module_name": "model.language_model.layers.7.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.7.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 8,
+        "module_name": "model.language_model.layers.8.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.8.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 9,
+        "module_name": "model.language_model.layers.9.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.9.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 10,
+        "module_name": "model.language_model.layers.10.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.10.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 11,
+        "module_name": "model.language_model.layers.11.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.11.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 12,
+        "module_name": "model.language_model.layers.12.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.12.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 13,
+        "module_name": "model.language_model.layers.13.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.13.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 14,
+        "module_name": "model.language_model.layers.14.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.14.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 15,
+        "module_name": "model.language_model.layers.15.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.15.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 16,
+        "module_name": "model.language_model.layers.16.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.16.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 17,
+        "module_name": "model.language_model.layers.17.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.17.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 18,
+        "module_name": "model.language_model.layers.18.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.18.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 19,
+        "module_name": "model.language_model.layers.19.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.19.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 20,
+        "module_name": "model.language_model.layers.20.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.20.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 21,
+        "module_name": "model.language_model.layers.21.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.21.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 22,
+        "module_name": "model.language_model.layers.22.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.22.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 23,
+        "module_name": "model.language_model.layers.23.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+      }
+    ],
+    "family": "qwen3_5",
+    "limitations": [],
+    "quantized": false,
+    "runtime": {
+      "backward_calls": 1,
+      "device": "cpu",
+      "forward_calls": 1,
+      "gradient_probe_tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+      "model_load_seconds": 5.324825800023973,
+      "peak_rss_bytes": 2386698240,
+      "probe_cpu_seconds": 1.5625,
+      "probe_wall_seconds": 0.27233090001391247,
+      "torch_version": "2.15.0+cpu",
+      "transformers_version": "5.22.1"
+    },
+    "schema": "weightbridge.model_capabilities.v1",
+    "serialization": "safetensors",
+    "storage_dtypes": [
+      "BF16",
+      "F32"
+    ],
+    "tokenizer_class": "Qwen3_5Tokenizer"
+  },
+  "engineering_disposition": "PASS",
+  "intent": {
+    "data": {
+      "evaluation": "parity-sign-evaluation-v1",
+      "practice": "parity-sign-practice-v1"
+    },
+    "limits": {
+      "max_backward_calls": 12,
+      "max_candidates": 2,
+      "max_forward_calls": 64,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 65536,
+      "max_update_norm": 0.25
+    },
+    "methods": [
+      "constrained",
+      "gradient"
+    ],
+    "objective": {
+      "family": "parity",
+      "metric": "exact_answer",
+      "min_gain": 1
+    },
+    "preserve": [
+      "sign"
+    ],
+    "risk": {
+      "max_harm_probability": 0.12,
+      "max_regressions": 0
+    },
+    "schema": "weightbridge.awl.v3",
+    "verify": {
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "fresh_evaluation": true,
+      "persistent": true
+    }
+  },
+  "manifest_sha256": "760118eaaea6eea53252acb34984a7d31ae958189d735699deb666a5af6799dd",
+  "meta_decision": {
+    "action": "measure",
+    "reason": "measurement_unqualified",
+    "schema": "weightbridge.meta_decision.v1",
+    "utility": null
+  },
+  "practice": {
+    "disposition": "HOLD",
+    "exact_parsed": [
+      24,
+      24
+    ],
+    "gates": {
+      "exact_parse_rate": true,
+      "persistent_target_errors": false,
+      "ranker_generation_agreement": true,
+      "ranker_paraphrase_stability": false,
+      "solved_preservation": true
+    },
+    "persistent_target_errors": [],
+    "ranker_generation_agreed": [
+      24,
+      24
+    ],
+    "solved_preservation_items": [
+      "practice/sign/9913",
+      "practice/sign/5289",
+      "practice/sign/-8082"
+    ],
+    "target_items_stable": [
+      0,
+      8
+    ]
+  },
+  "resources": {
+    "host_cpu_seconds": 80.0,
+    "host_peak_rss_bytes": 2567020544,
+    "wall_seconds": 113.89366469997913
+  },
+  "rollback": {
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "exact_replay": true,
+    "worker_resources": {
+      "cpu_seconds": 61.0,
+      "peak_rss_bytes": 2510184448,
+      "wall_seconds": 22.533993099990766
+    }
+  },
+  "schema": "weightbridge.phase_iiif.matrix_report.v1",
+  "scientific_disposition": "HOLD",
+  "sequential_disposition": "HOLD"
+}

@@ -1,0 +1,1580 @@
+{
+  "checkpoint_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+  "contract": {
+    "access_level": "editable_open_weight",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "capabilities": [
+      "configure_runtime",
+      "evaluate_behavior",
+      "inspect_tensors",
+      "modify_weights",
+      "read_weights",
+      "reload_checkpoint",
+      "restore_original",
+      "save_checkpoint"
+    ],
+    "checkpoint_bytes": 1746942600,
+    "checkpoint_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+    "editable_regions": [
+      {
+        "dtype": "BF16",
+        "layer_index": 0,
+        "module_name": "model.language_model.layers.0.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.0.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 1,
+        "module_name": "model.language_model.layers.1.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.1.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 2,
+        "module_name": "model.language_model.layers.2.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.2.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 3,
+        "module_name": "model.language_model.layers.3.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.3.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 4,
+        "module_name": "model.language_model.layers.4.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.4.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 5,
+        "module_name": "model.language_model.layers.5.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.5.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 6,
+        "module_name": "model.language_model.layers.6.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.6.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 7,
+        "module_name": "model.language_model.layers.7.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.7.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 8,
+        "module_name": "model.language_model.layers.8.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.8.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 9,
+        "module_name": "model.language_model.layers.9.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.9.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 10,
+        "module_name": "model.language_model.layers.10.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.10.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 11,
+        "module_name": "model.language_model.layers.11.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.11.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 12,
+        "module_name": "model.language_model.layers.12.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.12.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 13,
+        "module_name": "model.language_model.layers.13.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.13.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 14,
+        "module_name": "model.language_model.layers.14.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.14.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 15,
+        "module_name": "model.language_model.layers.15.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.15.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 16,
+        "module_name": "model.language_model.layers.16.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.16.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 17,
+        "module_name": "model.language_model.layers.17.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.17.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 18,
+        "module_name": "model.language_model.layers.18.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.18.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 19,
+        "module_name": "model.language_model.layers.19.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.19.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 20,
+        "module_name": "model.language_model.layers.20.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.20.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 21,
+        "module_name": "model.language_model.layers.21.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.21.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 22,
+        "module_name": "model.language_model.layers.22.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.22.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 23,
+        "module_name": "model.language_model.layers.23.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          1024,
+          3584
+        ],
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+      }
+    ],
+    "family": "qwen3_5",
+    "limitations": [
+      "No finite, nonzero model gradient was verified for this receipt."
+    ],
+    "quantized": false,
+    "runtime": {
+      "backward_calls": 0,
+      "device": "cpu",
+      "forward_calls": 0,
+      "gradient_probe_tensor": null,
+      "model_load_seconds": 4.91860859998269,
+      "peak_rss_bytes": 2203648000,
+      "probe_cpu_seconds": 0.0,
+      "probe_wall_seconds": 0.00014670001110062003,
+      "torch_version": "2.15.0+cpu",
+      "transformers_version": "5.22.1"
+    },
+    "schema": "weightbridge.model_capabilities.v1",
+    "serialization": "safetensors",
+    "storage_dtypes": [
+      "BF16",
+      "F32"
+    ],
+    "tokenizer_class": "Qwen3_5Tokenizer"
+  },
+  "evaluation_sha256": "4475ece8e62603b354f6944e2af34f396ba28b95dfba2d3b5ffe3b9f26a81bde",
+  "measurement": {
+    "resources": {
+      "generation": {
+        "batched_decode_steps": 6,
+        "generate_batches": 3,
+        "generated_examples": 24,
+        "padded_prompt_token_positions": 744
+      },
+      "peak_rss_bytes": 2505310208,
+      "process_cpu_seconds": 50.25,
+      "scoring": {
+        "forward_batches": 6,
+        "forward_examples": 48,
+        "padded_input_token_positions": 1536
+      },
+      "wall_seconds": 8.6514897000161
+    },
+    "rows": [
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/1692/w0",
+        "item": "evaluation/parity/1692",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.247457504272461,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.247457504272461,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.747457504272461,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.747457504272461,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/1692/w1",
+        "item": "evaluation/parity/1692",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.806535720825195,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.806535720825195,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.181535720825195,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.181535720825195,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/9937/w0",
+        "item": "evaluation/parity/9937",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.914018630981445,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.914018630981445,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.789018630981445,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.789018630981445,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/9937/w1",
+        "item": "evaluation/parity/9937",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.70705795288086,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.70705795288086,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.51955795288086,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.51955795288086,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/4283/w0",
+        "item": "evaluation/parity/4283",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.101470947265625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.101470947265625,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.601470947265625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.601470947265625,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/4283/w1",
+        "item": "evaluation/parity/4283",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.66244125366211,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.66244125366211,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.53744125366211,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.53744125366211,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/sign/8030/w0",
+        "item": "evaluation/sign/8030",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.536102294921875,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.536102294921875,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -15.973602294921875,
+            "prefix_tokens": 29,
+            "sum_log_probability": -15.973602294921875,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "evaluation/sign/8030/w1",
+        "item": "evaluation/sign/8030",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -14.98629379272461,
+            "prefix_tokens": 28,
+            "sum_log_probability": -14.98629379272461,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.29879379272461,
+            "prefix_tokens": 28,
+            "sum_log_probability": -11.29879379272461,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/5424/w0",
+        "item": "evaluation/parity/5424",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.20460319519043,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.20460319519043,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.95460319519043,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.95460319519043,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/5424/w1",
+        "item": "evaluation/parity/5424",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.922174453735352,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.922174453735352,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.234674453735352,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.234674453735352,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/4186/w0",
+        "item": "evaluation/parity/4186",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.483804702758789,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.483804702758789,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.358804702758789,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.358804702758789,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/4186/w1",
+        "item": "evaluation/parity/4186",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.632308959960938,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.632308959960938,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.507308959960938,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.507308959960938,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/7703/w0",
+        "item": "evaluation/parity/7703",
+        "preserve": false,
+        "ranker": null,
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.8077392578125,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.8077392578125,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.8077392578125,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.8077392578125,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/7703/w1",
+        "item": "evaluation/parity/7703",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.729204177856445,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.729204177856445,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.666704177856445,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.666704177856445,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/sign/7325/w0",
+        "item": "evaluation/sign/7325",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.579904556274414,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.579904556274414,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -16.267404556274414,
+            "prefix_tokens": 29,
+            "sum_log_probability": -16.267404556274414,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "evaluation/sign/7325/w1",
+        "item": "evaluation/sign/7325",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -15.473039627075195,
+            "prefix_tokens": 28,
+            "sum_log_probability": -15.473039627075195,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.535539627075195,
+            "prefix_tokens": 28,
+            "sum_log_probability": -11.535539627075195,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/3048/w0",
+        "item": "evaluation/parity/3048",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.101964950561523,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.101964950561523,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.851964950561523,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.851964950561523,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/3048/w1",
+        "item": "evaluation/parity/3048",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.794918060302734,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.794918060302734,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.544918060302734,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.544918060302734,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3721,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "false"
+        },
+        "id": "evaluation/sign/-2139/w0",
+        "item": "evaluation/sign/-2139",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.898374557495117,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.898374557495117,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -14.960874557495117,
+            "prefix_tokens": 29,
+            "sum_log_probability": -14.960874557495117,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/sign/-2139/w1",
+        "item": "evaluation/sign/-2139",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.358579635620117,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.358579635620117,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.171079635620117,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.171079635620117,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "evaluation/parity/3913/w0",
+        "item": "evaluation/parity/3913",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.76510238647461,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.76510238647461,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.89010238647461,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.89010238647461,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "evaluation/parity/3913/w1",
+        "item": "evaluation/parity/3913",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.61638069152832,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.61638069152832,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.67888069152832,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.67888069152832,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3721,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "false"
+        },
+        "id": "evaluation/sign/-6721/w0",
+        "item": "evaluation/sign/-6721",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.962396621704102,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.962396621704102,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -14.837396621704102,
+            "prefix_tokens": 29,
+            "sum_log_probability": -14.837396621704102,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "evaluation/sign/-6721/w1",
+        "item": "evaluation/sign/-6721",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.995128631591797,
+            "prefix_tokens": 28,
+            "sum_log_probability": -11.995128631591797,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.370128631591797,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.370128631591797,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      }
+    ],
+    "summary": {
+      "parity": {
+        "exact_correct_items": 0,
+        "exact_correct_presentations": 8,
+        "exact_parsed": 16,
+        "items": 8,
+        "presentations": 16,
+        "ranker_correct_items": 1,
+        "ranker_correct_presentations": 9
+      },
+      "sign": {
+        "exact_correct_items": 3,
+        "exact_correct_presentations": 7,
+        "exact_parsed": 8,
+        "items": 4,
+        "presentations": 8,
+        "ranker_correct_items": 3,
+        "ranker_correct_presentations": 7
+      }
+    }
+  },
+  "schema": "weightbridge.phase_iiif.independent_evaluation.v1",
+  "worker_resources": {
+    "cpu_seconds": 64.640625,
+    "peak_rss_bytes": 2505310208,
+    "wall_seconds": 23.331719600013457
+  }
+}

@@ -38,6 +38,11 @@ recommend a bounded solver, or HOLD. It reduced harmful finalists in
 the familiar synthetic benchmark and failed under a hidden sensitivity
 reversal. [Phase III-E findings and replay](docs/PHASE_III_E.md)
 
+Phase III-F compiles a shared AWL v3 intent through distinct Qwen3.5
+and Llama adapters. Both pinned models passed stored-precision patch,
+independent reload, and original-checkpoint restoration checks.
+[Phase III-F findings and replay](docs/PHASE_III_F.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

@@ -1,0 +1,1300 @@
+{
+  "measurement": {
+    "resources": {
+      "generation": {
+        "batched_decode_steps": 6,
+        "generate_batches": 3,
+        "generated_examples": 24,
+        "padded_prompt_token_positions": 744
+      },
+      "peak_rss_bytes": 2527862784,
+      "process_cpu_seconds": 45.765625,
+      "scoring": {
+        "forward_batches": 6,
+        "forward_examples": 48,
+        "padded_input_token_positions": 1536
+      },
+      "wall_seconds": 7.8246378999901935
+    },
+    "rows": [
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/sign/9913/w0",
+        "item": "practice/sign/9913",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.58022689819336,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.58022689819336,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -16.08022689819336,
+            "prefix_tokens": 29,
+            "sum_log_probability": -16.08022689819336,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "practice/sign/9913/w1",
+        "item": "practice/sign/9913",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -15.47248649597168,
+            "prefix_tokens": 28,
+            "sum_log_probability": -15.47248649597168,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.15998649597168,
+            "prefix_tokens": 28,
+            "sum_log_probability": -11.15998649597168,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/5145/w0",
+        "item": "practice/parity/5145",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.905506134033203,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.905506134033203,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.655506134033203,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.655506134033203,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/5145/w1",
+        "item": "practice/parity/5145",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.774635314941406,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.774635314941406,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.587135314941406,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.587135314941406,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/1132/w0",
+        "item": "practice/parity/1132",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.379547119140625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.379547119140625,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.254547119140625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.254547119140625,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/1132/w1",
+        "item": "practice/parity/1132",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.888731002807617,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.888731002807617,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.326231002807617,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.326231002807617,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/2046/w0",
+        "item": "practice/parity/2046",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.419378280639648,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.419378280639648,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.544378280639648,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.544378280639648,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/2046/w1",
+        "item": "practice/parity/2046",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.730314254760742,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.730314254760742,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.605314254760742,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.605314254760742,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/sign/5289/w0",
+        "item": "practice/sign/5289",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.479448318481445,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.479448318481445,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -16.104448318481445,
+            "prefix_tokens": 29,
+            "sum_log_probability": -16.104448318481445,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "practice/sign/5289/w1",
+        "item": "practice/sign/5289",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -15.166572570800781,
+            "prefix_tokens": 28,
+            "sum_log_probability": -15.166572570800781,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.291572570800781,
+            "prefix_tokens": 28,
+            "sum_log_probability": -11.291572570800781,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/1087/w0",
+        "item": "practice/parity/1087",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.03074836730957,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.03074836730957,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.65574836730957,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.65574836730957,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/1087/w1",
+        "item": "practice/parity/1087",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.969932556152344,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.969932556152344,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.594932556152344,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.594932556152344,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/1706/w0",
+        "item": "practice/parity/1706",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.2740478515625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.2740478515625,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.5240478515625,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.5240478515625,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/1706/w1",
+        "item": "practice/parity/1706",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.76091194152832,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.76091194152832,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.69841194152832,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.69841194152832,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/8852/w0",
+        "item": "practice/parity/8852",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.379131317138672,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.379131317138672,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.379131317138672,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.379131317138672,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/8852/w1",
+        "item": "practice/parity/8852",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.775161743164062,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.775161743164062,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.275161743164062,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.275161743164062,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3721,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "false"
+        },
+        "id": "practice/sign/-8082/w0",
+        "item": "practice/sign/-8082",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.874582290649414,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.874582290649414,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -14.812082290649414,
+            "prefix_tokens": 29,
+            "sum_log_probability": -14.812082290649414,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/sign/-8082/w1",
+        "item": "practice/sign/-8082",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.293354034423828,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.293354034423828,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.043354034423828,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.043354034423828,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/8603/w0",
+        "item": "practice/parity/8603",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.227685928344727,
+            "prefix_tokens": 29,
+            "sum_log_probability": -11.227685928344727,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.415185928344727,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.415185928344727,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/8603/w1",
+        "item": "practice/parity/8603",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.690269470214844,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.690269470214844,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.627769470214844,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.627769470214844,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            3721,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "false"
+        },
+        "id": "practice/sign/-6791/w0",
+        "item": "practice/sign/-6791",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -9.927175521850586,
+            "prefix_tokens": 29,
+            "sum_log_probability": -9.927175521850586,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -15.177175521850586,
+            "prefix_tokens": 29,
+            "sum_log_probability": -15.177175521850586,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            2434,
+            248046
+          ],
+          "prefix_tokens": 28,
+          "stop_reason": "eos",
+          "text": "True"
+        },
+        "id": "practice/sign/-6791/w1",
+        "item": "practice/sign/-6791",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.006654739379883,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.006654739379883,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.381654739379883,
+            "prefix_tokens": 28,
+            "sum_log_probability": -12.381654739379883,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            867
+          ],
+          [
+            804
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": "true",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            1802,
+            248046
+          ],
+          "prefix_tokens": 29,
+          "stop_reason": "eos",
+          "text": "true"
+        },
+        "id": "practice/parity/5745/w0",
+        "item": "practice/parity/5745",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.947113037109375,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.947113037109375,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -10.697113037109375,
+            "prefix_tokens": 29,
+            "sum_log_probability": -10.697113037109375,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            804
+          ],
+          [
+            867
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": "false",
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            3913,
+            248046
+          ],
+          "prefix_tokens": 31,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/parity/5745/w1",
+        "item": "practice/parity/5745",
+        "preserve": false,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.711814880371094,
+            "prefix_tokens": 31,
+            "sum_log_probability": -12.711814880371094,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -11.524314880371094,
+            "prefix_tokens": 31,
+            "sum_log_probability": -11.524314880371094,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      }
+    ],
+    "summary": {
+      "parity": {
+        "exact_correct_items": 0,
+        "exact_correct_presentations": 8,
+        "exact_parsed": 16,
+        "items": 8,
+        "presentations": 16,
+        "ranker_correct_items": 0,
+        "ranker_correct_presentations": 8
+      },
+      "sign": {
+        "exact_correct_items": 3,
+        "exact_correct_presentations": 7,
+        "exact_parsed": 8,
+        "items": 4,
+        "presentations": 8,
+        "ranker_correct_items": 3,
+        "ranker_correct_presentations": 7
+      }
+    }
+  },
+  "meta_decision": {
+    "action": "measure",
+    "reason": "measurement_unqualified",
+    "schema": "weightbridge.meta_decision.v1",
+    "utility": null
+  },
+  "qualification": {
+    "disposition": "HOLD",
+    "exact_parsed": [
+      24,
+      24
+    ],
+    "gates": {
+      "exact_parse_rate": true,
+      "persistent_target_errors": false,
+      "ranker_generation_agreement": true,
+      "ranker_paraphrase_stability": false,
+      "solved_preservation": true
+    },
+    "persistent_target_errors": [],
+    "ranker_generation_agreed": [
+      24,
+      24
+    ],
+    "solved_preservation_items": [
+      "practice/sign/9913",
+      "practice/sign/5289",
+      "practice/sign/-8082"
+    ],
+    "target_items_stable": [
+      0,
+      8
+    ]
+  }
+}

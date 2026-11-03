@@ -1,0 +1,48 @@
+{
+  "candidate_attempts": 0,
+  "checkpoint_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+  "freeze_sha256": "bcaa196b0d9f8d0584c45974756983de1b73202afd74451571d37dc399cb74d8",
+  "model": "smollm2",
+  "predictions_sha256": "14199d9496f118b3f80272d280e282c53fcfd986b744de2f85c789b14e509e38",
+  "qualification": {
+    "disposition": "HOLD",
+    "exact_parsed": [
+      20,
+      24
+    ],
+    "gates": {
+      "exact_parse_rate": true,
+      "persistent_target_errors": true,
+      "ranker_generation_agreement": true,
+      "ranker_stability": false,
+      "solved_preservation_items": false,
+      "solved_target_items": false
+    },
+    "persistent_target_errors": [
+      "product-12-17",
+      "product-24-19",
+      "product-53-26",
+      "product-67-28",
+      "product-89-16"
+    ],
+    "ranker_generation_agreed": [
+      17,
+      20
+    ],
+    "ranker_stable_items": [
+      5,
+      8
+    ],
+    "solved_preservation_items": [],
+    "solved_target_items": []
+  },
+  "resources": {
+    "cpu_seconds": 9.359375,
+    "forward_calls": 3,
+    "generate_calls": 3,
+    "peak_rss_bytes": 677486592,
+    "prompt_tokens": 720,
+    "wall_seconds": 5.932144599966705
+  },
+  "schema": "weightbridge.phase_iiif.digit_screen.v1"
+}

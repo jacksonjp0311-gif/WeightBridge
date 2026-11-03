@@ -142,3 +142,12 @@ a half-radius edit still produced opposite hidden outcomes within each
 pair. Independent verification remains necessary even when the solver is
 locally feasible and the controller estimates low risk.
 [Phase III-E evidence](PHASE_III_E.md)
+
+Phase III-F validates one editable affine role in supported dense
+Qwen3.5 and Llama safetensors layouts. Quantized weights, external
+adapter training, arbitrary model derivatives, and model-independent
+risk calibration remain outside the verified capability set. The
+engineering study verified source restoration in fresh processes.
+The pretrained models have yet to demonstrate behavioral improvement or
+retention through this interface.
+[Phase III-F evidence](PHASE_III_F.md)

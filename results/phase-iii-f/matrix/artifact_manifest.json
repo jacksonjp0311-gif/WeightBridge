@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "llama/candidate-lock.json": "46e6ecf04902cabef887c5acec89156d97c4e74fc2c46c18c7dca05311ab4297",
+    "llama/execution.json": "3b14292fa2af83af6062b09e5f1efb125da9d6219c356a2e893b21374a91bfe6",
+    "llama/patches/direct_low_rank-policy.json": "1a603bd372cf900537b1929f2ef6f05e15f07775f92e6d742db417e5fdb884a3",
+    "llama/patches/direct_low_rank-receipt.json": "dc898b5ceb49221837fc4225f4e7dc1743262f46bab2ae6fe70613b2948ed85a",
+    "llama/patches/direct_low_rank.json": "1c649b5bf394caacaf647c43f01032c51c5a297092d329a1136fb621a8eb7f94",
+    "llama/practice.json": "5ff1858ff68a14c323692334f291f6c6d5e0abc3bb6801d2ba1ea03259eed06f",
+    "llama/report.json": "0c14df7b7dd20e3c4e606ca1bd72b80df57588b1c248d2171abde63c1468b2d7",
+    "llama/verification/base.json": "3fc04a70e679c3f1ddabb768c96a2c4b62554f9a5a375dd01080406b373a11fc",
+    "llama/verification/direct_low_rank.json": "f9fde22ad92a28672d0b2594ef40571651e7975d9bde230dd7423e2fac450f7e",
+    "llama/verification/rollback.json": "1990611915bc838446ed9ae6c84b674723e94e45287ae25ad8ce21b40dc9e3b3",
+    "material/evaluation.json": "4475ece8e62603b354f6944e2af34f396ba28b95dfba2d3b5ffe3b9f26a81bde",
+    "material/manifest.json": "760118eaaea6eea53252acb34984a7d31ae958189d735699deb666a5af6799dd",
+    "material/practice.json": "3672c1a73b4f62d31807dfc2d9e08a7a29ebf153814246f701957f39b1d35e7e",
+    "protocol.json": "ff78d2830da2b97b4f81f77d7d77355996fa5afd7b7feb93f8eb295bd70fcbeb",
+    "qwen3_5/candidate-lock.json": "da1725d6a42f5c1b469c57bc86c38a6c8750d46b7f81ff58a3925422d87d0fb8",
+    "qwen3_5/execution.json": "f63a9a47797539d385a1cd49152ca4ca594065867ce1459b2968ba677ca38187",
+    "qwen3_5/patches/direct_low_rank-policy.json": "16ea6448e04b873c013038d8b8f2bca61e530accf9eb74f7926aec2667e79401",
+    "qwen3_5/patches/direct_low_rank-receipt.json": "f9591d58b9767186dbd3082bd0163267b6ec6ffef06dafd431a495aff864bfac",
+    "qwen3_5/patches/direct_low_rank.json": "b3ba0faa205c4acaa0cc43edb2720a98b30e06a9a3a7ece59163f31b19bf8960",
+    "qwen3_5/practice.json": "3d039a939586944bb07597ab740dad8cb137934b7ee620cd5127ec4307d79f0d",
+    "qwen3_5/report.json": "dbd2a197bf616270fa3c5b864bf39c2d8cc2b0b0b8c9b3eeada8ee1f3ea3da3a",
+    "qwen3_5/verification/base.json": "26198c84c95548ced3fd5cd7c62dd689859c1f56518af4fe0c95b0f1d1689391",
+    "qwen3_5/verification/direct_low_rank.json": "169d8294e27f97f4a938df9c6c7cf64d016fa9f17a69f70cf3cf90f49000fb4b",
+    "qwen3_5/verification/rollback.json": "0caeb63b7ffd926ec4c8610aff51daab947304e68edfbc5d16a204eae5ed2bf4"
+  },
+  "models": {
+    "llama": {
+      "base_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+      "engineering_disposition": "PASS",
+      "scientific_disposition": "HOLD",
+      "sequential_disposition": "HOLD"
+    },
+    "qwen3_5": {
+      "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "engineering_disposition": "PASS",
+      "scientific_disposition": "HOLD",
+      "sequential_disposition": "HOLD"
+    }
+  },
+  "schema": "weightbridge.phase_iiif.matrix_archive.v1"
+}

@@ -1,0 +1,168 @@
+{
+  "candidates": {
+    "constrained": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    },
+    "direct_low_rank": {
+      "candidate": {
+        "checkpoint_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+        "max_abs_stored_delta": 0.03125,
+        "receipt": {
+          "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+          "candidate_sha256": "5ca79fea87d6e169d670b1f270ea9f668364b0f4628840e413360cd48439da93",
+          "changed_entries": 2,
+          "changes": [
+            {
+              "axis": "columns",
+              "indices": [
+                0,
+                1
+              ],
+              "op": "slice_set",
+              "parameter_updates": 2048,
+              "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+              "values_sha256": "53180e334140b5b8d91d46ad99eafe10340bdb73c7f296a5a38b376393c67c7e"
+            }
+          ],
+          "evidence_ids": [],
+          "max_abs_delta": 0.03125,
+          "note": "Candidate is isolated and has not been promoted or deployed",
+          "parameter_fraction_changed": 2.2897998539071058e-09,
+          "patch_sha256": "137f0e85787d08300fac52b5d97c200a733023d24db01b26cec7b4411152c762",
+          "policy_sha256": "4844f2ec8c8698eb11e2829934a8d15f3ccb092a5bce3071d6eaaf92fd7a0de6",
+          "schema": "weightbridge.receipt.v2",
+          "source_shards": [
+            "model.safetensors-00001-of-00001.safetensors"
+          ],
+          "status": "candidate_only_not_promoted",
+          "tensor_receipts": {
+            "model.language_model.layers.23.mlp.down_proj.weight": {
+              "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+              "bytes_changed": 4,
+              "candidate_sha256": "a3266e78e82b0b6eee26d07b3104cdb6e038a190f97c9faf61460191f96189e5",
+              "dtype": "BF16",
+              "shape": [
+                1024,
+                3584
+              ]
+            }
+          },
+          "total_parameters": 873438784,
+          "touched_entries": 2048
+        },
+        "verified_changed_entries": 2,
+        "verified_update_norm": 0.03494538875143396
+      },
+      "disposition": "CANDIDATE",
+      "fit": {
+        "backward_calls": 0,
+        "candidate_probes": 0,
+        "changed_entries": 2,
+        "cpu_seconds": 3.375,
+        "forward_calls": 0,
+        "max_abs_delta": 0.03125,
+        "method": "direct_low_rank",
+        "peak_rss_bytes": 2527862784,
+        "planned_rank": 1,
+        "realized_update_norm": 0.03494538875143396,
+        "reason": "engineering_probe",
+        "schema": "weightbridge.universal_update.v1",
+        "source_dtype": "BF16",
+        "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+        "touched_entries": 2048,
+        "wall_seconds": 2.48617170000216
+      },
+      "plan": {
+        "architecture": "Qwen3_5ForConditionalGeneration",
+        "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "eligible_methods": [
+          "direct_low_rank"
+        ],
+        "family": "qwen3_5",
+        "intent": {
+          "evaluation_data_id": "parity-sign-evaluation-v1",
+          "limits": {
+            "max_backward_calls": 12,
+            "max_candidates": 2,
+            "max_forward_calls": 64,
+            "max_memory_bytes": 10737418240,
+            "max_rank": 1,
+            "max_update_entries": 65536,
+            "max_update_norm": 0.25
+          },
+          "methods": [
+            "direct_low_rank"
+          ],
+          "objective": {
+            "family": "parity",
+            "metric": "exact_answer",
+            "min_gain": 1
+          },
+          "practice_data_id": "parity-sign-practice-v1",
+          "preserve": [
+            "sign"
+          ],
+          "risk": {
+            "max_harm_probability": 0.12,
+            "max_regressions": 0
+          },
+          "verify": {
+            "checkpoint_reload": true,
+            "compare_baselines": true,
+            "fresh_evaluation": true,
+            "persistent": true
+          }
+        },
+        "limits": {
+          "max_backward_calls": 12,
+          "max_candidates": 2,
+          "max_forward_calls": 64,
+          "max_memory_bytes": 10737418240,
+          "max_rank": 1,
+          "max_update_entries": 65536,
+          "max_update_norm": 0.25
+        },
+        "max_columns": 64,
+        "method": "direct_low_rank",
+        "region": {
+          "dtype": "BF16",
+          "layer_index": 23,
+          "module_name": "model.language_model.layers.23.mlp.down_proj",
+          "role": "ffn_output",
+          "shape": [
+            1024,
+            3584
+          ],
+          "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "schema": "weightbridge.execution_plan.v1"
+      },
+      "resources": {
+        "fit_cpu_seconds": 3.375,
+        "fit_wall_seconds": 2.4886409000027925,
+        "peak_rss_bytes": 2527862784
+      }
+    },
+    "gradient": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    }
+  },
+  "practice_sha256": "3d039a939586944bb07597ab740dad8cb137934b7ee620cd5127ec4307d79f0d",
+  "schema": "weightbridge.phase_iiif.candidate_lock.v1",
+  "source_sha256": {
+    "experiments/phase_iiif/matrix_data.py": "d7bd7fd0a28cd4f9c5d9a8130e433eb558981e2bfae9c9f638ca1e0faf4b7ace",
+    "experiments/phase_iiif/matrix_protocol.json": "ff78d2830da2b97b4f81f77d7d77355996fa5afd7b7feb93f8eb295bd70fcbeb",
+    "experiments/phase_iiif/matrix_scoring.py": "80fd4ae6cbb60a36d70c9f4308307539ebbae3860c22df4548e5cb29269a1e64",
+    "experiments/phase_iiif/run_matrix.py": "824d46f4696ae86440e1022b572842aa1ff9a06d7681f6c7cf076f22bd7ba698",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+    "weightbridge/adaptation/model_adapter.py": "fa844ed2eca8963391f23890edf7a5beb24fd0d729d86dc5405dadaf8bfda604",
+    "weightbridge/adaptation/universal_awl.py": "9c1dc7e19911d0ae01559427ff07624d2a63a7f4639b366522066911afa14a85",
+    "weightbridge/adaptation/universal_update.py": "0dd65c3af5381dc0dc2ae3d99dbc5fb95724d0eae96cc30ecb4f4de5bbd90a61",
+    "weightbridge/inference/huggingface.py": "a563b044166d203666821759a328a5ab679386e857ce4cf35957ab0a10b8d624",
+    "weightbridge/patches/huggingface.py": "ccc5f60b8075f8aa4b0e1f157826d2c9f2c7fcd2ee9df22a444c75417923dfd3"
+  }
+}

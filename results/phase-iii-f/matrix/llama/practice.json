@@ -1,0 +1,1385 @@
+{
+  "measurement": {
+    "resources": {
+      "generation": {
+        "batched_decode_steps": 18,
+        "generate_batches": 3,
+        "generated_examples": 24,
+        "padded_prompt_token_positions": 1176
+      },
+      "peak_rss_bytes": 685084672,
+      "process_cpu_seconds": 14.453125,
+      "scoring": {
+        "forward_batches": 6,
+        "forward_examples": 48,
+        "padded_input_token_positions": 2400
+      },
+      "wall_seconds": 2.479595099983271
+    },
+    "rows": [
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            41,
+            41,
+            33
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 991"
+        },
+        "id": "practice/sign/9913/w0",
+        "item": "practice/sign/9913",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.704465866088867,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.704465866088867,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.829465866088867,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.829465866088867,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": "false",
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            4245,
+            2
+          ],
+          "prefix_tokens": 46,
+          "stop_reason": "eos",
+          "text": "False"
+        },
+        "id": "practice/sign/9913/w1",
+        "item": "practice/sign/9913",
+        "preserve": true,
+        "ranker": "false",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.387245178222656,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.387245178222656,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.512245178222656,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.512245178222656,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            37,
+            33,
+            36
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 514"
+        },
+        "id": "practice/parity/5145/w0",
+        "item": "practice/parity/5145",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.966510772705078,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.966510772705078,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.216510772705078,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.216510772705078,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            37,
+            33
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 51"
+        },
+        "id": "practice/parity/5145/w1",
+        "item": "practice/parity/5145",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.395427703857422,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.395427703857422,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.520427703857422,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.520427703857422,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            33,
+            33,
+            35
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 113"
+        },
+        "id": "practice/parity/1132/w0",
+        "item": "practice/parity/1132",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.592741012573242,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.592741012573242,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.967741012573242,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.967741012573242,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            33,
+            33
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 11"
+        },
+        "id": "practice/parity/1132/w1",
+        "item": "practice/parity/1132",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.543191909790039,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.543191909790039,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.293191909790039,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.293191909790039,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            34,
+            32,
+            36
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 204"
+        },
+        "id": "practice/parity/2046/w0",
+        "item": "practice/parity/2046",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.661262512207031,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.661262512207031,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.661262512207031,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.661262512207031,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            34,
+            32
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 20"
+        },
+        "id": "practice/parity/2046/w1",
+        "item": "practice/parity/2046",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.390933990478516,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.390933990478516,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.140933990478516,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.140933990478516,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            37,
+            34,
+            40
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 528"
+        },
+        "id": "practice/sign/5289/w0",
+        "item": "practice/sign/5289",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.040943145751953,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.040943145751953,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.415943145751953,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.415943145751953,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            4245,
+            30,
+            2
+          ],
+          "prefix_tokens": 46,
+          "stop_reason": "eos",
+          "text": "False."
+        },
+        "id": "practice/sign/5289/w1",
+        "item": "practice/sign/5289",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.86248779296875,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.86248779296875,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.61248779296875,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.61248779296875,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            33,
+            32,
+            40
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 108"
+        },
+        "id": "practice/parity/1087/w0",
+        "item": "practice/parity/1087",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.840871810913086,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.840871810913086,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.715871810913086,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.715871810913086,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            33,
+            32
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 10"
+        },
+        "id": "practice/parity/1087/w1",
+        "item": "practice/parity/1087",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.329874038696289,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.329874038696289,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.579874038696289,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.579874038696289,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            33,
+            39,
+            32
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 170"
+        },
+        "id": "practice/parity/1706/w0",
+        "item": "practice/parity/1706",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.59044075012207,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.59044075012207,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.84044075012207,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.84044075012207,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            33,
+            39
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 17"
+        },
+        "id": "practice/parity/1706/w1",
+        "item": "practice/parity/1706",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.531976699829102,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.531976699829102,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.281976699829102,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.281976699829102,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            40,
+            40,
+            37
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 885"
+        },
+        "id": "practice/parity/8852/w0",
+        "item": "practice/parity/8852",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.88344955444336,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.88344955444336,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.25844955444336,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.25844955444336,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "true",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            40,
+            40
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 88"
+        },
+        "id": "practice/parity/8852/w1",
+        "item": "practice/parity/8852",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.415634155273438,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.415634155273438,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.415634155273438,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.415634155273438,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            731,
+            40,
+            32,
+            40
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer -808"
+        },
+        "id": "practice/sign/-8082/w0",
+        "item": "practice/sign/-8082",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.108909606933594,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.108909606933594,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.608909606933594,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.608909606933594,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            10539,
+            28,
+            731,
+            40,
+            32,
+            40
+          ],
+          "prefix_tokens": 46,
+          "stop_reason": "token_budget",
+          "text": "Yes, -808"
+        },
+        "id": "practice/sign/-8082/w1",
+        "item": "practice/sign/-8082",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.262062072753906,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.262062072753906,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.012062072753906,
+            "prefix_tokens": 46,
+            "sum_log_probability": -13.012062072753906,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            40,
+            38,
+            32
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 860"
+        },
+        "id": "practice/parity/8603/w0",
+        "item": "practice/parity/8603",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.19758415222168,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.19758415222168,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.94758415222168,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.94758415222168,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            40,
+            38
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 86"
+        },
+        "id": "practice/parity/8603/w1",
+        "item": "practice/parity/8603",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.107048034667969,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.107048034667969,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.107048034667969,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.107048034667969,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            731,
+            38,
+            39,
+            41
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer -679"
+        },
+        "id": "practice/sign/-6791/w0",
+        "item": "practice/sign/-6791",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.159961700439453,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.159961700439453,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.534961700439453,
+            "prefix_tokens": 48,
+            "sum_log_probability": -12.534961700439453,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "sign",
+        "generation": {
+          "generated_token_ids": [
+            10539,
+            28,
+            731,
+            38,
+            39,
+            41
+          ],
+          "prefix_tokens": 46,
+          "stop_reason": "token_budget",
+          "text": "Yes, -679"
+        },
+        "id": "practice/sign/-6791/w1",
+        "item": "practice/sign/-6791",
+        "preserve": true,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.202987670898438,
+            "prefix_tokens": 46,
+            "sum_log_probability": -12.202987670898438,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.077987670898438,
+            "prefix_tokens": 46,
+            "sum_log_probability": -13.077987670898438,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      },
+      {
+        "answer_token_ids": [
+          [
+            7065
+          ],
+          [
+            2629
+          ]
+        ],
+        "choices": [
+          "false",
+          "true"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            504,
+            15328,
+            216,
+            37,
+            39,
+            36
+          ],
+          "prefix_tokens": 48,
+          "stop_reason": "token_budget",
+          "text": "The integer 574"
+        },
+        "id": "practice/parity/5745/w0",
+        "item": "practice/parity/5745",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.97842788696289,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.97842788696289,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.22842788696289,
+            "prefix_tokens": 48,
+            "sum_log_probability": -13.22842788696289,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 0
+      },
+      {
+        "answer_token_ids": [
+          [
+            2629
+          ],
+          [
+            7065
+          ]
+        ],
+        "choices": [
+          "true",
+          "false"
+        ],
+        "correct": "false",
+        "exact": null,
+        "family": "parity",
+        "generation": {
+          "generated_token_ids": [
+            5230,
+            28,
+            15213,
+            216,
+            37,
+            39
+          ],
+          "prefix_tokens": 49,
+          "stop_reason": "token_budget",
+          "text": "No, dividing 57"
+        },
+        "id": "practice/parity/5745/w1",
+        "item": "practice/parity/5745",
+        "preserve": false,
+        "ranker": "true",
+        "score": [
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -12.461200714111328,
+            "prefix_tokens": 49,
+            "sum_log_probability": -12.461200714111328,
+            "terminated_sum_log_probability": null
+          },
+          {
+            "answer_tokens": 1,
+            "eos_log_probability": null,
+            "joint_tokenization_matches": true,
+            "mean_log_probability": -13.586200714111328,
+            "prefix_tokens": 49,
+            "sum_log_probability": -13.586200714111328,
+            "terminated_sum_log_probability": null
+          }
+        ],
+        "wording": 1
+      }
+    ],
+    "summary": {
+      "parity": {
+        "exact_correct_items": 0,
+        "exact_correct_presentations": 0,
+        "exact_parsed": 0,
+        "items": 8,
+        "presentations": 16,
+        "ranker_correct_items": 4,
+        "ranker_correct_presentations": 8
+      },
+      "sign": {
+        "exact_correct_items": 0,
+        "exact_correct_presentations": 0,
+        "exact_parsed": 1,
+        "items": 4,
+        "presentations": 8,
+        "ranker_correct_items": 1,
+        "ranker_correct_presentations": 3
+      }
+    }
+  },
+  "meta_decision": {
+    "action": "measure",
+    "reason": "measurement_unqualified",
+    "schema": "weightbridge.meta_decision.v1",
+    "utility": null
+  },
+  "qualification": {
+    "disposition": "HOLD",
+    "exact_parsed": [
+      1,
+      24
+    ],
+    "gates": {
+      "exact_parse_rate": false,
+      "persistent_target_errors": false,
+      "ranker_generation_agreement": true,
+      "ranker_paraphrase_stability": true,
+      "solved_preservation": false
+    },
+    "persistent_target_errors": [],
+    "ranker_generation_agreed": [
+      1,
+      1
+    ],
+    "solved_preservation_items": [],
+    "target_items_stable": [
+      8,
+      8
+    ]
+  }
+}

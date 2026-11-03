@@ -1,0 +1,684 @@
+{
+  "artifacts": {
+    "candidate-lock.json": "46e6ecf04902cabef887c5acec89156d97c4e74fc2c46c18c7dca05311ab4297",
+    "execution.json": "3b14292fa2af83af6062b09e5f1efb125da9d6219c356a2e893b21374a91bfe6",
+    "patches/direct_low_rank-policy.json": "1a603bd372cf900537b1929f2ef6f05e15f07775f92e6d742db417e5fdb884a3",
+    "patches/direct_low_rank-receipt.json": "dc898b5ceb49221837fc4225f4e7dc1743262f46bab2ae6fe70613b2948ed85a",
+    "patches/direct_low_rank.json": "1c649b5bf394caacaf647c43f01032c51c5a297092d329a1136fb621a8eb7f94",
+    "practice.json": "5ff1858ff68a14c323692334f291f6c6d5e0abc3bb6801d2ba1ea03259eed06f",
+    "verification/base.json": "3fc04a70e679c3f1ddabb768c96a2c4b62554f9a5a375dd01080406b373a11fc",
+    "verification/direct_low_rank.json": "f9fde22ad92a28672d0b2594ef40571651e7975d9bde230dd7423e2fac450f7e",
+    "verification/rollback.json": "1990611915bc838446ed9ae6c84b674723e94e45287ae25ad8ce21b40dc9e3b3"
+  },
+  "base_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+  "baseline_resources": {
+    "cpu_seconds": 24.28125,
+    "peak_rss_bytes": 679010304,
+    "wall_seconds": 12.522367300000042
+  },
+  "baseline_summary": {
+    "parity": {
+      "exact_correct_items": 0,
+      "exact_correct_presentations": 0,
+      "exact_parsed": 0,
+      "items": 8,
+      "presentations": 16,
+      "ranker_correct_items": 4,
+      "ranker_correct_presentations": 8
+    },
+    "sign": {
+      "exact_correct_items": 0,
+      "exact_correct_presentations": 0,
+      "exact_parsed": 0,
+      "items": 4,
+      "presentations": 8,
+      "ranker_correct_items": 0,
+      "ranker_correct_presentations": 1
+    }
+  },
+  "candidates": {
+    "constrained": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    },
+    "direct_low_rank": {
+      "candidate": {
+        "checkpoint_sha256": "f57da704afe6cad9561996a88cd3eed67c44346706579045126da48de67867ae",
+        "max_abs_stored_delta": 0.03125,
+        "receipt": {
+          "base_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+          "candidate_sha256": "f57da704afe6cad9561996a88cd3eed67c44346706579045126da48de67867ae",
+          "changed_entries": 2,
+          "changes": [
+            {
+              "axis": "columns",
+              "indices": [
+                0,
+                1
+              ],
+              "op": "slice_set",
+              "parameter_updates": 1152,
+              "tensor": "model.layers.29.mlp.down_proj.weight",
+              "values_sha256": "c635e34f70d5d5d97e66477dcd1142d3f7fb626facbffa5be9ca605e9adc31ef"
+            }
+          ],
+          "evidence_ids": [],
+          "max_abs_delta": 0.03125,
+          "note": "Candidate is isolated and has not been promoted or deployed",
+          "parameter_fraction_changed": 1.4868229424630447e-08,
+          "patch_sha256": "cd8211eb0ee0b4331bf6b5ab9e245beee299cd8a670afdf52999ab4f0aa17a9b",
+          "policy_sha256": "fff2d066766c62d39075b5038806ac647f1cee00300b0b66531df6ba1cadb4f9",
+          "schema": "weightbridge.receipt.v2",
+          "source_shards": [
+            "model.safetensors"
+          ],
+          "status": "candidate_only_not_promoted",
+          "tensor_receipts": {
+            "model.layers.29.mlp.down_proj.weight": {
+              "base_sha256": "52c0d895a55f21c98c6c75256cc960315bb9c68a0688d0c4562d879a1445a985",
+              "bytes_changed": 2,
+              "candidate_sha256": "204615d4e4e49f3cd307373aa1e7f37ad796872d81e3b0cfb8c930e325f52e26",
+              "dtype": "BF16",
+              "shape": [
+                576,
+                1536
+              ]
+            }
+          },
+          "total_parameters": 134515008,
+          "touched_entries": 1152
+        },
+        "verified_changed_entries": 2,
+        "verified_update_norm": 0.034938562148434216
+      },
+      "disposition": "CANDIDATE",
+      "fit": {
+        "backward_calls": 0,
+        "candidate_probes": 0,
+        "changed_entries": 2,
+        "cpu_seconds": 1.390625,
+        "forward_calls": 0,
+        "max_abs_delta": 0.03125,
+        "method": "direct_low_rank",
+        "peak_rss_bytes": 701050880,
+        "planned_rank": 1,
+        "realized_update_norm": 0.034938562148434216,
+        "reason": "engineering_probe",
+        "schema": "weightbridge.universal_update.v1",
+        "source_dtype": "BF16",
+        "tensor_name": "model.layers.29.mlp.down_proj.weight",
+        "touched_entries": 1152,
+        "wall_seconds": 0.36859139997977763
+      },
+      "plan": {
+        "architecture": "LlamaForCausalLM",
+        "checkpoint_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+        "eligible_methods": [
+          "direct_low_rank"
+        ],
+        "family": "llama",
+        "intent": {
+          "evaluation_data_id": "parity-sign-evaluation-v1",
+          "limits": {
+            "max_backward_calls": 12,
+            "max_candidates": 2,
+            "max_forward_calls": 64,
+            "max_memory_bytes": 10737418240,
+            "max_rank": 1,
+            "max_update_entries": 65536,
+            "max_update_norm": 0.25
+          },
+          "methods": [
+            "direct_low_rank"
+          ],
+          "objective": {
+            "family": "parity",
+            "metric": "exact_answer",
+            "min_gain": 1
+          },
+          "practice_data_id": "parity-sign-practice-v1",
+          "preserve": [
+            "sign"
+          ],
+          "risk": {
+            "max_harm_probability": 0.12,
+            "max_regressions": 0
+          },
+          "verify": {
+            "checkpoint_reload": true,
+            "compare_baselines": true,
+            "fresh_evaluation": true,
+            "persistent": true
+          }
+        },
+        "limits": {
+          "max_backward_calls": 12,
+          "max_candidates": 2,
+          "max_forward_calls": 64,
+          "max_memory_bytes": 10737418240,
+          "max_rank": 1,
+          "max_update_entries": 65536,
+          "max_update_norm": 0.25
+        },
+        "max_columns": 113,
+        "method": "direct_low_rank",
+        "region": {
+          "dtype": "BF16",
+          "layer_index": 29,
+          "module_name": "model.layers.29.mlp.down_proj",
+          "role": "ffn_output",
+          "shape": [
+            576,
+            1536
+          ],
+          "tensor_name": "model.layers.29.mlp.down_proj.weight"
+        },
+        "schema": "weightbridge.execution_plan.v1"
+      },
+      "resources": {
+        "fit_cpu_seconds": 1.390625,
+        "fit_wall_seconds": 0.36955440003657714,
+        "peak_rss_bytes": 701050880
+      }
+    },
+    "gradient": {
+      "candidate": null,
+      "disposition": "HOLD",
+      "reason": "practice_measurement_or_headroom"
+    }
+  },
+  "comparison": {
+    "direct_low_rank": {
+      "behavior_gate": "FAIL",
+      "disposition": "ENGINEERING_ONLY",
+      "exact_item_gain": 0,
+      "exact_regressions": [],
+      "preservation_changes": [],
+      "ranker_item_gain": 0,
+      "ranker_regressions": [],
+      "summary": {
+        "parity": {
+          "exact_correct_items": 0,
+          "exact_correct_presentations": 0,
+          "exact_parsed": 0,
+          "items": 8,
+          "presentations": 16,
+          "ranker_correct_items": 4,
+          "ranker_correct_presentations": 8
+        },
+        "sign": {
+          "exact_correct_items": 0,
+          "exact_correct_presentations": 0,
+          "exact_parsed": 0,
+          "items": 4,
+          "presentations": 8,
+          "ranker_correct_items": 0,
+          "ranker_correct_presentations": 1
+        }
+      },
+      "worker_resources": {
+        "cpu_seconds": 22.90625,
+        "peak_rss_bytes": 677801984,
+        "wall_seconds": 11.383524300006684
+      }
+    }
+  },
+  "contract": {
+    "access_level": "editable_open_weight",
+    "architecture": "LlamaForCausalLM",
+    "capabilities": [
+      "compute_gradients",
+      "configure_runtime",
+      "evaluate_behavior",
+      "inspect_tensors",
+      "modify_weights",
+      "read_weights",
+      "reload_checkpoint",
+      "restore_original",
+      "save_checkpoint"
+    ],
+    "checkpoint_bytes": 269060552,
+    "checkpoint_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+    "editable_regions": [
+      {
+        "dtype": "BF16",
+        "layer_index": 0,
+        "module_name": "model.layers.0.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.0.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 1,
+        "module_name": "model.layers.1.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.1.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 2,
+        "module_name": "model.layers.2.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.2.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 3,
+        "module_name": "model.layers.3.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.3.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 4,
+        "module_name": "model.layers.4.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.4.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 5,
+        "module_name": "model.layers.5.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.5.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 6,
+        "module_name": "model.layers.6.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.6.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 7,
+        "module_name": "model.layers.7.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.7.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 8,
+        "module_name": "model.layers.8.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.8.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 9,
+        "module_name": "model.layers.9.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.9.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 10,
+        "module_name": "model.layers.10.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.10.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 11,
+        "module_name": "model.layers.11.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.11.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 12,
+        "module_name": "model.layers.12.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.12.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 13,
+        "module_name": "model.layers.13.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.13.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 14,
+        "module_name": "model.layers.14.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.14.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 15,
+        "module_name": "model.layers.15.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.15.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 16,
+        "module_name": "model.layers.16.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.16.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 17,
+        "module_name": "model.layers.17.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.17.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 18,
+        "module_name": "model.layers.18.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.18.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 19,
+        "module_name": "model.layers.19.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.19.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 20,
+        "module_name": "model.layers.20.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.20.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 21,
+        "module_name": "model.layers.21.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.21.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 22,
+        "module_name": "model.layers.22.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.22.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 23,
+        "module_name": "model.layers.23.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.23.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 24,
+        "module_name": "model.layers.24.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.24.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 25,
+        "module_name": "model.layers.25.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.25.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 26,
+        "module_name": "model.layers.26.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.26.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 27,
+        "module_name": "model.layers.27.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.27.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 28,
+        "module_name": "model.layers.28.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.28.mlp.down_proj.weight"
+      },
+      {
+        "dtype": "BF16",
+        "layer_index": 29,
+        "module_name": "model.layers.29.mlp.down_proj",
+        "role": "ffn_output",
+        "shape": [
+          576,
+          1536
+        ],
+        "tensor_name": "model.layers.29.mlp.down_proj.weight"
+      }
+    ],
+    "family": "llama",
+    "limitations": [],
+    "quantized": false,
+    "runtime": {
+      "backward_calls": 1,
+      "device": "cpu",
+      "forward_calls": 1,
+      "gradient_probe_tensor": "model.layers.29.mlp.down_proj.weight",
+      "model_load_seconds": 3.3010136999655515,
+      "peak_rss_bytes": 657154048,
+      "probe_cpu_seconds": 0.375,
+      "probe_wall_seconds": 0.07353049999801442,
+      "torch_version": "2.15.0+cpu",
+      "transformers_version": "5.22.1"
+    },
+    "schema": "weightbridge.model_capabilities.v1",
+    "serialization": "safetensors",
+    "storage_dtypes": [
+      "BF16"
+    ],
+    "tokenizer_class": "GPT2Tokenizer"
+  },
+  "engineering_disposition": "PASS",
+  "intent": {
+    "data": {
+      "evaluation": "parity-sign-evaluation-v1",
+      "practice": "parity-sign-practice-v1"
+    },
+    "limits": {
+      "max_backward_calls": 12,
+      "max_candidates": 2,
+      "max_forward_calls": 64,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 65536,
+      "max_update_norm": 0.25
+    },
+    "methods": [
+      "constrained",
+      "gradient"
+    ],
+    "objective": {
+      "family": "parity",
+      "metric": "exact_answer",
+      "min_gain": 1
+    },
+    "preserve": [
+      "sign"
+    ],
+    "risk": {
+      "max_harm_probability": 0.12,
+      "max_regressions": 0
+    },
+    "schema": "weightbridge.awl.v3",
+    "verify": {
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "fresh_evaluation": true,
+      "persistent": true
+    }
+  },
+  "manifest_sha256": "760118eaaea6eea53252acb34984a7d31ae958189d735699deb666a5af6799dd",
+  "meta_decision": {
+    "action": "measure",
+    "reason": "measurement_unqualified",
+    "schema": "weightbridge.meta_decision.v1",
+    "utility": null
+  },
+  "practice": {
+    "disposition": "HOLD",
+    "exact_parsed": [
+      1,
+      24
+    ],
+    "gates": {
+      "exact_parse_rate": false,
+      "persistent_target_errors": false,
+      "ranker_generation_agreement": true,
+      "ranker_paraphrase_stability": true,
+      "solved_preservation": false
+    },
+    "persistent_target_errors": [],
+    "ranker_generation_agreed": [
+      1,
+      1
+    ],
+    "solved_preservation_items": [],
+    "target_items_stable": [
+      8,
+      8
+    ]
+  },
+  "resources": {
+    "host_cpu_seconds": 29.15625,
+    "host_peak_rss_bytes": 728842240,
+    "wall_seconds": 55.357296200003475
+  },
+  "rollback": {
+    "checkpoint_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+    "exact_replay": true,
+    "worker_resources": {
+      "cpu_seconds": 24.34375,
+      "peak_rss_bytes": 678113280,
+      "wall_seconds": 11.554059199988842
+    }
+  },
+  "schema": "weightbridge.phase_iiif.matrix_report.v1",
+  "scientific_disposition": "HOLD",
+  "sequential_disposition": "HOLD"
+}
