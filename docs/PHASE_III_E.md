@@ -224,6 +224,63 @@ this fixture, and the experiment uses the familiar mechanisms.
 [Follow-up report](../results/phase-iii-e/cache-followup/report.json) ·
 [Follow-up protocol](../experiments/phase_iiie/cache_protocol.json)
 
+## Qwen measurement and admission
+
+The runner locked paired scoring on practice. The combined measurement
+and headroom outcome was **HOLD**. Neither ranker nor generation passed
+any complete split gate. The practice and selection banks each contained
+two solved date questions and seven unstable questions. Both had zero
+persistent errors under the required agreement between raw and locked
+decisions.
+
+| Split | Paired joint | Raw joint | Prior joint | Letter joint | Paired order stability | Greedy joint |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Practice | 30/36 | 16/36 | 12/36 | 8/36 | 12/18 | 10/18 |
+| Selection | 26/36 | 13/36 | 9/36 | 6/36 | 10/18 | 6/18 |
+| Qualification | 37/48 | 15/48 | 9/48 | 8/48 | 17/24 | 14/24 |
+
+The qualification denominator represents 12 independent questions with
+four label and order presentations each. Paired joint correctness was
+77.1%, with a question-clustered 95% interval of 60.4% to 89.6%.
+The paired rule was stable on 21/24 label swaps and 37/48 paraphrases.
+Its joint scores were 15/16 for date, 12/16 for fraction, and 10/16 for
+word order. The individual raw prompts scored 33/48 in the original
+direction and 29/48 in the reversed direction, with 15/48 correct in both.
+That standalone joint rate missed the frozen 60% gate. The paired margin
+minus the absolute irrelevant shift averaged +0.265 log-score units,
+with interval −0.077 to +0.602. The positive lower-bound requirement
+therefore failed.
+
+All 48 qualification generations completed and parsed strictly. Bullet
+generation got 18/24 original and 19/24 reversed prompts right, with
+14/24 pairs right in both directions. Its choices were stable across both
+orders on 6/12 questions, below the 65% gate. These results keep scoring
+and direct generation separate and offer no evidence of a weight change.
+The host handoff recorded zero candidates and the adaptation reserve
+remained unopened.
+
+The real study scored 1,920 continuations in 240 forward batches and
+generated 120 responses in 18 batches. It took 1,245.04 wall seconds,
+7,222.52 process CPU seconds and 6.21 GiB peak resident memory on the
+pinned Windows BF16 CPU path. The execution receipt includes runtime
+versions and the exact source hashes.
+[Preregistered split commitments](../results/phase-iii-e/qwen-preregistration.json) ·
+[Measured report](../results/phase-iii-e/qwen/report.json) ·
+[Raw qualification outcomes](../results/phase-iii-e/qwen/qualification-predictions.json) ·
+[Host handoff](../results/phase-iii-e/qwen-handoff.json)
+
+## Next experiment
+
+Keep the cached acquisition path as the synthetic comparison arm. Freeze
+a new held-mechanism test where an authorized practice perturbation can
+reveal a hidden sign reversal in some cases and leaves others ambiguous.
+Test whether the controller buys that evidence only when its expected
+value covers cost, and whether it reduces harmful finalists without
+holding every repair. On Qwen, test standalone scoring and greedy
+generation with the same bullet display. Require improvement in both
+semantic directions and across option order before selecting a real
+adaptation task.
+
 ## Replay
 
 Use new output directories. Synthetic replay uses the standard research

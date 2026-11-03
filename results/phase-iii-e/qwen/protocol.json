@@ -1,0 +1,43 @@
+{
+  "schema": "weightbridge.phase_iiie.qwen_protocol.v1",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "practice_seed": "weightbridge-iii-e-paired-qwen-practice-v1",
+  "items_per_family": {"practice": 3, "selection": 3, "qualification": 4, "sealed-adaptation": 4},
+  "inference": {"device": "cpu", "dtype": "bfloat16", "cpu_threads": 6, "batch_size": 8, "max_input_tokens": 160},
+  "generation": {"batch_size": 8, "max_new_tokens": 12, "require_eos_for_correctness": true, "display": "bullets"},
+  "scoring": {
+    "content": "summed conditional answer token log probability without EOS",
+    "ties": "abstain",
+    "prior_alpha": 1.5,
+    "methods_in_tie_order": ["raw", "prior", "paired"],
+    "letter_role": "Comparator only. It scores the two opposing label prompts."
+  },
+  "ranker_gate": {
+    "original_accuracy": 0.65,
+    "reversed_accuracy": 0.65,
+    "joint_accuracy": 0.60,
+    "order_stability": 0.65,
+    "label_stability": 0.65,
+    "paraphrase_stability": 0.65,
+    "raw_standalone_joint_accuracy": 0.60,
+    "question_over_irrelevant_ci_lower_strictly_greater_than": 0.0
+  },
+  "generation_gate": {
+    "strict_parse_rate": 0.70,
+    "original_accuracy": 0.55,
+    "reversed_accuracy": 0.55,
+    "joint_accuracy": 0.40,
+    "order_stability": 0.65
+  },
+  "headroom_gate": {"persistent_errors_per_split": 2, "preserved_items_per_split": 2},
+  "bootstrap": {"replicates": 4000, "seed": 492015, "unit": "underlying question stratified by family"},
+  "scope": {
+    "practice": "Select one ranker once by gate passes, joint correctness, worst-direction accuracy and order stability in that order.",
+    "selection": "Check the locked ranker and collect headroom evidence without retuning.",
+    "qualification": "Open and score once after practice lock. No selection of method from these outcomes.",
+    "sealed-adaptation": "Host private, unused in measurement, excluded from archive.",
+    "editing": "A ranker must pass on all three splits and have two persistent errors in one family and two cross-family solved controls on practice and selection before considering a separate adaptation experiment. Each target must be wrong on every original presentation under both the locked and raw scores. Controls must be correct in both directions on every presentation under both scores."
+  }
+}

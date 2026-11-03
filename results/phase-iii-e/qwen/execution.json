@@ -1,0 +1,30 @@
+{
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "manifest_sha256": "c1c6e632d381c1c31929dc165797f6306484546a4d825bf97ee9cb52072813e3",
+  "packages": {
+    "numpy": "2.5.4",
+    "psutil": "7.2.2",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.3",
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol_sha256": "a2eeec955845fd6d6d6700071b6bc570138bd8ec5a6b2284010479f34136d090",
+  "python": "3.12.10",
+  "schema": "weightbridge.phase_iiie.qwen_execution.v1",
+  "source_sha256": {
+    "experiments/phase_iiid/analysis.py": "26891666261da767810dcac1f26e2ec819f326d40d93859a5964fae83c765318",
+    "experiments/phase_iiid/roster.py": "6729c2881a3d6445407056aedf237cfcdf78af7afc6f18265bdf13685f82d948",
+    "experiments/phase_iiid/run_grounding.py": "f56971c8124de2c5e6a1c92bf90a880c5dcd6beab154bc5ee3e560c08e57a402",
+    "experiments/phase_iiie/qwen_analysis.py": "c820cc0a1853bd284fbb9c9d099aa0086c747d3c37b45e8d67a61c364d6f7bcb",
+    "experiments/phase_iiie/qwen_measure.py": "65448149eebfdd7e67f2447f52923baf087775840ac45694540a8bce96794f1f",
+    "experiments/phase_iiie/qwen_protocol.json": "a2eeec955845fd6d6d6700071b6bc570138bd8ec5a6b2284010479f34136d090",
+    "experiments/phase_iiie/qwen_roster.py": "2ae9e37b7d8973a30f4fbb3ac0ba29dbdb5eb90c1b169ba82ecfd3384f82ed20",
+    "weightbridge/adaptation/bic.py": "e3b9e3d7d83f35d40d19ae2aed4044ab65c0f0cc2389f2e10b53ba50e28993eb",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+    "weightbridge/adaptation/counterfactual.py": "a93cc6e7bff554377bc13c2dfde99b84c5c32b06200d4b9662ab4b255513304a",
+    "weightbridge/adaptation/grounding.py": "79fe276c4db782eee0033b418e20d04e0cba1e017c9580b8c38abde8b3980b89",
+    "weightbridge/inference/huggingface.py": "a563b044166d203666821759a328a5ab679386e857ce4cf35957ab0a10b8d624"
+  }
+}
