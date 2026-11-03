@@ -1,0 +1,527 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "metrics": {
+    "ab_correct": 6,
+    "alternate_text_choice_changes": 0,
+    "alternate_text_rows": 8,
+    "content_correct": 4,
+    "label_pair_choice_changes": 8,
+    "neutral_answer_prior_agreement": 10,
+    "rows": 12,
+    "underlying_items": 6,
+    "xy_correct": 8
+  },
+  "practice_sha256": "ce77c9ba656f74a3bbf24a560c8d4a8bec5019b8d2b434ad716b3fd7cee85a40",
+  "protocol_sha256": "3ba8015af5926225c3053452120d33504cac3be9849f999fec3cf4043fe909f1",
+  "resources": {
+    "cpu_seconds": 510.125,
+    "peak_rss_bytes": 6525571072,
+    "scoring": {
+      "AB": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1248
+      },
+      "XY": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1248
+      },
+      "alternate_answers": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1576
+      },
+      "answers": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 1584
+      },
+      "neutral": {
+        "forward_batches": 3,
+        "forward_examples": 24,
+        "padded_input_token_positions": 624
+      }
+    },
+    "wall_seconds": 102.61450589995366
+  },
+  "rows": [
+    {
+      "AB": [
+        -0.06368446350097656,
+        -2.8136844635009766
+      ],
+      "XY": [
+        -0.6990547180175781,
+        -0.6990547180175781
+      ],
+      "alternate_answers": [
+        "fnhksrmnn",
+        "fnhkstkoo"
+      ],
+      "alternate_answers_scores": [
+        -0.4330463409423828,
+        -0.7166872024536133
+      ],
+      "answers": [
+        "fnhksrmnn",
+        "fnhkstkoo"
+      ],
+      "answers_scores": [
+        -0.4330463409423828,
+        -0.7166872024536133
+      ],
+      "family": "word-order",
+      "id": "practice/word-order/6e37a95f8b92d86a/p0-o0",
+      "item_id": "practice/word-order/6e37a95f8b92d86a",
+      "neutral_scores": [
+        -8.994508743286133,
+        -11.973273277282715
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which string comes earlier in alphabetical order?"
+    },
+    {
+      "AB": [
+        -0.07174110412597656,
+        -2.6967411041259766
+      ],
+      "XY": [
+        -0.76336669921875,
+        -0.63836669921875
+      ],
+      "alternate_answers": [
+        "fnhkstkoo",
+        "fnhksrmnn"
+      ],
+      "alternate_answers_scores": [
+        -0.5297021865844727,
+        -0.6350566744804382
+      ],
+      "answers": [
+        "fnhkstkoo",
+        "fnhksrmnn"
+      ],
+      "answers_scores": [
+        -0.5297021865844727,
+        -0.6350566744804382
+      ],
+      "family": "word-order",
+      "id": "practice/word-order/6e37a95f8b92d86a/p0-o1",
+      "item_id": "practice/word-order/6e37a95f8b92d86a",
+      "neutral_scores": [
+        -11.973273277282715,
+        -8.994508743286133
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which string comes earlier in alphabetical order?"
+    },
+    {
+      "AB": [
+        -0.14571189880371094,
+        -2.020711898803711
+      ],
+      "XY": [
+        -0.8348674774169922,
+        -0.5848674774169922
+      ],
+      "alternate_answers": [
+        "ebuzcbek",
+        "ebuzclauaoe"
+      ],
+      "alternate_answers_scores": [
+        -0.7130856513977051,
+        -0.41882768273353577
+      ],
+      "answers": [
+        "ebuzcbek",
+        "ebuzclauaoe"
+      ],
+      "answers_scores": [
+        -0.7130856513977051,
+        -0.41882768273353577
+      ],
+      "family": "word-order",
+      "id": "practice/word-order/8919a313a0447321/p0-o0",
+      "item_id": "practice/word-order/8919a313a0447321",
+      "neutral_scores": [
+        -11.293266296386719,
+        -9.605834007263184
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which string comes earlier in alphabetical order?"
+    },
+    {
+      "AB": [
+        -0.14501571655273438,
+        -2.0200157165527344
+      ],
+      "XY": [
+        -0.9826984405517578,
+        -0.4826984405517578
+      ],
+      "alternate_answers": [
+        "ebuzclauaoe",
+        "ebuzcbek"
+      ],
+      "alternate_answers_scores": [
+        -0.4136924743652344,
+        -1.069612979888916
+      ],
+      "answers": [
+        "ebuzclauaoe",
+        "ebuzcbek"
+      ],
+      "answers_scores": [
+        -0.4136924743652344,
+        -1.069612979888916
+      ],
+      "family": "word-order",
+      "id": "practice/word-order/8919a313a0447321/p0-o1",
+      "item_id": "practice/word-order/8919a313a0447321",
+      "neutral_scores": [
+        -9.605834007263184,
+        -11.293266296386719
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which string comes earlier in alphabetical order?"
+    },
+    {
+      "AB": [
+        -0.18413925170898438,
+        -1.8091392517089844
+      ],
+      "XY": [
+        -0.766448974609375,
+        -0.641448974609375
+      ],
+      "alternate_answers": [
+        "May 31, 2260",
+        "October 17, 2260"
+      ],
+      "alternate_answers_scores": [
+        -0.45053043961524963,
+        -0.2926841676235199
+      ],
+      "answers": [
+        "31 May 2260",
+        "17 October 2260"
+      ],
+      "answers_scores": [
+        -0.5801517963409424,
+        -0.4934821128845215
+      ],
+      "family": "date-order",
+      "id": "practice/date-order/a742a49abbfa1c64/p0-o0",
+      "item_id": "practice/date-order/a742a49abbfa1c64",
+      "neutral_scores": [
+        -4.7138776779174805,
+        -4.010336875915527
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which event occurs on the earlier calendar date?"
+    },
+    {
+      "AB": [
+        -0.16462135314941406,
+        -1.914621353149414
+      ],
+      "XY": [
+        -0.8343658447265625,
+        -0.5843658447265625
+      ],
+      "alternate_answers": [
+        "October 17, 2260",
+        "May 31, 2260"
+      ],
+      "alternate_answers_scores": [
+        -0.3386192321777344,
+        -0.3205627501010895
+      ],
+      "answers": [
+        "17 October 2260",
+        "31 May 2260"
+      ],
+      "answers_scores": [
+        -0.5680422782897949,
+        -0.5141746997833252
+      ],
+      "family": "date-order",
+      "id": "practice/date-order/a742a49abbfa1c64/p0-o1",
+      "item_id": "practice/date-order/a742a49abbfa1c64",
+      "neutral_scores": [
+        -4.010336875915527,
+        -4.7138776779174805
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which event occurs on the earlier calendar date?"
+    },
+    {
+      "AB": [
+        -0.1837310791015625,
+        -1.8087310791015625
+      ],
+      "XY": [
+        -0.7656459808349609,
+        -0.6406459808349609
+      ],
+      "alternate_answers": [
+        "8 March 2220",
+        "24 July 2220"
+      ],
+      "alternate_answers_scores": [
+        -0.8585158586502075,
+        -0.5337307453155518
+      ],
+      "answers": [
+        "March 8, 2220",
+        "July 24, 2220"
+      ],
+      "answers_scores": [
+        -0.4536639451980591,
+        -0.3167133331298828
+      ],
+      "family": "date-order",
+      "id": "practice/date-order/e3e1075fce4f7853/p0-o0",
+      "item_id": "practice/date-order/e3e1075fce4f7853",
+      "neutral_scores": [
+        -3.5203232765197754,
+        -3.247344970703125
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which event occurs on the earlier calendar date?"
+    },
+    {
+      "AB": [
+        -0.22925567626953125,
+        -1.6042556762695312
+      ],
+      "XY": [
+        -0.9801750183105469,
+        -0.4801750183105469
+      ],
+      "alternate_answers": [
+        "24 July 2220",
+        "8 March 2220"
+      ],
+      "alternate_answers_scores": [
+        -0.6245334148406982,
+        -0.7509999871253967
+      ],
+      "answers": [
+        "July 24, 2220",
+        "March 8, 2220"
+      ],
+      "answers_scores": [
+        -0.35642948746681213,
+        -0.3644659221172333
+      ],
+      "family": "date-order",
+      "id": "practice/date-order/e3e1075fce4f7853/p0-o1",
+      "item_id": "practice/date-order/e3e1075fce4f7853",
+      "neutral_scores": [
+        -3.247344970703125,
+        -3.5203232765197754
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which event occurs on the earlier calendar date?"
+    },
+    {
+      "AB": [
+        -0.09560394287109375,
+        -2.4706039428710938
+      ],
+      "XY": [
+        -0.5922069549560547,
+        -0.8422069549560547
+      ],
+      "alternate_answers": [
+        "313/95",
+        "549/167"
+      ],
+      "alternate_answers_scores": [
+        -0.4285357892513275,
+        -0.39067649841308594
+      ],
+      "answers": [
+        "313/95",
+        "1098/334"
+      ],
+      "answers_scores": [
+        -0.5446491241455078,
+        -0.37737560272216797
+      ],
+      "family": "fraction-order",
+      "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o0",
+      "item_id": "practice/fraction-order/bb95b5df7c3bc030",
+      "neutral_scores": [
+        -4.967713356018066,
+        -3.729738235473633
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which fraction represents the larger number?"
+    },
+    {
+      "AB": [
+        -0.08556175231933594,
+        -2.585561752319336
+      ],
+      "XY": [
+        -0.7704372406005859,
+        -0.6454372406005859
+      ],
+      "alternate_answers": [
+        "549/167",
+        "313/95"
+      ],
+      "alternate_answers_scores": [
+        -0.3201746344566345,
+        -0.46613726019859314
+      ],
+      "answers": [
+        "1098/334",
+        "313/95"
+      ],
+      "answers_scores": [
+        -0.3122127056121826,
+        -0.5575873255729675
+      ],
+      "family": "fraction-order",
+      "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o1",
+      "item_id": "practice/fraction-order/bb95b5df7c3bc030",
+      "neutral_scores": [
+        -3.729738235473633,
+        -4.967713356018066
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which fraction represents the larger number?"
+    },
+    {
+      "AB": [
+        -0.06719207763671875,
+        -2.8171920776367188
+      ],
+      "XY": [
+        -0.7072868347167969,
+        -0.7072868347167969
+      ],
+      "alternate_answers": [
+        "599/165",
+        "275/76"
+      ],
+      "alternate_answers_scores": [
+        -0.33515167236328125,
+        -0.5046491622924805
+      ],
+      "answers": [
+        "1198/330",
+        "275/76"
+      ],
+      "answers_scores": [
+        -0.3412952423095703,
+        -0.46775975823402405
+      ],
+      "family": "fraction-order",
+      "id": "practice/fraction-order/748e6ba03c84f911/p0-o0",
+      "item_id": "practice/fraction-order/748e6ba03c84f911",
+      "neutral_scores": [
+        -3.6776773929595947,
+        -4.4770636558532715
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "question": "Which fraction represents the larger number?"
+    },
+    {
+      "AB": [
+        -0.09541893005371094,
+        -2.470418930053711
+      ],
+      "XY": [
+        -0.5918636322021484,
+        -0.8418636322021484
+      ],
+      "alternate_answers": [
+        "275/76",
+        "599/165"
+      ],
+      "alternate_answers_scores": [
+        -0.4608875811100006,
+        -0.38770756125450134
+      ],
+      "answers": [
+        "275/76",
+        "1198/330"
+      ],
+      "answers_scores": [
+        -0.4812294542789459,
+        -0.3848710060119629
+      ],
+      "family": "fraction-order",
+      "id": "practice/fraction-order/748e6ba03c84f911/p0-o1",
+      "item_id": "practice/fraction-order/748e6ba03c84f911",
+      "neutral_scores": [
+        -4.4770636558532715,
+        -3.6776773929595947
+      ],
+      "order": [
+        1,
+        0
+      ],
+      "question": "Which fraction represents the larger number?"
+    }
+  ],
+  "rule": {
+    "content_score": "mean_log_probability",
+    "label_pairs": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "X",
+        "Y"
+      ]
+    ],
+    "neutral_prompt": "Reply with one answer string.",
+    "neutral_score": "mean_log_probability",
+    "selection": "first two frozen practice items from each family, first paraphrase and both orders",
+    "tie_break": "first_printed_option",
+    "used_for_measurement_rule_selection": false
+  },
+  "schema": "weightbridge.phase_iiic.practice_invariance.v1",
+  "scoring_source_sha256": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+  "source_sha256": "9a35a84e80768f418e6236db48f26c5850fb75e3903f23290b146d9d001c2148"
+}

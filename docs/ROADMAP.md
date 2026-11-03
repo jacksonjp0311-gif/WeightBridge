@@ -11,6 +11,7 @@
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 | Phase III. Continual research adaptation | CONTROLLER IMPLEMENTED / MODEL QUALIFICATION FAIL | One of five natural Qwen cycles retained an edit. Final score fell from 18/24 to 15/24. See the [Phase III study](PHASE_III.md). |
 | Phase III-B. Behavioral Interaction Compiler | SYNTHETIC ADMISSION PASS / QWEN PILOT ZERO ACCEPTANCES | Mixed curvature helped constructed dormant cases. Both coordinated Qwen arms reversed every A/B date prediction with no net gain. See the [Phase III-B study](PHASE_III_B.md). |
+| Phase III-C. Behavior-grounded adaptation | MEASUREMENT FAIL / REAL EDITS HOLD | The locked content rule scored 23/48 versus 28/48 for letter scoring on qualification. Only 1/48 content generations passed the parser. See the [Phase III-C study](PHASE_III_C.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

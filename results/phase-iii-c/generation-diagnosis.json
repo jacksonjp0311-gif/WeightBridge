@@ -1,0 +1,1052 @@
+{
+  "schema": "weightbridge.phase_iiic.generation_diagnosis.v1",
+  "scope": "Post-hoc response-format diagnosis, not part of the gate.",
+  "splits": {
+    "practice": {
+      "counts": {
+        "LABEL_ONLY": 26,
+        "LABEL_WITH_MATCHING_ANSWER": 9,
+        "OTHER_COMPLETED_TEXT": 3,
+        "TOKEN_BUDGET": 10
+      },
+      "diagnostic_correct": 18,
+      "rows": [
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/6e37a95f8b92d86a/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/6e37a95f8b92d86a/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/6e37a95f8b92d86a/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/6e37a95f8b92d86a/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/8919a313a0447321/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/8919a313a0447321/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/8919a313a0447321/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/8919a313a0447321/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/996df558e65db228/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/996df558e65db228/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/996df558e65db228/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/996df558e65db228/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/b550f2252bd898fb/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "practice/word-order/b550f2252bd898fb/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "word-order",
+          "id": "practice/word-order/b550f2252bd898fb/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "practice/word-order/b550f2252bd898fb/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "practice/date-order/a742a49abbfa1c64/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "practice/date-order/a742a49abbfa1c64/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "practice/date-order/a742a49abbfa1c64/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "practice/date-order/a742a49abbfa1c64/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/e3e1075fce4f7853/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/e3e1075fce4f7853/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/e3e1075fce4f7853/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/e3e1075fce4f7853/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/10a87f1e8a52717c/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/10a87f1e8a52717c/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/10a87f1e8a52717c/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/10a87f1e8a52717c/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/38ea7cbc9b42e4aa/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/38ea7cbc9b42e4aa/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/38ea7cbc9b42e4aa/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "practice/date-order/38ea7cbc9b42e4aa/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/bb95b5df7c3bc030/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/bb95b5df7c3bc030/p1-o0",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/bb95b5df7c3bc030/p1-o1",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/748e6ba03c84f911/p0-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/748e6ba03c84f911/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/748e6ba03c84f911/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/748e6ba03c84f911/p1-o1",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6567a13f874a9186/p0-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6567a13f874a9186/p0-o1",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6567a13f874a9186/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6567a13f874a9186/p1-o1",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6178e597bd9bc241/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6178e597bd9bc241/p0-o1",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6178e597bd9bc241/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "practice/fraction-order/6178e597bd9bc241/p1-o1",
+          "kind": "TOKEN_BUDGET"
+        }
+      ],
+      "source_sha256": "9883a60a54f5f5f1b704004c0149e93ea85f570677edbaa963562f411396015e"
+    },
+    "qualification": {
+      "counts": {
+        "EXACT_CONTENT": 1,
+        "LABEL_ONLY": 32,
+        "LABEL_WITH_MATCHING_ANSWER": 11,
+        "OTHER_COMPLETED_TEXT": 2,
+        "TOKEN_BUDGET": 2
+      },
+      "diagnostic_correct": 22,
+      "rows": [
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "qualification/word-order/4d107376fa8daf41/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "qualification/word-order/4d107376fa8daf41/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "qualification/word-order/4d107376fa8daf41/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "qualification/word-order/4d107376fa8daf41/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/946dfefc35697a77/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/946dfefc35697a77/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/946dfefc35697a77/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/946dfefc35697a77/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/d17eb8d15943ce4d/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/d17eb8d15943ce4d/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/d17eb8d15943ce4d/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/d17eb8d15943ce4d/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/4b20e82c6d025c43/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/4b20e82c6d025c43/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/4b20e82c6d025c43/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "qualification/word-order/4b20e82c6d025c43/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "qualification/date-order/4df9cd287115497c/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "qualification/date-order/4df9cd287115497c/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "qualification/date-order/4df9cd287115497c/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "qualification/date-order/4df9cd287115497c/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/f64322da770cd0bb/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/f64322da770cd0bb/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/f64322da770cd0bb/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/f64322da770cd0bb/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/a7a68c0158eea2a1/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/a7a68c0158eea2a1/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/a7a68c0158eea2a1/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/a7a68c0158eea2a1/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/03d5f065c8cf999e/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/03d5f065c8cf999e/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/03d5f065c8cf999e/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "qualification/date-order/03d5f065c8cf999e/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/b5f52aae838bab7b/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/b5f52aae838bab7b/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/b5f52aae838bab7b/p1-o0",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/b5f52aae838bab7b/p1-o1",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/8301ac1fc0b88317/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/8301ac1fc0b88317/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/8301ac1fc0b88317/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/8301ac1fc0b88317/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/c3df4ecd315fc2aa/p0-o0",
+          "kind": "EXACT_CONTENT"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/c3df4ecd315fc2aa/p0-o1",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/c3df4ecd315fc2aa/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/c3df4ecd315fc2aa/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/4698187cf42e8ae5/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/4698187cf42e8ae5/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/4698187cf42e8ae5/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "qualification/fraction-order/4698187cf42e8ae5/p1-o1",
+          "kind": "LABEL_ONLY"
+        }
+      ],
+      "source_sha256": "a1dcf6245c643cf707eaee74fda7b8839b6309c43b5289bcc1a585da1851cce0"
+    },
+    "selection": {
+      "counts": {
+        "LABEL_ANSWER_CONFLICT": 1,
+        "LABEL_ONLY": 32,
+        "LABEL_WITH_MATCHING_ANSWER": 11,
+        "OTHER_COMPLETED_TEXT": 2,
+        "TOKEN_BUDGET": 2
+      },
+      "diagnostic_correct": 24,
+      "rows": [
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/f92ab592b382065b/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/f92ab592b382065b/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/f92ab592b382065b/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/f92ab592b382065b/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/deef0f564f797cd0/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/deef0f564f797cd0/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/deef0f564f797cd0/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/deef0f564f797cd0/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/94dddca2d310ab8b/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/94dddca2d310ab8b/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/94dddca2d310ab8b/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/94dddca2d310ab8b/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/e74188684d90478e/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "word-order",
+          "id": "selection/word-order/e74188684d90478e/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "word-order",
+          "id": "selection/word-order/e74188684d90478e/p1-o0",
+          "kind": "LABEL_ANSWER_CONFLICT"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "word-order",
+          "id": "selection/word-order/e74188684d90478e/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "selection/date-order/0d1a5f70ad2a027b/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "selection/date-order/0d1a5f70ad2a027b/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "selection/date-order/0d1a5f70ad2a027b/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "date-order",
+          "id": "selection/date-order/0d1a5f70ad2a027b/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/79649744cd03d076/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/79649744cd03d076/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/79649744cd03d076/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/79649744cd03d076/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/ab645d91ad14c99b/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/ab645d91ad14c99b/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/ab645d91ad14c99b/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/ab645d91ad14c99b/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/3f93117e79e0e039/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/3f93117e79e0e039/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/3f93117e79e0e039/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "date-order",
+          "id": "selection/date-order/3f93117e79e0e039/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/e86ab9e50dbfb5df/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 0,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/e86ab9e50dbfb5df/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/e86ab9e50dbfb5df/p1-o0",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/e86ab9e50dbfb5df/p1-o1",
+          "kind": "OTHER_COMPLETED_TEXT"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6dc7437446accf99/p0-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6dc7437446accf99/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": null,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6dc7437446accf99/p1-o0",
+          "kind": "TOKEN_BUDGET"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6dc7437446accf99/p1-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6e8b65d94ad5d31d/p0-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6e8b65d94ad5d31d/p0-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6e8b65d94ad5d31d/p1-o0",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/6e8b65d94ad5d31d/p1-o1",
+          "kind": "LABEL_WITH_MATCHING_ANSWER"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/8d54398e9fa77836/p0-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/8d54398e9fa77836/p0-o1",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 0,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/8d54398e9fa77836/p1-o0",
+          "kind": "LABEL_ONLY"
+        },
+        {
+          "correct_position": 1,
+          "diagnostic_position": 1,
+          "family": "fraction-order",
+          "id": "selection/fraction-order/8d54398e9fa77836/p1-o1",
+          "kind": "LABEL_ONLY"
+        }
+      ],
+      "source_sha256": "bc21565828858b2e5bfb19c96120a0be7dbea0e88cf428ea28e11cc004c8f56d"
+    }
+  }
+}

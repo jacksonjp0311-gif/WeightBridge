@@ -106,3 +106,70 @@ the neutral mean score raised correct presentations from 4/12 to 8/12 and
 both-order correctness from 1/6 to 4/6. This reuses the measured practice
 scores, so it does not provide independent confirmation or affect the
 frozen rule. [Neutral-prior reanalysis](../results/phase-iii-c/neutral-prior-analysis.json)
+
+## Independent result and headroom
+
+**The frozen measurement failed qualification. Stage 1 is HOLD.** The
+practice-locked mean score met one of six checks on practice and one of
+six on qualification. The one passing qualification check was agreement
+with generation among eligible parses, based on a single response.
+
+| Frozen condition | Practice | Selection | Independent qualification |
+|---|---:|---:|---:|
+| Letter instruction, label score | 23/48 | 26/48 | 28/48 |
+| Letter instruction, mean content score | 20/48 | 21/48 | 22/48 |
+| Content instruction, label score | 24/48 | 25/48 | 22/48 |
+| Content instruction, mean content score | 21/48 | 26/48 | 23/48 |
+| Letter generation, completed and correct | 23/48 | 26/48 | 27/48 |
+| Content generation, completed and correct | 0/48 | 0/48 | 1/48 |
+
+On qualification, mean content scoring was 10.4 percentage points below
+letter/letter. The paired question bootstrap interval was −29.2 to +10.4
+points. Mean content scoring selected the same answer content in 15/24
+reversed-order pairs, compared with 4/24 for letter/letter. Three of 12
+questions were scored correctly in all four content-mean presentations.
+The higher consistency did not bring higher accuracy. Summed content
+likelihood scored 25/48. The diagnostic EOS-terminated sum scored 29/48,
+but got all four presentations right on only 2/12 questions. That score
+was never eligible for rule selection and is not evidence of generation
+improvement. [Frozen measurement records](../results/phase-iii-c/measurement/)
+
+Holding scoring fixed on qualification, changing the instruction moved
+letter accuracy down 6/48 and mean content accuracy up 1/48. The paired
+interval on their factorial interaction was −12.5 to +43.8 percentage
+points. There were zero separate-versus-joint tokenization mismatches
+across 1,152 scored continuations. This rules out that particular boundary
+mismatch in this run. It leaves response compliance and answer preference
+as distinct observed problems.
+
+The model reached EOS on 46/48 content qualification prompts. Of the 46
+completed outputs, 32 were labels alone, 11 included a label followed by
+the matching text, two were other text, and one matched the requested
+answer. On practice and selection there were no eligible content
+generations to confirm a persistent wrong answer or a solved control.
+Even on likelihood alone, the numbers of all-four-wrong items on practice
+and selection were 2 and 1 for word order, 0 and 1 for date order, and 1
+and 0 for fraction order. No family met the two-per-split threshold.
+This protocol could not establish usable learning headroom.
+[Generation failure categories](../results/phase-iii-c/generation-diagnosis.json)
+
+The host ran the actual Stage 1 admission command and recorded zero
+candidate attempts. No real weight update or independent adaptation
+evaluation ran. The sealed adaptation roster remains unscored and the
+archive records its hash. The measurement run took 837.2 wall seconds,
+4,832.3 CPU seconds and 6.66 GB peak RSS. The two extra inference probes
+used another 801.4 CPU seconds. The inference suite passed 165 tests with
+the optional MCP test skipped. The toy BF16 test reproduced measured
+margins after saving and reloading the patch. The generation verification
+fixture also exercised exact checkpoint lineage and rollback.
+[Stage 1 HOLD receipt](../results/phase-iii-c/stage-one/report.json)
+
+For the next measurement experiment, use fresh questions to compare
+unlabeled content prompts with the current labeled display, and freeze
+raw and neutral-subtracted likelihood candidates before scoring. Require
+agreement with completed generation and correctness under both orders.
+The exploratory subtraction gain had a six-question paired interval
+from −33.3 to +91.7 percentage points. That uncertainty and the absence
+of any correct both-order generation in the bullet probe make a new
+measurement trial the next justified step. Keep the same strict
+independent weight acceptance gates once there is measurable headroom.
