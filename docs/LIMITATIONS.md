@@ -133,3 +133,12 @@ the process must be contained against allocation spikes.
   selection on a common task family. The v2 cohort freezes one roster, order,
   and decision gate; it does not authorize reusing its holdout to tune later
   candidates or correct significance across multiple cohorts.
+
+Phase III-E's work units are a declared proxy for the two-coordinate
+fixtures. They do not predict GPU or training costs. The synthetic
+controller's harm estimates lost calibration on held mechanisms.
+All exact sensitivity-reversal twins fell inside calibrated support, and
+a half-radius edit still produced opposite hidden outcomes within each
+pair. Independent verification remains necessary even when the solver is
+locally feasible and the controller estimates low risk.
+[Phase III-E evidence](PHASE_III_E.md)

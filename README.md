@@ -33,6 +33,11 @@ generation compliance. The locked ranker and generation endpoints both
 failed qualification, so the study held weight editing.
 [Phase III-D study](docs/PHASE_III_D.md)
 
+Phase III-E adds an experimental controller that can request evidence,
+recommend a bounded solver, or HOLD. It reduced harmful finalists in
+the familiar synthetic benchmark and failed under a hidden sensitivity
+reversal. [Phase III-E findings and replay](docs/PHASE_III_E.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

@@ -56,7 +56,10 @@ decisions are correct exactly when the evidence exceeds the absolute
 shared preference. A positive odd component can fall short of that
 threshold. This distinction explains why the paired ranker can score
 well even when an individual conditional prompt still favors the wrong
-content.
+content. Raw joint correctness implies positive paired evidence, so
+every raw joint success is also a paired success by construction. The
+standalone, stability and negative-control checks carry the additional
+evidential burden.
 
 The prototype loss adds `softplus(-m)`, `softplus(r)`, and a nonnegative
 multiple of squared shared preference. Its derivatives with respect to
@@ -75,6 +78,12 @@ any policy given shared practice evidence and opposite hidden outcomes.
 A conservative policy can trade missed repairs for fewer harmful
 proposals. It cannot identify the hidden response of an indistinguishable
 twin. The benchmark reports diagnostic and update costs separately.
+In the constructed balanced twins, an edit attempted with probability
+`p` has expected repair and harm rates of `p/2` each. With harm weight
+`lambda`, its expected utility before work is `p*(1 - lambda)/2`.
+The adaptive diagnostics policy estimates the change in that kind of
+utility from completed calibration runs and subtracts acquisition cost.
+It does not estimate entropy reduction or certify transfer to held mechanisms.
 
 The Qwen study uses new question populations and a practice-only rule
 selection. Its ranking and free generation endpoints have separate gates.
