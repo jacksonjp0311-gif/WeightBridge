@@ -1,0 +1,191 @@
+{
+  "choices": [
+    "A",
+    "B"
+  ],
+  "schema": "weightbridge.hf_edit_suite.v1",
+  "sentinel": [
+    {
+      "id": "five-cycle/final/integer-control/01",
+      "label": "B",
+      "text": "Which number is greater, 94 or 53?\nA. 53\nB. 94\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/integer-control/02",
+      "label": "A",
+      "text": "Which number is greater, 91 or 84?\nA. 91\nB. 84\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/integer-control/03",
+      "label": "A",
+      "text": "Which number is greater, 30 or 89?\nA. 89\nB. 30\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/integer-control/04",
+      "label": "B",
+      "text": "Which number is greater, 19 or 24?\nA. 19\nB. 24\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/integer-control/05",
+      "label": "A",
+      "text": "Which number is greater, 63 or 22?\nA. 63\nB. 22\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/integer-control/06",
+      "label": "B",
+      "text": "Which number is greater, 90 or 14?\nA. 14\nB. 90\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/01",
+      "label": "B",
+      "text": "In the list T, U, P, which letter comes first in alphabetical order?\nA. U\nB. P\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/02",
+      "label": "B",
+      "text": "In the list T, Q, E, which letter comes first in alphabetical order?\nA. T\nB. E\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/03",
+      "label": "B",
+      "text": "In the list E, B, S, which letter comes first in alphabetical order?\nA. S\nB. B\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/04",
+      "label": "A",
+      "text": "In the list M, I, A, which letter comes first in alphabetical order?\nA. A\nB. M\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/05",
+      "label": "A",
+      "text": "In the list H, K, V, which letter comes first in alphabetical order?\nA. H\nB. V\nReply with only A or B."
+    },
+    {
+      "id": "five-cycle/final/alphabet-control/06",
+      "label": "A",
+      "text": "In the list D, H, S, which letter comes first in alphabetical order?\nA. D\nB. S\nReply with only A or B."
+    }
+  ],
+  "target": [
+    {
+      "id": "five-cycle/final/word-order/01",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. oiou\nB. oion\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/02",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. eqeq\nB. eqes\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/03",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. ydyq\nB. ydyb\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/04",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. jins\nB. jinu\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/05",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. fivb\nB. five\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/06",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. nnpv\nB. nnpn\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/07",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. hwoe\nB. hwox\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/word-order/08",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. szsq\nB. szsb\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/01",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 17 March 1998\nB. 09 April 1998\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/02",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 06 November 2011\nB. 24 November 2011\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/03",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 27 March 2019\nB. 01 May 2019\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/04",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 09 September 1995\nB. 01 April 1995\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/05",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 14 August 2015\nB. 05 August 2015\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/06",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 06 April 1991\nB. 28 February 1991\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/07",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 15 May 2002\nB. 27 January 2002\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/date-order/08",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 23 August 1991\nB. 24 August 1991\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/01",
+      "label": "B",
+      "text": "Which fraction is larger?\nA. 2/6\nB. 5/12\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/02",
+      "label": "B",
+      "text": "Which fraction is larger?\nA. 3/16\nB. 11/17\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/03",
+      "label": "B",
+      "text": "Which fraction is larger?\nA. 4/14\nB. 8/15\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/04",
+      "label": "A",
+      "text": "Which fraction is larger?\nA. 8/14\nB. 4/12\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/05",
+      "label": "A",
+      "text": "Which fraction is larger?\nA. 11/15\nB. 7/15\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/06",
+      "label": "A",
+      "text": "Which fraction is larger?\nA. 4/5\nB. 5/16\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/07",
+      "label": "B",
+      "text": "Which fraction is larger?\nA. 7/12\nB. 9/11\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/final/fraction-order/08",
+      "label": "A",
+      "text": "Which fraction is larger?\nA. 11/15\nB. 2/10\nAnswer with the letter A or B only."
+    }
+  ]
+}

@@ -15,7 +15,9 @@ MCP server supports practice sessions on synthetic MLPs.
 Phase III adds typed [AWL intents](docs/AWL.md) and a research controller for
 sequential edits. Each cycle searches on practice data and can advance the
 research lineage only after a separate verifier checks the finalist against
-unseen examples and previously verified predictions. [Phase III study](docs/PHASE_III.md)
+unseen examples and previously verified predictions. The first five-cycle
+natural Qwen study retained one edit, and the final score fell from 18/24 to
+15/24. [Phase III study](docs/PHASE_III.md)
 
 ## Install and try it
 

@@ -1,0 +1,68 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "cycles": [
+    {
+      "family": "word-order",
+      "holdout_sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5",
+      "id": "cycle-01",
+      "intent_sha256": "85a66611fc1936d80f9d2806795221b82c222d79c0787c2d65064f7d485c8cae",
+      "practice_sha256": "507be23a39fe5666164eda158a974b441495e6ffe5f813c6d34c485f7472e8ba"
+    },
+    {
+      "family": "date-order",
+      "holdout_sha256": "fe0eb13821132222feddd7c7cfbeeb2197a5814e3d227ec07cbb79665985ce17",
+      "id": "cycle-02",
+      "intent_sha256": "03cafcc2adb8049eb9b30df7d0a7453f146cf1954ac024804be957a84a895a94",
+      "practice_sha256": "9db88c35eda325e6d32cabf4fdbee81c99d10c2ed8d5bfecfc3924bf0b1decd8"
+    },
+    {
+      "family": "fraction-order",
+      "holdout_sha256": "b45eae976a34c712e484fd9e817b1cfe66d18bf0eefae8378246f7022b8ee59d",
+      "id": "cycle-03",
+      "intent_sha256": "d1f6c4b17a0eb495855b00339d5f9331359c52a9a0acc487251b638cc2890a69",
+      "practice_sha256": "e7d25a6da96c64608f9e131fb8eece176917b656a09064433ce75763931d7b09"
+    },
+    {
+      "family": "word-order",
+      "holdout_sha256": "e9eb96ec58a34212f717e4539ab4fe6e3eab60d13833cf69231720b3588ba819",
+      "id": "cycle-04",
+      "intent_sha256": "8476dbd87f040df38b083b8a3abcf74e1360796cf9997e5564f96b08fcbd3f65",
+      "practice_sha256": "b7f4ef95ba90348f74d3af72bcedaf264456739c52186771d37f438a72e278c5"
+    },
+    {
+      "family": "date-order",
+      "holdout_sha256": "1f14dffdb7e8399f31539cee45937bbd321b4350cc27276c39341195fd227867",
+      "id": "cycle-05",
+      "intent_sha256": "29e9792fe41793827d7728c5d45d10928f3e866c4d97d5ae140140165ff49672",
+      "practice_sha256": "d73616de14fd5093646a558ccc54e48f0e2176c2ea3be27f4bcd811a4282674e"
+    }
+  ],
+  "edit_cost_penalty": 1.0,
+  "final_sha256": "f40a530a4c72bc808c85c7418f5ec4644ed34b89b8f2c25087875d097814d9fb",
+  "inference": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "max_candidates": 2,
+  "max_sentinel_flips": 0,
+  "max_target_regressions": 0,
+  "min_target_gain": 1,
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.23.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.19.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "preservation_penalty": 1.0,
+  "schema": "weightbridge.phase_iii.protocol.v1"
+}

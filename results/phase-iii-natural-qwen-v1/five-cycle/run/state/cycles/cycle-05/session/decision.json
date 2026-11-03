@@ -1,0 +1,41 @@
+{
+  "base_target_correct": 9,
+  "candidate_id": "candidate-0001",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0001\\model",
+  "candidate_sha256": "6b081611a35bb2cfc8fd04f249a3ab0ca332405451eb41fc01a278168a5cf926",
+  "candidate_target_correct": 10,
+  "changed_entries": 64335,
+  "disposition": "FINALIZED",
+  "parameter_fraction_changed": 7.365713680055682e-05,
+  "patch_file_sha256": "789010e905097bb79ab30ab7d8cd2717218c104989c440ce36735d0f0af2a20f",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0001\\patch.json",
+  "patch_sha256": "e5e452412135884196c2bbd40275a7f428567e87578898390464703777b0470a",
+  "practice_disposition": "PASS",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0001\\practice_report.json",
+  "practice_report_sha256": "805df010e05b3712f876c9ac62fdd75d4235a0e5378b69cd801fb5743391e44c",
+  "proposal_kind": "direction",
+  "remaining_candidates": 1,
+  "schema": "weightbridge.hf_edit_session_decision.v1",
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.03,
+  "target_corrections": 1,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "five-cycle/cycle-05/practice/date-order/03",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 19 February 2025\nB. 14 April 2025\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-05/practice/date-order/04",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 15 February 2002\nB. 04 November 2002\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 1,
+  "target_regressions": 0,
+  "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+}

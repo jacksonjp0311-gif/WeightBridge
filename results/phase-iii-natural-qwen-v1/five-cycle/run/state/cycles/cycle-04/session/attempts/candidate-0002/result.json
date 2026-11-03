@@ -1,0 +1,63 @@
+{
+  "base_target_correct": 4,
+  "candidate_id": "candidate-0002",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-04\\session\\attempts\\candidate-0002\\model",
+  "candidate_sha256": "bfd714db18a5cda37e7017e237ec5ef29e0c2298c6863b8c658b1b72832ee1f7",
+  "candidate_target_correct": 6,
+  "changed_entries": 64684,
+  "disposition": "FAIL",
+  "parameter_fraction_changed": 7.405670687506361e-05,
+  "patch_file_sha256": "e27766c89ce654d21488eecae0036d5528b77fab7b800545b8b98677b140b635",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-04\\session\\attempts\\candidate-0002\\patch.json",
+  "patch_sha256": "67bf9442bc07b0703d559771d5ce0f8feae0b80d40fa30c972d58f9ac9be9ec8",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-04\\session\\attempts\\candidate-0002\\practice_report.json",
+  "practice_report_sha256": "54b75804b3ce5fef7fa3e9352cbce6e328f645a1b1a73124ec95c1f854101c43",
+  "proposal_kind": "direction",
+  "remaining_candidates": 0,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 1,
+  "strength": 0.07,
+  "target_corrections": 3,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/04",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. pdav\nB. pdax\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/05",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. rvfw\nB. rvfy\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/07",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. somc\nB. somn\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/08",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. zjed\nB. zjey\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/09",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. nkjb\nB. nkjp\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-04/practice/word-order/11",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. kcwe\nB. kcwt\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 2,
+  "target_regressions": 1,
+  "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+}

@@ -1,0 +1,20 @@
+{
+  "attempts": [
+    {
+      "strength": 0.07,
+      "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    {
+      "strength": 0.07,
+      "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+    }
+  ],
+  "cycle_id": "cycle-04",
+  "family": "word-order",
+  "intent_sha256": "8476dbd87f040df38b083b8a3abcf74e1360796cf9997e5564f96b08fcbd3f65",
+  "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "practice_sha256": "b7f4ef95ba90348f74d3af72bcedaf264456739c52186771d37f438a72e278c5",
+  "preferred_tensors": [
+    "model.language_model.layers.23.mlp.down_proj.weight"
+  ]
+}

@@ -3,7 +3,7 @@
 This study starts from the pinned, unmodified Qwen3.5-0.8B checkpoint. The
 practice screen measures answer choices from that checkpoint on authored prompts.
 The study chooses natural failure families with observed errors and mixed
-predictions. It applies no injected defect or pre-specified correction.
+predictions. The solver derives its candidate corrections from practice responses.
 
 The pilot uses word and calendar ordering. The independent five-cycle study
 adds fraction comparison and revisits the first two families with fresh inputs.
@@ -40,7 +40,7 @@ and a two-step gradient baseline after all cycles finish. The gradient
 comparator optimizes two rank-one factors from practice data. The random arm
 preserves the requested norm and coordinates, and the exact realized change is
 measured after bfloat16 rounding. These arms share the cycle's original base
-and evaluation inputs. They do not enter the adaptation lineage.
+and evaluation inputs. The host records them separately from the adaptation lineage.
 
 ```bash
 python experiments/phase_iii/run_natural_qwen_controls.py --base /path/to/base --materialized /path/to/material --study-run /path/to/new-run --frozen-config benchmarks/configs/phase_iii_natural_qwen_v1_qualification.json --out /path/to/new-controls

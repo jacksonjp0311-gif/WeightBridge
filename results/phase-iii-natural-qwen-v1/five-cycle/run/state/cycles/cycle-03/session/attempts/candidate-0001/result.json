@@ -1,0 +1,57 @@
+{
+  "base_target_correct": 7,
+  "candidate_id": "candidate-0001",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-03\\session\\attempts\\candidate-0001\\model",
+  "candidate_sha256": "df43e1e999a61deb461836ad71324b0ae8837575467334748b680cba072b5a0f",
+  "candidate_target_correct": 7,
+  "changed_entries": 65229,
+  "disposition": "FAIL",
+  "parameter_fraction_changed": 7.46806773352533e-05,
+  "patch_file_sha256": "b13efb4957ae6a2317fd6dcd5a85be7b25bde68d67d3c46d9f999ceb67ba4bd8",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-03\\session\\attempts\\candidate-0001\\patch.json",
+  "patch_sha256": "0a8387a30421da30f0ddc1fdb9f0198dbc44cdd94fe6cc076434b7f5f67e0bcf",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-03\\session\\attempts\\candidate-0001\\practice_report.json",
+  "practice_report_sha256": "973acf41687ba2bf5ed55b4c6465aa3e5e2a516c2da1bdea65901ed637a0c387",
+  "proposal_kind": "direction",
+  "remaining_candidates": 1,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.03,
+  "target_corrections": 0,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "five-cycle/cycle-03/practice/fraction-order/03",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which fraction is larger?\nA. 5/9\nB. 6/8\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-03/practice/fraction-order/05",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which fraction is larger?\nA. 6/17\nB. 5/7\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-03/practice/fraction-order/07",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which fraction is larger?\nA. 8/14\nB. 9/12\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-03/practice/fraction-order/09",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which fraction is larger?\nA. 6/16\nB. 9/15\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-03/practice/fraction-order/12",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which fraction is larger?\nA. 3/12\nB. 10/13\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 0,
+  "target_regressions": 0,
+  "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+}

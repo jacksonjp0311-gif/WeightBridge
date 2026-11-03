@@ -1,0 +1,13 @@
+{
+  "allow_tensors": [
+    "model.language_model.layers.23.mlp.down_proj.weight",
+    "model.language_model.layers.21.mlp.down_proj.weight",
+    "model.language_model.layers.19.mlp.down_proj.weight"
+  ],
+  "max_abs_delta": 8.0,
+  "max_entries": 65536,
+  "max_fraction": 8e-05,
+  "max_tensor_bytes": 8388608,
+  "max_total_tensor_bytes": 8388608,
+  "schema": "weightbridge.policy.v1"
+}

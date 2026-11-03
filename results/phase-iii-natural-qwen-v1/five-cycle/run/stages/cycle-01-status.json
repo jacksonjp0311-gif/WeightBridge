@@ -1,0 +1,70 @@
+{
+  "process": {
+    "cpu_seconds": 2.578125,
+    "peak_rss_bytes": 42176512,
+    "peak_vram_bytes": null
+  },
+  "report": {
+    "ancestry": [
+      {
+        "cycle_id": null,
+        "holdout_path": null,
+        "holdout_sha256": null,
+        "path": "$BASE_CHECKPOINT",
+        "sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8"
+      },
+      {
+        "cycle_id": "cycle-01",
+        "holdout_path": "$FROZEN_MATERIAL\\sealed\\cycle-01.json",
+        "holdout_sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5",
+        "path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model",
+        "sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63"
+      }
+    ],
+    "events": [
+      {
+        "candidate": {
+          "path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model",
+          "sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63"
+        },
+        "cycle_id": "cycle-01",
+        "event_sha256": "c72a7062b4db4ad32b0802259f71156fe939ebcc7ee2b71ae7c0dcab6432343a",
+        "kind": "ACCEPT",
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "previous_sha256": "c9f249de8e2b73956bc2933904a5ab0bf771403eae6773c5a2bb1f75dfa18e19",
+        "reason": "Held-out target gain and preservation gates passed",
+        "schema": "weightbridge.checkpoint_lineage_event.v1",
+        "sequence": 1,
+        "verification": {
+          "disposition": "PASS",
+          "receipt": {
+            "path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model\\.weightbridge_receipt.json",
+            "sha256": "e0ec80b53ee99b79e8c85f54b3db96ad10f60c51b0963c1f5b0b3352df68e542"
+          },
+          "report": {
+            "path": "$STUDY_RUN\\state\\evaluation\\cycle-01\\report.json",
+            "sha256": "d087a23774da9b1c07ad494807ad72087c2d505cfb2f7926f276deda6abb5516"
+          },
+          "sentinel_prediction_flips": 0,
+          "source_holdout": {
+            "path": "$FROZEN_MATERIAL\\sealed\\cycle-01.json",
+            "sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5"
+          },
+          "suite": {
+            "path": "$STUDY_RUN\\state\\evaluation\\cycle-01\\suite.json",
+            "sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5"
+          },
+          "target_gain": 3
+        }
+      }
+    ],
+    "head_path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model",
+    "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+    "last_event_sha256": "70d1a1530c6e87ae8745de977e4d6f4673830e69e9ba95d66dd334dc95cce562",
+    "root_path": "$BASE_CHECKPOINT",
+    "root_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "schema": "weightbridge.checkpoint_lineage.v1"
+  },
+  "stage": "status",
+  "wall_seconds": 3.0699989999993704
+}

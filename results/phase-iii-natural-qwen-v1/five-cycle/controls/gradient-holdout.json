@@ -1,0 +1,173 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "base_target_correct": 4,
+  "candidate_sha256": "1a969cb8ff9735f4ce87c5715260dd80158f5ae79b5c66f5a0d8ad0502f82552",
+  "candidate_target_correct": 5,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "disposition": "FAIL",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 1,
+  "receipt_sha256": "ef2ee39f7a04ece7f2de5e61eeb78bf77b50e4afb2506a3a58b21df91ec498df",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/integer-control/01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-01/holdout/integer-control/02",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/integer-control/03",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/integer-control/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/integer-control/05",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-01/holdout/integer-control/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/01",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/02",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/03",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/04",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/alphabet-control/06",
+      "label": "A"
+    }
+  ],
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 1,
+  "suite_sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5",
+  "target": [
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/01",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/02",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/03",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-01/holdout/word-order/07",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-01/holdout/word-order/08",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/09",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/10",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-01/holdout/word-order/11",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-01/holdout/word-order/12",
+      "label": "A"
+    }
+  ],
+  "target_corrections": 4,
+  "target_count": 12,
+  "target_gain": 1,
+  "target_regressions": 3
+}

@@ -1,0 +1,25 @@
+{
+  "attempts": [
+    {
+      "candidate_id": "candidate-0001",
+      "diagnostic": "ELIGIBLE",
+      "disposition": "PASS"
+    },
+    {
+      "candidate_id": "candidate-0002",
+      "diagnostic": "SENTINEL_REGRESSION",
+      "disposition": "FAIL"
+    }
+  ],
+  "cycle_id": "cycle-04",
+  "elapsed_seconds": 109.29861540003913,
+  "finalist": {
+    "candidate_id": "candidate-0001",
+    "candidate_sha256": "d5ccf2c18b17565897d922a78ed15cf55a03011a4abe03c84076da0df083a5a8",
+    "strength": 0.07,
+    "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+  },
+  "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "plan_sha256": "b45c7ff7ba4111627cf4ad67a4636690d204c0b083f9d0d5d879f5b8aa0946fd",
+  "session_decision_sha256": "993a0ef5af0c13f561f2e71577058e49e17dc91fae1ccb928b9a5879ec48741d"
+}

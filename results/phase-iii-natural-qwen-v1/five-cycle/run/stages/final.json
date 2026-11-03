@@ -1,0 +1,260 @@
+{
+  "process": {
+    "cpu_seconds": 80.0625,
+    "peak_rss_bytes": 2367565824,
+    "peak_vram_bytes": null
+  },
+  "report": {
+    "accepted_cycles": 1,
+    "base_target_correct": 18,
+    "configuration": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "elapsed_seconds": 31.733387600048445,
+    "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+    "head_target_correct": 15,
+    "paired_prompt_bootstrap": {
+      "ci_high": 0.041666666666666664,
+      "ci_low": -0.2916666666666667,
+      "confidence": 0.95,
+      "mean_difference": -0.125,
+      "n": 24,
+      "resamples": 10000,
+      "seed": 0
+    },
+    "root_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "schema": "weightbridge.phase_iii.final.v1",
+    "sentinel": [
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/integer-control/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/integer-control/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/alphabet-control/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/06",
+        "label": "A"
+      }
+    ],
+    "sentinel_count": 12,
+    "sentinel_prediction_flips": 0,
+    "suite_sha256": "f40a530a4c72bc808c85c7418f5ec4644ed34b89b8f2c25087875d097814d9fb",
+    "target": [
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/07",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/08",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/date-order/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/date-order/08",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/06",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/08",
+        "label": "A"
+      }
+    ],
+    "target_count": 24,
+    "target_gain": -3,
+    "target_regressions": 4
+  },
+  "stage": "final",
+  "wall_seconds": 35.87182399997255
+}

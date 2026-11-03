@@ -1,0 +1,173 @@
+{
+  "base_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "base_target_correct": 7,
+  "candidate_sha256": "df43e1e999a61deb461836ad71324b0ae8837575467334748b680cba072b5a0f",
+  "candidate_target_correct": 7,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "disposition": "FAIL",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 1,
+  "receipt_sha256": "9ddb6281c3995584b75e53ed0bc0dff03f1a7ba74f00e8a3870ad0e18bf4c9fc",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/integer-control/01",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/integer-control/02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/integer-control/03",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-03/practice/integer-control/04",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-03/practice/integer-control/05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-03/practice/integer-control/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/05",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/alphabet-control/06",
+      "label": "B"
+    }
+  ],
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "suite_sha256": "e7d25a6da96c64608f9e131fb8eece176917b656a09064433ce75763931d7b09",
+  "target": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/01",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-03/practice/fraction-order/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/07",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/08",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/09",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/10",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/11",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-03/practice/fraction-order/12",
+      "label": "B"
+    }
+  ],
+  "target_corrections": 0,
+  "target_count": 12,
+  "target_gain": 0,
+  "target_regressions": 0
+}

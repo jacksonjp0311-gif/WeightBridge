@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0001\\model",
+    "sha256": "89dddd6f6051b246534d272e402bf058086ddd0d45b9f3e81e87c69c802f7fb4"
+  },
+  "cycle_id": "cycle-02",
+  "event_sha256": "26882bc818d102c7199e9f7e8e5d6d743a5902f711717a2175c9cd6263dcfd86",
+  "kind": "REJECT",
+  "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "previous_sha256": "70d1a1530c6e87ae8745de977e4d6f4673830e69e9ba95d66dd334dc95cce562",
+  "reason": "Prior verified prediction changed",
+  "schema": "weightbridge.checkpoint_lineage_event.v1",
+  "sequence": 2,
+  "verification": {
+    "disposition": "FAIL",
+    "receipt": {
+      "path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0001\\model\\.weightbridge_receipt.json",
+      "sha256": "d2452a1523e687d0dc723a2e32da3ede1cd867d242377db7f2f713494d05ed4e"
+    },
+    "report": {
+      "path": "$STUDY_RUN\\state\\evaluation\\cycle-02\\report.json",
+      "sha256": "a2460f16a9451931cfde734e8fd65b3e5cbc6b98d5a5cd490dd23de70f39623f"
+    },
+    "sentinel_prediction_flips": 3,
+    "source_holdout": {
+      "path": "$FROZEN_MATERIAL\\sealed\\cycle-02.json",
+      "sha256": "fe0eb13821132222feddd7c7cfbeeb2197a5814e3d227ec07cbb79665985ce17"
+    },
+    "suite": {
+      "path": "$STUDY_RUN\\state\\evaluation\\cycle-02\\suite.json",
+      "sha256": "3d77b808ba416d289bf1020d6fec9254cf248e1a6f6182f920db70ac60004bfe"
+    },
+    "target_gain": 1
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "base_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "base_target_correct": 4,
+  "candidate_sha256": "d5ccf2c18b17565897d922a78ed15cf55a03011a4abe03c84076da0df083a5a8",
+  "candidate_target_correct": 12,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "disposition": "PASS",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 1,
+  "receipt_sha256": "cb4c1ae7ae1b520a8bae31edeac1623c74a381a886feaa9f5781b2cff61f7704",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/integer-control/01",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/integer-control/02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/integer-control/03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/integer-control/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/integer-control/05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/integer-control/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/04",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/05",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/alphabet-control/06",
+      "label": "A"
+    }
+  ],
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "suite_sha256": "b7f4ef95ba90348f74d3af72bcedaf264456739c52186771d37f438a72e278c5",
+  "target": [
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/02",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/05",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/06",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/07",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/08",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/09",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/10",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "five-cycle/cycle-04/practice/word-order/11",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "five-cycle/cycle-04/practice/word-order/12",
+      "label": "B"
+    }
+  ],
+  "target_corrections": 8,
+  "target_count": 12,
+  "target_gain": 8,
+  "target_regressions": 0
+}

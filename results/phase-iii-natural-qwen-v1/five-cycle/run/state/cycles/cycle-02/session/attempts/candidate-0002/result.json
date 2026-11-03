@@ -1,0 +1,63 @@
+{
+  "base_target_correct": 7,
+  "candidate_id": "candidate-0002",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\model",
+  "candidate_sha256": "32139f80fb31c0429c9e6bc96b73e9e1d689961497afc9e8693ad338c3e07f13",
+  "candidate_target_correct": 6,
+  "changed_entries": 64919,
+  "disposition": "FAIL",
+  "parameter_fraction_changed": 7.43257583578977e-05,
+  "patch_file_sha256": "874fb171ced19c910cbc1cb44073523bfea5f60a2cd6b30fdcb9245176b705be",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\patch.json",
+  "patch_sha256": "a1debfe11391846fdba80044581fd9109747cafd8674ddc1862714de90646fe1",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\practice_report.json",
+  "practice_report_sha256": "9d644c8b3a9232fbcdaa67ec2992548a2f7536a83dc579a9cf8509b200d72506",
+  "proposal_kind": "direction",
+  "remaining_candidates": 0,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.07,
+  "target_corrections": 0,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/03",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 26 October 2007\nB. 08 November 2007\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/04",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 11 February 2003\nB. 09 December 2003\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/09",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 01 January 2001\nB. 14 November 2001\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/10",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 23 January 1985\nB. 16 March 1985\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/11",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 09 April 2024\nB. 18 June 2024\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-02/practice/date-order/12",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 30 June 2007\nB. 12 October 2007\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": -1,
+  "target_regressions": 1,
+  "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+}

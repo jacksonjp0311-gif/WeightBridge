@@ -1,0 +1,39 @@
+{
+  "base_target_correct": 9,
+  "candidate_id": "candidate-0002",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0002\\model",
+  "candidate_sha256": "89ddcc254013d4cdf08dc8567346794fe409e1b156e9ce1630b5421a5492da6c",
+  "candidate_target_correct": 10,
+  "changed_entries": 64770,
+  "disposition": "PASS",
+  "parameter_fraction_changed": 7.415516826878161e-05,
+  "patch_file_sha256": "ae807f104de88ad36ecdd987296fc2e9a1272314c5ecf527b13ae2f8edf173cd",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0002\\patch.json",
+  "patch_sha256": "20f5538fb566261b05dfbfcf7b686092ec3396ac8fa8f172f27609a153c9c15b",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-05\\session\\attempts\\candidate-0002\\practice_report.json",
+  "practice_report_sha256": "a180c209630809b9a635d84ce9bb2e582587dc04c20b81d0c5e60e5627417d74",
+  "proposal_kind": "direction",
+  "remaining_candidates": 0,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.03,
+  "target_corrections": 1,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "five-cycle/cycle-05/practice/date-order/03",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 19 February 2025\nB. 14 April 2025\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "five-cycle/cycle-05/practice/date-order/04",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 15 February 2002\nB. 04 November 2002\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 1,
+  "target_regressions": 0,
+  "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+}

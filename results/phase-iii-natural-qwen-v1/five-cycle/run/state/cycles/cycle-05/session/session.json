@@ -1,0 +1,54 @@
+{
+  "allowed_tensors": [
+    {
+      "dtype": "BF16",
+      "name": "model.language_model.layers.19.mlp.down_proj.weight",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_sha256": "638eedeb701b94aa861f4438e615c07ec6c60ee703db1bfee2de577bb6498c3e"
+    },
+    {
+      "dtype": "BF16",
+      "name": "model.language_model.layers.21.mlp.down_proj.weight",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_sha256": "af9fa5ecc9556068d867a410180e79bb3b5ac93c05059b8c98fef526c4483d9c"
+    },
+    {
+      "dtype": "BF16",
+      "name": "model.language_model.layers.23.mlp.down_proj.weight",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_sha256": "43674bf43cab4bc1e85344d74d89595b123c404e316e5a167f39dbf6ff8364b0"
+    }
+  ],
+  "base_path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model",
+  "base_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "baseline_sha256": "fed00a8931da932606e2b51792f9cc394b2e96dd6783f3f067e13f12d7405ce4",
+  "direction_tensors": [
+    "model.language_model.layers.19.mlp.down_proj.weight",
+    "model.language_model.layers.21.mlp.down_proj.weight",
+    "model.language_model.layers.23.mlp.down_proj.weight"
+  ],
+  "inference": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "max_candidates": 2,
+  "policy_sha256": "7760d9554f8088200b6448e6dd507c72865e6c91f87033298e3000cfce163e2b",
+  "practice_gate": {
+    "max_sentinel_flips": 0,
+    "min_target_gain": 1
+  },
+  "practice_sha256": "d73616de14fd5093646a558ccc54e48f0e2176c2ea3be27f4bcd811a4282674e",
+  "schema": "weightbridge.hf_edit_session.v1"
+}

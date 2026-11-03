@@ -1,0 +1,482 @@
+{
+  "accepted_cycles": 1,
+  "cycles": [
+    {
+      "accepted": true,
+      "cycle_id": "cycle-01",
+      "family": "word-order",
+      "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "SENTINEL_REGRESSION",
+            "disposition": "FAIL"
+          }
+        ],
+        "cycle_id": "cycle-01",
+        "elapsed_seconds": 112.99903450004058,
+        "finalist": {
+          "candidate_id": "candidate-0001",
+          "candidate_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+          "strength": 0.03,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "plan_sha256": "b3437e0783c752022967d81f71ed39ba2f53e90b93ad4f66571e67001702a2d3",
+        "session_decision_sha256": "5f2fff4c319923ab63abd19f402cfd3699e1e744c47638a051be33d2a8994af2"
+      },
+      "verification": {
+        "candidate_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "cycle_id": "cycle-01",
+        "disposition": "ACCEPT",
+        "elapsed_seconds": 33.02940070000477,
+        "holdout_sha256": "da39b5474fee3582cb4e36aa20510886204aaec709ef5fc69f3d21b6f22227f5",
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "reason": "Held-out target gain and preservation gates passed",
+        "report_sha256": "d087a23774da9b1c07ad494807ad72087c2d505cfb2f7926f276deda6abb5516",
+        "retention_count": 0,
+        "retention_flips": 0,
+        "sentinel_prediction_flips": 0,
+        "target_gain": 3,
+        "target_regressions": 0
+      }
+    },
+    {
+      "accepted": false,
+      "cycle_id": "cycle-02",
+      "family": "date-order",
+      "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "TARGET_REGRESSION",
+            "disposition": "FAIL"
+          }
+        ],
+        "cycle_id": "cycle-02",
+        "elapsed_seconds": 113.31735689996276,
+        "finalist": {
+          "candidate_id": "candidate-0001",
+          "candidate_sha256": "89dddd6f6051b246534d272e402bf058086ddd0d45b9f3e81e87c69c802f7fb4",
+          "strength": 0.07,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "plan_sha256": "91eb868336f026cf2556c8fae3cb39e7158f5ad79413fd75d671c789cda273e6",
+        "session_decision_sha256": "9e8cc21c75ffaca69b911278bd003a8fca2cc882d59b3afff3d047b30799b786"
+      },
+      "verification": {
+        "candidate_sha256": "89dddd6f6051b246534d272e402bf058086ddd0d45b9f3e81e87c69c802f7fb4",
+        "cycle_id": "cycle-02",
+        "disposition": "REJECT",
+        "elapsed_seconds": 39.87470679997932,
+        "holdout_sha256": "fe0eb13821132222feddd7c7cfbeeb2197a5814e3d227ec07cbb79665985ce17",
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "reason": "Prior verified prediction changed",
+        "report_sha256": "a2460f16a9451931cfde734e8fd65b3e5cbc6b98d5a5cd490dd23de70f39623f",
+        "retention_count": 24,
+        "retention_flips": 3,
+        "sentinel_prediction_flips": 0,
+        "target_gain": 1,
+        "target_regressions": 0
+      }
+    },
+    {
+      "accepted": false,
+      "cycle_id": "cycle-03",
+      "family": "fraction-order",
+      "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "PREDICTIONS_UNCHANGED",
+            "disposition": "FAIL"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "PREDICTIONS_UNCHANGED",
+            "disposition": "FAIL"
+          }
+        ],
+        "cycle_id": "cycle-03",
+        "elapsed_seconds": 112.4094864000217,
+        "finalist": null,
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "plan_sha256": "f5f55cf9d05138092a785af2c232b98547ecdb2c24d7e039e6ba189f652c653b",
+        "session_decision_sha256": "f5a662b1441820cd6e4600dd575ce520349398457e7f739106ab6265839c0a10"
+      },
+      "verification": {
+        "cycle_id": "cycle-03",
+        "disposition": "NO_FINALIST",
+        "elapsed_seconds": 0.004589200019836426,
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "reason": "No candidate passed practice"
+      }
+    },
+    {
+      "accepted": false,
+      "cycle_id": "cycle-04",
+      "family": "word-order",
+      "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "SENTINEL_REGRESSION",
+            "disposition": "FAIL"
+          }
+        ],
+        "cycle_id": "cycle-04",
+        "elapsed_seconds": 109.29861540003913,
+        "finalist": {
+          "candidate_id": "candidate-0001",
+          "candidate_sha256": "d5ccf2c18b17565897d922a78ed15cf55a03011a4abe03c84076da0df083a5a8",
+          "strength": 0.07,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "plan_sha256": "b45c7ff7ba4111627cf4ad67a4636690d204c0b083f9d0d5d879f5b8aa0946fd",
+        "session_decision_sha256": "993a0ef5af0c13f561f2e71577058e49e17dc91fae1ccb928b9a5879ec48741d"
+      },
+      "verification": {
+        "candidate_sha256": "d5ccf2c18b17565897d922a78ed15cf55a03011a4abe03c84076da0df083a5a8",
+        "cycle_id": "cycle-04",
+        "disposition": "REJECT",
+        "elapsed_seconds": 36.83293259999482,
+        "holdout_sha256": "e9eb96ec58a34212f717e4539ab4fe6e3eab60d13833cf69231720b3588ba819",
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "reason": "Prior verified prediction changed",
+        "report_sha256": "39177edf040d5ab4a41b97eb071dc3e21e0a451b264eaf1300c7e6a6acca3b3e",
+        "retention_count": 24,
+        "retention_flips": 6,
+        "sentinel_prediction_flips": 0,
+        "target_gain": -1,
+        "target_regressions": 1
+      }
+    },
+    {
+      "accepted": false,
+      "cycle_id": "cycle-05",
+      "family": "date-order",
+      "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          }
+        ],
+        "cycle_id": "cycle-05",
+        "elapsed_seconds": 111.10449040000094,
+        "finalist": {
+          "candidate_id": "candidate-0001",
+          "candidate_sha256": "6b081611a35bb2cfc8fd04f249a3ab0ca332405451eb41fc01a278168a5cf926",
+          "strength": 0.03,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "plan_sha256": "72aa85c6b8a0ab0fbfa247f5ce3ca267df7a6d77f0781a323a6ef0d4692631cd",
+        "session_decision_sha256": "5a0001e7477c844319e22bbf478c91859582ffdcad1e8d80af0ca2be863fadf8"
+      },
+      "verification": {
+        "candidate_sha256": "6b081611a35bb2cfc8fd04f249a3ab0ca332405451eb41fc01a278168a5cf926",
+        "cycle_id": "cycle-05",
+        "disposition": "REJECT",
+        "elapsed_seconds": 37.55705959995976,
+        "holdout_sha256": "1f14dffdb7e8399f31539cee45937bbd321b4350cc27276c39341195fd227867",
+        "parent_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+        "reason": "Prior verified prediction changed",
+        "report_sha256": "630464aed9f478bb5af220e1bf8a0c55bd3878ef6f60be52db73a7a128c03727",
+        "retention_count": 24,
+        "retention_flips": 3,
+        "sentinel_prediction_flips": 0,
+        "target_gain": 0,
+        "target_regressions": 0
+      }
+    }
+  ],
+  "final": {
+    "accepted_cycles": 1,
+    "base_target_correct": 18,
+    "configuration": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "elapsed_seconds": 31.733387600048445,
+    "head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+    "head_target_correct": 15,
+    "paired_prompt_bootstrap": {
+      "ci_high": 0.041666666666666664,
+      "ci_low": -0.2916666666666667,
+      "confidence": 0.95,
+      "mean_difference": -0.125,
+      "n": 24,
+      "resamples": 10000,
+      "seed": 0
+    },
+    "root_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "schema": "weightbridge.phase_iii.final.v1",
+    "sentinel": [
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/integer-control/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/integer-control/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/integer-control/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/alphabet-control/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/alphabet-control/06",
+        "label": "A"
+      }
+    ],
+    "sentinel_count": 12,
+    "sentinel_prediction_flips": 0,
+    "suite_sha256": "f40a530a4c72bc808c85c7418f5ec4644ed34b89b8f2c25087875d097814d9fb",
+    "target": [
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/word-order/07",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/word-order/08",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/date-order/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "five-cycle/final/date-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/date-order/08",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/06",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "five-cycle/final/fraction-order/08",
+        "label": "A"
+      }
+    ],
+    "target_count": 24,
+    "target_gain": -3,
+    "target_regressions": 4
+  },
+  "final_head_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "original_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "protocol_sha256": "76980c44b93cbfc4c05c99c09f5b7c3c432ace2c4a4c8efdcc1085c322a13b4a",
+  "schema": "weightbridge.phase_iii.study_run.v1"
+}
