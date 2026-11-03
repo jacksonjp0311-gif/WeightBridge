@@ -134,6 +134,33 @@ the host calls diagnostics and practice evaluation automatically, while the
 model supplies patch proposals and chooses whether to finalize an evaluated
 candidate. Treat the interaction modes as separate exploratory conditions.
 
+### Paired connectivity probe
+
+For the toy MLP, an input weight `input_weight[i, j]` or hidden bias
+`hidden_bias[j]` has no path to either logit when the entire outgoing row
+`output_weight[j, :]` is zero. The read-only probe lists those coordinates
+from the base checkpoint. A nonzero outgoing row is a structural condition,
+and the effect of an edit still depends on the input, weights and edit value.
+The host attaches the probe only to the treatment arm's practice view.
+
+```bash
+python experiments/original_weight_edits/run_local_mcp_cohort.py \
+  --model /path/to/pinned/qwen35-base \
+  --broker-python /path/to/mcp-enabled/python \
+  --tasks 4 --seed-offset 50000 --mode patch-form \
+  --paired-connectivity --out results/wb-cx
+python experiments/original_weight_edits/summarize_connectivity_ablation.py \
+  results/wb-cx --out results/wb-cx/comparison.json
+```
+
+Run the host command in the inference environment and the replay in the
+project environment. Use a fresh output directory and unused split-seed
+offset for each new study. One pair uses the same base and splits in two
+fresh model contexts. Arm order alternates across pairs. The primary outcome
+is the fraction of tasks with an accepted edit whose maximum absolute
+practice logit change exceeds `1e-9`. The replay also reports prediction
+changes, finalized holdout repairs, token counts and CPU time.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

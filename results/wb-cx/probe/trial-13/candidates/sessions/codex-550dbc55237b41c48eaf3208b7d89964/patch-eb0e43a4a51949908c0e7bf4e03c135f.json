@@ -1,0 +1,19 @@
+{
+  "base_sha256": "2c3e2171c419fa6b4c4eef16906ede1c0fd52feeef148b84454791aab737d157",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.05
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weight at index 0 and 1 are identical (both 1.0), causing the hidden unit to output the same value for both inputs. This creates a zero-weight path to the output, preventing the model from distinguishing between the two input classes. Adding a small negative delta to one of them breaks this symmetry, allowing the model to learn the class separation.",
+  "schema": "weightbridge.patch.v1"
+}

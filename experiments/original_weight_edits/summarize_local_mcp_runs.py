@@ -38,11 +38,14 @@ def verify_scores(directory, record, calls):
         if _file_sha256(checkpoint) != digest:
             raise ValueError(f"Checkpoint hash mismatch for {directory.name}/{key}")
         correct = ToyMLP.load(checkpoint).forward(features).argmax(axis=1) == labels
-        if correct.tolist() != metrics[key]["per_example_correct"]:
+        reported = metrics[key]
+        if (correct.tolist() != reported["per_example_correct"]
+                or correct.size != reported["n"] or int(correct.sum()) != reported["correct"]
+                or float(correct.mean()) != reported["accuracy"]):
             raise ValueError(f"Holdout replay differs for {directory.name}/{key}")
 
 
-def accepted_practice_edits(directory, record, calls):
+def accepted_practice_edits(directory, record, calls, *, include_class_changes=False):
     accepted = [call for call in calls if call["request"].get("tool") == "submit_patch"
                 and call["response"].get("ok") is True]
     if not accepted:
@@ -51,6 +54,8 @@ def accepted_practice_edits(directory, record, calls):
     base = ToyMLP.load(directory / "base.npz")
     with np.load(directory / "practice.npz", allow_pickle=False) as practice:
         features = practice["features"]
+        if include_class_changes:
+            labels = practice["labels"]
     baseline_logits = base.forward(features)
     edits = []
     for call in accepted:
@@ -64,16 +69,25 @@ def accepted_practice_edits(directory, record, calls):
                       for name, weights in base.tensors.items())
         if changed != receipt["changed_entries"]:
             raise ValueError(f"Practice candidate change count mismatch for {path.name}")
-        edits.append({
+        candidate_logits = candidate.forward(features)
+        edit = {
             "candidate_sha256": receipt["candidate_sha256"], "changed_entries": changed,
             "patch": call["request"]["arguments"]["patch"]["changes"],
             "max_absolute_practice_logit_delta": float(
-                np.max(np.abs(candidate.forward(features) - baseline_logits))),
-        })
+                np.max(np.abs(candidate_logits - baseline_logits))),
+        }
+        if include_class_changes:
+            candidate_classes = candidate_logits.argmax(axis=1)
+            baseline_classes = baseline_logits.argmax(axis=1)
+            edit["practice_class_changes"] = int(np.count_nonzero(
+                candidate_classes != baseline_classes))
+            edit["practice_correct_delta"] = int(
+                np.count_nonzero(candidate_classes == labels) - np.count_nonzero(baseline_classes == labels))
+        edits.append(edit)
     return edits
 
 
-def summarize_run(path):
+def summarize_run(path, *, include_class_changes=False):
     protocol = _read_json(path / "frozen_protocol.json")
     record_paths = sorted(path.glob("trial-*/experiment_record.json"))
     records = [_read_json(record) for record in record_paths]
@@ -115,7 +129,8 @@ def summarize_run(path):
             "holdout": {key: (None if result is None else {"correct": result["correct"], "n": result["n"]})
                         for key, result in metrics.items()},
             "random_control_match": record["control_modification"]["magnitude_match_type"],
-            "accepted_practice_edits": accepted_practice_edits(record_path.parent, record, calls),
+            "accepted_practice_edits": accepted_practice_edits(
+                record_path.parent, record, calls, include_class_changes=include_class_changes),
             "counts": dict(counts),
         })
     return {

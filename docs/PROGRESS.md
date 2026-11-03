@@ -174,3 +174,17 @@ deployed; candidates remain isolated research artifacts.
 - The first Windows archive replay matched all JSON values but changed the
   comparison file's line endings. The source, evidence and comparison files
   now have explicit LF checkout rules where their exact bytes are checked.
+
+## Paired connectivity experiment
+
+- Added a read-only toy MLP probe for upstream coordinates blocked by
+  zero outgoing weights, and a paired runner with frozen arm order.
+- Four fresh pairs finished. Both arms had zero tasks with any practice
+  logit change, zero prediction changes and zero finalized candidates.
+  All 18 accepted submissions targeted a disconnected coordinate.
+  [Comparison](../results/wb-cx/comparison.json)
+- Replay verified the saved checkpoints, scores, matching split arrays and
+  model-facing diagnostic views. The old smoke comparison still replays
+  byte for byte.
+- Core suite passed 78 tests with 2 skipped. The inference suite passed
+  81 with 1 skipped. The 20-task transfer gate is still HOLD.

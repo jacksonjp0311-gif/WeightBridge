@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.001
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weight at index 0 and 1 are identical (both 1.0), causing the hidden unit to output zero logits for both inputs. Adding a small negative delta to one of them (e.g., -0.001) will shift the logits for that input, allowing the model to distinguish between the two classes.",
+  "schema": "weightbridge.patch.v1"
+}

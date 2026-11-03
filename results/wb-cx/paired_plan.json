@@ -1,0 +1,51 @@
+{
+  "hypothesis": "The probe increases tasks with at least one accepted edit changing practice logits.",
+  "primary": "fraction of paired tasks with any accepted edit changing practice logits by more than 1e-9",
+  "protocol_sha256": {
+    "control": "9df5057effc207887863628aa369f60461c830c14c432a8dea4cb5a6cabbecf5",
+    "probe": "191cc1a2a7edf332b4719d866fec9812594e52be4642ee79e03df0a535b26d54"
+  },
+  "schedule": [
+    {
+      "arm": "control",
+      "task": "trial-05"
+    },
+    {
+      "arm": "probe",
+      "task": "trial-05"
+    },
+    {
+      "arm": "probe",
+      "task": "trial-09"
+    },
+    {
+      "arm": "control",
+      "task": "trial-09"
+    },
+    {
+      "arm": "control",
+      "task": "trial-13"
+    },
+    {
+      "arm": "probe",
+      "task": "trial-13"
+    },
+    {
+      "arm": "probe",
+      "task": "trial-16"
+    },
+    {
+      "arm": "control",
+      "task": "trial-16"
+    }
+  ],
+  "schema": "weightbridge.connectivity_ablation.v1",
+  "secondary": [
+    "practice class changes",
+    "finalized holdout repairs",
+    "accepted edits",
+    "model token counts",
+    "CPU seconds"
+  ],
+  "seed_offset": 50000
+}

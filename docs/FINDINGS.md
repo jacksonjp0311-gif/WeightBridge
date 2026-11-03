@@ -255,3 +255,30 @@ summaries and, for the stopped Windows attempt, a hash of the omitted trace.
 The comparison counts finalized candidates from scored candidate artifacts
 because the broker's legacy `candidate_finalized` flag can also be true on a
 stop event.
+
+## Paired test of the connectivity probe
+
+The control and probe each ran the patch form on the same four fresh
+synthetic tasks. Each task used a fresh model context in both arms. The
+schedule alternated arm order, and only the probe arm saw the disconnected
+coordinate list. The scorer treated a task as active if at least one
+accepted edit changed any practice logit by more than `1e-9`.
+
+| Condition | Active tasks | Accepted submissions | Submissions to disconnected coordinates | Finalized candidates |
+|---|---:|---:|---:|---:|
+| Control | 0/4 | 8 | 8 | 0 |
+| Connectivity probe | 0/4 | 10 | 10 | 0 |
+
+All four pairs tied. Every accepted edit targeted `input_weight[0, 1]`,
+and checkpoint replay found zero practice logit and prediction changes.
+On the first probe trial the model mentioned the zero outgoing weights
+but still submitted an edit to the disconnected coordinate. The result
+shows a failure to use the supplied evidence in this particular model
+and workflow. The 20-task transfer gate remains HOLD.
+
+The study used 2,216.09 model-host CPU seconds and 402.73 wall seconds
+across eight sessions. The two arms processed 32,538 input tokens and
+generated 3,158 output tokens. The replay verifies equal paired data,
+the frozen execution order, diagnostics sent, and checkpoint scores.
+See the [paired comparison](../results/wb-cx/comparison.json) and
+[frozen plan](../results/wb-cx/paired_plan.json).
