@@ -1,0 +1,284 @@
+{
+  "attempts": [
+    {
+      "rounded_frobenius_norm": 64.99365854523506,
+      "rows": {
+        "sentinel": [
+          {
+            "correct": true,
+            "id": "construction-sentinel-00",
+            "label": "A",
+            "margin": 3.375,
+            "prediction": "A"
+          },
+          {
+            "correct": false,
+            "id": "construction-sentinel-01",
+            "label": "B",
+            "margin": -0.875,
+            "prediction": "A"
+          },
+          {
+            "correct": true,
+            "id": "construction-sentinel-02",
+            "label": "A",
+            "margin": 2.0,
+            "prediction": "A"
+          },
+          {
+            "correct": true,
+            "id": "construction-sentinel-03",
+            "label": "B",
+            "margin": 2.375,
+            "prediction": "B"
+          },
+          {
+            "correct": true,
+            "id": "construction-sentinel-04",
+            "label": "A",
+            "margin": 1.75,
+            "prediction": "A"
+          },
+          {
+            "correct": false,
+            "id": "construction-sentinel-05",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "A"
+          },
+          {
+            "correct": true,
+            "id": "construction-sentinel-06",
+            "label": "A",
+            "margin": 5.75,
+            "prediction": "A"
+          },
+          {
+            "correct": false,
+            "id": "construction-sentinel-07",
+            "label": "B",
+            "margin": -0.625,
+            "prediction": "A"
+          }
+        ],
+        "target": [
+          {
+            "correct": false,
+            "id": "construction-target-00",
+            "label": "A",
+            "margin": -29.75,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-01",
+            "label": "A",
+            "margin": -30.5,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-02",
+            "label": "A",
+            "margin": -30.8125,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-03",
+            "label": "A",
+            "margin": -26.75,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-04",
+            "label": "A",
+            "margin": -29.0625,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-05",
+            "label": "A",
+            "margin": -29.6875,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-06",
+            "label": "A",
+            "margin": -26.75,
+            "prediction": "B"
+          },
+          {
+            "correct": false,
+            "id": "construction-target-07",
+            "label": "A",
+            "margin": -29.0625,
+            "prediction": "B"
+          }
+        ]
+      },
+      "sentinel_flips": 3,
+      "strength": 4.0,
+      "target_loss": 7
+    },
+    {
+      "failure": "rounded intervention exceeds host scalar cap",
+      "strength": 8.0
+    },
+    {
+      "failure": "rounded intervention exceeds host scalar cap",
+      "strength": 16.0
+    },
+    {
+      "failure": "rounded intervention exceeds host scalar cap",
+      "strength": 32.0
+    },
+    {
+      "failure": "rounded intervention exceeds host scalar cap",
+      "strength": 64.0
+    },
+    {
+      "failure": "rounded intervention exceeds host scalar cap",
+      "strength": 128.0
+    }
+  ],
+  "fault_layer": 23,
+  "fault_seed": 919611,
+  "pristine": {
+    "sentinel": [
+      {
+        "correct": true,
+        "id": "construction-sentinel-00",
+        "label": "A",
+        "margin": 0.625,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-01",
+        "label": "B",
+        "margin": 2.5,
+        "prediction": "B"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-02",
+        "label": "A",
+        "margin": 0.375,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-03",
+        "label": "B",
+        "margin": 0.625,
+        "prediction": "B"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-04",
+        "label": "A",
+        "margin": 0.375,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-05",
+        "label": "B",
+        "margin": 2.75,
+        "prediction": "B"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-06",
+        "label": "A",
+        "margin": 0.125,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-sentinel-07",
+        "label": "B",
+        "margin": 3.0,
+        "prediction": "B"
+      }
+    ],
+    "target": [
+      {
+        "correct": true,
+        "id": "construction-target-00",
+        "label": "A",
+        "margin": 0.5,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-01",
+        "label": "A",
+        "margin": 0.125,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-02",
+        "label": "A",
+        "margin": 0.25,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-03",
+        "label": "A",
+        "margin": 0.25,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-04",
+        "label": "A",
+        "margin": 0.125,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-05",
+        "label": "A",
+        "margin": 0.375,
+        "prediction": "A"
+      },
+      {
+        "correct": true,
+        "id": "construction-target-06",
+        "label": "A",
+        "margin": 0.25,
+        "prediction": "A"
+      },
+      {
+        "correct": false,
+        "id": "construction-target-07",
+        "label": "A",
+        "margin": -0.125,
+        "prediction": "B"
+      }
+    ]
+  },
+  "pristine_checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "resources": {
+    "forward_batches": 4,
+    "input_tokens": 1216,
+    "model_output_tokens_generated": 0,
+    "numpy": "2.5.4",
+    "peak_rss_bytes": 2347536384,
+    "prompt_examples": 32,
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "split_seeds": {
+    "construction": 1813731604,
+    "holdout": 1056975658,
+    "practice": 813006
+  }
+}

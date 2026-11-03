@@ -1,0 +1,132 @@
+{
+  "affected_parameters": {
+    "changed_entries": 16289,
+    "parameter_fraction_changed": 1.8649274910146423e-05
+  },
+  "artifact_root": "results/qwen-blind-repair-v2",
+  "artifacts": [
+    "evaluation/damaged_scores.json",
+    "evaluation/pristine_scores.json",
+    "evaluation/random_813021_patch.json",
+    "evaluation/random_813021_receipt.json",
+    "evaluation/random_813021_scores.json",
+    "evaluation/random_813022_patch.json",
+    "evaluation/random_813022_receipt.json",
+    "evaluation/random_813022_scores.json",
+    "evaluation/random_813023_patch.json",
+    "evaluation/random_813023_receipt.json",
+    "evaluation/random_813023_scores.json",
+    "evaluation/repaired_scores.json",
+    "evaluation/stage_resources.json",
+    "evaluation/summary.json",
+    "evaluator/calibration.json",
+    "evaluator/construction.json",
+    "evaluator/fault_patch.json",
+    "evaluator/fault_receipt.json",
+    "evaluator/holdout.json",
+    "evaluator/stage_resources.json",
+    "public/practice.json",
+    "public/protocol.json",
+    "search/repair_patch.json",
+    "search/repair_receipt.json",
+    "search/search.json",
+    "search/stage_resources.json"
+  ],
+  "disposition": "INCONCLUSIVE",
+  "evaluation": {
+    "dataset": "frozen synthetic two-choice prompts",
+    "practice_test_separated": true,
+    "seeds": {
+      "construction": 1813731604,
+      "holdout": 1056975658,
+      "practice": 813006
+    },
+    "summary": "evaluation/summary.json"
+  },
+  "experiment_id": "qwen-blind-repair-v2",
+  "hypothesis": "A bounded practice-only search can recover at least half the held-out accuracy lost to an injected Qwen weight defect.",
+  "measurement_key": "4db3309dd8014517e361979177aae48f49d355399550b6c8a254821abfbfa199",
+  "proposed_modification": "search/repair_patch.json",
+  "resources": {
+    "final_evaluation": {
+      "damaged": {
+        "forward_batches": 7,
+        "input_tokens": 2154,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2429276160,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "pristine": {
+        "forward_batches": 7,
+        "input_tokens": 2154,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2355146752,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_813021": {
+        "forward_batches": 7,
+        "input_tokens": 2154,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2429874176,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_813022": {
+        "forward_batches": 7,
+        "input_tokens": 2154,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2463498240,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_813023": {
+        "forward_batches": 7,
+        "input_tokens": 2154,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2496536576,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "repaired": {
+        "forward_batches": 10,
+        "input_tokens": 3091,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2429276160,
+        "prompt_examples": 80,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      }
+    },
+    "search": {
+      "forward_batches": 75,
+      "input_tokens": 23425,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2356486144,
+      "prompt_examples": 600,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    }
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "damaged_sha256": "f00fe2a2338691a94381e32d61f02e6701da20e9df2426f743e1fc9b1a9e7118",
+    "id": "Qwen/Qwen3.5-0.8B",
+    "pristine_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+  },
+  "timestamp_utc": "2026-11-03T06:33:51.542218+00:00"
+}

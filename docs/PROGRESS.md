@@ -222,3 +222,17 @@ deployed; candidates remain isolated research artifacts.
 - The core suite passed 83 tests with 2 skipped, and the inference suite
   passed 86 with 1 skipped. The earlier search comparison still replays
   byte for byte at `726f668`.
+
+## Blind Qwen checkpoint repair
+
+- Added separate preparation, practice-only search, and saved-checkpoint
+  evaluation commands for pinned Qwen3.5-0.8B. The evaluator compares
+  pristine, damaged, repaired, and three norm-matched random checkpoints.
+- The initial calibration halted before saving a model. A smaller injection
+  passed calibration, but the paraphrase trial had no held-out accuracy loss
+  to recover. The first same-format trial recovered 2/2 lost choices and beat
+  all random controls. It failed the unrelated-prediction gate with 3/32 flips.
+- A sentinel-constrained follow-up increased practice coverage and penalized
+  unrelated activation responses. Its first protocol was retired before
+  scoring because six sentinel prompts overlapped an earlier holdout.
+  [Protocol and evidence](QWEN_BLIND_REPAIR.md)

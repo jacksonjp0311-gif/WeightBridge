@@ -1,0 +1,45 @@
+{
+  "affected_parameters": {
+    "changed_entries": 60705,
+    "saved_repair_candidate": false
+  },
+  "artifact_root": "results/qwen-blind-repair-v4-retired",
+  "artifacts": [
+    "calibration.json",
+    "construction.json",
+    "experiment_record.json",
+    "fault_receipt.json",
+    "protocol.json",
+    "stage_resources.json",
+    "unscored_holdout.json"
+  ],
+  "disposition": "HOLD",
+  "evaluation": {
+    "dataset": "construction only",
+    "holdout_overlap_with_v3_sentinels": 6,
+    "holdout_scored": false,
+    "practice_test_separated": true,
+    "reason": "Overlap audit retired this protocol before scoring. Search rejected its stale source hash before loading the model.",
+    "seeds": {
+      "construction": 2993114628,
+      "holdout": 1576151824,
+      "practice": 833006
+    }
+  },
+  "experiment_id": "qwen-blind-repair-v4-retired",
+  "hypothesis": "Penalizing sentinel activations during the fit may reduce unrelated prediction changes.",
+  "measurement_key": "d2155b9382bc3dc6f14f01aa3727b6b9d11f03c0f39ff8fdb55023f1e8f683b2",
+  "proposed_modification": "Evaluator-only calibration with a weighted activation gate over 64 MLP columns.",
+  "resources": {
+    "cpu_seconds": 129.03125,
+    "peak_rss_bytes": 2529132544,
+    "wall_seconds": 45.37642730001244
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8"
+  },
+  "timestamp_utc": "2026-11-03T06:41:13.779447+00:00"
+}

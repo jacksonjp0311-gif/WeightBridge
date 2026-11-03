@@ -1,0 +1,59 @@
+{
+  "base_sha256": "e8cec1148c94cb12c60220c8b79a84658fe4e408726bc5f8aa908a4bf73fcfbc",
+  "candidate_sha256": "14896615a682d852867873a978a4c4727be1c0734f20d7e4b0c29d9d75074307",
+  "changed_entries": 16252,
+  "changes": [
+    {
+      "axis": "columns",
+      "indices": [
+        2068,
+        1987,
+        116,
+        657,
+        1985,
+        1724,
+        1688,
+        841,
+        2708,
+        1761,
+        1018,
+        2389,
+        72,
+        1604,
+        2356,
+        1970
+      ],
+      "op": "slice_add",
+      "parameter_updates": 16384,
+      "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+      "values_sha256": "dd575745c973f3aadfcfbcdfbf86e2b4941c8d0f801a3eed07563db5aecb4652"
+    }
+  ],
+  "evidence_ids": [
+    "qwen-blind-injection-v1"
+  ],
+  "max_abs_delta": 0.066986083984375,
+  "note": "Candidate is isolated and has not been promoted or deployed",
+  "parameter_fraction_changed": 1.860691361284914e-05,
+  "patch_sha256": "b7cdfceec95c57d687dccb46f005cf73f27bd70eb9a3c17ab3856143f7606cbd",
+  "policy_sha256": "e1a4f6662c7da27dd080e1498d413b005a7a15368e08874fbd351fd27f2884e4",
+  "schema": "weightbridge.receipt.v2",
+  "source_shards": [
+    "model.safetensors-00001-of-00001.safetensors"
+  ],
+  "status": "candidate_only_not_promoted",
+  "tensor_receipts": {
+    "model.language_model.layers.23.mlp.down_proj.weight": {
+      "base_sha256": "e4b32201a10a4ccc9548ed9b31c665c08e8e0e2912d540132d2f720acd4b6845",
+      "bytes_changed": 23063,
+      "candidate_sha256": "39f80d210a543e5693b822ee45f7145a32667e67c795bbd1e9e51540677a9d0e",
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        3584
+      ]
+    }
+  },
+  "total_parameters": 873438784,
+  "touched_entries": 16384
+}

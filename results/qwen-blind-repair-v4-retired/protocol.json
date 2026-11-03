@@ -1,0 +1,65 @@
+{
+  "activation_gate": {
+    "columns": 64,
+    "sentinel_weight": 64.0
+  },
+  "construction_sha256": "ebe4b44f8630a1a957e84a0d7666d278b47fe6184c94e042f40ea37d88a37a41",
+  "eligible_layers": [
+    19,
+    21,
+    23
+  ],
+  "fault_strengths": [
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64,
+    1.28,
+    2.56,
+    4.0
+  ],
+  "holdout_sha256": "203f7193773aeea9accd1cfd8acac89f685b43697b4bd3ee078825ec024a2166",
+  "inference": "CPU BF16, 6 threads, left padding, no thinking, max 96 input tokens, A/B logits only",
+  "max_unrelated_prediction_flips_vs_damaged": 0,
+  "minimum_calibration_accuracy_loss_count": 6,
+  "minimum_recovery": 0.5,
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.19.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.23.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "practice_seed": 833006,
+  "practice_sha256": "6f8de20c67400d26dc5fe9dcd1a7ec3492c33eb62520906e6d8155a23b2c99a1",
+  "primary": "fraction of lost forced-choice holdout accuracy recovered",
+  "random_control_seeds": [
+    833021,
+    833022,
+    833023
+  ],
+  "schema": "weightbridge.qwen_blind_repair.v1",
+  "source_sha256": "a9a91181496fe61373b513cf65ad06141b7ebfb7c3c1c463876d5a6c7512efcf",
+  "strengths": [
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64,
+    1.28
+  ],
+  "timestamp_utc": "2026-11-03T06:41:13.779447+00:00"
+}

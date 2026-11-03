@@ -7,9 +7,10 @@
 > optional MCP server now exposes a practice-only toy diagnosis session to
 > LLM hosts. A Codex MCP pilot independently proposed a one-weight hidden-bias
 > correction and improved a synthetic holdout; this is one task, not evidence
-> of transfer. The bundled diagnostic worker remains deterministic search
-> code, not an LLM, and no Qwen improvement has been demonstrated. See the
-> evidence ledger for measured results.
+> of transfer. A separate [blind repair experiment](docs/QWEN_BLIND_REPAIR.md)
+> uses a deterministic activation-guided search to edit an intentionally
+> damaged Qwen3.5-0.8B checkpoint. See the experiment report for held-out
+> recovery, regression measurements and replay commands.
 
 ## Historical v0.1 guide
 

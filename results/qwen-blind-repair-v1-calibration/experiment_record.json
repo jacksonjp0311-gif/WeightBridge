@@ -1,0 +1,41 @@
+{
+  "affected_parameters": {
+    "saved_candidate": false
+  },
+  "artifact_root": "results/qwen-blind-repair-v1-calibration",
+  "artifacts": [
+    "protocol.json",
+    "construction.json",
+    "calibration.json",
+    "experiment_record.json"
+  ],
+  "disposition": "HOLD",
+  "evaluation": {
+    "dataset": "construction only",
+    "holdout_scored": false,
+    "reason": "The smallest intervention flipped three unrelated construction predictions. Larger strengths exceeded the scalar cap.",
+    "seed": 1813731604,
+    "split": "construction"
+  },
+  "experiment_id": "qwen-blind-repair-v1-calibration",
+  "hypothesis": "A construction-only directional injection causes a measurable targeted fault.",
+  "measurement_key": "aee6651c6cb9c4f4f6c8a0d29be2be65a2d08a651678517e730bb847dce7aab3",
+  "proposed_modification": "Calibration strengths 4 through 128 over one selected MLP projection",
+  "resources": {
+    "forward_batches": 4,
+    "input_tokens": 1216,
+    "model_output_tokens_generated": 0,
+    "numpy": "2.5.4",
+    "peak_rss_bytes": 2347536384,
+    "prompt_examples": 32,
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8"
+  },
+  "timestamp_utc": "2026-11-03T06:33:08.537381+00:00"
+}
