@@ -1,0 +1,38 @@
+{
+  "schema": "weightbridge.phase_iiib.synthetic_protocol.v1",
+  "dormant": {
+    "seed_start": 20261103,
+    "cases": 200,
+    "features": 48,
+    "practice_rows": 96,
+    "test_rows": 256,
+    "noise_sd": 0.001,
+    "maximum_absolute_factor_product": 1.0,
+    "candidate_evaluations_per_arm": 17
+  },
+  "sequential": {
+    "seed_start": 41200,
+    "networks": 20,
+    "cycles": 5,
+    "shared_dimensions": 4,
+    "practice_rows": 24,
+    "test_rows": 96,
+    "retention_penalty": 4.0,
+    "update_penalty": 0.05,
+    "minimum_target_improvement": 1e-10
+  },
+  "permutation_seed": 7263,
+  "finite_difference_step": 0.0001,
+  "gates": {
+    "derivative_max_absolute_error": 1e-6,
+    "exact_repair_max_loss": 1e-12,
+    "guided_dormant_min_repair_rate": 0.9,
+    "guided_dormant_min_advantage": 0.3,
+    "guided_dormant_max_mse_ratio": 0.05,
+    "permutation_raw_min_test_mse": 0.001,
+    "require_harmful_proposal_rejection": true,
+    "require_sequential_soft_drift_reduction": true,
+    "require_strict_nullspace_exhaustion": true
+  },
+  "eligibility": "All gates must pass to justify a bounded Qwen exploration. The sequential fixture compares preservation objectives on its own linear task family. It does not qualify a mixed-curvature solver on sequential learning."
+}
