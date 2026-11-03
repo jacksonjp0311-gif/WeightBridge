@@ -56,6 +56,8 @@ def export(material, run, output, *, admission=None, description=None):
             or any(digest != model for digest in (report["base_sha256"], manifest["model_sha256"], sources["base_sha256"]))
             or sources["material_manifest_sha256"] != report["material_manifest_sha256"]
             or any(sources[key] != protocol[key] for key in ("inference", "generation"))
+            or sources["generation_contexts"] != ["task", "counterfactual"]
+            or sources["scored_contexts"] != ["task", "counterfactual", "neutral_absent", "neutral_generic", "irrelevant"]
             or set(sources["source_sha256"]) != set(SOURCES)
             or set(report["splits"]) != set(SPLITS)
             or manifest["generator_sha256"] != sources["source_sha256"]["experiments/phase_iiid/roster.py"]):
@@ -74,9 +76,18 @@ def export(material, run, output, *, admission=None, description=None):
     if decision["practice_predictions_sha256"] != report["splits"]["practice"]["predictions_sha256"]:
         raise ValueError("Practice decision does not bind the archived practice predictions")
 
-    for name, path in (("admission", admission), ("description", description)):
-        if path is not None and read(f"run/{name}.json", path)["report_sha256"] != report_hash:
-            raise ValueError(f"Optional {name} does not bind the measured report")
+    if admission is not None:
+        record = read("run/admission.json", admission)
+        links = {"report_sha256": report_hash, "protocol_sha256": protocol_hash, "model_sha256": model,
+                 "material_manifest_sha256": report["material_manifest_sha256"],
+                 "practice_decision_sha256": report["practice_decision_sha256"]}
+        if any(record.get(key) != digest for key, digest in links.items()):
+            raise ValueError("Optional admission does not bind the measured report")
+    if description is not None:
+        record = read("run/description.json", description)
+        if (record.get("report_sha256") != report_hash
+                or record.get("description_source_sha256") != file_hash(Path(__file__).with_name("describe_grounding.py"))):
+            raise ValueError("Optional description does not bind the measured report and analysis source")
 
     output.mkdir(parents=True, exist_ok=False)
     for relative, data in artifacts.items():

@@ -28,7 +28,8 @@ def evidence(tmp_path):
     json_dump_atomic(sources, {"schema": "weightbridge.phase_iiid.grounding_execution.v1", "base_sha256": base,
                               "protocol_sha256": protocol_hash, "material_manifest_sha256": file_hash(manifest),
                               "source_sha256": source_hashes, "inference": protocol["inference"],
-                              "generation": protocol["generation"]})
+                              "generation": protocol["generation"], "generation_contexts": ["task", "counterfactual"],
+                              "scored_contexts": ["task", "counterfactual", "neutral_absent", "neutral_generic", "irrelevant"]})
     json_dump_atomic(decision, {"protocol_sha256": protocol_hash,
                                "practice_predictions_sha256": splits["practice"]["predictions_sha256"]})
     json_dump_atomic(run / "report.json", {"schema": "weightbridge.phase_iiid.grounding_report.v1", "base_sha256": base,
