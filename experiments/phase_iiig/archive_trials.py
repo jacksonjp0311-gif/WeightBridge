@@ -21,16 +21,16 @@ def _read(path):
     return json.loads(path.read_bytes())
 
 
-def replay_rows(measured, expected):
+def replay_rows(measured, expected, parser=parse_integer):
     rows = measured["rows"]
     for prediction, row in zip(rows, expected, strict=True):
         if (any(prediction[key] != value for key, value in row.items())
-                or prediction["exact"] != parse_integer(prediction["text"], prediction["stop_reason"])):
+                or prediction["exact"] != parser(prediction["text"], prediction["stop_reason"])):
             raise ValueError("Behavioral prediction differs from its frozen row or raw output")
     return rows
 
 
-def verify_trial(run, material, protocol, manifest, load, expected_sources):
+def verify_trial(run, material, protocol, manifest, load, expected_sources, parser=parse_integer):
     report, lock = (_read(run / name) for name in ("report.json", "candidate-lock.json"))
     manifest_sha = file_hash(material / "manifest.json")
     model = report["model"]
@@ -55,7 +55,7 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
             or family_lock["manifest_sha256"] != manifest_sha
             or family_lock["selected_family"] != report["selected_family"]):
         raise ValueError("Practice lock is inconsistent")
-    practice = replay_rows(_read(files["practice.json"]), load("practice"))
+    practice = replay_rows(_read(files["practice.json"]), load("practice"), parser)
     qualification = {family: qualify(practice, family, protocol["qualification"])
                      for family in report["practice"]}
     passes = [family for family, result in qualification.items() if result["disposition"] == "PASS"]
@@ -67,7 +67,7 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
         if report["behavioral_qualification"] != "HOLD" or report["candidate_attempts"] or report["hidden_opened"]:
             raise ValueError("Unqualified measurement advanced to fitting")
         return report, files
-    selection = replay_rows(_read(files["selection.json"]), _scope(load("selection"), family))
+    selection = replay_rows(_read(files["selection.json"]), _scope(load("selection"), family), parser)
     selection_gate = qualify(selection, family, protocol["qualification"])
     if selection_gate != report["selection"] or selection_gate["disposition"] != report["behavioral_qualification"]:
         raise ValueError("Selection qualification differs on replay")
@@ -77,7 +77,7 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
         if (payload["split"] != split or payload["family"] != family or payload["checkpoint_sha256"] != expected_sha
                 or payload["roster_sha256"] != manifest["splits"][split]["sha256"]):
             raise ValueError("Independent verifier used another roster or checkpoint")
-        return replay_rows(payload["measurement"], _scope(load(split), family))
+        return replay_rows(payload["measurement"], _scope(load(split), family), parser)
 
     if lock["candidates"]:
         before = independent("selection", "selection-base", report["base_sha256"])
@@ -129,8 +129,14 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources):
     return report, files
 
 
-def archive(material, runs, out, *, followup=False, scaling=False, replication=False):
-    if replication:
+def archive(material, runs, out, *, followup=False, scaling=False, replication=False, decimal=False):
+    parser = parse_integer
+    if decimal:
+        from experiments.phase_iiig.decimal_endpoint import parse_decimal
+        from experiments.phase_iiig.roster_decimal import PROTOCOL as protocol_path, load_split as read_split
+        from experiments.phase_iiig.run_decimal import _sources as source_hashes
+        parser = parse_decimal
+    elif replication:
         from experiments.phase_iiig.roster_replication import PROTOCOL as protocol_path, load_split as read_split
         from experiments.phase_iiig.run_replication import _sources as source_hashes
     elif scaling:
@@ -157,7 +163,7 @@ def archive(material, runs, out, *, followup=False, scaling=False, replication=F
         def model_split(split):
             return [row for row in load(split) if row["family"] in eligible or row["group"] == "preserve"]
 
-        report, files = verify_trial(run, material, config, manifest, model_split, source_hashes())
+        report, files = verify_trial(run, material, config, manifest, model_split, source_hashes(), parser)
         model = report["model"]
         if model in reports:
             raise ValueError("Duplicate model in the trial matrix")
@@ -205,11 +211,12 @@ if __name__ == "__main__":
     version.add_argument("--followup", action="store_true")
     version.add_argument("--scaling", action="store_true")
     version.add_argument("--replication", action="store_true")
+    version.add_argument("--decimal", action="store_true")
     args = parser.parse_args()
-    singleton = args.scaling or args.replication
+    singleton = args.scaling or args.replication or args.decimal
     if singleton == (args.smollm2 is not None):
         parser.error("Use --smollm2 for the two-model trials and omit it for Qwen-only trials")
     runs = (args.qwen,) if singleton else (args.qwen, args.smollm2)
     result = archive(args.material, runs, args.out, followup=args.followup, scaling=args.scaling,
-                     replication=args.replication)
+                     replication=args.replication, decimal=args.decimal)
     print(json.dumps(result["models"], indent=2))

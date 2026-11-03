@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from experiments.phase_iiig import run_trial
+from experiments.phase_iiig import run_replication, run_trial
 from experiments.phase_iiig.run_trial import compare, qualify
 from weightbridge.core import file_hash
 
@@ -116,3 +116,34 @@ def test_finish_only_accepts_preselected_winner_and_replays_rollback(tmp_path, m
     assert report["candidates"]["gradient"]["hidden"]["disposition"] == "PASS"
     assert report["single_cycle"] == ("PASS" if winner_qualifies else "FAIL")
     assert ("restart" in calls) == ("rollback" in calls) == winner_qualifies
+
+
+def test_replication_fit_caps_practice_items_without_dropping_controls(monkeypatch):
+    qualification = {"solved": {"target": list(range(20)), "positive": list(range(4)),
+                                "preserve": list(range(4))},
+                     "repeatable_errors": {f"error-{index}": "1" for index in range(12)}}
+
+    def fit(runner, measured, family, scoped, settings):
+        assert scoped["solved"]["positive"] == list(range(4))
+        assert scoped["solved"]["preserve"] == list(range(4))
+        assert scoped["solved"]["target"] == list(range(16))
+        assert list(scoped["repeatable_errors"]) == [f"error-{index}" for index in range(8)]
+        return [None] * 64
+
+    monkeypatch.setattr(run_replication, "_FIT_ROWS", fit)
+    assert len(run_replication._fit_rows(None, [], "multiplication", qualification, {})) == 64
+
+
+def test_decimal_fit_uses_observed_wrong_answer_and_exact_decimal_preservation_rival(monkeypatch):
+    from experiments.phase_iiig import run_decimal
+
+    measured = [
+        *item("target", "larger-decimal", "target", "-0.9", ["-0.91", "-0.91"]),
+        *item("copy", "copy", "preserve", "-1.005", ["-1.005", "-1.005"]),
+    ]
+    qualification = {"solved": {"target": [], "positive": [], "preserve": ["copy"]},
+                     "repeatable_errors": {"target": "-0.91"}}
+    monkeypatch.setattr(run_decimal, "answer_pair", lambda runner, prompt, answer, rival, **_: (answer, rival))
+    fit = run_decimal._fit_rows(None, measured, "larger-decimal", qualification, {"max_input_tokens": 64})
+    assert [row["answers"] for row in fit] == [("-0.9", "-0.91")] * 2 + [("-1.005", "-0.005")] * 2
+    assert [row["preserve"] for row in fit] == [False, False, True, True]
