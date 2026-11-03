@@ -1,0 +1,173 @@
+{
+  "hypothesis": "An AI can select a practice-supported candidate that improves a fresh holdout.",
+  "practice_evaluation_cap": 1,
+  "primary": "tasks with finalized positive holdout gain, paired with deterministic selection",
+  "protocol_sha256": {
+    "guided": "fbd0469c3ba9f2df2113f49158d33997de484f69fbe7599ac81f507d8b9aa2a1",
+    "solver": "c9ea862beecc90b1629a4446f71a1061e7af850ea2dc8acb8453829e3aac6f7b"
+  },
+  "schedule": [
+    {
+      "arm": "guided",
+      "task": "trial-05"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-05"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-09"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-09"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-13"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-13"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-16"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-16"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-03"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-03"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-06"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-06"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-04"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-04"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-10"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-10"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-11"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-11"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-07"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-07"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-19"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-19"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-17"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-17"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-01"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-01"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-18"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-18"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-08"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-08"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-20"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-20"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-14"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-14"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-12"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-12"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-15"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-15"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-02"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-02"
+    }
+  ],
+  "schema": "weightbridge.solver_selection_comparison.v1",
+  "seed_offset": 80000
+}

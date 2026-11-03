@@ -1,0 +1,45 @@
+{
+  "hypothesis": "An AI can select a practice-supported candidate that improves a fresh holdout.",
+  "practice_evaluation_cap": 1,
+  "primary": "tasks with finalized positive holdout gain, paired with deterministic selection",
+  "protocol_sha256": {
+    "guided": "adc2e226bcb9bd667161034aceb4d38ac6fecff622555abd0d025c872109e667",
+    "solver": "0df36286202d976ca875925ea9bc2ff9b8acef9f0919fcdf91d835073c90c1a0"
+  },
+  "schedule": [
+    {
+      "arm": "guided",
+      "task": "trial-05"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-05"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-09"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-09"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-13"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-13"
+    },
+    {
+      "arm": "solver",
+      "task": "trial-16"
+    },
+    {
+      "arm": "guided",
+      "task": "trial-16"
+    }
+  ],
+  "schema": "weightbridge.solver_selection_comparison.v1",
+  "seed_offset": 70000
+}

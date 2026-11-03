@@ -10,6 +10,11 @@
 | 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | One Codex MCP discovery; pinned local Qwen host exercised in bounded synthetic trials; 20-task gate pending |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 
+The separate breakpoint solver study completed 20 paired toy tasks. The
+deterministic selector fully repaired 20/20 and the Qwen selector repaired
+19/20. Both passed the solver-assisted toy gate. The direct-proposal AI
+transfer gate remains held. [Solver evidence](../results/wb-bf/comparison.json)
+
 ## Immediate next experiment
 
 The balanced 20-task protocol, fixed prompt, host policy, task assignments,

@@ -1,0 +1,34 @@
+{
+  "analytical_deltas_scored": 349,
+  "baseline_correct": 32,
+  "input_tokens": 544,
+  "label_logits": {
+    "A": 22.5,
+    "B": 21.0
+  },
+  "model_forwards": 1,
+  "options": {
+    "A": {
+      "delta": 4.057852597104317,
+      "index": [
+        0,
+        0
+      ],
+      "minimum_signed_margin": 0.7068614514949477,
+      "practice_correct": 64,
+      "tensor": "input_weight"
+    },
+    "B": {
+      "delta": 7.966741891591344,
+      "index": [
+        1,
+        0
+      ],
+      "minimum_signed_margin": -11.800253682500815,
+      "practice_correct": 33,
+      "tensor": "output_weight"
+    }
+  },
+  "practice_n": 64,
+  "selected_label": "A"
+}

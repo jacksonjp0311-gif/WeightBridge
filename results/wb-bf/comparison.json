@@ -1,0 +1,4617 @@
+{
+  "disposition": "INCONCLUSIVE",
+  "guided_tasks_with_multiple_options": 11,
+  "host_resources": {
+    "completed_tasks": 40,
+    "failure": null,
+    "host_cpu_seconds": 198.96875,
+    "host_peak_rss_bytes": 2426535936,
+    "wall_seconds": 169.49496380001074
+  },
+  "pairs": [
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 344,
+          "baseline_correct": 32,
+          "input_tokens": 483,
+          "label_logits": {
+            "A": 22.25
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 3.9937982991694247,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6241309531495755,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "a9c5de488264d9b71c78163ac57b35aec9ca98338cb9300020f908fce9504fc1",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "input_direction_reversal",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 344,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 3.9937982991694247,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6241309531495755,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "4f0570dede686b419c36e4a7c73b8cfe6d1303d4e94c9d1ad19c0aaf49cbb5b4",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-05"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 36,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 36,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 422,
+          "baseline_correct": 43,
+          "input_tokens": 663,
+          "label_logits": {
+            "A": 21.25,
+            "B": 22.5,
+            "C": 20.75,
+            "D": 19.875
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 6.149697720487806,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.193231500445368,
+              "practice_correct": 46,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": -0.7134316532273449,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7113820207920494,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": 3.644497601382936,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.44657760244792,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "D": {
+              "delta": -1.3996573302182826,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.1892639965218032,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "B"
+        },
+        "menu_sha256": "b64731483f1d86f11e81064379067aaee9c5990a832c06d20e120e2daf94e676",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "hidden_threshold_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 36,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 36,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 422,
+          "baseline_correct": 43,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 6.149697720487806,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.193231500445368,
+              "practice_correct": 46,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": -0.7134316532273449,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7113820207920494,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": 3.644497601382936,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.44657760244792,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "D": {
+              "delta": -1.3996573302182826,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.1892639965218032,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "B"
+        },
+        "menu_sha256": "19f3b46762b2ccf2546b2c8798b18e8672010b1b2f0b64b409dc1f5371b77abb",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-09"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 31,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 468,
+          "label_logits": {
+            "A": 22.0
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8800497963725007,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "a1c6970a70913f37027c6740a6c00fce7d3ee887cbd56a2bbd388f8d5d2d2046",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_class_collapse",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 31,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8800497963725007,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "19d50c17099fa6f226672470a9d50e7e6c4cca20c6352062d66595ea061b9190",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-13"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 47,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 419,
+          "baseline_correct": 32,
+          "input_tokens": 652,
+          "label_logits": {
+            "A": 22.0,
+            "B": 21.875,
+            "C": 20.125,
+            "D": 20.625
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -1.944707545633612,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007075505958824557,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": -0.96339679640818,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.26550301797528597,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -2.8356797202972763,
+              "practice_correct": 55,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": 4.443338958530884,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.6566190784034798,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "aec92c2d028d1d291c66722bc6afd4b98401cf87457d972ece01cee8d33b525d",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_intercept_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 419,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -1.944707545633612,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007075505958824557,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": -0.96339679640818,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.26550301797528597,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -2.8356797202972763,
+              "practice_correct": 55,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": 4.443338958530884,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.6566190784034798,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "D"
+        },
+        "menu_sha256": "0d1f511e9aa1ab3d3f9cb3b7c8dd36c547fc8c97a050189dd2efaf6bdf19cede",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-16"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 30,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 342,
+          "baseline_correct": 32,
+          "input_tokens": 482,
+          "label_logits": {
+            "A": 22.25
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.055313007218811,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6681881072576477,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "fd1cd2baceee228d7d766d9ec07da986e4b81abcad0750458f74b77383d482ee",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "input_direction_reversal",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 30,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 342,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.055313007218811,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6681881072576477,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "6e99cfaa9378cea8b67dd1c77dcef55437b7f1f1041476f2319121da915649ef",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-03"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 40,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 64,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 424,
+          "baseline_correct": 37,
+          "input_tokens": 667,
+          "label_logits": {
+            "A": 21.375,
+            "B": 22.125,
+            "C": 21.0,
+            "D": 20.375
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -5.217276067086665,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.068781962098449,
+              "practice_correct": 48,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": 3.6755099599217855,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.5075365794422604,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "C": {
+              "delta": -1.4036950921832199,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.21249642686186188,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "D": {
+              "delta": -0.7245716846997963,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.8181313030224683,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "B"
+        },
+        "menu_sha256": "4c6d4d32e9ef0732798e6290dfa0f20f5318ca70aefc11338e9bb134020cbcc3",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "hidden_threshold_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 40,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 40,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 424,
+          "baseline_correct": 37,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -5.217276067086665,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.068781962098449,
+              "practice_correct": 48,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": 3.6755099599217855,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.5075365794422604,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "C": {
+              "delta": -1.4036950921832199,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.21249642686186188,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "D": {
+              "delta": -0.7245716846997963,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.8181313030224683,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "D"
+        },
+        "menu_sha256": "0f310f20c50c2c1fd73ba226b2525cacb8206376cc2f2fd559d2e05272f04772",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-06"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 343,
+          "baseline_correct": 32,
+          "input_tokens": 483,
+          "label_logits": {
+            "A": 22.25
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.0478304094378865,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6766048135452996,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "f6a3025eca5a626d00c626db411d03377971f84106d6e44728723233a20ff6d3",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "input_direction_reversal",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 343,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.0478304094378865,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.6766048135452996,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "0789d8eb9f4d6742b7bd8cf4b2de76a2e8056020c55f8fa3e54519e7f2f949a9",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-04"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 41,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 416,
+          "baseline_correct": 41,
+          "input_tokens": 667,
+          "label_logits": {
+            "A": 22.375,
+            "B": 21.75,
+            "C": 20.375,
+            "D": 20.5
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 3.587480829098104,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.48784034570142554,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -0.6996825202051995,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7637292187854534,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -5.445199498712279,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.695195074526307,
+              "practice_correct": 44,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -1.3898084707159968,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.20420903950732117,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "37e6cc0ce9c0f8aa23c6756998bbd3892ee988b1254f12b6b9b1651ca4d32b9e",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "hidden_threshold_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 41,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 41,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 416,
+          "baseline_correct": 41,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 3.587480829098104,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.48784034570142554,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -0.6996825202051995,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7637292187854534,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -5.445199498712279,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -6.695195074526307,
+              "practice_correct": 44,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -1.3898084707159968,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.20420903950732117,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "B"
+        },
+        "menu_sha256": "926b3de88ddfc0aae419a6649802e86e48b8dab1753d211559c7c019ea5f1914",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-10"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 64,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 468,
+          "label_logits": {
+            "A": 22.125
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8134091605181214,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "40657ceb1dfecc8b6879433eb0bf4191d6df8c85db6eff2f52b0e70df0be92a0",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_class_collapse",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 64,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8134091605181214,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "5b1d71048cbc93f08270dc9de0940fdd32e4bc3e08c4a1255a88fb13987d5352",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-11"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 37,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 37,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 417,
+          "baseline_correct": 39,
+          "input_tokens": 667,
+          "label_logits": {
+            "A": 21.875,
+            "B": 19.75,
+            "C": 22.75,
+            "D": 19.625
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 3.608920797882428,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.46154584920378916,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": 7.030711100705986,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -8.085380371543772,
+              "practice_correct": 45,
+              "tensor": "output_weight"
+            },
+            "C": {
+              "delta": -0.7043890411583875,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7270619494987652,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "D": {
+              "delta": -1.3937094921189819,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.19457091283773154,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "C"
+        },
+        "menu_sha256": "3f4240a4f948b39f92bce61a5b816327bf791b21ea0b501f2197252154e82826",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "hidden_threshold_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 37,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 37,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 417,
+          "baseline_correct": 39,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 3.608920797882428,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.46154584920378916,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": 7.030711100705986,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -8.085380371543772,
+              "practice_correct": 45,
+              "tensor": "output_weight"
+            },
+            "C": {
+              "delta": -0.7043890411583875,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7270619494987652,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "D": {
+              "delta": -1.3937094921189819,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.19457091283773154,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "C"
+        },
+        "menu_sha256": "60448a7bbf0295f5741154171b8f95f70fd59611b612606d2835fc9cda6bb684",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-07"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 412,
+          "baseline_correct": 32,
+          "input_tokens": 653,
+          "label_logits": {
+            "A": 22.25,
+            "B": 20.125,
+            "C": 22.25,
+            "D": 20.0
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.5996216148465585,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7409297246642534,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.003614410425379,
+              "practice_correct": 54,
+              "tensor": "output_weight"
+            },
+            "C": {
+              "delta": -0.9898174632570761,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.2967554632344367,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "D": {
+              "delta": -1.946002111312814,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007707868324072109,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "80d920b1d784d1f662e21049df8c665688db24507a40130c7c9130d2d96b827c",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_intercept_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 412,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.5996216148465585,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7409297246642534,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.003614410425379,
+              "practice_correct": 54,
+              "tensor": "output_weight"
+            },
+            "C": {
+              "delta": -0.9898174632570761,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.2967554632344367,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "D": {
+              "delta": -1.946002111312814,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007707868324072109,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "34f449bbea929e1f6a949525e01a68c6579351ab9282db4349d8aab23ab2d144",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-19"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 422,
+          "baseline_correct": 32,
+          "input_tokens": 654,
+          "label_logits": {
+            "A": 22.0,
+            "B": 21.625,
+            "C": 20.5,
+            "D": 21.0
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -1.9462302319254765,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007920506864924626,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": 4.630729879493434,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.767525097918413,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.0141444903417147,
+              "practice_correct": 53,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -0.9951096594187833,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.30653135835079226,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "bf6ff229e8da2c2083d118568322741e71783f8a3a13571ece86ef163ebef504",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_intercept_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 64,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 422,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -1.9462302319254765,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007920506864924626,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": 4.630729879493434,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.767525097918413,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.0141444903417147,
+              "practice_correct": 53,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -0.9951096594187833,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.30653135835079226,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "B"
+        },
+        "menu_sha256": "ce4fb7a7ee821c7ba5abfe4460cbcb30b716765cb2d186c7954f6d4cd43ec610",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-17"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 24,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 350,
+          "baseline_correct": 32,
+          "input_tokens": 482,
+          "label_logits": {
+            "A": 22.375
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.010651381852757,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.5737038631038145,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "09645998afd1d2b285f713cf66acfca61895821d4c20eeca3d67da472a556396",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "input_direction_reversal",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 24,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 350,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.010651381852757,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.5737038631038145,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "df7a69cf029c927366be0c5678e03062f984d4b181d1d650495e8e944d0899f3",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-01"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 417,
+          "baseline_correct": 32,
+          "input_tokens": 654,
+          "label_logits": {
+            "A": 22.375,
+            "B": 21.25,
+            "C": 20.625,
+            "D": 20.625
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.456659439684019,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7645666486617841,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -0.9656122805663835,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.30533315959098317,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -2.6148831790518816,
+              "practice_correct": 55,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -1.944586779887861,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.008097276183903546,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "809e979cc79df2a2562bc458394a65272c45db95711ad5e13ffc6f444577e832",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_intercept_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 417,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.456659439684019,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7645666486617841,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -0.9656122805663835,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.30533315959098317,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            },
+            "C": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -2.6148831790518816,
+              "practice_correct": 55,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -1.944586779887861,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.008097276183903546,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "37376ef4f3e79db52cbc06b044e6a63f4b8c430318fab6af0f94e9f3bf9d57ca",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-18"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 43,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 410,
+          "baseline_correct": 39,
+          "input_tokens": 665,
+          "label_logits": {
+            "A": 22.375,
+            "B": 21.375,
+            "C": 20.75,
+            "D": 21.375
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 3.5328310223335913,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.4681253587475491,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -1.3812017349900718,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.1963939608205016,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "C": {
+              "delta": 4.00164388964217,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -5.966978963795947,
+              "practice_correct": 45,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -0.6843981229460461,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7201583307212973,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "f983d5172b30609fea59ae273983834388769cec9858241858093021b26da0ec",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "hidden_threshold_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 43,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 43,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 410,
+          "baseline_correct": 39,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 3.5328310223335913,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.4681253587475491,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "B": {
+              "delta": -1.3812017349900718,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.1963939608205016,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "C": {
+              "delta": 4.00164388964217,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -5.966978963795947,
+              "practice_correct": 45,
+              "tensor": "output_weight"
+            },
+            "D": {
+              "delta": -0.6843981229460461,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7201583307212973,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "D"
+        },
+        "menu_sha256": "3be9f151a494383cc2b69512a6c92d1d715bedd3d2a31c31b5964424234d4209",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-08"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 58,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 44,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 398,
+          "baseline_correct": 32,
+          "input_tokens": 651,
+          "label_logits": {
+            "A": 21.625,
+            "B": 21.5,
+            "C": 21.625,
+            "D": 20.375
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.101159577941554,
+              "practice_correct": 54,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": -1.94645036550458,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007737945167334281,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "C": {
+              "delta": 4.650638816059576,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7501418540846245,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "D": {
+              "delta": -0.9984660047202436,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.3002276466416127,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "b3e262b6d86f5a6eb73e131455a8cb27c61bcc2f04bd8fa437212111ece96398",
+        "practice_correct": 54,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_intercept_shift",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 398,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": -3.101159577941554,
+              "practice_correct": 54,
+              "tensor": "output_weight"
+            },
+            "B": {
+              "delta": -1.94645036550458,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.007737945167334281,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "C": {
+              "delta": 4.650638816059576,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.7501418540846245,
+              "practice_correct": 64,
+              "tensor": "output_bias"
+            },
+            "D": {
+              "delta": -0.9984660047202436,
+              "index": [
+                0
+              ],
+              "minimum_signed_margin": 0.3002276466416127,
+              "practice_correct": 64,
+              "tensor": "hidden_bias"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "C"
+        },
+        "menu_sha256": "f0867825e354216bcf32ab664928d52716918b50dd7aacf7fff09a2e99fe2e1d",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-20"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 29,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 468,
+          "label_logits": {
+            "A": 22.125
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8472001139944259,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "e935fdcba24d4075574c2344c9b626cdb6b1e257c6d938b9698aa96a5113c891",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_class_collapse",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 29,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8472001139944259,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "15b95d0b528ccbc5176683a60b919cc30f3027c0d70dbdd18657f92167c666bb",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-14"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 37,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 468,
+          "label_logits": {
+            "A": 22.125
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.9712462853440336,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "4062ebb09a85269bd819bd1ab8ea8208d92bd86528d613d2daf09c53dad638bc",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_class_collapse",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 37,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.9712462853440336,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "252bbcedff5de1e819424305c055bdef3f794795af8a68eb6a88e74b3dea1204",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-12"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 38,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 468,
+          "label_logits": {
+            "A": 22.125
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8228560818977728,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "46ab71dd5e81b92ce993e0db5165afa8ccf350c3a26236f956885d089b549951",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "output_class_collapse",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 38,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 24,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": -8.0,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.8228560818977728,
+              "practice_correct": 64,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "9f59b1aacf79149ec9ecd2327699181089364f49609762ce6212a42aecef4641",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-15"
+    },
+    {
+      "guided": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 349,
+          "baseline_correct": 32,
+          "input_tokens": 544,
+          "label_logits": {
+            "A": 22.5,
+            "B": 21.0
+          },
+          "model_forwards": 1,
+          "options": {
+            "A": {
+              "delta": 4.057852597104317,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.7068614514949477,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": 7.966741891591344,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -11.800253682500815,
+              "practice_correct": 33,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "a97867c28fff6a2ce61f8bd670cbe0e0667e48748a171d11c6a814c57ea9e1de",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "mechanism": "input_direction_reversal",
+      "solver": {
+        "holdout": {
+          "ai_candidate": {
+            "correct": 64,
+            "n": 64
+          },
+          "baseline": {
+            "correct": 32,
+            "n": 64
+          },
+          "random_control": {
+            "correct": 32,
+            "n": 64
+          }
+        },
+        "menu": {
+          "analytical_deltas_scored": 349,
+          "baseline_correct": 32,
+          "input_tokens": 0,
+          "model_forwards": 0,
+          "options": {
+            "A": {
+              "delta": 4.057852597104317,
+              "index": [
+                0,
+                0
+              ],
+              "minimum_signed_margin": 0.7068614514949477,
+              "practice_correct": 64,
+              "tensor": "input_weight"
+            },
+            "B": {
+              "delta": 7.966741891591344,
+              "index": [
+                1,
+                0
+              ],
+              "minimum_signed_margin": -11.800253682500815,
+              "practice_correct": 33,
+              "tensor": "output_weight"
+            }
+          },
+          "practice_n": 64,
+          "selected_label": "A"
+        },
+        "menu_sha256": "2696bef33841bfc748c1c97873c8beddfc9541640b3db68ebc0edde11404e597",
+        "practice_correct": 64,
+        "practice_evaluations": 1
+      },
+      "task": "trial-02"
+    }
+  ],
+  "plan_sha256": "0f6d4fa2edf3d095ba44cea3dcd6c81ed70df1795057544bc740ab5525e20d3c",
+  "runs": {
+    "guided": {
+      "cohort_disposition": "PASS",
+      "cohort_id": "wb-bf-guided",
+      "cohort_reasons": [],
+      "counts": {
+        "accepted_patches": 20,
+        "finalized_candidates": 20,
+        "full_repairs": 19,
+        "host_budget_stops": 0,
+        "mcp_calls": 80,
+        "mcp_rejections": 0,
+        "model_input_tokens": 0,
+        "model_output_tokens": 0,
+        "model_token_cap_turns": 0,
+        "model_turns": 0,
+        "repeated_model_outputs": 0,
+        "transport_errors": 0
+      },
+      "holdout_replay_verified": true,
+      "protocol_sha256": "fbd0469c3ba9f2df2113f49158d33997de484f69fbe7599ac81f507d8b9aa2a1",
+      "resources": {
+        "completed_tasks": 20,
+        "failure": null,
+        "host_cpu_seconds": 195.1875,
+        "host_peak_rss_bytes": 2426535936,
+        "wall_seconds": 99.87919619993772
+      },
+      "trials": [
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "d850d051d0b48f9d8a7c7d5c13fac4dca88d66497dcb50eccf0dfa53172da898",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.118484994496821,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.010651381852757
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 24,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-01/experiment_record.json",
+          "record_sha256": "e23a7ff38a7808dbc9775cb807ddcef8f548a882547ee909598a5f1c0b7c2073",
+          "seed": 142000,
+          "task_id": "trial-01"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "dd4bf21447e3ef281157df215c42a501d51e99d1fe973e1d4cc2f751e7895cb2",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.146556978883792,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.057852597104317
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-02/experiment_record.json",
+          "record_sha256": "0ddabfc7f044db051852cab2d5064f306bd718ad1039170bf602b7371ec89bfa",
+          "seed": 142002,
+          "task_id": "trial-02"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "5e952c20c881b9fa765dd7969e5f8ec1f4fad0bb4c9834911d96a2eaa6614730",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.19035142969542,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.055313007218811
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 30,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-03/experiment_record.json",
+          "record_sha256": "5567be9998d14b78f6ffd92dac84b7c82b0f6aa78775e042246a5ebc6c43bd7d",
+          "seed": 142004,
+          "task_id": "trial-03"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "e573262facf2e51607832ebbf8933465bb7336e9ad794ec6c6dd1abec9cd0217",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.123078804326526,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.0478304094378865
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-04/experiment_record.json",
+          "record_sha256": "e12fb3fae767e3aabea41c92ba6723a15634cf378a5090c7be3d460c8f13724b",
+          "seed": 142006,
+          "task_id": "trial-04"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "6398b59e103f46c813c7b137cfaa88ba50986b3eefbc17c4e41563b5657c210e",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.01371163882329,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 3.9937982991694247
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-05/experiment_record.json",
+          "record_sha256": "82dd72c8929055323b9e25fa908149067569628a7c183e3e2f8e41a8e30615a3",
+          "seed": 142008,
+          "task_id": "trial-05"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "bb4834df789971a4a257a2ee33035a85423032135414238486ce3f0ede45e05c",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 3.6755099599217855,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 3.6755099599217855
+                }
+              ],
+              "practice_class_changes": 27,
+              "practice_correct_delta": 27
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 40,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-06/experiment_record.json",
+          "record_sha256": "3ebcdeb3f14e97755a66752ba349f7db2dc1284b0fbb57769b55d27edce45cf5",
+          "seed": 142010,
+          "task_id": "trial-06"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "1b1f76d36e41c5958ffb7f7061b4c3518800d7ed5c3a6bea5eefcb038d876318",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.029472631402051,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.7043890411583875
+                }
+              ],
+              "practice_class_changes": 25,
+              "practice_correct_delta": 25
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 37,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 37,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-07/experiment_record.json",
+          "record_sha256": "e7e45d53f3ee113b82a8cbe708cc839118a6f865402553c555061bc5af26e83e",
+          "seed": 142012,
+          "task_id": "trial-07"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "a3b941e06e81cc22bdb97938c042a66bdc2bda2050aecbe55fab2f8a89c621fe",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 3.5328310223335917,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 3.5328310223335913
+                }
+              ],
+              "practice_class_changes": 25,
+              "practice_correct_delta": 25
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 43,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-08/experiment_record.json",
+          "record_sha256": "027ae5a157036f4acd85be277510a4483d3408f7074834abbd2086f5a97dea80",
+          "seed": 142014,
+          "task_id": "trial-08"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "c9b19e3e3421c320123e6ab87a3c8dd8162905594336a6589bf8429d367093b2",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.0535108773961395,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.7134316532273449
+                }
+              ],
+              "practice_class_changes": 21,
+              "practice_correct_delta": 21
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 36,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 36,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-09/experiment_record.json",
+          "record_sha256": "197d5e273c03b97d6d15fdea8768a122ad73cb487a9896c0e2d5bde8f7eb9dd1",
+          "seed": 142016,
+          "task_id": "trial-09"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "7a0b90272493b89e6b1a0deb16ef33fa22e08cd32660825be3a965d614b3b167",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 3.5874808290981046,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 3.587480829098104
+                }
+              ],
+              "practice_class_changes": 23,
+              "practice_correct_delta": 23
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 41,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-10/experiment_record.json",
+          "record_sha256": "34a695138b0398437dfed729269b3b40fa8a50edcd98ba51f0e4c495ccb3a521",
+          "seed": 142018,
+          "task_id": "trial-10"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.711218728308006,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-11/experiment_record.json",
+          "record_sha256": "d55fb2947c9009bac811dad0e3740757774929c86fb175570d22f3b394910cc9",
+          "seed": 142020,
+          "task_id": "trial-11"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.679608755326756,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 37,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-12/experiment_record.json",
+          "record_sha256": "47e4793814bcc0a2070a634a221739abc616b55c935d680f6ac01621fa20ba87",
+          "seed": 142022,
+          "task_id": "trial-12"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.713861302931213,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 31,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-13/experiment_record.json",
+          "record_sha256": "c94558f7c0e8e7c982e0090c6c57365ec4ebd780aad1784414dd9f008ba4589e",
+          "seed": 142024,
+          "task_id": "trial-13"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.715928081191347,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 29,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-14/experiment_record.json",
+          "record_sha256": "cac740eff492ca099de5ba0ac158e794829b32583c4d60a6f805cf1a8d24d2d3",
+          "seed": 142026,
+          "task_id": "trial-14"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.635827285630355,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 38,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-15/experiment_record.json",
+          "record_sha256": "1012d6323eeee6a956dad1f6424cc28873537b14afb081d38ee922fc4b030024",
+          "seed": 142028,
+          "task_id": "trial-15"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "512017f099b8d385c07e6622e41a1cdfec47ee91d1cb70b35a96cc789bc8754d",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.285138551490308,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.944707545633612
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 47,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-16/experiment_record.json",
+          "record_sha256": "43ec87c6493e77d4d7145e3ad1f5b976494d615a08ee1debaba38d617d2ba4fd",
+          "seed": 142030,
+          "task_id": "trial-16"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "5de985ba7f53f94bad15726b2af73a5a73240b03e52a7cc2f679c342f04c4af2",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.344513654693025,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.9462302319254765
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-17/experiment_record.json",
+          "record_sha256": "0488cb535324cec429a059f513e2ba70a6056f362aaf22381d8545aaf89d440c",
+          "seed": 142032,
+          "task_id": "trial-17"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "d4c0c51a1c5471d9511ac4292aa08168518065a24c1be293e8a8a0af1178f33d",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.456659439684019,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.456659439684019
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-18/experiment_record.json",
+          "record_sha256": "c34b67c9c0fbf8f51c71682fa365a9934043c6e0937c648848806aee74f52801",
+          "seed": 142034,
+          "task_id": "trial-18"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "e1785d53b6663b42ac2c2a07964d744998b0c400aed43a87b59b83bc87acbee7",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.5996216148465585,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.5996216148465585
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-19/experiment_record.json",
+          "record_sha256": "95602f9a441da6e287f1557fc56583d9c8f66cea073593a0e4e354c38f1edc45",
+          "seed": 142036,
+          "task_id": "trial-19"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "e54d888a8be08e8176139a897d3ecef9c01eae4bd28da8eaa2e23dfca4c5351f",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.710226696859499,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 22,
+              "practice_correct_delta": 22
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 0,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 58,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 44,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/guided/trial-20/experiment_record.json",
+          "record_sha256": "6e6f1318d39d7c1c161d757632def565b881e45b812f16aef8e359ebc8ab327d",
+          "seed": 142038,
+          "task_id": "trial-20"
+        }
+      ]
+    },
+    "solver": {
+      "cohort_disposition": "PASS",
+      "cohort_id": "wb-bf-solver",
+      "cohort_reasons": [],
+      "counts": {
+        "accepted_patches": 20,
+        "finalized_candidates": 20,
+        "full_repairs": 20,
+        "host_budget_stops": 0,
+        "mcp_calls": 80,
+        "mcp_rejections": 0,
+        "model_input_tokens": 0,
+        "model_output_tokens": 0,
+        "model_token_cap_turns": 0,
+        "model_turns": 0,
+        "repeated_model_outputs": 0,
+        "transport_errors": 0
+      },
+      "holdout_replay_verified": true,
+      "protocol_sha256": "c9ea862beecc90b1629a4446f71a1061e7af850ea2dc8acb8453829e3aac6f7b",
+      "resources": {
+        "completed_tasks": 20,
+        "failure": null,
+        "host_cpu_seconds": 0.40625,
+        "host_peak_rss_bytes": 2426535936,
+        "wall_seconds": 66.15183500008425
+      },
+      "trials": [
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "d850d051d0b48f9d8a7c7d5c13fac4dca88d66497dcb50eccf0dfa53172da898",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.118484994496821,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.010651381852757
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 24,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-01/experiment_record.json",
+          "record_sha256": "a3bf56f8b33e5690a32e7f8e96628cc1a033d9fb04bbf88a7f54af7d11f780f2",
+          "seed": 142000,
+          "task_id": "trial-01"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "dd4bf21447e3ef281157df215c42a501d51e99d1fe973e1d4cc2f751e7895cb2",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.146556978883792,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.057852597104317
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-02/experiment_record.json",
+          "record_sha256": "91b7a62f36967f65175dacd6f26b53f3b29e541e3332a330f51070559619d0ad",
+          "seed": 142002,
+          "task_id": "trial-02"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "5e952c20c881b9fa765dd7969e5f8ec1f4fad0bb4c9834911d96a2eaa6614730",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.19035142969542,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.055313007218811
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 30,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-03/experiment_record.json",
+          "record_sha256": "38b11ff5a732aeaf4efbdee93c260105a0b226208e341052c975465c0a1761bb",
+          "seed": 142004,
+          "task_id": "trial-03"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "e573262facf2e51607832ebbf8933465bb7336e9ad794ec6c6dd1abec9cd0217",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.123078804326526,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 4.0478304094378865
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-04/experiment_record.json",
+          "record_sha256": "ab92e8e57f2f19cda42ee8ab5357ae343f78a0eafd7912d4fb1b829260a3de59",
+          "seed": 142006,
+          "task_id": "trial-04"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "6398b59e103f46c813c7b137cfaa88ba50986b3eefbc17c4e41563b5657c210e",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.01371163882329,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": 3.9937982991694247
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-05/experiment_record.json",
+          "record_sha256": "83a5891738c31a3f921b05239c7b59e4783014053d981d81ad10356c2897ec1c",
+          "seed": 142008,
+          "task_id": "trial-05"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "9bb8a2071177e3298ce2f1fb8f55530d23edd9754401dd5900582cbb49cda351",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.08330330254633,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.7245716846997963
+                }
+              ],
+              "practice_class_changes": 27,
+              "practice_correct_delta": 27
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 40,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 40,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-06/experiment_record.json",
+          "record_sha256": "153b77e858befdab5734cdf71b5bbeb16646df425ee36e8264b8651fc762bd89",
+          "seed": 142010,
+          "task_id": "trial-06"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "1b1f76d36e41c5958ffb7f7061b4c3518800d7ed5c3a6bea5eefcb038d876318",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.029472631402051,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.7043890411583875
+                }
+              ],
+              "practice_class_changes": 25,
+              "practice_correct_delta": 25
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 37,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 37,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-07/experiment_record.json",
+          "record_sha256": "989ec7869a9554862478497f3b100db8419b72e6469ae91e99f7dca0e007c255",
+          "seed": 142012,
+          "task_id": "trial-07"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "dd3ebee59593537d6fa37ad04ae17c4baad3cb4c2d60416a3886ba23e1433c80",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 1.9764946912952273,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.6843981229460461
+                }
+              ],
+              "practice_class_changes": 25,
+              "practice_correct_delta": 25
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 43,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 43,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-08/experiment_record.json",
+          "record_sha256": "eced68143acd6dbd18a1925e80adcab613acda86d4786cc2472f21a0dfbead3a",
+          "seed": 142014,
+          "task_id": "trial-08"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "c9b19e3e3421c320123e6ab87a3c8dd8162905594336a6589bf8429d367093b2",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.0535108773961395,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.7134316532273449
+                }
+              ],
+              "practice_class_changes": 21,
+              "practice_correct_delta": 21
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 36,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 36,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-09/experiment_record.json",
+          "record_sha256": "bc80fee9d184bcdc7752b5b53cf285773dbaf511749794d8ffe8e4fcbdf982e1",
+          "seed": 142016,
+          "task_id": "trial-09"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "5b754b91270ec5433cd4de388cfb8dfc1cb78f71dad7e3f51007a099c3d8203b",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 2.0135082065030123,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "hidden_bias",
+                  "value": -0.6996825202051995
+                }
+              ],
+              "practice_class_changes": 23,
+              "practice_correct_delta": 23
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 41,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 41,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-10/experiment_record.json",
+          "record_sha256": "0b189fb490929b319ea81388a903991cd4dc19dc7463eeb4e423097435d4d8a9",
+          "seed": 142018,
+          "task_id": "trial-10"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.711218728308006,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-11/experiment_record.json",
+          "record_sha256": "e0ac0f32dce87f6bc5319d158dc8b04cf6b677beaf05db603c9980e82ce18aa9",
+          "seed": 142020,
+          "task_id": "trial-11"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.679608755326756,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 37,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-12/experiment_record.json",
+          "record_sha256": "b8733fa38a8b375efd75625863faeacc1dfeed3babf1635a7db755d256ae4e9e",
+          "seed": 142022,
+          "task_id": "trial-12"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.713861302931213,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 31,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-13/experiment_record.json",
+          "record_sha256": "91a28bcb4d2c06df35d6917257020483fb25be676c536a45efefbe69833661ee",
+          "seed": 142024,
+          "task_id": "trial-13"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.715928081191347,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 29,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-14/experiment_record.json",
+          "record_sha256": "be0f9c3869a2cb60c37fb78beb15223040c00de87c9dc4eec64ebce46f077627",
+          "seed": 142026,
+          "task_id": "trial-14"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "28b288f9460dc464160312795bdf73e4f2f5e7776d86388da8e68659953d24d0",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 5.635827285630355,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_weight",
+                  "value": -8.0
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 38,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-15/experiment_record.json",
+          "record_sha256": "c98dde83f12c51a063e20e1d57d53dd7dc9cf6a2a97347ba15e90567ad31ea47",
+          "seed": 142028,
+          "task_id": "trial-15"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "14eba91fa77add96eb878e1cd92ca825c344d56a4968061ab2736df3974dcaae",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.443338958530884,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.443338958530884
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-16/experiment_record.json",
+          "record_sha256": "c42942cce93a5108419144361597587e9a6b5321354a9f6c0cd7039ada777989",
+          "seed": 142030,
+          "task_id": "trial-16"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "65c9ae8b22880f28d5dcd406554bf32395a3f3358535d0269929540ed1dc6299",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.630729879493435,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.630729879493434
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-17/experiment_record.json",
+          "record_sha256": "0ba2d4ce441afd3b5b889fa9c1286640abfa5dbbe7bacf76ab8869cc438400ee",
+          "seed": 142032,
+          "task_id": "trial-17"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "d4c0c51a1c5471d9511ac4292aa08168518065a24c1be293e8a8a0af1178f33d",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.456659439684019,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.456659439684019
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-18/experiment_record.json",
+          "record_sha256": "729cf08db9efaec011d9888dbaa929d86405ffa504529a211b7b89f00a2a3bbf",
+          "seed": 142034,
+          "task_id": "trial-18"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "e1785d53b6663b42ac2c2a07964d744998b0c400aed43a87b59b83bc87acbee7",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.5996216148465585,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.5996216148465585
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-19/experiment_record.json",
+          "record_sha256": "ab241ccda5b57cea96e748c653ddb77720eaa14f60921c7993d9e198f15f62a0",
+          "seed": 142036,
+          "task_id": "trial-19"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "f9cac33902b3972dbf59bf46750d906d1fcbd38cd402f7962a55aec24c56b6b1",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 4.650638816059576,
+              "patch": [
+                {
+                  "index": [
+                    0
+                  ],
+                  "op": "add",
+                  "tensor": "output_bias",
+                  "value": 4.650638816059576
+                }
+              ],
+              "practice_class_changes": 32,
+              "practice_correct_delta": 32
+            }
+          ],
+          "counts": {
+            "accepted_patches": 1,
+            "finalized_candidates": 1,
+            "full_repairs": 1,
+            "host_budget_stops": 0,
+            "mcp_calls": 4,
+            "mcp_rejections": 0,
+            "model_input_tokens": 0,
+            "model_output_tokens": 0,
+            "model_token_cap_turns": 0,
+            "model_turns": 0,
+            "repeated_model_outputs": 0,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": {
+              "correct": 64,
+              "n": 64
+            },
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "same_tensor_and_absolute_magnitude",
+          "record": "results/wb-bf/solver/trial-20/experiment_record.json",
+          "record_sha256": "090d50895886977266e81bd0645d5f626c6c06b31fbbedf025f2fe279cc50525",
+          "seed": 142038,
+          "task_id": "trial-20"
+        }
+      ]
+    }
+  },
+  "schema": "weightbridge.solver_selection_summary.v1",
+  "selections_differ": 6,
+  "tasks_with_finalized_holdout_gain": {
+    "guided": 20,
+    "solver": 20
+  },
+  "verified_pairs": 20
+}

@@ -1,0 +1,202 @@
+{
+  "analysis": {
+    "bootstrap_seed": 918273,
+    "confidence": 0.95,
+    "method": "paired task-level accuracy differences; bootstrap seeds within each mechanism stratum",
+    "resamples": 10000
+  },
+  "cohort_id": "mcp-llm-transfer-v2",
+  "decision_gate": {
+    "ci_lower_strictly_above": 0.0,
+    "max_regression_rate": 0.05,
+    "min_candidate_minus_random": 0.2,
+    "min_repair_rate": 0.7,
+    "repair_definition": "candidate achieves 100 percent holdout accuracy and baseline is below 100 percent"
+  },
+  "execution_order": [
+    "trial-05",
+    "trial-09",
+    "trial-13",
+    "trial-16",
+    "trial-03",
+    "trial-06",
+    "trial-04",
+    "trial-10",
+    "trial-11",
+    "trial-07",
+    "trial-19",
+    "trial-17",
+    "trial-01",
+    "trial-18",
+    "trial-08",
+    "trial-20",
+    "trial-14",
+    "trial-12",
+    "trial-15",
+    "trial-02"
+  ],
+  "execution_order_seed": 9182,
+  "host_policy": {
+    "allow_tensors": [
+      "input_weight",
+      "hidden_bias",
+      "output_weight",
+      "output_bias"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 1,
+    "max_fraction": 0.08333333333333333,
+    "schema": "weightbridge.policy.v1"
+  },
+  "host_policy_sha256": "64de26ca0165e4752decc695376c1c933e51615bb3f0baee36e9049877373bf1",
+  "max_candidates": 8,
+  "max_failure_examples": 48,
+  "model_binding": {
+    "identity_evidence_path": null,
+    "identity_evidence_sha256": null,
+    "identity_provenance": null,
+    "identity_verified": false,
+    "model_id": null,
+    "provider": null,
+    "sampling": null,
+    "version": null
+  },
+  "prompt_path": "experiments/original_weight_edits/MCP_AGENT_PROMPT_V2.md",
+  "prompt_sha256": "cedefde69a0d6e82cdd5d0b0abc7c1934011fcbe989cc2d663b88ea96389d3e6",
+  "protocol_sha256": "62e35fd0cc8351e7c45465fe0bc37f044bd0fe1bf67afc61b3eb1d2f87acc491",
+  "schema": "weightbridge.mcp_llm_cohort_protocol.v2",
+  "source_hashes": {
+    "agent_prompt": {
+      "path": "experiments/original_weight_edits/MCP_AGENT_PROMPT_V2.md",
+      "sha256": "cedefde69a0d6e82cdd5d0b0abc7c1934011fcbe989cc2d663b88ea96389d3e6"
+    },
+    "cohort_evaluator": {
+      "path": "weightbridge/evaluation/mcp_cohort.py",
+      "sha256": "1b0a79216e62a43f04272a0138965e57666a11b458b77786e2127d3f5166a76f"
+    },
+    "mcp_tool_server": {
+      "path": "weightbridge/agents/mcp_server.py",
+      "sha256": "47f7958e8b43d31a424aabced4c18cae3154f5abfa6bfb41591b1a904465b46c"
+    },
+    "protocol_freezer": {
+      "path": "weightbridge/evaluation/freeze_cohort.py",
+      "sha256": "ebc9916794c2b136008d1835f9d6de02597a909ae14c2f775388c82aab2f8a0c"
+    },
+    "task_generator": {
+      "path": "experiments/original_weight_edits/run_mcp_agent_experiment.py",
+      "sha256": "d4d1b115bb3ffaf5ddd9018753df5aa488f7cbdc58311ad6f9da47b1160feb95"
+    }
+  },
+  "status": "TEMPLATE_HOLD",
+  "task_design": {
+    "agent_surface": "MCP tools only; no filesystem, repository, or network tools",
+    "fresh_agent_context_per_task": true,
+    "generator": "make_blinded_task-v2",
+    "hidden_labels_accessible_to_agent": false,
+    "practice_and_holdout_per_class": 32,
+    "random_control": "one-entry random edit; same tensor and absolute magnitude when a candidate exists; fallback magnitude 4.0 otherwise",
+    "tool_access_isolated": true
+  },
+  "tasks": [
+    {
+      "mechanism": "input_direction_reversal",
+      "seed": 132000,
+      "task_id": "trial-01"
+    },
+    {
+      "mechanism": "input_direction_reversal",
+      "seed": 132002,
+      "task_id": "trial-02"
+    },
+    {
+      "mechanism": "input_direction_reversal",
+      "seed": 132004,
+      "task_id": "trial-03"
+    },
+    {
+      "mechanism": "input_direction_reversal",
+      "seed": 132006,
+      "task_id": "trial-04"
+    },
+    {
+      "mechanism": "input_direction_reversal",
+      "seed": 132008,
+      "task_id": "trial-05"
+    },
+    {
+      "mechanism": "hidden_threshold_shift",
+      "seed": 132010,
+      "task_id": "trial-06"
+    },
+    {
+      "mechanism": "hidden_threshold_shift",
+      "seed": 132012,
+      "task_id": "trial-07"
+    },
+    {
+      "mechanism": "hidden_threshold_shift",
+      "seed": 132014,
+      "task_id": "trial-08"
+    },
+    {
+      "mechanism": "hidden_threshold_shift",
+      "seed": 132016,
+      "task_id": "trial-09"
+    },
+    {
+      "mechanism": "hidden_threshold_shift",
+      "seed": 132018,
+      "task_id": "trial-10"
+    },
+    {
+      "mechanism": "output_class_collapse",
+      "seed": 132020,
+      "task_id": "trial-11"
+    },
+    {
+      "mechanism": "output_class_collapse",
+      "seed": 132022,
+      "task_id": "trial-12"
+    },
+    {
+      "mechanism": "output_class_collapse",
+      "seed": 132024,
+      "task_id": "trial-13"
+    },
+    {
+      "mechanism": "output_class_collapse",
+      "seed": 132026,
+      "task_id": "trial-14"
+    },
+    {
+      "mechanism": "output_class_collapse",
+      "seed": 132028,
+      "task_id": "trial-15"
+    },
+    {
+      "mechanism": "output_intercept_shift",
+      "seed": 132030,
+      "task_id": "trial-16"
+    },
+    {
+      "mechanism": "output_intercept_shift",
+      "seed": 132032,
+      "task_id": "trial-17"
+    },
+    {
+      "mechanism": "output_intercept_shift",
+      "seed": 132034,
+      "task_id": "trial-18"
+    },
+    {
+      "mechanism": "output_intercept_shift",
+      "seed": 132036,
+      "task_id": "trial-19"
+    },
+    {
+      "mechanism": "output_intercept_shift",
+      "seed": 132038,
+      "task_id": "trial-20"
+    }
+  ]
+}

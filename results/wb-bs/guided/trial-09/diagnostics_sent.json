@@ -1,0 +1,117 @@
+{
+  "failure_examples": [
+    {
+      "expected": 0,
+      "h": [
+        0.089,
+        0.562
+      ],
+      "logits": [
+        -0.267,
+        0.267
+      ],
+      "predicted": 1,
+      "x": [
+        0.195,
+        0.818
+      ]
+    },
+    {
+      "expected": 0,
+      "h": [
+        0.023,
+        -0.529
+      ],
+      "logits": [
+        -0.069,
+        0.069
+      ],
+      "predicted": 1,
+      "x": [
+        0.161,
+        0.206
+      ]
+    }
+  ],
+  "logit_connectivity": {
+    "disconnected_hidden_units": [
+      1
+    ],
+    "interpretation": "Editing one listed coordinate cannot change either logit while its hidden unit's outgoing weights are zero. Other coordinates may still fail to improve accuracy.",
+    "single_edits_with_no_logit_path": {
+      "hidden_bias": [
+        [
+          1
+        ]
+      ],
+      "input_weight": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "policy": {
+    "max_abs_delta": 8.0,
+    "max_entries": 1,
+    "max_fraction": 0.08333333333333333
+  },
+  "practice": {
+    "accuracy": 0.65625,
+    "baseline_correct_n": 42,
+    "class_errors": {
+      "0": 22,
+      "1": 0
+    },
+    "correct": 42,
+    "n": 64,
+    "regression_rate": 0.0,
+    "regressions": 0,
+    "rescues": 0
+  },
+  "tensors": {
+    "hidden_bias": {
+      "l2_norm": 1.044,
+      "max": -0.3,
+      "mean": -0.65,
+      "min": -1.0,
+      "shape": [
+        2
+      ]
+    },
+    "input_weight": {
+      "l2_norm": 2.828,
+      "max": 2.0,
+      "mean": 1.0,
+      "min": 0.0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "output_bias": {
+      "l2_norm": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "shape": [
+        2
+      ]
+    },
+    "output_weight": {
+      "l2_norm": 4.243,
+      "max": 3.0,
+      "mean": 0.0,
+      "min": -3.0,
+      "shape": [
+        2,
+        2
+      ]
+    }
+  }
+}

@@ -129,6 +129,10 @@ The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 add
   against the MCP broker on toy weights, with a fresh context for each trial.
   Bounded smoke results and the remaining transfer gate are tracked in
   [the research progress record](docs/PROGRESS.md).
+- `breakpoint-menu` generates practice-supported one-scalar patch proposals
+  for the float64 toy MLP. The normal `apply` command validates a selected
+  proposal under the host policy and writes a separate checkpoint.
+  [Tool guide](docs/AGENT_TOOLS.md)
 
 Install the core tools and run the tests/demo:
 

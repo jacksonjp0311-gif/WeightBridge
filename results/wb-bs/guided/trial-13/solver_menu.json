@@ -1,0 +1,23 @@
+{
+  "analytical_deltas_scored": 24,
+  "baseline_correct": 32,
+  "input_tokens": 468,
+  "label_logits": {
+    "A": 22.125
+  },
+  "model_forwards": 1,
+  "options": {
+    "A": {
+      "delta": -8.0,
+      "index": [
+        0,
+        0
+      ],
+      "minimum_signed_margin": 1.0028665155032572,
+      "practice_correct": 64,
+      "tensor": "output_weight"
+    }
+  },
+  "practice_n": 64,
+  "selected_label": "A"
+}

@@ -3,10 +3,11 @@ import argparse
 import json
 from pathlib import Path
 
-from .core import apply_patch, inspect_checkpoint
+from .core import apply_patch, inspect_checkpoint, json_dump_atomic
 from .demo import compare_demo, run_demo
 from .patches import apply_safetensors_patch
 from .inference import HFTextRunner, InferenceConfig
+from .diagnostics.breakpoint_cli import propose_breakpoints
 
 
 def main():
@@ -22,6 +23,12 @@ def main():
     p.add_argument("--patch", required=True)
     p.add_argument("--policy", required=True)
     p.add_argument("--out", required=True)
+    p = sub.add_parser("breakpoint-menu", help="Propose bounded scalar edits from labeled toy practice data")
+    p.add_argument("--base", required=True)
+    p.add_argument("--practice", required=True)
+    p.add_argument("--policy", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--best-patch", action="store_true", help="Write the best proposal as an apply-ready patch")
     p = sub.add_parser("apply-hf", help="Patch a sharded or unsharded safetensors checkpoint into a new candidate")
     p.add_argument("--base", required=True)
     p.add_argument("--patch", required=True)
@@ -57,6 +64,10 @@ def main():
         patch = json.loads(Path(args.patch).read_text(encoding="utf-8"))
         policy = json.loads(Path(args.policy).read_text(encoding="utf-8"))
         result = apply_patch(args.base, patch, policy, args.out)
+    elif args.cmd == "breakpoint-menu":
+        policy = json.loads(Path(args.policy).read_text(encoding="utf-8"))
+        result = propose_breakpoints(args.base, args.practice, policy, best_patch=args.best_patch)
+        json_dump_atomic(args.out, result)
     elif args.cmd == "apply-hf":
         patch = json.loads(Path(args.patch).read_text(encoding="utf-8"))
         policy = json.loads(Path(args.policy).read_text(encoding="utf-8"))

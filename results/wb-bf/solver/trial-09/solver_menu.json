@@ -1,0 +1,48 @@
+{
+  "analytical_deltas_scored": 422,
+  "baseline_correct": 43,
+  "input_tokens": 0,
+  "model_forwards": 0,
+  "options": {
+    "A": {
+      "delta": 6.149697720487806,
+      "index": [
+        1,
+        0
+      ],
+      "minimum_signed_margin": -6.193231500445368,
+      "practice_correct": 46,
+      "tensor": "output_weight"
+    },
+    "B": {
+      "delta": -0.7134316532273449,
+      "index": [
+        0
+      ],
+      "minimum_signed_margin": 0.7113820207920494,
+      "practice_correct": 64,
+      "tensor": "hidden_bias"
+    },
+    "C": {
+      "delta": 3.644497601382936,
+      "index": [
+        0
+      ],
+      "minimum_signed_margin": 0.44657760244792,
+      "practice_correct": 64,
+      "tensor": "output_bias"
+    },
+    "D": {
+      "delta": -1.3996573302182826,
+      "index": [
+        0,
+        0
+      ],
+      "minimum_signed_margin": 0.1892639965218032,
+      "practice_correct": 64,
+      "tensor": "input_weight"
+    }
+  },
+  "practice_n": 64,
+  "selected_label": "B"
+}

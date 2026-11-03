@@ -205,3 +205,20 @@ deployed; candidates remain isolated research artifacts.
   from its original source commit.
 - The 20-task AI transfer gate remains HOLD. The exploratory results are in
   [the search comparison](../results/wb-sr/comparison.json).
+
+## Practice breakpoint repair
+
+- Added a practice-only scalar solver and the regular
+  `weightbridge breakpoint-menu` command. The CLI reproduced a saved
+  input-reversal repair byte for byte and preserved the base hash.
+- A four-pair smoke fully repaired all four toy holdouts in both arms.
+  A separate 20-pair confirmation completed all 40 sessions. The
+  Qwen-assisted arm fully repaired 19/20, and the deterministic arm
+  fully repaired 20/20. Both passed the hybrid toy repair gate.
+  [Confirmation](../results/wb-bf/comparison.json)
+- The first full-cohort replay loaded records in filename order and
+  produced slightly different bootstrap endpoints. Replay now follows
+  the frozen execution order and reproduces the original statistics.
+- The core suite passed 83 tests with 2 skipped, and the inference suite
+  passed 86 with 1 skipped. The earlier search comparison still replays
+  byte for byte at `726f668`.

@@ -187,6 +187,44 @@ Use the source at the original experiment commit to replay an older
 comparison whose manifest binds a previous broker version. The paired
 connectivity report replays at commit `948d4ae`.
 
+### Generate a practice-supported patch
+
+For the float64 toy MLP, pass an NPZ checkpoint, a separate NPZ practice
+split containing `features` and `labels`, and the host patch policy.
+The menu contains one practice-improving proposal per eligible tensor
+when such a proposal is found. Use `--best-patch` for the deterministic
+choice in ordinary WeightBridge patch format.
+
+```bash
+python -m weightbridge breakpoint-menu --base base.npz --practice practice.npz \
+  --policy policy.json --best-patch --out proposed.json
+python -m weightbridge apply --base base.npz --policy policy.json \
+  --patch proposed.json --out candidate.npz
+```
+
+The first command screens analytical practice margins and writes an
+immutable proposal. The second applies the standard policy and writes a
+separate candidate. Score the reloaded candidate on a held-out split to
+test generalization.
+
+The paired research runner gives Qwen and the deterministic selector the
+same practice candidate menu. Qwen chooses among its labels in one model
+forward. Each arm validates and evaluates only its chosen candidate, and
+finalizes it only when the broker reproduces the predicted practice gain.
+
+```bash
+python experiments/original_weight_edits/run_local_mcp_cohort.py \
+  --model /path/to/pinned/qwen35-base \
+  --broker-python /path/to/mcp-enabled/python \
+  --tasks 20 --seed-offset 80000 --mode patch-form \
+  --paired-solver --out results/wb-bf
+python experiments/original_weight_edits/summarize_solver_selection.py \
+  results/wb-bf --out results/wb-bf/comparison.json
+```
+
+Choose a fresh output path and split offset for a new experiment. The
+historical three-arm search comparison replays at commit `726f668`.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

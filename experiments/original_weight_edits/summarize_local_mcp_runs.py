@@ -91,7 +91,10 @@ def summarize_run(path, *, include_class_changes=False):
     protocol = _read_json(path / "frozen_protocol.json")
     record_paths = sorted(path.glob("trial-*/experiment_record.json"))
     records = [_read_json(record) for record in record_paths]
-    cohort = summarize_cohort(protocol, records)
+    # Bootstrap draws must see the same within-stratum ordering as the host.
+    order = {task_id: i for i, task_id in enumerate(protocol["execution_order"])}
+    cohort = summarize_cohort(protocol, sorted(
+        records, key=lambda row: order[row["protocol_binding"]["task_id"]]))
     if cohort != _read_json(path / "cohort_summary.json"):
         raise ValueError(f"Cohort replay differs from recorded summary for {path.name}")
     trials = []

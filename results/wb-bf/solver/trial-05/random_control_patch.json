@@ -1,0 +1,20 @@
+{
+  "base_sha256": "ec17e7617dc564ff74a7435e1379dd02b2ee09b4c50cf668ab90b5dd4eb7d253",
+  "changes": [
+    {
+      "index": [
+        1,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": 3.9937982991694247
+    }
+  ],
+  "evidence_ids": [
+    "mcp-cohort-random-control"
+  ],
+  "projections": [],
+  "reason": "Seeded random one-entry control matched to the candidate tensor and magnitude.",
+  "schema": "weightbridge.patch.v1"
+}

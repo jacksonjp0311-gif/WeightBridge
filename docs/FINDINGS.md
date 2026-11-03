@@ -326,3 +326,58 @@ remains HOLD. The experiment used 543.21 seconds of elapsed time and
 seconds of elapsed time including its broker calls. See the
 [frozen plan](../results/wb-sr/paired_plan.json) and
 [comparison with raw evidence paths](../results/wb-sr/comparison.json).
+
+## Practice breakpoint search and candidate selection
+
+For one scalar change `d`, the binary logit margin is the class-1 logit
+minus the class-0 logit. An output-layer edit makes this margin affine
+in `d`. An edit to an input weight or hidden bias gives a constant plus
+a scaled `tanh(z + s*d)`. The solver finds where each practice margin
+crosses zero inside the allowed delta range. It scores the interval
+midpoints and cap endpoints, skips ambiguous near ties, and keeps one
+improving proposal per eligible tensor. The deterministic ranking uses
+correct predictions, minimum signed margin, and then edit magnitude.
+
+In a four-pair smoke, both Qwen menu selection and deterministic
+selection produced 64/64 holdout scores after checkpoint reload on
+all four tasks. Input reversal was repaired by adding about 4.013 to
+`input_weight[0, 0]`. The earlier fixed-step search used a step of 3.
+Qwen picked A on all four menus, including the two with multiple
+choices. It chose a different edit from the deterministic selector on
+one task and tied its holdout score. The solver calculated every
+candidate delta from practice data.
+
+The menu is screened analytically before the one broker practice
+evaluation. The smoke screened 1,204 scalar deltas per arm, so its
+one-evaluation ceiling is distinct from the eight-candidate search
+budget in the earlier study. See the [smoke comparison](../results/wb-bs/comparison.json).
+
+A fresh 20-pair confirmation used five split seeds per synthetic defect
+mechanism. Both arms passed the frozen repair, regression, and matched
+random thresholds for this solver-assisted workflow.
+
+| Selector | Original correct | Reloaded correct | Matched random correct | Full repairs | Mean lead over random |
+|---|---:|---:|---:|---:|---:|
+| Qwen | 677/1,280 | 1,274/1,280 | 737/1,280 | 19/20 | 41.95 percentage points |
+| Deterministic | 677/1,280 | 1,280/1,280 | 738/1,280 | 20/20 | 42.34 percentage points |
+
+Both arms had zero regressions among examples the original classified
+correctly. The stratified paired 95% intervals for the advantage over
+random were 34.77 to 48.05 points for Qwen and 35.39 to 47.97 for the
+deterministic selector. These intervals apply to the tested task
+distribution, with repeated splits of the four injected mechanisms.
+
+Qwen picked A on 17 of 20 menus. Eleven menus had multiple options, and
+the two selectors disagreed six times. On the sole partial repair, Qwen
+chose an output-weight edit at the policy cap that scored 54/64 on
+practice and 58/64 on holdout. The deterministic selector chose an
+output-bias edit that scored 64/64 on both. Candidate selection offered
+no measured advantage over deterministic ranking on these tasks.
+
+The confirmation used 169.49 seconds of wall time and 198.97 host
+CPU seconds across 40 sessions. Each arm screened 6,005 analytical
+deltas and used 20 broker practice evaluations. Qwen used 20 model
+forwards and 11,407 input tokens. The original direct-proposal AI transfer
+study remains a separate held experiment. Qwen served as the selector
+in this study and the edited checkpoints were toy MLPs.
+[Confirmation and raw evidence](../results/wb-bf/comparison.json)
