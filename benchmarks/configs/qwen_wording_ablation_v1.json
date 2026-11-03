@@ -1,0 +1,223 @@
+{
+  "calibration": {
+    "max_unrelated_flips": 1,
+    "minimum_lost_targets": 2,
+    "minimum_pristine_correct": 6
+  },
+  "candidate_evaluations_per_arm": 9,
+  "cases": [
+    {
+      "fault": "one_position",
+      "layer": 21,
+      "replicate": 1,
+      "seed": 919527,
+      "slot": 1
+    },
+    {
+      "fault": "reversal",
+      "layer": 23,
+      "replicate": 0,
+      "seed": 919528,
+      "slot": 2
+    },
+    {
+      "fault": "one_position",
+      "layer": 23,
+      "replicate": 1,
+      "seed": 919529,
+      "slot": 3
+    },
+    {
+      "fault": "one_position",
+      "layer": 19,
+      "replicate": 1,
+      "seed": 919530,
+      "slot": 4
+    },
+    {
+      "fault": "reversal",
+      "layer": 23,
+      "replicate": 1,
+      "seed": 919531,
+      "slot": 5
+    },
+    {
+      "fault": "reversal",
+      "layer": 19,
+      "replicate": 0,
+      "seed": 919532,
+      "slot": 6
+    },
+    {
+      "fault": "reversal",
+      "layer": 19,
+      "replicate": 1,
+      "seed": 919533,
+      "slot": 7
+    },
+    {
+      "fault": "reversal",
+      "layer": 21,
+      "replicate": 1,
+      "seed": 919534,
+      "slot": 8
+    },
+    {
+      "fault": "one_position",
+      "layer": 23,
+      "replicate": 0,
+      "seed": 919535,
+      "slot": 9
+    },
+    {
+      "fault": "one_position",
+      "layer": 19,
+      "replicate": 0,
+      "seed": 919536,
+      "slot": 10
+    },
+    {
+      "fault": "reversal",
+      "layer": 21,
+      "replicate": 0,
+      "seed": 919537,
+      "slot": 11
+    },
+    {
+      "fault": "one_position",
+      "layer": 21,
+      "replicate": 0,
+      "seed": 919538,
+      "slot": 12
+    }
+  ],
+  "fault_strengths": [
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64,
+    1.28
+  ],
+  "gate": {
+    "max_unrelated_flips_vs_pristine": 0,
+    "minimum_case_passes": 8,
+    "minimum_holdout_loss": 2,
+    "minimum_recovery": 0.5,
+    "require_no_paraphrase_regression_vs_damaged": true,
+    "require_strict_win_against_random": true
+  },
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.19.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.23.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "practice_modes": [
+    "single",
+    "multi"
+  ],
+  "primary_comparison": "paired multi minus single held-out paraphrase accuracy",
+  "schema": "weightbridge.qwen_wording_ablation.v1",
+  "seed": 919426,
+  "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "source_sha256": {
+    "run_blind_qwen_repair.py": "00a50a42256a418c07adf6463b256ddcdd29e5ea37f894846605729e9643f8a3",
+    "run_qwen_repair_cohort.py": "dd3d53445adc56ff49e4259c4b07b01fe9d8508ffaa8d6e43334f6afc7544ec7",
+    "run_qwen_wording_ablation.py": "b91028314c0c912e51aabdee3a79334bde29f86279c05a04d7d513b75dad50ac"
+  },
+  "splits": {
+    "construction": [
+      8,
+      8
+    ],
+    "holdout": [
+      24,
+      16
+    ],
+    "practice": [
+      8,
+      16
+    ]
+  },
+  "strengths": [
+    0.03,
+    0.07,
+    0.15
+  ],
+  "templates": {
+    "brackets": "Identify the larger of ({a}) and ({b}). Choose A for ({a}) or B for ({b}). Reply with the option letter only.",
+    "comparison": "Compare the values below. Which is the greater integer?\nA. {a}\nB. {b}\nAnswer with the letter A or B only.",
+    "inline": "Which number is larger, A) {a} or B) {b}? Answer with the letter of the larger number only.",
+    "maximum": "Pick the maximum of these two integers.\nA. {a}\nB. {b}\nAnswer with the letter A or B only.",
+    "standard": "Which integer is larger?\nA. {a}\nB. {b}\nAnswer with the letter A or B only."
+  },
+  "wordings": {
+    "construction": [
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard"
+    ],
+    "holdout": [
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "comparison",
+      "comparison",
+      "comparison",
+      "comparison",
+      "comparison",
+      "comparison",
+      "maximum",
+      "maximum",
+      "maximum",
+      "maximum",
+      "maximum",
+      "maximum"
+    ],
+    "multi": [
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "inline",
+      "inline",
+      "brackets",
+      "brackets"
+    ],
+    "single": [
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard",
+      "standard"
+    ]
+  }
+}
