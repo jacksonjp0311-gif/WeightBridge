@@ -1,0 +1,269 @@
+{
+  "base_sha256": "6ba2e85011de104f70fbbd1f272250b538843d94fe8ece9a16a3b3d44f7e30d0",
+  "base_target_correct": 21,
+  "candidate_sha256": "d289d82de3cd23035aa7c0f99116c21428178b236b8995e9394033da52cc615c",
+  "candidate_target_correct": 24,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 512
+  },
+  "disposition": "PASS",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 3,
+  "receipt_sha256": "31a30e43ab6900402c73a167580e97208cf0d07ab25c7187c9abd5138b92e93f",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s2",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-s3",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-s4",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s5",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s6",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s7",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s8",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s9",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-s10",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s11",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-s12",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-s13",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s14",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-s15",
+      "label": "B"
+    }
+  ],
+  "sentinel_count": 16,
+  "sentinel_prediction_flips": 0,
+  "suite_sha256": "3960f48a556afe784c9bab25a828bbc1dfebb2dd755452ca55576dbd2b77a7a0",
+  "target": [
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t2",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t3",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t4",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t5",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t6",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t7",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t8",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t9",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t10",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t11",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t12",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t13",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t14",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t15",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t16",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t17",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t18",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t19",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-holdout-t20",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t21",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t22",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-holdout-t23",
+      "label": "B"
+    }
+  ],
+  "target_corrections": 3,
+  "target_count": 24,
+  "target_gain": 3,
+  "target_regressions": 0
+}

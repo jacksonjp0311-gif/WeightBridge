@@ -1,14 +1,84 @@
 # WeightBridge agent tools
 
-WeightBridge now has two ways for an AI host to submit a weight proposal:
+WeightBridge has three ways for an AI host to submit a weight proposal.
 
-- The CLI accepts inspection and patch commands. It supports the implemented
-  NumPy and safetensors paths, including Hugging Face checkpoints.
+- A local Hugging Face edit session accepts JSON tool calls for a bounded
+  practice loop and returns a candidate for independent evaluation.
+- The CLI accepts individual inspection and patch commands for NumPy and
+  safetensors checkpoints.
 - The optional MCP server exposes a typed, local stdio interface for a
-  practice-only synthetic MLP diagnosis session. This is the first
-  LLM-hosted agent path; it does not yet wrap Hugging Face inference.
+  practice-only synthetic MLP diagnosis session.
 
-## Install and connect
+## Local Hugging Face edit sessions
+
+Use the [README setup](../README.md#give-an-agent-a-weight-editing-session)
+to pin a base checkpoint, host policy and labeled practice suite. Choose
+the inference device and token limit when you initialize the session.
+Each trial may save a full checkpoint copy. Budget disk space for the
+number of attempts and set a subprocess timeout in your host harness.
+
+Register the JSON schemas from `hf-edit-session tools` as local agent
+tools. Route each invocation to
+`python -m weightbridge hf-edit-session call --session <host-owned-directory>`
+with one JSON request on stdin. Read one JSON response from stdout. Keep
+the session directory argument fixed in the adapter. A coding agent with
+local shell access can issue the same calls directly. An API-backed agent
+such as a Grok-backed controller needs a local process to relay those calls.
+Treat a nonzero exit as a tool error. A completed trial returns JSON with
+its own disposition, so an agent can learn from a rejected or failed edit.
+
+| Tool | Arguments | Use |
+|---|---|---|
+| `describe` | `{}` | Read the allowed tensors, session status and practice diagnostics. |
+| `try_direction` | `{"tensor":"<allowed Qwen MLP projection>","strength":0.03}` | Fit an activation-based direction from the frozen practice examples and measure the candidate. |
+| `try_patch` | `{"patch":{...}}` | Submit a `weightbridge.patch.v1` document with exact base and tensor hashes and measure the candidate. |
+| `finalize` | `{"candidate_id":"candidate-0001"}` | Freeze a candidate that cleared the practice gate and end the session. |
+| `stop` | `{"reason":"No proposal cleared the practice gate"}` | End the session without a candidate. |
+
+A direction request looks like this for the pinned Qwen3.5-0.8B example,
+provided the host explicitly allowed this tensor.
+
+```json
+{"tool":"try_direction","arguments":{"tensor":"model.language_model.layers.23.mlp.down_proj.weight","strength":0.03}}
+```
+
+An example task for the agent is “Inspect the practice failures. Choose a
+permitted projection and strength and explain your hypothesis. Use each
+practice result to decide what to try next. Finalize a candidate that passes
+the practice gate or stop.” The direction tool fits the numeric update.
+The raw patch tool lets an agent supply the numeric update itself.
+
+Run the tool process with access to the research checkpoint and session
+directory. Keep the holdout, evaluator controls and deployed checkpoint
+outside the agent's filesystem permissions. If the agent has unrestricted
+shell access, the CLI alone cannot enforce that isolation. In a restricted
+harness, expose the five calls and keep the session and its files host-owned.
+Check the frozen candidate with `evaluate-hf-edit` on fresh prompts and
+unrelated sentinels. A practice PASS authorizes finalization for that test.
+
+The reproducible integration check runs two disclosed choices from the
+published WeightBridge pilot through the JSON tool interface. The script
+builds the damaged checkpoint, compiles and measures both edits, finalizes
+the eligible one, then reloads it for evaluation. It checks the exact
+candidate checkpoint hash and every held-out prediction against the archive.
+Use the [pinned checkpoint from the README](../README.md#replay-a-measured-qwen-improvement)
+and a new output directory. The replay uses roughly 6 GB for three
+checkpoint copies and was tested with Transformers 5.22.1 and Torch 2.15.0
+on CPU in BF16.
+
+```bash
+python experiments/original_weight_edits/replay_hf_edit_demo.py --pristine ./qwen35-base --out ./session-demo --example ai-pilot --session-tools
+```
+
+The layer 21 candidate gained one practice answer and flipped two of 16
+sentinel predictions, which failed the practice gate. The layer 23
+candidate gained one practice answer with zero sentinel flips and was
+finalized. After reload, it scored 24/24 versus 21/24 for the damaged
+base on the held-out targets, with all 16 sentinel predictions preserved.
+The full replay took 166 seconds on the recorded CPU runtime.
+[Replay summary, suites and receipts](../results/hf-agent-session-replay/)
+
+## Install and connect synthetic MCP
 
 Install the optional SDK adapter:
 

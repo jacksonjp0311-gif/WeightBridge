@@ -6,9 +6,11 @@ report and submits a patch as JSON. The host enforces a policy and saves the
 result as a separate checkpoint with a receipt. You can reload that candidate
 and measure whether it improves the behavior you care about.
 
-The CLI supports NumPy and Hugging Face safetensors checkpoints. The optional
-local MCP server lets an LLM propose and score edits on a toy model's practice
-data. See the [agent tools guide](docs/AGENT_TOOLS.md) for setup and scope.
+The CLI supports NumPy and Hugging Face safetensors checkpoints. The
+[local HF edit session](#give-an-agent-a-weight-editing-session) lets an
+agent choose edits, see practice results and freeze a candidate. The optional
+MCP server supports practice sessions on synthetic MLPs.
+[Agent tools guide](docs/AGENT_TOOLS.md)
 
 ## Install and try it
 
@@ -32,6 +34,28 @@ Install `.[inference]` to load a Hugging Face model locally or `.[mcp]` to
 enable the toy MCP workflow. The real-model evaluation examples use a pinned
 Qwen3.5-0.8B checkpoint on CPU. See the [runtime notes](docs/LIMITATIONS.md)
 for measured compatibility.
+
+## Give an agent a weight editing session
+
+Install `.[inference,safetensors]`. The host creates a new session with a
+local checkpoint, a [weight policy](#patch-contract) and a labeled practice
+suite. The practice suite uses the same JSON format as the evaluator below.
+
+```bash
+python -m weightbridge hf-edit-session init --session ./edit-session \
+  --base ./base-model --policy host-policy.json --practice practice.json \
+  --max-candidates 6 --max-sentinel-flips 0 --device cpu
+python -m weightbridge hf-edit-session tools
+echo '{"tool":"describe","arguments":{}}' | python -m weightbridge hf-edit-session call --session ./edit-session
+```
+
+Give a local coding agent this tool contract and the behavior you want to
+repair. For an API-backed agent, run the calls in its local harness and pass
+back the JSON replies. The agent can try a raw patch or ask WeightBridge to
+fit a direction on a permitted Qwen3.5 MLP projection. It uses practice
+feedback to choose its next attempt, then finalizes an eligible candidate
+or stops. The host can reload that candidate with `evaluate-hf-edit` and
+score it on a separate holdout. [Host setup and request examples](docs/AGENT_TOOLS.md#local-hugging-face-edit-sessions)
 
 ## Edit and test a real checkpoint
 

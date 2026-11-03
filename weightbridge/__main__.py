@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .agents.hf_session_cli import add_hf_session_parser, run_hf_session_command
 from .core import apply_patch, inspect_checkpoint, json_dump_atomic
 from .demo import compare_demo, run_demo
 from .evaluation.hf_edit import evaluate_hf_edit
@@ -48,6 +49,7 @@ def main():
     p.add_argument("--cpu-threads", type=int, default=6)
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--max-input-tokens", type=int, default=512)
+    add_hf_session_parser(sub)
     p = sub.add_parser("compare-demo", help="Evaluate same synthetic holdout on base and candidate")
     p.add_argument("--base", required=True)
     p.add_argument("--candidate", required=True)
@@ -94,6 +96,11 @@ def main():
                 device=args.device, dtype=args.dtype, cpu_threads=args.cpu_threads,
                 batch_size=args.batch_size, max_input_tokens=args.max_input_tokens,
             )
+        except (InferenceError, OSError, ValueError) as exc:
+            parser.error(str(exc))
+    elif args.cmd == "hf-edit-session":
+        try:
+            result = run_hf_session_command(args)
         except (InferenceError, OSError, ValueError) as exc:
             parser.error(str(exc))
     elif args.cmd == "generate":

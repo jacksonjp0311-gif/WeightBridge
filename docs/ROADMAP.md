@@ -29,7 +29,10 @@ strengths and the host fit each edit from practice activations. One saved
 candidate recovered all three lost targets and preserved all unrelated
 predictions after reload. One of three cases passed. The README documents
 the separate product evaluator for any compatible local Hugging Face
-candidate and host-owned forced-choice suite.
+candidate and host-owned forced-choice suite. The [local JSON tool
+session](AGENT_TOOLS.md#local-hugging-face-edit-sessions) packages this
+bounded practice loop for a local agent harness. The real-model MCP
+promotion gate below remains in force.
 
 ## Direct-proposal qualification
 

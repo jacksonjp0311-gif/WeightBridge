@@ -1,0 +1,173 @@
+{
+  "base_sha256": "6ba2e85011de104f70fbbd1f272250b538843d94fe8ece9a16a3b3d44f7e30d0",
+  "base_target_correct": 6,
+  "candidate_sha256": "713dde0b2443d1209ae91ea2bfb9323ee8268012a533f71003569dd599eb8797",
+  "candidate_target_correct": 7,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 96
+  },
+  "disposition": "FAIL",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 1,
+  "receipt_sha256": "0b665d9f62dcc9929912667713c4a89de67042afd536986243d56b933e9e0e55",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s1",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s2",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s3",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s4",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-s5",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s6",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s7",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "3-practice-s8",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s9",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-s10",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-s11",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "3-practice-s12",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s13",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s14",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-s15",
+      "label": "A"
+    }
+  ],
+  "sentinel_count": 16,
+  "sentinel_prediction_flips": 2,
+  "suite_sha256": "239a16be1b14839228547dad9ff4bdacda9f5a76d5d90e2e7e7275bb812306f3",
+  "target": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-t0",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-t1",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-t2",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-t3",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "3-practice-t4",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "3-practice-t5",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-t6",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "3-practice-t7",
+      "label": "A"
+    }
+  ],
+  "target_corrections": 1,
+  "target_count": 8,
+  "target_gain": 1,
+  "target_regressions": 0
+}
