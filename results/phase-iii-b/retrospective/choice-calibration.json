@@ -1,0 +1,2480 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "conditions": {
+    "12": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "1": 4,
+            "2": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "1": 8,
+            "2": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "1": 1,
+            "2": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "1": 0,
+            "2": 2
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.625,
+          "both_orders_correct": 1,
+          "both_orders_wrong": 0,
+          "collapsed": false,
+          "correct": 5,
+          "item_count": 4,
+          "labels": {
+            "1": 4,
+            "2": 4
+          },
+          "minority_prediction_count": 3,
+          "order_consistency": 0.25,
+          "predictions": {
+            "1": 5,
+            "2": 3
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "1": 1,
+            "2": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "1": 2,
+            "2": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": false,
+        "order_consistency": false,
+        "prediction_balance": true
+      },
+      "metrics": {
+        "accuracy": 0.55,
+        "both_orders_correct": 1,
+        "both_orders_wrong": 0,
+        "collapsed": false,
+        "correct": 11,
+        "item_count": 10,
+        "labels": {
+          "1": 10,
+          "2": 10
+        },
+        "minority_prediction_count": 5,
+        "order_consistency": 0.1,
+        "predictions": {
+          "1": 15,
+          "2": 5
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "1",
+          "margin": 0.5,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 0.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "2",
+          "margin": 0.875,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "2",
+          "margin": 1.375,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": -1.375
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "1",
+          "margin": 1.0,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": 1.0
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "1",
+          "margin": 0.875,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 0.875
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "2",
+          "margin": 0.75,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": -0.75
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "2",
+          "margin": 1.5,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": -1.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "1",
+          "margin": 0.75,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": 0.75
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "1",
+          "margin": 0.0,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 0.0
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "2",
+          "margin": 0.375,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": -0.375
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "2",
+          "margin": -0.125,
+          "prediction": "2",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": 0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "1",
+          "margin": -0.25,
+          "prediction": "2",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": -0.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "1",
+          "margin": 0.125,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "2",
+          "margin": -1.25,
+          "prediction": "2",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 1.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "2",
+          "margin": 0.125,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": -0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "1",
+          "margin": 0.0,
+          "prediction": "1",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": 0.0
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "1",
+          "margin": 0.625,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": 0.625
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "2",
+          "margin": 0.875,
+          "prediction": "1",
+          "presentation": [
+            "1",
+            "2"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "2",
+          "margin": -0.125,
+          "prediction": "2",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": 0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "1",
+          "margin": -0.375,
+          "prediction": "2",
+          "presentation": [
+            "2",
+            "1"
+          ],
+          "signed_margin": -0.375
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 17.75,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1088,
+        "forward_wall_seconds": 2.991448600019794,
+        "peak_rss_bytes": 2374246400,
+        "wall_seconds": 3.0002915000077337
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        16,
+        17
+      ]
+    },
+    "AB": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "A": 4,
+            "B": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "A": 8,
+            "B": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "A": 1,
+            "B": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "A": 2,
+            "B": 0
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.75,
+          "both_orders_correct": 2,
+          "both_orders_wrong": 0,
+          "collapsed": false,
+          "correct": 6,
+          "item_count": 4,
+          "labels": {
+            "A": 4,
+            "B": 4
+          },
+          "minority_prediction_count": 2,
+          "order_consistency": 0.5,
+          "predictions": {
+            "A": 6,
+            "B": 2
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "A": 1,
+            "B": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "A": 2,
+            "B": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": true,
+        "order_consistency": false,
+        "prediction_balance": false
+      },
+      "metrics": {
+        "accuracy": 0.6,
+        "both_orders_correct": 2,
+        "both_orders_wrong": 0,
+        "collapsed": false,
+        "correct": 12,
+        "item_count": 10,
+        "labels": {
+          "A": 10,
+          "B": 10
+        },
+        "minority_prediction_count": 2,
+        "order_consistency": 0.2,
+        "predictions": {
+          "A": 18,
+          "B": 2
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "A",
+          "margin": 1.5,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 1.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "B",
+          "margin": 1.5,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": -1.5
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "B",
+          "margin": 1.5,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": -1.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "A",
+          "margin": 1.5,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 1.5
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "A",
+          "margin": 1.625,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 1.625
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "B",
+          "margin": 1.5,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": -1.5
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "B",
+          "margin": 2.25,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": -2.25
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "A",
+          "margin": 1.125,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 1.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "A",
+          "margin": 2.5,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 2.5
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "B",
+          "margin": 0.625,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": -0.625
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "B",
+          "margin": -0.75,
+          "prediction": "B",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 0.75
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "A",
+          "margin": 0.25,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 0.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "A",
+          "margin": 3.125,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 3.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "B",
+          "margin": -1.125,
+          "prediction": "B",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 1.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "B",
+          "margin": 0.125,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": -0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "A",
+          "margin": 0.375,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 0.375
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "A",
+          "margin": 2.125,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": 2.125
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "B",
+          "margin": 1.625,
+          "prediction": "A",
+          "presentation": [
+            "A",
+            "B"
+          ],
+          "signed_margin": -1.625
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "B",
+          "margin": 0.25,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": -0.25
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "A",
+          "margin": 0.625,
+          "prediction": "A",
+          "presentation": [
+            "B",
+            "A"
+          ],
+          "signed_margin": 0.625
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 17.125,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1048,
+        "forward_wall_seconds": 2.875497800006997,
+        "peak_rss_bytes": 2350747648,
+        "wall_seconds": 2.928732000000309
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        32,
+        33
+      ]
+    },
+    "CD": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "C": 4,
+            "D": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "C": 8,
+            "D": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "C": 1,
+            "D": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "C": 2,
+            "D": 0
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.625,
+          "both_orders_correct": 1,
+          "both_orders_wrong": 0,
+          "collapsed": false,
+          "correct": 5,
+          "item_count": 4,
+          "labels": {
+            "C": 4,
+            "D": 4
+          },
+          "minority_prediction_count": 1,
+          "order_consistency": 0.25,
+          "predictions": {
+            "C": 7,
+            "D": 1
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "C": 1,
+            "D": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "C": 2,
+            "D": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": false,
+        "order_consistency": false,
+        "prediction_balance": false
+      },
+      "metrics": {
+        "accuracy": 0.55,
+        "both_orders_correct": 1,
+        "both_orders_wrong": 0,
+        "collapsed": false,
+        "correct": 11,
+        "item_count": 10,
+        "labels": {
+          "C": 10,
+          "D": 10
+        },
+        "minority_prediction_count": 1,
+        "order_consistency": 0.1,
+        "predictions": {
+          "C": 19,
+          "D": 1
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "C",
+          "margin": 1.375,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 1.375
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "D",
+          "margin": 1.0,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": -1.0
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "D",
+          "margin": 3.5,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": -3.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "C",
+          "margin": 3.5,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": 3.5
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "C",
+          "margin": 1.75,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 1.75
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "D",
+          "margin": 1.0,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": -1.0
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "D",
+          "margin": 4.625,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": -4.625
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "C",
+          "margin": 3.125,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": 3.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "C",
+          "margin": 1.25,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 1.25
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "D",
+          "margin": 1.0,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": -1.0
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "D",
+          "margin": 0.75,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": -0.75
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "C",
+          "margin": 1.5,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": 1.5
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "C",
+          "margin": 1.375,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 1.375
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "D",
+          "margin": -0.625,
+          "prediction": "D",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 0.625
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "D",
+          "margin": 0.875,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "C",
+          "margin": 1.25,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": 1.25
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "C",
+          "margin": 2.875,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": 2.875
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "D",
+          "margin": 1.375,
+          "prediction": "C",
+          "presentation": [
+            "C",
+            "D"
+          ],
+          "signed_margin": -1.375
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "D",
+          "margin": 0.5,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": -0.5
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "C",
+          "margin": 0.75,
+          "prediction": "C",
+          "presentation": [
+            "D",
+            "C"
+          ],
+          "signed_margin": 0.75
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 17.390625,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1048,
+        "forward_wall_seconds": 2.9437452000565827,
+        "peak_rss_bytes": 2375102464,
+        "wall_seconds": 2.9532631000038236
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        34,
+        35
+      ]
+    },
+    "LR": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "L": 4,
+            "R": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "L": 8,
+            "R": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "L": 1,
+            "R": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "L": 2,
+            "R": 0
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.625,
+          "both_orders_correct": 1,
+          "both_orders_wrong": 0,
+          "collapsed": false,
+          "correct": 5,
+          "item_count": 4,
+          "labels": {
+            "L": 4,
+            "R": 4
+          },
+          "minority_prediction_count": 3,
+          "order_consistency": 0.25,
+          "predictions": {
+            "L": 5,
+            "R": 3
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "L": 1,
+            "R": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "L": 2,
+            "R": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": false,
+        "order_consistency": false,
+        "prediction_balance": false
+      },
+      "metrics": {
+        "accuracy": 0.55,
+        "both_orders_correct": 1,
+        "both_orders_wrong": 0,
+        "collapsed": false,
+        "correct": 11,
+        "item_count": 10,
+        "labels": {
+          "L": 10,
+          "R": 10
+        },
+        "minority_prediction_count": 3,
+        "order_consistency": 0.1,
+        "predictions": {
+          "L": 17,
+          "R": 3
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "L",
+          "margin": 1.625,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 1.625
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "R",
+          "margin": 0.875,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "R",
+          "margin": 1.75,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": -1.75
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "L",
+          "margin": 2.375,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": 2.375
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "L",
+          "margin": 1.875,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 1.875
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "R",
+          "margin": 1.25,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": -1.25
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "R",
+          "margin": 2.375,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": -2.375
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "L",
+          "margin": 2.125,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": 2.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "L",
+          "margin": 2.5,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 2.5
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "R",
+          "margin": 0.5,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": -0.5
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "R",
+          "margin": 0.0,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": -0.0
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "L",
+          "margin": 0.125,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": 0.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "L",
+          "margin": 2.5,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 2.5
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "R",
+          "margin": -0.375,
+          "prediction": "R",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 0.375
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "R",
+          "margin": -0.375,
+          "prediction": "R",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": 0.375
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "L",
+          "margin": -0.5,
+          "prediction": "R",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": -0.5
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "L",
+          "margin": 1.75,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": 1.75
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "R",
+          "margin": 0.875,
+          "prediction": "L",
+          "presentation": [
+            "L",
+            "R"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "R",
+          "margin": 0.0,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": -0.0
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "L",
+          "margin": 0.875,
+          "prediction": "L",
+          "presentation": [
+            "R",
+            "L"
+          ],
+          "signed_margin": 0.875
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 16.28125,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1048,
+        "forward_wall_seconds": 2.7500696000061,
+        "peak_rss_bytes": 2376114176,
+        "wall_seconds": 2.757739999971818
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        43,
+        49
+      ]
+    },
+    "PQ": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "P": 4,
+            "Q": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "P": 8,
+            "Q": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "P": 1,
+            "Q": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "P": 2,
+            "Q": 0
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "P": 4,
+            "Q": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "P": 8,
+            "Q": 0
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "P": 1,
+            "Q": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "P": 2,
+            "Q": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": false,
+        "order_consistency": false,
+        "prediction_balance": false
+      },
+      "metrics": {
+        "accuracy": 0.5,
+        "both_orders_correct": 0,
+        "both_orders_wrong": 0,
+        "collapsed": true,
+        "correct": 10,
+        "item_count": 10,
+        "labels": {
+          "P": 10,
+          "Q": 10
+        },
+        "minority_prediction_count": 0,
+        "order_consistency": 0.0,
+        "predictions": {
+          "P": 20,
+          "Q": 0
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "P",
+          "margin": 1.5,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": 1.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "Q",
+          "margin": 1.25,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": -1.25
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "Q",
+          "margin": 3.25,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": -3.25
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "P",
+          "margin": 2.875,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": 2.875
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "P",
+          "margin": 1.5,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": 1.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "Q",
+          "margin": 1.125,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": -1.125
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "Q",
+          "margin": 4.375,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": -4.375
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "P",
+          "margin": 2.75,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": 2.75
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "P",
+          "margin": 2.75,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": 2.75
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "Q",
+          "margin": 2.5,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": -2.5
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "Q",
+          "margin": 2.0,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": -2.0
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "P",
+          "margin": 2.25,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": 2.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "P",
+          "margin": 2.625,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": 2.625
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "Q",
+          "margin": 1.25,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": -1.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "Q",
+          "margin": 2.375,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": -2.375
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "P",
+          "margin": 1.625,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": 1.625
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "P",
+          "margin": 3.375,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": 3.375
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "Q",
+          "margin": 1.5,
+          "prediction": "P",
+          "presentation": [
+            "P",
+            "Q"
+          ],
+          "signed_margin": -1.5
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "Q",
+          "margin": 1.625,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": -1.625
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "P",
+          "margin": 2.625,
+          "prediction": "P",
+          "presentation": [
+            "Q",
+            "P"
+          ],
+          "signed_margin": 2.625
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 16.421875,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1048,
+        "forward_wall_seconds": 2.783383500005584,
+        "peak_rss_bytes": 2375905280,
+        "wall_seconds": 2.7926179000060074
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        47,
+        48
+      ]
+    },
+    "XY": {
+      "by_family": {
+        "date-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 4,
+          "item_count": 4,
+          "labels": {
+            "X": 4,
+            "Y": 4
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "X": 8,
+            "Y": 0
+          },
+          "rows": 8
+        },
+        "fraction-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "X": 1,
+            "Y": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "X": 2,
+            "Y": 0
+          },
+          "rows": 2
+        },
+        "generic": {
+          "accuracy": 0.625,
+          "both_orders_correct": 1,
+          "both_orders_wrong": 0,
+          "collapsed": false,
+          "correct": 5,
+          "item_count": 4,
+          "labels": {
+            "X": 4,
+            "Y": 4
+          },
+          "minority_prediction_count": 1,
+          "order_consistency": 0.25,
+          "predictions": {
+            "X": 7,
+            "Y": 1
+          },
+          "rows": 8
+        },
+        "word-order": {
+          "accuracy": 0.5,
+          "both_orders_correct": 0,
+          "both_orders_wrong": 0,
+          "collapsed": true,
+          "correct": 1,
+          "item_count": 1,
+          "labels": {
+            "X": 1,
+            "Y": 1
+          },
+          "minority_prediction_count": 0,
+          "order_consistency": 0.0,
+          "predictions": {
+            "X": 2,
+            "Y": 0
+          },
+          "rows": 2
+        }
+      },
+      "checks": {
+        "accuracy": false,
+        "order_consistency": false,
+        "prediction_balance": false
+      },
+      "metrics": {
+        "accuracy": 0.55,
+        "both_orders_correct": 1,
+        "both_orders_wrong": 0,
+        "collapsed": false,
+        "correct": 11,
+        "item_count": 10,
+        "labels": {
+          "X": 10,
+          "Y": 10
+        },
+        "minority_prediction_count": 1,
+        "order_consistency": 0.1,
+        "predictions": {
+          "X": 19,
+          "Y": 1
+        },
+        "rows": 20
+      },
+      "paired_predictions": [
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/0",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "X",
+          "margin": 1.375,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 1.375
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/ed0c2bec9080fadb/1",
+          "item_key": "ed0c2bec9080fadb6cf62d2ed18deab94ddcd118e5a6549c48181fc6530cf425",
+          "label": "Y",
+          "margin": 0.875,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": -0.875
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/0",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "Y",
+          "margin": 2.5,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": -2.5
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/d0d9d9ccb7d36c89/1",
+          "item_key": "d0d9d9ccb7d36c893682129ae2480eb1e0da62cfac6bf1d769f3bb56d92d891b",
+          "label": "X",
+          "margin": 2.5,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": 2.5
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/0",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "X",
+          "margin": 1.125,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 1.125
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/6541f3837415b56a/1",
+          "item_key": "6541f3837415b56a8bc4766e3f04ff230be22f45d9d990c6b485f7fb1cae5c20",
+          "label": "Y",
+          "margin": 0.625,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": -0.625
+        },
+        {
+          "answer_position": 0,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/0",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "Y",
+          "margin": 3.0,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": -3.0
+        },
+        {
+          "answer_position": 1,
+          "family": "date-order",
+          "id": "practice/cycle-01/target/37f3c5dbbd7e77e3/1",
+          "item_key": "37f3c5dbbd7e77e3e4e7b42c8f2c80443aa7ebc9f0c4ddb8d828936eb11228fd",
+          "label": "X",
+          "margin": 2.0,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": 2.0
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/0",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "X",
+          "margin": 1.875,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 1.875
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/078991da5bed580f/1",
+          "item_key": "078991da5bed580face94db728ff019ab5ed415c5fefd0726cb7994b27d95571",
+          "label": "Y",
+          "margin": 0.25,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": -0.25
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/0",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "Y",
+          "margin": 0.125,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": -0.125
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3b8377f3230139d1/1",
+          "item_key": "3b8377f3230139d152e4efb97234d82ee741b4f58c66f24f66a23509ce76d730",
+          "label": "X",
+          "margin": 1.375,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": 1.375
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/0",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "X",
+          "margin": 1.625,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 1.625
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/c72c9531ed7f8abe/1",
+          "item_key": "c72c9531ed7f8abeeeb66ea5b55734fcd1548da371c26af4cc464f98a9193ff1",
+          "label": "Y",
+          "margin": -0.125,
+          "prediction": "Y",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 0.125
+        },
+        {
+          "answer_position": 0,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/0",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "Y",
+          "margin": 0.25,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": -0.25
+        },
+        {
+          "answer_position": 1,
+          "family": "generic",
+          "id": "practice/cycle-01/sentinel/3fc346f860de81a5/1",
+          "item_key": "3fc346f860de81a56e33fc5ba35bde54cf35f2e9afe51b9b837f21478be1f4f7",
+          "label": "X",
+          "margin": 0.625,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": 0.625
+        },
+        {
+          "answer_position": 0,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/0",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "X",
+          "margin": 1.875,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": 1.875
+        },
+        {
+          "answer_position": 1,
+          "family": "word-order",
+          "id": "practice/cycle-01/sentinel/9e22026157c3c494/1",
+          "item_key": "9e22026157c3c494dedaf9add180ab164b98b9cad707ce38df934ca15f45500d",
+          "label": "Y",
+          "margin": 0.5,
+          "prediction": "X",
+          "presentation": [
+            "X",
+            "Y"
+          ],
+          "signed_margin": -0.5
+        },
+        {
+          "answer_position": 0,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/0",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "Y",
+          "margin": 0.375,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": -0.375
+        },
+        {
+          "answer_position": 1,
+          "family": "fraction-order",
+          "id": "practice/cycle-01/sentinel/924a809971cc81b9/1",
+          "item_key": "924a809971cc81b9b6aa491e63a4f1d3bf648fc5bac4716031b0ff70f9ca9c25",
+          "label": "X",
+          "margin": 1.625,
+          "prediction": "X",
+          "presentation": [
+            "Y",
+            "X"
+          ],
+          "signed_margin": 1.625
+        }
+      ],
+      "resources": {
+        "backward_batches": 0,
+        "backward_examples": 0,
+        "backward_wall_seconds": 0.0,
+        "cpu_seconds": 17.859375,
+        "forward_batches": 3,
+        "forward_examples": 20,
+        "forward_token_positions": 1048,
+        "forward_wall_seconds": 2.979964700061828,
+        "peak_rss_bytes": 2352832512,
+        "wall_seconds": 2.988891599990893
+      },
+      "status": "MEASURED",
+      "token_ids": [
+        55,
+        56
+      ]
+    }
+  },
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "declared_choices": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "X",
+      "Y"
+    ],
+    [
+      "1",
+      "2"
+    ],
+    [
+      "C",
+      "D"
+    ],
+    [
+      "P",
+      "Q"
+    ],
+    [
+      "L",
+      "R"
+    ]
+  ],
+  "practice_screen_sha256": "98d13a875080e9f136db0da0d6e3405c841c364a35764ee1993948eb0fa8a3fe",
+  "protocol_sha256": "c51fc00201738c735d0f3944fdb2c2c27eae440384aaa6cf5d6156cfeb7bbb8d",
+  "recommended_alternate": null,
+  "resources": {
+    "cpu_seconds": 118.84375,
+    "forward_batches": 18,
+    "model_loads": 1,
+    "peak_rss_bytes": 2376114176,
+    "wall_seconds": 32.89208820002386
+  },
+  "rule": {
+    "minimum_accuracy": 0.6,
+    "minimum_order_consistency": 0.6,
+    "minimum_predicted_class_share": 0.25,
+    "rank": [
+      "both_orders_correct",
+      "correct",
+      "minority_prediction_count",
+      "declared_pair_order"
+    ]
+  },
+  "schema": "weightbridge.phase_iiib.choice_calibration.v1",
+  "scope": "Unedited pinned Qwen and frozen practice only. Pair selection requires independent confirmation.",
+  "source_sha256": "1088396ba0f37eb6ac2f976f1c8b26775893f9627f9c8f72f8dc28a57633dfa3"
+}

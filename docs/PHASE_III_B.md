@@ -94,3 +94,12 @@ is selective for the intended task or that the same alignment holds earlier
 in the model. The margin diagnosis took 25 forward batches and one backward
 batch, totaling 174.0 process CPU seconds and 53.2 summed wall seconds.
 [Retrospective margins and replay evidence](../results/phase-iii-b/retrospective/)
+
+On the fresh common practice screen, none of the tested alternate token pairs
+met the predeclared accuracy, response balance and same-answer consistency
+criteria. A/B scored 12/20 and selected the same answer content in 2/10 paired
+variants. X/Y chose X on 19/20 rows and was consistent in 1/10. The preferred
+token changed across prompt sets. The calibration used 18 forward batches,
+32.9 wall seconds and 118.8 process CPU seconds. Renaming the answer tokens
+alone did not produce a reliable behavioral measurement.
+[Practice-only choice calibration](../results/phase-iii-b/retrospective/choice-calibration.json)

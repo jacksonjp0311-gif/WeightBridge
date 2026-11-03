@@ -1,0 +1,56 @@
+{
+  "schema": "weightbridge.phase_iiib.qwen_design.v1",
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "families": ["word-order", "date-order", "fraction-order"],
+  "cycles": ["word-order", "date-order", "fraction-order", "word-order", "date-order"],
+  "pilot_cycles": ["date-order"],
+  "full_rosters": ["bic-qualification-v1-20261103-a", "bic-qualification-v1-20261103-b"],
+  "pilot_roster": "bic-bounded-pilot-v1-20261103",
+  "inference": {
+    "device": "cpu", "dtype": "bfloat16", "cpu_threads": 6,
+    "batch_size": 8, "max_input_tokens": 128
+  },
+  "choice_formats": {"ab": ["A", "B"], "xy": ["X", "Y"]},
+  "practice_target_items": 4,
+  "practice_sentinel_items": 4,
+  "holdout_target_items": 4,
+  "holdout_sentinel_items": 3,
+  "final_target_items_per_family": 4,
+  "final_sentinel_items": 3,
+  "candidate_budget_per_cycle": 1,
+  "probe_batch_cap": 64,
+  "frob_cap": 1.0,
+  "max_entries": 65536,
+  "max_fraction": 0.00008,
+  "max_abs_delta": 8.0,
+  "max_tensor_bytes": 8388608,
+  "max_total_tensor_bytes": 16777216,
+  "tensor_layers": [23, 21],
+  "ridge_strength": 0.03,
+  "methods": {
+    "A": "activation_ridge",
+    "B": "activation_ridge",
+    "C": "bic_first_order",
+    "D": "bic_interaction"
+  },
+  "controls": {
+    "random_seed": 20261103,
+    "adam_seed": 20261103,
+    "adam_steps": 2,
+    "adam_learning_rate": 0.01,
+    "deterministic": "First frozen Arm A proposal, identical to A under the one-slot budget.",
+    "gradient": "Adam on rank-one factors restricted to the first Arm A proposal's columns."
+  },
+  "acceptance": {
+    "min_cycle_ab_gain": 1,
+    "max_cycle_target_regressions": 0,
+    "max_cycle_sentinel_flips": 0,
+    "max_prior_prediction_flips": 0,
+    "min_accepted_full_cycles": 3,
+    "min_final_gain": 1,
+    "max_final_target_regressions": 0,
+    "max_final_sentinel_flips": 0,
+    "min_final_gain_over_strongest_full_baseline": 1
+  }
+}
