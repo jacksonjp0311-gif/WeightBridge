@@ -88,6 +88,12 @@ Review `docs/RESEARCH_PLAN.md` for the experimental roadmap and failure modes.
 
 This code is original research scaffolding. The authors' published p50c edit has been deterministically reconstructed and its two edited-tensor hashes verified. The bounded CPU smoke is not an independent reproduction of the paper's benchmark results.
 
+The original WeightBridge software is licensed under MIT; see `LICENSE`. The
+authors' `p50c` patch artifact is a separate third-party item attributed under
+CC BY 4.0 and is excluded from the MIT grant; see `NOTICE.md` and the
+[reference provenance record](experiments/published_reproduction/REFERENCE_PROVENANCE.md).
+The Qwen checkpoint and full evaluation datasets are not redistributed.
+
 ## v0.2 portable research platform
 
 The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 adds:
