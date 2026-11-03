@@ -108,3 +108,45 @@ the wording often changed the wrong result. The model held before
 selection scoring or fitting.
 [v3 selection HOLD](../results/phase-iii-g/arithmetic-v3) ·
 [v4 practice HOLD](../results/phase-iii-g/arithmetic-v4)
+
+## A repeatable semantic error
+
+The independently frozen v5 trial asks Qwen to return the larger decimal
+value itself. It balances display side and which option has more
+decimal places. The parser uses exact decimal arithmetic and accepts
+equivalent representations of a completed value.
+
+Both practice and selection parsed 64/64 presentations, solved 16/24
+target items across both wordings, and reproduced eight wrong answers.
+In every repeatable error the model chose the smaller of the two
+displayed negative numbers. The errors covered both display sides and
+both precision directions. The four copy controls passed in both
+splits. Practice solved three of four positive controls. Selection
+solved two of four because the two easy negative-only controls also
+reversed their operands. That missed the frozen minimum of three.
+The v5 trial held before optimization. Its hidden set remains unopened.
+[Signed-decimal v5 evidence](../results/phase-iii-g/decimal-v5)
+
+## Replay
+
+The local model prerequisites and pinned checkpoint hashes match
+[Phase III-F](PHASE_III_F.md). Each output directory must be new. The
+two-model drivers use both candidate locks before hidden scoring.
+Their archive commands accept the measured run directories, or the
+published model evidence directories for offline replay.
+
+```powershell
+python experiments/phase_iiig/format_diagnostic.py --model qwen --checkpoint $Qwen --out $Format
+python experiments/phase_iiig/run_trial.py run --model qwen --base $Qwen --material $Material --out $QwenRun
+python experiments/phase_iiig/run_trial.py run --model smollm2 --base $Smol --material $Material --out $SmolRun
+python experiments/phase_iiig/run_trial.py finish --base $Qwen --material $Material --out $QwenRun --peer $SmolRun
+python experiments/phase_iiig/run_trial.py finish --base $Smol --material $Material --out $SmolRun --peer $QwenRun
+python experiments/phase_iiig/archive_trials.py --material $Material --qwen $QwenRun --smollm2 $SmolRun --out $Archive
+```
+
+Use `run_followup.py` and the archive flag `--followup` for v2.
+The Qwen-only v4 and v5 drivers are `run_replication.py` and
+`run_decimal.py`. They take `run` and `finish` with the same base,
+material and output paths, and require no peer. Their archive flags
+are `--replication` and `--decimal`. The v3 HOLD archive replays
+with `--scaling`. A fresh independent study needs a new freeze.
