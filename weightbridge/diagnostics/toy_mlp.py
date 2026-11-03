@@ -37,6 +37,23 @@ class ToyMLP:
                        "min": float(value.min()), "max": float(value.max())}
                 for name, value in self.tensors.items()}
 
+    def logit_connectivity(self) -> dict[str, Any]:
+        """Find upstream coordinates blocked by an all-zero outgoing row."""
+        disconnected = np.flatnonzero(~np.any(self.tensors["output_weight"] != 0, axis=1)).tolist()
+        return {
+            "disconnected_hidden_units": disconnected,
+            "single_edits_with_no_logit_path": {
+                "input_weight": [[feature, unit]
+                                 for feature in range(self.tensors["input_weight"].shape[0])
+                                 for unit in disconnected],
+                "hidden_bias": [[unit] for unit in disconnected],
+            },
+            "interpretation": (
+                "Editing one listed coordinate cannot change either logit while its hidden unit's "
+                "outgoing weights are zero. Other coordinates may still fail to improve accuracy."
+            ),
+        }
+
     def save(self, path: str | Path) -> None:
         # Store as .npz; checkpoint application remains delegated to core.apply_patch.
         with Path(path).open("wb") as stream:

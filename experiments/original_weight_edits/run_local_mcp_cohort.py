@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 
 from weightbridge.evaluation.freeze_cohort import freeze_protocol
 from weightbridge.evaluation.mcp_cohort import _canonical_hash, _file_sha256, _read_json, summarize_cohort
+from weightbridge.diagnostics.toy_mlp import ToyMLP
 from weightbridge.provenance import peak_rss_bytes
 
 
@@ -126,7 +127,8 @@ def check_output_path(path):
             raise ValueError("candidate receipt exceeds the Windows path budget; use a short --out path")
 
 
-def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt, mode):
+def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt, mode,
+             connectivity=None):
     output = root / task_id
     lines = Queue()
     started = time.perf_counter()
@@ -172,8 +174,16 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     raise RuntimeError("host diagnostic call failed")
                 log({"host_call": "get_diagnostic_report"})
                 base_sha = diagnostic["result"]["base_sha256"]
+                view = diagnostic_view(diagnostic["result"])
+                if connectivity:
+                    checkpoint = output / "base.npz"
+                    if _file_sha256(checkpoint) != base_sha:
+                        raise RuntimeError("base checkpoint differs from the broker diagnostic")
+                    view["logit_connectivity"] = ToyMLP.load(checkpoint).logit_connectivity()
+                if connectivity is not None:
+                    write_json(output / "diagnostics_sent.json", view)
                 messages[-1]["content"] = FORM_GUIDE + "\nPractice diagnostics:\n" + json.dumps(
-                    diagnostic_view(diagnostic["result"]), separators=(",", ":"))
+                    view, separators=(",", ":"))
             ended = False
             last_output = None
             repeats = 0
@@ -272,9 +282,13 @@ def main():
     parser.add_argument("--tasks", type=int, choices=range(1, 21), default=20,
                         metavar="1-20", help="execute a prefix of the frozen order")
     parser.add_argument("--mode", choices=("tool-json", "patch-form"), default="tool-json")
+    parser.add_argument("--paired-connectivity", action="store_true",
+                        help="compare control and connectivity views on identical fresh tasks")
     args = parser.parse_args()
     if args.seed_offset < 20_000:
         parser.error("--seed-offset must be at least 20000")
+    if args.paired_connectivity and args.mode != "patch-form":
+        parser.error("--paired-connectivity requires --mode patch-form")
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     import torch
@@ -283,7 +297,10 @@ def main():
     out = args.out.resolve()
     if not out.is_relative_to(ROOT):
         parser.error("--out must be within the checkout for portable evidence paths")
-    check_output_path(out)
+    arm_paths = {"control": out / "control", "probe": out / "probe"} if args.paired_connectivity else {"single": out}
+    for path in arm_paths.values():
+        check_output_path(path)
+    broker_python = args.broker_python.resolve(strict=True)
     model_path = args.model.resolve(strict=True)
     checkpoint_files = {path.name: _file_sha256(path) for path in sorted(model_path.iterdir())
                         if path.is_file()}
@@ -313,13 +330,10 @@ def main():
         model_path, dtype=torch.bfloat16, local_files_only=True,
     ).eval()
     out.mkdir(parents=True, exist_ok=False)
-    draft_path = out / "study_template.json"
-    write_json(draft_path, template)
-    receipt_path = out / "local_model_identity.json"
-    write_json(receipt_path, {
+    identity = {
         "schema": "weightbridge.llm_identity_receipt.v1",
         "provider": "local-transformers", "model_id": MODEL_ID, "version": REVISION,
-        "host_call_id": uuid.uuid4().hex, "checkpoint_files_sha256": checkpoint_files,
+        "checkpoint_files_sha256": checkpoint_files,
         "host_source_sha256": _file_sha256(SOURCE), "planned_task_prefix": args.tasks,
         "interaction_mode": args.mode,
         "diagnostic_view": "first two failures per class rounded to three decimals; practice metrics and tensor summaries",
@@ -328,29 +342,75 @@ def main():
                      "identical_response_stop": REPEAT_LIMIT,
                      "dtype": "bfloat16", "torch_threads": THREADS, "torch": version("torch"),
                      "transformers": version("transformers")},
-    })
-    manifest = out / "frozen_protocol.json"
-    freeze_protocol(draft_path, receipt_path, manifest, cohort_id=out.name,
-                    identity_provenance="Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task.")
-    protocol = _read_json(manifest)
-    records = []
+    }
+    manifests = {}
+    for arm, path in arm_paths.items():
+        path.mkdir(exist_ok=True)
+        draft_path = path / "study_template.json"
+        write_json(draft_path, template)
+        receipt_path = path / "local_model_identity.json"
+        receipt = dict(identity, host_call_id=uuid.uuid4().hex)
+        if args.paired_connectivity:
+            receipt["connectivity_probe"] = arm == "probe"
+            receipt["toy_model_source_sha256"] = _file_sha256(ROOT / "weightbridge/diagnostics/toy_mlp.py")
+        write_json(receipt_path, receipt)
+        manifest = path / "frozen_protocol.json"
+        freeze_protocol(draft_path, receipt_path, manifest, cohort_id=(
+            f"{out.name}-{arm}" if args.paired_connectivity else out.name),
+            identity_provenance="Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task.")
+        manifests[arm] = manifest
+    schedule = []
+    for index, task_id in enumerate(template["execution_order"][:args.tasks]):
+        arms = list(arm_paths)
+        if index % 2:
+            arms.reverse()
+        schedule.extend({"task": task_id, "arm": arm} for arm in arms)
+    if args.paired_connectivity:
+        write_json(out / "paired_plan.json", {
+            "schema": "weightbridge.connectivity_ablation.v1",
+            "seed_offset": args.seed_offset, "schedule": schedule,
+            "hypothesis": "The probe increases tasks with at least one accepted edit changing practice logits.",
+            "primary": "fraction of paired tasks with any accepted edit changing practice logits by more than 1e-9",
+            "secondary": ["practice class changes", "finalized holdout repairs", "accepted edits",
+                          "model token counts", "CPU seconds"],
+            "protocol_sha256": {arm: _read_json(path)["protocol_sha256"]
+                                for arm, path in manifests.items()},
+        })
+    records = {arm: [] for arm in arm_paths}
     failure = None
     try:
-        for task_id in protocol["execution_order"][:args.tasks]:
-            print(f"Starting {task_id}", flush=True)
-            record = run_task(task_id, out, manifest, args.broker_python.resolve(strict=True),
-                              tokenizer, model, prompt, args.mode)
-            records.append(record)
-            print(f"Completed {task_id}", flush=True)
+        for step in schedule:
+            task_id, arm = step["task"], step["arm"]
+            print(f"Starting {arm} {task_id}", flush=True)
+            record = run_task(task_id, arm_paths[arm], manifests[arm], broker_python,
+                              tokenizer, model, prompt, args.mode,
+                              arm == "probe" if args.paired_connectivity else None)
+            records[arm].append(record)
+            print(f"Completed {arm} {task_id}", flush=True)
     except Exception as exc:
         failure = f"{type(exc).__name__}: {exc}"
         raise
     finally:
-        write_json(out / "cohort_summary.json", summarize_cohort(protocol, records))
-        write_json(out / "host_resources.json", {"wall_seconds": time.perf_counter() - started,
-                   "host_cpu_seconds": time.process_time() - started_cpu,
-                   "host_peak_rss_bytes": peak_rss_bytes(), "completed_tasks": len(records),
-                   "failure": failure})
+        for arm, path in arm_paths.items():
+            write_json(path / "cohort_summary.json",
+                       summarize_cohort(_read_json(manifests[arm]), records[arm]))
+            resources = {"wall_seconds": time.perf_counter() - started,
+                         "host_cpu_seconds": time.process_time() - started_cpu,
+                         "host_peak_rss_bytes": peak_rss_bytes(), "completed_tasks": len(records[arm]),
+                         "failure": failure}
+            if args.paired_connectivity:
+                measured = [_read_json(path / f"{row['protocol_binding']['task_id']}.host_resources.json")
+                            for row in records[arm]]
+                for field in ("wall_seconds", "host_cpu_seconds"):
+                    resources[field] = sum(item[field] for item in measured)
+            write_json(path / "host_resources.json", resources)
+        if args.paired_connectivity:
+            write_json(out / "host_resources.json", {
+                "wall_seconds": time.perf_counter() - started,
+                "host_cpu_seconds": time.process_time() - started_cpu,
+                "host_peak_rss_bytes": peak_rss_bytes(),
+                "completed_tasks": sum(len(rows) for rows in records.values()), "failure": failure,
+            })
 
 
 if __name__ == "__main__":
