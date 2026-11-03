@@ -1,0 +1,29 @@
+{
+  "schema": "weightbridge.phase_iii.qualification.v1",
+  "declared_utc": "2026-11-03T14:37:55+00:00",
+  "protocol_sha256": "76980c44b93cbfc4c05c99c09f5b7c3c432ace2c4a4c8efdcc1085c322a13b4a",
+  "min_active_accepted_cycles": 3,
+  "min_final_target_gain": 1,
+  "max_final_target_regressions": 0,
+  "max_final_sentinel_prediction_flips": 0,
+  "max_per_cycle_retention_flips": 0,
+  "fixed_deterministic_comparator": {
+    "method": "activation_ridge",
+    "source": "first applied proposal in cycle-01 only, unchanged original parent",
+    "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+    "strength": 0.03
+  },
+  "random_comparator": {
+    "method": "rank_one_output_row_permutation",
+    "reference": "fixed deterministic comparator",
+    "seed": 20261103
+  },
+  "gradient_comparator": {
+    "method": "rank_one_gradient_descent",
+    "reference": "fixed deterministic comparator",
+    "seed": 20261103,
+    "steps": 2,
+    "learning_rate": 0.01
+  },
+  "comparison_rule": "Host evaluates cycle-01 comparators on the same practice and held-out prompts after the full adaptive study ends. Comparators never enter its lineage or inform its selection. A missing or rejected control is reported as HOLD or FAIL with its reason."
+}

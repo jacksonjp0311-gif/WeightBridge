@@ -1,0 +1,24 @@
+{
+  "schema": "weightbridge.phase_iii.controls.v1",
+  "declared_utc": "2026-11-03T14:38:12+00:00",
+  "protocol_sha256": "30474f71c2996bf91c078ffeb23a83c671ce8012bf55c2f7f7f3a73bb364dbbd",
+  "fixed_deterministic_comparator": {
+    "method": "activation_ridge",
+    "source": "first applied proposal in cycle-01 only, unchanged original parent",
+    "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+    "strength": 0.03
+  },
+  "random_comparator": {
+    "method": "rank_one_output_row_permutation",
+    "reference": "fixed deterministic comparator",
+    "seed": 20261103
+  },
+  "gradient_comparator": {
+    "method": "rank_one_gradient_descent",
+    "reference": "fixed deterministic comparator",
+    "seed": 20261103,
+    "steps": 2,
+    "learning_rate": 0.01
+  },
+  "comparison_rule": "Host evaluates cycle-01 comparators on the same practice and held-out prompts after the pilot ends. Comparators never enter its lineage or inform its selection. A missing or rejected control is reported as HOLD or FAIL with its reason."
+}
