@@ -21,6 +21,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import shutil
 import sys
 import time
 import uuid
@@ -80,12 +81,19 @@ def _make_split(gold_model: ToyMLP, seed: int, per_class: int) -> dict[str, np.n
     return {"features": features[order], "labels": labels[order]}
 
 
-def make_blinded_task(seed: int, per_class: int) -> dict:
+def make_blinded_task(seed: int, per_class: int, *, mechanism: str | None = None) -> dict:
     if type(seed) is not int or seed < 0 or type(per_class) is not int or per_class < 8:
         raise ValueError("seed must be nonnegative and per_class at least 8")
     gold = _correct_model()
-    choice_rng = np.random.default_rng(seed ^ 0x5A17)
-    oracle = dict(MECHANISMS[int(choice_rng.integers(0, len(MECHANISMS)))])
+    if mechanism is None:
+        choice_rng = np.random.default_rng(seed ^ 0x5A17)
+        oracle_template = MECHANISMS[int(choice_rng.integers(0, len(MECHANISMS)))]
+    else:
+        oracle_template = next((item for item in MECHANISMS
+                                if item["mechanism"] == mechanism), None)
+        if oracle_template is None:
+            raise ValueError(f"Unknown toy defect mechanism: {mechanism}")
+    oracle = dict(oracle_template)
     damaged = {name: np.array(value, copy=True) for name, value in gold.tensors.items()}
     tensor_name = oracle["tensor"]
     index = tuple(oracle["index"])
@@ -120,9 +128,47 @@ def _artifact_paths(root: Path) -> list[str]:
         "experiment_record.json"]
 
 
+def make_random_control_patch(
+    model: ToyMLP, base_sha256: str, seed: int, *,
+    target_tensor: str | None = None, target_index: list[int] | None = None,
+    magnitude: float | None = None,
+) -> tuple[dict, str]:
+    """Build one seeded random edit, matching tensor and magnitude when given."""
+    rng = np.random.default_rng(seed + 100003)
+    matched = target_tensor is not None and target_tensor in model.tensors and magnitude is not None
+    if matched:
+        array = model.tensors[target_tensor]
+        target = tuple(target_index or [])
+        coordinates = [index for index in np.ndindex(array.shape) if index != target]
+        if not coordinates:
+            coordinates = [target]
+        control_index = coordinates[int(rng.integers(0, len(coordinates)))]
+        control_tensor = target_tensor
+        match_type = "same_tensor_and_absolute_magnitude"
+        chosen_magnitude = float(magnitude)
+    else:
+        all_coordinates = [(name, tuple(index)) for name, arr in model.tensors.items()
+                           for index in np.ndindex(arr.shape)]
+        control_tensor, control_index = all_coordinates[int(rng.integers(0, len(all_coordinates)))]
+        chosen_magnitude = 4.0 if magnitude is None else float(magnitude)
+        match_type = "predeclared_fallback_magnitude"
+    sign = int(rng.choice(np.array([-1, 1])))
+    return ({
+        "schema": "weightbridge.patch.v1", "base_sha256": base_sha256,
+        "reason": ("Seeded random one-entry control matched to the candidate tensor and magnitude."
+                   if matched else
+                   "Seeded random one-entry control uses the preregistered fallback magnitude."),
+        "evidence_ids": ["mcp-cohort-random-control"],
+        "changes": [{"tensor": control_tensor, "index": list(control_index),
+                     "op": "add", "value": chosen_magnitude * sign}],
+        "projections": [],
+    }, match_type)
+
+
 def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
                          finalized: dict | None, tool_calls: int,
-                         started_wall: float, started_cpu: float) -> dict:
+                         started_wall: float, started_cpu: float,
+                         protocol_binding: dict | None = None) -> dict:
     base_path = output / "base.npz"
     base_hash = file_hash(base_path)
     holdout = task["holdout"]
@@ -152,35 +198,29 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
         if file_hash(candidate_path) != finalized["candidate_sha256"]:
             raise RuntimeError("Finalized MCP candidate hash does not match the frozen receipt")
         candidate_result = _score(candidate_path, holdout)
-        # One seeded random scalar control matched to the AI edit's realized magnitude.
-        rng = np.random.default_rng(seed + 100003)
-        all_coordinates = [(name, tuple(index)) for name, arr in task["model"].tensors.items()
-                           for index in np.ndindex(arr.shape)]
-        coordinate_number = int(rng.integers(0, len(all_coordinates)))
-        control_tensor, control_index = all_coordinates[coordinate_number]
-        magnitude = float(patch_receipt["max_abs_delta"])
-        sign = int(rng.choice(np.array([-1, 1])))
-        control_delta = magnitude * sign
-        policy = {"schema": "weightbridge.policy.v1",
-                  "allow_tensors": list(ToyMLP.tensor_names),
-                  "max_entries": 1, "max_fraction": 1 / 12, "max_abs_delta": 8.0}
-        control_patch = {
-            "schema": "weightbridge.patch.v1", "base_sha256": base_hash,
-            "reason": "Seeded random one-entry control matched by edit magnitude and parameter count.",
-            "evidence_ids": ["mcp-pilot-random-control"],
-            "changes": [{"tensor": control_tensor, "index": list(control_index),
-                         "op": "add", "value": control_delta}],
-            "projections": [],
-        }
-        control_path = output / "random_control.npz"
-        control_receipt = apply_patch(base_path, control_patch, policy, control_path)
-        _write_json(output / "random_control_patch.json", control_patch)
-        control_result = _score(control_path, holdout)
         base_correct = np.asarray(baseline["per_example_correct"], dtype=float)
         candidate_correct = np.asarray(candidate_result["per_example_correct"], dtype=float)
-        control_correct = np.asarray(control_result["per_example_correct"], dtype=float)
         paired_ci = paired_bootstrap_interval(base_correct, candidate_correct, seed=seed)
-        random_ci = paired_bootstrap_interval(base_correct, control_correct, seed=seed + 1)
+
+    # Always create a random control. If the agent stops without a candidate,
+    # use the preregistered fallback magnitude so that task still contributes.
+    policy = {"schema": "weightbridge.policy.v1",
+              "allow_tensors": list(ToyMLP.tensor_names),
+              "max_entries": 1, "max_fraction": 1 / 12, "max_abs_delta": 8.0}
+    if patch_receipt:
+        changed = patch_receipt["changes"][0]
+        control_patch, control_match_type = make_random_control_patch(
+            task["model"], base_hash, seed, target_tensor=changed["tensor"],
+            target_index=changed["index"], magnitude=patch_receipt["max_abs_delta"])
+    else:
+        control_patch, control_match_type = make_random_control_patch(task["model"], base_hash, seed)
+    control_path = output / "random_control.npz"
+    control_receipt = apply_patch(base_path, control_patch, policy, control_path)
+    _write_json(output / "random_control_patch.json", control_patch)
+    control_result = _score(control_path, holdout)
+    base_correct = np.asarray(baseline["per_example_correct"], dtype=float)
+    control_correct = np.asarray(control_result["per_example_correct"], dtype=float)
+    random_ci = paired_bootstrap_interval(base_correct, control_correct, seed=seed + 1)
 
     _write_json(output / "evaluation.json", {
         "schema": "weightbridge.mcp_toy_evaluation.v1",
@@ -196,6 +236,8 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
         "base_sha256": base_hash, "practice_sha256": file_hash(output / "practice.npz"),
         "holdout_sha256": file_hash(hidden_path),
     }
+    if protocol_binding is not None:
+        measurement_material["protocol_sha256"] = protocol_binding["protocol_sha256"]
     measurement_key = hashlib.sha256(json.dumps(measurement_material, sort_keys=True,
                                                 separators=(",", ":")).encode()).hexdigest()
     experiment_id = f"codex-mcp-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}-{uuid.uuid4().hex[:8]}"
@@ -217,7 +259,9 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
     cpu = time.process_time() - started_cpu
     record = {
         "schema": "weightbridge.experiment.v1", "experiment_id": experiment_id,
-        "measurement_key": measurement_key, "replicate_role": "single_instance_mcp_discovery_pilot",
+        "measurement_key": measurement_key,
+        "replicate_role": ("mcp_llm_cohort_v2" if protocol_binding is not None
+                            else "single_instance_mcp_discovery_pilot"),
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "hypothesis": "An LLM using standard MCP tools can infer and propose a bounded repair from weight summaries and practice-only failures without receiving the correction.",
         "source_model": {"id": "synthetic-toy-mlp-blinded-single-weight-defect-v1",
@@ -231,6 +275,8 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
             "index": control_receipt["changes"][0]["index"],
             "delta": control_receipt["changes"][0]["after"] - control_receipt["changes"][0]["before"],
             "candidate_sha256": control_receipt["candidate_sha256"],
+            "parameter_count": control_receipt["changed_entries"],
+            "magnitude_match_type": control_match_type,
         },
         "evaluation": {
             "dataset": task["dataset"], "version": "1", "seed": seed,
@@ -251,10 +297,16 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
                       "mcp_tool_calls": tool_calls,
                       "note": "AI token and MCP child-process resource use were not available from the host."},
         "agent": {"type": "LLM-directed-MCP-tool-caller",
-                  "model": "Codex session; provider token meter unavailable",
+                  "model": (f"{protocol_binding['provider']}/{protocol_binding['model_id']}@{protocol_binding['version']}"
+                            if protocol_binding is not None
+                            else "Codex session; provider model ID and token meter unavailable"),
                   "tool_calls": tool_calls,
-                  "candidate_finalized": finalized is not None},
+                  "candidate_finalized": finalized is not None,
+                  "mcp_transcript_sha256": file_hash(output / "agent_mcp_transcript.jsonl"),
+                  "identity_verified": (protocol_binding.get("identity_verified", False)
+                                        if protocol_binding is not None else False)},
         "task_oracle": task["oracle"],
+        "protocol_binding": protocol_binding,
         "artifact_root": output.relative_to(ROOT).as_posix() if output.is_relative_to(ROOT) else str(output),
         "artifacts": _artifact_paths(output),
         "disposition": disposition,
@@ -265,15 +317,20 @@ def _finalize_experiment(output: Path, task: dict, *, seed: int, per_class: int,
     return record
 
 
-async def run_session(output: Path, *, seed: int, per_class: int) -> dict:
+async def run_session(output: Path, *, seed: int, per_class: int,
+                      mechanism: str | None = None,
+                      protocol_binding: dict | None = None) -> dict:
     from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
 
-    task = make_blinded_task(seed, per_class)
+    task = make_blinded_task(seed, per_class, mechanism=mechanism)
     base_path = output / "base.npz"
     task["model"].save(base_path)
     np.savez_compressed(output / "practice.npz", **task["practice"])
     session_id = f"codex-{uuid.uuid4().hex}"
+    if protocol_binding is not None:
+        protocol_binding = dict(protocol_binding)
+        protocol_binding["agent_session_id"] = session_id
     config = {
         "schema": "weightbridge.agent_session.v1", "session_id": session_id,
         "base_checkpoint": str(base_path.resolve()),
@@ -285,6 +342,8 @@ async def run_session(output: Path, *, seed: int, per_class: int) -> dict:
     }
     config_path = output / "host_session.json"
     _write_json(config_path, config)
+    if protocol_binding is not None:
+        _write_json(output / "protocol_binding.json", protocol_binding)
     transcript_path = output / "agent_mcp_transcript.jsonl"
     with transcript_path.open("x", encoding="utf-8", newline="\n"):
         pass
@@ -359,7 +418,8 @@ async def run_session(output: Path, *, seed: int, per_class: int) -> dict:
         raise RuntimeError("Agent session ended without finalization or an explicit stop")
     record = _finalize_experiment(output, task, seed=seed, per_class=per_class,
                                   finalized=finalized, tool_calls=tool_calls,
-                                  started_wall=_STARTED_WALL, started_cpu=_STARTED_CPU)
+                                  started_wall=_STARTED_WALL, started_cpu=_STARTED_CPU,
+                                  protocol_binding=protocol_binding)
     sys.stdout.write(json.dumps({"experiment_complete": True,
                                  "experiment_id": record["experiment_id"],
                                  "disposition": record["disposition"],
@@ -376,13 +436,59 @@ _STARTED_CPU = time.process_time()
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a blinded toy discovery session through WeightBridge MCP")
     parser.add_argument("--out", default=None)
-    parser.add_argument("--seed", type=int, default=28431)
+    parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--per-class", type=int, default=32)
+    parser.add_argument("--mechanism", choices=[item["mechanism"] for item in MECHANISMS],
+                        default=None, help="Host-selected mechanism for a predeclared cohort trial")
+    parser.add_argument("--cohort-manifest", type=Path, default=None,
+                        help="Frozen host-only MCP LLM cohort manifest")
+    parser.add_argument("--task-id", default=None,
+                        help="Opaque task ID from --cohort-manifest")
     args = parser.parse_args()
-    output = Path(args.out) if args.out else ROOT / "results" / "original_weight_edits" / f"mcp-pilot-{uuid.uuid4().hex[:10]}"
+    if (args.cohort_manifest is None) != (args.task_id is None):
+        parser.error("--cohort-manifest and --task-id must be supplied together")
+    seed = args.seed if args.seed is not None else 28431
+    mechanism = args.mechanism
+    protocol_binding = None
+    identity_evidence_source = None
+    if args.cohort_manifest is not None:
+        if args.seed is not None or args.mechanism is not None or args.per_class != 32:
+            parser.error("a frozen cohort manifest controls the task seed, mechanism, and split size")
+        from weightbridge.evaluation.mcp_cohort import load_cohort_task
+        try:
+            protocol, task_spec = load_cohort_task(args.cohort_manifest, args.task_id)
+        except Exception as exc:
+            parser.error(f"cohort protocol is not runnable: {exc}")
+        seed = task_spec["seed"]
+        mechanism = task_spec["mechanism"]
+        identity_evidence_source = Path(protocol["model_binding"]["identity_evidence_path"])
+        if not identity_evidence_source.is_absolute():
+            identity_evidence_source = ROOT / identity_evidence_source
+        identity_evidence_source = identity_evidence_source.resolve(strict=True)
+        protocol_binding = {
+            "cohort_id": protocol["cohort_id"],
+            "protocol_sha256": protocol["protocol_sha256"],
+            "task_id": task_spec["task_id"],
+            "execution_index": protocol["execution_order"].index(task_spec["task_id"]) + 1,
+            "task_seed": seed,
+            "mechanism": mechanism,
+            "provider": protocol["model_binding"]["provider"],
+            "model_id": protocol["model_binding"]["model_id"],
+            "version": protocol["model_binding"]["version"],
+            "identity_verified": protocol["model_binding"]["identity_verified"],
+            "identity_evidence_sha256": protocol["model_binding"]["identity_evidence_sha256"],
+            "identity_evidence_artifact": "model_identity_receipt.json",
+            "prompt_sha256": protocol["prompt_sha256"],
+        }
+    default_name = (f"mcp-cohort-v2-{args.task_id}" if args.task_id
+                    else f"mcp-pilot-{uuid.uuid4().hex[:10]}")
+    output = Path(args.out) if args.out else ROOT / "results" / "original_weight_edits" / default_name
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    asyncio.run(run_session(output, seed=args.seed, per_class=args.per_class))
+    if identity_evidence_source is not None:
+        shutil.copyfile(identity_evidence_source, output / "model_identity_receipt.json")
+    asyncio.run(run_session(output, seed=seed, per_class=args.per_class,
+                            mechanism=mechanism, protocol_binding=protocol_binding))
 
 
 if __name__ == "__main__":

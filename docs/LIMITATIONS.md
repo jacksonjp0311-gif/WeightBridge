@@ -110,11 +110,18 @@ the process must be contained against allocation spikes.
 - The MCP tools currently bind only a synthetic `ToyMLP` practice evaluator;
   real Hugging Face models still use the CLI, with no LLM-directed Qwen
   practice/evaluation loop. The MCP server is not an OS sandbox.
+- The v2 20-task cohort is a hashed template and preflight utility, not a
+  completed study. This host does not provide a verifiable provider model ID,
+  version, or reasoning-sampling receipt; the current Codex workspace also has
+  access to the task-generator source. A formal trial needs an isolated,
+  fresh-context-per-task MCP host with no filesystem, repository, or network
+  tools. The preflight is INCONCLUSIVE and contains no cohort measurements.
 - The MCP pilot measured host-process CPU and elapsed time, but not MCP child
   CPU or LLM token costs. A future multi-task study needs a pinned model/harness
   identity, full tool transcript and provider cost records where available.
 - The ledger is append-only for a single writer but does not implement
   multi-process locking or signed remote provenance.
-- There is no selection correction for repeated adaptive experimentation on a
-  common task family. The planned next toy experiment must freeze its holdout
-  and analysis gates before collection.
+- There is no selection correction across repeated adaptive cohorts or model
+  selection on a common task family. The v2 cohort freezes one roster, order,
+  and decision gate; it does not authorize reusing its holdout to tune later
+  candidates or correct significance across multiple cohorts.

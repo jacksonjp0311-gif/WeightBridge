@@ -124,6 +124,9 @@ The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 add
 - An optional local MCP server exposing host-pinned inspection, bounded patch
   submission, practice-only scoring and candidate finalization; one Codex
   session found the injected hidden-bias correction on a blinded toy task.
+- A hashed 20-task, four-mechanism LLM transfer protocol and stratified cohort
+  evaluator. The checked-in plan remains HOLD until an isolated host pins the
+  model identity/version and sampling configuration; no cohort results exist.
 
 Install the core tools and run the tests/demo:
 

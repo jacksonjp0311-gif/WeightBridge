@@ -7,23 +7,28 @@
 | 1. Preserve and reproduce v0.1 | COMPLETE | Baseline commit `321547d`; 11 original tests passed; v0.1 demo rerun |
 | 2. Real-model inspection and patch reconstruction | COMPLETE for local safetensors/Qwen path | Sharded/unsharded inspection and host-policy patcher; p50c hashes match |
 | 3. Bounded original-versus-published benchmark | PARTIAL / HOLD | Small CPU smoke completed but truncated; published datasets/scores not run |
-| 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | Deterministic worker cohort plus one Codex MCP discovery on a hidden-bias task; no Qwen proposal |
+| 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | One Codex MCP discovery; balanced v2 cohort protocol and evaluator implemented, but formal execution is HOLD pending pinned model identity and isolated MCP-only host |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 
 ## Immediate next experiment
 
-Run the amended 20-instance, four-mechanism LLM study in
-[`KNOWLEDGE_LEDGER.md`](KNOWLEDGE_LEDGER.md). The earlier v1 plan targeted the
-deterministic worker and remains recorded as unrun. For v2, freeze and hash the
-LLM model/version, tool prompt, MCP host policy, task generation,
-practice/holdout split, eight-candidate budget, evaluator and matched random
-control before exposing the agent. The agent must not see hidden labels. Keep
-the original gate: at least 70% holdout repairs, at most 5% regression among
-baseline-correct items, and at least a 20 percentage-point advantage over
-matched random edits with a task-seed-clustered paired 95% lower bound above
-zero. Archive every call, rejection, failure and candidate receipt. The MCP
-tool adapter must be expanded to real Hugging Face inference only after this
-synthetic transfer gate and the Qwen resource gate are satisfied.
+The balanced 20-task protocol, fixed prompt, host policy, task assignments,
+source hashes, matched-control rule and stratified evaluator are implemented
+in `experiments/original_weight_edits/`. The current checked-in file is a
+template, not a runnable study: preflight marks it HOLD because this Codex
+host does not expose a verifiable provider model/version or sampling receipt,
+and the current agent context has repository access. Do not run the cohort
+from this workspace as if it were isolated. The formal study needs a fresh
+session for each task behind an MCP-only host with no filesystem, repository
+or network tools; then pin and freeze the identity, sampling configuration,
+prompt and hashes before the first task.
+
+The gate remains at least 70% fully repaired holdouts, at most 5% regression
+among baseline-correct items, and at least a 20 percentage-point advantage
+over matched random edits with a mechanism-stratified paired 95% lower bound
+above zero. Archive every call, rejection, failure and candidate receipt. Do
+not extend MCP to real Hugging Face inference until this synthetic transfer
+gate and the Qwen resource gate are satisfied.
 
 ## Qwen benchmark gate
 

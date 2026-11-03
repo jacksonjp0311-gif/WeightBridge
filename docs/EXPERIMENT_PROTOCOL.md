@@ -75,6 +75,33 @@ For (N) labeled examples with correctness indicator (c_i\in\{0,1\}):
   host does not provide usage totals or a pinned model ID, store null and state
   the limitation; do not estimate or backfill invented costs.
 
+## MCP LLM transfer protocol v2
+
+The checked-in host-only template declares 20 tasks: four single-weight defect
+mechanisms, five unique seeds each, randomized execution order, and a fresh
+agent context per task. The pinned prompt, task generator, MCP server, cohort
+evaluator, policy, candidate budget and decision gate are hash-bound. The
+caller must have MCP tools only, without filesystem, repository or network
+tools. The host keeps task assignments, practice/holdout data and the oracle
+out of the caller's context.
+
+A complete repair means 100% holdout accuracy when the baseline is below 100%.
+The gate requires repairs on at least 70% of tasks, no more than 5% regressions
+among baseline-correct items, a mean candidate advantage of at least 20
+percentage points over a one-entry random control matched to the same tensor
+and absolute magnitude, and a 95% stratified paired-bootstrap lower bound
+above zero. The bootstrap resamples task seeds within each mechanism.
+
+The current file is `TEMPLATE_HOLD`, because this environment cannot verify an
+LLM provider model/version or sampling receipt and the current workspace is
+visible to the model. A runnable protocol must point to a hash-checked host
+identity receipt containing provider, model ID, version, sampling settings and
+host call ID; each run copies the receipt into its raw evidence. The runner
+rejects the current template before task creation. Bind a separate isolated
+host, create and hash a new frozen protocol version, and retain each task's
+full request/response transcript before starting the study. The current
+one-record preflight is INCONCLUSIVE and is not a behavioral result.
+
 ## Published Experiment 8 protocol reference
 
 The authors report Qwen3.5-0.8B with thinking enabled; temperature 0.6, top-p

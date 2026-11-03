@@ -68,6 +68,40 @@ host should call the MCP tools directly instead of using the JSONL bridge.
 The committed pilot evidence includes its synthetic holdout and oracle after
 the session; do not reuse that disclosed split as hidden evaluation data.
 
+## Multi-task transfer protocol
+
+The v2 cohort template declares 20 blinded tasks: five independent seeds for
+each of four single-weight defect mechanisms. The task roster is host-owned;
+the model caller must not receive the manifest or access this repository.
+Each task requires a fresh agent session with only these MCP tools. The
+protocol fixes the prompt, one-entry policy, eight-candidate budget, practice
+and holdout split, same-tensor/magnitude random control, and stratified
+decision gate. Its current SHA-256 is recorded in
+[`mcp_llm_transfer_v2.template.json`](../experiments/original_weight_edits/mcp_llm_transfer_v2.template.json).
+
+The file remains `TEMPLATE_HOLD`: the current Codex host does not expose a
+verifiable provider model ID/version or reasoning-sampling receipt, and this
+workspace is visible to the current model. The runner rejects this template
+before creating a task. A frozen protocol must point to a hash-checked host
+identity receipt containing provider, model ID, version, sampling settings and
+host call ID; each task record retains that receipt. Bind an isolated host,
+freeze a new protocol version and its source hashes, then invoke one task at a
+time with the host-owned manifest. Do not edit the template in place or reuse
+the disclosed pilot holdout.
+
+Audit a preflight or completed cohort with:
+
+```bash
+python -m weightbridge.evaluation.mcp_cohort \
+  --protocol experiments/original_weight_edits/mcp_llm_transfer_v2.template.json \
+  --records path/to/experiment_record.json \
+  --out results/original_weight_edits/cohort_summary.json
+```
+
+The current preflight is [`INCONCLUSIVE`](../results/original_weight_edits/mcp-cohort-v2-preflight.json),
+with one prior pilot record and no task bound to the 20-slot protocol. It is a
+protocol audit, not a behavioral cohort result.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

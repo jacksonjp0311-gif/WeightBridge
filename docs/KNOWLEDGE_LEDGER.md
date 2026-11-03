@@ -99,3 +99,17 @@ advantage over matched random edits with a task-seed-clustered paired 95%
 lower bound above zero. If the host cannot pin model identity or retain full
 tool traces, mark the result INCONCLUSIVE rather than treating an unrepeatable
 LLM response as independent evidence.
+
+### Protocol v2 preflight status
+
+The host task selector, 20-slot balanced manifest template, fixed diagnostic
+prompt, matched same-tensor random control, transcript hash checks and
+mechanism-stratified cohort analyzer are implemented and covered by tests.
+Preflighting the prior one-task pilot against this manifest returns
+INCONCLUSIVE: it is not bound to the protocol, 20 task records are absent, and
+the current host cannot verify the LLM provider/model/version/sampling data.
+The current Codex context can access repository files, so it cannot serve as
+the isolated MCP-only diagnostic host required by the protocol. This is a
+readiness audit, not a behavioral result; the v2 transfer gate remains
+unrun. The preflight output is
+[`mcp-cohort-v2-preflight.json`](../results/original_weight_edits/mcp-cohort-v2-preflight.json).

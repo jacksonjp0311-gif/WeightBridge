@@ -11,7 +11,7 @@ Baseline commit: `321547d` (`Import WeightBridge v0.1 baseline`).
 | B. Real-model inspection and patch path | COMPLETE for safetensors/HF local checkpoint path | Lazy shard inspection, exact hashes, policy-controlled edit receipts, bounded Transformers inference and probes |
 | C. Published Experiment 8 | PARTIAL / HOLD | p50c reconstructed and hashes match; bounded Qwen CPU smoke truncated; full benchmark not run |
 | D. Benchmark laboratory | PARTIAL | Append-only records, paired statistics, runner scripts and evidence-derived figures implemented; full datasets not evaluated |
-| E. AI-directed diagnosis | PILOT COMPLETE / TRANSFER HOLD | The deterministic worker cohort remains separate; one Codex LLM used the MCP tools to discover a hidden-bias repair on a fresh toy task; no Qwen patch proposal |
+| E. AI-directed diagnosis | PILOT COMPLETE / TRANSFER HOLD | One Codex LLM discovered a hidden-bias repair; the balanced v2 cohort protocol/evaluator now exists, but execution is HOLD pending verified LLM identity and MCP-only host isolation |
 | F. MWC memory ablation | PILOT COMPLETE / general result HOLD | Four conditions across ten synthetic seeds; exact same-family experience was available |
 | G. Research knowledge base | COMPLETE for current evidence | Findings, evidence ledger, limitations, roadmap and this progress record |
 
@@ -51,13 +51,21 @@ one same-task holdout; the multi-mechanism transfer gate remains INCONCLUSIVE.
 No Qwen weight edit was discovered or validated, and no private memory was
 loaded.
 
+The v2 cohort template contains 20 host-owned task assignments across four
+mechanisms and five seeds each. It freezes the prompt, policy, tool/task/evaluator
+hashes, matched same-tensor random controls, transcript verification and
+stratified gate. The current preflight intentionally returns INCONCLUSIVE: the
+host model identity/sampling receipt is unavailable, no tasks are bound to the
+template, and this workspace is not isolated from the diagnostic caller. No
+new behavioral measurement was collected in this continuation.
+
 ## Verification record
 
 Final checks on 2026-11-03:
 
-- Core environment: `.venv\Scripts\python.exe -m pytest -q` — 59 passed,
+- Core environment: `.venv\Scripts\python.exe -m pytest -q` — 71 passed,
   2 optional-dependency skips.
-- Inference-capable reference environment: 62 passed, 1 optional-dependency
+- Inference-capable reference environment: 74 passed, 1 optional-dependency
   skip.
 - `python -m compileall -q weightbridge benchmarks experiments tests` passed.
 - `benchmarks/runners/plot_results.py` completed and generated eight
@@ -85,6 +93,14 @@ Final checks on 2026-11-03:
   `results/original_weight_edits/mcp-pilot-18d5cab750/`.
 - MCP adapter tests exercise host policy, immutable candidates, input/candidate
   hash tampering, state resume, and real stdio tool discovery/calls: 6 passed.
+- MCP cohort protocol tests: 12 passed. They cover four forced mechanisms,
+  balanced task validation, random-control matching/fallbacks, fixed hashes,
+  fail-closed identity binding, task order, transcript integrity and the
+  stratified decision gate.
+- Cohort preflight: INCONCLUSIVE, one prior pilot record received, zero of 20
+  task slots bound. It reports missing provider/model/version/sampling
+  evidence and the unpinned template; it is not a new behavioral experiment.
+  See `results/original_weight_edits/mcp-cohort-v2-preflight.json`.
 - The MCP runtime was Python 3.12.10, Windows 11 build 26200, NumPy 2.5.4 and
   MCP SDK 1.30.0. Host CPU was 0.875 seconds and wall time 83.99 seconds;
   MCP child CPU and provider model-token cost were unavailable.
@@ -100,3 +116,20 @@ The v0.2 source and research artifacts are published on the public GitHub
 repository's `main` and `dev/weightbridge-v0.2` branches. This progress update
 records the MCP evolution and its evidence. No edited model is promoted or
 deployed; candidates remain isolated research artifacts.
+
+## Cohort protocol continuation checks
+
+- The v2 protocol source bindings and canonical protocol hash were verified.
+  The checked-in file remains `TEMPLATE_HOLD`; it cannot launch until a host
+  supplies a verifiable model identity/sampling receipt and MCP-only isolation.
+- Preflight against the existing MCP pilot returned INCONCLUSIVE: one prior
+  record received, zero of 20 planned tasks bound, and the model identity,
+  sampling, and host verification evidence are absent. This is a protocol
+  readiness check, not a new behavioral experiment.
+- Cohort and MCP tests: 19 passed. The cohort module has 13 tests; together
+  these cover task binding, source and identity hashes, transcript integrity,
+  execution order, random controls, and the preregistered decision gate.
+- Full core suite: 72 passed, 2 skipped. Full inference-capable reference
+  environment: 75 passed, 1 skipped. `compileall` and `git diff --check`
+  passed.
+- No new model-behavior measurements were collected in this continuation.

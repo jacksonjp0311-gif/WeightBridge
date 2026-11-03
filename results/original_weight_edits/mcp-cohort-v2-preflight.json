@@ -1,0 +1,42 @@
+{
+  "disposition": "INCONCLUSIVE",
+  "metrics": null,
+  "missing_task_ids": [
+    "trial-01",
+    "trial-02",
+    "trial-03",
+    "trial-04",
+    "trial-05",
+    "trial-06",
+    "trial-07",
+    "trial-08",
+    "trial-09",
+    "trial-10",
+    "trial-11",
+    "trial-12",
+    "trial-13",
+    "trial-14",
+    "trial-15",
+    "trial-16",
+    "trial-17",
+    "trial-18",
+    "trial-19",
+    "trial-20"
+  ],
+  "planned_tasks": 20,
+  "reasons": [
+    "LLM identity evidence path is missing",
+    "LLM identity has no host verification",
+    "LLM identity is not pinned: identity_provenance",
+    "LLM identity is not pinned: model_id",
+    "LLM identity is not pinned: provider",
+    "LLM identity is not pinned: version",
+    "LLM sampling configuration is missing",
+    "missing 20 of 20 planned task records",
+    "protocol is a template and has not been frozen for a specific LLM",
+    "unregistered or missing task binding: None"
+  ],
+  "records_bound_to_plan": 0,
+  "records_received": 1,
+  "schema": "weightbridge.mcp_llm_cohort_summary.v2"
+}
