@@ -401,8 +401,13 @@ def _repair_cohort_summary(root: Path) -> dict[str, Any]:
                  for a, b in zip(score["pristine"]["sentinel"], score[arm]["sentinel"]))
         for arm in ("guided", "random")
     }
+    totals = {
+        form: {arm: sum(row["target_by_form"][form][arm] for row in measured)
+               for arm in ("pristine", "damaged", "guided", "random")}
+        for form in ("same", "paraphrase")
+    }
     return {**result, "raw_evidence": relative(evidence), "guided_advantage_over_random": advantage,
-            "sentinel_regressions_vs_pristine": regressions}
+            "sentinel_regressions_vs_pristine": regressions, "target_correct_by_form": totals}
 
 
 def _repair_cohort_figure(cohort: dict[str, Any], outdir: Path) -> None:
@@ -412,19 +417,21 @@ def _repair_cohort_figure(cohort: dict[str, Any], outdir: Path) -> None:
     import matplotlib.pyplot as plt
 
     x = np.arange(len(rows))
-    fig, axes = plt.subplots(2, 1, figsize=(10, 6.4), sharex=True, constrained_layout=True)
+    fig, axes = plt.subplots(3, 1, figsize=(10, 8.4), sharex=True, constrained_layout=True)
     for arm, offset, color in (("guided", -0.2, "#197a70"), ("random", 0.2, "#68778f")):
-        gains = [r["target_correct"][arm] - r["target_correct"]["damaged"] for r in rows]
+        for ax, form in zip(axes[:2], ("same", "paraphrase")):
+            gains = [r["target_by_form"][form][arm] - r["target_by_form"][form]["damaged"] for r in rows]
+            ax.bar(x + offset, gains, width=0.38, label=arm.title(), color=color)
         flips = [r["sentinel_flips_vs_pristine"][arm] for r in rows]
-        axes[0].bar(x + offset, gains, width=0.38, label=arm.title(), color=color)
-        axes[1].bar(x + offset, flips, width=0.38, color=color)
-    axes[0].axhline(0, color="#333333", linewidth=0.8)
-    axes[0].set_ylabel("Additional correct targets (of 24)")
+        axes[2].bar(x + offset, flips, width=0.38, color=color)
+    for ax, title in zip(axes[:2], ("Same wording", "Paraphrase")):
+        ax.axhline(0, color="#333333", linewidth=0.8)
+        ax.set_ylabel(f"{title}\nCorrect answers gained")
     axes[0].legend()
-    axes[1].set_ylabel("Sentinel flips vs pristine (of 16)")
+    axes[2].set_ylabel("Sentinel flips\nvs pristine (of 16)")
     labels = [f"{r['slot']:02d}\nL{r['layer']}" + (" *" if r["status"] == "PASS" else "") for r in rows]
-    axes[1].set_xticks(x, labels)
-    axes[1].set_xlabel("Case and injection layer (* passed all gates)")
+    axes[2].set_xticks(x, labels)
+    axes[2].set_xlabel("Case and injection layer (* passed all gates)")
     fig.suptitle(f"Blinded Qwen repair cohort · {cohort['counts']['PASS']}/12 cases passed")
     fig.savefig(outdir / "qwen_repair_cohort.png", dpi=160)
     plt.close(fig)

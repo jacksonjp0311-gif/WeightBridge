@@ -420,3 +420,20 @@ families. It does not estimate transfer to arbitrary defects, alternative
 answer positions, or natural generation failures. The search was deterministic
 and did not use an LLM to formulate or select its patch.
 [Protocol and raw evidence](QWEN_BLIND_REPAIR.md)
+
+## Blinded Qwen cohort
+
+On the revised 12-case cohort, saved activation-guided patches won 11
+paired comparisons against equally budgeted random search. They recovered
+52 of the 86 net answers lost to damage. Only five met the full recovery,
+locality and paraphrase gate, short of eight. Two cases had insufficient
+held-out damage to judge repair.
+
+The same-wording gain accounted for 46 of the 52 additional correct
+answers. One case gained five same-wording answers and lost six
+paraphrased answers. Layer 23 was selected in all 12 cases, including
+eight faults injected in earlier layers. Behavioral recovery can therefore
+occur through downstream compensation in this setup. The results motivate
+a comparison that divides the same practice budget across several
+wordings and preserves new paraphrases for final evaluation.
+[Cohort protocol and evidence](QWEN_REPAIR_COHORT.md)

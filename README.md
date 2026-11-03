@@ -11,6 +11,8 @@
 > uses a deterministic activation-guided search to edit an intentionally
 > damaged Qwen3.5-0.8B checkpoint. See the experiment report for held-out
 > recovery, regression measurements and replay commands.
+> The [12-case follow-up](docs/QWEN_REPAIR_COHORT.md) compares guided and
+> random search with equal practice budgets and measures transfer to paraphrases.
 
 ## Historical v0.1 guide
 

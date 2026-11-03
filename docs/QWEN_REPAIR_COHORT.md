@@ -39,11 +39,45 @@ positions across its two replicates.
 
 The first protocol stopped at its construction floor in slot 01. Pristine
 Qwen answered A on all eight targets and scored 4/8. A construction-only
-probe on the same number pairs found 8/8 with a three-digit comparison
+probe on three-digit versions of those pairs found 8/8 with a comparison
 prompt and 8/8 with an inline alternative. The revised protocol uses
 these two wordings, fresh seeds and a new numeric range. The first
 protocol's remaining eleven slots were unrun. No holdout result informed
 this change. [Retired protocol evidence](../results/qwen-repair-cohort-v1/summary.json)
+
+## Completed result
+
+The revised cohort finished all 12 slots. Five passed, five failed, and
+two were inconclusive because damage cost only one held-out answer. The
+cohort disposition is **FAIL** against the frozen eight-pass threshold.
+
+| Held-out target prompts | Pristine | Damaged | Guided | Random |
+|---|---:|---:|---:|---:|
+| Same wording | 144/144 | 92/144 | 138/144 | 92/144 |
+| Paraphrase | 140/144 | 106/144 | 112/144 | 107/144 |
+| Total | 284/288 | 198/288 | 250/288 | 199/288 |
+
+Guided repair beat random on 11 of 12 cases. Its mean paired advantage
+was 17.7 percentage points, with a case-resampled descriptive 95%
+interval of 10.1 to 25.7 points. The interval reflects variation across
+these synthetic cases on one model. Both arms used 324 candidate forward
+batches, in addition to the shared practice baselines. Four random arms
+selected a finalist. The remaining eight used the damaged checkpoint.
+
+Case 7 gained five answers on the original wording and lost six on the
+paraphrase. Across the cohort, guided patches changed eight pristine
+sentinel predictions, including five correct-to-incorrect changes.
+Every guided finalist targeted layer 23. Four faults were injected there
+and eight were injected elsewhere. The result supports compensatory
+repair and leaves fault localization unverified.
+
+The 12 cases used 6,689.13 process CPU seconds and 1,955.16 summed
+stage wall seconds with two cases running at a time. Peak recorded
+single-process RSS was 2,542,981,120 bytes. The original weight shard
+matched its pinned SHA-256 after the run.
+
+[Per-case scores, policies and receipts](../results/qwen-repair-cohort-v2/)
+· [Comparison by wording](../results/figures/qwen_repair_cohort.png)
 
 ## Run
 

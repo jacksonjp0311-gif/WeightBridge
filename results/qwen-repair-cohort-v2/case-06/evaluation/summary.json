@@ -1,0 +1,76 @@
+{
+  "disposition": "FAIL",
+  "recovery": 0.4166666666666667,
+  "resources": {
+    "damaged": {
+      "forward_batches": 5,
+      "input_tokens": 1550,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2355683328,
+      "prompt_examples": 40,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    },
+    "guided": {
+      "forward_batches": 8,
+      "input_tokens": 2441,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2393026560,
+      "prompt_examples": 64,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    },
+    "pristine": {
+      "forward_batches": 5,
+      "input_tokens": 1550,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2346999808,
+      "prompt_examples": 40,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    }
+  },
+  "scores_sha256": "9aa9024ea04ea7dff2062260bc2c75e7e5d2896663585caca3c954d812640c66",
+  "selected": {
+    "guided": 8,
+    "random": null
+  },
+  "sentinel_correct": {
+    "damaged": 10,
+    "guided": 9,
+    "pristine": 13,
+    "random": 10
+  },
+  "sentinel_flips_vs_damaged": {
+    "guided": 1,
+    "random": 0
+  },
+  "sentinel_flips_vs_pristine": {
+    "guided": 4,
+    "random": 3
+  },
+  "target_by_form": {
+    "paraphrase": {
+      "damaged": 6,
+      "guided": 6,
+      "pristine": 12,
+      "random": 6
+    },
+    "same": {
+      "damaged": 6,
+      "guided": 11,
+      "pristine": 12,
+      "random": 6
+    }
+  },
+  "target_correct": {
+    "damaged": 12,
+    "guided": 17,
+    "pristine": 24,
+    "random": 12
+  },
+  "target_loss": 12
+}

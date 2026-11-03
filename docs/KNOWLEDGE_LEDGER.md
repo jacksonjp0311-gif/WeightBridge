@@ -173,3 +173,24 @@ ranking changed across trials, so their separate effects cannot be estimated
 from this series. Freeze both locality references and a compute-matched
 search control before a cohort with balanced answer positions, multiple
 unknown injection sites and paraphrased holdouts.
+
+### Matched search on a blinded Qwen cohort
+
+**Observation and intervention.** A balanced 12-case study compared nine
+signed-activation proposals with nine norm- and support-matched random
+proposals per case. Both search arms saw the same practice prompts and the
+evaluator loaded the finalists independently.
+
+**Result and interpretation.** Guided search beat random in 11 cases and
+passed the full gate in five. The gains concentrated in the practice
+wording. One same-wording improvement hid a six-answer paraphrase
+regression. All guided finalists edited layer 23, including earlier-layer
+faults. Practice gain and the chosen repair layer therefore offer limited
+evidence of cross-wording recovery or fault localization.
+
+**Limitations and next experiment.** Both fault patterns alter one
+rank-one output direction in the same architecture. On fresh cases, hold
+the candidate budget fixed and compare single-wording with multi-wording
+practice, then evaluate on wording unseen by either arm. Test whether
+this reduces paraphrase regressions while preserving pristine sentinels.
+[Cohort evidence](QWEN_REPAIR_COHORT.md)

@@ -244,3 +244,17 @@ deployed; candidates remain isolated research artifacts.
   restoring the original correct answer. The frozen damaged-relative gate
   records FAIL.
   [Protocol and evidence](QWEN_BLIND_REPAIR.md)
+
+## Blinded Qwen repair cohort
+
+- Implemented and froze a 12-case comparison across three MLP layers,
+  with balanced answer positions and nine practice candidates per arm.
+- The first prompt protocol scored 4/8 on pristine construction data
+  and stopped before fault injection. A construction-only wording probe
+  informed a fresh manifest and new splits.
+- The revised cohort completed all 12 cases. Five passed, five failed,
+  and two were inconclusive. Guided repair beat random in 11 cases.
+  Most gains came on the wording used in practice.
+- Replayed all case dispositions from raw scores and verified the saved
+  patch and policy hashes and equal forward budgets.
+  [Protocol, report and evidence](QWEN_REPAIR_COHORT.md)
