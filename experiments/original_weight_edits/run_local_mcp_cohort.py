@@ -1,0 +1,248 @@
+"""Run a local Transformers diagnostic model against the real WeightBridge MCP broker."""
+from __future__ import annotations
+
+import argparse
+from importlib.metadata import version
+import json
+import os
+from pathlib import Path
+from queue import Queue
+import subprocess
+import sys
+from threading import Thread
+import time
+import uuid
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from weightbridge.evaluation.freeze_cohort import freeze_protocol
+from weightbridge.evaluation.mcp_cohort import _file_sha256, _read_json, summarize_cohort
+from weightbridge.provenance import peak_rss_bytes
+
+
+SOURCE = Path(__file__).resolve()
+TEMPLATE = SOURCE.with_name("mcp_llm_transfer_v2.template.json")
+BROKER = SOURCE.with_name("run_mcp_agent_experiment.py")
+MODEL_ID = "Qwen/Qwen3.5-0.8B"
+REVISION = "2fc06364715b967f1860aea9cf38778875588b17"
+TURN_LIMIT = 12
+TOKEN_LIMIT = 192
+THREADS = 6
+
+GUIDE = """Reply with exactly one JSON object, no prose, on each turn.
+Start with {"tool":"get_diagnostic_report","arguments":{}}.
+To propose an edit, use this syntax (choose your own tensor, index, value and rationale):
+{"tool":"submit_patch","arguments":{"patch":{"schema":"weightbridge.patch.v1","base_sha256":"BASE","reason":"your diagnosis and expected effect","evidence_ids":["practice-diagnostics"],"changes":[{"tensor":"TENSOR","index":[0],"op":"add","value":0.1}]}}}
+Use literal BASE for the current base checkpoint hash. The host attaches a short alias such as C1 to each accepted candidate.
+To evaluate it, use {"tool":"evaluate_practice","arguments":{"candidate_id":"C1"}}.
+To finalize it, use {"tool":"finalize_candidate","arguments":{"candidate_id":"C1"}}.
+To stop, use {"tool":"stop_without_candidate","arguments":{"reason":"your reason"}}.
+The host returns the result of your tool call, then you may call one tool again."""
+
+
+def write_json(path, value):
+    with path.open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(value, stream, indent=2, sort_keys=True, allow_nan=False)
+        stream.write("\n")
+
+
+def read_lines(stream, lines):
+    for line in stream:
+        lines.put(line)
+    lines.put(None)
+
+
+def decode_request(text):
+    text = text.strip()
+    if text.startswith("```json") and text.endswith("```"):
+        text = text[7:-3].strip()
+    request = json.loads(text)
+    if (not isinstance(request, dict) or set(request) != {"tool", "arguments"}
+            or not isinstance(request["tool"], str) or not isinstance(request["arguments"], dict)):
+        raise ValueError("expected a single tool request with an arguments object")
+    return request
+
+
+def generate(tokenizer, model, messages):
+    import torch
+
+    encoded = tokenizer.apply_chat_template(
+        messages, add_generation_prompt=True, enable_thinking=False,
+        tokenize=True, return_dict=True, return_tensors="pt",
+    )
+    prompt_tokens = encoded["input_ids"].shape[1]
+    if prompt_tokens > 16_384:
+        raise ValueError("host input token budget exceeded")
+    with torch.inference_mode():
+        tokens = model.generate(**encoded, do_sample=False, max_new_tokens=TOKEN_LIMIT)
+    new_tokens = tokens[0, prompt_tokens:]
+    return tokenizer.decode(new_tokens, skip_special_tokens=True), prompt_tokens, len(new_tokens)
+
+
+def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prompt):
+    output = root / task_id
+    lines = Queue()
+    started = time.perf_counter()
+    started_cpu = time.process_time()
+    aliases = {}
+    base_sha = None
+    messages = [{"role": "system", "content": prompt}, {"role": "user", "content": GUIDE}]
+    events_path = root / f"{task_id}.model_turns.jsonl"
+    with (root / f"{task_id}.broker.stderr.txt").open("x", encoding="utf-8") as stderr, \
+            events_path.open("x", encoding="utf-8", newline="\n") as events:
+        proc = subprocess.Popen(
+            [str(broker_python), str(BROKER), "--cohort-manifest", str(protocol_path),
+             "--task-id", task_id, "--out", str(output)],
+            cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=stderr,
+            text=True, encoding="utf-8",
+        )
+        Thread(target=read_lines, args=(proc.stdout, lines), daemon=True).start()
+
+        def receive():
+            line = lines.get(timeout=60)
+            if line is None:
+                raise RuntimeError(f"MCP broker closed early for {task_id}")
+            return json.loads(line)
+
+        def send(request):
+            proc.stdin.write(json.dumps(request, allow_nan=False) + "\n")
+            proc.stdin.flush()
+            return receive()
+
+        def log(event):
+            events.write(json.dumps(event, ensure_ascii=True, allow_nan=False) + "\n")
+            events.flush()
+
+        try:
+            ready = receive()
+            if ready.get("ready") is not True:
+                raise RuntimeError(f"MCP broker did not initialize for {task_id}")
+            allowed = {tool["name"] for tool in ready["tools"]}
+            ended = False
+            for turn in range(1, TURN_LIMIT + 1):
+                text, input_tokens, output_tokens = generate(tokenizer, model, messages)
+                messages.append({"role": "assistant", "content": text})
+                log({"turn": turn, "raw_output": text, "input_tokens": input_tokens,
+                     "output_tokens": output_tokens, "at_token_cap": output_tokens == TOKEN_LIMIT})
+                try:
+                    request = decode_request(text)
+                    tool, arguments = request["tool"], request["arguments"]
+                    if tool not in allowed:
+                        raise ValueError("tool is not available")
+                    patch = arguments.get("patch")
+                    if (tool == "submit_patch" and isinstance(patch, dict)
+                            and patch.get("base_sha256") == "BASE" and base_sha):
+                        patch["base_sha256"] = base_sha
+                    candidate_id = arguments.get("candidate_id")
+                    if isinstance(candidate_id, str) and candidate_id in aliases:
+                        arguments["candidate_id"] = aliases[candidate_id]
+                    json.dumps(request, allow_nan=False)
+                except ValueError as exc:
+                    log({"turn": turn, "transport_error": str(exc)})
+                    messages.append({"role": "user", "content": "Invalid request. " + GUIDE})
+                    continue
+                response = send(request)
+                if response.get("experiment_complete") is True:
+                    ended = True
+                    break
+                result = response.get("result")
+                if response.get("ok") and isinstance(result, dict):
+                    if tool == "get_diagnostic_report":
+                        base_sha = result.get("base_sha256")
+                    if tool == "submit_patch" and result.get("candidate_id"):
+                        alias = f"C{len(aliases) + 1}"
+                        aliases[alias] = result["candidate_id"]
+                        response["candidate_alias"] = alias
+                messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
+            if not ended:
+                log({"host_stop": "model turn budget exhausted"})
+                response = send({"tool": "stop_without_candidate",
+                                 "arguments": {"reason": "Host model turn budget exhausted"}})
+                if response.get("experiment_complete") is not True:
+                    raise RuntimeError("budget stop did not finalize the experiment")
+            if proc.wait(timeout=30) != 0:
+                raise RuntimeError("MCP broker exited with an error")
+        finally:
+            if proc.poll() is None:
+                proc.kill()
+                proc.wait(timeout=15)
+    write_json(root / f"{task_id}.host_resources.json", {
+        "wall_seconds": time.perf_counter() - started,
+        "host_cpu_seconds": time.process_time() - started_cpu,
+        "host_peak_rss_bytes": peak_rss_bytes(),
+    })
+    return _read_json(output / "experiment_record.json")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--model", type=Path, required=True)
+    parser.add_argument("--broker-python", type=Path, required=True)
+    parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args()
+    os.environ["HF_HUB_OFFLINE"] = "1"
+    os.environ["TRANSFORMERS_OFFLINE"] = "1"
+    import torch
+    from transformers import AutoTokenizer, Qwen3_5ForConditionalGeneration
+
+    out = args.out.resolve()
+    if not out.is_relative_to(ROOT):
+        parser.error("--out must be within the checkout for portable evidence paths")
+    model_path = args.model.resolve(strict=True)
+    checkpoint_files = {path.name: _file_sha256(path) for path in sorted(model_path.iterdir())
+                        if path.is_file()}
+    reference = _read_json(ROOT / "results/published_reproduction/p50c_rebuild_summary.json")
+    checkpoint_sha = reference["base_checkpoint_sha256"]
+    if checkpoint_files.get("model.safetensors-00001-of-00001.safetensors") != checkpoint_sha:
+        raise ValueError("local checkpoint differs from the pinned Qwen base")
+    template = _read_json(TEMPLATE)
+    split_seeds = [seed for task in template["tasks"] for seed in (task["seed"], task["seed"] + 1)]
+    if len(split_seeds) != len(set(split_seeds)):
+        raise ValueError("cohort practice and holdout seeds overlap")
+    prompt = (ROOT / template["prompt_path"]).read_text(encoding="utf-8")
+    started = time.perf_counter()
+    started_cpu = time.process_time()
+    torch.set_num_threads(THREADS)
+    tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True, trust_remote_code=False)
+    model = Qwen3_5ForConditionalGeneration.from_pretrained(
+        model_path, dtype=torch.bfloat16, local_files_only=True,
+    ).eval()
+    out.mkdir(parents=True, exist_ok=False)
+    receipt_path = out / "local_model_identity.json"
+    write_json(receipt_path, {
+        "schema": "weightbridge.llm_identity_receipt.v1",
+        "provider": "local-transformers", "model_id": MODEL_ID, "version": REVISION,
+        "host_call_id": uuid.uuid4().hex, "checkpoint_files_sha256": checkpoint_files,
+        "host_source_sha256": _file_sha256(SOURCE),
+        "sampling": {"do_sample": False, "enable_thinking": False, "max_new_tokens": TOKEN_LIMIT,
+                     "max_model_turns": TURN_LIMIT, "max_input_tokens": 16_384, "device": "cpu",
+                     "dtype": "bfloat16", "torch_threads": THREADS, "torch": version("torch"),
+                     "transformers": version("transformers")},
+    })
+    manifest = out / "frozen_protocol.json"
+    freeze_protocol(TEMPLATE, receipt_path, manifest, cohort_id=out.name,
+                    identity_provenance="Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task.")
+    protocol = _read_json(manifest)
+    records = []
+    failure = None
+    try:
+        for task_id in protocol["execution_order"]:
+            print(f"Starting {task_id}", flush=True)
+            record = run_task(task_id, out, manifest, args.broker_python.resolve(strict=True),
+                              tokenizer, model, prompt)
+            records.append(record)
+            print(f"Completed {task_id}", flush=True)
+    except Exception as exc:
+        failure = f"{type(exc).__name__}: {exc}"
+        raise
+    finally:
+        write_json(out / "cohort_summary.json", summarize_cohort(protocol, records))
+        write_json(out / "host_resources.json", {"wall_seconds": time.perf_counter() - started,
+                   "host_cpu_seconds": time.process_time() - started_cpu,
+                   "host_peak_rss_bytes": peak_rss_bytes(), "completed_tasks": len(records),
+                   "failure": failure})
+
+
+if __name__ == "__main__":
+    main()
