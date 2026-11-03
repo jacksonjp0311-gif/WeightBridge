@@ -80,3 +80,5 @@ def test_description_separates_display_compliance_from_semantic_accuracy():
     assert result["raw_context_preferences"]["labeled"]["neutral_absent"] == {
         "left_preferences": 6, "right_preferences": 6, "ties": 0, "mean_absolute_margin": 6.0,
     }
+    assert result["raw_margin_shifts"]["labeled"]["signed_question_margin_shift"]["estimate"] == 3
+    assert result["raw_margin_shifts"]["labeled"]["absolute_irrelevant_margin_shift"]["estimate"] == 0

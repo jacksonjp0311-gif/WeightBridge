@@ -48,7 +48,7 @@ def describe_split(rows, decision, config):
             "ranker_first_position": sum(p["task"] == 0 for p in selected),
         }
 
-    ranker_outcomes, generation_outcomes, controls = {}, {}, {}
+    ranker_outcomes, generation_outcomes, controls, shifts = {}, {}, {}, {}
     for display in DISPLAYS:
         raw_rule = {"display": display, "kind": "sum"}
         calibrated_rule = {"display": display, "kind": "prior_sum", **decision["factorial_prior"]}
@@ -56,15 +56,29 @@ def describe_split(rows, decision, config):
                                           for p, row in zip(ranker_predictions(rows, candidate), rows, strict=True)]
                                     for kind, candidate in (("raw", raw_rule), ("calibrated", calibrated_rule))}
         neutral = decision["factorial_prior"]["neutral"]
-        controls[display] = {}
-        for name in ("task", "counterfactual", "irrelevant", neutral):
-            pairs = [_positions(row, display, name, raw_rule) for row in rows]
-            controls[display][name] = {
-                "left_preferences": sum(left > right for left, right in pairs),
-                "right_preferences": sum(right > left for left, right in pairs),
-                "ties": sum(left == right for left, right in pairs),
-                "mean_absolute_margin": sum(abs(left - right) for left, right in pairs) / len(rows),
+        margins = {}
+        for context in ("task", "counterfactual", "irrelevant", neutral):
+            pairs = [_positions(row, display, context, raw_rule) for row in rows]
+            margins[context] = [left - right for left, right in pairs]
+        controls[display] = {
+            context: {
+                "left_preferences": sum(value > 0 for value in values),
+                "right_preferences": sum(value < 0 for value in values),
+                "ties": sum(value == 0 for value in values),
+                "mean_absolute_margin": sum(map(abs, values)) / len(rows),
             }
+            for context, values in margins.items()
+        }
+        signed = [(1 if row["correct_position"] == 0 else -1) * (task - changed)
+                  for row, task, changed in zip(rows, margins["task"], margins["counterfactual"], strict=True)]
+        irrelevant = [abs(other - prior) for other, prior in zip(margins["irrelevant"], margins[neutral], strict=True)]
+        shifts[display] = {
+            "signed_question_margin_shift": _effect(rows, signed, config),
+            "absolute_irrelevant_margin_shift": _effect(rows, irrelevant, config),
+            "expected_question_shift_fraction": _effect(rows, [value > 0 for value in signed], config),
+            "question_shift_exceeds_irrelevant_fraction": _effect(
+                rows, [q > control for q, control in zip(signed, irrelevant, strict=True)], config),
+        }
         responses = [row["displays"][display]["generation"] for row in rows]
         generation_outcomes[display] = {}
         for parser in ("strict", "semantic"):
@@ -73,7 +87,10 @@ def describe_split(rows, decision, config):
             correct = [p == row["correct_position"] for p, row in zip(task, rows, strict=True)]
             changed_correct = [p == row["counterfactual_position"] for p, row in zip(changed, rows, strict=True)]
             generation_outcomes[display][parser] = {
+                "completed": [r["task"]["stop_reason"] == "eos" for r in responses],
+                "counterfactual_completed": [r["counterfactual"]["stop_reason"] == "eos" for r in responses],
                 "parsed": [p is not None for p in task], "correct": correct,
+                "counterfactual_parsed": [p is not None for p in changed],
                 "counterfactual_correct": changed_correct,
                 "both_correct": [a and b for a, b in zip(correct, changed_correct, strict=True)],
             }
@@ -85,6 +102,7 @@ def describe_split(rows, decision, config):
             for family, indices in families.items()},
         "label_strata": labels,
         "raw_context_preferences": controls,
+        "raw_margin_shifts": shifts,
         "bullets_minus_labeled_accuracy": {
             key: _effect(rows, [int(b) - int(a) for a, b in zip(
                 ranker_outcomes["labeled"][key], ranker_outcomes["bullets"][key], strict=True)], config)
