@@ -29,8 +29,8 @@ BASE_SHARD = "model.safetensors-00001-of-00001.safetensors"
 LAYERS = (19, 21, 23)
 WIDTH = 16
 BATCH = 8
-STRENGTHS = (2.0, 4.0, 8.0, 16.0, 32.0, 64.0)
-FAULT_STRENGTHS = (4.0, 8.0, 16.0, 32.0, 64.0, 128.0)
+STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)
+FAULT_STRENGTHS = (*STRENGTHS, 2.56, 4.0)
 SPLIT_SEEDS = {"construction": 813005, "practice": 813006, "holdout": 813007}
 RANDOM_SEEDS = (813021, 813022, 813023)
 
