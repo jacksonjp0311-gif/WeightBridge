@@ -19,6 +19,10 @@ unseen examples and previously verified predictions. The first five-cycle
 natural Qwen study retained one edit, and the final score fell from 18/24 to
 15/24. [Phase III study](docs/PHASE_III.md)
 
+Phase III-B adds the [Behavioral Interaction Compiler](docs/PHASE_III_B.md)
+for coordinated updates, task-aware preservation, and bounded mixed-curvature
+probes.
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

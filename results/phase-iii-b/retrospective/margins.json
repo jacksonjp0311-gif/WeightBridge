@@ -1,0 +1,1753 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "candidate_sha256": "d51807a73f7116e3ec15490ab1dbfc3b9a9d9ad5383100d82d5ad6bff05c1a63",
+  "conditions": {
+    "AB-original": {
+      "base": {
+        "choices": [
+          "A",
+          "B"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 27.671875,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 3.000204499985557,
+          "peak_rss_bytes": 2343833600,
+          "wall_seconds": 13.178514200029895
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "B",
+            "margin": -0.75,
+            "prediction": "B",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "A",
+            "margin": -0.25,
+            "prediction": "B",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "A",
+            "margin": -0.25,
+            "prediction": "B",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "A",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": 0.0
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "A",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": 0.0
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "A",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": 0.0
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "A",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "B",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "A",
+            "margin": 0.625,
+            "prediction": "A",
+            "signed_margin": 0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "A",
+            "margin": 1.0,
+            "prediction": "A",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "A",
+            "margin": 1.0,
+            "prediction": "A",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "A",
+            "margin": 1.0,
+            "prediction": "A",
+            "signed_margin": 1.0
+          }
+        ]
+      },
+      "by_family": {
+        "date-order": {
+          "after_correct": 6,
+          "before_correct": 7,
+          "examples": 8,
+          "mean_raw_margin_change": 0.0,
+          "mean_signed_margin_change": 0.03125,
+          "negative_raw_shifts": 2,
+          "positive_raw_shifts": 3
+        },
+        "fraction-order": {
+          "after_correct": 4,
+          "before_correct": 6,
+          "examples": 8,
+          "mean_raw_margin_change": 0.421875,
+          "mean_signed_margin_change": 0.078125,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 8
+        },
+        "word-order": {
+          "after_correct": 5,
+          "before_correct": 5,
+          "examples": 8,
+          "mean_raw_margin_change": 0.03125,
+          "mean_signed_margin_change": 0.09375,
+          "negative_raw_shifts": 2,
+          "positive_raw_shifts": 3
+        }
+      },
+      "candidate": {
+        "choices": [
+          "A",
+          "B"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 19.640625,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 2.9924836000427604,
+          "peak_rss_bytes": 2352123904,
+          "wall_seconds": 5.176374399976339
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "B",
+            "margin": -0.625,
+            "prediction": "B",
+            "signed_margin": 0.625
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "A",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "B",
+            "margin": -0.75,
+            "prediction": "B",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "A",
+            "margin": -0.25,
+            "prediction": "B",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "A",
+            "margin": -0.25,
+            "prediction": "B",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "A",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": 0.25
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "B",
+            "margin": -0.625,
+            "prediction": "B",
+            "signed_margin": 0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "A",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "A",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": 0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "B",
+            "margin": 0.625,
+            "prediction": "A",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "B",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "B",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "A",
+            "margin": 1.0,
+            "prediction": "A",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "A",
+            "margin": 1.75,
+            "prediction": "A",
+            "signed_margin": 1.75
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "A",
+            "margin": 1.375,
+            "prediction": "A",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "A",
+            "margin": 1.5,
+            "prediction": "A",
+            "signed_margin": 1.5
+          }
+        ]
+      }
+    },
+    "AB-swapped": {
+      "base": {
+        "choices": [
+          "A",
+          "B"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 19.796875,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 3.019868300005328,
+          "peak_rss_bytes": 2356129792,
+          "wall_seconds": 5.10585120000178
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "A",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "B",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "A",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "B",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "B",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": 0.375
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "A",
+            "margin": -0.25,
+            "prediction": "B",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "A",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": 0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "A",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": 0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "A",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": 0.0
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "B",
+            "margin": -0.75,
+            "prediction": "B",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "A",
+            "margin": 0.5,
+            "prediction": "A",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "A",
+            "margin": 1.125,
+            "prediction": "A",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "A",
+            "margin": 0.625,
+            "prediction": "A",
+            "signed_margin": 0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "B",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "B",
+            "margin": -1.125,
+            "prediction": "B",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "A",
+            "margin": 0.875,
+            "prediction": "A",
+            "signed_margin": 0.875
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          }
+        ]
+      },
+      "by_family": {
+        "date-order": {
+          "after_correct": 7,
+          "before_correct": 7,
+          "examples": 8,
+          "mean_raw_margin_change": 0.015625,
+          "mean_signed_margin_change": -0.046875,
+          "negative_raw_shifts": 1,
+          "positive_raw_shifts": 1
+        },
+        "fraction-order": {
+          "after_correct": 5,
+          "before_correct": 5,
+          "examples": 8,
+          "mean_raw_margin_change": 0.40625,
+          "mean_signed_margin_change": 0.0625,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 8
+        },
+        "word-order": {
+          "after_correct": 2,
+          "before_correct": 2,
+          "examples": 8,
+          "mean_raw_margin_change": 0.078125,
+          "mean_signed_margin_change": -0.078125,
+          "negative_raw_shifts": 1,
+          "positive_raw_shifts": 3
+        }
+      },
+      "candidate": {
+        "choices": [
+          "A",
+          "B"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 19.6875,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 2.9829542000079527,
+          "peak_rss_bytes": 2356129792,
+          "wall_seconds": 5.174254299956374
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "A",
+            "margin": -0.375,
+            "prediction": "B",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "B",
+            "margin": 0.375,
+            "prediction": "A",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "A",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "B",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "A",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "B",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": -0.0
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "A",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "B",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "A",
+            "margin": 0.125,
+            "prediction": "A",
+            "signed_margin": 0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "A",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": 0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "A",
+            "margin": -0.125,
+            "prediction": "B",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "A",
+            "margin": 0.0,
+            "prediction": "A",
+            "signed_margin": 0.0
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "B",
+            "margin": -0.5,
+            "prediction": "B",
+            "signed_margin": 0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "A",
+            "margin": 0.875,
+            "prediction": "A",
+            "signed_margin": 0.875
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "A",
+            "margin": 1.625,
+            "prediction": "A",
+            "signed_margin": 1.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "A",
+            "margin": 1.125,
+            "prediction": "A",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "B",
+            "margin": 0.625,
+            "prediction": "A",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "B",
+            "margin": -0.625,
+            "prediction": "B",
+            "signed_margin": 0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "B",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "A",
+            "margin": 1.375,
+            "prediction": "A",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "B",
+            "margin": 0.25,
+            "prediction": "A",
+            "signed_margin": -0.25
+          }
+        ]
+      }
+    },
+    "XY-original": {
+      "base": {
+        "choices": [
+          "X",
+          "Y"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 19.859375,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 2.964990300068166,
+          "peak_rss_bytes": 2359963648,
+          "wall_seconds": 5.473795300000347
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "Y",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "X",
+            "margin": -1.625,
+            "prediction": "Y",
+            "signed_margin": -1.625
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "X",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": -1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "X",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": -1.375
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "Y",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "X",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": -1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "X",
+            "margin": -0.25,
+            "prediction": "Y",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "Y",
+            "margin": -1.625,
+            "prediction": "Y",
+            "signed_margin": 1.625
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "Y",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "X",
+            "margin": -0.25,
+            "prediction": "Y",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "X",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": -0.75
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "X",
+            "margin": -0.875,
+            "prediction": "Y",
+            "signed_margin": -0.875
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          }
+        ]
+      },
+      "by_family": {
+        "date-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.0,
+          "mean_signed_margin_change": 0.0,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 0
+        },
+        "fraction-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.0,
+          "mean_signed_margin_change": 0.0,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 0
+        },
+        "word-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.015625,
+          "mean_signed_margin_change": -0.015625,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 1
+        }
+      },
+      "candidate": {
+        "choices": [
+          "X",
+          "Y"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 20.1875,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 3.0892643000697717,
+          "peak_rss_bytes": 2361647104,
+          "wall_seconds": 5.37902250001207
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "Y",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "X",
+            "margin": -1.625,
+            "prediction": "Y",
+            "signed_margin": -1.625
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "X",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": -1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "X",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": -1.375
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "X",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": -1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "X",
+            "margin": -0.25,
+            "prediction": "Y",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "Y",
+            "margin": -1.625,
+            "prediction": "Y",
+            "signed_margin": 1.625
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "Y",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": 1.375
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "X",
+            "margin": -0.25,
+            "prediction": "Y",
+            "signed_margin": -0.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "Y",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": 1.125
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "X",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": -0.75
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "X",
+            "margin": -0.875,
+            "prediction": "Y",
+            "signed_margin": -0.875
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          }
+        ]
+      }
+    },
+    "XY-swapped": {
+      "base": {
+        "choices": [
+          "X",
+          "Y"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 20.046875,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 3.000802999944426,
+          "peak_rss_bytes": 2367557632,
+          "wall_seconds": 5.448757900041528
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "X",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": -1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "X",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": -1.125
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "Y",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "X",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": -1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "X",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": -1.375
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "Y",
+            "margin": -0.875,
+            "prediction": "Y",
+            "signed_margin": 0.875
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "X",
+            "margin": -0.375,
+            "prediction": "Y",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "X",
+            "margin": -0.125,
+            "prediction": "Y",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "X",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": -0.75
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "Y",
+            "margin": -0.875,
+            "prediction": "Y",
+            "signed_margin": 0.875
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "Y",
+            "margin": -2.5,
+            "prediction": "Y",
+            "signed_margin": 2.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          }
+        ]
+      },
+      "by_family": {
+        "date-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.0,
+          "mean_signed_margin_change": 0.0,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 0
+        },
+        "fraction-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.046875,
+          "mean_signed_margin_change": -0.015625,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 3
+        },
+        "word-order": {
+          "after_correct": 4,
+          "before_correct": 4,
+          "examples": 8,
+          "mean_raw_margin_change": 0.015625,
+          "mean_signed_margin_change": 0.015625,
+          "negative_raw_shifts": 0,
+          "positive_raw_shifts": 1
+        }
+      },
+      "candidate": {
+        "choices": [
+          "X",
+          "Y"
+        ],
+        "resources": {
+          "backward_batches": 0,
+          "backward_wall_seconds": 0.0,
+          "cpu_seconds": 19.765625,
+          "forward_batches": 3,
+          "forward_examples": 24,
+          "forward_token_positions": 1120,
+          "forward_wall_seconds": 3.030171499995049,
+          "peak_rss_bytes": 2368774144,
+          "wall_seconds": 5.117587700020522
+        },
+        "rows": [
+          {
+            "id": "five-cycle/final/word-order/01",
+            "label": "X",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": -1.125
+          },
+          {
+            "id": "five-cycle/final/word-order/02",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/03",
+            "label": "X",
+            "margin": -1.125,
+            "prediction": "Y",
+            "signed_margin": -1.125
+          },
+          {
+            "id": "five-cycle/final/word-order/04",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/05",
+            "label": "Y",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/word-order/06",
+            "label": "X",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": -1.25
+          },
+          {
+            "id": "five-cycle/final/word-order/07",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          },
+          {
+            "id": "five-cycle/final/word-order/08",
+            "label": "X",
+            "margin": -1.375,
+            "prediction": "Y",
+            "signed_margin": -1.375
+          },
+          {
+            "id": "five-cycle/final/date-order/01",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/02",
+            "label": "Y",
+            "margin": -0.875,
+            "prediction": "Y",
+            "signed_margin": 0.875
+          },
+          {
+            "id": "five-cycle/final/date-order/03",
+            "label": "Y",
+            "margin": -1.0,
+            "prediction": "Y",
+            "signed_margin": 1.0
+          },
+          {
+            "id": "five-cycle/final/date-order/04",
+            "label": "X",
+            "margin": -0.375,
+            "prediction": "Y",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/date-order/05",
+            "label": "X",
+            "margin": -0.125,
+            "prediction": "Y",
+            "signed_margin": -0.125
+          },
+          {
+            "id": "five-cycle/final/date-order/06",
+            "label": "X",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": -0.75
+          },
+          {
+            "id": "five-cycle/final/date-order/07",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/date-order/08",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/01",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/02",
+            "label": "X",
+            "margin": -0.5,
+            "prediction": "Y",
+            "signed_margin": -0.5
+          },
+          {
+            "id": "five-cycle/final/fraction-order/03",
+            "label": "X",
+            "margin": -0.375,
+            "prediction": "Y",
+            "signed_margin": -0.375
+          },
+          {
+            "id": "five-cycle/final/fraction-order/04",
+            "label": "Y",
+            "margin": -0.75,
+            "prediction": "Y",
+            "signed_margin": 0.75
+          },
+          {
+            "id": "five-cycle/final/fraction-order/05",
+            "label": "Y",
+            "margin": -2.375,
+            "prediction": "Y",
+            "signed_margin": 2.375
+          },
+          {
+            "id": "five-cycle/final/fraction-order/06",
+            "label": "Y",
+            "margin": -1.25,
+            "prediction": "Y",
+            "signed_margin": 1.25
+          },
+          {
+            "id": "five-cycle/final/fraction-order/07",
+            "label": "X",
+            "margin": -0.625,
+            "prediction": "Y",
+            "signed_margin": -0.625
+          },
+          {
+            "id": "five-cycle/final/fraction-order/08",
+            "label": "Y",
+            "margin": -1.5,
+            "prediction": "Y",
+            "signed_margin": 1.5
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "counterbalanced_decomposition": {
+    "AB": {
+      "date-order": {
+        "mean_position_component": 0.0078125,
+        "mean_signed_component": -0.0078125,
+        "rms_position_component": 0.09110862335695782,
+        "rms_signed_component": 0.06629126073623882
+      },
+      "fraction-order": {
+        "mean_position_component": 0.4140625,
+        "mean_signed_component": 0.0703125,
+        "rms_position_component": 0.42331928700450205,
+        "rms_signed_component": 0.09631896879639025
+      },
+      "word-order": {
+        "mean_position_component": 0.0546875,
+        "mean_signed_component": 0.0078125,
+        "rms_position_component": 0.18087245160609727,
+        "rms_signed_component": 0.038273277230987154
+      }
+    },
+    "XY": {
+      "date-order": {
+        "mean_position_component": 0.0,
+        "mean_signed_component": 0.0,
+        "rms_position_component": 0.0,
+        "rms_signed_component": 0.0
+      },
+      "fraction-order": {
+        "mean_position_component": 0.0234375,
+        "mean_signed_component": -0.0078125,
+        "rms_position_component": 0.038273277230987154,
+        "rms_signed_component": 0.038273277230987154
+      },
+      "word-order": {
+        "mean_position_component": 0.015625,
+        "mean_signed_component": 0.0,
+        "rms_position_component": 0.03125,
+        "rms_signed_component": 0.03125
+      }
+    }
+  },
+  "parent_jacobian_sample": {
+    "choices": [
+      "A",
+      "B"
+    ],
+    "resources": {
+      "backward_batches": 1,
+      "backward_wall_seconds": 0.022011900029610842,
+      "cpu_seconds": 7.359375,
+      "forward_batches": 1,
+      "forward_examples": 6,
+      "forward_token_positions": 312,
+      "forward_wall_seconds": 0.8517261000233702,
+      "peak_rss_bytes": 2368774144,
+      "wall_seconds": 3.1492136000306346
+    },
+    "rows": [
+      {
+        "embedding_jacobian_cosine": 0.9922357945704452,
+        "id": "five-cycle/final/word-order/01",
+        "jacobian_norm": 8.639006614685059,
+        "label": "B",
+        "margin": -0.375,
+        "prediction": "B",
+        "signed_margin": 0.375
+      },
+      {
+        "embedding_jacobian_cosine": 0.9922033632455951,
+        "id": "five-cycle/final/word-order/02",
+        "jacobian_norm": 8.951382637023926,
+        "label": "A",
+        "margin": -0.25,
+        "prediction": "B",
+        "signed_margin": -0.25
+      },
+      {
+        "embedding_jacobian_cosine": 0.9922058867943624,
+        "id": "five-cycle/final/date-order/01",
+        "jacobian_norm": 7.948546886444092,
+        "label": "A",
+        "margin": 0.0,
+        "prediction": "A",
+        "signed_margin": 0.0
+      },
+      {
+        "embedding_jacobian_cosine": 0.9922183163193887,
+        "id": "five-cycle/final/date-order/04",
+        "jacobian_norm": 7.9223246574401855,
+        "label": "B",
+        "margin": -0.125,
+        "prediction": "B",
+        "signed_margin": 0.125
+      },
+      {
+        "embedding_jacobian_cosine": 0.9922149683429117,
+        "id": "five-cycle/final/fraction-order/01",
+        "jacobian_norm": 9.18249225616455,
+        "label": "B",
+        "margin": 0.25,
+        "prediction": "A",
+        "signed_margin": -0.25
+      },
+      {
+        "embedding_jacobian_cosine": 0.9921297806033287,
+        "id": "five-cycle/final/fraction-order/04",
+        "jacobian_norm": 9.238691329956055,
+        "label": "A",
+        "margin": 0.75,
+        "prediction": "A",
+        "signed_margin": 0.75
+      }
+    ]
+  },
+  "prior_report_sha256": "7a7d2e4aafcf4bbd5264dc33ba8c54d576a77ffd310aa62bdf54c46f24b42b3e",
+  "purpose": "Disclosed history only. No selection or qualification.",
+  "schema": "weightbridge.phase_iiib.retrospective.v1",
+  "suite_sha256": "f40a530a4c72bc808c85c7418f5ec4644ed34b89b8f2c25087875d097814d9fb",
+  "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+}
