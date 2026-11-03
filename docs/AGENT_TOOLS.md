@@ -146,13 +146,14 @@ The damaged fallback averaged 2.97 percentage points below the
 predeclared random controls. The mechanism-stratified 95% interval ran from
 −8.52 to +1.17 points. [Protocol, transcripts and scores](../results/wb-dq/)
 
-Audit the archived result from the repository root. Use a fresh report path.
+Audit the archived result from the repository root. Pass the records in
+frozen execution order to reproduce the seeded bootstrap exactly.
 
-```bash
-python -m weightbridge.evaluation.mcp_cohort \
-  --protocol results/wb-dq/frozen_protocol.json \
-  --records results/wb-dq/trial-*/experiment_record.json \
-  --out direct-audit.json
+```powershell
+$protocol = 'results/wb-dq/frozen_protocol.json'
+$order = (Get-Content $protocol -Raw | ConvertFrom-Json).execution_order
+$records = @($order | ForEach-Object { "results/wb-dq/$_/experiment_record.json" })
+python -m weightbridge.evaluation.mcp_cohort --protocol $protocol --records @records --out direct-audit.json
 ```
 
 The [real-checkpoint CLI pilot](QWEN_AI_EDIT_PILOT.md) used a constrained
