@@ -111,7 +111,7 @@ def run(base, materialized, study_run, frozen_config, out):
         for split, suite in (("practice", practice), ("holdout", holdout)):
             report = out / f"{arm}-{split}.json"
             scores[arm][split] = measure(lambda: evaluate_hf_edit(base, model, suite, report, **options))
-            json_dump_atomic(out / "scores.json", scores)
+            json_dump_atomic(out / f"{arm}-{split}.resources.json", scores[arm][split])
     summary = {"schema": "weightbridge.phase_iii.control_run.v1", "protocol_sha256": protocol_sha,
                "control_config_sha256": file_hash(frozen_config), "study_summary_sha256": file_hash(completion_path),
                "cycle_id": cycle_id, "family": spec["family"], "base_sha256": original_hash,
