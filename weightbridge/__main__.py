@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .adaptation.cli import add_phase_iii_parser, run_phase_iii_command
 from .agents.hf_session_cli import add_hf_session_parser, run_hf_session_command
 from .core import apply_patch, inspect_checkpoint, json_dump_atomic
 from .demo import compare_demo, run_demo
@@ -50,6 +51,7 @@ def main():
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--max-input-tokens", type=int, default=512)
     add_hf_session_parser(sub)
+    add_phase_iii_parser(sub)
     p = sub.add_parser("compare-demo", help="Evaluate same synthetic holdout on base and candidate")
     p.add_argument("--base", required=True)
     p.add_argument("--candidate", required=True)
@@ -101,6 +103,11 @@ def main():
     elif args.cmd == "hf-edit-session":
         try:
             result = run_hf_session_command(args)
+        except (InferenceError, OSError, ValueError) as exc:
+            parser.error(str(exc))
+    elif args.cmd == "phase-iii":
+        try:
+            result = run_phase_iii_command(args)
         except (InferenceError, OSError, ValueError) as exc:
             parser.error(str(exc))
     elif args.cmd == "generate":

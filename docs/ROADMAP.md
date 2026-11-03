@@ -9,6 +9,7 @@
 | 3. Bounded original-versus-published benchmark | PARTIAL / HOLD | Small CPU smoke completed but truncated; published datasets/scores not run |
 | 4. AI-directed diagnosis and candidate edit | REAL CLI PILOT COMPLETE / DIRECT TRANSFER FAIL | One passing real Qwen CLI case out of three. The frozen 20-task direct-proposal gate failed with zero finalized repairs. |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
+| Phase III. Continual research adaptation | CONTROLLER IMPLEMENTED / MODEL QUALIFICATION HOLD | AWL, independent retention gates, persistent lineage and rollback. See the [Phase III study](PHASE_III.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

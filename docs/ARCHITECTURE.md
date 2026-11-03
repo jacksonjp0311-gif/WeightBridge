@@ -23,6 +23,12 @@ LLM host ──MCP stdio──> fixed local model/practice session
        ├── patch proposal ──> host policy ──> immutable candidate
        ├── practice-only score ──> revise or stop
        └── finalize ──> host opens holdout once
+
+AWL intent + practice ──> bounded direction search ──> one frozen finalist
+                                ▲                               │
+                        accepted parent                  independent reload
+                                │                               │
+                       research lineage <── target and retention gates
 ```
 
 ## Modules
@@ -37,12 +43,15 @@ LLM host ──MCP stdio──> fixed local model/practice session
 - `weightbridge.diagnostics.toy_mlp`: a two-layer synthetic classifier with a one-sided output-bias defect. The injected value is not passed to the agent.
 - `weightbridge.memory`: append-only synthetic-only MWC experience records keyed by observation ID, with exact failure fingerprint, model hash, intervention and evaluation links. No external memory connector exists.
 - `weightbridge.provenance`: append-only JSONL experiment records, duplicate experiment-ID checks, correction links, paired bootstrap intervals and platform resource probes.
+- `weightbridge.adaptation.awl` parses versioned adaptation intents. The numerical plan requests scoped `activation_ridge` proposals from the existing Qwen solver. It uses the same patch policy and receipt path as the local HF edit session.
+- `weightbridge.adaptation.controller` freezes a sequence of cycles, searches practice-only, and records a single finalist or abstention per cycle. The verifier reloads that finalist and its accepted parent, and checks new targets, current sentinels, and the held-out predictions of active accepted ancestors. Final scoring is a separate command after the protocol closes.
+- `weightbridge.adaptation.lineage` stores immutable, hash-linked acceptance, rejection and rollback events in a host-owned directory. Each accepted version points to an isolated checkpoint. Rollback moves the research selection to a verified ancestor without rewriting the checkpoint.
 
 ## Trust boundaries
 
 Patch documents are data; none of their fields are evaluated as code. Validation checks tensor identity, bounds, data type, coordinate uniqueness, numerical finiteness, dtype rounding, parameter limits and candidate immutability. A valid candidate is still unpromoted. The test suite deliberately covers malformed schema, tensor allowlist/hash violations, duplicate coordinates, path traversal, truncated offsets, nested outputs and budgets.
 
-The toy workers and MCP session get no holdout path or values. The MCP tool session accepts only the host's fixed base and practice paths and refuses a changed base, practice file, candidate hash, or session policy. The small-network worker and MCP server are experimental boundaries, not hardened operating-system sandboxes: their Python processes retain the operating-system access of the launching user. The Codex MCP pilot discovered a one-coordinate hidden-bias correction on one synthetic task; Qwen has no AI-generated patch evaluation.
+The toy workers and MCP session get no holdout path or values. The MCP tool session accepts only the host's fixed base and practice paths and refuses a changed base, practice file, candidate hash, or session policy. The Phase III search command receives practice data and input hashes. Only verifier commands receive sealed suite paths. The workers and CLI processes retain the filesystem permissions of the launching user. A harness that exposes tools to an untrusted agent must also isolate the sealed files, the lineage workspace and any deployed checkpoint at the operating-system level.
 
 ## Checkpoint identity
 

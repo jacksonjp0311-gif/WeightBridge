@@ -38,3 +38,12 @@
 /results/hf-agent-session-replay/*.json -text whitespace=cr-at-eol
 /results/wb-dq/**/*.json text eol=lf
 /results/wb-dq/**/*.jsonl text eol=lf
+/benchmarks/configs/phase_iii*.json -text whitespace=cr-at-eol
+/experiments/phase_iii/*.py text eol=lf
+/weightbridge/adaptation/*.py text eol=lf
+/weightbridge/agents/hf_direction.py text eol=lf
+/weightbridge/agents/hf_session.py text eol=lf
+/weightbridge/evaluation/hf_edit.py text eol=lf
+/weightbridge/inspection/safetensors.py text eol=lf
+/weightbridge/patches/huggingface.py text eol=lf
+/results/phase-iii-*/**/*.json -text whitespace=cr-at-eol

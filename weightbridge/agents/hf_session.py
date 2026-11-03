@@ -246,7 +246,15 @@ def _try_hf_edit(session, proposal):
                           parameter_fraction_changed=receipt["parameter_fraction_changed"])
             try:
                 if receipt["candidate_sha256"] == state["base_sha256"]:
+                    result["failure_code"] = "PRECISION_NOOP"
                     raise EditRejected("Patch left checkpoint weights unchanged at stored precision")
+                for previous in _attempts(root)[:-1]:
+                    previous_result = previous / "result.json"
+                    prior = _read(previous_result) if previous_result.is_file() else {}
+                    if (prior.get("disposition") in ("PASS", "FAIL")
+                            and prior.get("candidate_sha256") == receipt["candidate_sha256"]):
+                        result["failure_code"] = "DUPLICATE_CHECKPOINT"
+                        raise EditRejected("Patch produced the exact checkpoint of an earlier attempt")
                 report = evaluate_hf_edit(
                     state["base_path"], candidate, root / "practice.json", report_path,
                     **state["practice_gate"], **state["inference"],

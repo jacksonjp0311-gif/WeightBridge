@@ -129,6 +129,23 @@ def test_session_rejects_precision_noop(tmp_path, host_inputs):
     assert "stored precision" in result["reason"]
 
 
+def test_duplicate_checkpoint_uses_budget_without_rescoring(tmp_path, host_inputs, monkeypatch):
+    base, policy, practice = host_inputs
+    session = tmp_path / "session"
+    hf_session.init_hf_session(session, base, policy, practice, max_candidates=2)
+    first = hf_session.try_hf_patch(session, make_patch(base))
+
+    def unexpected_evaluation(*args, **kwargs):
+        pytest.fail("An exact duplicate must not be rescored")
+
+    monkeypatch.setattr(hf_session, "evaluate_hf_edit", unexpected_evaluation)
+    duplicate = hf_session.try_hf_patch(session, make_patch(base))
+    assert duplicate["disposition"] == "REJECTED"
+    assert duplicate["failure_code"] == "DUPLICATE_CHECKPOINT"
+    assert duplicate["candidate_sha256"] == first["candidate_sha256"]
+    assert duplicate["remaining_candidates"] == 0
+
+
 def test_session_rejects_holdout_fields_and_checkpoint_nested_storage(tmp_path, host_inputs):
     base, policy, practice = host_inputs
     with pytest.raises(ValueError):
