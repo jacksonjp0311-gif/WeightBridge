@@ -1,0 +1,70 @@
+{
+  "schema": "weightbridge.phase_iiih.decimal_endpoint.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "practice": "weightbridge-iiih-endpoint-aligned-practice-v1",
+    "selection": "weightbridge-iiih-endpoint-aligned-selection-v1"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {"target": 16, "positive": 4, "preserve": 4},
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 600
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [0, 1],
+    "max_candidate_evaluations": 6,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {"max_repeatable_error_items": 4, "max_solved_target_items": 8, "max_rows": 40},
+  "probe_design": {
+    "doses": [0.025, 0.1, 0.25],
+    "kl_weight": 0.2,
+    "norm_weight": 0.1,
+    "prefix_controls": "Both wordings of the first solved positive and first solved copy item in frozen practice order. Evaluate the full vocabulary along the observed accepted generation, including its completion boundary when available.",
+    "A": "Legacy correct-plus-one preservation rivals. Existing conditional-margin guard is a diagnostic flag only. All numerical probes run actual generation.",
+    "B": "Corrected comparison rivals. Existing conditional-margin guard is a diagnostic flag only. All numerical probes run actual generation.",
+    "C": "Reuse B's exact rounded probes. Select only endpoint-qualified probes by target item gain and then smallest realized norm.",
+    "D": "Reuse B's exact rounded probes. Rank endpoint-qualified probes by measured target logistic loss plus 0.2 times full-vocabulary preservation-prefix KL plus 0.1 times squared realized norm. This applies measured regularization to selection; it does not differentiate KL or generate additional directions.",
+    "practice_gate": "At least one additional completed correct target item in both wordings and a both-wordings correction of at least one previously repeated smaller-negative error. Zero lost validity and zero baseline-correct presentation regressions. Every eligible checkpoint must first pass the actual endpoint; diagnostic A/B flags never authorize materialization.",
+    "control_accounting": "A and B have the same fit rows, rank, radii, and endpoint budget. B/C/D share exact corrected candidate trajectories. No-adaptation parent is measured. A separately trained conventional tuning baseline is outside this bounded pilot; it is required before a scientific comparison of optimizer performance."
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {"family": "larger-decimal", "metric": "exact_answer", "min_gain": 2},
+    "preserve": ["larger-decimal-easy", "copy"],
+    "risk": {"max_regressions": 0, "max_harm_probability": 0.12},
+    "limits": {
+      "max_forward_calls": 400,
+      "max_backward_calls": 2,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.35,
+      "max_rank": 1,
+      "max_candidates": 3
+    },
+    "data": {"practice": "iiih-endpoint-practice-v1", "evaluation": "iiih-endpoint-hidden-v1"},
+    "methods": ["constrained"],
+    "verify": {"fresh_evaluation": true, "checkpoint_reload": true, "compare_baselines": true, "persistent": true}
+  },
+  "selection_gate": {"min_target_gain": 1, "max_regressions": 0},
+  "hidden_gate": {"min_target_gain": 2, "max_regressions": 0},
+  "candidate_lock": "Only practice endpoint winners C and D may enter selection, deduplicated by probe. Independent verification reloads them in new processes. Select by paired target gain, then realized norm, then probe ID. Hidden opens only for the locked candidate plus parent after independent selection. A successful hidden gate must reproduce exact rows on a second reload and exact parent output on rollback."
+}
