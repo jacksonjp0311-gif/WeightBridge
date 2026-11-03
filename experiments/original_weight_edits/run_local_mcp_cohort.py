@@ -30,15 +30,13 @@ TURN_LIMIT = 8
 TOKEN_LIMIT = 160
 THREADS = 6
 
-GUIDE = """Reply with one compact JSON object, no prose, per turn.
-Start with {"tool":"get_diagnostic_report","arguments":{}}.
-The model computes h=tanh(x @ input_weight + hidden_bias), then logits=h @ output_weight + output_bias. Highest logit wins. Use zero-based indices. Choose one scalar weight and a signed additive delta.
-{"tool":"submit_patch","arguments":{"tensor":"TENSOR","index":[0],"delta":0.1,"reason":"hypothesis in at most 12 words"}}
-The host attaches a short alias such as C1 to each accepted candidate.
-To evaluate it, use {"tool":"evaluate_practice","arguments":{"candidate_id":"C1"}}.
-To finalize it, use {"tool":"finalize_candidate","arguments":{"candidate_id":"C1"}}.
-To stop, use {"tool":"stop_without_candidate","arguments":{"reason":"your reason"}}.
-The host returns the result of your tool call, then you may call one tool again."""
+GUIDE = """Return one JSON object with keys tool (the tool name) and arguments (an object).
+First call get_diagnostic_report with empty arguments.
+The model computes h=tanh(x @ input_weight + hidden_bias), then logits=h @ output_weight + output_bias. Highest logit wins.
+For submit_patch, arguments are tensor (exact name from diagnostics), index (array of zero-based integers, one per tensor axis), delta (signed number to add), and reason (short causal hypothesis).
+For evaluate_practice or finalize_candidate, arguments contain candidate_id (the alias returned by submit_patch).
+For stop_without_candidate, arguments contain reason (a short explanation).
+Work from observed values. Evaluate each accepted candidate before deciding whether to finalize it."""
 
 
 def write_json(path, value):
@@ -177,7 +175,8 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                 if response.get("ok") and isinstance(result, dict):
                     if tool == "get_diagnostic_report":
                         base_sha = result.get("base_sha256")
-                        response = ({"practice_diagnostics": diagnostic_view(result)}
+                        response = ({"practice_diagnostics": diagnostic_view(result),
+                                     "next": "Infer which single coordinate caused the errors. Propose a numerical patch, or stop if no diagnosis is supported."}
                                     if not diagnostic_shown else {"status": "See previous diagnostics"})
                         diagnostic_shown = True
                     if tool == "submit_patch" and result.get("candidate_id"):
@@ -185,9 +184,11 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                         aliases[alias] = result["candidate_id"]
                         response = {"candidate_alias": alias, "next": "evaluate_practice"}
                     if tool == "evaluate_practice":
-                        response = {"practice_result": result["result"]}
+                        response = {"practice_result": result["result"],
+                                    "next": "Choose whether to finalize the evaluated alias or revise the diagnosis."}
                 if response.get("ok") is False:
-                    response = {"error": str(response.get("error", ""))[:350]}
+                    response = {"error": str(response.get("error", ""))[:350],
+                                "next": "Correct the request using the diagnostics. Do not repeat a rejected patch."}
                 messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
             if not ended:
                 log({"host_stop": "model turn budget exhausted"})
@@ -214,9 +215,13 @@ def main():
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--broker-python", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--seed-offset", type=int, required=True,
+                        help="fresh split seed offset, at least 20000, unique per study")
     parser.add_argument("--tasks", type=int, choices=range(1, 21), default=20,
                         metavar="1-20", help="execute a prefix of the frozen order")
     args = parser.parse_args()
+    if args.seed_offset < 20_000:
+        parser.error("--seed-offset must be at least 20000")
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     import torch
@@ -236,7 +241,7 @@ def main():
     # Fresh study data and a balanced four-mechanism prefix for a bounded smoke.
     by_id = {task["task_id"]: task for task in template["tasks"]}
     for task in template["tasks"]:
-        task["seed"] += 10_000
+        task["seed"] += args.seed_offset
     prefix = list({}.fromkeys(by_id[item]["mechanism"] for item in template["execution_order"]))
     first_ids = [next(item for item in template["execution_order"] if by_id[item]["mechanism"] == mechanism)
                  for mechanism in prefix]
