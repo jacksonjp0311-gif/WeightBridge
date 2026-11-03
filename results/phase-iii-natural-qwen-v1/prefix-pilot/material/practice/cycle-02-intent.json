@@ -1,0 +1,17 @@
+{
+  "diagnose": "Test whether a bounded rank-one edit can correct the signed choice response.",
+  "observe": "date-order errors in the local model on this practice suite.",
+  "optimize": {
+    "method": "activation_ridge",
+    "strengths": [
+      0.03,
+      0.07
+    ]
+  },
+  "schema": "weightbridge.awl.v1",
+  "target": [
+    "model.language_model.layers.23.mlp.down_proj.weight",
+    "model.language_model.layers.21.mlp.down_proj.weight",
+    "model.language_model.layers.19.mlp.down_proj.weight"
+  ]
+}

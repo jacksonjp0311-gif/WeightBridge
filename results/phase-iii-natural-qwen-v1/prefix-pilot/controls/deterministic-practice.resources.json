@@ -1,0 +1,180 @@
+{
+  "cpu_seconds": 53.859375,
+  "peak_vram_bytes": null,
+  "process_peak_rss_so_far_bytes": 2395860992,
+  "result": {
+    "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "base_target_correct": 5,
+    "candidate_sha256": "71f3ce1c5d9a1b2c40c5674e8b5ea0a2d92d0de14e84dc5ac716248a78addbd6",
+    "candidate_target_correct": 9,
+    "configuration": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "disposition": "PASS",
+    "max_sentinel_flips": 0,
+    "min_target_gain": 1,
+    "receipt_sha256": "32754a05ad26ecf07fa0a1de059263c1f29e483a52fa6e7d6d50feb99c323a2b",
+    "schema": "weightbridge.hf_edit_evaluation.v1",
+    "sentinel": [
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/integer-control/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/alphabet-control/06",
+        "label": "B"
+      }
+    ],
+    "sentinel_count": 12,
+    "sentinel_prediction_flips": 0,
+    "suite_sha256": "f30f44f4d71311fa43359c19040775460a73f02d1517cbdcdca0f4d0fe8f6496",
+    "target": [
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/word-order/06",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/word-order/08",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/practice/word-order/09",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/10",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/11",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/practice/word-order/12",
+        "label": "B"
+      }
+    ],
+    "target_corrections": 4,
+    "target_count": 12,
+    "target_gain": 4,
+    "target_regressions": 0
+  },
+  "status": "COMPLETE",
+  "wall_seconds": 23.155153900035657
+}

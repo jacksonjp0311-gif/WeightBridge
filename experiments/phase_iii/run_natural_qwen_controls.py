@@ -7,6 +7,8 @@ from pathlib import Path
 import sys
 import time
 
+import numpy as np
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
@@ -14,7 +16,7 @@ from weightbridge.adaptation.controls import build_matched_control, matched_rand
 from weightbridge.core import EditRejected, file_hash, json_dump_atomic
 from weightbridge.evaluation.hf_edit import evaluate_hf_edit
 from weightbridge.inspection.safetensors import load_checkpoint
-from weightbridge.patches.huggingface import apply_safetensors_patch
+from weightbridge.patches.huggingface import _to_float64, apply_safetensors_patch
 from weightbridge.provenance import peak_rss_bytes
 
 
@@ -32,6 +34,22 @@ def measure(operation):
         result = {"status": "HOLD", "reason": f"{type(exc).__name__}: {exc}"}
     return {**result, "wall_seconds": time.perf_counter() - wall, "cpu_seconds": time.process_time() - cpu,
             "process_peak_rss_so_far_bytes": peak_rss_bytes(), "peak_vram_bytes": None}
+
+
+def rounded_column_delta(base, candidate, patch, policy):
+    edit = patch["slices"][0]
+    name = edit["tensor"]
+    checkpoints = [load_checkpoint(path) for path in (base, candidate)]
+
+    def selected(checkpoint):
+        ref = checkpoint.tensors[name]
+        raw = checkpoint.read_raw(name, max_bytes=policy["max_tensor_bytes"])
+        return _to_float64(raw, ref.dtype).reshape(ref.shape)[:, edit["indices"]]
+
+    delta = selected(checkpoints[1]) - selected(checkpoints[0])
+    return {"requested_frobenius_norm": float(np.linalg.norm(edit["values"])),
+            "realized_frobenius_norm": float(np.linalg.norm(delta)),
+            "changed_entries": int(np.count_nonzero(delta))}
 
 
 def run(base, materialized, study_run, frozen_config, out):
@@ -91,7 +109,11 @@ def run(base, materialized, study_run, frozen_config, out):
         control = fit_gradient_control(base, read(practice), patch, protocol["inference"],
                                        **{key: recipe[key] for key in ("seed", "steps", "learning_rate")})
         json_dump_atomic(gradient_dir / "patch.json", control)
-        return apply_safetensors_patch(base, control, protocol["policy"], gradient_model)
+        receipt = apply_safetensors_patch(base, control, protocol["policy"], gradient_model)
+        rounded = rounded_column_delta(base, gradient_model, control, protocol["policy"])
+        if rounded["changed_entries"] != receipt["changed_entries"]:
+            raise ValueError("Rounded gradient changes differ from the patch receipt")
+        return {**receipt, "rounded_scope": rounded}
 
     builds = {"random": measure(random_control), "gradient": measure(gradient_control)}
     json_dump_atomic(out / "builds.json", builds)

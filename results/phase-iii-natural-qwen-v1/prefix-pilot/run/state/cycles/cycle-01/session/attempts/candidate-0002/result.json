@@ -1,0 +1,63 @@
+{
+  "base_target_correct": 5,
+  "candidate_id": "candidate-0002",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0002\\model",
+  "candidate_sha256": "092d35750e37a806bbd9365d74027c177f3dbabce86ef061f8d494bbae22b1a4",
+  "candidate_target_correct": 6,
+  "changed_entries": 64076,
+  "disposition": "PASS",
+  "parameter_fraction_changed": 7.336060771947585e-05,
+  "patch_file_sha256": "0ded518d080c7edc0925d23e2df0817400e5a59c5ebd31f6d092b86c8928b347",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0002\\patch.json",
+  "patch_sha256": "5f27a9ce38b08fe0619c4b32ac27429a67a874235aef08e2114797a681cd09e8",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0002\\practice_report.json",
+  "practice_report_sha256": "47b80a1d7d2e96cc8c3657ba2ea36fd6f7c9593b794089d91dca8c027d2f7cbc",
+  "proposal_kind": "direction",
+  "remaining_candidates": 0,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.03,
+  "target_corrections": 1,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/03",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. fvsn\nB. fvsw\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/06",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. hdgh\nB. hdgn\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/08",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. qszf\nB. qszx\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/09",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. hgrb\nB. hgru\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/10",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. hcir\nB. hcis\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-01/practice/word-order/11",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. euwc\nB. euwf\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 1,
+  "target_regressions": 0,
+  "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+}

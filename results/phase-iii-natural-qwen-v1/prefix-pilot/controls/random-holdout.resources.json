@@ -1,0 +1,180 @@
+{
+  "cpu_seconds": 52.578125,
+  "peak_vram_bytes": null,
+  "process_peak_rss_so_far_bytes": 2429927424,
+  "result": {
+    "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "base_target_correct": 7,
+    "candidate_sha256": "d54e89876bdd7d038a9162d5dd0987465489caad9b99fdc542ad49591d55f96f",
+    "candidate_target_correct": 7,
+    "configuration": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "disposition": "FAIL",
+    "max_sentinel_flips": 0,
+    "min_target_gain": 1,
+    "receipt_sha256": "6c4d630406b828968b02070595394cf8564e314ebdb87e6d720546f7dec166aa",
+    "schema": "weightbridge.hf_edit_evaluation.v1",
+    "sentinel": [
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/integer-control/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/alphabet-control/06",
+        "label": "B"
+      }
+    ],
+    "sentinel_count": 12,
+    "sentinel_prediction_flips": 0,
+    "suite_sha256": "f1b60c07a6107c155d732659213c5e1688e4675bd62844ab3152d77017e3cec4",
+    "target": [
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/04",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/06",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/07",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/08",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/09",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/10",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "candidate_prediction": "B",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/11",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "candidate_prediction": "A",
+        "id": "prefix-pilot/cycle-01/holdout/word-order/12",
+        "label": "B"
+      }
+    ],
+    "target_corrections": 0,
+    "target_count": 12,
+    "target_gain": 0,
+    "target_regressions": 0
+  },
+  "status": "COMPLETE",
+  "wall_seconds": 21.91239279997535
+}

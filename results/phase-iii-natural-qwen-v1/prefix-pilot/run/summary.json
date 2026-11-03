@@ -1,0 +1,293 @@
+{
+  "accepted_cycles": 0,
+  "cycles": [
+    {
+      "accepted": false,
+      "cycle_id": "cycle-01",
+      "family": "word-order",
+      "head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "ELIGIBLE",
+            "disposition": "PASS"
+          }
+        ],
+        "cycle_id": "cycle-01",
+        "elapsed_seconds": 112.44928669999354,
+        "finalist": {
+          "candidate_id": "candidate-0001",
+          "candidate_sha256": "71f3ce1c5d9a1b2c40c5674e8b5ea0a2d92d0de14e84dc5ac716248a78addbd6",
+          "strength": 0.03,
+          "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+        },
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "plan_sha256": "192aa288ebff3127c130c764b61d8a7217d908be2102cd1ea1b67c95666d936b",
+        "session_decision_sha256": "afb26afbeb5782c6e1a497f9aad09632efd490265ebac379fb48664cdda05efe"
+      },
+      "verification": {
+        "candidate_sha256": "71f3ce1c5d9a1b2c40c5674e8b5ea0a2d92d0de14e84dc5ac716248a78addbd6",
+        "cycle_id": "cycle-01",
+        "disposition": "REJECT",
+        "elapsed_seconds": 33.53565720003098,
+        "holdout_sha256": "f1b60c07a6107c155d732659213c5e1688e4675bd62844ab3152d77017e3cec4",
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "reason": "Target regressions exceeded the frozen threshold",
+        "report_sha256": "8d9c1278bfbd36420384e3fabac2c6de533eae12601243a63b3eff7e784bbb94",
+        "retention_count": 0,
+        "retention_flips": 0,
+        "sentinel_prediction_flips": 0,
+        "target_gain": 0,
+        "target_regressions": 1
+      }
+    },
+    {
+      "accepted": false,
+      "cycle_id": "cycle-02",
+      "family": "date-order",
+      "head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "search": {
+        "attempts": [
+          {
+            "candidate_id": "candidate-0001",
+            "diagnostic": "PREDICTIONS_UNCHANGED",
+            "disposition": "FAIL"
+          },
+          {
+            "candidate_id": "candidate-0002",
+            "diagnostic": "SENTINEL_REGRESSION",
+            "disposition": "FAIL"
+          }
+        ],
+        "cycle_id": "cycle-02",
+        "elapsed_seconds": 110.55734790000133,
+        "finalist": null,
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "plan_sha256": "d750ee33a06bdc11fcde496664089eb39e2393c3d7089a2a3737ca22dffa39a6",
+        "session_decision_sha256": "f5a662b1441820cd6e4600dd575ce520349398457e7f739106ab6265839c0a10"
+      },
+      "verification": {
+        "cycle_id": "cycle-02",
+        "disposition": "NO_FINALIST",
+        "elapsed_seconds": 0.004148299980442971,
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "reason": "No candidate passed practice"
+      }
+    }
+  ],
+  "final": {
+    "accepted_cycles": 0,
+    "base_target_correct": 7,
+    "configuration": {
+      "batch_size": 8,
+      "cpu_threads": 6,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "max_input_tokens": 128
+    },
+    "elapsed_seconds": 25.757736500003375,
+    "head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "head_target_correct": 7,
+    "paired_prompt_bootstrap": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean_difference": 0.0,
+      "n": 16,
+      "resamples": 10000,
+      "seed": 0
+    },
+    "root_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "schema": "weightbridge.phase_iii.final.v1",
+    "sentinel": [
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/integer-control/01",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/integer-control/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/integer-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/integer-control/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/integer-control/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/integer-control/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/alphabet-control/06",
+        "label": "B"
+      }
+    ],
+    "sentinel_count": 12,
+    "sentinel_prediction_flips": 0,
+    "suite_sha256": "b2dde538cae844109338df08c915051469d75337db0554dfe051fdc2da4a55b6",
+    "target": [
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/02",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/03",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/05",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/06",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/word-order/07",
+        "label": "A"
+      },
+      {
+        "base_prediction": "A",
+        "head_prediction": "A",
+        "id": "prefix-pilot/final/word-order/08",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/01",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/02",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/03",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/04",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/05",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/06",
+        "label": "B"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/07",
+        "label": "A"
+      },
+      {
+        "base_prediction": "B",
+        "head_prediction": "B",
+        "id": "prefix-pilot/final/date-order/08",
+        "label": "B"
+      }
+    ],
+    "target_count": 16,
+    "target_gain": 0,
+    "target_regressions": 0
+  },
+  "final_head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "original_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "protocol_sha256": "30474f71c2996bf91c078ffeb23a83c671ce8012bf55c2f7f7f3a73bb364dbbd",
+  "schema": "weightbridge.phase_iii.study_run.v1"
+}

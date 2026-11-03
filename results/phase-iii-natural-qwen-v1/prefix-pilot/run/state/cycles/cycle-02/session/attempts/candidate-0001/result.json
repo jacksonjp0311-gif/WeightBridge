@@ -1,0 +1,33 @@
+{
+  "base_target_correct": 11,
+  "candidate_id": "candidate-0001",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0001\\model",
+  "candidate_sha256": "e7b40b4e70b2d945afdd4bd05f56455b40076297d3a788ec304e68a0f3fa26ee",
+  "candidate_target_correct": 11,
+  "changed_entries": 63143,
+  "disposition": "FAIL",
+  "parameter_fraction_changed": 7.229241608762818e-05,
+  "patch_file_sha256": "74d11e5d782f17cb713104c1539657170cd409c56435d57c6d37930a2c463206",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0001\\patch.json",
+  "patch_sha256": "b0db62ba3252e24896998ac2d7de88ac49dfcdbae05fdd7f65a3f022fdeb9a8e",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0001\\practice_report.json",
+  "practice_report_sha256": "9c6568de834e2c32c676aea013af8d1974ab0f02a341eb356cff176b4298fa9b",
+  "proposal_kind": "direction",
+  "remaining_candidates": 1,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 0,
+  "strength": 0.03,
+  "target_corrections": 0,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "prefix-pilot/cycle-02/practice/date-order/09",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 27 February 2025\nB. 06 November 2025\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": 0,
+  "target_regressions": 0,
+  "tensor": "model.language_model.layers.23.mlp.down_proj.weight"
+}

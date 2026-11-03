@@ -1,0 +1,51 @@
+{
+  "base_target_correct": 11,
+  "candidate_id": "candidate-0002",
+  "candidate_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\model",
+  "candidate_sha256": "15eab581b81301cbb7b7833d06992b4583b6a75ec39af75acd79ceffcae4b1c3",
+  "candidate_target_correct": 8,
+  "changed_entries": 64964,
+  "disposition": "FAIL",
+  "parameter_fraction_changed": 7.437727885461061e-05,
+  "patch_file_sha256": "68c7c6d51095c03bf296f34e10490182e50cc99b0e9e768e3fc35769501a0015",
+  "patch_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\patch.json",
+  "patch_sha256": "9d64faf5f589b27724cfae26fdb19dc80344ad8e949677a1fe1a8cde29c3e451",
+  "practice_report_path": "$STUDY_RUN\\state\\cycles\\cycle-02\\session\\attempts\\candidate-0002\\practice_report.json",
+  "practice_report_sha256": "2eb07da2608bd2bd84fd2ad5af4a87b740b2e2a5407c9390c98dd9f14bbc4968",
+  "proposal_kind": "direction",
+  "remaining_candidates": 0,
+  "sentinel_count": 12,
+  "sentinel_prediction_flips": 1,
+  "strength": 0.03,
+  "target_corrections": 0,
+  "target_count": 12,
+  "target_failures": [
+    {
+      "id": "prefix-pilot/cycle-02/practice/date-order/01",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which calendar date is earlier?\nA. 05 October 1983\nB. 29 January 1983\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-02/practice/date-order/02",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which calendar date is earlier?\nA. 09 April 1997\nB. 23 January 1997\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-02/practice/date-order/09",
+      "label": "A",
+      "prediction": "B",
+      "text": "Which calendar date is earlier?\nA. 27 February 2025\nB. 06 November 2025\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/cycle-02/practice/date-order/12",
+      "label": "B",
+      "prediction": "A",
+      "text": "Which calendar date is earlier?\nA. 29 September 2018\nB. 11 September 2018\nAnswer with the letter A or B only."
+    }
+  ],
+  "target_gain": -3,
+  "target_regressions": 3,
+  "tensor": "model.language_model.layers.21.mlp.down_proj.weight"
+}

@@ -1,0 +1,47 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "cycles": [
+    {
+      "family": "word-order",
+      "holdout_sha256": "f1b60c07a6107c155d732659213c5e1688e4675bd62844ab3152d77017e3cec4",
+      "id": "cycle-01",
+      "intent_sha256": "85a66611fc1936d80f9d2806795221b82c222d79c0787c2d65064f7d485c8cae",
+      "practice_sha256": "f30f44f4d71311fa43359c19040775460a73f02d1517cbdcdca0f4d0fe8f6496"
+    },
+    {
+      "family": "date-order",
+      "holdout_sha256": "4102da1da3ac57af69e947170e33be47224c57849fcd6a9af77242111d2aa692",
+      "id": "cycle-02",
+      "intent_sha256": "29e9792fe41793827d7728c5d45d10928f3e866c4d97d5ae140140165ff49672",
+      "practice_sha256": "09f4f48749c2725983de6fb96f815c0ae47c178bb2c6cedf971e6593fd1a4bd7"
+    }
+  ],
+  "edit_cost_penalty": 1.0,
+  "final_sha256": "b2dde538cae844109338df08c915051469d75337db0554dfe051fdc2da4a55b6",
+  "inference": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "max_candidates": 2,
+  "max_sentinel_flips": 0,
+  "max_target_regressions": 0,
+  "min_target_gain": 1,
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.23.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.19.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "preservation_penalty": 1.0,
+  "schema": "weightbridge.phase_iii.protocol.v1"
+}

@@ -72,6 +72,32 @@ behavior in the test fixture.
 Real-model qualification requires sequential accepted improvements and a
 separate cumulative result. The natural Qwen study uses the pinned original
 checkpoint and authored, disjoint practice and evaluation variants. The
-five-cycle gate requires at least three retained improvements across the
-attempt. The two-cycle pilot measures execution and transfer on a smaller
-budget. It cannot clear that qualification gate.
+five-cycle gate requires at least three active accepted improvements, a
+positive gain on the final suite, and zero final target regressions or
+sentinel flips. Each cycle permits two candidates and requires at least one
+new held-out answer, no target regressions, and zero sentinel and retention
+flips. The two-cycle pilot is a separate, smaller transfer test.
+[Frozen full protocol](../benchmarks/configs/phase_iii_natural_qwen_v1.json)
+· [Qualification criteria](../benchmarks/configs/phase_iii_natural_qwen_v1_qualification.json)
+· [Reproduction instructions](../experiments/phase_iii/README.md)
+
+### Two-cycle pilot
+
+The word-order practice winner improved 5/12 to 9/12. On unseen inputs it
+fixed one answer and broke another, leaving 7/12 correct. The verifier
+rejected it. Neither date-order candidate passed practice. The original
+checkpoint stayed active and scored 7/16 on the separate final suite.
+
+| Word-order comparator | Practice correct | Holdout correct | Holdout target regressions | Sentinel flips |
+|---|---:|---:|---:|---:|
+| Original | 5/12 | 7/12 | 0 | 0 |
+| First activation-ridge proposal | 9/12 | 7/12 | 1 | 0 |
+| Matched random row permutation | 5/12 | 7/12 | 0 | 0 |
+| Two-step rank-one Adam | 8/12 | 5/12 | 3 | 0 |
+
+The first proposal was also the practice-selected finalist. Its comparator
+reevaluation is a repeat measurement of the same intervention. The gradient
+arm trained two factors on the same selected columns and capped the update
+norm at the activation-ridge proposal's requested norm. The three arms used
+the same evaluation prompts, with all fitting performed on practice data.
+[Pilot suites, decisions, controls and timings](../results/phase-iii-natural-qwen-v1/prefix-pilot/)

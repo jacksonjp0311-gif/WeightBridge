@@ -1,0 +1,560 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "families": {
+    "bit-parity": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/bit-parity/01",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/02",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/04",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0.\nA. 1\nB. 0\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/05",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0.\nA. 1\nB. 0\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/06",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/07",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/08",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/09",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0.\nA. 1\nB. 0\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/10",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1.\nA. 1\nB. 0\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/11",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/bit-parity/12",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the XOR of these bits? 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1.\nA. 1\nB. 0\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "conjunction-count": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/conjunction-count/01",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 67, 21, 34, 51, 20, 43, 32, 22, 45, 29, 58, 24, count values that are odd and strictly greater than 29.\nA. 5\nB. 4\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/02",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 68, 20, 67, 56, 47, 32, 18, 12, 24, 35, 64, 51, count values that are odd and strictly greater than 51.\nA. 1\nB. 2\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 57, 61, 23, 22, 18, 29, 64, 60, 46, 28, 13, 54, count values that are odd and strictly greater than 61.\nA. 1\nB. 0\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/04",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 64, 33, 61, 53, 65, 54, 19, 51, 37, 49, 14, 63, count values that are odd and strictly greater than 37.\nA. 6\nB. 7\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/05",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 52, 60, 56, 43, 41, 67, 40, 57, 30, 21, 26, 58, count values that are odd and strictly greater than 43.\nA. 2\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/06",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 18, 67, 36, 11, 53, 47, 61, 14, 54, 31, 64, 34, count values that are odd and strictly greater than 53.\nA. 2\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/07",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 63, 62, 31, 65, 16, 53, 55, 59, 64, 29, 52, 12, count values that are odd and strictly greater than 31.\nA. 6\nB. 5\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/08",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 11, 58, 23, 47, 36, 50, 55, 14, 32, 30, 22, 68, count values that are odd and strictly greater than 47.\nA. 2\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/09",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 28, 38, 56, 45, 55, 49, 60, 31, 33, 40, 39, 17, count values that are odd and strictly greater than 17.\nA. 7\nB. 6\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/10",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 47, 65, 43, 50, 42, 41, 27, 23, 37, 15, 12, 29, count values that are odd and strictly greater than 65.\nA. 0\nB. 1\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/11",
+          "label": "A",
+          "prediction": "A",
+          "text": "From 42, 61, 19, 29, 65, 36, 12, 17, 21, 51, 41, 64, count values that are odd and strictly greater than 51.\nA. 2\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/conjunction-count/12",
+          "label": "B",
+          "prediction": "A",
+          "text": "From 47, 32, 37, 55, 18, 67, 15, 38, 62, 19, 30, 49, count values that are odd and strictly greater than 15.\nA. 7\nB. 6\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "controls": {
+      "correct": 8,
+      "rows": [
+        {
+          "id": "screen/integer-control/01",
+          "label": "B",
+          "prediction": "B",
+          "text": "Which number is greater, 77 or 64?\nA. 64\nB. 77\nReply with only A or B."
+        },
+        {
+          "id": "screen/integer-control/02",
+          "label": "B",
+          "prediction": "B",
+          "text": "Which number is greater, 16 or 25?\nA. 16\nB. 25\nReply with only A or B."
+        },
+        {
+          "id": "screen/integer-control/03",
+          "label": "A",
+          "prediction": "A",
+          "text": "Which number is greater, 13 or 70?\nA. 70\nB. 13\nReply with only A or B."
+        },
+        {
+          "id": "screen/integer-control/04",
+          "label": "A",
+          "prediction": "A",
+          "text": "Which number is greater, 44 or 43?\nA. 44\nB. 43\nReply with only A or B."
+        },
+        {
+          "id": "screen/integer-control/05",
+          "label": "A",
+          "prediction": "A",
+          "text": "Which number is greater, 62 or 43?\nA. 62\nB. 43\nReply with only A or B."
+        },
+        {
+          "id": "screen/integer-control/06",
+          "label": "B",
+          "prediction": "A",
+          "text": "Which number is greater, 50 or 17?\nA. 17\nB. 50\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/01",
+          "label": "A",
+          "prediction": "A",
+          "text": "In the list I, T, A, which letter comes first in alphabetical order?\nA. A\nB. T\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/02",
+          "label": "B",
+          "prediction": "A",
+          "text": "In the list L, J, C, which letter comes first in alphabetical order?\nA. L\nB. C\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "In the list M, K, W, which letter comes first in alphabetical order?\nA. W\nB. K\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/04",
+          "label": "A",
+          "prediction": "A",
+          "text": "In the list I, S, P, which letter comes first in alphabetical order?\nA. I\nB. S\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/05",
+          "label": "B",
+          "prediction": "A",
+          "text": "In the list B, G, K, which letter comes first in alphabetical order?\nA. K\nB. B\nReply with only A or B."
+        },
+        {
+          "id": "screen/alphabet-control/06",
+          "label": "A",
+          "prediction": "A",
+          "text": "In the list C, J, H, which letter comes first in alphabetical order?\nA. C\nB. J\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "modular-arithmetic": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/modular-arithmetic/01",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (53 * 49 + 44) is divided by 7?\nA. 2\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/02",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (45 * 12 + 31) is divided by 19?\nA. 1\nB. 2\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (53 * 21 + 5) is divided by 17?\nA. 14\nB. 13\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/04",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (48 * 32 + 1) is divided by 13?\nA. 4\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/05",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (36 * 39 + 16) is divided by 19?\nA. 15\nB. 14\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/06",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (43 * 26 + 11) is divided by 17?\nA. 8\nB. 7\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/07",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (57 * 42 + 6) is divided by 17?\nA. 3\nB. 4\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/08",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (17 * 23 + 35) is divided by 7?\nA. 0\nB. 6\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/09",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (16 * 36 + 44) is divided by 13?\nA. 9\nB. 10\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/10",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (32 * 56 + 38) is divided by 19?\nA. 6\nB. 7\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/11",
+          "label": "A",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (26 * 18 + 24) is divided by 11?\nA. 8\nB. 9\nReply with only A or B."
+        },
+        {
+          "id": "screen/modular-arithmetic/12",
+          "label": "B",
+          "prediction": "A",
+          "text": "What is the least nonnegative remainder when (15 * 35 + 44) is divided by 13?\nA. 11\nB. 10\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "overlap-count": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/overlap-count/01",
+          "label": "A",
+          "prediction": "A",
+          "text": "In NQNQNQNQNQNQNQNQNQNQNQPNQNQNQNQNQNQNQ, how many times does NQNQNQNQ occur as a contiguous substring? Count overlapping occurrences.\nA. 12\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/02",
+          "label": "A",
+          "prediction": "A",
+          "text": "In TDTDTDTDTDTDTDTDKTDTDTDTDTD, how many times does TDTDTD occur as a contiguous substring? Count overlapping occurrences.\nA. 9\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "In EMEMEMEMEMEMEMWEMEMEMEM, how many times does EMEM occur as a contiguous substring? Count overlapping occurrences.\nA. 5\nB. 9\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/04",
+          "label": "A",
+          "prediction": "A",
+          "text": "In ESESESESESESESESESESKESESES, how many times does ESESESES occur as a contiguous substring? Count overlapping occurrences.\nA. 7\nB. 2\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/05",
+          "label": "A",
+          "prediction": "A",
+          "text": "In BCBCBCBCBCBCBCBCBCBCBCQBCBCBC, how many times does BCBC occur as a contiguous substring? Count overlapping occurrences.\nA. 12\nB. 6\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/06",
+          "label": "B",
+          "prediction": "A",
+          "text": "In QRQRQRQRQRQRQRQRQRQRCQRQRQRQRQR, how many times does QRQR occur as a contiguous substring? Count overlapping occurrences.\nA. 7\nB. 13\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/07",
+          "label": "B",
+          "prediction": "A",
+          "text": "In QCQCQCQCQCQCQCQCTQCQCQCQCQCQCQC, how many times does QCQC occur as a contiguous substring? Count overlapping occurrences.\nA. 7\nB. 13\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/08",
+          "label": "B",
+          "prediction": "A",
+          "text": "In GRGRGRGRGRGRGRGRGRGRGRHGRGRGRGR, how many times does GRGRGRGR occur as a contiguous substring? Count overlapping occurrences.\nA. 3\nB. 9\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/09",
+          "label": "B",
+          "prediction": "A",
+          "text": "In ZXZXZXZXZXZXZXZXZXZXZXNZXZXZX, how many times does ZXZXZXZX occur as a contiguous substring? Count overlapping occurrences.\nA. 2\nB. 8\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/10",
+          "label": "A",
+          "prediction": "A",
+          "text": "In DFDFDFDFDFDFTDFDFDF, how many times does DFDFDF occur as a contiguous substring? Count overlapping occurrences.\nA. 5\nB. 3\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/11",
+          "label": "B",
+          "prediction": "A",
+          "text": "In WDWDWDWDWDWDWDGWDWDWDWDWD, how many times does WDWDWDWD occur as a contiguous substring? Count overlapping occurrences.\nA. 2\nB. 6\nReply with only A or B."
+        },
+        {
+          "id": "screen/overlap-count/12",
+          "label": "A",
+          "prediction": "A",
+          "text": "In VTVTVTVTVTVTVTVTBVTVTVTVTVTVT, how many times does VTVTVTVT occur as a contiguous substring? Count overlapping occurrences.\nA. 8\nB. 3\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "signed-arithmetic": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/signed-arithmetic/01",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 173 - (-31) * 9.\nA. 452\nB. 1836\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/02",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 153 - (-40) * 6.\nA. 1158\nB. 393\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/03",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 124 - (-42) * 7.\nA. 1162\nB. 418\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/04",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 153 - (-35) * 9.\nA. 1692\nB. 468\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/05",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 119 - (-22) * 9.\nA. 317\nB. 1269\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/06",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 169 - (-32) * 4.\nA. 804\nB. 297\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/07",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 143 - (-13) * 9.\nA. 260\nB. 1404\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/08",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 124 - (-39) * 5.\nA. 815\nB. 319\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/09",
+          "label": "B",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 135 - (-26) * 9.\nA. 1449\nB. 369\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/10",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 111 - (-24) * 5.\nA. 231\nB. 675\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/11",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 104 - (-14) * 4.\nA. 160\nB. 472\nReply with only A or B."
+        },
+        {
+          "id": "screen/signed-arithmetic/12",
+          "label": "A",
+          "prediction": "A",
+          "text": "Using standard precedence, compute 116 - (-22) * 6.\nA. 248\nB. 828\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    },
+    "weekday-offset": {
+      "correct": 6,
+      "rows": [
+        {
+          "id": "screen/weekday-offset/01",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Thursday, go back 47 days, then go forward 42 days. What weekday do you land on?\nA. Friday\nB. Saturday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/02",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Monday, go back 46 days, then go forward 43 days. What weekday do you land on?\nA. Friday\nB. Thursday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/03",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Thursday, go back 48 days, then go forward 46 days. What weekday do you land on?\nA. Tuesday\nB. Wednesday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/04",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Saturday, go back 33 days, then go forward 20 days. What weekday do you land on?\nA. Saturday\nB. Sunday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/05",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Sunday, go back 46 days, then go forward 16 days. What weekday do you land on?\nA. Friday\nB. Saturday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/06",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Friday, go back 27 days, then go forward 50 days. What weekday do you land on?\nA. Sunday\nB. Saturday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/07",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Saturday, go back 21 days, then go forward 21 days. What weekday do you land on?\nA. Saturday\nB. Sunday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/08",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Monday, go back 23 days, then go forward 43 days. What weekday do you land on?\nA. Saturday\nB. Sunday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/09",
+          "label": "A",
+          "prediction": "A",
+          "text": "Start on Tuesday, go back 10 days, then go forward 28 days. What weekday do you land on?\nA. Saturday\nB. Sunday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/10",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Thursday, go back 27 days, then go forward 37 days. What weekday do you land on?\nA. Monday\nB. Sunday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/11",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Friday, go back 29 days, then go forward 22 days. What weekday do you land on?\nA. Saturday\nB. Friday\nReply with only A or B."
+        },
+        {
+          "id": "screen/weekday-offset/12",
+          "label": "B",
+          "prediction": "A",
+          "text": "Start on Saturday, go back 36 days, then go forward 48 days. What weekday do you land on?\nA. Friday\nB. Thursday\nReply with only A or B."
+        }
+      ],
+      "total": 12
+    }
+  },
+  "inference": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 128
+  },
+  "schema": "weightbridge.phase_iii.calibration.v1",
+  "seed": "weightbridge-phase-iii-natural-qwen-v1"
+}

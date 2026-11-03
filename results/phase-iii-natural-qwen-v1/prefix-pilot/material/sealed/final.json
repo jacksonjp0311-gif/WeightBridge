@@ -1,0 +1,151 @@
+{
+  "choices": [
+    "A",
+    "B"
+  ],
+  "schema": "weightbridge.hf_edit_suite.v1",
+  "sentinel": [
+    {
+      "id": "prefix-pilot/final/integer-control/01",
+      "label": "A",
+      "text": "Which number is greater, 68 or 14?\nA. 68\nB. 14\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/integer-control/02",
+      "label": "B",
+      "text": "Which number is greater, 82 or 54?\nA. 54\nB. 82\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/integer-control/03",
+      "label": "A",
+      "text": "Which number is greater, 86 or 45?\nA. 86\nB. 45\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/integer-control/04",
+      "label": "A",
+      "text": "Which number is greater, 31 or 66?\nA. 66\nB. 31\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/integer-control/05",
+      "label": "B",
+      "text": "Which number is greater, 82 or 72?\nA. 72\nB. 82\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/integer-control/06",
+      "label": "B",
+      "text": "Which number is greater, 26 or 83?\nA. 26\nB. 83\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/01",
+      "label": "B",
+      "text": "In the list P, L, S, which letter comes first in alphabetical order?\nA. S\nB. L\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/02",
+      "label": "A",
+      "text": "In the list L, F, S, which letter comes first in alphabetical order?\nA. F\nB. S\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/03",
+      "label": "A",
+      "text": "In the list P, W, N, which letter comes first in alphabetical order?\nA. N\nB. W\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/04",
+      "label": "A",
+      "text": "In the list O, C, T, which letter comes first in alphabetical order?\nA. C\nB. T\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/05",
+      "label": "B",
+      "text": "In the list E, L, R, which letter comes first in alphabetical order?\nA. R\nB. E\nReply with only A or B."
+    },
+    {
+      "id": "prefix-pilot/final/alphabet-control/06",
+      "label": "B",
+      "text": "In the list M, V, W, which letter comes first in alphabetical order?\nA. W\nB. M\nReply with only A or B."
+    }
+  ],
+  "target": [
+    {
+      "id": "prefix-pilot/final/word-order/01",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. ngrn\nB. ngrm\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/02",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. euzc\nB. euzu\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/03",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. oagr\nB. oagg\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/04",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. uvwb\nB. uvwy\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/05",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. jnhj\nB. jnhg\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/06",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. eeer\nB. eeey\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/07",
+      "label": "A",
+      "text": "Which of these strings comes first in alphabetical order?\nA. wxfs\nB. wxft\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/word-order/08",
+      "label": "B",
+      "text": "Which of these strings comes first in alphabetical order?\nA. yksp\nB. yksa\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/01",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 10 July 1998\nB. 03 April 1998\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/02",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 14 May 1998\nB. 28 March 1998\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/03",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 09 November 2004\nB. 08 December 2004\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/04",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 26 August 2024\nB. 02 September 2024\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/05",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 20 February 1998\nB. 22 February 1998\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/06",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 13 October 2001\nB. 09 September 2001\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/07",
+      "label": "A",
+      "text": "Which calendar date is earlier?\nA. 27 July 2017\nB. 18 December 2017\nAnswer with the letter A or B only."
+    },
+    {
+      "id": "prefix-pilot/final/date-order/08",
+      "label": "B",
+      "text": "Which calendar date is earlier?\nA. 27 August 1984\nB. 16 March 1984\nAnswer with the letter A or B only."
+    }
+  ]
+}

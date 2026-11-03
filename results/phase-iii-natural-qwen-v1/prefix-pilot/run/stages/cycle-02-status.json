@@ -1,0 +1,68 @@
+{
+  "report": {
+    "ancestry": [
+      {
+        "cycle_id": null,
+        "holdout_path": null,
+        "holdout_sha256": null,
+        "path": "$BASE_CHECKPOINT",
+        "sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8"
+      }
+    ],
+    "events": [
+      {
+        "candidate": {
+          "path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model",
+          "sha256": "71f3ce1c5d9a1b2c40c5674e8b5ea0a2d92d0de14e84dc5ac716248a78addbd6"
+        },
+        "cycle_id": "cycle-01",
+        "event_sha256": "e5760a62e0b803824c03e6d33112189c8d950fef96daba5bbf94c7d76c760c7b",
+        "kind": "REJECT",
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "previous_sha256": "c9f249de8e2b73956bc2933904a5ab0bf771403eae6773c5a2bb1f75dfa18e19",
+        "reason": "Target regressions exceeded the frozen threshold",
+        "schema": "weightbridge.checkpoint_lineage_event.v1",
+        "sequence": 1,
+        "verification": {
+          "disposition": "FAIL",
+          "receipt": {
+            "path": "$STUDY_RUN\\state\\cycles\\cycle-01\\session\\attempts\\candidate-0001\\model\\.weightbridge_receipt.json",
+            "sha256": "32754a05ad26ecf07fa0a1de059263c1f29e483a52fa6e7d6d50feb99c323a2b"
+          },
+          "report": {
+            "path": "$STUDY_RUN\\state\\evaluation\\cycle-01\\report.json",
+            "sha256": "8d9c1278bfbd36420384e3fabac2c6de533eae12601243a63b3eff7e784bbb94"
+          },
+          "sentinel_prediction_flips": 0,
+          "source_holdout": {
+            "path": "$FROZEN_MATERIAL\\sealed\\cycle-01.json",
+            "sha256": "f1b60c07a6107c155d732659213c5e1688e4675bd62844ab3152d77017e3cec4"
+          },
+          "suite": {
+            "path": "$STUDY_RUN\\state\\evaluation\\cycle-01\\suite.json",
+            "sha256": "f1b60c07a6107c155d732659213c5e1688e4675bd62844ab3152d77017e3cec4"
+          },
+          "target_gain": 0
+        }
+      },
+      {
+        "cycle_id": "cycle-02",
+        "event_sha256": "2b33dd3dcd467b99ce4b17be9b6547e77581e35e63af8e8c84630d8b64991118",
+        "kind": "REJECT",
+        "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "previous_sha256": "9183b966f75fed9e6f15916d237755f5a3a400f0da2548ce277808587a259c78",
+        "reason": "No candidate passed practice",
+        "schema": "weightbridge.checkpoint_lineage_event.v1",
+        "sequence": 2
+      }
+    ],
+    "head_path": "$BASE_CHECKPOINT",
+    "head_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "last_event_sha256": "e7548697f70a9f544c8e96c63ac1cc9e260f69dc4beeb7f4d7a734455a073513",
+    "root_path": "$BASE_CHECKPOINT",
+    "root_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "schema": "weightbridge.checkpoint_lineage.v1"
+  },
+  "stage": "status",
+  "wall_seconds": 2.9892250999691896
+}
