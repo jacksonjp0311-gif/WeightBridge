@@ -30,11 +30,12 @@ LAYERS = (19, 21, 23)
 WIDTH = 64
 SENTINEL_WEIGHT = 64.0
 SEARCH_SENTINEL_WEIGHT = 256.0
+MAX_SENTINEL_DRIFT = 0.25
 BATCH = 8
 STRENGTHS = (0.01, 0.02, 0.025, 0.03, 0.035, 0.04, 0.06, 0.08)
 FAULT_STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28, 2.56, 4.0)
-SPLIT_SEEDS = {"construction": 843005, "practice": 843006, "holdout": 843007}
-RANDOM_SEEDS = (843021, 843022, 843023)
+SPLIT_SEEDS = {"construction": 853005, "practice": 853006, "holdout": 853007}
+RANDOM_SEEDS = (853021, 853022, 853023)
 
 
 def timestamp():
@@ -82,7 +83,7 @@ def build_splits(seeds):
     )
     suffix = "\nAnswer with the letter A or B only."
     sizes = {"construction": (12, 24), "practice": (12, 40), "holdout": (24, 32)}
-    shifts = {"construction": (0, 2), "practice": (1, 4), "holdout": (6, 7)}
+    shifts = {"construction": (0, 2), "practice": (1, 4), "holdout": (3, 5)}
     sets = {}
     used_pairs = set()
     for split, (n_target, n_other) in sizes.items():
@@ -261,7 +262,8 @@ def prepare(run, pristine, fault_seed):
         "fault_strengths": list(FAULT_STRENGTHS), "policy": policy(),
         "activation_gate": {"columns": WIDTH, "sentinel_weight": SENTINEL_WEIGHT},
         "search_activation_gate": {"columns": WIDTH, "sentinel_weight": SEARCH_SENTINEL_WEIGHT},
-        "practice_selection": "minimum_sentinel_drift_at_half_best_target_gain",
+        "practice_selection": "max_target_gain_with_small_sentinel_drift",
+        "max_practice_sentinel_margin_drift": MAX_SENTINEL_DRIFT,
         "practice_seed": seeds["practice"], "random_control_seeds": list(RANDOM_SEEDS),
         "practice_sha256": digest(public / "practice.json"),
         "holdout_sha256": digest(sealed / "holdout.json"),
@@ -348,11 +350,10 @@ def search(public, output):
                              "sentinel_margin_drift": drift,
                              "rounded_frobenius_norm": norm, "rows": scores})
         print(f"Practice search finished layer {layer}.", flush=True)
-    eligible = [(i, row) for i, row in enumerate(attempts)
-                if row.get("target_gain", 0) > 0 and row["sentinel_flips"] == 0]
-    max_gain = max((row["target_gain"] for _, row in eligible), default=0)
-    best = min(((row["sentinel_margin_drift"], -row["target_gain"], row["rounded_frobenius_norm"],
-                 -row["target_margin_gain"], i) for i, row in eligible if 2 * row["target_gain"] >= max_gain),
+    best = min(((-row["target_gain"], row["sentinel_margin_drift"], row["rounded_frobenius_norm"],
+                 -row["target_margin_gain"], i) for i, row in enumerate(attempts)
+                if row.get("target_gain", 0) > 0 and row["sentinel_flips"] == 0
+                and row["sentinel_margin_drift"] <= config["max_practice_sentinel_margin_drift"]),
                default=None)
     write(output / "search.json", {"baseline": baseline, "attempts": attempts,
                                    "selected_attempt": None if best is None else best[-1],
