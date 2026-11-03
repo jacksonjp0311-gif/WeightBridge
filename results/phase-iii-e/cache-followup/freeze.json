@@ -1,0 +1,26 @@
+{
+  "protocol": {
+    "archived_selector_report_sha256": "a4209675edd8dcc56228ebceec9da2bcd8ec9c794f7eb4c758b2799f7ac36a00",
+    "comparators": [
+      "original_adaptive",
+      "cache_reusing_adaptive",
+      "all_diagnostics"
+    ],
+    "rows_per_mechanism": 130,
+    "schema": "weightbridge.anmc.cached_diagnostics_protocol.v1",
+    "success_criteria": {
+      "lower_adaptive_work_units": true,
+      "matching_adaptive_checkpoint_hashes": true,
+      "matching_adaptive_decisions": true
+    },
+    "test_seed": 61031
+  },
+  "source_sha256": {
+    "experiments/phase_iiie/cache_protocol.json": "14f81b9def10b3a60546b18d2cad9e3f6c556fdc9800e7a43efb9327026b99c1",
+    "experiments/phase_iiie/cached_diagnostics.py": "501eced88ecd3fab7c2b18a445a991bd80bf545e39d5d76aa6d082738343cc25",
+    "experiments/phase_iiie/run_synthetic.py": "1968042c14f68bc01e2a56b0b301e4466c5911eedb6b292ca8b97982be7ec603",
+    "experiments/phase_iiie/synthetic_protocol.json": "c0ba4474a2cabe5b1b736b4d33c48fe6e402e9441e1c1c9abd2a0896f6888c21",
+    "experiments/phase_iiie/synthetic_tasks.py": "ac91a5334bce242d1bd118c4d3a214a096e27afa4446721027ea390b30c4c107",
+    "weightbridge/adaptation/meta_controller.py": "02ffd594df6cda5c63b2021297de3d5449dfadcf67553dd3aec6aaa430ddc9f7"
+  }
+}

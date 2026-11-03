@@ -1,0 +1,83 @@
+{
+  "adaptive_matching_rows": 780,
+  "adaptive_row_digests": {
+    "cache_reusing_adaptive": "040980872fc416724efd12ab70b38331d56bb59f4c3f3dd9640c557c7d35b24f",
+    "original_adaptive": "040980872fc416724efd12ab70b38331d56bb59f4c3f3dd9640c557c7d35b24f"
+  },
+  "adaptive_work_units_saved": 4030.0,
+  "comparisons": {
+    "all_diagnostics": {
+      "cpu_seconds": 0.578125,
+      "diagnostics": {
+        "curvature": 701,
+        "measure": 130,
+        "reachability": 701
+      },
+      "harmful": 18,
+      "improved": 255,
+      "mean_utility": 0.08435384615384614,
+      "n": 780,
+      "total_cost": {
+        "backwards": 1713,
+        "candidates": 1244,
+        "curvature": 827,
+        "diagnostics": 3844,
+        "forwards": 4630,
+        "linear_trials": 227328,
+        "reloads": 1798,
+        "units": 25534.0
+      },
+      "wall_seconds": 0.5782529999851249
+    },
+    "cache_reusing_adaptive": {
+      "cpu_seconds": 0.515625,
+      "diagnostics": {
+        "curvature": 310,
+        "measure": 130,
+        "reachability": 701
+      },
+      "harmful": 19,
+      "improved": 255,
+      "mean_utility": 0.09565897435897434,
+      "n": 780,
+      "total_cost": {
+        "backwards": 1715,
+        "candidates": 1252,
+        "curvature": 436,
+        "diagnostics": 3453,
+        "forwards": 4640,
+        "linear_trials": 233472,
+        "reloads": 1808,
+        "units": 23731.0
+      },
+      "wall_seconds": 0.5268732999684289
+    },
+    "original_adaptive": {
+      "cpu_seconds": 0.6875,
+      "diagnostics": {
+        "curvature": 310,
+        "measure": 130,
+        "reachability": 701
+      },
+      "harmful": 19,
+      "improved": 255,
+      "mean_utility": 0.06465897435897436,
+      "n": 780,
+      "total_cost": {
+        "backwards": 2335,
+        "candidates": 1252,
+        "curvature": 436,
+        "diagnostics": 4383,
+        "forwards": 5260,
+        "linear_trials": 312832,
+        "reloads": 1808,
+        "units": 27761.0
+      },
+      "wall_seconds": 0.6747521999641322
+    }
+  },
+  "freeze_sha256": "5e80b6b0eff2d9816b71ee38038fdd5bb9c63147e1c84113669e062cd5786c83",
+  "gate_passed": true,
+  "outcomes_sha256": "5559ac40913bc6d853c0702b5c2f69f2217913160d2491b2c45e39f078ba2457",
+  "schema": "weightbridge.anmc.cached_diagnostics_report.v1"
+}

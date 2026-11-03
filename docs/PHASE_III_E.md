@@ -37,7 +37,8 @@ Each preservation inequality has the form
 The solver intersects target slabs, preservation halfspaces, and the norm
 ball using bounded Dykstra projections. A failed search can be
 indeterminate. A feasible witness certifies the stated linear constraints
-and still needs remeasurement after a real edit.
+and still needs remeasurement after a real edit. The two-coordinate
+benchmark uses its own bounded grid for the local reachability feature.
 
 ## Paired question geometry
 
@@ -49,6 +50,13 @@ question margin `m` and an opposite-question margin `r`, the odd component
 both margins leaves the odd component invariant. The decomposition is an
 algebraic diagnostic. Other differences between the prompts can also
 affect the score.
+
+If the original answer is 0 and the opposite answer is 1, both raw
+decisions are correct exactly when the evidence exceeds the absolute
+shared preference. A positive odd component can fall short of that
+threshold. This distinction explains why the paired ranker can score
+well even when an individual conditional prompt still favors the wrong
+content.
 
 The prototype loss adds `softplus(-m)`, `softplus(r)`, and a nonnegative
 multiple of squared shared preference. Its derivatives with respect to
@@ -156,6 +164,15 @@ Training and calibration together cost 183,288 work units before fitting.
 The full run, including evaluator-only profiles, took 32.34 wall seconds
 and 31.70 process CPU seconds.
 
+The per-policy utility in the table charges test-time work. If the full
+183,288-unit development cost is charged to D on this one cohort, its mean
+utility drops by 0.705. Against fixed interaction, D gives up 273 repairs,
+avoids 248 harmful finalists, and spends 1,832 extra test-time units.
+At the frozen work price it needs a harm penalty above about 1.15 to win
+that comparison before amortizing development cost. These calculations
+use the observed cohort and do not establish a deployment break-even
+point.
+
 The exact shift counterexample held on all 130 observational pairs.
 Learned D chose the same method within each pair and produced 130
 verified repairs and 130 harmful finalists on the 260 reversal tasks.
@@ -178,6 +195,26 @@ the independent verification gate.
 [Frozen protocol](../experiments/phase_iiie/synthetic_protocol.json) ·
 [Raw outcomes](../results/phase-iii-e/synthetic/outcomes.jsonl.gz)
 
+## Diagnostic cache follow-up
+
+The original adaptive run repeated its reachability and preservation
+features whenever it requested curvature. The follow-up froze a fresh
+780-task familiar roster, reused the archived trained models and thresholds,
+and added only the curvature signal to the cached evidence. The old and
+new adaptive implementations matched on all 780 decisions, probabilities,
+stored candidate hashes, and verification outcomes. Both produced 255
+repairs and 19 harmful finalists.
+
+Caching cut work from 27,761 to 23,731 units, a 14.5% saving, and increased
+mean utility from +0.0647 to +0.0957. The all-diagnostics comparator
+produced 255 repairs and 18 harmful finalists at 25,534 units and +0.0844
+utility. Process CPU was 0.688 seconds for original adaptive, 0.516 for
+cached adaptive, and 0.578 for all diagnostics. Those timings come from
+one short run. The operation counts isolate avoided recomputation in
+this fixture, and the experiment uses the familiar mechanisms.
+[Follow-up report](../results/phase-iii-e/cache-followup/report.json) ·
+[Follow-up protocol](../experiments/phase_iiie/cache_protocol.json)
+
 ## Replay
 
 Use new output directories. Synthetic replay uses the standard research
@@ -186,6 +223,7 @@ checkpoint and its inference dependencies.
 
 ```powershell
 python experiments/phase_iiie/run_synthetic.py --out $Synthetic
+python experiments/phase_iiie/cached_diagnostics.py --out $CacheStudy
 python experiments/phase_iiie/qwen_roster.py --out $Material
 python experiments/phase_iiie/qwen_measure.py run --base $Base --material $Material --run $Run
 python experiments/phase_iiie/qwen_measure.py archive --material $Material --run $Run --archive $Archive

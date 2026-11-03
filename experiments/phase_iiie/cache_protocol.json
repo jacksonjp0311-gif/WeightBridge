@@ -1,0 +1,12 @@
+{
+  "schema": "weightbridge.anmc.cached_diagnostics_protocol.v1",
+  "test_seed": 61031,
+  "rows_per_mechanism": 130,
+  "archived_selector_report_sha256": "a4209675edd8dcc56228ebceec9da2bcd8ec9c794f7eb4c758b2799f7ac36a00",
+  "comparators": ["original_adaptive", "cache_reusing_adaptive", "all_diagnostics"],
+  "success_criteria": {
+    "matching_adaptive_decisions": true,
+    "matching_adaptive_checkpoint_hashes": true,
+    "lower_adaptive_work_units": true
+  }
+}
