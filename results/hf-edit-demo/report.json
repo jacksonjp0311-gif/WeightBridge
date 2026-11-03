@@ -1,0 +1,269 @@
+{
+  "base_sha256": "c63ab12d84a39a98426c8fee7adc01cd4e4328c793f66076b7a373b92200ef9d",
+  "base_target_correct": 12,
+  "candidate_sha256": "22a59fe3da1a468656d546baa3c115593a98c5b6d56f88c5a4730aef0dfada90",
+  "candidate_target_correct": 22,
+  "configuration": {
+    "batch_size": 8,
+    "cpu_threads": 6,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "max_input_tokens": 512
+  },
+  "disposition": "PASS",
+  "max_sentinel_flips": 0,
+  "min_target_gain": 10,
+  "receipt_sha256": "4adeff48c20f5641f831bffb8a891828b077eea6f454a3346b2f2d01984a56d0",
+  "schema": "weightbridge.hf_edit_evaluation.v1",
+  "sentinel": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s00",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s02",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s05",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s06",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "12-holdout-s07",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s08",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "12-holdout-s09",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "12-holdout-s10",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s11",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s12",
+      "label": "A"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "12-holdout-s13",
+      "label": "B"
+    },
+    {
+      "base_prediction": "B",
+      "candidate_prediction": "B",
+      "id": "12-holdout-s14",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-s15",
+      "label": "A"
+    }
+  ],
+  "sentinel_count": 16,
+  "sentinel_prediction_flips": 0,
+  "suite_sha256": "4e953a637806e753a954f463953377b2f06dddd6eb0510b515be1a49dec57ab4",
+  "target": [
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t00",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t01",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t02",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t03",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t04",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t05",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t06",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t07",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t08",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t09",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t10",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t11",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t12",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t13",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t14",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t15",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t16",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t17",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t18",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t19",
+      "label": "A"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t20",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t21",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "B",
+      "id": "12-holdout-t22",
+      "label": "B"
+    },
+    {
+      "base_prediction": "A",
+      "candidate_prediction": "A",
+      "id": "12-holdout-t23",
+      "label": "A"
+    }
+  ],
+  "target_corrections": 10,
+  "target_count": 24,
+  "target_gain": 10,
+  "target_regressions": 0
+}

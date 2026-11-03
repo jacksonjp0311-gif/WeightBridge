@@ -1,20 +1,116 @@
-# WeightBridge — evidence-gated neural weight editing
+# WeightBridge
 
-> **Current status (v0.2):** WeightBridge is an AI-callable local toolset for
-> inspecting model weights, validating proposed patches against host-owned
-> limits, and writing immutable candidate checkpoints. An AI with command-line
-> access can inspect JSON output, propose a patch, and call the patcher. The
-> optional MCP server now exposes a practice-only toy diagnosis session to
-> LLM hosts. A Codex MCP pilot independently proposed a one-weight hidden-bias
-> correction and improved a synthetic holdout; this is one task, not evidence
-> of transfer. A separate [blind repair experiment](docs/QWEN_BLIND_REPAIR.md)
-> uses a deterministic activation-guided search to edit an intentionally
-> damaged Qwen3.5-0.8B checkpoint. See the experiment report for held-out
-> recovery, regression measurements and replay commands.
-> The [12-case follow-up](docs/QWEN_REPAIR_COHORT.md) compares guided and
-> random search with equal practice budgets and measures transfer to paraphrases.
-> The [wording ablation](docs/QWEN_WORDING_ABLATION.md) tests whether
-> spreading that same budget across three wordings improves transfer.
+WeightBridge gives an AI a way to propose changes to model weights and gives
+the host a way to check and test those changes. The AI receives an inspection
+report and submits a patch as JSON. The host enforces a policy and saves the
+result as a separate checkpoint with a receipt. You can reload that candidate
+and measure whether it improves the behavior you care about.
+
+The CLI supports NumPy and Hugging Face safetensors checkpoints. The optional
+local MCP server lets an LLM propose and score edits on a toy model's practice
+data. See the [agent tools guide](docs/AGENT_TOOLS.md) for setup and scope.
+
+## Install and try it
+
+Use Python 3.10 or later. Clone the repository, install the CLI, and run the
+offline demo.
+
+```bash
+git clone https://github.com/jacksonjp0311-gif/WeightBridge.git
+cd WeightBridge
+python -m pip install -e ".[safetensors,test]"
+python -m weightbridge demo --dir ./demo-run
+python -m weightbridge inspect ./demo-run/base.npz
+python -m pytest -q
+```
+
+The demo creates a synthetic checkpoint, applies a predefined correction, and
+scores the base and saved candidate on the same holdout. The output includes
+the policy, patch, receipt, and evaluation JSON.
+
+Install `.[inference]` to load a Hugging Face model locally or `.[mcp]` to
+enable the toy MCP workflow. The real-model evaluation examples use a pinned
+Qwen3.5-0.8B checkpoint on CPU. See the [runtime notes](docs/LIMITATIONS.md)
+for measured compatibility.
+
+## Edit and test a real checkpoint
+
+1. **Inspect the base.** Use a local Hugging Face model directory. Give the AI
+   the inspection report, the behavior you want to change, and practice
+   examples. Keep the final evaluation prompts separate.
+
+   ```bash
+   python -m weightbridge inspect ./base-model --max-tensors 16
+   ```
+
+2. **Review the proposal and apply it.** The AI supplies a
+   `weightbridge.patch.v1` JSON document with the report's
+   `checkpoint_sha256` as `base_sha256`. A sparse edit specifies a tensor
+   name, an index, an operation, and a value. The host supplies a
+   `weightbridge.policy.v1` JSON document with allowed tensors, the maximum
+   entries and fraction of weights that can change, and the maximum
+   absolute delta per entry. The [patch and policy examples](#patch-contract)
+   show the schema.
+
+   ```bash
+   python -m weightbridge apply-hf --base ./base-model \
+     --patch proposal.json --policy host-policy.json --out ./candidate-model
+   ```
+
+   Use a fresh output path. The receipt identifies the base, candidate,
+   patch, policy, and affected tensors. The host can keep the base available
+   for rollback.
+
+3. **Reload and evaluate.** Keep a host-owned forced-choice suite of unseen
+   target prompts and unrelated control prompts, called sentinels. Each
+   choice must encode as one distinct token in the model's tokenizer.
+
+   ```json
+   {
+     "schema": "weightbridge.hf_edit_suite.v1",
+     "choices": ["A", "B"],
+     "target": [{"id": "t1", "text": "Which is larger? A. 20 B. 30. Reply A or B.", "label": "B"}],
+     "sentinel": [{"id": "s1", "text": "Which is a color? A. blue B. chair. Reply A or B.", "label": "A"}]
+   }
+   ```
+
+   ```bash
+   python -m weightbridge evaluate-hf-edit --base ./base-model \
+     --candidate ./candidate-model --suite holdout.json --out edit-report.json \
+     --min-target-gain 1 --max-sentinel-flips 0 --device cpu
+   ```
+
+   The evaluator checks the candidate receipt against both checkpoint hashes,
+   reloads both models, and records paired predictions. Here the candidate
+   must answer at least one additional target correctly and preserve every
+   sentinel prediction. A measured FAIL writes the report and returns exit 1.
+
+## Replay a measured Qwen improvement
+
+With `.[inference,safetensors]` installed and the pinned
+Qwen3.5-0.8B checkpoint available locally, rebuild and evaluate the
+archived case 12 repair. The runner checks the rebuilt receipt hashes and
+compares every prediction with the archived run.
+
+```bash
+python experiments/original_weight_edits/replay_hf_edit_demo.py \
+  --pristine ./qwen35-base --out ./qwen-edit-demo
+```
+
+The replay scores **12/24 → 22/24** on targets, with zero changes on
+16 sentinels. Use a new output directory and roughly 4 GB of scratch
+space for the two checkpoint copies. [Pinned model and case evidence](docs/QWEN_WORDING_ABLATION.md)
+
+## Measured results
+
+| Workflow | Result |
+|---|---|
+| Deterministic search on real Qwen weights | Guided candidates beat matched random search in 11 of 12 cases. Five passed all per-case requirements. The cohort threshold was eight. [Cohort report](docs/QWEN_REPAIR_COHORT.md) |
+| Practice wording on real Qwen weights | One candidate took fresh paraphrase accuracy from 6/12 to 12/12 after reload while preserving all 16 unrelated predictions. The three-wording arm passed 2/12 cases. [Wording study](docs/QWEN_WORDING_ABLATION.md) |
+| AI edit selection | One Codex pilot independently found a blinded toy repair. Qwen chose successful solver-proposed edits in 19/20 toy cases. The formal benchmark for AI-proposed edits has its own gate. [Agent tools](docs/AGENT_TOOLS.md) · [Roadmap](docs/ROADMAP.md) |
+
+<details>
+<summary>Historical v0.1 guide and patch examples</summary>
 
 ## Historical v0.1 guide
 
@@ -102,6 +198,8 @@ patching remain available through the CLI.
 - Only an explicit operator-approved promotion can alter which model the host starts. The main model is immutable, and rollback is a pointer to the known original checkpoint, not a speculative reverse edit.
 
 Review `docs/RESEARCH_PLAN.md` for the experimental roadmap and failure modes.
+
+</details>
 
 ## Source inspiration and independence
 

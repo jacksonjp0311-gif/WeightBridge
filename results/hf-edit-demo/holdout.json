@@ -1,0 +1,259 @@
+{
+  "choices": [
+    "A",
+    "B"
+  ],
+  "schema": "weightbridge.hf_edit_suite.v1",
+  "sentinel": [
+    {
+      "id": "12-holdout-s00",
+      "label": "A",
+      "text": "Choose the option that names a garment.\nA. dress\nB. cabinet\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s01",
+      "label": "B",
+      "text": "Choose the option that names a vehicle.\nA. plate\nB. train\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s02",
+      "label": "B",
+      "text": "Choose the option that names a vehicle.\nA. plate\nB. tram\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s03",
+      "label": "B",
+      "text": "Choose the option that names a tool.\nA. banana\nB. pliers\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s04",
+      "label": "A",
+      "text": "Choose the option that names a tool.\nA. pliers\nB. peach\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s05",
+      "label": "A",
+      "text": "Choose the option that names a vehicle.\nA. tractor\nB. shirt\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s06",
+      "label": "A",
+      "text": "Choose the option that names a garment.\nA. shirt\nB. sofa\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s07",
+      "label": "B",
+      "text": "Choose the option that names a color.\nA. floor\nB. black\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s08",
+      "label": "A",
+      "text": "Choose the option that names a garment.\nA. dress\nB. board\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s09",
+      "label": "B",
+      "text": "Choose the option that names a garment.\nA. ladder\nB. shirt\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s10",
+      "label": "B",
+      "text": "Choose the option that names a fruit.\nA. lamp\nB. plum\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s11",
+      "label": "A",
+      "text": "Choose the option that names a vehicle.\nA. bus\nB. pillow\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s12",
+      "label": "A",
+      "text": "Choose the option that names a garment.\nA. vest\nB. desk\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s13",
+      "label": "B",
+      "text": "Choose the option that names a fruit.\nA. radio\nB. plum\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s14",
+      "label": "B",
+      "text": "Choose the option that names a color.\nA. pillar\nB. purple\nAnswer with A or B."
+    },
+    {
+      "id": "12-holdout-s15",
+      "label": "A",
+      "text": "Choose the option that names a color.\nA. teal\nB. pillar\nAnswer with A or B."
+    }
+  ],
+  "target": [
+    {
+      "form": "same",
+      "id": "12-holdout-t00",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 655\nB. 558\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t01",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 562\nB. 692\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t02",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 650\nB. 550\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t03",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 554\nB. 631\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t04",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 687\nB. 584\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t05",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 549\nB. 825\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t06",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 712\nB. 563\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t07",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 583\nB. 829\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t08",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 588\nB. 688\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t09",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 845\nB. 541\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t10",
+      "label": "A",
+      "text": "Which integer is larger?\nA. 693\nB. 585\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "same",
+      "id": "12-holdout-t11",
+      "label": "B",
+      "text": "Which integer is larger?\nA. 549\nB. 885\nAnswer with the letter A or B only.",
+      "wording": "standard"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t12",
+      "label": "B",
+      "text": "Compare the values below. Which is the greater integer?\nA. 591\nB. 762\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t13",
+      "label": "A",
+      "text": "Compare the values below. Which is the greater integer?\nA. 766\nB. 566\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t14",
+      "label": "A",
+      "text": "Compare the values below. Which is the greater integer?\nA. 721\nB. 573\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t15",
+      "label": "A",
+      "text": "Compare the values below. Which is the greater integer?\nA. 893\nB. 562\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t16",
+      "label": "B",
+      "text": "Compare the values below. Which is the greater integer?\nA. 589\nB. 729\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t17",
+      "label": "B",
+      "text": "Compare the values below. Which is the greater integer?\nA. 556\nB. 782\nAnswer with the letter A or B only.",
+      "wording": "comparison"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t18",
+      "label": "A",
+      "text": "Pick the maximum of these two integers.\nA. 824\nB. 580\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t19",
+      "label": "A",
+      "text": "Pick the maximum of these two integers.\nA. 682\nB. 561\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t20",
+      "label": "B",
+      "text": "Pick the maximum of these two integers.\nA. 544\nB. 662\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t21",
+      "label": "B",
+      "text": "Pick the maximum of these two integers.\nA. 544\nB. 831\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t22",
+      "label": "B",
+      "text": "Pick the maximum of these two integers.\nA. 599\nB. 842\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    },
+    {
+      "form": "paraphrase",
+      "id": "12-holdout-t23",
+      "label": "A",
+      "text": "Pick the maximum of these two integers.\nA. 800\nB. 562\nAnswer with the letter A or B only.",
+      "wording": "maximum"
+    }
+  ]
+}

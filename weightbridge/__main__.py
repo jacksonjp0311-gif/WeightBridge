@@ -5,8 +5,9 @@ from pathlib import Path
 
 from .core import apply_patch, inspect_checkpoint, json_dump_atomic
 from .demo import compare_demo, run_demo
+from .evaluation.hf_edit import evaluate_hf_edit
 from .patches import apply_safetensors_patch
-from .inference import HFTextRunner, InferenceConfig
+from .inference import HFTextRunner, InferenceConfig, InferenceError
 from .diagnostics.breakpoint_cli import propose_breakpoints
 
 
@@ -34,6 +35,19 @@ def main():
     p.add_argument("--patch", required=True)
     p.add_argument("--policy", required=True)
     p.add_argument("--out", required=True)
+    p = sub.add_parser("evaluate-hf-edit", help="Score a saved HF candidate and its base on a frozen local suite")
+    p.add_argument("--base", required=True)
+    p.add_argument("--candidate", required=True)
+    p.add_argument("--receipt", help="Trusted patch receipt (defaults to the candidate directory receipt)")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--min-target-gain", type=int, default=1)
+    p.add_argument("--max-sentinel-flips", type=int, default=0)
+    p.add_argument("--device", default="cpu")
+    p.add_argument("--dtype", default="auto", choices=["auto", "float32", "float16", "bfloat16"])
+    p.add_argument("--cpu-threads", type=int, default=6)
+    p.add_argument("--batch-size", type=int, default=8)
+    p.add_argument("--max-input-tokens", type=int, default=512)
     p = sub.add_parser("compare-demo", help="Evaluate same synthetic holdout on base and candidate")
     p.add_argument("--base", required=True)
     p.add_argument("--candidate", required=True)
@@ -72,6 +86,16 @@ def main():
         patch = json.loads(Path(args.patch).read_text(encoding="utf-8"))
         policy = json.loads(Path(args.policy).read_text(encoding="utf-8"))
         result = apply_safetensors_patch(args.base, patch, policy, args.out)
+    elif args.cmd == "evaluate-hf-edit":
+        try:
+            result = evaluate_hf_edit(
+                args.base, args.candidate, args.suite, args.out, receipt_path=args.receipt,
+                min_target_gain=args.min_target_gain, max_sentinel_flips=args.max_sentinel_flips,
+                device=args.device, dtype=args.dtype, cpu_threads=args.cpu_threads,
+                batch_size=args.batch_size, max_input_tokens=args.max_input_tokens,
+            )
+        except (InferenceError, OSError, ValueError) as exc:
+            parser.error(str(exc))
     elif args.cmd == "generate":
         if bool(args.prompt) == bool(args.prompt_file):
             parser.error("provide exactly one of --prompt or --prompt-file")
@@ -92,6 +116,8 @@ def main():
     else:
         result = compare_demo(args.base, args.candidate, args.out)
     print(json.dumps(result, indent=2, sort_keys=True))
+    if args.cmd == "evaluate-hf-edit" and result["disposition"] == "FAIL":
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
