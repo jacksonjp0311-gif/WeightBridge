@@ -57,3 +57,28 @@ requires at least two newly correct target items, zero regressions on
 previously correct target and control presentations, and reproducible
 checkpoint reload and restoration.
 [Frozen arithmetic protocol](../experiments/phase_iiig/protocol.json)
+
+## First two qualification rounds
+
+Both model-specific scopes parsed every scored practice presentation
+in the first two rounds. The remaining gate failures depended on
+task behavior.
+
+| Trial and model | Practice target | Solved across both wordings | Same wrong answer across both wordings | Solved positive controls | Qualification |
+| --- | --- | ---: | ---: | ---: | --- |
+| v1 Qwen | Addition | 10/12 | 0/12 | 4/4 | HOLD |
+| v1 Qwen | Subtraction | 11/12 | 0/12 | 4/4 | HOLD |
+| v1 SmolLM2 | Addition | 0/12 | 0/12 | 2/4 | HOLD |
+| v1 SmolLM2 | Subtraction | 0/12 | 0/12 | 1/4 | HOLD |
+| v2 Qwen | Multiplication | 10/12 | 1/12 | 4/4 | HOLD |
+| v2 SmolLM2 | First digit | 1/12 | 9/12 | 4/4 | HOLD |
+| v2 SmolLM2 | Last digit | 6/12 | 0/12 | 0/4 | HOLD |
+
+All copy-control sets passed. Qwen's first multiplication roster fell
+one repeatable error short of admission. SmolLM2's sole solved
+first-digit target was 44, for which choosing the last digit also gives
+the correct output. Most of its repeatable wrong first-digit answers
+were the last digit of the input. These rounds held before fitting.
+Their hidden rosters remain outside the public archive.
+[Arithmetic v1 evidence](../results/phase-iii-g/arithmetic-v1) ·
+[Model-specific v2 evidence](../results/phase-iii-g/arithmetic-v2)

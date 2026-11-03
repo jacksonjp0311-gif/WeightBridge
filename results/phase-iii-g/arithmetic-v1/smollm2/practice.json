@@ -1,0 +1,2015 @@
+{
+  "resources": {
+    "batched_decode_steps": 72,
+    "cpu_seconds": 30.484375,
+    "generate_batches": 9,
+    "generated_examples": 72,
+    "padded_prompt_token_positions": 4352,
+    "peak_rss_bytes": 697974784,
+    "wall_seconds": 5.201286799972877
+  },
+  "rows": [
+    {
+      "answer": "76",
+      "exact": "143",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        36,
+        35,
+        2
+      ],
+      "group": "target",
+      "id": "practice/addition/target/00/0",
+      "item": "practice/addition/target/00",
+      "operands": [
+        69,
+        7
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 69 plus 7?\nAnswer:",
+      "stop_reason": "eos",
+      "text": " 143",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "76",
+      "exact": "86",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        38,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/00/1",
+      "item": "practice/addition/target/00",
+      "operands": [
+        69,
+        7
+      ],
+      "prefix_tokens": 39,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n69 + 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 86\n\nQuestion: What",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "82",
+      "exact": "121",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        34,
+        33,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/01/0",
+      "item": "practice/addition/target/01",
+      "operands": [
+        43,
+        39
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 43 plus 39?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 121\nQuestion: What",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "82",
+      "exact": "82",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        34,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/01/1",
+      "item": "practice/addition/target/01",
+      "operands": [
+        43,
+        39
+      ],
+      "prefix_tokens": 40,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n43 + 39\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 82\n\nQuestion: What",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "1770",
+      "exact": "1764",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        39,
+        38,
+        36,
+        198,
+        17872,
+        42
+      ],
+      "group": "target",
+      "id": "practice/addition/target/02/0",
+      "item": "practice/addition/target/02",
+      "operands": [
+        948,
+        822
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 948 plus 822?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1764\nQuestion:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "1770",
+      "exact": "1700",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        39,
+        32,
+        32,
+        198,
+        198,
+        17872
+      ],
+      "group": "target",
+      "id": "practice/addition/target/02/1",
+      "item": "practice/addition/target/02",
+      "operands": [
+        948,
+        822
+      ],
+      "prefix_tokens": 42,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n948 + 822\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1700\n\nQuestion",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "80",
+      "exact": "120",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        34,
+        32,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/03/0",
+      "item": "practice/addition/target/03",
+      "operands": [
+        76,
+        4
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 76 plus 4?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 120\nQuestion: What",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "80",
+      "exact": "82",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        34,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/03/1",
+      "item": "practice/addition/target/03",
+      "operands": [
+        76,
+        4
+      ],
+      "prefix_tokens": 39,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n76 + 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 82\n\nQuestion: What",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "90",
+      "exact": "100",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        32,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/04/0",
+      "item": "practice/addition/target/04",
+      "operands": [
+        33,
+        57
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 33 plus 57?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 100\nQuestion: What",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "90",
+      "exact": "82",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        34,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/04/1",
+      "item": "practice/addition/target/04",
+      "operands": [
+        33,
+        57
+      ],
+      "prefix_tokens": 40,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n33 + 57\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 82\n\nQuestion: What",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "610",
+      "exact": "1008",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        32,
+        40,
+        198,
+        17872,
+        42
+      ],
+      "group": "target",
+      "id": "practice/addition/target/05/0",
+      "item": "practice/addition/target/05",
+      "operands": [
+        442,
+        168
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 442 plus 168?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1008\nQuestion:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "610",
+      "exact": "590",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        37,
+        41,
+        32,
+        198,
+        37,
+        1232,
+        216
+      ],
+      "group": "target",
+      "id": "practice/addition/target/05/1",
+      "item": "practice/addition/target/05",
+      "operands": [
+        442,
+        168
+      ],
+      "prefix_tokens": 42,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n442 + 168\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 590\n5 + ",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "83",
+      "exact": "126",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        34,
+        38,
+        2
+      ],
+      "group": "target",
+      "id": "practice/addition/target/06/0",
+      "item": "practice/addition/target/06",
+      "operands": [
+        79,
+        4
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 79 plus 4?\nAnswer:",
+      "stop_reason": "eos",
+      "text": " 126",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "83",
+      "exact": "83",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        35,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/06/1",
+      "item": "practice/addition/target/06",
+      "operands": [
+        79,
+        4
+      ],
+      "prefix_tokens": 39,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n79 + 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 83\n\nQuestion: What",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "43",
+      "exact": "49",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        36,
+        41,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/addition/target/07/0",
+      "item": "practice/addition/target/07",
+      "operands": [
+        27,
+        16
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 27 plus 16?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 49\nQuestion: What is",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "43",
+      "exact": "33",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        35,
+        35,
+        198,
+        35,
+        1232,
+        216,
+        35
+      ],
+      "group": "target",
+      "id": "practice/addition/target/07/1",
+      "item": "practice/addition/target/07",
+      "operands": [
+        27,
+        16
+      ],
+      "prefix_tokens": 40,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n27 + 16\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 33\n3 + 3",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "1435",
+      "exact": "1445",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        36,
+        36,
+        37,
+        198,
+        17872,
+        42
+      ],
+      "group": "target",
+      "id": "practice/addition/target/08/0",
+      "item": "practice/addition/target/08",
+      "operands": [
+        487,
+        948
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 487 plus 948?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1445\nQuestion:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "1435",
+      "exact": "1435",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        36,
+        35,
+        37,
+        198,
+        198,
+        17872
+      ],
+      "group": "target",
+      "id": "practice/addition/target/08/1",
+      "item": "practice/addition/target/08",
+      "operands": [
+        487,
+        948
+      ],
+      "prefix_tokens": 42,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n487 + 948\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1435\n\nQuestion",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "34",
+      "exact": "10",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/addition/target/09/0",
+      "item": "practice/addition/target/09",
+      "operands": [
+        27,
+        7
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 27 plus 7?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "34",
+      "exact": "34",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        35,
+        36,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/09/1",
+      "item": "practice/addition/target/09",
+      "operands": [
+        27,
+        7
+      ],
+      "prefix_tokens": 39,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n27 + 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 34\n\nQuestion: What",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "111",
+      "exact": "100",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        32,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "target",
+      "id": "practice/addition/target/10/0",
+      "item": "practice/addition/target/10",
+      "operands": [
+        95,
+        16
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 95 plus 16?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 100\nQuestion: What",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "111",
+      "exact": "102",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        34,
+        198,
+        198,
+        17872,
+        42
+      ],
+      "group": "target",
+      "id": "practice/addition/target/10/1",
+      "item": "practice/addition/target/10",
+      "operands": [
+        95,
+        16
+      ],
+      "prefix_tokens": 40,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n95 + 16\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 102\n\nQuestion:",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "1572",
+      "exact": "1565",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        37,
+        38,
+        37,
+        198,
+        17872,
+        42
+      ],
+      "group": "target",
+      "id": "practice/addition/target/11/0",
+      "item": "practice/addition/target/11",
+      "operands": [
+        718,
+        854
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 718 plus 854?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1565\nQuestion:",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "1572",
+      "exact": "1683",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        38,
+        40,
+        35,
+        198,
+        33,
+        38
+      ],
+      "group": "target",
+      "id": "practice/addition/target/11/1",
+      "item": "practice/addition/target/11",
+      "operands": [
+        718,
+        854
+      ],
+      "prefix_tokens": 42,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n718 + 854\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1683\n16",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "9",
+      "exact": "10",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/00/0",
+      "item": "practice/addition/positive/00",
+      "operands": [
+        7,
+        2
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 7 plus 2?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "9",
+      "exact": "9",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        41,
+        198,
+        33,
+        1232,
+        216,
+        33,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/00/1",
+      "item": "practice/addition/positive/00",
+      "operands": [
+        7,
+        2
+      ],
+      "prefix_tokens": 38,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n7 + 2\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 9\n1 + 1\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "8",
+      "exact": "8",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/01/0",
+      "item": "practice/addition/positive/01",
+      "operands": [
+        6,
+        2
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 6 plus 2?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 8\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "8",
+      "exact": "8",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        40,
+        198,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/01/1",
+      "item": "practice/addition/positive/01",
+      "operands": [
+        6,
+        2
+      ],
+      "prefix_tokens": 38,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n6 + 2\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 8\n\nQuestion: What is",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "6",
+      "exact": "6",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/02/0",
+      "item": "practice/addition/positive/02",
+      "operands": [
+        4,
+        2
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 4 plus 2?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "6",
+      "exact": "6",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        37,
+        1232,
+        216,
+        33,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/02/1",
+      "item": "practice/addition/positive/02",
+      "operands": [
+        4,
+        2
+      ],
+      "prefix_tokens": 38,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n4 + 2\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\n5 + 1\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "3",
+      "exact": "3",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        35,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/03/0",
+      "item": "practice/addition/positive/03",
+      "operands": [
+        2,
+        1
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer sum. Give only the integer answer.\nQuestion: What is 2 plus 3?\nAnswer: 5\nQuestion: What is 5 plus 3?\nAnswer: 8\nQuestion: What is 2 plus 1?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 3\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "3",
+      "exact": "4",
+      "family": "addition",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        33,
+        1232,
+        216,
+        33,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/addition/positive/03/1",
+      "item": "practice/addition/positive/03",
+      "operands": [
+        2,
+        1
+      ],
+      "prefix_tokens": 38,
+      "prompt": "Add the numbers and write the sum after Answer:.\n8 + 1\nAnswer: 9\n3 + 3\nAnswer: 6\n2 + 1\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\n1 + 1\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "81",
+      "exact": "8",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        40,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/00/0",
+      "item": "practice/subtraction/target/00",
+      "operands": [
+        90,
+        9
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 90 minus 9?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 8\nQuestion: What is ",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "81",
+      "exact": "81",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        40,
+        33,
+        198,
+        41,
+        33,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/00/1",
+      "item": "practice/subtraction/target/00",
+      "operands": [
+        90,
+        9
+      ],
+      "prefix_tokens": 44,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n90 - 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 81\n91 - ",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "26",
+      "exact": "3",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        35,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/01/0",
+      "item": "practice/subtraction/target/01",
+      "operands": [
+        92,
+        66
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 92 minus 66?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 3\nQuestion: What is ",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "26",
+      "exact": "48",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        36,
+        40,
+        198,
+        41,
+        41,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/01/1",
+      "item": "practice/subtraction/target/01",
+      "operands": [
+        92,
+        66
+      ],
+      "prefix_tokens": 45,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n92 - 66\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 48\n99 - ",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "307",
+      "exact": "13",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        35,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/02/0",
+      "item": "practice/subtraction/target/02",
+      "operands": [
+        872,
+        565
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 872 minus 565?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 13\nQuestion: What is",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "307",
+      "exact": "145",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        36,
+        37,
+        198,
+        33,
+        36,
+        37
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/02/1",
+      "item": "practice/subtraction/target/02",
+      "operands": [
+        872,
+        565
+      ],
+      "prefix_tokens": 47,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n872 - 565\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 145\n145",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "14",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/03/0",
+      "item": "practice/subtraction/target/03",
+      "operands": [
+        22,
+        8
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 22 minus 8?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "14",
+      "exact": "19",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        41,
+        198,
+        33,
+        41,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/03/1",
+      "item": "practice/subtraction/target/03",
+      "operands": [
+        22,
+        8
+      ],
+      "prefix_tokens": 44,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n22 - 8\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 19\n19 - ",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/04/0",
+      "item": "practice/subtraction/target/04",
+      "operands": [
+        22,
+        17
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 22 minus 17?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nQuestion: What is ",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        33,
+        32,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/04/1",
+      "item": "practice/subtraction/target/04",
+      "operands": [
+        22,
+        17
+      ],
+      "prefix_tokens": 45,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n22 - 17\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\n10 - ",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "98",
+      "exact": "1",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/05/0",
+      "item": "practice/subtraction/target/05",
+      "operands": [
+        577,
+        479
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 577 minus 479?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nQuestion: What is ",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "98",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        33,
+        32,
+        32,
+        32
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/05/1",
+      "item": "practice/subtraction/target/05",
+      "operands": [
+        577,
+        479
+      ],
+      "prefix_tokens": 47,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n577 - 479\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\n1000",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "59",
+      "exact": "3",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        35,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/06/0",
+      "item": "practice/subtraction/target/06",
+      "operands": [
+        65,
+        6
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 65 minus 6?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 3\nQuestion: What is ",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "59",
+      "exact": "62",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        38,
+        34,
+        198,
+        38,
+        38,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/06/1",
+      "item": "practice/subtraction/target/06",
+      "operands": [
+        65,
+        6
+      ],
+      "prefix_tokens": 44,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n65 - 6\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 62\n66 - ",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "51",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/07/0",
+      "item": "practice/subtraction/target/07",
+      "operands": [
+        80,
+        29
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 80 minus 29?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "51",
+      "exact": "55",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        37,
+        37,
+        198,
+        41,
+        731,
+        216,
+        36
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/07/1",
+      "item": "practice/subtraction/target/07",
+      "operands": [
+        80,
+        29
+      ],
+      "prefix_tokens": 45,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n80 - 29\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 55\n9 - 4",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "377",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/08/0",
+      "item": "practice/subtraction/target/08",
+      "operands": [
+        790,
+        413
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 790 minus 413?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "377",
+      "exact": "100",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        32,
+        198,
+        33,
+        32,
+        32
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/08/1",
+      "item": "practice/subtraction/target/08",
+      "operands": [
+        790,
+        413
+      ],
+      "prefix_tokens": 47,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n790 - 413\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 100\n100",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "89",
+      "exact": "18",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        40,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/09/0",
+      "item": "practice/subtraction/target/09",
+      "operands": [
+        97,
+        8
+      ],
+      "prefix_tokens": 58,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 97 minus 8?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 18\nQuestion: What is",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "89",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        41,
+        41,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/09/1",
+      "item": "practice/subtraction/target/09",
+      "operands": [
+        97,
+        8
+      ],
+      "prefix_tokens": 44,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n97 - 8\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\n99 - ",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "38",
+      "exact": "2",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/10/0",
+      "item": "practice/subtraction/target/10",
+      "operands": [
+        71,
+        33
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 71 minus 33?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nQuestion: What is ",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "38",
+      "exact": "22",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        34,
+        34,
+        198,
+        39,
+        34,
+        731,
+        216
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/10/1",
+      "item": "practice/subtraction/target/10",
+      "operands": [
+        71,
+        33
+      ],
+      "prefix_tokens": 45,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n71 - 33\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 22\n72 - ",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "357",
+      "exact": "10",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/11/0",
+      "item": "practice/subtraction/target/11",
+      "operands": [
+        503,
+        146
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 503 minus 146?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What is",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "357",
+      "exact": "146",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        36,
+        38,
+        198,
+        33,
+        36,
+        38
+      ],
+      "group": "target",
+      "id": "practice/subtraction/target/11/1",
+      "item": "practice/subtraction/target/11",
+      "operands": [
+        503,
+        146
+      ],
+      "prefix_tokens": 47,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n503 - 146\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 146\n146",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "5",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/00/0",
+      "item": "practice/subtraction/positive/00",
+      "operands": [
+        8,
+        1
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 8 minus 1?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "7",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        41,
+        731,
+        216,
+        36,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/00/1",
+      "item": "practice/subtraction/positive/00",
+      "operands": [
+        8,
+        1
+      ],
+      "prefix_tokens": 43,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n8 - 1\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\n9 - 4\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "0",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/01/0",
+      "item": "practice/subtraction/positive/01",
+      "operands": [
+        2,
+        1
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 2 minus 1?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 0\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        33,
+        731,
+        216,
+        34,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/01/1",
+      "item": "practice/subtraction/positive/01",
+      "operands": [
+        2,
+        1
+      ],
+      "prefix_tokens": 43,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n2 - 1\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\n1 - 2\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "3",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        35,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/02/0",
+      "item": "practice/subtraction/positive/02",
+      "operands": [
+        5,
+        4
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 5 minus 4?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 3\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "2",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        33,
+        731,
+        216,
+        34,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/02/1",
+      "item": "practice/subtraction/positive/02",
+      "operands": [
+        5,
+        4
+      ],
+      "prefix_tokens": 43,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n5 - 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\n1 - 2\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        17872,
+        42,
+        1812,
+        314,
+        216
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/03/0",
+      "item": "practice/subtraction/positive/03",
+      "operands": [
+        3,
+        2
+      ],
+      "prefix_tokens": 57,
+      "prompt": "Compute the integer difference. Give only the integer answer.\nQuestion: What is 8 minus 2?\nAnswer: 6\nQuestion: What is 5 minus 1?\nAnswer: 4\nQuestion: What is 3 minus 2?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nQuestion: What is ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "subtraction",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        33,
+        731,
+        216,
+        33,
+        198
+      ],
+      "group": "positive",
+      "id": "practice/subtraction/positive/03/1",
+      "item": "practice/subtraction/positive/03",
+      "operands": [
+        3,
+        2
+      ],
+      "prefix_tokens": 43,
+      "prompt": "Subtract the second number from the first. Write the result after Answer:.\n9 - 2\nAnswer: 7\n8 - 3\nAnswer: 5\n3 - 2\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\n1 - 1\n",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "29",
+      "exact": "29",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        34,
+        41,
+        198,
+        17872,
+        42,
+        1812,
+        15328
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/00/0",
+      "item": "practice/copy/preserve/00",
+      "operands": [
+        29
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Repeat the integer. Give only the integer answer.\nQuestion: What integer is written here, 31?\nAnswer: 31\nQuestion: What integer is written here, 74?\nAnswer: 74\nQuestion: What integer is written here, 29?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 29\nQuestion: What integer",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "29",
+      "exact": "29",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        34,
+        41,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/00/1",
+      "item": "practice/copy/preserve/00",
+      "operands": [
+        29
+      ],
+      "prefix_tokens": 50,
+      "prompt": "Write the same number after Answer: without changing it.\nNumber to copy = 21\nAnswer: 21\nNumber to copy = 89\nAnswer: 89\nNumber to copy = 29\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 29\n\nQuestion: What",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "40",
+      "exact": "40",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        36,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        15328
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/01/0",
+      "item": "practice/copy/preserve/01",
+      "operands": [
+        40
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Repeat the integer. Give only the integer answer.\nQuestion: What integer is written here, 31?\nAnswer: 31\nQuestion: What integer is written here, 74?\nAnswer: 74\nQuestion: What integer is written here, 40?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 40\nQuestion: What integer",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "40",
+      "exact": "40",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        36,
+        32,
+        198,
+        198,
+        17872,
+        42,
+        1812
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/01/1",
+      "item": "practice/copy/preserve/01",
+      "operands": [
+        40
+      ],
+      "prefix_tokens": 50,
+      "prompt": "Write the same number after Answer: without changing it.\nNumber to copy = 21\nAnswer: 21\nNumber to copy = 89\nAnswer: 89\nNumber to copy = 40\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 40\n\nQuestion: What",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "10",
+      "exact": "10",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        17872,
+        42,
+        1812,
+        15328
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/02/0",
+      "item": "practice/copy/preserve/02",
+      "operands": [
+        10
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Repeat the integer. Give only the integer answer.\nQuestion: What integer is written here, 31?\nAnswer: 31\nQuestion: What integer is written here, 74?\nAnswer: 74\nQuestion: What integer is written here, 10?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nQuestion: What integer",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "10",
+      "exact": "10",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        33,
+        32,
+        198,
+        13014,
+        288,
+        3784,
+        446
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/02/1",
+      "item": "practice/copy/preserve/02",
+      "operands": [
+        10
+      ],
+      "prefix_tokens": 50,
+      "prompt": "Write the same number after Answer: without changing it.\nNumber to copy = 21\nAnswer: 21\nNumber to copy = 89\nAnswer: 89\nNumber to copy = 10\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 10\nNumber to copy =",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "37",
+      "exact": "37",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        35,
+        39,
+        198,
+        17872,
+        42,
+        1812,
+        15328
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/03/0",
+      "item": "practice/copy/preserve/03",
+      "operands": [
+        37
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Repeat the integer. Give only the integer answer.\nQuestion: What integer is written here, 31?\nAnswer: 31\nQuestion: What integer is written here, 74?\nAnswer: 74\nQuestion: What integer is written here, 37?\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 37\nQuestion: What integer",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "37",
+      "exact": "37",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        35,
+        39,
+        198,
+        13014,
+        288,
+        3784,
+        446
+      ],
+      "group": "preserve",
+      "id": "practice/copy/preserve/03/1",
+      "item": "practice/copy/preserve/03",
+      "operands": [
+        37
+      ],
+      "prefix_tokens": 50,
+      "prompt": "Write the same number after Answer: without changing it.\nNumber to copy = 21\nAnswer: 21\nNumber to copy = 89\nAnswer: 89\nNumber to copy = 37\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 37\nNumber to copy =",
+      "tier": null,
+      "wording": 1
+    }
+  ]
+}

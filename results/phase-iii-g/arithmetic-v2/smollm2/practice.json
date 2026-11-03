@@ -1,0 +1,1957 @@
+{
+  "resources": {
+    "batched_decode_steps": 72,
+    "cpu_seconds": 30.703125,
+    "generate_batches": 9,
+    "generated_examples": 72,
+    "padded_prompt_token_positions": 4576,
+    "peak_rss_bytes": 702586880,
+    "wall_seconds": 5.210371299996041
+  },
+  "rows": [
+    {
+      "answer": "5",
+      "exact": "0",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        32,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/00/0",
+      "item": "followup/practice/first-digit/target/00",
+      "operands": [
+        50
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 50\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 0\nNumber: 10",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "0",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        32,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/00/1",
+      "item": "followup/practice/first-digit/target/00",
+      "operands": [
+        50
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 50\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 0\nNumber: 10",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/01/0",
+      "item": "followup/practice/first-digit/target/01",
+      "operands": [
+        584
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 584\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/01/1",
+      "item": "followup/practice/first-digit/target/01",
+      "operands": [
+        584
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 584\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "5",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/02/0",
+      "item": "followup/practice/first-digit/target/02",
+      "operands": [
+        764551
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 764551\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "5",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/02/1",
+      "item": "followup/practice/first-digit/target/02",
+      "operands": [
+        764551
+      ],
+      "prefix_tokens": 65,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 764551\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/03/0",
+      "item": "followup/practice/first-digit/target/03",
+      "operands": [
+        51
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 51\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/03/1",
+      "item": "followup/practice/first-digit/target/03",
+      "operands": [
+        51
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 51\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "3",
+      "exact": "3",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        35,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/04/0",
+      "item": "followup/practice/first-digit/target/04",
+      "operands": [
+        3685
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 3685\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 3\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "3",
+      "exact": "5",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/04/1",
+      "item": "followup/practice/first-digit/target/04",
+      "operands": [
+        3685
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 3685\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "3",
+      "exact": "6",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/05/0",
+      "item": "followup/practice/first-digit/target/05",
+      "operands": [
+        34766
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 34766\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "3",
+      "exact": "6",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/05/1",
+      "item": "followup/practice/first-digit/target/05",
+      "operands": [
+        34766
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 34766\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/06/0",
+      "item": "followup/practice/first-digit/target/06",
+      "operands": [
+        44
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 44\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/06/1",
+      "item": "followup/practice/first-digit/target/06",
+      "operands": [
+        44
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 44\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "2",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/07/0",
+      "item": "followup/practice/first-digit/target/07",
+      "operands": [
+        7292
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 7292\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "2",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/07/1",
+      "item": "followup/practice/first-digit/target/07",
+      "operands": [
+        7292
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 7292\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 10",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/08/0",
+      "item": "followup/practice/first-digit/target/08",
+      "operands": [
+        57921
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 57921\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/08/1",
+      "item": "followup/practice/first-digit/target/08",
+      "operands": [
+        57921
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 57921\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "8",
+      "exact": "9",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        41,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/09/0",
+      "item": "followup/practice/first-digit/target/09",
+      "operands": [
+        89
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 89\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 9\nNumber: 10",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "8",
+      "exact": "9",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        41,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/09/1",
+      "item": "followup/practice/first-digit/target/09",
+      "operands": [
+        89
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 89\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 9\nNumber: 10",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "6",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/10/0",
+      "item": "followup/practice/first-digit/target/10",
+      "operands": [
+        768
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 768\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "6",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/10/1",
+      "item": "followup/practice/first-digit/target/10",
+      "operands": [
+        768
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 768\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "7",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/11/0",
+      "item": "followup/practice/first-digit/target/11",
+      "operands": [
+        545807
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 545807\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "5",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/first-digit/target/11/1",
+      "item": "followup/practice/first-digit/target/11",
+      "operands": [
+        545807
+      ],
+      "prefix_tokens": 65,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 545807\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/00/0",
+      "item": "followup/practice/first-digit/positive/00",
+      "operands": [
+        4
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/00/1",
+      "item": "followup/practice/first-digit/positive/00",
+      "operands": [
+        4
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 4\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "7",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/01/0",
+      "item": "followup/practice/first-digit/positive/01",
+      "operands": [
+        7
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\nNumber: 12",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "7",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/01/1",
+      "item": "followup/practice/first-digit/positive/01",
+      "operands": [
+        7
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 7\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\nNumber: 10",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        33
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/02/0",
+      "item": "followup/practice/first-digit/positive/02",
+      "operands": [
+        1
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 1\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 11",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/02/1",
+      "item": "followup/practice/first-digit/positive/02",
+      "operands": [
+        1
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 1\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/03/0",
+      "item": "followup/practice/first-digit/positive/03",
+      "operands": [
+        13
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the first digit of the given number. Give only one digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 13\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "first-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/first-digit/positive/03/1",
+      "item": "followup/practice/first-digit/positive/03",
+      "operands": [
+        13
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the leftmost digit of each integer and answer with just that digit.\nNumber: 47\nAnswer: 4\nNumber: 219\nAnswer: 2\nNumber: 73284\nAnswer: 7\nNumber: 13\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "8",
+      "exact": "4",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/00/0",
+      "item": "followup/practice/last-digit/target/00",
+      "operands": [
+        78
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 78\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 10",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "8",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/00/1",
+      "item": "followup/practice/last-digit/target/00",
+      "operands": [
+        78
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 78\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/01/0",
+      "item": "followup/practice/last-digit/target/01",
+      "operands": [
+        3961
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 3961\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "1",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/01/1",
+      "item": "followup/practice/last-digit/target/01",
+      "operands": [
+        3961
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 3961\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "7",
+      "exact": "7",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/02/0",
+      "item": "followup/practice/last-digit/target/02",
+      "operands": [
+        980547
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 980547\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\nNumber: 10",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "7",
+      "exact": "7",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        39,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/02/1",
+      "item": "followup/practice/last-digit/target/02",
+      "operands": [
+        980547
+      ],
+      "prefix_tokens": 65,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 980547\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 7\nNumber: 10",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "9",
+      "exact": "4",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/03/0",
+      "item": "followup/practice/last-digit/target/03",
+      "operands": [
+        89
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 89\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "9",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/03/1",
+      "item": "followup/practice/last-digit/target/03",
+      "operands": [
+        89
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 89\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 10",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "8",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/04/0",
+      "item": "followup/practice/last-digit/target/04",
+      "operands": [
+        358
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 358\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "8",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/04/1",
+      "item": "followup/practice/last-digit/target/04",
+      "operands": [
+        358
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 358\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "9",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/05/0",
+      "item": "followup/practice/last-digit/target/05",
+      "operands": [
+        36299
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 36299\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "9",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/05/1",
+      "item": "followup/practice/last-digit/target/05",
+      "operands": [
+        36299
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 36299\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "6",
+      "exact": "6",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/06/0",
+      "item": "followup/practice/last-digit/target/06",
+      "operands": [
+        66
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 66\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "6",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/06/1",
+      "item": "followup/practice/last-digit/target/06",
+      "operands": [
+        66
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 66\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/07/0",
+      "item": "followup/practice/last-digit/target/07",
+      "operands": [
+        4264
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 4264\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "4",
+      "exact": "4",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/07/1",
+      "item": "followup/practice/last-digit/target/07",
+      "operands": [
+        4264
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 4264\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "9",
+      "exact": "6",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        38,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/08/0",
+      "item": "followup/practice/last-digit/target/08",
+      "operands": [
+        698569
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 698569\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 6\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "9",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/08/1",
+      "item": "followup/practice/last-digit/target/08",
+      "operands": [
+        698569
+      ],
+      "prefix_tokens": 65,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 698569\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "2",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/09/0",
+      "item": "followup/practice/last-digit/target/09",
+      "operands": [
+        12
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 12\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 0,
+      "wording": 0
+    },
+    {
+      "answer": "2",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/09/1",
+      "item": "followup/practice/last-digit/target/09",
+      "operands": [
+        12
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 12\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 0,
+      "wording": 1
+    },
+    {
+      "answer": "2",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/10/0",
+      "item": "followup/practice/last-digit/target/10",
+      "operands": [
+        7832
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 7832\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 1,
+      "wording": 0
+    },
+    {
+      "answer": "2",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/10/1",
+      "item": "followup/practice/last-digit/target/10",
+      "operands": [
+        7832
+      ],
+      "prefix_tokens": 63,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 7832\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 12",
+      "tier": 1,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "5",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/11/0",
+      "item": "followup/practice/last-digit/target/11",
+      "operands": [
+        354325
+      ],
+      "prefix_tokens": 64,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 354325\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 2,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "5",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        37,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "target",
+      "id": "followup/practice/last-digit/target/11/1",
+      "item": "followup/practice/last-digit/target/11",
+      "operands": [
+        354325
+      ],
+      "prefix_tokens": 65,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 354325\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 5\nNumber: 12",
+      "tier": 2,
+      "wording": 1
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/00/0",
+      "item": "followup/practice/last-digit/positive/00",
+      "operands": [
+        5
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "5",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/00/1",
+      "item": "followup/practice/last-digit/positive/00",
+      "operands": [
+        5
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 5\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "9",
+      "exact": "4",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        36,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/01/0",
+      "item": "followup/practice/last-digit/positive/01",
+      "operands": [
+        9
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 4\nNumber: 10",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "9",
+      "exact": "2",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        34,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/01/1",
+      "item": "followup/practice/last-digit/positive/01",
+      "operands": [
+        9
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 9\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 2\nNumber: 10",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "6",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/02/0",
+      "item": "followup/practice/last-digit/positive/02",
+      "operands": [
+        6
+      ],
+      "prefix_tokens": 59,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 6\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "6",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        34
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/02/1",
+      "item": "followup/practice/last-digit/positive/02",
+      "operands": [
+        6
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 6\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 12",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "0",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/03/0",
+      "item": "followup/practice/last-digit/positive/03",
+      "operands": [
+        30
+      ],
+      "prefix_tokens": 60,
+      "prompt": "Extract the last digit of the given number. Give only one digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 30\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "0",
+      "exact": "1",
+      "family": "last-digit",
+      "generated_token_ids": [
+        216,
+        33,
+        198,
+        13014,
+        42,
+        216,
+        33,
+        32
+      ],
+      "group": "positive",
+      "id": "followup/practice/last-digit/positive/03/1",
+      "item": "followup/practice/last-digit/positive/03",
+      "operands": [
+        30
+      ],
+      "prefix_tokens": 61,
+      "prompt": "Find the rightmost digit of each integer and answer with just that digit.\nNumber: 61\nAnswer: 1\nNumber: 583\nAnswer: 3\nNumber: 89546\nAnswer: 6\nNumber: 30\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 1\nNumber: 10",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "959",
+      "exact": "959",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        41,
+        37,
+        41,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/00/0",
+      "item": "followup/practice/copy/preserve/00",
+      "operands": [
+        959
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 959\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 959\nNumber: ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "959",
+      "exact": "959",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        41,
+        37,
+        41,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/00/1",
+      "item": "followup/practice/copy/preserve/00",
+      "operands": [
+        959
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 959\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 959\nNumber: ",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "177",
+      "exact": "177",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        33,
+        39,
+        39,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/01/0",
+      "item": "followup/practice/copy/preserve/01",
+      "operands": [
+        177
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 177\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 177\nNumber: ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "177",
+      "exact": "177",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        33,
+        39,
+        39,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/01/1",
+      "item": "followup/practice/copy/preserve/01",
+      "operands": [
+        177
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 177\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 177\nNumber: ",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "609",
+      "exact": "609",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        38,
+        32,
+        41,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/02/0",
+      "item": "followup/practice/copy/preserve/02",
+      "operands": [
+        609
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 609\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 609\nNumber: ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "609",
+      "exact": "609",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        38,
+        32,
+        41,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/02/1",
+      "item": "followup/practice/copy/preserve/02",
+      "operands": [
+        609
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 609\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 609\nNumber: ",
+      "tier": null,
+      "wording": 1
+    },
+    {
+      "answer": "810",
+      "exact": "810",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        40,
+        33,
+        32,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/03/0",
+      "item": "followup/practice/copy/preserve/03",
+      "operands": [
+        810
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Repeat the integer. Give only the integer answer.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 810\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 810\nNumber: ",
+      "tier": null,
+      "wording": 0
+    },
+    {
+      "answer": "810",
+      "exact": "810",
+      "family": "copy",
+      "generated_token_ids": [
+        216,
+        40,
+        33,
+        32,
+        198,
+        13014,
+        42,
+        216
+      ],
+      "group": "preserve",
+      "id": "followup/practice/copy/preserve/03/1",
+      "item": "followup/practice/copy/preserve/03",
+      "operands": [
+        810
+      ],
+      "prefix_tokens": 62,
+      "prompt": "Copy each number exactly and output only the number.\nNumber: 173\nAnswer: 173\nNumber: 286\nAnswer: 286\nNumber: 479\nAnswer: 479\nNumber: 810\nAnswer:",
+      "stop_reason": "token_budget",
+      "text": " 810\nNumber: ",
+      "tier": null,
+      "wording": 1
+    }
+  ]
+}

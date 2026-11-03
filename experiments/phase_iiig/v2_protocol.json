@@ -1,0 +1,118 @@
+{
+  "schema": "weightbridge.phase_iiig.behavioral_adaptation.v2",
+  "checkpoints": {
+    "qwen": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "smollm2": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a"
+  },
+  "seeds": {
+    "practice": "weightbridge-iiig-model-specific-practice-v2",
+    "selection": "weightbridge-iiig-model-specific-selection-v2"
+  },
+  "target_families": [
+    "multiplication",
+    "first-digit",
+    "last-digit"
+  ],
+  "roster_counts": {
+    "practice": {
+      "target": 12,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target": 12,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target": 16,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 8,
+    "worker_timeout_seconds": 600
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "answer": "one canonical decimal integer on the first completed line",
+    "completion": "newline or EOS within the generation budget",
+    "conditional_answer_prefix": " ",
+    "qualification_uses": "unrestricted deterministic greedy generation",
+    "selection_unit": "underlying item, with both fixed wordings"
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "family_lock": "Within each model choose among passing practice families by most repeatable errors, then most solved targets, then alphabetically. Selection can approve or hold the locked family and cannot switch it.",
+  "fitting_scope": "Use only practice. Include both wordings of at most eight stable wrong target items, stable solved target items, solved same-family positive controls, and solved copy controls. Use the observed wrong practice answer as contrast for errors.",
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "multiplication",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 128,
+      "max_backward_calls": 4,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 65536,
+      "max_update_norm": 1.5,
+      "max_rank": 1,
+      "max_candidates": 2
+    },
+    "data": {
+      "practice": "iiig-model-specific-practice-v2",
+      "evaluation": "iiig-model-specific-hidden-v2"
+    },
+    "methods": [
+      "constrained",
+      "gradient"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "candidate_lock": "Reload all candidates for selection. Eligible candidates meet the parsing floor, improve at least one target item and preserve every correct baseline presentation. Lock the highest-gain eligible candidate, breaking ties by intent method order. Keep hidden closed for a model with no eligible candidate. Evaluate all its eligible arms on hidden but accept only the locked candidate.",
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "evaluation_scope": "After both model plans and candidate receipts are locked, measure each admitted model on its locked target family, corresponding positive controls, and copy controls. Count correct items only when both wordings are correct. Preserve every baseline-correct target or control presentation. Keep controls separate from target gain.",
+  "eligible_families": {
+    "qwen": [
+      "multiplication"
+    ],
+    "smollm2": [
+      "first-digit",
+      "last-digit"
+    ]
+  },
+  "followup_design": "Fresh model-specific task families after the arithmetic admission HOLD. Qwen uses multiplication across three operand-width strata. SmolLM2 uses digit extraction across three input-width strata. The same thresholds and candidate rules apply. Operation wording differs while the expression and answer prefix stay fixed."
+}
