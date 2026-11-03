@@ -258,3 +258,18 @@ deployed; candidates remain isolated research artifacts.
 - Replayed all case dispositions from raw scores and verified the saved
   patch and policy hashes and equal forward budgets.
   [Protocol, report and evidence](QWEN_REPAIR_COHORT.md)
+
+## Real checkpoint edit workflow and qualification
+
+- Added `evaluate-hf-edit` for saved Hugging Face candidates. The CLI
+  verifies both checkpoint hashes against the patch receipt and gates
+  held-out target gains and unrelated prediction changes.
+- Rebuilt the archived deterministic Qwen example and reproduced
+  12/24 to 22/24 targets with zero sentinel flips from a clean archive.
+- In the fresh constrained AI pilot, one of three cases passed. The
+  passing candidate scored 21/24 to 24/24 with zero of 16 sentinel flips.
+  The generic evaluator and clean-archive replay reproduced the result.
+  [Pilot and evidence](QWEN_AI_EDIT_PILOT.md)
+- The separate frozen 20-task direct-proposal qualification finished
+  with zero finalized repairs. The audit replayed all recorded holdout
+  arrays. [Qualification report](../results/wb-dq/cohort_summary.json)

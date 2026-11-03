@@ -34,9 +34,15 @@ the gates for exposing real checkpoints through MCP.
 The passing case recovered all three lost target answers and preserved
 all 16 unrelated predictions relative to both pristine and damaged
 checkpoints. Its paraphrase split scored 12/12 before and after the edit.
+The selected layer 23 edit used strength 0.03 and changed 63,186 stored
+BF16 values, about 0.0072% of model parameters. In cases 19 and 23 the
+random arm found no eligible practice finalist after six proposals and
+used the damaged checkpoint as its holdout fallback.
 An independent run of the product evaluator reproduced the gain on the
 saved candidate. The 19th-layer case also recovered every lost target
 answer, but two sentinel predictions still differed from pristine.
+The product evaluator rejected that candidate at a zero-flip threshold
+because it changed one sentinel prediction relative to the damaged base.
 In the 21st-layer case, random scored higher on targets and the
 AI-directed edit lost one paraphrase answer. One of three cases cleared
 the gate. The result establishes a working constrained edit loop for one

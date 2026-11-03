@@ -1,0 +1,19 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -1.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too positive (mean 1.0, min 0.0), causing tanh to output negative values for positive inputs, flipping the activation sign and causing the model to predict the wrong class (0 vs 1) when the true class is 1.",
+  "schema": "weightbridge.patch.v1"
+}

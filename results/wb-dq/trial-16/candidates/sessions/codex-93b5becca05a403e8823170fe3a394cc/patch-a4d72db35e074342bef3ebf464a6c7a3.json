@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.5
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too positive (mean 1.0, max 2.0) compared to expected negative values (expected 0, max -3.0). Adding -0.5 to both weights shifts the activation to negative, correcting the bias.",
+  "schema": "weightbridge.patch.v1"
+}

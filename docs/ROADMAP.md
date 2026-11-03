@@ -7,7 +7,7 @@
 | 1. Preserve and reproduce v0.1 | COMPLETE | Baseline commit `321547d`; 11 original tests passed; v0.1 demo rerun |
 | 2. Real-model inspection and patch reconstruction | COMPLETE for local safetensors/Qwen path | Sharded/unsharded inspection and host-policy patcher; p50c hashes match |
 | 3. Bounded original-versus-published benchmark | PARTIAL / HOLD | Small CPU smoke completed but truncated; published datasets/scores not run |
-| 4. AI-directed diagnosis and candidate edit | PILOT COMPLETE / TRANSFER HOLD | One Codex MCP discovery; pinned local Qwen host exercised in bounded synthetic trials; 20-task gate pending |
+| 4. AI-directed diagnosis and candidate edit | REAL CLI PILOT COMPLETE / DIRECT TRANSFER FAIL | One passing real Qwen CLI case out of three. The frozen 20-task direct-proposal gate failed with zero finalized repairs. |
 | 5. Memory-guided diagnosis | PILOT COMPLETE / GENERAL CLAIM HOLD | Four-condition synthetic ablation across ten task seeds |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
@@ -31,16 +31,18 @@ predictions after reload. One of three cases passed. The README documents
 the separate product evaluator for any compatible local Hugging Face
 candidate and host-owned forced-choice suite.
 
-## Immediate next experiment
+## Direct-proposal qualification
 
 The balanced 20-task protocol, fixed prompt, host policy, task assignments,
 source hashes, matched-control rule and stratified evaluator are implemented
 in `experiments/original_weight_edits/`. The local Qwen host pins checkpoint
 and runtime identity, freezes the protocol and starts a new model context for
-each trial. The model receives the prompt and tool responses. A formal study
-needs a single frozen interaction mode and a fresh roster of splits, with all
-20 tasks completed. The four-task exploratory runs use distinct seed sets
-and have their own receipts.
+each trial. The model receives the prompt and tool responses. The
+[completed qualification](../results/wb-dq/cohort_summary.json) used
+one frozen interaction mode and a fresh roster across all 20 tasks.
+The local Qwen controller finalized zero repairs. All 37 accepted
+practice evaluations left logits unchanged at the measured tolerance.
+The earlier exploratory and solver-assisted runs retain separate receipts.
 
 The gate remains at least 70% fully repaired holdouts, at most 5% regression
 among baseline-correct items, and at least a 20 percentage-point advantage

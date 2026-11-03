@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.05
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too large (mean 1.0, max 2.0) compared to the expected activation magnitude (max 0.492), causing the tanh activation to be too negative and the logits to be too high, pushing the model to predict 1 when it should predict 0.",
+  "schema": "weightbridge.patch.v1"
+}

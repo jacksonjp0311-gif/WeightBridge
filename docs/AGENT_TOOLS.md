@@ -134,6 +134,33 @@ the host calls diagnostics and practice evaluation automatically, while the
 model supplies patch proposals and chooses whether to finalize an evaluated
 candidate. Treat the interaction modes as separate exploratory conditions.
 
+### Completed direct-proposal qualification
+
+The pinned local Qwen controller completed all 20 blinded patch-form tasks
+across four fault types with fresh splits. The host routed practice
+evaluation, and the model supplied each patch and its final decision.
+The frozen qualification recorded **FAIL** with zero finalized candidates
+and zero repairs. All 37 practice evaluations left logits unchanged
+within `1e-9`, and 19 proposals duplicated an earlier proposal.
+The damaged fallback averaged 2.97 percentage points below the
+predeclared random controls. The mechanism-stratified 95% interval ran from
+−8.52 to +1.17 points. [Protocol, transcripts and scores](../results/wb-dq/)
+
+Audit the archived result from the repository root. Use a fresh report path.
+
+```bash
+python -m weightbridge.evaluation.mcp_cohort \
+  --protocol results/wb-dq/frozen_protocol.json \
+  --records results/wb-dq/trial-*/experiment_record.json \
+  --out direct-audit.json
+```
+
+The [real-checkpoint CLI pilot](QWEN_AI_EDIT_PILOT.md) used a constrained
+controller that chose layers and strengths and a host that fit the edit
+direction. It passed one of three real Qwen cases. Use the
+[README workflow](../README.md#edit-and-test-a-real-checkpoint) to submit and
+evaluate your own saved Hugging Face candidate.
+
 ### Paired connectivity probe
 
 For the toy MLP, an input weight `input_weight[i, j]` or hidden bias

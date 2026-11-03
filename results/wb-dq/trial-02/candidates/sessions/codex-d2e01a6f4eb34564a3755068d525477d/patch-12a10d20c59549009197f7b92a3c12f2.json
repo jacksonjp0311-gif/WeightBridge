@@ -1,0 +1,19 @@
+{
+  "base_sha256": "ec17e7617dc564ff74a7435e1379dd02b2ee09b4c50cf668ab90b5dd4eb7d253",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -1.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too positive, causing tanh activation to be negative for both inputs (0.862, 0.942) and (0.714, 0.21), resulting in logit < 0 and h < 0. This causes the model to predict 0 instead of 1 for both examples, violating the 'Highest logit wins' rule.",
+  "schema": "weightbridge.patch.v1"
+}

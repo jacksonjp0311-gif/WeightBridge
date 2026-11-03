@@ -1,0 +1,79 @@
+{
+  "analysis": {
+    "bootstrap_seed": 918273,
+    "confidence": 0.95,
+    "method": "paired task-level accuracy differences; bootstrap seeds within each mechanism stratum",
+    "resamples": 10000
+  },
+  "cohort_id": "wb-dq",
+  "disposition": "FAIL",
+  "gate": {
+    "ci_lower_strictly_above": 0.0,
+    "max_regression_rate": 0.05,
+    "min_candidate_minus_random": 0.2,
+    "min_repair_rate": 0.7,
+    "repair_definition": "candidate achieves 100 percent holdout accuracy and baseline is below 100 percent"
+  },
+  "metrics": {
+    "baseline_correct_items": 680,
+    "by_mechanism": {
+      "hidden_threshold_shift": {
+        "baseline_accuracy": 0.625,
+        "candidate_accuracy": 0.625,
+        "n": 5,
+        "random_accuracy": 0.603125,
+        "repair_rate": 0.0,
+        "repairs": 0
+      },
+      "input_direction_reversal": {
+        "baseline_accuracy": 0.5,
+        "candidate_accuracy": 0.5,
+        "n": 5,
+        "random_accuracy": 0.6,
+        "repair_rate": 0.0,
+        "repairs": 0
+      },
+      "output_class_collapse": {
+        "baseline_accuracy": 0.5,
+        "candidate_accuracy": 0.5,
+        "n": 5,
+        "random_accuracy": 0.521875,
+        "repair_rate": 0.0,
+        "repairs": 0
+      },
+      "output_intercept_shift": {
+        "baseline_accuracy": 0.5,
+        "candidate_accuracy": 0.5,
+        "n": 5,
+        "random_accuracy": 0.51875,
+        "repair_rate": 0.0,
+        "repairs": 0
+      }
+    },
+    "candidate_minus_matched_random": {
+      "bootstrap_seed": 918273,
+      "ci95_stratified_by_mechanism": [
+        -0.08517578124999983,
+        0.01171875
+      ],
+      "confidence": 0.95,
+      "mean_candidate_minus_random": -0.0296875,
+      "resamples": 10000,
+      "seed_clusters_per_mechanism": {
+        "hidden_threshold_shift": 5,
+        "input_direction_reversal": 5,
+        "output_class_collapse": 5,
+        "output_intercept_shift": 5
+      }
+    },
+    "regression_rate": 0.0,
+    "regressions": 0,
+    "repair_rate": 0.0,
+    "repairs": 0
+  },
+  "planned_tasks": 20,
+  "reasons": [],
+  "records_received": 20,
+  "repair_definition": "candidate scores 100% on holdout while baseline is below 100%",
+  "schema": "weightbridge.mcp_llm_cohort_summary.v2"
+}

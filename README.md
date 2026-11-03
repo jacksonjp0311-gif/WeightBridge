@@ -122,7 +122,7 @@ all 16 sentinel predictions. [AI pilot evidence](docs/QWEN_AI_EDIT_PILOT.md)
 | Deterministic search on real Qwen weights | Guided candidates beat matched random search in 11 of 12 cases. Five passed all per-case requirements. The cohort threshold was eight. [Cohort report](docs/QWEN_REPAIR_COHORT.md) |
 | Practice wording on real Qwen weights | One candidate took fresh paraphrase accuracy from 6/12 to 12/12 after reload while preserving all 16 unrelated predictions. The three-wording arm passed 2/12 cases. [Wording study](docs/QWEN_WORDING_ABLATION.md) |
 | AI-directed selection on real Qwen weights | Qwen chose which bounded edits to try. One saved finalist improved held-out targets from 21/24 to 24/24 with all 16 unrelated predictions preserved. One of three cases passed the full gate. [Pilot and receipts](docs/QWEN_AI_EDIT_PILOT.md) |
-| AI edit selection | One Codex pilot independently found a blinded toy repair. Qwen chose successful solver-proposed edits in 19/20 toy cases. The formal benchmark for AI-proposed edits has its own gate. [Agent tools](docs/AGENT_TOOLS.md) · [Roadmap](docs/ROADMAP.md) |
+| AI edit selection on toy models | One Codex pilot independently found a blinded repair. Qwen chose successful solver-proposed edits in 19/20 cases. In the separate frozen test of direct patch writing, Qwen finalized 0/20 repairs. [Agent tools](docs/AGENT_TOOLS.md) · [Qualification report](results/wb-dq/cohort_summary.json) |
 
 <details>
 <summary>Historical v0.1 guide and patch examples</summary>

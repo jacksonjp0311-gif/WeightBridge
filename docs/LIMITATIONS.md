@@ -7,17 +7,19 @@
   matrix scripts are present, but the `benchmark` optional dependencies are
   not installed in the project environment. The Qwen checkpoint and candidate
   were kept in an external temporary cache and are not included in the project.
-- **Qwen behavioral claim: HOLD / INCONCLUSIVE.** The paired smoke used two
+- **Published Qwen generation reproduction: HOLD / INCONCLUSIVE.** The paired smoke used two
   hand-authored development prompts, one output each, and a 64-token cap. Every
   output was truncated. A separate exploratory 256-token smoke also truncated
   every generation. Neither can support an accuracy or loop-reduction claim.
-- **Qwen AI-directed edit: HOLD.** The diagnostic agent was exercised only on
-  the synthetic MLP. No Qwen patch was proposed by the agent or evaluated.
-- **LLM transfer: HOLD / INCONCLUSIVE.** One Codex session used MCP tools
-  to identify and repair a hidden-bias defect. The local Qwen host has also
-  been exercised in bounded exploratory trials. The four-mechanism,
-  20-instance transfer study is pending.
-- **Random Qwen control behavior: HOLD.** The control checkpoint has matching
+- **Constrained Qwen AI-directed edit: pilot.** The controller chose layers
+  and strengths and a fixed compiler fit edit directions. One of three
+  induced-fault cases passed the full reload and locality gate.
+  [Pilot](QWEN_AI_EDIT_PILOT.md)
+- **Direct LLM transfer: FAIL.** The frozen four-mechanism, 20-task
+  Qwen cohort completed with zero finalized repairs. One separate Codex
+  session found a blinded hidden-bias repair.
+  [Qualification](../results/wb-dq/cohort_summary.json)
+- **Published random Qwen control behavior: HOLD.** The control checkpoint has matching
   changed-value counts but was not run through inference.
 - **LoRA or language-model conventional baseline: HOLD.** The measured
   conventional baseline is full-batch SGD on the small synthetic MLP only.
@@ -107,10 +109,11 @@ the process must be contained against allocation spikes.
   on the p50 Qwen candidate.
 - No layer-specific activation intervention, singular-value survey or
   causal circuit analysis has identified why the published patch works.
-- The MCP tools currently bind only a synthetic `ToyMLP` practice evaluator;
-  real Hugging Face models still use the CLI, with no LLM-directed Qwen
-  practice/evaluation loop. The MCP server is not an OS sandbox.
-- The v2 20-task cohort is pending. The local Transformers host records
+- The MCP tools bind a synthetic `ToyMLP` practice evaluator. Real Hugging
+  Face checkpoint edits and held-out scoring use the CLI. The MCP server is
+  an application boundary under the launching user's OS permissions.
+- The completed v2 20-task cohort covers local Qwen in patch-form mode.
+  The local Transformers host records
   checkpoint, tokenizer, sampling and runtime identity and uses a fresh
   context per trial. The model's only action channel is the broker's MCP
   interface. Bounded runs use separate protocols and seed rosters, so they

@@ -1,0 +1,19 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.05
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too positive, causing tanh activation to be too high (h[0]=0.215, h[1]=-0.362) relative to expected 0.0, resulting in logits that are too positive for the expected class 0. This misalignment between tanh output and expected logits is the primary cause of the 20 class errors.",
+  "schema": "weightbridge.patch.v1"
+}

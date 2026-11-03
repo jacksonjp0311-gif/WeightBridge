@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.5
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too positive (mean 1.0, max 2.0) compared to expected negative values (expected 0, max -3.0). Positive inputs cause tanh to output positive logits, but the model expects negative logits to trigger the correct class (0). Adding a negative delta to the first two inputs corrects the bias for the first two classes.",
+  "schema": "weightbridge.patch.v1"
+}

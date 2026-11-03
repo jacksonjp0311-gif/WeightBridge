@@ -1,0 +1,19 @@
+{
+  "base_sha256": "2c3e2171c419fa6b4c4eef16906ede1c0fd52feeef148b84454791aab737d157",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.005
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too high (mean 1.0 vs expected 0.5), causing tanh to saturate at 0.713 and -0.758, pushing logits to 2.14 and 1.569, which are below the threshold of 1.0. Adding -0.005 to the first weight axis reduces the tanh output, increasing logits toward the correct range.",
+  "schema": "weightbridge.patch.v1"
+}

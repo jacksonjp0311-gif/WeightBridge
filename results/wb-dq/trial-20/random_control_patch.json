@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0
+      ],
+      "op": "add",
+      "tensor": "hidden_bias",
+      "value": 4.0
+    }
+  ],
+  "evidence_ids": [
+    "mcp-cohort-random-control"
+  ],
+  "projections": [],
+  "reason": "Seeded random one-entry control uses the preregistered fallback magnitude.",
+  "schema": "weightbridge.patch.v1"
+}

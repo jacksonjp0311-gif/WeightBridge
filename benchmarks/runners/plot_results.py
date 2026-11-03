@@ -507,6 +507,7 @@ def build() -> dict[str, Any]:
     blind_qwen = []
     qwen_repair_cohorts = []
     qwen_wording_ablations = []
+    ai_edit_validation = {}
     for item in experiments:
         if item["experiment_id"].startswith("qwen-blind-repair-") and "summary" in item["evaluation"]:
             evidence = ROOT / item["artifact_root"] / item["evaluation"]["summary"]
@@ -518,6 +519,9 @@ def build() -> dict[str, Any]:
         if item["experiment_id"].startswith("qwen-wording-ablation-"):
             qwen_wording_ablations.append({"experiment_id": item["experiment_id"],
                                           **_wording_ablation_summary(ROOT / item["artifact_root"])})
+        if item["experiment_id"] in {"qwen-ai-edit-pilot-v1", "wb-dq"}:
+            evidence = ROOT / item["artifact_root"] / item["evaluation"]["summary"]
+            ai_edit_validation[item["experiment_id"]] = {"raw_evidence": relative(evidence), **read_json(evidence)}
     # The seed-731 early records were duplicate replays; the ledger correction
     # excludes the first and one isolated replay is retained as historical only.
     toy = [item for item in experiments if item["experiment_id"] in {
@@ -708,6 +712,7 @@ def build() -> dict[str, Any]:
         "qwen_blind_repair": blind_qwen,
         "qwen_repair_cohorts": qwen_repair_cohorts,
         "qwen_wording_ablations": qwen_wording_ablations,
+        "ai_edit_validation": ai_edit_validation,
         "cost_improvement_points": cost_points,
         "regression_rates": regressions,
         "outcomes_over_time": outcomes,
