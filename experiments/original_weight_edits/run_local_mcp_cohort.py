@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from weightbridge.evaluation.freeze_cohort import freeze_protocol
-from weightbridge.evaluation.mcp_cohort import _file_sha256, _read_json, summarize_cohort
+from weightbridge.evaluation.mcp_cohort import _canonical_hash, _file_sha256, _read_json, summarize_cohort
 from weightbridge.provenance import peak_rss_bytes
 
 
@@ -26,15 +26,15 @@ TEMPLATE = SOURCE.with_name("mcp_llm_transfer_v2.template.json")
 BROKER = SOURCE.with_name("run_mcp_agent_experiment.py")
 MODEL_ID = "Qwen/Qwen3.5-0.8B"
 REVISION = "2fc06364715b967f1860aea9cf38778875588b17"
-TURN_LIMIT = 12
-TOKEN_LIMIT = 192
+TURN_LIMIT = 8
+TOKEN_LIMIT = 160
 THREADS = 6
 
-GUIDE = """Reply with exactly one JSON object, no prose, on each turn.
+GUIDE = """Reply with one compact JSON object, no prose, per turn.
 Start with {"tool":"get_diagnostic_report","arguments":{}}.
-To propose an edit, use this syntax (choose your own tensor, index, value and rationale):
-{"tool":"submit_patch","arguments":{"patch":{"schema":"weightbridge.patch.v1","base_sha256":"BASE","reason":"your diagnosis and expected effect","evidence_ids":["practice-diagnostics"],"changes":[{"tensor":"TENSOR","index":[0],"op":"add","value":0.1}]}}}
-Use literal BASE for the current base checkpoint hash. The host attaches a short alias such as C1 to each accepted candidate.
+The model computes h=tanh(x @ input_weight + hidden_bias), then logits=h @ output_weight + output_bias. Highest logit wins. Use zero-based indices. Choose one scalar weight and a signed additive delta.
+{"tool":"submit_patch","arguments":{"tensor":"TENSOR","index":[0],"delta":0.1,"reason":"hypothesis in at most 12 words"}}
+The host attaches a short alias such as C1 to each accepted candidate.
 To evaluate it, use {"tool":"evaluate_practice","arguments":{"candidate_id":"C1"}}.
 To finalize it, use {"tool":"finalize_candidate","arguments":{"candidate_id":"C1"}}.
 To stop, use {"tool":"stop_without_candidate","arguments":{"reason":"your reason"}}.
@@ -64,6 +64,27 @@ def decode_request(text):
     return request
 
 
+def diagnostic_view(result):
+    failures = result["practice_failures"]
+    examples = []
+    for label in (0, 1):
+        group = [row for row in failures["examples"] if row["expected_class"] == label]
+        for row in group[:2]:
+            examples.append({
+                "x": [round(value, 3) for value in row["input"]],
+                "expected": label, "predicted": row["predicted_class"],
+                "logits": [round(value, 3) for value in row["logits"]],
+                "h": [round(value, 3) for value in row["hidden_activation"]],
+            })
+    return {
+        "practice": result["practice_baseline"], "failure_examples": examples,
+        "tensors": {name: {key: round(value, 3) if isinstance(value, float) else value
+                           for key, value in stats.items() if key != "dtype"}
+                    for name, stats in result["tensor_summary"].items()},
+        "policy": result["host_policy"],
+    }
+
+
 def generate(tokenizer, model, messages):
     import torch
 
@@ -87,6 +108,7 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
     started_cpu = time.process_time()
     aliases = {}
     base_sha = None
+    diagnostic_shown = False
     messages = [{"role": "system", "content": prompt}, {"role": "user", "content": GUIDE}]
     events_path = root / f"{task_id}.model_turns.jsonl"
     with (root / f"{task_id}.broker.stderr.txt").open("x", encoding="utf-8") as stderr, \
@@ -130,17 +152,22 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                     tool, arguments = request["tool"], request["arguments"]
                     if tool not in allowed:
                         raise ValueError("tool is not available")
-                    patch = arguments.get("patch")
-                    if (tool == "submit_patch" and isinstance(patch, dict)
-                            and patch.get("base_sha256") == "BASE" and base_sha):
-                        patch["base_sha256"] = base_sha
+                    if tool == "submit_patch":
+                        if set(arguments) != {"tensor", "index", "delta", "reason"} or not base_sha:
+                            raise ValueError("provide tensor, index, delta and reason after diagnostics")
+                        request["arguments"] = {"patch": {
+                            "schema": "weightbridge.patch.v1", "base_sha256": base_sha,
+                            "reason": arguments["reason"], "evidence_ids": ["practice-diagnostics"],
+                            "changes": [{"tensor": arguments["tensor"], "index": arguments["index"],
+                                         "op": "add", "value": arguments["delta"]}],
+                        }}
                     candidate_id = arguments.get("candidate_id")
                     if isinstance(candidate_id, str) and candidate_id in aliases:
                         arguments["candidate_id"] = aliases[candidate_id]
                     json.dumps(request, allow_nan=False)
                 except ValueError as exc:
                     log({"turn": turn, "transport_error": str(exc)})
-                    messages.append({"role": "user", "content": "Invalid request. " + GUIDE})
+                    messages.append({"role": "user", "content": "Invalid request. Use one JSON object in the specified format."})
                     continue
                 response = send(request)
                 if response.get("experiment_complete") is True:
@@ -150,10 +177,17 @@ def run_task(task_id, root, protocol_path, broker_python, tokenizer, model, prom
                 if response.get("ok") and isinstance(result, dict):
                     if tool == "get_diagnostic_report":
                         base_sha = result.get("base_sha256")
+                        response = ({"practice_diagnostics": diagnostic_view(result)}
+                                    if not diagnostic_shown else {"status": "See previous diagnostics"})
+                        diagnostic_shown = True
                     if tool == "submit_patch" and result.get("candidate_id"):
                         alias = f"C{len(aliases) + 1}"
                         aliases[alias] = result["candidate_id"]
-                        response["candidate_alias"] = alias
+                        response = {"candidate_alias": alias, "next": "evaluate_practice"}
+                    if tool == "evaluate_practice":
+                        response = {"practice_result": result["result"]}
+                if response.get("ok") is False:
+                    response = {"error": str(response.get("error", ""))[:350]}
                 messages.append({"role": "user", "content": json.dumps(response, separators=(",", ":"))})
             if not ended:
                 log({"host_stop": "model turn budget exhausted"})
@@ -180,6 +214,8 @@ def main():
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--broker-python", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--tasks", type=int, choices=range(1, 21), default=20,
+                        metavar="1-20", help="execute a prefix of the frozen order")
     args = parser.parse_args()
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
@@ -197,6 +233,15 @@ def main():
     if checkpoint_files.get("model.safetensors-00001-of-00001.safetensors") != checkpoint_sha:
         raise ValueError("local checkpoint differs from the pinned Qwen base")
     template = _read_json(TEMPLATE)
+    # Fresh study data and a balanced four-mechanism prefix for a bounded smoke.
+    by_id = {task["task_id"]: task for task in template["tasks"]}
+    for task in template["tasks"]:
+        task["seed"] += 10_000
+    prefix = list({}.fromkeys(by_id[item]["mechanism"] for item in template["execution_order"]))
+    first_ids = [next(item for item in template["execution_order"] if by_id[item]["mechanism"] == mechanism)
+                 for mechanism in prefix]
+    template["execution_order"] = first_ids + [item for item in template["execution_order"] if item not in first_ids]
+    template["protocol_sha256"] = _canonical_hash(template)
     split_seeds = [seed for task in template["tasks"] for seed in (task["seed"], task["seed"] + 1)]
     if len(split_seeds) != len(set(split_seeds)):
         raise ValueError("cohort practice and holdout seeds overlap")
@@ -209,25 +254,28 @@ def main():
         model_path, dtype=torch.bfloat16, local_files_only=True,
     ).eval()
     out.mkdir(parents=True, exist_ok=False)
+    draft_path = out / "study_template.json"
+    write_json(draft_path, template)
     receipt_path = out / "local_model_identity.json"
     write_json(receipt_path, {
         "schema": "weightbridge.llm_identity_receipt.v1",
         "provider": "local-transformers", "model_id": MODEL_ID, "version": REVISION,
         "host_call_id": uuid.uuid4().hex, "checkpoint_files_sha256": checkpoint_files,
-        "host_source_sha256": _file_sha256(SOURCE),
+        "host_source_sha256": _file_sha256(SOURCE), "planned_task_prefix": args.tasks,
+        "diagnostic_view": "first two failures per class rounded to three decimals; practice metrics and tensor summaries",
         "sampling": {"do_sample": False, "enable_thinking": False, "max_new_tokens": TOKEN_LIMIT,
                      "max_model_turns": TURN_LIMIT, "max_input_tokens": 16_384, "device": "cpu",
                      "dtype": "bfloat16", "torch_threads": THREADS, "torch": version("torch"),
                      "transformers": version("transformers")},
     })
     manifest = out / "frozen_protocol.json"
-    freeze_protocol(TEMPLATE, receipt_path, manifest, cohort_id=out.name,
+    freeze_protocol(draft_path, receipt_path, manifest, cohort_id=out.name,
                     identity_provenance="Local checkpoint matched the pinned SHA-256; local files hashed, offline inference with a fresh chat per task.")
     protocol = _read_json(manifest)
     records = []
     failure = None
     try:
-        for task_id in protocol["execution_order"]:
+        for task_id in protocol["execution_order"][:args.tasks]:
             print(f"Starting {task_id}", flush=True)
             record = run_task(task_id, out, manifest, args.broker_python.resolve(strict=True),
                               tokenizer, model, prompt)
