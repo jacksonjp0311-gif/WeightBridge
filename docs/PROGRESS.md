@@ -121,15 +121,21 @@ deployed; candidates remain isolated research artifacts.
 
 - The v2 protocol source bindings and canonical protocol hash were verified.
   The checked-in file remains `TEMPLATE_HOLD`; it cannot launch until a host
-  supplies a verifiable model identity/sampling receipt and MCP-only isolation.
+  supplies a pinned model identity/sampling receipt and MCP-only isolation.
 - Preflight against the existing MCP pilot returned INCONCLUSIVE: one prior
   record received, zero of 20 planned tasks bound, and the model identity,
   sampling, and host verification evidence are absent. This is a protocol
   readiness check, not a new behavioral experiment.
-- Cohort and MCP tests: 19 passed. The cohort module has 13 tests; together
+- A follow-up audit found that the evaluator declared but did not consume the
+  manifest's bootstrap plan. It now validates the frozen seed, resample count
+  and confidence, uses those values, and records them in the summary. The first
+  focused rerun caught source-hash drift and an obsolete test override; both
+  were corrected before final verification.
+- Cohort and MCP tests: 20 passed. The cohort module has 14 tests; together
   these cover task binding, source and identity hashes, transcript integrity,
-  execution order, random controls, and the preregistered decision gate.
-- Full core suite: 72 passed, 2 skipped. Full inference-capable reference
-  environment: 75 passed, 1 skipped. `compileall` and `git diff --check`
+  execution order, random controls, the analysis plan, and the preregistered
+  decision gate.
+- Full core suite: 73 passed, 2 skipped. Full inference-capable reference
+  environment: 76 passed, 1 skipped. `compileall` and `git diff --check`
   passed.
 - No new model-behavior measurements were collected in this continuation.

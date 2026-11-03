@@ -87,6 +87,12 @@ def make_protocol(tmp_path):
             "min_repair_rate": 0.7, "max_regression_rate": 0.05,
             "min_candidate_minus_random": 0.2, "ci_lower_strictly_above": 0.0,
         },
+        "analysis": {
+            "bootstrap_seed": 918273,
+            "confidence": 0.95,
+            "method": "paired task-level accuracy differences; bootstrap seeds within each mechanism stratum",
+            "resamples": 10_000,
+        },
     }
     protocol["protocol_sha256"] = _canonical_hash(protocol)
     return protocol
@@ -190,6 +196,14 @@ def test_manifest_rejects_unpinned_template_before_start(tmp_path):
         load_cohort_task(manifest, "trial-01", root=tmp_path)
 
 
+def test_manifest_rejects_unregistered_analysis_plan(tmp_path):
+    protocol = make_protocol(tmp_path)
+    protocol["analysis"]["resamples"] = 500
+    protocol["protocol_sha256"] = _canonical_hash(protocol)
+    errors = validate_protocol(protocol, root=tmp_path)
+    assert "analysis plan differs from the preregistered stratified bootstrap" in errors
+
+
 def test_checked_in_protocol_template_has_valid_hashes_but_is_hold_for_identity():
     project_root = Path(__file__).resolve().parents[1]
     manifest_path = project_root / "experiments" / "original_weight_edits" / "mcp_llm_transfer_v2.template.json"
@@ -218,7 +232,7 @@ def test_runner_refuses_template_before_creating_a_task():
 
 def test_stratified_cohort_gate_uses_holdout_arrays_and_matched_random(tmp_path):
     protocol = make_protocol(tmp_path)
-    summary = summarize_cohort(protocol, make_records(protocol, tmp_path), root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, make_records(protocol, tmp_path), root=tmp_path)
     assert summary["disposition"] == "PASS"
     assert summary["metrics"]["repairs"] == 20
     assert summary["metrics"]["repair_rate"] == 1.0
@@ -226,12 +240,16 @@ def test_stratified_cohort_gate_uses_holdout_arrays_and_matched_random(tmp_path)
     paired = summary["metrics"]["candidate_minus_matched_random"]
     assert paired["mean_candidate_minus_random"] == 0.5
     assert paired["ci95_stratified_by_mechanism"] == [0.5, 0.5]
+    assert paired["bootstrap_seed"] == protocol["analysis"]["bootstrap_seed"]
+    assert paired["resamples"] == protocol["analysis"]["resamples"]
+    assert paired["confidence"] == protocol["analysis"]["confidence"]
+    assert summary["analysis"] == protocol["analysis"]
 
 
 def test_cohort_fails_when_matched_random_is_as_good_as_agent(tmp_path):
     protocol = make_protocol(tmp_path)
     summary = summarize_cohort(protocol, make_records(protocol, tmp_path, random_accuracy=1.0),
-                               root=tmp_path, resamples=200)
+                               root=tmp_path)
     assert summary["disposition"] == "FAIL"
     assert summary["metrics"]["candidate_minus_matched_random"]["mean_candidate_minus_random"] == 0.0
 
@@ -248,7 +266,7 @@ def test_holdout_exposure_prevents_cohort_pass(tmp_path):
     protocol = make_protocol(tmp_path)
     records = make_records(protocol, tmp_path)
     records[0]["evaluation"]["holdout_accessed_by_agent"] = True
-    summary = summarize_cohort(protocol, records, root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, records, root=tmp_path)
     assert summary["disposition"] == "INCONCLUSIVE"
     assert any("holdout exposure" in reason for reason in summary["reasons"])
 
@@ -257,7 +275,7 @@ def test_unmatched_random_edit_prevents_cohort_pass(tmp_path):
     protocol = make_protocol(tmp_path)
     records = make_records(protocol, tmp_path)
     records[0]["control_modification"]["tensor"] = "output_bias"
-    summary = summarize_cohort(protocol, records, root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, records, root=tmp_path)
     assert summary["disposition"] == "INCONCLUSIVE"
     assert any("not matched to the AI edit" in reason for reason in summary["reasons"])
 
@@ -267,7 +285,7 @@ def test_transcript_hash_tampering_prevents_cohort_pass(tmp_path):
     records = make_records(protocol, tmp_path)
     transcript = tmp_path / records[0]["artifact_root"] / "agent_mcp_transcript.jsonl"
     transcript.write_text("tampered\n", encoding="utf-8")
-    summary = summarize_cohort(protocol, records, root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, records, root=tmp_path)
     assert summary["disposition"] == "INCONCLUSIVE"
     assert any("hashed MCP transcript is missing" in reason for reason in summary["reasons"])
 
@@ -277,7 +295,7 @@ def test_identity_receipt_tampering_prevents_cohort_pass(tmp_path):
     records = make_records(protocol, tmp_path)
     evidence = tmp_path / records[0]["artifact_root"] / "model_identity_receipt.json"
     evidence.write_text("tampered", encoding="utf-8")
-    summary = summarize_cohort(protocol, records, root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, records, root=tmp_path)
     assert summary["disposition"] == "INCONCLUSIVE"
     assert any("hashed LLM identity receipt is missing" in reason for reason in summary["reasons"])
 
@@ -286,6 +304,6 @@ def test_execution_order_mismatch_prevents_cohort_pass(tmp_path):
     protocol = make_protocol(tmp_path)
     records = make_records(protocol, tmp_path)
     records[0]["protocol_binding"]["execution_index"] = 1
-    summary = summarize_cohort(protocol, records, root=tmp_path, resamples=200)
+    summary = summarize_cohort(protocol, records, root=tmp_path)
     assert summary["disposition"] == "INCONCLUSIVE"
     assert any("execution order differs" in reason for reason in summary["reasons"])

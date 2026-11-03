@@ -180,6 +180,15 @@ def validate_protocol(protocol: dict[str, Any], *, root: Path = ROOT) -> list[st
     if gate != expected_gate:
         errors.append("decision gate differs from the preregistered criteria")
 
+    expected_analysis = {
+        "bootstrap_seed": 918273,
+        "confidence": 0.95,
+        "method": "paired task-level accuracy differences; bootstrap seeds within each mechanism stratum",
+        "resamples": 10_000,
+    }
+    if protocol.get("analysis") != expected_analysis:
+        errors.append("analysis plan differs from the preregistered stratified bootstrap")
+
     if protocol.get("status") != "FROZEN":
         errors.append("protocol is a template and has not been frozen for a specific LLM")
     return errors
@@ -261,6 +270,7 @@ def _verify_identity_evidence(record: dict[str, Any], protocol: dict[str, Any], 
 
 def _stratified_bootstrap(
     differences: dict[str, list[float]], *, seed: int, resamples: int,
+    confidence: float,
 ) -> dict[str, Any]:
     rng = np.random.default_rng(seed)
     mechanisms = [name for name in MECHANISMS if name in differences]
@@ -274,16 +284,17 @@ def _stratified_bootstrap(
             sampled.extend(values[rng.integers(0, len(values), size=len(values))].tolist())
         draws[index] = float(np.mean(sampled))
     observed = float(np.mean([value for group in differences.values() for value in group]))
-    low, high = np.quantile(draws, [0.025, 0.975])
+    tail = (1.0 - confidence) / 2.0
+    low, high = np.quantile(draws, [tail, 1.0 - tail])
     return {"mean_candidate_minus_random": observed,
             "ci95_stratified_by_mechanism": [float(low), float(high)],
             "seed_clusters_per_mechanism": {key: len(value) for key, value in differences.items()},
-            "bootstrap_seed": seed, "resamples": resamples}
+            "bootstrap_seed": seed, "resamples": resamples,
+            "confidence": confidence}
 
 
 def summarize_cohort(
-    protocol: dict[str, Any], records: list[dict[str, Any]], *,
-    root: Path = ROOT, bootstrap_seed: int = 918273, resamples: int = 10_000,
+    protocol: dict[str, Any], records: list[dict[str, Any]], *, root: Path = ROOT,
 ) -> dict[str, Any]:
     """Audit cohort completeness and calculate the preregistered gates."""
     protocol_errors = validate_protocol(protocol, root=root)
@@ -472,8 +483,13 @@ def summarize_cohort(
                 "missing_task_ids": missing, "reasons": sorted(set(errors)),
                 "metrics": None}
 
-    paired = _stratified_bootstrap(paired_differences, seed=bootstrap_seed,
-                                   resamples=resamples)
+    analysis = protocol["analysis"]
+    paired = _stratified_bootstrap(
+        paired_differences,
+        seed=analysis["bootstrap_seed"],
+        resamples=analysis["resamples"],
+        confidence=analysis["confidence"],
+    )
     repair_rate = repairs / EXPECTED_TASKS
     regression_rate = (regression_numerator / regression_denominator
                        if regression_denominator else 0.0)
@@ -494,6 +510,7 @@ def summarize_cohort(
         "cohort_id": protocol.get("cohort_id"), "disposition": disposition,
         "planned_tasks": EXPECTED_TASKS, "records_received": len(records),
         "repair_definition": "candidate scores 100% on holdout while baseline is below 100%",
+        "analysis": analysis,
         "metrics": {"repairs": repairs, "repair_rate": repair_rate,
                     "regressions": regression_numerator,
                     "baseline_correct_items": regression_denominator,

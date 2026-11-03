@@ -96,7 +96,9 @@ The current file is `TEMPLATE_HOLD`, because this environment cannot verify an
 LLM provider model/version or sampling receipt and the current workspace is
 visible to the model. A runnable protocol must point to a hash-checked host
 identity receipt containing provider, model ID, version, sampling settings and
-host call ID; each run copies the receipt into its raw evidence. The runner
+host call ID; each run copies the receipt into its raw evidence. Hashes detect
+content changes but do not prove provider identity cryptographically; the
+receipt remains host-reported evidence. The runner
 rejects the current template before task creation. Bind a separate isolated
 host, create and hash a new frozen protocol version, and retain each task's
 full request/response transcript before starting the study. The current

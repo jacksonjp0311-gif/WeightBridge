@@ -116,6 +116,12 @@ the process must be contained against allocation spikes.
   access to the task-generator source. A formal trial needs an isolated,
   fresh-context-per-task MCP host with no filesystem, repository, or network
   tools. The preflight is INCONCLUSIVE and contains no cohort measurements.
+- The host identity receipt and cohort records are content-hashed, not
+  cryptographically signed or provider-attested. They make accidental or
+  post-freeze changes detectable when the original protocol is retained, but
+  a host operator could fabricate the identity assertion. Treat model identity
+  as host-reported evidence until an auditable attestation/signature mechanism
+  is added.
 - The MCP pilot measured host-process CPU and elapsed time, but not MCP child
   CPU or LLM token costs. A future multi-task study needs a pinned model/harness
   identity, full tool transcript and provider cost records where available.

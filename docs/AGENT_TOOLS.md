@@ -84,7 +84,9 @@ verifiable provider model ID/version or reasoning-sampling receipt, and this
 workspace is visible to the current model. The runner rejects this template
 before creating a task. A frozen protocol must point to a hash-checked host
 identity receipt containing provider, model ID, version, sampling settings and
-host call ID; each task record retains that receipt. Bind an isolated host,
+host call ID; each task record retains that receipt. The receipt is
+host-reported and content-hashed, not cryptographically signed by a provider.
+Bind an isolated host,
 freeze a new protocol version and its source hashes, then invoke one task at a
 time with the host-owned manifest. Do not edit the template in place or reuse
 the disclosed pilot holdout.
