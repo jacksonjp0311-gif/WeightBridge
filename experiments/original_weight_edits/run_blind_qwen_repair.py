@@ -81,7 +81,7 @@ def build_splits(seeds):
     )
     suffix = "\nAnswer with the letter A or B only."
     sizes = {"construction": (12, 24), "practice": (12, 40), "holdout": (24, 32)}
-    shifts = {"construction": (0, 2), "practice": (1, 4), "holdout": (5, 7)}
+    shifts = {"construction": (0, 2), "practice": (1, 4), "holdout": (6, 7)}
     sets = {}
     used_pairs = set()
     for split, (n_target, n_other) in sizes.items():
