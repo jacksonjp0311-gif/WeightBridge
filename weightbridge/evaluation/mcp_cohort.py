@@ -64,7 +64,8 @@ def validate_protocol(protocol: dict[str, Any], *, root: Path = ROOT) -> list[st
     if not isinstance(expected_hashes, dict):
         expected_hashes = {}
         errors.append("source_hashes must be an object")
-    for key in ("task_generator", "mcp_tool_server", "agent_prompt", "cohort_evaluator"):
+    for key in ("task_generator", "mcp_tool_server", "agent_prompt", "cohort_evaluator",
+                "protocol_freezer"):
         item = expected_hashes.get(key)
         if not isinstance(item, dict) or not isinstance(item.get("path"), str):
             errors.append(f"missing source hash binding: {key}")

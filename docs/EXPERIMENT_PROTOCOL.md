@@ -104,6 +104,21 @@ host, create and hash a new frozen protocol version, and retain each task's
 full request/response transcript before starting the study. The current
 one-record preflight is INCONCLUSIVE and is not a behavioral result.
 
+Freeze a host receipt into a new protocol rather than editing the template:
+
+```bash
+python -m weightbridge.evaluation.freeze_cohort \
+  --template experiments/original_weight_edits/mcp_llm_transfer_v2.template.json \
+  --identity-receipt path/to/host_identity_receipt.json \
+  --out experiments/original_weight_edits/mcp_llm_transfer_v2.cohort-a.json \
+  --cohort-id mcp-llm-transfer-v2-cohort-a \
+  --identity-provenance "host identity checked from the recorded inference session"
+```
+
+The command copies and hashes the receipt beside the new protocol, verifies
+all bound sources and frozen settings, and refuses existing output paths. The
+operator-provided provenance remains an attestation, not cryptographic proof.
+
 ## Published Experiment 8 protocol reference
 
 The authors report Qwen3.5-0.8B with thinking enabled; temperature 0.6, top-p

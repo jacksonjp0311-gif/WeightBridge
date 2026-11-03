@@ -20,6 +20,7 @@ mcp = ["mcp>=1.28,<2"]
 [project.scripts]
 weightbridge = "weightbridge.__main__:main"
 weightbridge-mcp = "weightbridge.agents.mcp_server:main"
+weightbridge-freeze-mcp-cohort = "weightbridge.evaluation.freeze_cohort:main"
 
 [tool.setuptools.packages.find]
 include = ["weightbridge*"]

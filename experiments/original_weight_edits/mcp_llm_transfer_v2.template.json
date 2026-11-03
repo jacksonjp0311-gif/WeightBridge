@@ -63,7 +63,7 @@
   },
   "prompt_path": "experiments/original_weight_edits/MCP_AGENT_PROMPT_V2.md",
   "prompt_sha256": "cedefde69a0d6e82cdd5d0b0abc7c1934011fcbe989cc2d663b88ea96389d3e6",
-  "protocol_sha256": "4e6f5b2cb73d47eaad67f0c099da0ed4203259543437bde2d461583d22a11651",
+  "protocol_sha256": "bcad567cec8f4c89fcc1080d8b955aa33929cc3f3e32166f2f08f95f42b4a083",
   "schema": "weightbridge.mcp_llm_cohort_protocol.v2",
   "source_hashes": {
     "agent_prompt": {
@@ -72,11 +72,15 @@
     },
     "cohort_evaluator": {
       "path": "weightbridge/evaluation/mcp_cohort.py",
-      "sha256": "5e1292782216a36e36567f1287bcdeddd9fb758785f2fa8daf281a31d10a5f8f"
+      "sha256": "1b0a79216e62a43f04272a0138965e57666a11b458b77786e2127d3f5166a76f"
     },
     "mcp_tool_server": {
       "path": "weightbridge/agents/mcp_server.py",
       "sha256": "47f7958e8b43d31a424aabced4c18cae3154f5abfa6bfb41591b1a904465b46c"
+    },
+    "protocol_freezer": {
+      "path": "weightbridge/evaluation/freeze_cohort.py",
+      "sha256": "ebc9916794c2b136008d1835f9d6de02597a909ae14c2f775388c82aab2f8a0c"
     },
     "task_generator": {
       "path": "experiments/original_weight_edits/run_mcp_agent_experiment.py",

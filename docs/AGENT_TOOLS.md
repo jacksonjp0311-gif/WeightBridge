@@ -104,6 +104,12 @@ The current preflight is [`INCONCLUSIVE`](../results/original_weight_edits/mcp-c
 with one prior pilot record and no task bound to the 20-slot protocol. It is a
 protocol audit, not a behavioral cohort result.
 
+When a separate host can provide its identity receipt, freeze it into a new
+protocol file with `weightbridge-freeze-mcp-cohort` (or
+`python -m weightbridge.evaluation.freeze_cohort`). Use a new output name for
+every cohort; the command refuses to overwrite protocol or receipt files. Its
+identity provenance field is an operator statement, not a provider signature.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

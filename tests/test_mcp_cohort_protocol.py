@@ -19,6 +19,7 @@ from weightbridge.evaluation.mcp_cohort import (
     summarize_cohort,
     validate_protocol,
 )
+from weightbridge.evaluation.freeze_cohort import freeze_protocol
 
 
 def make_protocol(tmp_path):
@@ -28,6 +29,7 @@ def make_protocol(tmp_path):
         "mcp_tool_server": "mcp_server.py",
         "agent_prompt": "agent_prompt.md",
         "cohort_evaluator": "cohort_evaluator.py",
+        "protocol_freezer": "protocol_freezer.py",
     }.items():
         path = tmp_path / relative
         path.write_text(name, encoding="utf-8")
@@ -202,6 +204,72 @@ def test_manifest_rejects_unregistered_analysis_plan(tmp_path):
     protocol["protocol_sha256"] = _canonical_hash(protocol)
     errors = validate_protocol(protocol, root=tmp_path)
     assert "analysis plan differs from the preregistered stratified bootstrap" in errors
+
+
+def _write_template_for_freeze(tmp_path):
+    protocol = make_protocol(tmp_path)
+    protocol["status"] = "TEMPLATE_HOLD"
+    protocol["model_binding"].update({
+        "provider": None, "model_id": None, "version": None,
+        "identity_provenance": None, "identity_verified": False,
+        "sampling": None, "identity_evidence_path": None,
+        "identity_evidence_sha256": None,
+    })
+    protocol["protocol_sha256"] = _canonical_hash(protocol)
+    path = tmp_path / "template.json"
+    path.write_text(json.dumps(protocol), encoding="utf-8")
+    return path
+
+
+def test_freeze_command_creates_valid_new_protocol_and_receipt_bundle(tmp_path):
+    template = _write_template_for_freeze(tmp_path)
+    receipt = tmp_path / "model_identity_receipt.json"
+    output_dir = tmp_path / "frozen"
+    output_dir.mkdir()
+    output = output_dir / "cohort-a.json"
+    result = freeze_protocol(
+        template, receipt, output,
+        cohort_id="cohort-a-2026-11-03",
+        identity_provenance="test host receipt; unit test only",
+        root=tmp_path,
+    )
+    frozen = json.loads(output.read_text(encoding="utf-8"))
+    assert frozen["status"] == "FROZEN"
+    assert frozen["cohort_id"] == "cohort-a-2026-11-03"
+    assert frozen["model_binding"]["identity_verified"] is True
+    assert result["identity_receipt_path"].is_file()
+    assert validate_protocol(frozen, root=tmp_path) == []
+    loaded, task = load_cohort_task(output, "trial-01", root=tmp_path)
+    assert loaded["cohort_id"] == "cohort-a-2026-11-03"
+    assert task["seed"] == frozen["tasks"][0]["seed"]
+    with pytest.raises(FileExistsError, match="immutable"):
+        freeze_protocol(
+            template, receipt, output,
+            cohort_id="cohort-a-2026-11-03",
+            identity_provenance="test host receipt; unit test only",
+            root=tmp_path,
+        )
+
+
+def test_freeze_command_rejects_incomplete_identity_receipt(tmp_path):
+    template = _write_template_for_freeze(tmp_path)
+    bad_receipt = tmp_path / "bad_identity_receipt.json"
+    bad_receipt.write_text(json.dumps({
+        "schema": "weightbridge.llm_identity_receipt.v1",
+        "provider": "test-provider",
+    }), encoding="utf-8")
+    output_dir = tmp_path / "frozen"
+    output_dir.mkdir()
+    output = output_dir / "cohort-a.json"
+    with pytest.raises(CohortProtocolError, match="identity receipt is incomplete"):
+        freeze_protocol(
+            template, bad_receipt, output,
+            cohort_id="cohort-a",
+            identity_provenance="unit test",
+            root=tmp_path,
+        )
+    assert not output.exists()
+    assert not output.with_name("cohort-a.identity_receipt.json").exists()
 
 
 def test_checked_in_protocol_template_has_valid_hashes_but_is_hold_for_identity():
