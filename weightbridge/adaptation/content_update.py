@@ -19,13 +19,16 @@ from .bic_guard import MeasuredProbe, select_measured_probe
 from .content_scoring import prepare_continuations, score_batch
 
 
-def _practice_rows(targets, preservation):
+def _practice_rows(targets, preservation, *, use_prior=False):
     if (not isinstance(targets, (list, tuple)) or not isinstance(preservation, (list, tuple))
             or not targets or not preservation or len(targets) + len(preservation) > 64):
         raise ValueError("Content updates require target and preservation practice, at most 64 rows")
     rows = tuple(targets) + tuple(preservation)
+    fields = {"id", "prompt", "answers", "correct"}
+    if use_prior:
+        fields.add("neutral_prompt")
     for row in rows:
-        if (not isinstance(row, Mapping) or set(row) != {"id", "prompt", "answers", "correct"}
+        if (not isinstance(row, Mapping) or set(row) != fields
                 or not isinstance(row["id"], str) or not row["id"].strip()
                 or not isinstance(row["prompt"], str) or not row["prompt"].strip()
                 or not isinstance(row["answers"], (list, tuple)) or len(row["answers"]) != 2
@@ -33,6 +36,9 @@ def _practice_rows(targets, preservation):
                 or row["answers"][0] == row["answers"][1]
                 or type(row["correct"]) is not int or row["correct"] not in (0, 1)):
             raise ValueError("Each practice row requires id, prompt, two answers and correct index")
+        if use_prior and (not isinstance(row["neutral_prompt"], str) or not row["neutral_prompt"].strip()
+                          or row["neutral_prompt"].strip() == row["prompt"].strip()):
+            raise ValueError("Calibrated practice requires a distinct neutral prompt for each row")
     if len({row["id"] for row in rows}) != len(rows):
         raise ValueError("Practice row IDs must be unique")
     return rows
@@ -48,10 +54,28 @@ def _probe_points(dimensions, radius):
             yield tuple(float(value) for value in point) + (0.0,) * (2 - dimensions)
 
 
-def _measure(runner, torch, batches, scoring, resources, signs=(), modules=()):
+def _prepare_batches(tokenizer, rows, scoring, max_input_tokens, batch_size, use_prior):
+    answers = [row["answers"] for row in rows]
+    task = prepare_continuations(tokenizer, [row["prompt"] for row in rows], answers,
+                                 max_input_tokens=max_input_tokens, include_eos=scoring == "terminated_sum")
+    if use_prior:
+        neutral = prepare_continuations(tokenizer, [row["neutral_prompt"] for row in rows], answers,
+                                        max_input_tokens=max_input_tokens)
+        if any(left.answer_ids != right.answer_ids or left.prefix_ids == right.prefix_ids
+               for left, right in zip(task, neutral, strict=True)):
+            raise InferenceError("Calibrated continuations require matching answer token IDs and distinct prefixes")
+        # Each batch keeps both options under both contexts together.
+        task = tuple(continuation for index in range(0, len(task), 2)
+                     for continuation in (*task[index:index + 2], *neutral[index:index + 2]))
+    return [task[start:start + batch_size] for start in range(0, len(task), batch_size)]
+
+
+def _measure(runner, torch, batches, scoring, resources, signs=(), modules=(), *, prior_alpha=None):
     """Return first-minus-second scores and exact target-loss weight derivatives."""
     gradients = [np.zeros(tuple(module.weight.shape), dtype=np.float64) for module in modules]
     activations, outputs, margins, row_offset = {}, {}, [], 0
+    raw_task_margins, raw_neutral_margins = [], []
+    continuations_per_row = 2 if prior_alpha is None else 4
     handles = []
 
     def capture_input(_module, inputs, index):
@@ -66,8 +90,9 @@ def _measure(runner, torch, batches, scoring, resources, signs=(), modules=()):
 
     try:
         for batch in batches:
-            target_signs = signs[row_offset:row_offset + len(batch) // 2]
-            row_offset += len(batch) // 2
+            batch_rows = len(batch) // continuations_per_row
+            target_signs = signs[row_offset:row_offset + batch_rows]
+            row_offset += batch_rows
             capture = bool(modules) and len(target_signs) > 0
             if capture and not handles:
                 for index, module in enumerate(modules):
@@ -87,7 +112,16 @@ def _measure(runner, torch, batches, scoring, resources, signs=(), modules=()):
                 started = time.perf_counter()
                 token_scores = score_batch(runner, batch)
                 totals = torch.stack([value.mean() if scoring == "mean" else value.sum() for value in token_scores])
-                difference = totals[::2] - totals[1::2]
+                if prior_alpha is None:
+                    difference = totals[::2] - totals[1::2]
+                else:
+                    # Match the standalone calibrated evaluator's double precision arithmetic.
+                    task_first, task_second, neutral_first, neutral_second = totals.double().reshape(-1, 4).T
+                    first = task_first - prior_alpha * neutral_first
+                    second = task_second - prior_alpha * neutral_second
+                    difference = first - second
+                    raw_task_margins.extend((task_first - task_second).detach().cpu().tolist())
+                    raw_neutral_margins.extend((neutral_first - neutral_second).detach().cpu().tolist())
                 resources["forward_wall_seconds"] += time.perf_counter() - started
                 resources["forward_batches"] += 1
                 resources["forward_sequences"] += len(batch)
@@ -115,7 +149,9 @@ def _measure(runner, torch, batches, scoring, resources, signs=(), modules=()):
             handle.remove()
     if any(not np.isfinite(gradient).all() for gradient in gradients):
         raise InferenceError("Nonfinite continuation weight sensitivity")
-    return np.asarray(margins, dtype=np.float64), gradients
+    raw_margins = {} if prior_alpha is None else {"raw_task_margins": raw_task_margins,
+                                                  "raw_neutral_margins": raw_neutral_margins}
+    return np.asarray(margins, dtype=np.float64), gradients, raw_margins
 
 
 def _basis(gradient, width):
@@ -142,6 +178,7 @@ def propose_content_update(
     *,
     policy,
     scoring: str,
+    prior_alpha: float | None = None,
     guard: bool = True,
     radius: float = 0.25,
     retention_weight: float = 1.0,
@@ -154,17 +191,27 @@ def propose_content_update(
 
     ``targets`` and ``preservation`` are authorized practice rows. The answer
     continuations must match the chosen prompt and behavioral representation.
+    ``prior_subtracted_sum`` additionally requires a matched ``neutral_prompt``
+    per row, a frozen alpha, and the measured guard. Both contexts are measured
+    on every candidate with the same model weights.
     Letter and whole-answer arms share the same rank, probe and budget rules.
     Applying and verifying the persisted patch remain separate host actions.
     """
     started, cpu_started = time.perf_counter(), time.process_time()
-    rows = _practice_rows(targets, preservation)
-    if (scoring not in ("sum", "mean", "terminated_sum") or type(guard) is not bool
+    use_prior = scoring == "prior_subtracted_sum"
+    rows = _practice_rows(targets, preservation, use_prior=use_prior)
+    if (scoring not in ("sum", "mean", "terminated_sum", "prior_subtracted_sum") or type(guard) is not bool
             or not _finite_number(radius) or not 1e-6 <= radius <= 8
             or not _finite_number(retention_weight) or not 0 <= retention_weight <= 1000
             or not _finite_number(update_penalty) or not 0 <= update_penalty <= 1000
             or not _finite_number(max_preservation_margin_drop) or not 0 <= max_preservation_margin_drop <= 1000):
         raise ValueError("Invalid content scoring, guard, radius or objective penalty")
+    if use_prior:
+        if not guard or not _finite_number(prior_alpha) or prior_alpha not in (0.5, 1.0, 1.5):
+            raise ValueError("Prior subtraction requires the measured guard and alpha in {0.5, 1.0, 1.5}")
+        prior_alpha = float(prior_alpha)
+    elif prior_alpha is not None:
+        raise ValueError("prior_alpha is only allowed for prior_subtracted_sum scoring")
     if (not isinstance(tensor_names, (list, tuple)) or not 1 <= len(tensor_names) <= 2
             or not all(isinstance(name, str) and _DOWN_PROJECTION.fullmatch(name) for name in tensor_names)
             or len(set(tensor_names)) != len(tensor_names)):
@@ -175,7 +222,9 @@ def propose_content_update(
     batch_size = inference["batch_size"]
     if type(batch_size) is not int or batch_size not in (2, 4, 6, 8):
         raise ValueError("Content update batch size must hold 1 to 4 complete continuation pairs")
-    rows_per_batch = batch_size // 2
+    if use_prior and batch_size not in (4, 8):
+        raise ValueError("Calibrated batch size must hold complete four-continuation rows")
+    rows_per_batch = batch_size // (4 if use_prior else 2)
     probes = tuple(_probe_points(len(tensor_names), radius))
     forward_limit = math.ceil(len(rows) / rows_per_batch) * (1 + len(probes))
     backward_limit = math.ceil(len(targets) / rows_per_batch)
@@ -208,21 +257,22 @@ def propose_content_update(
                    "forward_budget": max_forward_batches, "backward_budget": max_backward_batches,
                    "preservation_margin_drop_limit": max_preservation_margin_drop if guard else None,
                    "rows": [row["id"] for row in rows], "probes": [], "basis": []}
+    if use_prior:
+        diagnostics.update(prior_alpha=prior_alpha, continuations_per_row=4)
     patch = None
     with _runner(checkpoint.root, inference) as (runner, torch):
         tokenize_started = time.perf_counter()
-        sequences = prepare_continuations(runner.tokenizer, [row["prompt"] for row in rows],
-                                          [row["answers"] for row in rows],
-                                          max_input_tokens=inference["max_input_tokens"],
-                                          include_eos=scoring == "terminated_sum")
-        width = 2 * rows_per_batch
-        batches = [sequences[start:start + width] for start in range(0, len(sequences), width)]
+        batches = _prepare_batches(runner.tokenizer, rows, scoring, inference["max_input_tokens"],
+                                   batch_size, use_prior)
         resources["tokenization_wall_seconds"] = time.perf_counter() - tokenize_started
         modules = [runner.model.get_submodule(name.removesuffix(".weight")) for name in tensor_names]
         if any(module.weight.dtype != torch.bfloat16 or tuple(module.weight.shape) != ref.shape
                for module, ref in zip(modules, refs, strict=True)):
             raise EditRejected("Loaded projection dtype or shape differs from the BF16 checkpoint")
-        baseline, gradients = _measure(runner, torch, batches, scoring, resources, signs, modules)
+        baseline, gradients, baseline_raw = _measure(runner, torch, batches, scoring, resources, signs, modules,
+                                                      prior_alpha=prior_alpha)
+        if use_prior:
+            diagnostics["baseline_raw_margins"] = baseline_raw
         origin, _, _ = _objective(baseline, baseline, signs, retention_weight)
         diagnostics.update(origin_objective=origin, baseline_margins=baseline.tolist(), disposition="NO_SENSITIVITY")
         layers = []
@@ -273,7 +323,9 @@ def propose_content_update(
                     continue
                 seen.add(rounded_key)
                 with _temporary_weights(torch, selected, rounded):
-                    observed, _ = _measure(runner, torch, batches, scoring, resources)
+                    observed, _, observed_raw = _measure(runner, torch, batches, scoring, resources,
+                                                          prior_alpha=prior_alpha)
+                probe.update(observed_raw)
                 loss, target_loss, preservation_kl = _objective(observed, baseline, signs, retention_weight)
                 penalty = update_penalty * norm**2
                 actual = loss + penalty

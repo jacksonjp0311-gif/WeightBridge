@@ -46,6 +46,7 @@ AWL intent + practice ──> bounded direction search ──> one frozen finali
 - `weightbridge.adaptation.awl` parses versioned adaptation intents. The numerical plan requests scoped `activation_ridge` proposals from the existing Qwen solver. It uses the same patch policy and receipt path as the local HF edit session.
 - `weightbridge.adaptation.controller` freezes a sequence of cycles, searches practice-only, and records a single finalist or abstention per cycle. The verifier reloads that finalist and its accepted parent, and checks new targets, current sentinels, and the held-out predictions of active accepted ancestors. Final scoring is a separate command after the protocol closes.
 - `weightbridge.adaptation.lineage` stores immutable, hash-linked acceptance, rejection and rollback events in a host-owned directory. Each accepted version points to an isolated checkpoint. Rollback moves the research selection to a verified ancestor without rewriting the checkpoint.
+- `weightbridge.adaptation.grounding` parses EOS-completed answers with separate strict and diagnostic results, and calibrates answer scores against token-matched neutral continuations. The Phase III-D runner locks its scoring rule and neutral design on practice. The admission checker independently replays the decision, generation parser, and measurement gates from hash-bound evidence. The optional calibrated content-gradient backend measures both contexts at each rounded probe under the same host guard.
 
 ## Trust boundaries
 

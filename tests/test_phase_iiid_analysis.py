@@ -4,6 +4,7 @@ from pathlib import Path
 import pytest
 
 from experiments.phase_iiid.analysis import analyze_split, select_practice
+from experiments.phase_iiid.describe_grounding import describe_split
 
 
 CONFIG = json.loads((Path(__file__).parents[1] / "experiments/phase_iiid/protocol.json").read_bytes())
@@ -37,7 +38,7 @@ def split(*, signal):
                                              "semantic_kind": "answer" if display == "bullets" else "label",
                                          } for context, position in (("task", correct), ("counterfactual", changed))}}
                 rows.append({"id": f"{family}-{paraphrase}-{correct}", "item_id": family, "family": family,
-                             "order": order, "paraphrase": paraphrase, "correct_position": correct,
+                             "order": order, "paraphrase": paraphrase, "labels": ["A", "B"], "correct_position": correct,
                              "counterfactual_position": changed, "displays": displays})
     return rows
 
@@ -67,3 +68,15 @@ def test_locked_rule_does_not_qualify_a_prior_only_split():
     assert analysis["selected_ranker"]["task_accuracy"] == 0.5
     assert analysis["selected_ranker"]["both_correct_fraction"] == 0
     assert analysis["selected_ranker"]["mean_directional_margin_advantage"] == pytest.approx(0)
+
+
+def test_description_separates_display_compliance_from_semantic_accuracy():
+    rows = split(signal=True)
+    result = describe_split(rows, select_practice(rows, CONFIG), CONFIG)
+    display = result["bullets_minus_labeled_generation"]
+    assert display["strict"]["correct"] == {"estimate": 1.0, "question_interval": [1.0, 1.0]}
+    assert display["semantic"]["correct"] == {"estimate": 0.0, "question_interval": [0.0, 0.0]}
+    assert result["label_strata"]["AB"]["letter_first_position"] == 6
+    assert result["raw_context_preferences"]["labeled"]["neutral_absent"] == {
+        "left_preferences": 6, "right_preferences": 6, "ties": 0, "mean_absolute_margin": 6.0,
+    }
