@@ -385,16 +385,65 @@ def _blind_qwen_figure(runs: list[dict[str, Any]], outdir: Path) -> None:
     plt.close(fig)
 
 
+def _repair_cohort_summary(root: Path) -> dict[str, Any]:
+    evidence = root / "summary.json"
+    result = read_json(evidence)
+    measured = [row for row in result["cases"] if "target_correct" in row]
+    scores = [read_json(root / f"case-{row['slot']:02d}/evaluation/scores.json") for row in measured]
+    advantage = None
+    if scores:
+        advantage = paired_cluster_bootstrap(
+            [[row["correct"] for row in score["random"]["target"]] for score in scores],
+            [[row["correct"] for row in score["guided"]["target"]] for score in scores],
+        )
+    regressions = {
+        arm: sum(a["correct"] and not b["correct"] for score in scores
+                 for a, b in zip(score["pristine"]["sentinel"], score[arm]["sentinel"]))
+        for arm in ("guided", "random")
+    }
+    return {**result, "raw_evidence": relative(evidence), "guided_advantage_over_random": advantage,
+            "sentinel_regressions_vs_pristine": regressions}
+
+
+def _repair_cohort_figure(cohort: dict[str, Any], outdir: Path) -> None:
+    rows = [row for row in cohort["cases"] if "target_correct" in row]
+    if not rows:
+        return
+    import matplotlib.pyplot as plt
+
+    x = np.arange(len(rows))
+    fig, axes = plt.subplots(2, 1, figsize=(10, 6.4), sharex=True, constrained_layout=True)
+    for arm, offset, color in (("guided", -0.2, "#197a70"), ("random", 0.2, "#68778f")):
+        gains = [r["target_correct"][arm] - r["target_correct"]["damaged"] for r in rows]
+        flips = [r["sentinel_flips_vs_pristine"][arm] for r in rows]
+        axes[0].bar(x + offset, gains, width=0.38, label=arm.title(), color=color)
+        axes[1].bar(x + offset, flips, width=0.38, color=color)
+    axes[0].axhline(0, color="#333333", linewidth=0.8)
+    axes[0].set_ylabel("Additional correct targets (of 24)")
+    axes[0].legend()
+    axes[1].set_ylabel("Sentinel flips vs pristine (of 16)")
+    labels = [f"{r['slot']:02d}\nL{r['layer']}" + (" *" if r["status"] == "PASS" else "") for r in rows]
+    axes[1].set_xticks(x, labels)
+    axes[1].set_xlabel("Case and injection layer (* passed all gates)")
+    fig.suptitle(f"Blinded Qwen repair cohort · {cohort['counts']['PASS']}/12 cases passed")
+    fig.savefig(outdir / "qwen_repair_cohort.png", dpi=160)
+    plt.close(fig)
+
+
 def build() -> dict[str, Any]:
     raw_records = load_ledger()
     experiments = canonical_experiments(raw_records)
     by_id = {item["experiment_id"]: item for item in experiments}
     blind_qwen = []
+    qwen_repair_cohorts = []
     for item in experiments:
         if item["experiment_id"].startswith("qwen-blind-repair-") and "summary" in item["evaluation"]:
             evidence = ROOT / item["artifact_root"] / item["evaluation"]["summary"]
             blind_qwen.append({"experiment_id": item["experiment_id"], "raw_evidence": relative(evidence),
                                **read_json(evidence)})
+        if item["experiment_id"].startswith("qwen-repair-cohort-"):
+            qwen_repair_cohorts.append({"experiment_id": item["experiment_id"],
+                                        **_repair_cohort_summary(ROOT / item["artifact_root"])})
     # The seed-731 early records were duplicate replays; the ledger correction
     # excludes the first and one isolated replay is retained as historical only.
     toy = [item for item in experiments if item["experiment_id"] in {
@@ -583,6 +632,7 @@ def build() -> dict[str, Any]:
         "qwen_smoke_64": qwen64,
         "qwen_smoke_256": qwen256,
         "qwen_blind_repair": blind_qwen,
+        "qwen_repair_cohorts": qwen_repair_cohorts,
         "cost_improvement_points": cost_points,
         "regression_rates": regressions,
         "outcomes_over_time": outcomes,
@@ -605,6 +655,8 @@ def main() -> None:
     _accuracy_figures(summary, args.figures)
     _qwen_figures(summary, args.figures)
     _blind_qwen_figure(summary["qwen_blind_repair"], args.figures)
+    if summary["qwen_repair_cohorts"]:
+        _repair_cohort_figure(summary["qwen_repair_cohorts"][-1], args.figures)
     _patch_figures(summary, args.figures)
     _mcp_agent_figures(summary, args.figures)
     _resource_figures(summary, args.figures)

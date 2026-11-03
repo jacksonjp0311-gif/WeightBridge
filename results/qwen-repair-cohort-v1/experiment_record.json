@@ -1,0 +1,44 @@
+{
+  "affected_parameters": {
+    "changed_entries": 0
+  },
+  "artifact_root": "results/qwen-repair-cohort-v1",
+  "artifacts": [
+    "case-01/evaluator/calibration.json",
+    "case-01/evaluator/case.json",
+    "case-01/evaluator/construction.json",
+    "case-01/evaluator/hold.json",
+    "case-01/evaluator/holdout.json",
+    "case-01/evaluator/resources.json",
+    "case-01/public/practice.json",
+    "manifest.json",
+    "summary.json"
+  ],
+  "disposition": "HOLD",
+  "evaluation": {
+    "construction_targets": 8,
+    "dataset": "Frozen balanced A/B arithmetic construction prompts",
+    "holdout_scored": false,
+    "practice_test_separated": true,
+    "pristine_correct": 4,
+    "seed": 913883
+  },
+  "experiment_id": "qwen-repair-cohort-v1",
+  "hypothesis": "The frozen balanced-choice cohort has sufficient pristine construction accuracy for blinded fault calibration.",
+  "measurement_key": "e75d76fd4fd0cdf0833b043b6feb300fbfb2caa5e1cfc69ba651a82b1c954899",
+  "proposed_modification": "Calibrate a rank-one answer-contrast reversal on layer 23; pristine floor stopped the case before injection.",
+  "resources": {
+    "completed_utc": "2026-11-03T12:05:02.944130+00:00",
+    "cpu_seconds": 25.53125,
+    "peak_rss_bytes": 2342690816,
+    "wall_seconds": 16.216559699969366
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+  },
+  "timestamp_utc": "2026-11-03T12:05:02.944130+00:00"
+}
