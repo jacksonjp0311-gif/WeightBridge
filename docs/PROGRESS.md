@@ -188,3 +188,20 @@ deployed; candidates remain isolated research artifacts.
   byte for byte.
 - Core suite passed 78 tests with 2 skipped. The inference suite passed
   81 with 1 skipped. The 20-task transfer gate is still HOLD.
+
+## Three-arm search comparison
+
+- Added a host-side rejection option and a deterministic coordinate
+  schedule. Four matched tasks and 12 sessions completed. Rejection
+  blocked six disconnected proposals, and neither Qwen arm finalized
+  a candidate. Search finalized three practice-selected candidates with
+  positive holdout gains after checkpoint reload.
+- Every pair shared the same checkpoints and data splits. Replay checks
+  the proposal sequence, practice scores, selection, holdout scores and
+  artifact hashes. The broker now records search as a deterministic
+  baseline and counts only scored candidates as finalized.
+- Core suite passed 80 tests with 2 skipped. The inference suite passed
+  83 with 1 skipped. The prior connectivity result replayed byte for byte
+  from its original source commit.
+- The 20-task AI transfer gate remains HOLD. The exploratory results are in
+  [the search comparison](../results/wb-sr/comparison.json).

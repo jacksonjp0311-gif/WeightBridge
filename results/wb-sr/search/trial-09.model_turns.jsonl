@@ -1,0 +1,18 @@
+{"host_call": "get_diagnostic_report"}
+{"turn": 1, "search_proposal": {"tensor": "input_weight", "index": [1, 0], "delta": -3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C1"}
+{"turn": 2, "search_proposal": {"tensor": "input_weight", "index": [1, 0], "delta": 3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C2"}
+{"turn": 3, "search_proposal": {"tensor": "hidden_bias", "index": [0], "delta": -3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C3"}
+{"turn": 4, "search_proposal": {"tensor": "hidden_bias", "index": [0], "delta": 3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C4"}
+{"turn": 5, "search_proposal": {"tensor": "output_weight", "index": [0, 0], "delta": -3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C5"}
+{"turn": 6, "search_proposal": {"tensor": "output_weight", "index": [0, 0], "delta": 3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C6"}
+{"turn": 7, "search_proposal": {"tensor": "output_bias", "index": [1], "delta": -3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C7"}
+{"turn": 8, "search_proposal": {"tensor": "output_bias", "index": [1], "delta": 3.0, "reason": "Fixed coordinate search with two signed perturbations per tensor."}}
+{"host_call": "evaluate_practice", "candidate_alias": "C8"}
+{"search_selection": "C7", "baseline_correct": 39, "selected_practice_correct": 63}

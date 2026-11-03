@@ -282,3 +282,47 @@ generated 3,158 output tokens. The replay verifies equal paired data,
 the frozen execution order, diagnostics sent, and checkpoint scores.
 See the [paired comparison](../results/wb-cx/comparison.json) and
 [frozen plan](../results/wb-cx/paired_plan.json).
+
+## Rejection versus coordinate search
+
+The same four fresh checkpoints and splits were used in three arms.
+Both Qwen arms received the connectivity probe. Only the rejection arm
+received a refusal for a disconnected proposal, which consumed a model
+turn. Coordinate search used a fixed, seeded schedule of eight proposals
+and chose the first best practice improvement.
+
+| Outcome | Qwen with advice | Qwen with rejection | Coordinate search |
+|---|---:|---:|---:|
+| Decision attempts | 14 | 19 | 32 |
+| Practice evaluations | 7 | 8 | 32 |
+| Tasks with a practice logit change | 0/4 | 3/4 | 4/4 |
+| Tasks with a practice prediction change | 0/4 | 0/4 | 4/4 |
+| Tasks with a practice accuracy gain | 0/4 | 0/4 | 3/4 |
+| Finalized holdout improvements | 0/4 | 0/4 | 3/4 |
+
+Rejection blocked six proposals. It redirected the model to weights that
+changed logits, but its edits did not cross a decision boundary. Search
+used more of the shared evaluation ceiling. In a descriptive replay of
+its stored practice scores truncated to the rejection arm's realized
+evaluation count for each task, search found gains on two of four tasks.
+That prefix comparison uses practice scores only.
+
+| Search candidate | Original holdout | Reloaded candidate | Matched random |
+|---|---:|---:|---:|
+| Hidden threshold | 34/64 | 62/64 | 62/64 |
+| Output collapse | 32/64 | 64/64 | 27/64 |
+| Output intercept | 32/64 | 59/64 | 32/64 |
+
+The search arm stopped on input reversal because its practice scores
+never exceeded baseline. In the hidden-threshold task, the selected
+edit subtracted 3 from output bias 1 while the matched control added 3
+to output bias 0. Both edits reduce the class-1 versus class-0 logit
+margin by exactly 3, which accounts for the tied scores.
+
+These outcomes favor the deterministic schedule for this small test.
+The paired comparison is exploratory, and the 20-task AI transfer gate
+remains HOLD. The experiment used 543.21 seconds of elapsed time and
+2,957.89 model-host CPU seconds. The deterministic arm used 14.11
+seconds of elapsed time including its broker calls. See the
+[frozen plan](../results/wb-sr/paired_plan.json) and
+[comparison with raw evidence paths](../results/wb-sr/comparison.json).

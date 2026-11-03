@@ -1,0 +1,70 @@
+{
+  "hypothesis": "Rejection increases tasks with a practice accuracy gain and beats coordinate search.",
+  "max_practice_evaluations": 8,
+  "primary": "tasks with any accepted edit improving practice accuracy",
+  "protocol_sha256": {
+    "advice": "35561b6c633255d001c6dfe16ae041b94948c33a33632a24546d737a74a6da0a",
+    "reject": "477a67fbd02a9ac8d90a6fbae9245b111ed2eb56b834b15b91300a90c3d18170",
+    "search": "9dcd9342d177de755a8ad170d1afea4ed447cb80d5d5e00bf0bcb6e1f77716ce"
+  },
+  "schedule": [
+    {
+      "arm": "advice",
+      "task": "trial-05"
+    },
+    {
+      "arm": "reject",
+      "task": "trial-05"
+    },
+    {
+      "arm": "search",
+      "task": "trial-05"
+    },
+    {
+      "arm": "reject",
+      "task": "trial-09"
+    },
+    {
+      "arm": "search",
+      "task": "trial-09"
+    },
+    {
+      "arm": "advice",
+      "task": "trial-09"
+    },
+    {
+      "arm": "search",
+      "task": "trial-13"
+    },
+    {
+      "arm": "advice",
+      "task": "trial-13"
+    },
+    {
+      "arm": "reject",
+      "task": "trial-13"
+    },
+    {
+      "arm": "advice",
+      "task": "trial-16"
+    },
+    {
+      "arm": "reject",
+      "task": "trial-16"
+    },
+    {
+      "arm": "search",
+      "task": "trial-16"
+    }
+  ],
+  "schema": "weightbridge.search_comparison.v1",
+  "secondary": [
+    "practice prediction changes",
+    "finalized holdout gains",
+    "full holdout repairs",
+    "proposal attempts",
+    "practice evaluations",
+    "CPU seconds"
+  ],
+  "seed_offset": 60000
+}

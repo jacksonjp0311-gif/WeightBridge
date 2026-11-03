@@ -161,6 +161,32 @@ is the fraction of tasks with an accepted edit whose maximum absolute
 practice logit change exceeds `1e-9`. The replay also reports prediction
 changes, finalized holdout repairs, token counts and CPU time.
 
+### Compare rejection with coordinate search
+
+The three-arm runner shows both AI arms the same connectivity report. In
+the rejection arm, an exact match against the disconnected coordinate mask
+consumes one model turn and receives an explanation before any checkpoint
+write or practice evaluation. The deterministic arm selects one eligible
+coordinate per tensor using the task seed and tests deltas of `-3` and
+`+3`. It freezes the first candidate with the best practice score only
+when that score exceeds baseline. Each arm has an eight-evaluation ceiling.
+The AI arms can use fewer evaluations when they stop or repeat.
+
+```bash
+python experiments/original_weight_edits/run_local_mcp_cohort.py \
+  --model /path/to/pinned/qwen35-base \
+  --broker-python /path/to/mcp-enabled/python \
+  --tasks 4 --seed-offset 60000 --mode patch-form \
+  --paired-search --out results/wb-sr
+python experiments/original_weight_edits/summarize_search_comparison.py \
+  results/wb-sr --out results/wb-sr/comparison.json
+```
+
+The replay checks the shared inputs, budget, search schedule and selection.
+Use the source at the original experiment commit to replay an older
+comparison whose manifest binds a previous broker version. The paired
+connectivity report replays at commit `948d4ae`.
+
 ## Available tools
 
 | Tool | What the caller receives or changes |

@@ -138,3 +138,14 @@ test whether exposing graph reachability from permitted parameters to the
 logits improves the fraction of proposed edits that affect practice behavior
 under the same budget. Evaluate that change on fresh trials before using the
 20-task transfer gate to make a claim about held-out repair.
+
+### Rejection and deterministic search
+
+Rejecting coordinates with zero outgoing connectivity redirected Qwen to
+edits that changed logits on three of four tasks. The observed Qwen edits
+left all practice classifications unchanged. The fixed coordinate schedule
+found three practice gains that survived a checkpoint reload and improved
+held-out accuracy. Two of those finalists exceeded their own matched
+random control. This is a small comparison of workflows under a shared
+evaluation ceiling, with different realized evaluation counts.
+[Paired evidence](../results/wb-sr/comparison.json)

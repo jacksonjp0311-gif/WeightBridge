@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -0.085
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weight at index 0 is too large (2.0) relative to the hidden unit's zero-weighted output, causing the tanh activation to be too high and the logit to be too high, pushing the model to the wrong class. Reducing this weight to 0.085 aligns the input with the correct class distribution.",
+  "schema": "weightbridge.patch.v1"
+}

@@ -1,0 +1,18 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "changes": [
+    {
+      "index": [
+        1
+      ],
+      "op": "add",
+      "tensor": "output_bias",
+      "value": 3.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Fixed coordinate search with two signed perturbations per tensor.",
+  "schema": "weightbridge.patch.v1"
+}

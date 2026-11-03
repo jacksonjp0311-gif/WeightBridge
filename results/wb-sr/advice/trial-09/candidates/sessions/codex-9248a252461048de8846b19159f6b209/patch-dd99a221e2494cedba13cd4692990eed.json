@@ -1,0 +1,19 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -1.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weight at index 0 is too large (2.0) relative to the hidden bias (-0.65), causing the tanh activation to be too high for the first example, while the second example's hidden unit is zero, making the first example's failure irrelevant to the second.",
+  "schema": "weightbridge.patch.v1"
+}

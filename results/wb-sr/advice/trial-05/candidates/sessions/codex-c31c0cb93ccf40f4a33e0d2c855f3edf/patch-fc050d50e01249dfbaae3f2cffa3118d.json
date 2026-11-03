@@ -1,0 +1,19 @@
+{
+  "base_sha256": "ec17e7617dc564ff74a7435e1379dd02b2ee09b4c50cf668ab90b5dd4eb7d253",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -1.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weight at index 0 is too large (2.828) relative to the hidden bias (-1.0), causing the tanh activation to be too negative for the first example, while index 1 is too small (-0.001), causing the tanh activation to be too positive. Both contribute to the logit mismatch, but index 0 is the primary driver of the first failure example's logit direction.",
+  "schema": "weightbridge.patch.v1"
+}
