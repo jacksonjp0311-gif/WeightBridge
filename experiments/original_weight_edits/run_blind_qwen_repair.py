@@ -31,7 +31,7 @@ WIDTH = 16
 BATCH = 8
 STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)
 FAULT_STRENGTHS = (*STRENGTHS, 2.56, 4.0)
-SPLIT_SEEDS = {"construction": 813005, "practice": 813006, "holdout": 813007}
+SPLIT_SEEDS = {"construction": 823005, "practice": 823006, "holdout": 823007}
 RANDOM_SEEDS = (813021, 813022, 813023)
 
 
@@ -83,15 +83,14 @@ def build_splits(seeds):
     sets = {}
     for split, (n_target, n_other) in sizes.items():
         rng = np.random.default_rng(seeds[split])
-        offset = 1000 * list(sizes).index(split)
-        lows = rng.choice(np.arange(offset + 100, offset + 400), n_target, replace=False)
-        highs = rng.choice(np.arange(offset + 600, offset + 900), n_target, replace=False)
-        template = ("Select the greater integer.\nA. {}\nB. {}" if split == "holdout"
-                    else "Which integer is larger?\nA. {}\nB. {}")
+        offset = 100 * list(sizes).index(split)
+        lows = rng.choice(np.arange(offset + 100, offset + 190), n_target, replace=False)
+        highs = rng.choice(np.arange(offset + 600, offset + 690), n_target, replace=False)
+        template = "Which integer is larger?\nA. {}\nB. {}"
         target = [{"id": f"{split}-target-{i:02d}", "text": template.format(high, low) + suffix, "label": "A"}
                   for i, (low, high) in enumerate(zip(lows, highs))]
         # Change the actual pairs by split. Balance A and B in every set.
-        shifts = {"construction": 0, "practice": 1, "holdout": 3}
+        shifts = {"construction": 2, "practice": 4, "holdout": 5}
         bank = [(kind, good[j], bad[(j + shifts[split]) % len(bad)])
                 for kind, good, bad in groups for j in range(len(good))]
         other = []
