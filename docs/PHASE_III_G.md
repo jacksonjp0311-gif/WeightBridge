@@ -98,3 +98,13 @@ table still contained the SmolLM2 hash, so the generic finalizer required
 an additional lock. The closure receipt records the already measured
 HOLD from the sole declared participant, with zero fits and no hidden
 access. The v3 protocol and original runner remain byte-identical.
+
+The larger v4 replication parsed 74/76 practice presentations, solved
+all eight controls, and solved 13/30 targets across both wordings. One
+item had the same wrong answer in both forms. Thirteen items had two
+valid but different wrong answers, one was correct in only one form,
+and two had an unparsed form. Difficulty exposed errors, but changing
+the wording often changed the wrong result. The model held before
+selection scoring or fitting.
+[v3 selection HOLD](../results/phase-iii-g/arithmetic-v3) ·
+[v4 practice HOLD](../results/phase-iii-g/arithmetic-v4)
