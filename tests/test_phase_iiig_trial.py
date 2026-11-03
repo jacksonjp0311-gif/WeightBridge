@@ -147,3 +147,21 @@ def test_decimal_fit_uses_observed_wrong_answer_and_exact_decimal_preservation_r
     fit = run_decimal._fit_rows(None, measured, "larger-decimal", qualification, {"max_input_tokens": 64})
     assert [row["answers"] for row in fit] == [("-0.9", "-0.91")] * 2 + [("-1.005", "-0.005")] * 2
     assert [row["preserve"] for row in fit] == [False, False, True, True]
+
+
+def test_negative_qualification_counts_only_the_smaller_displayed_negative_operand():
+    from experiments.phase_iiig.run_signed_decimal import qualify_negative
+
+    rows = []
+    for name, operands, wrong in (("reversal", ["-0.9", "-0.91"], "-0.91"),
+                                  ("off-option", ["-0.9", "-0.91"], "-0.99"),
+                                  ("mixed-sign", ["1", "-2"], "-2")):
+        answer = "1" if name == "mixed-sign" else "-0.9"
+        rows.extend({**row, "operands": operands}
+                    for row in item(name, "larger-decimal", "target", answer, [wrong, wrong]))
+    thresholds = {"min_parse_rate": 1, "min_positive_solved": 0, "min_preserve_solved": 0,
+                  "min_target_solved": 0, "min_repeatable_errors": 2}
+    result = qualify_negative(rows, "larger-decimal", thresholds)
+    assert result["repeatable_errors"] == {"reversal": "-0.91"}
+    assert result["excluded_repeatable_outputs"] == {"off-option": "-0.99", "mixed-sign": "-2"}
+    assert result["disposition"] == "HOLD"

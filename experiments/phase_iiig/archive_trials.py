@@ -30,7 +30,8 @@ def replay_rows(measured, expected, parser=parse_integer):
     return rows
 
 
-def verify_trial(run, material, protocol, manifest, load, expected_sources, parser=parse_integer):
+def verify_trial(run, material, protocol, manifest, load, expected_sources, parser=parse_integer,
+                 qualifier=qualify):
     report, lock = (_read(run / name) for name in ("report.json", "candidate-lock.json"))
     manifest_sha = file_hash(material / "manifest.json")
     model = report["model"]
@@ -56,7 +57,7 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources, pars
             or family_lock["selected_family"] != report["selected_family"]):
         raise ValueError("Practice lock is inconsistent")
     practice = replay_rows(_read(files["practice.json"]), load("practice"), parser)
-    qualification = {family: qualify(practice, family, protocol["qualification"])
+    qualification = {family: qualifier(practice, family, protocol["qualification"])
                      for family in report["practice"]}
     passes = [family for family, result in qualification.items() if result["disposition"] == "PASS"]
     family = min(passes, key=lambda name: (-len(qualification[name]["repeatable_errors"]),
@@ -68,7 +69,7 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources, pars
             raise ValueError("Unqualified measurement advanced to fitting")
         return report, files
     selection = replay_rows(_read(files["selection.json"]), _scope(load("selection"), family), parser)
-    selection_gate = qualify(selection, family, protocol["qualification"])
+    selection_gate = qualifier(selection, family, protocol["qualification"])
     if selection_gate != report["selection"] or selection_gate["disposition"] != report["behavioral_qualification"]:
         raise ValueError("Selection qualification differs on replay")
 
@@ -129,9 +130,15 @@ def verify_trial(run, material, protocol, manifest, load, expected_sources, pars
     return report, files
 
 
-def archive(material, runs, out, *, followup=False, scaling=False, replication=False, decimal=False):
+def archive(material, runs, out, *, followup=False, scaling=False, replication=False, decimal=False, targeted=False):
     parser = parse_integer
-    if decimal:
+    qualifier = qualify
+    if targeted:
+        from experiments.phase_iiig.decimal_endpoint import parse_decimal
+        from experiments.phase_iiig.roster_decimal_targeted import PROTOCOL as protocol_path, load_split as read_split
+        from experiments.phase_iiig.run_signed_decimal import _sources as source_hashes, qualify_negative
+        parser, qualifier = parse_decimal, qualify_negative
+    elif decimal:
         from experiments.phase_iiig.decimal_endpoint import parse_decimal
         from experiments.phase_iiig.roster_decimal import PROTOCOL as protocol_path, load_split as read_split
         from experiments.phase_iiig.run_decimal import _sources as source_hashes
@@ -163,7 +170,8 @@ def archive(material, runs, out, *, followup=False, scaling=False, replication=F
         def model_split(split):
             return [row for row in load(split) if row["family"] in eligible or row["group"] == "preserve"]
 
-        report, files = verify_trial(run, material, config, manifest, model_split, source_hashes(), parser)
+        report, files = verify_trial(run, material, config, manifest, model_split, source_hashes(),
+                                     parser, qualifier)
         model = report["model"]
         if model in reports:
             raise ValueError("Duplicate model in the trial matrix")
@@ -212,11 +220,12 @@ if __name__ == "__main__":
     version.add_argument("--scaling", action="store_true")
     version.add_argument("--replication", action="store_true")
     version.add_argument("--decimal", action="store_true")
+    version.add_argument("--targeted", action="store_true")
     args = parser.parse_args()
-    singleton = args.scaling or args.replication or args.decimal
+    singleton = args.scaling or args.replication or args.decimal or args.targeted
     if singleton == (args.smollm2 is not None):
         parser.error("Use --smollm2 for the two-model trials and omit it for Qwen-only trials")
     runs = (args.qwen,) if singleton else (args.qwen, args.smollm2)
     result = archive(args.material, runs, args.out, followup=args.followup, scaling=args.scaling,
-                     replication=args.replication, decimal=args.decimal)
+                     replication=args.replication, decimal=args.decimal, targeted=args.targeted)
     print(json.dumps(result["models"], indent=2))
