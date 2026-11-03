@@ -1,0 +1,43 @@
+{
+  "cohort_audit": {
+    "disposition": "INCONCLUSIVE",
+    "metrics": null,
+    "missing_task_ids": [
+      "trial-01",
+      "trial-02",
+      "trial-03",
+      "trial-04",
+      "trial-06",
+      "trial-07",
+      "trial-08",
+      "trial-09",
+      "trial-10",
+      "trial-11",
+      "trial-12",
+      "trial-13",
+      "trial-14",
+      "trial-15",
+      "trial-16",
+      "trial-17",
+      "trial-18",
+      "trial-19",
+      "trial-20"
+    ],
+    "planned_tasks": 20,
+    "reasons": [
+      "missing 19 of 20 planned task records"
+    ],
+    "records_bound_to_plan": 1,
+    "records_received": 1,
+    "schema": "weightbridge.mcp_llm_cohort_summary.v2"
+  },
+  "completed_tasks": 1,
+  "disposition": "HOLD",
+  "failed_task": "trial-09",
+  "failed_task_holdout_scored": false,
+  "failed_transcript_sha256": "5f3961aa6ff8b94ff66c17810c10a0c2c5b3da234bac1e76d4a61a27aa550880",
+  "protocol_sha256": "9bef5e7180b8cf68f0094a3e59d32af35b00437b7c38709675d693df5af6f9ae",
+  "reason": "Windows WinError 3 in os.link when publishing a candidate receipt under the long experiment path. A candidate checkpoint could be left without a committed receipt. The attempt was stopped and retained.",
+  "schema": "weightbridge.local_mcp_attempt.v1",
+  "source_commit": "8a5a007"
+}

@@ -143,3 +143,31 @@ deployed; candidates remain isolated research artifacts.
   environment: 78 passed, 1 skipped. Editable installation exposed the new
   CLI successfully; `compileall` passed.
 - No new model-behavior measurements were collected in this continuation.
+
+## Local Qwen diagnostic runs
+
+- The local Transformers host ran the hash-verified Qwen3.5-0.8B checkpoint
+  offline with fresh contexts and a separate stdio MCP broker. Trial split
+  seeds are spaced so one trial's holdout cannot become another's practice.
+- Three four-task smokes completed, each with one task per defect mechanism.
+  The direct tool profiles finalized no candidates. The short-path patch form
+  accepted eight one-scalar submissions, including duplicates. Reloading
+  the candidates found zero change in practice logits. The model finalized
+  no candidates in that profile either.
+- Two interrupted attempts are archived separately. The initial full
+  diagnostic prompted a patch truncated at 192 tokens. The first patch-form
+  attempt scored one trial before a Windows receipt-path error interrupted
+  the next trial. The launcher now checks the receipt path before loading
+  the model, and the short-path rerun completed.
+- The measured 20-task gate remains HOLD. Each completed smoke's independent
+  cohort audit reports INCONCLUSIVE with 16 unrun slots. Keep the profiles
+  separate when interpreting their results.
+- The 12 completed smoke trials consumed 3,210.83 model-host process CPU
+  seconds and 595.16 summed wall seconds. The host generated 3,358 output
+  tokens and processed 77,894 input tokens across its model turns. Partial
+  attempts and broker processes are outside these host totals.
+- Latest verification included 23 focused tests, 76 passed and 2 skipped in
+  the core suite, and 79 passed and 1 skipped in the inference suite.
+  The bounded-run reporter replayed the stored holdout arrays and accepted
+  practice candidate hashes. See the
+  [comparison and raw evidence paths](../results/original_weight_edits/local-qwen-mcp-smoke-comparison.json).

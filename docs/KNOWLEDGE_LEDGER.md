@@ -113,3 +113,28 @@ the isolated MCP-only diagnostic host required by the protocol. This is a
 readiness audit, not a behavioral result; the v2 transfer gate remains
 unrun. The preflight output is
 [`mcp-cohort-v2-preflight.json`](../results/original_weight_edits/mcp-cohort-v2-preflight.json).
+
+### Local Qwen as the diagnostic model
+
+**Observation.** The same pinned Qwen3.5-0.8B checkpoint drove fresh local
+model contexts through the MCP broker. Raw model turns, tool exchanges,
+practice candidate checkpoints and hidden scores are linked from the
+[bounded-run summary](../results/original_weight_edits/local-qwen-mcp-smoke-comparison.json).
+
+**Hypothesis and intervention.** Separate tool orchestration from choosing
+an edit. In the patch form, the host requests diagnostics and evaluates
+accepted proposals. The model still chooses the scalar edit, its rationale,
+and whether to select a candidate. Each profile has a fresh seed roster.
+
+**Result and interpretation.** The direct tool interface exposed repeated
+requests and placeholder copying. The patch form allowed model proposals to
+reach practice evaluation. One accepted patch changed an input weight for a
+hidden unit with zero outgoing weights. A checkpoint reload confirmed that
+the practice logits were unchanged.
+
+**Limitations and next experiment.** These are bounded, exploratory
+profiles with different splits and transport rules. A frozen follow-up can
+test whether exposing graph reachability from permitted parameters to the
+logits improves the fraction of proposed edits that affect practice behavior
+under the same budget. Evaluate that change on fresh trials before using the
+20-task transfer gate to make a claim about held-out repair.

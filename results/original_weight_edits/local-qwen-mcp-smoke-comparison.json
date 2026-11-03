@@ -1,0 +1,641 @@
+{
+  "runs": [
+    {
+      "cohort_disposition": "INCONCLUSIVE",
+      "cohort_id": "local-qwen-mcp-compact-smoke",
+      "cohort_reasons": [
+        "missing 16 of 20 planned task records"
+      ],
+      "counts": {
+        "accepted_patches": 0,
+        "finalized_candidates": 0,
+        "full_repairs": 0,
+        "host_budget_stops": 4,
+        "mcp_calls": 36,
+        "mcp_rejections": 28,
+        "model_input_tokens": 34125,
+        "model_output_tokens": 1152,
+        "model_token_cap_turns": 0,
+        "model_turns": 32,
+        "repeated_model_outputs": 24,
+        "transport_errors": 0
+      },
+      "holdout_replay_verified": true,
+      "protocol_sha256": "b8f121afd54de86c0f047c2de3a34b2c0e91657e714d3c48aa13f4d5a7228ae4",
+      "resources": {
+        "completed_tasks": 4,
+        "failure": null,
+        "host_cpu_seconds": 1241.109375,
+        "host_peak_rss_bytes": 2623541248,
+        "wall_seconds": 227.11723709999933
+      },
+      "trials": [
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 7,
+            "model_input_tokens": 8526,
+            "model_output_tokens": 288,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 6,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-compact-smoke/trial-05/experiment_record.json",
+          "record_sha256": "8f30870cf512d74e788e629e2b72ffb989d005938f17180fc0bb704f1ffa3fc1",
+          "seed": 72008,
+          "task_id": "trial-05"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 7,
+            "model_input_tokens": 8547,
+            "model_output_tokens": 288,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 6,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 34,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-compact-smoke/trial-09/experiment_record.json",
+          "record_sha256": "ff8961f48ea04f34933da70a0ff5060e11806b04d142ea9e32b108a151eea40e",
+          "seed": 72016,
+          "task_id": "trial-09"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 7,
+            "model_input_tokens": 8519,
+            "model_output_tokens": 288,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 6,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-compact-smoke/trial-13/experiment_record.json",
+          "record_sha256": "298c6878826aad4861ea0dcdca1cd4f07ac89213ffd8a531699bf306f986fac0",
+          "seed": 72024,
+          "task_id": "trial-13"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 7,
+            "model_input_tokens": 8533,
+            "model_output_tokens": 288,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 6,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-compact-smoke/trial-16/experiment_record.json",
+          "record_sha256": "0a7863275ac934161016efec0366d5c3c20097db2b24ab54c4e2d6fbdf3107e1",
+          "seed": 72030,
+          "task_id": "trial-16"
+        }
+      ]
+    },
+    {
+      "cohort_disposition": "INCONCLUSIVE",
+      "cohort_id": "local-qwen-mcp-schema-smoke",
+      "cohort_reasons": [
+        "missing 16 of 20 planned task records"
+      ],
+      "counts": {
+        "accepted_patches": 0,
+        "finalized_candidates": 0,
+        "full_repairs": 0,
+        "host_budget_stops": 4,
+        "mcp_calls": 36,
+        "mcp_rejections": 0,
+        "model_input_tokens": 30908,
+        "model_output_tokens": 736,
+        "model_token_cap_turns": 0,
+        "model_turns": 32,
+        "repeated_model_outputs": 28,
+        "transport_errors": 0
+      },
+      "holdout_replay_verified": true,
+      "protocol_sha256": "4fa8709762d4c09b429a5523481886850050697d56eb21ded5fc60b7929458f3",
+      "resources": {
+        "completed_tasks": 4,
+        "failure": null,
+        "host_cpu_seconds": 959.328125,
+        "host_peak_rss_bytes": 2606608384,
+        "wall_seconds": 181.37331150000682
+      },
+      "trials": [
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 0,
+            "model_input_tokens": 7720,
+            "model_output_tokens": 184,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 7,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-schema-smoke/trial-05/experiment_record.json",
+          "record_sha256": "79400793e1c7fd21d156ed9f997fe1e6a73b60348d09a9738bf170736948888b",
+          "seed": 82008,
+          "task_id": "trial-05"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 0,
+            "model_input_tokens": 7748,
+            "model_output_tokens": 184,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 7,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 37,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-schema-smoke/trial-09/experiment_record.json",
+          "record_sha256": "cd091789749219a8f9436a6cd8c061ca37bb7d9bcb6ec36d8b1faa74322dc325",
+          "seed": 82016,
+          "task_id": "trial-09"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 0,
+            "model_input_tokens": 7713,
+            "model_output_tokens": 184,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 7,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-schema-smoke/trial-13/experiment_record.json",
+          "record_sha256": "fa837cd8e80f33781888d7fd7a61560d696b8c5ac6ffd54e72ddc3b3a3761aaa",
+          "seed": 82024,
+          "task_id": "trial-13"
+        },
+        {
+          "accepted_practice_edits": [],
+          "counts": {
+            "accepted_patches": 0,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 9,
+            "mcp_rejections": 0,
+            "model_input_tokens": 7727,
+            "model_output_tokens": 184,
+            "model_token_cap_turns": 0,
+            "model_turns": 8,
+            "repeated_model_outputs": 7,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/original_weight_edits/local-qwen-mcp-schema-smoke/trial-16/experiment_record.json",
+          "record_sha256": "2e917d3e8ca0bf5af4a4b9060761f0668cde1df51f4e5a6e6b1da25a4832dfcb",
+          "seed": 82030,
+          "task_id": "trial-16"
+        }
+      ]
+    },
+    {
+      "cohort_disposition": "INCONCLUSIVE",
+      "cohort_id": "wb-qf2",
+      "cohort_reasons": [
+        "missing 16 of 20 planned task records"
+      ],
+      "counts": {
+        "accepted_patches": 8,
+        "finalized_candidates": 0,
+        "full_repairs": 0,
+        "host_budget_stops": 4,
+        "mcp_calls": 24,
+        "mcp_rejections": 0,
+        "model_input_tokens": 12861,
+        "model_output_tokens": 1470,
+        "model_token_cap_turns": 0,
+        "model_turns": 12,
+        "repeated_model_outputs": 8,
+        "transport_errors": 0
+      },
+      "holdout_replay_verified": true,
+      "protocol_sha256": "25e4c79c3618465b6f4ceffffa43da1514d4e7fbf191a30933d9af9c2f11c5c9",
+      "resources": {
+        "completed_tasks": 4,
+        "failure": null,
+        "host_cpu_seconds": 1010.390625,
+        "host_peak_rss_bytes": 2519740416,
+        "wall_seconds": 186.67104909999762
+      },
+      "trials": [
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "0446fa3dd62ffed0f6e09564edc11f792dfe13144e1d64bd4f9d246090f1750b",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.0
+                }
+              ]
+            },
+            {
+              "candidate_sha256": "0446fa3dd62ffed0f6e09564edc11f792dfe13144e1d64bd4f9d246090f1750b",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.0
+                }
+              ]
+            }
+          ],
+          "counts": {
+            "accepted_patches": 2,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 6,
+            "mcp_rejections": 0,
+            "model_input_tokens": 3198,
+            "model_output_tokens": 357,
+            "model_token_cap_turns": 0,
+            "model_turns": 3,
+            "repeated_model_outputs": 2,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "input_direction_reversal",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/wb-qf2/trial-05/experiment_record.json",
+          "record_sha256": "06761ece7f2f3a31d0ccd9a72068b5b2596d00057c9c171167244c3a9b4ef09e",
+          "seed": 102008,
+          "task_id": "trial-05"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "61f5ed5ae4007e3df363c26a152556d80d12e66da1a2072c6ffa78d2b35b4385",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.0
+                }
+              ]
+            },
+            {
+              "candidate_sha256": "61f5ed5ae4007e3df363c26a152556d80d12e66da1a2072c6ffa78d2b35b4385",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -1.0
+                }
+              ]
+            }
+          ],
+          "counts": {
+            "accepted_patches": 2,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 6,
+            "mcp_rejections": 0,
+            "model_input_tokens": 3276,
+            "model_output_tokens": 402,
+            "model_token_cap_turns": 0,
+            "model_turns": 3,
+            "repeated_model_outputs": 2,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 39,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "hidden_threshold_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/wb-qf2/trial-09/experiment_record.json",
+          "record_sha256": "5286981126b4cfa1c80c98d82544f0d16c753cd4cccee1478f6366379ac48ead",
+          "seed": 102016,
+          "task_id": "trial-09"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "5114da434c1e43f02adc5120cb661c3c9eb0a7487752205b420c68a1fccbe4be",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -0.5
+                }
+              ]
+            },
+            {
+              "candidate_sha256": "5114da434c1e43f02adc5120cb661c3c9eb0a7487752205b420c68a1fccbe4be",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -0.5
+                }
+              ]
+            }
+          ],
+          "counts": {
+            "accepted_patches": 2,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 6,
+            "mcp_rejections": 0,
+            "model_input_tokens": 3222,
+            "model_output_tokens": 381,
+            "model_token_cap_turns": 0,
+            "model_turns": 3,
+            "repeated_model_outputs": 2,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 64,
+              "n": 64
+            }
+          },
+          "mechanism": "output_class_collapse",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/wb-qf2/trial-13/experiment_record.json",
+          "record_sha256": "9619d9842600dd1f072921d4c307f72ff8be91bd27525789866d65fb34ff091a",
+          "seed": 102024,
+          "task_id": "trial-13"
+        },
+        {
+          "accepted_practice_edits": [
+            {
+              "candidate_sha256": "336d916b31281d4ea5f01a87fe693fe731b94a732bd3f76801a86e0572ee2023",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -0.5
+                }
+              ]
+            },
+            {
+              "candidate_sha256": "336d916b31281d4ea5f01a87fe693fe731b94a732bd3f76801a86e0572ee2023",
+              "changed_entries": 1,
+              "max_absolute_practice_logit_delta": 0.0,
+              "patch": [
+                {
+                  "index": [
+                    0,
+                    1
+                  ],
+                  "op": "add",
+                  "tensor": "input_weight",
+                  "value": -0.5
+                }
+              ]
+            }
+          ],
+          "counts": {
+            "accepted_patches": 2,
+            "finalized_candidates": 0,
+            "full_repairs": 0,
+            "host_budget_stops": 1,
+            "mcp_calls": 6,
+            "mcp_rejections": 0,
+            "model_input_tokens": 3165,
+            "model_output_tokens": 330,
+            "model_token_cap_turns": 0,
+            "model_turns": 3,
+            "repeated_model_outputs": 2,
+            "transport_errors": 0
+          },
+          "holdout": {
+            "ai_candidate": null,
+            "baseline": {
+              "correct": 32,
+              "n": 64
+            },
+            "random_control": {
+              "correct": 32,
+              "n": 64
+            }
+          },
+          "mechanism": "output_intercept_shift",
+          "random_control_match": "predeclared_fallback_magnitude",
+          "record": "results/wb-qf2/trial-16/experiment_record.json",
+          "record_sha256": "55699b7da585097886e57da9fc550bc74f4821f79c1406051ceefec4c339ed22",
+          "seed": 102030,
+          "task_id": "trial-16"
+        }
+      ]
+    }
+  ],
+  "schema": "weightbridge.local_mcp_smoke_comparison.v1"
+}

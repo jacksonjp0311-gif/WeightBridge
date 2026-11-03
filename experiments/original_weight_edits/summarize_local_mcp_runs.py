@@ -42,6 +42,37 @@ def verify_scores(directory, record, calls):
             raise ValueError(f"Holdout replay differs for {directory.name}/{key}")
 
 
+def accepted_practice_edits(directory, record, calls):
+    accepted = [call for call in calls if call["request"].get("tool") == "submit_patch"
+                and call["response"].get("ok") is True]
+    if not accepted:
+        return []
+    session_id = record["protocol_binding"]["agent_session_id"]
+    base = ToyMLP.load(directory / "base.npz")
+    with np.load(directory / "practice.npz", allow_pickle=False) as practice:
+        features = practice["features"]
+    baseline_logits = base.forward(features)
+    edits = []
+    for call in accepted:
+        receipt = call["response"]["result"]
+        path = directory / "candidates" / "sessions" / session_id / (
+            f"candidate-{receipt['candidate_id']}.npz")
+        if _file_sha256(path) != receipt["candidate_sha256"]:
+            raise ValueError(f"Practice candidate hash mismatch for {path.name}")
+        candidate = ToyMLP.load(path)
+        changed = sum(int(np.count_nonzero(weights != candidate.tensors[name]))
+                      for name, weights in base.tensors.items())
+        if changed != receipt["changed_entries"]:
+            raise ValueError(f"Practice candidate change count mismatch for {path.name}")
+        edits.append({
+            "candidate_sha256": receipt["candidate_sha256"], "changed_entries": changed,
+            "patch": call["request"]["arguments"]["patch"]["changes"],
+            "max_absolute_practice_logit_delta": float(
+                np.max(np.abs(candidate.forward(features) - baseline_logits))),
+        })
+    return edits
+
+
 def summarize_run(path):
     protocol = _read_json(path / "frozen_protocol.json")
     record_paths = sorted(path.glob("trial-*/experiment_record.json"))
@@ -84,6 +115,7 @@ def summarize_run(path):
             "holdout": {key: (None if result is None else {"correct": result["correct"], "n": result["n"]})
                         for key, result in metrics.items()},
             "random_control_match": record["control_modification"]["magnitude_match_type"],
+            "accepted_practice_edits": accepted_practice_edits(record_path.parent, record, calls),
             "counts": dict(counts),
         })
     return {

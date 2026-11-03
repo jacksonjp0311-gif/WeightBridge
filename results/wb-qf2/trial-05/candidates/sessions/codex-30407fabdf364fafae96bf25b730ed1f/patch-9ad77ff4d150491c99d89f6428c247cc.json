@@ -1,0 +1,19 @@
+{
+  "base_sha256": "ec17e7617dc564ff74a7435e1379dd02b2ee09b4c50cf668ab90b5dd4eb7d253",
+  "changes": [
+    {
+      "index": [
+        0,
+        1
+      ],
+      "op": "add",
+      "tensor": "input_weight",
+      "value": -1.0
+    }
+  ],
+  "evidence_ids": [
+    "practice-diagnostics"
+  ],
+  "reason": "Input weights are too large (mean 0.0, min -2.0, max 2.0) compared to the expected activation magnitude (h ~ -1.0 to 0.5). Adding -1.0 to the first and second weights reduces the activation magnitude, aligning it closer to the expected range [-1.0, 0.5].",
+  "schema": "weightbridge.patch.v1"
+}

@@ -1,0 +1,12 @@
+# The cohort manifest and evidence receipts bind the exact file bytes.
+/experiments/original_weight_edits/MCP_AGENT_PROMPT_V2.md text eol=lf
+/experiments/original_weight_edits/run_mcp_agent_experiment.py text eol=lf
+/experiments/original_weight_edits/run_local_mcp_cohort.py text eol=lf
+/weightbridge/agents/mcp_server.py text eol=lf
+/weightbridge/evaluation/freeze_cohort.py text eol=lf
+/weightbridge/evaluation/mcp_cohort.py text eol=lf
+/results/original_weight_edits/local-qwen-mcp-*/**/*.json text eol=lf
+/results/original_weight_edits/local-qwen-mcp-*/**/*.jsonl text eol=lf
+/results/wb-qf2/**/*.json text eol=lf
+/results/wb-qf2/**/*.jsonl text eol=lf
+*.npz -text

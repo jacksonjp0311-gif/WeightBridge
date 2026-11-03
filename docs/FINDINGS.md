@@ -212,3 +212,46 @@ included, while its MCP child-process CPU and model-token use were unavailable.
 
 See [`KNOWLEDGE_LEDGER.md`](KNOWLEDGE_LEDGER.md) for evidence-linked
 observations and the next controlled experiments.
+
+## Local Qwen diagnosis of synthetic weights
+
+Qwen3.5-0.8B served as the diagnostic model. Each condition used fresh
+synthetic splits and a frozen host receipt. The model saw practice evidence
+and selected its own proposed weight edits.
+
+| Interaction | Scored tasks | Accepted proposals | Finalized candidates | Host CPU seconds |
+|---|---:|---:|---:|---:|
+| Compact JSON tools with an example | 4 | 0 | 0 | 1,241.11 |
+| Compact JSON tools with field descriptions | 4 | 0 | 0 | 959.33 |
+| Host-routed patch form with a repeated-response stop | 4 | 8 | 0 | 1,010.39 |
+
+The first profile copied a placeholder into 28 rejected requests. The
+second repeatedly requested diagnostics. In the third, all accepted edits
+targeted `input_weight[0, 1]`, which feeds a hidden unit with zero outgoing
+weights in these toy networks. The affected unit has no contribution to
+either logit, so those scalar edits could change its activation while leaving
+classification unchanged. Reloading every accepted candidate confirmed a
+maximum absolute practice logit change of zero. Eight submissions represent
+two copies of one proposal per task.
+
+Three fallback random controls reached 64/64 on individual holdouts. Their
+magnitudes were set by the fallback rule because the agent stopped without
+a candidate. The descriptive smoke outcomes offer no matched comparison
+against a finalized AI patch. The profiles use different splits and
+interaction rules, so the table does not estimate a causal effect of the
+interface change.
+
+The full cohort remains HOLD. An actionable follow-up is to expose a
+read-only connectivity probe and test whether it increases the fraction of
+proposals that alter practice logits under a fixed call budget on fresh tasks.
+The earlier Codex pilot remains the only recorded LLM-proposed persistent
+repair. The current runs use Qwen as a diagnostic caller and edit synthetic
+checkpoints.
+
+The [comparison artifact](../results/original_weight_edits/local-qwen-mcp-smoke-comparison.json)
+links per-task scores and checkpoint hashes. Raw traces with local absolute
+paths are retained locally. The published record includes their failure
+summaries and, for the stopped Windows attempt, a hash of the omitted trace.
+The comparison counts finalized candidates from scored candidate artifacts
+because the broker's legacy `candidate_finalized` flag can also be true on a
+stop event.
