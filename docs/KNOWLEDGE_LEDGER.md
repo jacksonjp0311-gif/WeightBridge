@@ -149,3 +149,27 @@ held-out accuracy. Two of those finalists exceeded their own matched
 random control. This is a small comparison of workflows under a shared
 evaluation ceiling, with different realized evaluation counts.
 [Paired evidence](../results/wb-sr/comparison.json)
+
+### Blind repair on a full Qwen checkpoint
+
+**Observation.** The injected layer 23 edits lowered next-token answer
+margins and produced accuracy loss on fresh examples of the same prompt
+format. The first paraphrase holdout retained its original accuracy.
+
+**Hypothesis and intervention.** A practice-fitted MLP update can raise the
+target answer margin, while fitting and ranking against unrelated activations
+can limit collateral changes. The margin-budget protocol fixed that ranking
+before evaluating the holdout.
+
+**Result and interpretation.** The margin-budget patch recovered 14/16 lost
+answers after reload, outperformed three norm-matched controls, and matched
+pristine predictions on 32 unrelated prompts. It also reversed one unrelated
+error introduced by the injection. The protocol still scores this as a
+locality failure because it uses the damaged checkpoint as the reference.
+[Evidence and protocol](QWEN_BLIND_REPAIR.md)
+
+**Limitations and next experiment.** Strength, sample construction and
+ranking changed across trials, so their separate effects cannot be estimated
+from this series. Freeze both locality references and a compute-matched
+search control before a cohort with balanced answer positions, multiple
+unknown injection sites and paraphrased holdouts.

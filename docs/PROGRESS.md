@@ -235,4 +235,12 @@ deployed; candidates remain isolated research artifacts.
 - A sentinel-constrained follow-up increased practice coverage and penalized
   unrelated activation responses. Its first protocol was retired before
   scoring because six sentinel prompts overlapped an earlier holdout.
+  The replacement recovered 13/13 lost answers with one beneficial
+  unrelated flip. A low-drift trial preserved every unrelated prediction
+  and recovered 8/23 lost answers.
+- The margin-budget trial recovered 14/16 lost answers after reload, beat
+  all three norm-matched controls and matched all 32 pristine unrelated
+  predictions. It changed one prediction relative to the damaged model,
+  restoring the original correct answer. The frozen damaged-relative gate
+  records FAIL.
   [Protocol and evidence](QWEN_BLIND_REPAIR.md)

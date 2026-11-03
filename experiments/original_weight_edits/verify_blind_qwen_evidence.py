@@ -126,6 +126,9 @@ def verify(root, frozen_source=None):
     expected = "PASS" if passed else "FAIL" if lost > 0 else "INCONCLUSIVE"
     require(expected == summary["disposition"], "decision gate replay differs")
     return {"disposition": expected, "target_correct": target, "sentinel_flips": unrelated,
+            "sentinel_flips_vs_pristine": flips(scores["pristine"]["sentinel"], scores["repaired"]["sentinel"]),
+            "sentinel_regressions_vs_damaged": sum(a["correct"] and not b["correct"] for a, b in
+                                                   zip(scores["damaged"]["sentinel"], scores["repaired"]["sentinel"])),
             "lost_accuracy_recovered": recovered}
 
 

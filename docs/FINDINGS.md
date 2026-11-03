@@ -401,6 +401,18 @@ errors and corrected one existing sentinel error, so it still failed exact
 prediction preservation. Reloading the pristine checkpoint afterward
 reproduced every original recorded holdout prediction and margin.
 
+The final margin-budget trial recovered 14/16 lost target answers and
+outscored the best norm-matched random edit by 14/24. The saved patch
+reproduced practice scores after reload. All 32 unrelated predictions
+matched pristine Qwen. The sole change relative to the damaged checkpoint
+restored the pristine answer, and the original exact-preservation rule
+still returned FAIL. That difference separates two plausible experimental
+goals. One holds all non-target predictions fixed relative to the broken
+model, while the other restores the behavior of the known good model.
+Future injected-fault studies should preregister both measures. Natural
+failure studies need independent expected behavior or regression tests
+because there may be no known good checkpoint.
+
 These are interventions on a full transformer checkpoint under a synthetic
 localized fault. They support a narrow behavioral recovery claim. The design
 uses one correct target answer position and related injection and repair

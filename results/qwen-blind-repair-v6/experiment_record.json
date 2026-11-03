@@ -1,0 +1,133 @@
+{
+  "affected_parameters": {
+    "changed_entries": 59826,
+    "parameter_fraction_changed": 6.849478302992325e-05
+  },
+  "artifact_root": "results/qwen-blind-repair-v6",
+  "artifacts": [
+    "evaluation/damaged_scores.json",
+    "evaluation/pristine_scores.json",
+    "evaluation/random_853021_patch.json",
+    "evaluation/random_853021_receipt.json",
+    "evaluation/random_853021_scores.json",
+    "evaluation/random_853022_patch.json",
+    "evaluation/random_853022_receipt.json",
+    "evaluation/random_853022_scores.json",
+    "evaluation/random_853023_patch.json",
+    "evaluation/random_853023_receipt.json",
+    "evaluation/random_853023_scores.json",
+    "evaluation/repaired_scores.json",
+    "evaluation/rollback.json",
+    "evaluation/stage_resources.json",
+    "evaluation/summary.json",
+    "evaluator/calibration.json",
+    "evaluator/construction.json",
+    "evaluator/fault_patch.json",
+    "evaluator/fault_receipt.json",
+    "evaluator/holdout.json",
+    "evaluator/stage_resources.json",
+    "public/practice.json",
+    "public/protocol.json",
+    "search/repair_patch.json",
+    "search/repair_receipt.json",
+    "search/search.json",
+    "search/stage_resources.json"
+  ],
+  "disposition": "FAIL",
+  "evaluation": {
+    "dataset": "frozen synthetic two-choice prompts",
+    "practice_test_separated": true,
+    "seeds": {
+      "construction": 3655414995,
+      "holdout": 4202065756,
+      "practice": 853006
+    },
+    "summary": "evaluation/summary.json"
+  },
+  "experiment_id": "qwen-blind-repair-v6",
+  "hypothesis": "A bounded practice-only search can recover at least half the held-out accuracy lost to an injected Qwen weight defect.",
+  "measurement_key": "87bb30724e7f258cf66936f3c51ef7f901aaebcfb08a85edb5b22ff212573ef5",
+  "proposed_modification": "search/repair_patch.json",
+  "resources": {
+    "final_evaluation": {
+      "damaged": {
+        "forward_batches": 7,
+        "input_tokens": 2114,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2388774912,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "pristine": {
+        "forward_batches": 7,
+        "input_tokens": 2114,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2349318144,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_853021": {
+        "forward_batches": 7,
+        "input_tokens": 2114,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2476158976,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_853022": {
+        "forward_batches": 7,
+        "input_tokens": 2114,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2503499776,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "random_853023": {
+        "forward_batches": 7,
+        "input_tokens": 2114,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2507132928,
+        "prompt_examples": 56,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      },
+      "repaired": {
+        "forward_batches": 14,
+        "input_tokens": 4016,
+        "model_output_tokens_generated": 0,
+        "numpy": "2.5.4",
+        "peak_rss_bytes": 2405330944,
+        "prompt_examples": 108,
+        "torch": "2.15.0",
+        "transformers": "5.22.1"
+      }
+    },
+    "search": {
+      "forward_batches": 175,
+      "input_tokens": 47550,
+      "model_output_tokens_generated": 0,
+      "numpy": "2.5.4",
+      "peak_rss_bytes": 2377932800,
+      "prompt_examples": 1300,
+      "torch": "2.15.0",
+      "transformers": "5.22.1"
+    }
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "damaged_sha256": "558d6aa73ddcbdd72ff9adb041f055483e7c20d96e2b5a6ba6256eaf66778f39",
+    "id": "Qwen/Qwen3.5-0.8B",
+    "pristine_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+  },
+  "timestamp_utc": "2026-11-03T06:52:11.041186+00:00"
+}

@@ -1,0 +1,71 @@
+{
+  "activation_gate": {
+    "columns": 64,
+    "sentinel_weight": 64.0
+  },
+  "construction_sha256": "26c2aa486cda209f3052d96a7d1ac0643db112f0dede621860a1525ca3b37140",
+  "eligible_layers": [
+    19,
+    21,
+    23
+  ],
+  "fault_strengths": [
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64,
+    1.28,
+    2.56,
+    4.0
+  ],
+  "holdout_sha256": "b6d95f7143e1834094072378b24e2ba9cb152415405da0bdd706abda0de7df48",
+  "inference": "CPU BF16, 6 threads, left padding, no thinking, max 96 input tokens, A/B logits only",
+  "max_practice_sentinel_margin_drift": 0.25,
+  "max_unrelated_prediction_flips_vs_damaged": 0,
+  "minimum_calibration_accuracy_loss_count": 6,
+  "minimum_recovery": 0.5,
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "policy": {
+    "allow_tensors": [
+      "model.language_model.layers.19.mlp.down_proj.weight",
+      "model.language_model.layers.21.mlp.down_proj.weight",
+      "model.language_model.layers.23.mlp.down_proj.weight"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 65536,
+    "max_fraction": 8e-05,
+    "max_tensor_bytes": 8388608,
+    "max_total_tensor_bytes": 8388608,
+    "schema": "weightbridge.policy.v1"
+  },
+  "practice_seed": 853006,
+  "practice_selection": "max_target_gain_with_small_sentinel_drift",
+  "practice_sha256": "1f14aa9549b0e6f7d292fb9bccabc8e70bfa0d6fda21194cb2a140e0c8e7d950",
+  "primary": "fraction of lost forced-choice holdout accuracy recovered",
+  "random_control_seeds": [
+    853021,
+    853022,
+    853023
+  ],
+  "schema": "weightbridge.qwen_blind_repair.v1",
+  "search_activation_gate": {
+    "columns": 64,
+    "sentinel_weight": 256.0
+  },
+  "source_sha256": "00a50a42256a418c07adf6463b256ddcdd29e5ea37f894846605729e9643f8a3",
+  "strengths": [
+    0.01,
+    0.02,
+    0.025,
+    0.03,
+    0.035,
+    0.04,
+    0.06,
+    0.08
+  ],
+  "timestamp_utc": "2026-11-03T06:52:11.041186+00:00"
+}

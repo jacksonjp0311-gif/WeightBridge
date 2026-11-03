@@ -9,6 +9,38 @@ The stages run in separate processes under the same local account. This is
 input separation for a trusted runner and does not provide filesystem security
 for an untrusted agent.
 
+## Margin-budget result
+
+| Checkpoint | Correct targets | Correct unrelated prompts |
+|---|---:|---:|
+| Pristine | 23/24 | 26/32 |
+| Damaged | 7/24 | 25/32 |
+| Reloaded repair | 21/24 | 26/32 |
+| Random control 853021 | 6/24 | 25/32 |
+| Random control 853022 | 7/24 | 25/32 |
+| Random control 853023 | 5/24 | 25/32 |
+
+The search selected layer 23 at strength 0.03. It changed 59,826 stored
+BF16 values and recovered 14 of 16 lost target answers after reload (87.5%).
+The repair matched all 32 pristine unrelated predictions. Compared with the
+damaged checkpoint, it corrected one unrelated prediction and introduced
+zero new unrelated errors. Because the frozen gate compares every unrelated
+prediction to the damaged checkpoint, its recorded disposition is FAIL.
+Pristine agreement is a separate post-score analysis.
+
+[Raw scores and receipts](../results/qwen-blind-repair-v6/)
+· [Comparison chart](../results/figures/qwen_blind_repair.png)
+
+The [rollback check](../results/qwen-blind-repair-v6/evaluation/rollback.json)
+loaded the pristine checkpoint in a fresh process and reproduced all 56
+original predictions and margins. The final trial used 339.20 wall seconds
+and 1,361.78 process CPU seconds, including rollback. Across timed trials,
+including the retired calibration and both rollback checks, the total was
+1,510.79 summed stage wall seconds and 5,816.20 process CPU seconds. Peak
+process RSS was 2,541,518,848 bytes. The first calibration logged forwards
+and RSS without CPU or wall time. These are local CPU measurements and the
+forced-choice protocol generated zero model tokens.
+
 ## Intervention and gate
 
 The search reads the final-position inputs to the MLP down projections of
