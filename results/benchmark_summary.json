@@ -1,5 +1,5 @@
 {
-  "canonical_ledger_experiment_count": 14,
+  "canonical_ledger_experiment_count": 15,
   "cost_improvement_points": [
     {
       "accuracy_difference": 0.5,
@@ -35,9 +35,14 @@
       "accuracy_difference": 0.0,
       "cpu_seconds": 402.953125,
       "label": "Qwen paired smoke"
+    },
+    {
+      "accuracy_difference": 0.453125,
+      "cpu_seconds": 0.875,
+      "label": "LLM MCP pilot d6cb4ec7"
     }
   ],
-  "generated_at_utc": "2026-11-03T03:55:04.417537+00:00",
+  "generated_at_utc": "2026-11-03T04:19:13.652222+00:00",
   "gradient_baseline": {
     "baseline_accuracy": 0.5,
     "candidate_accuracy": 1.0,
@@ -60,6 +65,41 @@
     "raw_evidence": [
       "results/original_weight_edits/gradient-20261103T030417Z/experiment_record.json"
     ]
+  },
+  "mcp_agent_discovery_pilots": {
+    "count": 1,
+    "independent_task_count": 1,
+    "runs": [
+      {
+        "affected_parameters": {
+          "candidate_tensor_index": [
+            0
+          ],
+          "count": 1,
+          "fraction": 0.08333333333333333,
+          "max_abs_delta": 0.7,
+          "tensor": "hidden_bias"
+        },
+        "baseline_accuracy": 0.546875,
+        "candidate_accuracy": 1.0,
+        "candidate_gain": 0.453125,
+        "candidate_vs_baseline_paired_ci95": {
+          "ci_high": 0.578125,
+          "ci_low": 0.328125,
+          "confidence": 0.95,
+          "mean_difference": 0.453125,
+          "n": 64,
+          "resamples": 10000,
+          "seed": 28431
+        },
+        "disposition": "INCONCLUSIVE",
+        "experiment_id": "codex-mcp-20261103T040947Z-d6cb4ec7",
+        "mechanism": "hidden_threshold_shift",
+        "random_control_accuracy": 0.546875,
+        "raw_evidence": "results/original_weight_edits/mcp-pilot-18d5cab750/evaluation.json"
+      }
+    ],
+    "scope_note": "LLM-directed MCP sessions are reported separately from the deterministic worker cohort; one task is a pilot, not a transfer estimate."
   },
   "mwc_ablation": {
     "conditions": {
@@ -284,6 +324,13 @@
       "experiment_id": "toy-gradient-baseline-20261103T030418Z-bc248dcf",
       "label": "toy conventional SGD",
       "timestamp_utc": "2026-11-03T03:04:18.221732+00:00"
+    },
+    {
+      "accuracy_difference": 0.453125,
+      "evidence": "results/original_weight_edits/mcp-pilot-18d5cab750/evaluation.json",
+      "experiment_id": "codex-mcp-20261103T040947Z-d6cb4ec7",
+      "label": "LLM MCP pilot d6cb4ec7",
+      "timestamp_utc": "2026-11-03T04:09:47.790548+00:00"
     }
   ],
   "published_patch": {
@@ -352,7 +399,7 @@
     "status": "PASS_REBUILD_ONLY"
   },
   "recorded_computation_totals": {
-    "cpu_seconds_sum_unique_experiment_records": 453.34375,
+    "cpu_seconds_sum_unique_experiment_records": 454.21875,
     "records": [
       {
         "cpu_seconds": 0.296875,
@@ -437,10 +484,16 @@
         "experiment_id": "toy-discovery-20261103T035435Z-ddc5c385",
         "peak_rss_bytes": 40792064,
         "wall_seconds": 0.8234679999877699
+      },
+      {
+        "cpu_seconds": 0.875,
+        "experiment_id": "codex-mcp-20261103T040947Z-d6cb4ec7",
+        "peak_rss_bytes": 76345344,
+        "wall_seconds": 83.9920182999922
       }
     ],
     "scope_note": "Sum of resource fields in canonical ledger experiment records only. It excludes unrecorded coding, development, test, reference-clone and dependency-download time; CPU and wall sums include non-comparable task runs.",
-    "wall_seconds_sum_unique_experiment_records": 205.05835359996325
+    "wall_seconds_sum_unique_experiment_records": 289.05037189995545
   },
   "regression_rates": [
     {
@@ -480,6 +533,11 @@
     {
       "basis": "paired raw correctness arrays, n=320",
       "label": "toy conventional SGD",
+      "rate": 0.0
+    },
+    {
+      "basis": "paired raw holdout correctness arrays; one task seed",
+      "label": "LLM MCP pilot d6cb4ec7",
       "rate": 0.0
     }
   ],

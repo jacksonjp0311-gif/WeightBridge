@@ -4,10 +4,12 @@
 > inspecting model weights, validating proposed patches against host-owned
 > limits, and writing immutable candidate checkpoints. An AI with command-line
 > access can inspect JSON output, propose a patch, and call the patcher. The
-> included toy diagnostic worker is deterministic search code, not an LLM; no
-> LLM-discovered Qwen improvement has been demonstrated. See the v0.2 section
-> below for implemented capabilities and the evidence ledger for measured
-> results.
+> optional MCP server now exposes a practice-only toy diagnosis session to
+> LLM hosts. A Codex MCP pilot independently proposed a one-weight hidden-bias
+> correction and improved a synthetic holdout; this is one task, not evidence
+> of transfer. The bundled diagnostic worker remains deterministic search
+> code, not an LLM, and no Qwen improvement has been demonstrated. See the
+> evidence ledger for measured results.
 
 ## Historical v0.1 guide
 
@@ -79,6 +81,11 @@ python -m weightbridge compare-demo --base demo-run/base.npz \
 
 The **v0.1 baseline** supports small unsharded `.safetensors` and NumPy `.npz` files. The v0.2 branch adds indexed sharded safetensors inspection and candidate patching, bounded Hugging Face inference, activation and attention summaries, and controlled activation ablations. Model-specific runtimes remain optional. See `docs/LIMITATIONS.md` for measured compatibility and current HOLDs.
 
+For the optional LLM-hosted practice-only MCP interface, install `.[mcp]` and
+see [`docs/AGENT_TOOLS.md`](docs/AGENT_TOOLS.md). It currently supports the
+synthetic MLP diagnosis session; real Hugging Face checkpoint inspection and
+patching remain available through the CLI.
+
 ## What this builds toward
 
 - RecallTree provides eligible, receipt-backed observations. Do not train on or export private memory without separate permission.
@@ -114,6 +121,9 @@ The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 add
 - A separate read-only Transformers inference interface with seed, input, output and time limits; optional activation/attention summaries and reversible activation ablations.
 - Append-only experiment records, paired bootstrap intervals, a synthetic diagnostic worker process, and a synthetic-only Memory-to-Weights Consolidation store.
 - A deterministic reconstruction script and attributed copy of the authors' p50c sparse patch artifact.
+- An optional local MCP server exposing host-pinned inspection, bounded patch
+  submission, practice-only scoring and candidate finalization; one Codex
+  session found the injected hidden-bias correction on a blinded toy task.
 
 Install the core tools and run the tests/demo:
 

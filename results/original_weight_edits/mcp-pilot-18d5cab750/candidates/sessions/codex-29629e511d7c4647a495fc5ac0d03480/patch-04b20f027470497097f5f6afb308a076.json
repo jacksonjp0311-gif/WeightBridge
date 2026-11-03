@@ -1,0 +1,21 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "changes": [
+    {
+      "index": [
+        0
+      ],
+      "op": "add",
+      "tensor": "hidden_bias",
+      "value": -0.7
+    }
+  ],
+  "evidence_ids": [
+    "mcp-diagnostic-report",
+    "practice-errors-class-0",
+    "practice-hidden-activation"
+  ],
+  "projections": [],
+  "reason": "The practice failures are exclusively class 0 at lower x0 values. The first hidden activation is already positive near x0=0.2 despite the separating labels; with input_weight[0,0]=2, its current threshold is consistent with hidden_bias[0]=-0.3. Moving that bias by -0.7 restores the observed class boundary near x0=0.5. This is a causal hypothesis to evaluate on practice data, not a known correction.",
+  "schema": "weightbridge.patch.v1"
+}

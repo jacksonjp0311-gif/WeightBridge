@@ -1,0 +1,21 @@
+{
+  "base_checkpoint": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\original_weight_edits\\mcp-pilot-18d5cab750\\base.npz",
+  "candidate_directory": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\original_weight_edits\\mcp-pilot-18d5cab750\\candidates",
+  "max_candidates": 8,
+  "max_failure_examples": 48,
+  "policy": {
+    "allow_tensors": [
+      "input_weight",
+      "hidden_bias",
+      "output_weight",
+      "output_bias"
+    ],
+    "max_abs_delta": 8.0,
+    "max_entries": 1,
+    "max_fraction": 0.08333333333333333,
+    "schema": "weightbridge.policy.v1"
+  },
+  "practice_dataset": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\original_weight_edits\\mcp-pilot-18d5cab750\\practice.npz",
+  "schema": "weightbridge.agent_session.v1",
+  "session_id": "codex-29629e511d7c4647a495fc5ac0d03480"
+}

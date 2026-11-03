@@ -87,6 +87,44 @@ score the holdout or create another behavioral measurement. See the
 [`seed-842 experiment record`](../results/original_weight_edits/run-20261103T035435Z/experiment_record.json)
 and [`CLI replay receipt`](../results/tool_interface_smoke/seed842_cli_application.json).
 
+## LLM-directed discovery through MCP
+
+I used the MCP tools as the diagnosing model on a fresh task selected from four
+single-weight defect mechanisms. The host exposed a bounded report of tensor
+statistics, practice errors and selected activations; the correct checkpoint,
+oracle mechanism and holdout labels were not available in the tool session.
+From one-sided class-0 failures and the first hidden activation, I hypothesized
+a shifted hidden threshold and proposed `hidden_bias[0] += -0.7`. The host
+accepted the one-entry patch under its fixed allowlist and policy. Practice
+accuracy rose from 42/64 to 64/64, with 22 rescues and zero regressions.
+
+After the candidate was finalized, the host reloaded it from disk and scored
+the previously withheld holdout once: baseline 35/64 (54.69%), candidate 64/64
+(100%), and a paired 95% bootstrap interval of +32.81 to +57.81 percentage
+points over the 64 paired examples. A one-entry random edit matched for
+parameter count and absolute edit magnitude scored 35/64. Only after this
+evaluation did the host reveal that the injected defect was `hidden_bias[0]`
+at -0.3 and that the correction was -0.7. The chosen edit matched it exactly.
+
+One proposed call was rejected because I copied the base hash with a trailing
+extra character. The rejection created no candidate; the corrected proposal
+was accepted. The server event log and versioned interaction supplement retain
+the accepted sequence and the rejected attempt. The MCP session used five
+tool calls, eight possible candidate slots, and no gradients. Token usage for
+the Codex model was unavailable. This is one successful LLM-directed,
+in-distribution synthetic discovery and a saved candidate reload, not evidence
+that the method transfers across task seeds, mechanisms, language models, or
+Qwen. Its experiment disposition remains INCONCLUSIVE because this one task
+does not satisfy the predeclared multi-instance transfer gate.
+
+Evidence: [`experiment record`](../results/original_weight_edits/mcp-pilot-18d5cab750/experiment_record.json),
+[`holdout evaluation`](../results/original_weight_edits/mcp-pilot-18d5cab750/evaluation.json),
+[`MCP event log`](../results/original_weight_edits/mcp-pilot-18d5cab750/candidates/sessions/codex-29629e511d7c4647a495fc5ac0d03480/events.jsonl),
+and [`interaction audit supplement`](../results/original_weight_edits/mcp-pilot-18d5cab750/interaction_audit_supplement.jsonl).
+The public evidence bundle includes the synthetic holdout and post-run oracle
+for auditability. The MCP caller did not receive them before finalization, but
+this disclosed split must never be reused as a hidden test.
+
 ## Conventional optimizer and memory ablation
 
 Full-batch SGD on the same toy model, trained for 400 cross-entropy steps on
@@ -148,14 +186,16 @@ into independent measurements.
 
 ## Recorded compute
 
-The canonical ledger records 453.05 process CPU seconds and 204.23 summed
+The canonical ledger records 454.22 process CPU seconds and 289.05 summed
 wall-clock seconds across the experiment records with resource fields. This
 includes two Qwen CPU smoke runs, patch reconstruction, synthetic discovery,
 MWC and the toy SGD baseline. The sum excludes development time, test time,
 reference inspection, dataset downloads and other unmetered work. Process CPU
 seconds can exceed wall time on a multithreaded run. See
 [`benchmark_summary.json`](../results/benchmark_summary.json) for record-level
-resource entries and evidence links.
+resource entries and evidence links. The total is refreshed from the ledger
+after each recorded experiment; the MCP pilot's host CPU and elapsed time are
+included, while its MCP child-process CPU and model-token use were unavailable.
 
 ## Open questions
 

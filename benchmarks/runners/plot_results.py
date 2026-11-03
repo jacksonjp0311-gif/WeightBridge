@@ -283,6 +283,37 @@ def _patch_figures(summary: dict[str, Any], outdir: Path) -> None:
     plt.close(fig)
 
 
+def _mcp_agent_figures(summary: dict[str, Any], outdir: Path) -> None:
+    import matplotlib.pyplot as plt
+
+    runs = summary["mcp_agent_discovery_pilots"]["runs"]
+    if not runs:
+        return
+    labels = [run["experiment_id"][-8:] for run in runs]
+    x = np.arange(len(runs))
+    width = .25
+    fig, ax = plt.subplots(figsize=(max(7, len(runs) * 1.5), 5), constrained_layout=True)
+    for offset, key, label, color in (
+        (-width, "baseline_accuracy", "Original", "#657b8b"),
+        (0, "candidate_accuracy", "AI MCP candidate", "#357a66"),
+        (width, "random_control_accuracy", "Matched random edit", "#ba8b42"),
+    ):
+        values = [run[key] if run[key] is not None else np.nan for run in runs]
+        bars = ax.bar(x + offset, values, width, label=label, color=color)
+        for bar, value in zip(bars, values):
+            if not np.isnan(value):
+                ax.text(bar.get_x() + bar.get_width()/2, value + .015, f"{value:.1%}",
+                        ha="center", fontsize=8)
+    ax.set_ylim(0, 1.12)
+    ax.set_xticks(x, labels, rotation=20, ha="right")
+    ax.set_ylabel("Holdout accuracy")
+    ax.set_title("LLM-directed MCP toy candidates (one independent task per run)")
+    ax.legend()
+    ax.grid(axis="y", alpha=.2)
+    fig.savefig(outdir / "mcp_agent_discovery_accuracy.png", dpi=160)
+    plt.close(fig)
+
+
 def _resource_figures(summary: dict[str, Any], outdir: Path) -> None:
     import matplotlib.pyplot as plt
 
@@ -385,6 +416,25 @@ def build() -> dict[str, Any]:
     random_control_record = next(x for x in experiments if x["experiment_id"].startswith("qwen-p50c-random-control-"))
     p50_record = next(x for x in experiments if x["experiment_id"].startswith("published-p50c-patch-rebuild-"))
     qwen_record = next(x for x in experiments if x["experiment_id"].startswith("qwen-p50c-paired-smoke-"))
+    mcp_records = [x for x in experiments
+                   if x.get("agent", {}).get("type") == "LLM-directed-MCP-tool-caller"]
+    mcp_runs = []
+    for item in mcp_records:
+        metrics = item["evaluation"]["metrics"]
+        candidate = metrics.get("ai_candidate")
+        random_candidate = metrics.get("random_control")
+        mcp_runs.append({
+            "experiment_id": item["experiment_id"],
+            "mechanism": item.get("task_oracle", {}).get("mechanism", "not recorded"),
+            "baseline_accuracy": metrics["baseline"]["accuracy"],
+            "candidate_accuracy": None if candidate is None else candidate["accuracy"],
+            "random_control_accuracy": None if random_candidate is None else random_candidate["accuracy"],
+            "candidate_gain": None if candidate is None else candidate["accuracy"] - metrics["baseline"]["accuracy"],
+            "candidate_vs_baseline_paired_ci95": item["evaluation"].get("ai_vs_baseline_paired_accuracy_ci"),
+            "affected_parameters": item["affected_parameters"],
+            "disposition": item["disposition"],
+            "raw_evidence": relative(ROOT / item["artifact_root"] / "evaluation.json"),
+        })
     toy_intervals = [x["evaluation"]["paired_accuracy_difference_ci"] for x in toy]
 
     outcomes: list[dict[str, Any]] = []
@@ -399,6 +449,9 @@ def build() -> dict[str, Any]:
         outcome(label, item, mwc["conditions"]["memory_plus_weight_edit"]["accuracy"] - mwc["conditions"]["no_memory_no_edit"]["accuracy"], relative(root / "mwc_ablation.json"))
     outcome("toy conventional SGD", gradient_record, gradient["candidate_accuracy"] - gradient["baseline_accuracy"], gradient["raw_evidence"][0])
     outcome("Qwen p50 paired smoke", qwen_record, qwen64["candidate_accuracy"] - qwen64["baseline_accuracy"], qwen64["raw_evidence"][2])
+    for item, run in zip(mcp_records, mcp_runs):
+        if run["candidate_gain"] is not None:
+            outcome("LLM MCP pilot " + item["experiment_id"][-8:], item, run["candidate_gain"], run["raw_evidence"])
     outcomes.sort(key=lambda row: row["timestamp_utc"])
 
     regressions = []
@@ -421,6 +474,20 @@ def build() -> dict[str, Any]:
             b = row["gradient_candidate"]["per_example_correct"]
             gradient_regressions += sum(bool(x) and not bool(y) for x, y in zip(a, b))
     regressions.append({"label": "toy conventional SGD", "rate": gradient_regressions / 320, "basis": "paired raw correctness arrays, n=320"})
+    for item in mcp_records:
+        metrics = item["evaluation"]["metrics"]
+        candidate = metrics.get("ai_candidate")
+        if candidate is not None:
+            base_correct = metrics["baseline"]["per_example_correct"]
+            candidate_correct = candidate["per_example_correct"]
+            denominator = sum(bool(value) for value in base_correct)
+            regressions.append({
+                "label": "LLM MCP pilot " + item["experiment_id"][-8:],
+                "rate": (sum(bool(before) and not bool(after)
+                             for before, after in zip(base_correct, candidate_correct)) / denominator)
+                        if denominator else 0.0,
+                "basis": "paired raw holdout correctness arrays; one task seed",
+            })
 
     cost_points = []
     for item in toy:
@@ -434,6 +501,10 @@ def build() -> dict[str, Any]:
         {"label": "toy SGD", "cpu_seconds": gradient_record["resources"].get("cpu_seconds"), "accuracy_difference": gradient["candidate_accuracy"] - gradient["baseline_accuracy"]},
         {"label": "Qwen paired smoke", "cpu_seconds": qwen_record["resources"].get("cpu_seconds"), "accuracy_difference": qwen64["candidate_accuracy"] - qwen64["baseline_accuracy"]},
     ])
+    cost_points.extend({"label": "LLM MCP pilot " + item["experiment_id"][-8:],
+                        "cpu_seconds": item["resources"].get("cpu_seconds"),
+                        "accuracy_difference": run["candidate_gain"]}
+                       for item, run in zip(mcp_records, mcp_runs) if run["candidate_gain"] is not None)
     cost_points = [point for point in cost_points if point["cpu_seconds"] is not None and point["cpu_seconds"] > 0]
 
     selected = list(experiments)
@@ -471,6 +542,11 @@ def build() -> dict[str, Any]:
                           "parameter_fraction": float(toy[0]["affected_parameters"]["fraction"]),
                           "selected_edit": "output_bias[1] += -4 on three isolated task seeds",
                           "raw_evidence": [relative(ROOT / x["artifact_root"] / "evaluation.json") for x in toy]},
+        "mcp_agent_discovery_pilots": {
+            "count": len(mcp_runs), "independent_task_count": len(mcp_runs),
+            "runs": mcp_runs,
+            "scope_note": "LLM-directed MCP sessions are reported separately from the deterministic worker cohort; one task is a pilot, not a transfer estimate.",
+        },
         "mwc_ablation": mwc,
         "gradient_baseline": gradient,
         "qwen_smoke_64": qwen64,
@@ -497,6 +573,7 @@ def main() -> None:
     _accuracy_figures(summary, args.figures)
     _qwen_figures(summary, args.figures)
     _patch_figures(summary, args.figures)
+    _mcp_agent_figures(summary, args.figures)
     _resource_figures(summary, args.figures)
     print(json.dumps({"summary": relative(args.summary), "figures": relative(args.figures),
                       "canonical_experiments": summary["canonical_ledger_experiment_count"],

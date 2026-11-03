@@ -15,9 +15,11 @@ test = ["pytest>=8"]
 inference = ["torch>=2.5", "transformers>=4.51"]
 figures = ["matplotlib>=3.8"]
 benchmark = ["datasets>=3.0", "math-verify==0.9.0"]
+mcp = ["mcp>=1.28,<2"]
 
 [project.scripts]
 weightbridge = "weightbridge.__main__:main"
+weightbridge-mcp = "weightbridge.agents.mcp_server:main"
 
 [tool.setuptools.packages.find]
 include = ["weightbridge*"]

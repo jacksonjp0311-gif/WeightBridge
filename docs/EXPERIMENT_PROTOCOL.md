@@ -26,11 +26,14 @@ fields are handled by versioned addenda rather than silent edits.
 
 1. Pin and hash the base model, config, tokenizer and relevant assets.
 2. Freeze the practice suite and evaluator; record its version and seed.
-3. Give the diagnostic worker only the practice data and an authorized scoring
-   tool. It receives neither the holdout file nor its answers.
+3. Give the diagnostic worker or MCP caller only practice data and an
+   authorized scoring tool. The hidden holdout remains in the host process and
+   its path is absent from the agent session config.
 4. Validate every proposal against a host-owned policy and write a new
-   candidate. Rejected proposals are evidence and must be retained.
-5. Select/freeze the candidate on practice data.
+   candidate. Retain every tool request and response, including rejected
+   proposals, budget failures and invalid hashes.
+5. Select/freeze the candidate on practice data. The agent's finalize call
+   records a hash and does not run hidden scoring.
 6. Evaluate the frozen baseline, controls and candidate once on paired holdout
    examples. Do not use those results to revise a patch.
 7. Reload the candidate from disk, verify hashes, score again if restart
@@ -68,6 +71,9 @@ For (N) labeled examples with correctness indicator (c_i\in\{0,1\}):
   subprocess wall-time timeout. Transient allocations during model load still
   need an OS/container memory limit for hard containment. The benchmark
   reconstruction currently lacks CPU-energy or dollar-cost metering.
+- LLM token/tool costs are recorded when the host exposes them. If the model
+  host does not provide usage totals or a pinned model ID, store null and state
+  the limitation; do not estimate or backfill invented costs.
 
 ## Published Experiment 8 protocol reference
 

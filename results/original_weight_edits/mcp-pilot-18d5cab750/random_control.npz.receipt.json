@@ -1,0 +1,28 @@
+{
+  "base_sha256": "2f3653b1468bbbfda826e1ea3e86875b4e7549cf3545330501980e70d43fe429",
+  "candidate_path": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\original_weight_edits\\mcp-pilot-18d5cab750\\random_control.npz",
+  "candidate_sha256": "7719cc005eb0d122dabe898dbb697da51cc7a3cc70a12f3875a24f27da3d986b",
+  "changed_entries": 1,
+  "changed_fraction": 0.08333333333333333,
+  "changes": [
+    {
+      "after": -2.3,
+      "before": -3.0,
+      "index": [
+        0,
+        0
+      ],
+      "tensor": "output_weight"
+    }
+  ],
+  "evidence_ids": [
+    "mcp-pilot-random-control"
+  ],
+  "max_abs_delta": 0.7000000000000002,
+  "note": "No live model deployment or self-learning claim",
+  "patch_sha256": "3040675cc9d3f5f10569a56881ead512d43e6ed5e458ea066de153023cc980e2",
+  "policy_sha256": "64de26ca0165e4752decc695376c1c933e51615bb3f0baee36e9049877373bf1",
+  "schema": "weightbridge.receipt.v1",
+  "status": "candidate_only_not_promoted",
+  "total_parameters": 12
+}

@@ -15,6 +15,7 @@ canonicalizes only explicit supersession and duplicate measurement keys.
 | Qwen paired smoke is unscorable | A low-cost initial smoke can reveal gross generation differences | Both variants hit the 64-token cap on 2/2 prompts and completed 0 answers; no measured accuracy difference | Increase to full protocol only after GPU/runtime and dataset readiness; do not tune on these prompts | [`paired comparison`](../results/published_reproduction/qwen_runner_paired_comparison_v02.json), [`base run`](../results/published_reproduction/qwen_runner_baseline_v02/run.json), [`p50 run`](../results/published_reproduction/qwen_runner_p50c_v02/run.json) |
 | Restricted toy diagnosis found the injected correction three times | Activation and error evidence plus bounded candidate evaluation can identify a one-coordinate repair | Practice-only search selected output_bias[1] += -4; three isolated 64-item seeds scored 64/64 vs baseline 32/64; paired audit shows 32 rescues and 0 regressions per seed; random control had 0 rescues and 0 regressions | The allowlist and one-sided defect are narrow; test different defect families and coordinates | [`seed 731`](../results/original_weight_edits/run-20261103T023455Z/experiment_record.json), [`seed 840`](../results/original_weight_edits/run-20261103T024129Z/experiment_record.json), [`seed 841`](../results/original_weight_edits/run-20261103T025154Z/experiment_record.json), [`derived paired correctness`](../results/original_weight_edits/derived_paired_correctness_v2.json) |
 | CLI tool path can inspect and materialize a bounded edit | An AI caller with subprocess access can invoke WeightBridge tools while host policy constrains the patch | On operational seed 842, CLI inspection read the 12-parameter toy checkpoint and CLI apply reproduced the worker candidate hash with one authorized `output_bias` change; no new score was collected by the CLI replay | This confirms CLI interoperability, not an LLM integration or new behavioral result; the built-in worker remains deterministic | [`seed 842 run`](../results/original_weight_edits/run-20261103T035435Z/experiment_record.json), [`CLI replay record`](../results/tool_interface_smoke/seed842_cli_application.json), [`policy`](../results/tool_interface_smoke/seed842_cli_policy.json) |
+| Codex found a hidden-threshold correction through MCP | An LLM can use scoped inspection and practice scoring to propose a one-entry edit without receiving the correction | From practice-only errors and activation summaries, Codex proposed `hidden_bias[0] += -0.7`; practice rose 42/64 to 64/64; after finalization, the reloaded candidate scored 64/64 on holdout vs base 35/64 and matched random 35/64; the hidden oracle later confirmed -0.7 was exact | One in-distribution synthetic task is a pilot; the task-seed transfer gate remains INCONCLUSIVE; Codex token use and MCP child CPU were unavailable | [`experiment record`](../results/original_weight_edits/mcp-pilot-18d5cab750/experiment_record.json), [`holdout evaluation`](../results/original_weight_edits/mcp-pilot-18d5cab750/evaluation.json), [`MCP events`](../results/original_weight_edits/mcp-pilot-18d5cab750/candidates/sessions/codex-29629e511d7c4647a495fc5ac0d03480/events.jsonl), [`interaction supplement`](../results/original_weight_edits/mcp-pilot-18d5cab750/interaction_audit_supplement.jsonl) |
 | Conventional SGD also solves the toy defect | A gradient baseline may solve the same task | 400-step SGD reached 100% on 320 examples and changed all 12 parameters | Not a language-model baseline or compute-matched comparison | [`gradient record`](../results/original_weight_edits/gradient-20261103T030417Z/experiment_record.json) |
 | Reused verified memory reduced search cost on the same synthetic pattern | The exact stored repair can shorten diagnosis | External-memory and memory+weight conditions scored 640/640; weight-only scored 628/640; no-edit scored 320/640. Weight-only used 8 candidate evaluations per seed; memory+weight used 2 | Memory condition is a decision-time logit bias; one repeated defect class and ten seeds do not establish general memory benefit | [`MWC batch 1`](../results/memory_ablation/run-20261103T024116Z/mwc_ablation.json), [`MWC batch 2`](../results/memory_ablation/run-20261103T025158Z/mwc_ablation.json) |
 | Candidate edits persist after file reload in toy runs | A saved candidate should retain its changed behavior across restart | Toy evaluator loads candidates from disk before scoring; all experiment receipts include candidate hashes | No persistent Qwen improvement has been demonstrated | Same toy records above |
@@ -45,6 +46,10 @@ canonicalizes only explicit supersession and duplicate measurement keys.
 - A deterministic replay of frozen toy files recovered per-example rescue
   and regression counts. The appended derivation record contributes no new
   independent measurement.
+- One Codex MCP session inferred and applied a hidden-bias correction after
+  observing practice-only failures. Its matched random edit did not improve
+  holdout accuracy. This establishes one AI-directed discovery instance, not
+  transfer across random seeds or defect types.
 
 ## Metric definitions
 
@@ -61,7 +66,7 @@ separately. Token-limit rate is the share of generations ending at max-new-
 tokens. The smoke's tail-repeat and repeated-block signals are diagnostic
 proxies and are not validated reasoning-loop metrics.
 
-## Next falsifiable experiment
+## Unrun prior protocol v1
 
 Evaluate the restricted diagnosis worker on 20 newly generated toy defect
 instances from four predeclared mechanisms (five independent seeds each),
@@ -74,3 +79,23 @@ with a seed-clustered paired 95% interval whose lower bound is above zero.
 Otherwise record FAIL or INCONCLUSIVE by the predeclared gate. This directly
 tests whether the current discovery result transfers beyond its injected
 coordinate while retaining provenance and evaluator separation.
+
+## Next falsifiable experiment: MCP LLM protocol amendment v2
+
+The v1 study above was not run. After the single Codex MCP pilot, amend the
+agent under test to a pinned LLM host using the new bounded tools. Run 20 new
+instances across the same four predeclared single-weight mechanisms, five
+independent seeds each. Freeze and hash the model/version, system/tool prompt,
+host policy, practice/holdout generator, eight-candidate budget, evaluator,
+and random-control procedure before the first instance. Each session gets
+practice data only; the host scores the fixed candidate and matched random
+edit on holdout once after finalization. Store every MCP request, response,
+rejection, candidate receipt and resource record. Keep this cohort separate
+from the deterministic worker and from the one-instance pilot.
+
+Use the original v1 gate unchanged: at least 70% of holdouts repaired, at most
+5% regressions among baseline-correct items, and at least a 20 percentage-point
+advantage over matched random edits with a task-seed-clustered paired 95%
+lower bound above zero. If the host cannot pin model identity or retain full
+tool traces, mark the result INCONCLUSIVE rather than treating an unrepeatable
+LLM response as independent evidence.

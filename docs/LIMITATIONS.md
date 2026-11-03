@@ -13,6 +13,10 @@
   every generation. Neither can support an accuracy or loop-reduction claim.
 - **Qwen AI-directed edit: HOLD.** The diagnostic agent was exercised only on
   the synthetic MLP. No Qwen patch was proposed by the agent or evaluated.
+- **LLM transfer: HOLD / INCONCLUSIVE.** One Codex session used the new MCP
+  tools to identify a hidden-bias defect and selected its exact one-value
+  correction. The candidate improved one in-distribution holdout, but only one
+  task was run; the four-mechanism, 20-instance transfer study is pending.
 - **Random Qwen control behavior: HOLD.** The control checkpoint has matching
   changed-value counts but was not run through inference.
 - **LoRA or language-model conventional baseline: HOLD.** The measured
@@ -45,12 +49,14 @@ availability are time-specific snapshots.
 
 ## Scientific limits
 
-- The diagnostic agent is deterministic finite-difference search code. It is
-  not an LLM and spent zero model-generated tokens. The term “agent discovery”
-  here means a restricted procedure observed practice failures and selected a
-  host-validated patch without receiving the correct value.
-- The toy defect was deliberately injected and the permitted tensor was
-  specified by a host allowlist. Three seeds do not establish broad discovery.
+- The bundled `DiagnosticAgent` remains deterministic finite-difference
+  search code; it is not an LLM and spent zero model-generated tokens. A
+  separate Codex MCP pilot made one LLM-directed proposal without being given
+  the correct value. Codex token use was not available from the host.
+- The toy defects were deliberately injected and the permitted tensor set was
+  specified by the host. The MCP task withheld its mechanism and correction
+  from the tool session, but one synthetic task does not establish broad
+  discovery or transfer.
 - External-memory-only changes inference-time decision behavior; it is not
   parametric learning. The memory record contains the exact repair for the
   same synthetic task family.
@@ -101,6 +107,12 @@ the process must be contained against allocation spikes.
   on the p50 Qwen candidate.
 - No layer-specific activation intervention, singular-value survey or
   causal circuit analysis has identified why the published patch works.
+- The MCP tools currently bind only a synthetic `ToyMLP` practice evaluator;
+  real Hugging Face models still use the CLI, with no LLM-directed Qwen
+  practice/evaluation loop. The MCP server is not an OS sandbox.
+- The MCP pilot measured host-process CPU and elapsed time, but not MCP child
+  CPU or LLM token costs. A future multi-task study needs a pinned model/harness
+  identity, full tool transcript and provider cost records where available.
 - The ledger is append-only for a single writer but does not implement
   multi-process locking or signed remote provenance.
 - There is no selection correction for repeated adaptive experimentation on a

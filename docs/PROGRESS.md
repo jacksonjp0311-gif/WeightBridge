@@ -11,7 +11,7 @@ Baseline commit: `321547d` (`Import WeightBridge v0.1 baseline`).
 | B. Real-model inspection and patch path | COMPLETE for safetensors/HF local checkpoint path | Lazy shard inspection, exact hashes, policy-controlled edit receipts, bounded Transformers inference and probes |
 | C. Published Experiment 8 | PARTIAL / HOLD | p50c reconstructed and hashes match; bounded Qwen CPU smoke truncated; full benchmark not run |
 | D. Benchmark laboratory | PARTIAL | Append-only records, paired statistics, runner scripts and evidence-derived figures implemented; full datasets not evaluated |
-| E. AI-directed diagnosis | COMPLETE for one injected toy failure family | Three-run fixed cohort plus seed-842 operational smoke; built-in worker is deterministic, not an LLM; no Qwen patch proposal |
+| E. AI-directed diagnosis | PILOT COMPLETE / TRANSFER HOLD | The deterministic worker cohort remains separate; one Codex LLM used the MCP tools to discover a hidden-bias repair on a fresh toy task; no Qwen patch proposal |
 | F. MWC memory ablation | PILOT COMPLETE / general result HOLD | Four conditions across ten synthetic seeds; exact same-family experience was available |
 | G. Research knowledge base | COMPLETE for current evidence | Findings, evidence ledger, limitations, roadmap and this progress record |
 
@@ -44,38 +44,59 @@ Baseline commit: `321547d` (`Import WeightBridge v0.1 baseline`).
 
 The published p50c edit reconstruction is a hash-verified implementation
 result, not a behavioral reproduction. Qwen smokes are INCONCLUSIVE because
-all generations hit the token cap. Three-run synthetic discovery and memory ablation
-support only the deliberate one-sided toy defect. No Qwen weight edit was
-discovered or validated by the agent, and no private memory was loaded.
+all generations hit the token cap. The three-run deterministic discovery and
+MWC ablation support only their deliberate output-bias defect. One Codex MCP
+session independently proposed the exact hidden-bias correction and improved
+one same-task holdout; the multi-mechanism transfer gate remains INCONCLUSIVE.
+No Qwen weight edit was discovered or validated, and no private memory was
+loaded.
 
 ## Verification record
 
 Final checks on 2026-11-03:
 
-- Core environment: `.venv\Scripts\python.exe -m pytest -q` — 53 passed,
+- Core environment: `.venv\Scripts\python.exe -m pytest -q` — 59 passed,
   2 optional-dependency skips.
-- Inference-capable reference environment: 57 passed.
+- Inference-capable reference environment: 62 passed, 1 optional-dependency
+  skip.
 - `python -m compileall -q weightbridge benchmarks experiments tests` passed.
-- `benchmarks/runners/plot_results.py` completed and generated seven figures
-  from the ledger records. The toy aggregate remains fixed to its original
-  three-run cohort; the later seed-842 smoke is retained separately.
-- Ledger audit: 32 append-only rows, 32 unique experiment IDs, 11 nonempty
-  unique measurement keys, and 14 canonical experiments in the summary. All
-  record-listed artifact files exist.
+- `benchmarks/runners/plot_results.py` completed and generated eight
+  evidence-derived figures, including an LLM MCP baseline/candidate/random
+  comparison. The deterministic toy aggregate remains fixed to its original
+  three-run cohort; later seed-842 and MCP pilots are reported separately.
+- Ledger audit: 37 append-only rows, 37 unique experiment IDs, 12 nonempty
+  unique measurement keys, and 15 canonical experiments in the summary. Two
+  early toy records received versioned artifact-root backfills; canonical
+  artifact and metadata-correction paths resolve.
 - A fresh seed-842 same-family smoke ran the diagnostic worker on 64 practice
   and 64 hidden items: base 32/64, selected candidate 64/64, random control
   32/64. The worker did not see hidden labels; the run is not included in the
   original fixed three-run aggregate. Direct `inspect` and `apply` CLI calls
   reproduced the recorded candidate hash under a one-entry host policy; the
   CLI replay itself did not score a holdout.
-- Full suite rerun after the smoke: core 53 passed, 2 optional skips;
-  inference-capable environment 57 passed.
+- The earlier seed-842 verification passed 53 core tests (2 skips) and 57
+  inference-environment tests; the current full rerun is reported above.
+- A Codex LLM used the new MCP interface on a fresh blinded hidden-threshold
+  task. Practice improved from 42/64 to 64/64; after finalization, a reloaded
+  candidate scored 64/64 on holdout vs baseline 35/64 and matched random 35/64.
+  It edited one of 12 parameters (`hidden_bias[0] += -0.7`), exactly matching
+  the hidden correction revealed after scoring. Disposition remains INCONCLUSIVE
+  for cross-task transfer (one independent task only). Raw run:
+  `results/original_weight_edits/mcp-pilot-18d5cab750/`.
+- MCP adapter tests exercise host policy, immutable candidates, input/candidate
+  hash tampering, state resume, and real stdio tool discovery/calls: 6 passed.
+- The MCP runtime was Python 3.12.10, Windows 11 build 26200, NumPy 2.5.4 and
+  MCP SDK 1.30.0. Host CPU was 0.875 seconds and wall time 83.99 seconds;
+  MCP child CPU and provider model-token cost were unavailable.
 - `git diff --check` passed; Git emitted only its configured LF-to-CRLF
-  working-copy notices. No model checkpoint files are stored in the project.
-- Canonical experiment records report 453.34 process CPU seconds and 205.06
+  working-copy notices. No pretrained Qwen checkpoint is stored in the project;
+  the run bundle includes only small synthetic toy checkpoints for replay.
+- Canonical experiment records report 454.22 process CPU seconds and 289.05
   summed wall seconds. These exclude coding, tests, reference inspection and
-  other unmetered work, and combine distinct experiments.
+  other unmetered work, and combine distinct experiments. The MCP session's
+  elapsed time includes model reasoning and is not a comparable compute cost.
 
-Implementation and evidence commit: `fd739a6746b01d97dae64248e674f7e4a6985574`.
-This verification-note update is committed separately. Both commits remain on
-`dev/weightbridge-v0.2`; nothing was pushed or deployed.
+The v0.2 source and research artifacts are published on the public GitHub
+repository's `main` and `dev/weightbridge-v0.2` branches. This progress update
+records the MCP evolution and its evidence. No edited model is promoted or
+deployed; candidates remain isolated research artifacts.
