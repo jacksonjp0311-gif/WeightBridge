@@ -127,6 +127,69 @@ reversed their operands. That missed the frozen minimum of three.
 The v5 trial held before optimization. Its hidden set remains unopened.
 [Signed-decimal v5 evidence](../results/phase-iii-g/decimal-v5)
 
+## Targeted negative-decimal adaptation
+
+The v6 trial froze a new roster after the v5 error analysis. Negative
+pairs remain target cases. Fresh easy positive and mixed-sign comparisons
+test competence with the same response interface, while the full mixed
+target roster and copy controls check preservation. The numeric gates
+are unchanged. The headroom filter is stricter for the diagnosed
+mechanism. It counts a wrong answer only when both displayed operands
+are negative and both wordings return the actual smaller operand.
+
+Qwen passed practice and selection. Both parsed 64/64 responses and
+solved every easy and copy control across both wordings. Practice solved
+17/24 target items and reproduced six negative reversals. Selection
+solved 18/24 target items and reproduced five. The host gave both
+numerical methods the same 60 practice presentations, including 12
+error contrasts and 48 preservation presentations. The selected
+native region came from the same AWL v3 adapter used in Phase III-F.
+[Frozen targeted protocol](../experiments/phase_iiig/v6_protocol.json)
+
+Both methods fitted a rank-one update to selected columns of the Qwen
+layer 23 feed-forward output. The constrained method used 60 forward
+and two backward calls. The Adam baseline used 105 forward and four
+backward calls. Each measured two stored-precision probes. Both
+selected updates corrected eight of 12 practice contrasts and
+preserved the measured preference on all 48 preservation contrasts.
+The realized update norms differed despite a shared cap.
+
+| Fresh selection checkpoint | Correct targets in both wordings | Complete parses | Regressed target / positive / copy presentations | BF16 values changed | Realized update norm |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Original | 18/24 | 64/64 | 0 / 0 / 0 | 0 | 0 |
+| Constrained first order | 3/24 | 54/64 | 31 / 4 / 8 | 16,359 | 0.712507 |
+| Rank-one Adam | 0/24 | 0/64 | 37 / 8 / 8 | 16,350 | 1.424994 |
+
+The original predictions replayed exactly in a fresh process. Each
+candidate reloaded with its exact stored checkpoint hash and failed
+the selection gate. Neither corrected any negative-pair presentation.
+The constrained candidate often produced values outside the displayed
+options. Every Adam completion reached the token cap without a
+completed line, typically repeating digits. The two-continuation
+practice guard tests a relative preference. It can pass even when
+unmeasured continuations dominate greedy generation.
+
+The constrained fit took 354.54 wall seconds and 2,043.16 process CPU
+seconds. Adam took 628.86 wall seconds and 3,639.38 process CPU seconds.
+The full registered trial took 1,228.04 wall seconds and 6,649.92 CPU
+seconds summed across the host and selection workers. Peak
+single-process memory was 7.03 GiB. The controller requested local
+reachability evidence. The trial compared the two preregistered methods
+without selecting a third solver.
+
+Engineering portability remains verified for the two Phase III-F
+architectures. Behavioral qualification passed for Qwen on v6 and
+held for SmolLM2 on its two independent rounds. The Qwen single-cycle
+trial recorded **FAIL**. The hidden set stayed unopened, no candidate
+entered lineage, and sequential readiness remains **HOLD**.
+
+A follow-up should score the same completed greedy responses on
+practice probes before locking a candidate. That would directly test
+whether the existing solvers can preserve the response behavior that
+failed here. A fresh independent roster is required for the next
+comparison.
+[Targeted v6 report and raw reloads](../results/phase-iii-g/negative-decimal-v6)
+
 ## Replay
 
 The local model prerequisites and pinned checkpoint hashes match
@@ -148,5 +211,7 @@ Use `run_followup.py` and the archive flag `--followup` for v2.
 The Qwen-only v4 and v5 drivers are `run_replication.py` and
 `run_decimal.py`. They take `run` and `finish` with the same base,
 material and output paths, and require no peer. Their archive flags
-are `--replication` and `--decimal`. The v3 HOLD archive replays
-with `--scaling`. A fresh independent study needs a new freeze.
+are `--replication` and `--decimal`. The v6 driver is
+`run_signed_decimal.py` and its archive flag is `--targeted`.
+The v3 HOLD archive replays with `--scaling`. A fresh independent
+study needs a new freeze.

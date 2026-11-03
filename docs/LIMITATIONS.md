@@ -151,3 +151,11 @@ engineering study verified source restoration in fresh processes.
 The pretrained models have yet to demonstrate behavioral improvement or
 retention through this interface.
 [Phase III-F evidence](PHASE_III_F.md)
+
+Phase III-G showed that the conditional two-answer practice guard can
+miss severe regressions in completed greedy answers. Both tested
+rank-one candidates passed that guard and failed fresh generation after
+reload. The observed failure is scoped to the selected layer, fitting
+data, update limits and task. The two realized perturbation norms
+differed, so the study does not isolate a solver-only effect.
+[Phase III-G evidence](PHASE_III_G.md)

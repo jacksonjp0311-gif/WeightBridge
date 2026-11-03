@@ -15,6 +15,7 @@
 | Phase III-D. Counterfactual behavioral grounding | MEASUREMENT FAIL / REAL EDITS HOLD | The locked ranker beat letter scoring 17/24 to 13/24 but got both question directions correct on 11/24 pairs. Strict bullet generation parsed 24/24 and failed its agreement gate. See the [Phase III-D study](PHASE_III_D.md). |
 | Phase III-E. Adaptive neural meta-compiler | FAMILIAR SYNTHETIC UTILITY GAIN / SHIFT FAIL / REAL EDITS HOLD | Learned selection reduced harmful finalists on familiar mechanisms. Exact sensitivity reversals produced one harmful finalist per twin pair. See the [Phase III-E study](PHASE_III_E.md). |
 | Phase III-F. Model-agnostic adaptation | ENGINEERING PASS ON TWO FAMILIES / LEARNING HOLD | The shared intent compiled to distinct Qwen3.5 and Llama affine plans. Both passed materialization, fresh reload, and source restoration. See the [Phase III-F study](PHASE_III_F.md). |
+| Phase III-G. Behavioral qualification | QWEN QUALIFICATION PASS / SINGLE-CYCLE FAIL | Targeted negative-decimal errors replicated. Both fitted candidates failed fresh greedy selection and the hidden roster remained closed. See the [Phase III-G study](PHASE_III_G.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

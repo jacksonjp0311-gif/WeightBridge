@@ -43,6 +43,11 @@ and Llama adapters. Both pinned models passed stored-precision patch,
 independent reload, and original-checkpoint restoration checks.
 [Phase III-F findings and replay](docs/PHASE_III_F.md)
 
+Phase III-G isolated a token-budget failure on both models and qualified
+a repeatable negative-decimal comparison error on Qwen. Two fitted
+BF16 candidates passed a conditional practice check and failed after
+fresh greedy evaluation. [Phase III-G findings and replay](docs/PHASE_III_G.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the
