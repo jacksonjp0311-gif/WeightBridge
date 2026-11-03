@@ -1,0 +1,43 @@
+{
+  "schema": "weightbridge.phase_iiid.grounding_protocol.v1",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seed": "weightbridge-phase-iiid-grounding-qwen-20261103-v1",
+  "underlying_items_per_family": {"practice": 2, "selection": 2, "qualification": 2, "sealed-adaptation": 2},
+  "inference": {"device": "cpu", "dtype": "bfloat16", "cpu_threads": 6, "batch_size": 8, "max_input_tokens": 160},
+  "generation": {"max_new_tokens": 12, "batch_size": 8, "require_eos_for_correctness": true},
+  "scoring": {
+    "include_eos": true,
+    "tie_break": "first_printed_option",
+    "displays_in_tie_order": ["labeled", "bullets"],
+    "rules_in_tie_order": ["raw_sum", "mean", "terminated_sum", "prior_subtracted_sum"],
+    "neutral_contexts_in_tie_order": ["neutral_absent", "neutral_generic"],
+    "alphas_in_tie_order": [0.5, 1.0, 1.5],
+    "primary_factorial": ["display: labeled vs bullets", "content score: raw_sum vs practice-locked prior_subtracted_sum"]
+  },
+  "ranker_gate": {
+    "min_task_accuracy": 0.65,
+    "min_counterfactual_accuracy": 0.65,
+    "min_both_correct_fraction": 0.60,
+    "min_all_four_task_correct": 0.50,
+    "min_order_stability": 0.65,
+    "min_mean_directional_margin_advantage": 0.0,
+    "min_paired_accuracy_gain_ci_lower": -0.25
+  },
+  "generation_gate": {
+    "min_completed_parse_rate": 0.70,
+    "min_generated_accuracy": 0.55,
+    "min_all_four_correct": 0.40,
+    "min_agreement_among_completed_parsed": 0.70,
+    "min_counterfactual_accuracy": 0.55
+  },
+  "headroom_gate": {"minimum_persistent_errors_per_split": 2, "minimum_cross_family_controls_per_split": 2},
+  "bootstrap": {"replicates": 4000, "seed": 2026110319, "unit": "underlying_question", "interval": 0.95},
+  "isolation": {
+    "practice": "The only population permitted for choosing scoring rule, display, alpha or neutral design.",
+    "selection": "Locked measurement validation and headroom check only. A failure cannot select a different endpoint.",
+    "qualification": "Independently assess the locked endpoint once. Failure cannot select or retune a measurement.",
+    "sealed-adaptation": "Independent weight-evaluation reserve; no model run or optimizer access during measurement qualification."
+  }
+}
