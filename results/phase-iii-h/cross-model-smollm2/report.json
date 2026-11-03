@@ -1,0 +1,137 @@
+{
+  "archived_receipt_sha256": "dc898b5ceb49221837fc4225f4e7dc1743262f46bab2ae6fe70613b2948ed85a",
+  "artifacts": {
+    "base.json": "2f2e3700ed2920b1b09e19d374f820d096cb8de1f819a26a6917fa8d960d8582",
+    "candidate.json": "b9426b185b762598717d5adb02c6ab5fe9c7d624e8b5fbd6ec241e68e8ee9df6",
+    "rollback.json": "b2343e337f439dd7c530b39918978ea4bfbd6519637609ec4c37984bdd5be47c"
+  },
+  "behavioral_adaptation_disposition": "NOT_TESTED",
+  "diagnostic_endpoint_comparison": {
+    "candidate": {
+      "positive": {
+        "completed": 8,
+        "correct": 5,
+        "grammar_valid": 8,
+        "items": 4,
+        "items_correct": 2,
+        "out_of_option": 0,
+        "presentations": 8,
+        "valid": 8
+      },
+      "preserve": {
+        "completed": 8,
+        "correct": 8,
+        "grammar_valid": 8,
+        "items": 4,
+        "items_correct": 4,
+        "out_of_option": 0,
+        "presentations": 8,
+        "valid": 8
+      },
+      "target": {
+        "completed": 32,
+        "correct": 9,
+        "grammar_valid": 32,
+        "items": 16,
+        "items_correct": 3,
+        "out_of_option": 8,
+        "presentations": 32,
+        "valid": 24
+      }
+    },
+    "changed_presentations": [],
+    "corrected_repeatable_target_items": [],
+    "corrected_target_items": [],
+    "lost_valid_presentations": [],
+    "parent": {
+      "positive": {
+        "completed": 8,
+        "correct": 5,
+        "grammar_valid": 8,
+        "items": 4,
+        "items_correct": 2,
+        "out_of_option": 0,
+        "presentations": 8,
+        "valid": 8
+      },
+      "preserve": {
+        "completed": 8,
+        "correct": 8,
+        "grammar_valid": 8,
+        "items": 4,
+        "items_correct": 4,
+        "out_of_option": 0,
+        "presentations": 8,
+        "valid": 8
+      },
+      "target": {
+        "completed": 32,
+        "correct": 9,
+        "grammar_valid": 32,
+        "items": 16,
+        "items_correct": 3,
+        "out_of_option": 8,
+        "presentations": 32,
+        "valid": 24
+      }
+    },
+    "passed": false,
+    "prohibited_regressions": [],
+    "target_item_gain": 0,
+    "target_presentation_gain": 0
+  },
+  "engineering_disposition": "PASS",
+  "patch_receipt": {
+    "base_sha256": "4e4984f36a1a8566aceb2d0baf01e267042dc34d087fc4609f64b80de249624a",
+    "candidate_sha256": "f57da704afe6cad9561996a88cd3eed67c44346706579045126da48de67867ae",
+    "changed_entries": 2,
+    "changes": [
+      {
+        "axis": "columns",
+        "indices": [
+          0,
+          1
+        ],
+        "op": "slice_set",
+        "parameter_updates": 1152,
+        "tensor": "model.layers.29.mlp.down_proj.weight",
+        "values_sha256": "c635e34f70d5d5d97e66477dcd1142d3f7fb626facbffa5be9ca605e9adc31ef"
+      }
+    ],
+    "evidence_ids": [],
+    "max_abs_delta": 0.03125,
+    "note": "Candidate is isolated and has not been promoted or deployed",
+    "parameter_fraction_changed": 1.4868229424630447e-08,
+    "patch_sha256": "cd8211eb0ee0b4331bf6b5ab9e245beee299cd8a670afdf52999ab4f0aa17a9b",
+    "policy_sha256": "fff2d066766c62d39075b5038806ac647f1cee00300b0b66531df6ba1cadb4f9",
+    "schema": "weightbridge.receipt.v2",
+    "source_shards": [
+      "model.safetensors"
+    ],
+    "status": "candidate_only_not_promoted",
+    "tensor_receipts": {
+      "model.layers.29.mlp.down_proj.weight": {
+        "base_sha256": "52c0d895a55f21c98c6c75256cc960315bb9c68a0688d0c4562d879a1445a985",
+        "bytes_changed": 2,
+        "candidate_sha256": "204615d4e4e49f3cd307373aa1e7f37ad796872d81e3b0cfb8c930e325f52e26",
+        "dtype": "BF16",
+        "shape": [
+          576,
+          1536
+        ]
+      }
+    },
+    "total_parameters": 134515008,
+    "touched_entries": 1152
+  },
+  "protocol_sha256": "79c85a25852b62dbc81f727bd0651afd32b2a0fb3a5c34e118eafcb3fbb8b8c1",
+  "reason": "Historical engineering patch; no task fitting, hidden access, or promotion",
+  "resources": {
+    "max_worker_peak_rss_bytes": 690073600,
+    "wall_seconds": 50.20585180004127,
+    "worker_cpu_seconds": 120.546875
+  },
+  "rollback_exact": true,
+  "schema": "weightbridge.phase_iiih.cross_model.v1",
+  "source_phase": "III-F"
+}
