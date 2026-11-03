@@ -27,6 +27,12 @@ Phase III-C tests whether a behavioral measurement is fit to optimize before
 compiling a real checkpoint edit. It compares scoring with completed
 generation under a frozen protocol. [Phase III-C study](docs/PHASE_III_C.md)
 
+Phase III-D tested whether Qwen's answer preferences followed meaningful
+changes to questions with the same options. Bullets improved strict
+generation compliance. The locked ranker and generation endpoints both
+failed qualification, so the study held weight editing.
+[Phase III-D study](docs/PHASE_III_D.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

@@ -84,6 +84,98 @@ existing measured preservation guard. The software path is exercised on
 toy checkpoints. Any real-model update needs prospective admission and a
 separate verifier.
 
+## Measured result
+
+Practice locked bullets with the generic neutral context and α = 1.5 for
+ranking, and bullets for strict generation. The calibration rule was
+chosen for joint accuracy across question directions and overall gate
+performance. It scored 14/24 on the original practice prompts versus
+15/24 for raw bullet scoring.
+
+| Split | Locked ranker original | Reversed question | Both correct | Stable under order reversal | Ranker gate | Strict bullet generation original | Reversed question | Generation gate |
+| --- | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
+| Practice | 14/24 | 17/24 | 10/24 | 4/12 | FAIL | 13/24 | 9/24 | FAIL |
+| Selection | 17/24 | 19/24 | 14/24 | 9/12 | FAIL | 17/24 | 20/24 | PASS |
+| Qualification | 17/24 | 17/24 | 11/24 | 5/12 | FAIL | 17/24 | 16/24 | FAIL |
+
+The independent letter baseline scored 13/24. The locked ranker gained
+16.7 percentage points against it, with a question-clustered 95% interval
+of +8.3 to +25.0 points. The ranker missed joint correctness, correctness
+in all four presentations, and option-order stability. Bullet generation
+met the independent parsing and correctness thresholds and fell short on
+ranker agreement, at 16/24 against the required 70%. These are separate
+measurements of the same unchanged checkpoint.
+
+| Qualification teacher-forced scoring | Labeled | Bullets |
+| --- | ---: | ---: |
+| Raw sum | 13/24 | 18/24 |
+| Mean | 13/24 | 17/24 |
+| EOS-inclusive sum | 14/24 | 18/24 |
+| Locked prior subtraction | 16/24 | 17/24 |
+
+Calibration gained 3/24 on labeled prompts and lost 1/24 on bullets. The
+clustered intervals for the prior-minus-raw differences were 0 to +25.0
+points and −33.3 to +25.0 points, respectively. The factorial interaction
+interval also included zero. The locked ranker solved all eight date
+presentations in both directions, five of eight word presentations in
+each direction with three joint successes, and four of eight fraction
+presentations in each direction with zero joint successes. Of 24 bullet
+presentations, the raw margin moved in the expected direction in 17 and
+exceeded the absolute irrelevant margin shift in 14. The mean signed
+question shift was 1.534 log-score units, while the mean absolute
+irrelevant shift was 0.642. The paired difference was +0.892
+with a question-clustered 95% interval of +0.110 to +1.675. This
+shows sensitivity to the question on this roster, with inconsistent
+choices under reversal. The calibrated score has no clear advantage
+over raw scoring on the locked display.
+
+| Qualification free generation | Labeled | Bullets |
+| --- | ---: | ---: |
+| EOS completion on original prompts | 20/24 | 24/24 |
+| Strict parses on original prompts | 0/24 | 24/24 |
+| Strict correct on original prompts | 0/24 | 17/24 |
+| Semantic correct on original prompts | 11/24 | 17/24 |
+| Semantic correct on reversed prompts | 13/24 | 16/24 |
+| Semantic correct on both | 4/24 | 13/24 |
+
+Nineteen completed labeled responses on original prompts used a label
+with its matching content, and one used the label alone. The paired gain
+in original-prompt strict correctness was 70.8 points (95% interval +41.7
+to +100.0), while the semantic gain was 25.0 points (−8.3 to +58.3).
+The display effect was clearest for instruction compliance. Strict bullet
+generation solved 8/8 date, 4/8 word, and 5/8 fraction presentations on the
+original prompts. The letter baseline picked the first displayed option on
+21/24 original presentations. The label strata and answer-length strata
+are available in the raw analysis. Only six independent questions inform
+each of these split-level estimates.
+
+The admission replay classified the six practice items for the locked
+ranker as one solved and five unstable. Selection had three solved, two
+unstable and one persistently wrong item. No family reached the minimum
+of two persistent errors in both splits. The adaptation decision is
+**HOLD** with zero candidate attempts, zero modified parameters and no
+inference on the adaptation reserve. The source hash was verified again
+at the end of measurement.
+
+The run took 1,068.45 wall seconds, 6,181.30 process CPU seconds, and
+6.27 GiB peak RSS on the Windows CPU BF16 path. It loaded the checkpoint
+once, scored 1,584 continuations in 198 forward batches, and generated
+288 responses in 36 batches. The runtime used reference PyTorch kernels.
+[Measured report](../results/phase-iii-d/grounding/run/report.json) ·
+[Admission receipt](../results/phase-iii-d/grounding/run/admission.json) ·
+[Question-level analysis](../results/phase-iii-d/grounding/run/description.json) ·
+[Archive manifest](../results/phase-iii-d/grounding/artifact_manifest.json) ·
+[Runtime](../results/phase-iii-d/runtime.json)
+
+The next experiment is a larger fresh comparison of the raw and
+neutral-subtracted rankers with a paired score based on the margin
+difference between a question and its semantic opposite. Freeze that
+score on practice and cross A/B and X/Y within the same question. The
+falsifiable prediction is higher joint accuracy and order stability on
+unseen items without larger preference shifts under irrelevant or
+meaning-preserving question changes. Keep free generation separate and
+leave the adaptation gate in force.
+
 ## Replay
 
 Use the pinned local checkpoint and a Python environment with the optional

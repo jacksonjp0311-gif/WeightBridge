@@ -1,0 +1,1093 @@
+{
+  "authorized_practice": {},
+  "candidate_attempts": 0,
+  "disposition": "HOLD",
+  "eligible_families": [],
+  "headroom_by_family": {
+    "date-order": {
+      "practice": {
+        "passed": false,
+        "persistent_wrong_item_ids": [],
+        "preservation_item_ids": []
+      },
+      "selection": {
+        "passed": false,
+        "persistent_wrong_item_ids": [],
+        "preservation_item_ids": []
+      }
+    },
+    "fraction-order": {
+      "practice": {
+        "passed": false,
+        "persistent_wrong_item_ids": [],
+        "preservation_item_ids": [
+          "practice/date-order/9b031054e9a4ed58"
+        ]
+      },
+      "selection": {
+        "passed": false,
+        "persistent_wrong_item_ids": [
+          "selection/fraction-order/71e0272c084afa5e"
+        ],
+        "preservation_item_ids": [
+          "selection/date-order/0ce5e26ce69ee48b",
+          "selection/date-order/239b803d25fa4ae5"
+        ]
+      }
+    },
+    "word-order": {
+      "practice": {
+        "passed": false,
+        "persistent_wrong_item_ids": [],
+        "preservation_item_ids": [
+          "practice/date-order/9b031054e9a4ed58"
+        ]
+      },
+      "selection": {
+        "passed": false,
+        "persistent_wrong_item_ids": [],
+        "preservation_item_ids": [
+          "selection/date-order/0ce5e26ce69ee48b",
+          "selection/date-order/239b803d25fa4ae5"
+        ]
+      }
+    }
+  },
+  "hold_reason": "NO_MEASUREMENT_QUALIFIED",
+  "material_manifest_sha256": "bb4002bd9c72f64488e1e0c49b5874486017115f548f84474479d911380a07bd",
+  "model_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "population": {
+    "practice": {
+      "ranker": {
+        "date-order": {
+          "practice/date-order/495add687d1ec251": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/date-order/9b031054e9a4ed58": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "practice/fraction-order/63c52673e46a59e8": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/fraction-order/7d2cb46c82f587c3": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "practice/word-order/907b6e81ddfabf8d": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/word-order/e97dea81c229a1de": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "semantic_generation": {
+        "date-order": {
+          "practice/date-order/495add687d1ec251": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/date-order/9b031054e9a4ed58": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "practice/fraction-order/63c52673e46a59e8": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/fraction-order/7d2cb46c82f587c3": {
+            "counterfactual": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "practice/word-order/907b6e81ddfabf8d": {
+            "counterfactual": {
+              "classification": "invalid",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 2
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/word-order/e97dea81c229a1de": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "strict_generation": {
+        "date-order": {
+          "practice/date-order/495add687d1ec251": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/date-order/9b031054e9a4ed58": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "practice/fraction-order/63c52673e46a59e8": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/fraction-order/7d2cb46c82f587c3": {
+            "counterfactual": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "practice/word-order/907b6e81ddfabf8d": {
+            "counterfactual": {
+              "classification": "invalid",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 2
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "practice/word-order/e97dea81c229a1de": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      }
+    },
+    "qualification": {
+      "ranker": {
+        "date-order": {
+          "qualification/date-order/1a6976a7468bcd8f": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/date-order/b0544c78a50533d7": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "qualification/fraction-order/374550bad19d5502": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/fraction-order/9b30e89b1b3650c0": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "qualification/word-order/25b88f9595e5498d": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/word-order/3dcba77d7b599488": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "semantic_generation": {
+        "date-order": {
+          "qualification/date-order/1a6976a7468bcd8f": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/date-order/b0544c78a50533d7": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "qualification/fraction-order/374550bad19d5502": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/fraction-order/9b30e89b1b3650c0": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "qualification/word-order/25b88f9595e5498d": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/word-order/3dcba77d7b599488": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "strict_generation": {
+        "date-order": {
+          "qualification/date-order/1a6976a7468bcd8f": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/date-order/b0544c78a50533d7": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "qualification/fraction-order/374550bad19d5502": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 1,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/fraction-order/9b30e89b1b3650c0": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "qualification/word-order/25b88f9595e5498d": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "qualification/word-order/3dcba77d7b599488": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      }
+    },
+    "selection": {
+      "ranker": {
+        "date-order": {
+          "selection/date-order/0ce5e26ce69ee48b": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/date-order/239b803d25fa4ae5": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "selection/fraction-order/679f590c360c2c9f": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/fraction-order/71e0272c084afa5e": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "selection/word-order/c5875ab4b09b96bb": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/word-order/cb7c626dfecf8af1": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "semantic_generation": {
+        "date-order": {
+          "selection/date-order/0ce5e26ce69ee48b": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/date-order/239b803d25fa4ae5": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "selection/fraction-order/679f590c360c2c9f": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/fraction-order/71e0272c084afa5e": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "selection/word-order/c5875ab4b09b96bb": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/word-order/cb7c626dfecf8af1": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      },
+      "strict_generation": {
+        "date-order": {
+          "selection/date-order/0ce5e26ce69ee48b": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/date-order/239b803d25fa4ae5": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "fraction-order": {
+          "selection/fraction-order/679f590c360c2c9f": {
+            "counterfactual": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/fraction-order/71e0272c084afa5e": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "persistent_wrong",
+              "content_consistent": true,
+              "correct": 0,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        },
+        "word-order": {
+          "selection/word-order/c5875ab4b09b96bb": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 2,
+              "presentations": 4,
+              "valid": 4
+            }
+          },
+          "selection/word-order/cb7c626dfecf8af1": {
+            "counterfactual": {
+              "classification": "unstable",
+              "content_consistent": false,
+              "correct": 3,
+              "presentations": 4,
+              "valid": 4
+            },
+            "task": {
+              "classification": "solved",
+              "content_consistent": true,
+              "correct": 4,
+              "presentations": 4,
+              "valid": 4
+            }
+          }
+        }
+      }
+    }
+  },
+  "practice_decision_sha256": "b6beb86d59c323b48b344c1e959142d93c5a341d959907241f23e761d391a976",
+  "protocol_sha256": "4b0fb720b5dca55350857ea821a66601dfe74da7507d9052a7b342971ea78b00",
+  "qualification": {
+    "ranker": false,
+    "splits": {
+      "practice": {
+        "ranker": {
+          "checks": {
+            "all_four_task_correct": false,
+            "both_correct_fraction": false,
+            "counterfactual_accuracy": true,
+            "directional_margin_advantage": false,
+            "order_stability": false,
+            "paired_accuracy_gain_ci_lower": true,
+            "task_accuracy": false
+          },
+          "passed": false
+        },
+        "strict_generation": {
+          "checks": {
+            "agreement_among_completed_parsed": false,
+            "all_four_correct": false,
+            "completed_parse_rate": true,
+            "counterfactual_accuracy": false,
+            "generated_accuracy": false
+          },
+          "passed": false
+        }
+      },
+      "qualification": {
+        "ranker": {
+          "checks": {
+            "all_four_task_correct": false,
+            "both_correct_fraction": false,
+            "counterfactual_accuracy": true,
+            "directional_margin_advantage": true,
+            "order_stability": false,
+            "paired_accuracy_gain_ci_lower": true,
+            "task_accuracy": true
+          },
+          "passed": false
+        },
+        "strict_generation": {
+          "checks": {
+            "agreement_among_completed_parsed": false,
+            "all_four_correct": true,
+            "completed_parse_rate": true,
+            "counterfactual_accuracy": true,
+            "generated_accuracy": true
+          },
+          "passed": false
+        }
+      },
+      "selection": {
+        "ranker": {
+          "checks": {
+            "all_four_task_correct": true,
+            "both_correct_fraction": false,
+            "counterfactual_accuracy": true,
+            "directional_margin_advantage": true,
+            "order_stability": true,
+            "paired_accuracy_gain_ci_lower": true,
+            "task_accuracy": true
+          },
+          "passed": false
+        },
+        "strict_generation": {
+          "checks": {
+            "agreement_among_completed_parsed": true,
+            "all_four_correct": true,
+            "completed_parse_rate": true,
+            "counterfactual_accuracy": true,
+            "generated_accuracy": true
+          },
+          "passed": true
+        }
+      }
+    },
+    "strict_generation": false
+  },
+  "ranker_rule": {
+    "alpha": 1.5,
+    "display": "bullets",
+    "kind": "prior_sum",
+    "neutral": "neutral_generic"
+  },
+  "report_sha256": "48fb49fad508ec051591f53c6b348b6c2084a32160cc005890b19d76f2cede8f",
+  "schema": "weightbridge.phase_iiid.admission.v1",
+  "sealed_adaptation_opened": false,
+  "strict_generation_display": "bullets"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "weightbridge.phase_iiid.runtime.v1",
+  "measured_process_started_utc": "2026-11-03T16:29:19.9153392Z",
+  "runtime_captured_utc": "2026-11-03T16:33:59.9400712Z",
+  "os": "Microsoft Windows 11 Pro",
+  "os_version": "10.0.26200",
+  "architecture": "64-bit",
+  "cpu_model": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+  "cpu_cores": 16,
+  "logical_cpus": 32,
+  "physical_memory_bytes": 132766306304,
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.5.4",
+    "torch": "2.15.0",
+    "transformers": "5.22.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.3",
+    "psutil": "7.2.2"
+  },
+  "device": "cpu",
+  "model_dtype": "bfloat16",
+  "torch_threads": 6,
+  "qwen_optional_kernels": "Reference PyTorch kernels were used because optional accelerated kernels were unavailable."
+}

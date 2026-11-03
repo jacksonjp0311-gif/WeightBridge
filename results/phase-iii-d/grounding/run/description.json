@@ -1,0 +1,3674 @@
+{
+  "description_source_sha256": "033bff4d09c959ae7a0c0caa843ceb041ec3acad8160a11773a99de3dbb765c5",
+  "report_sha256": "48fb49fad508ec051591f53c6b348b6c2084a32160cc005890b19d76f2cede8f",
+  "schema": "weightbridge.phase_iiid.description.v1",
+  "scope": "Descriptive only. Does not choose an endpoint or change a gate.",
+  "splits": {
+    "practice": {
+      "bullets_minus_labeled_accuracy": {
+        "calibrated": {
+          "estimate": 0.0,
+          "question_interval": [
+            -0.08333333333333333,
+            0.08333333333333333
+          ]
+        },
+        "raw": {
+          "estimate": 0.0,
+          "question_interval": [
+            -0.08333333333333333,
+            0.08333333333333333
+          ]
+        }
+      },
+      "bullets_minus_labeled_generation": {
+        "semantic": {
+          "both_correct": {
+            "estimate": 0.125,
+            "question_interval": [
+              -0.16666666666666666,
+              0.4166666666666667
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              -0.08333333333333333,
+              0.4166666666666667
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": -0.125,
+            "question_interval": [
+              -0.375,
+              0.125
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 0.08333333333333333,
+            "question_interval": [
+              -0.16666666666666666,
+              0.3333333333333333
+            ]
+          },
+          "parsed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          }
+        },
+        "strict": {
+          "both_correct": {
+            "estimate": 0.25,
+            "question_interval": [
+              0.08333333333333333,
+              0.4166666666666667
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.5416666666666666,
+            "question_interval": [
+              0.4166666666666667,
+              0.6666666666666666
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.25,
+              0.5
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 0.9166666666666666,
+            "question_interval": [
+              0.8333333333333334,
+              1.0
+            ]
+          },
+          "parsed": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "generation": {
+        "bullets": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.25,
+              "question_interval": [
+                0.08333333333333333,
+                0.4166666666666667
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.5416666666666666,
+              "question_interval": [
+                0.4166666666666667,
+                0.6666666666666666
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.375,
+              "question_interval": [
+                0.25,
+                0.5
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.9166666666666666,
+              "question_interval": [
+                0.8333333333333334,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.25,
+              "question_interval": [
+                0.08333333333333333,
+                0.4166666666666667
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.5416666666666666,
+              "question_interval": [
+                0.4166666666666667,
+                0.6666666666666666
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.375,
+              "question_interval": [
+                0.25,
+                0.5
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.9166666666666666,
+              "question_interval": [
+                0.8333333333333334,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "labeled": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.125,
+              "question_interval": [
+                0.0,
+                0.25
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.375,
+              "question_interval": [
+                0.25,
+                0.5
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.5,
+              "question_interval": [
+                0.3333333333333333,
+                0.6666666666666666
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "generation_by_family": {
+        "date-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.25,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.25,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "fraction-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.25,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "word-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.25,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.25,
+                  0.25
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.25,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.25,
+                  0.25
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.5,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      },
+      "label_strata": {
+        "AB": {
+          "letter_correct": 6,
+          "letter_first_named_label": 8,
+          "letter_first_position": 12,
+          "ranker_correct": 5,
+          "ranker_first_position": 7,
+          "rows": 12,
+          "underlying_items": 3
+        },
+        "XY": {
+          "letter_correct": 8,
+          "letter_first_named_label": 2,
+          "letter_first_position": 8,
+          "ranker_correct": 9,
+          "ranker_first_position": 9,
+          "rows": 12,
+          "underlying_items": 3
+        }
+      },
+      "raw_context_preferences": {
+        "bullets": {
+          "counterfactual": {
+            "left_preferences": 10,
+            "mean_absolute_margin": 0.9825994173685709,
+            "right_preferences": 14,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 18,
+            "mean_absolute_margin": 0.45249636967976886,
+            "right_preferences": 6,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 6,
+            "mean_absolute_margin": 0.43028736114501953,
+            "right_preferences": 18,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 9,
+            "mean_absolute_margin": 0.7859198252360026,
+            "right_preferences": 15,
+            "ties": 0
+          }
+        },
+        "labeled": {
+          "counterfactual": {
+            "left_preferences": 18,
+            "mean_absolute_margin": 0.9064297676086426,
+            "right_preferences": 6,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 18,
+            "mean_absolute_margin": 0.7740476926167806,
+            "right_preferences": 6,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 10,
+            "mean_absolute_margin": 0.6177878379821777,
+            "right_preferences": 14,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 17,
+            "mean_absolute_margin": 1.1671173572540283,
+            "right_preferences": 7,
+            "ties": 0
+          }
+        }
+      },
+      "raw_margin_shifts": {
+        "bullets": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 0.6581889788309733,
+            "question_interval": [
+              0.6169665654500326,
+              0.6994113922119141
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.4166666666666667,
+            "question_interval": [
+              0.3333333333333333,
+              0.5
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.25,
+              0.5
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 0.6574522654215494,
+            "question_interval": [
+              -0.12438543637593587,
+              1.439289967219035
+            ]
+          }
+        },
+        "labeled": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 0.8873065312703451,
+            "question_interval": [
+              0.635750929514567,
+              1.138862133026123
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.3333333333333333,
+              0.6666666666666666
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.2916666666666667,
+            "question_interval": [
+              0.16666666666666666,
+              0.4166666666666667
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 0.5371895631154379,
+            "question_interval": [
+              -0.09778992335001628,
+              1.1721690495808919
+            ]
+          }
+        }
+      },
+      "selected_ranker": {
+        "both_correct_fraction": {
+          "estimate": 0.4166666666666667,
+          "question_interval": [
+            0.3333333333333333,
+            0.5
+          ]
+        },
+        "counterfactual_accuracy": {
+          "estimate": 0.7083333333333334,
+          "question_interval": [
+            0.5833333333333334,
+            0.8333333333333334
+          ]
+        },
+        "directional_margin_advantage": {
+          "estimate": -0.0007367134094238281,
+          "question_interval": [
+            -0.8006940682729086,
+            0.7992206414540609
+          ]
+        },
+        "task_accuracy": {
+          "estimate": 0.5833333333333334,
+          "question_interval": [
+            0.4583333333333333,
+            0.7083333333333334
+          ]
+        }
+      },
+      "selected_ranker_by_family": {
+        "date-order": {
+          "both_correct_fraction": {
+            "estimate": 0.75,
+            "question_interval": [
+              0.5,
+              1.0
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.875,
+            "question_interval": [
+              0.75,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": 1.6352448463439941,
+            "question_interval": [
+              0.001708984375,
+              3.2687807083129883
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.75,
+            "question_interval": [
+              0.5,
+              1.0
+            ]
+          }
+        },
+        "fraction-order": {
+          "both_correct_fraction": {
+            "estimate": 0.0,
+            "question_interval": [
+              0.0,
+              0.0
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": -0.9648687839508057,
+            "question_interval": [
+              -1.1658024787902832,
+              -0.7639350891113281
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.25,
+              0.5
+            ]
+          }
+        },
+        "word-order": {
+          "both_correct_fraction": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.75,
+            "question_interval": [
+              0.5,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": -0.67258620262146,
+            "question_interval": [
+              -1.43892240524292,
+              0.09375
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.625,
+            "question_interval": [
+              0.5,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "qualification": {
+      "bullets_minus_labeled_accuracy": {
+        "calibrated": {
+          "estimate": 0.041666666666666664,
+          "question_interval": [
+            -0.125,
+            0.20833333333333334
+          ]
+        },
+        "raw": {
+          "estimate": 0.20833333333333334,
+          "question_interval": [
+            0.041666666666666664,
+            0.375
+          ]
+        }
+      },
+      "bullets_minus_labeled_generation": {
+        "semantic": {
+          "both_correct": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.16666666666666666,
+              0.5833333333333334
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.25,
+            "question_interval": [
+              -0.08333333333333333,
+              0.5833333333333334
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": 0.125,
+            "question_interval": [
+              -0.08333333333333333,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "parsed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          }
+        },
+        "strict": {
+          "both_correct": {
+            "estimate": 0.5416666666666666,
+            "question_interval": [
+              0.3333333333333333,
+              0.75
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.7083333333333334,
+            "question_interval": [
+              0.4166666666666667,
+              1.0
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": 0.6666666666666666,
+            "question_interval": [
+              0.5833333333333334,
+              0.75
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "parsed": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "generation": {
+        "bullets": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.5416666666666666,
+              "question_interval": [
+                0.3333333333333333,
+                0.75
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.7083333333333334,
+              "question_interval": [
+                0.4166666666666667,
+                1.0
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.6666666666666666,
+              "question_interval": [
+                0.5833333333333334,
+                0.75
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.5416666666666666,
+              "question_interval": [
+                0.3333333333333333,
+                0.75
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.7083333333333334,
+              "question_interval": [
+                0.4166666666666667,
+                1.0
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.6666666666666666,
+              "question_interval": [
+                0.5833333333333334,
+                0.75
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "labeled": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.16666666666666666,
+              "question_interval": [
+                0.041666666666666664,
+                0.2916666666666667
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.4583333333333333,
+              "question_interval": [
+                0.3333333333333333,
+                0.5833333333333334
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.5416666666666666,
+              "question_interval": [
+                0.3333333333333333,
+                0.75
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "generation_by_family": {
+        "date-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "fraction-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.25,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.25,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.25,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.25,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.5,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "word-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.5,
+                  0.75
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      },
+      "label_strata": {
+        "AB": {
+          "letter_correct": 6,
+          "letter_first_named_label": 8,
+          "letter_first_position": 12,
+          "ranker_correct": 8,
+          "ranker_first_position": 10,
+          "rows": 12,
+          "underlying_items": 3
+        },
+        "XY": {
+          "letter_correct": 7,
+          "letter_first_named_label": 1,
+          "letter_first_position": 9,
+          "ranker_correct": 9,
+          "ranker_first_position": 9,
+          "rows": 12,
+          "underlying_items": 3
+        }
+      },
+      "raw_context_preferences": {
+        "bullets": {
+          "counterfactual": {
+            "left_preferences": 9,
+            "mean_absolute_margin": 1.1387898127237956,
+            "right_preferences": 15,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 14,
+            "mean_absolute_margin": 0.4240536689758301,
+            "right_preferences": 10,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 2,
+            "mean_absolute_margin": 0.4652164777119954,
+            "right_preferences": 22,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 12,
+            "mean_absolute_margin": 0.9341273307800293,
+            "right_preferences": 12,
+            "ties": 0
+          }
+        },
+        "labeled": {
+          "counterfactual": {
+            "left_preferences": 15,
+            "mean_absolute_margin": 0.87201460202535,
+            "right_preferences": 9,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 18,
+            "mean_absolute_margin": 0.6188467343648275,
+            "right_preferences": 6,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 10,
+            "mean_absolute_margin": 0.64681609471639,
+            "right_preferences": 14,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 15,
+            "mean_absolute_margin": 0.9357070128122965,
+            "right_preferences": 9,
+            "ties": 0
+          }
+        }
+      },
+      "raw_margin_shifts": {
+        "bullets": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 0.6415061950683594,
+            "question_interval": [
+              0.4966033299763997,
+              0.786409060160319
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.7083333333333334,
+            "question_interval": [
+              0.5,
+              0.9166666666666666
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.5833333333333334,
+            "question_interval": [
+              0.3333333333333333,
+              0.8333333333333334
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 1.5339206059773762,
+            "question_interval": [
+              0.8964943885803223,
+              2.17134682337443
+            ]
+          }
+        },
+        "labeled": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 0.8065004348754883,
+            "question_interval": [
+              0.5904378890991211,
+              1.0225629806518555
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.6666666666666666,
+            "question_interval": [
+              0.4583333333333333,
+              0.875
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.20833333333333334,
+              0.5416666666666666
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 0.9499831199645996,
+            "question_interval": [
+              0.2788124084472656,
+              1.6211538314819336
+            ]
+          }
+        }
+      },
+      "selected_ranker": {
+        "both_correct_fraction": {
+          "estimate": 0.4583333333333333,
+          "question_interval": [
+            0.4166666666666667,
+            0.5
+          ]
+        },
+        "counterfactual_accuracy": {
+          "estimate": 0.7083333333333334,
+          "question_interval": [
+            0.5833333333333334,
+            0.8333333333333334
+          ]
+        },
+        "directional_margin_advantage": {
+          "estimate": 0.892414410909017,
+          "question_interval": [
+            0.11008532842000325,
+            1.6747434933980305
+          ]
+        },
+        "task_accuracy": {
+          "estimate": 0.7083333333333334,
+          "question_interval": [
+            0.6666666666666666,
+            0.75
+          ]
+        }
+      },
+      "selected_ranker_by_family": {
+        "date-order": {
+          "both_correct_fraction": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": 2.979424476623535,
+            "question_interval": [
+              1.6403546333312988,
+              4.3184943199157715
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "fraction-order": {
+          "both_correct_fraction": {
+            "estimate": 0.0,
+            "question_interval": [
+              0.0,
+              0.0
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": -0.4087204933166504,
+            "question_interval": [
+              -1.0319857597351074,
+              0.21454477310180664
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          }
+        },
+        "word-order": {
+          "both_correct_fraction": {
+            "estimate": 0.375,
+            "question_interval": [
+              0.25,
+              0.5
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.625,
+            "question_interval": [
+              0.25,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": 0.10653924942016602,
+            "question_interval": [
+              -0.9013781547546387,
+              1.1144566535949707
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.625,
+            "question_interval": [
+              0.5,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "selection": {
+      "bullets_minus_labeled_accuracy": {
+        "calibrated": {
+          "estimate": 0.08333333333333333,
+          "question_interval": [
+            -0.08333333333333333,
+            0.25
+          ]
+        },
+        "raw": {
+          "estimate": -0.041666666666666664,
+          "question_interval": [
+            -0.25,
+            0.16666666666666666
+          ]
+        }
+      },
+      "bullets_minus_labeled_generation": {
+        "semantic": {
+          "both_correct": {
+            "estimate": 0.5833333333333334,
+            "question_interval": [
+              0.4166666666666667,
+              0.75
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.2916666666666667,
+            "question_interval": [
+              0.08333333333333333,
+              0.5
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": 0.4583333333333333,
+            "question_interval": [
+              0.3333333333333333,
+              0.5833333333333334
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "parsed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          }
+        },
+        "strict": {
+          "both_correct": {
+            "estimate": 0.625,
+            "question_interval": [
+              0.4166666666666667,
+              0.8333333333333334
+            ]
+          },
+          "completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "correct": {
+            "estimate": 0.7083333333333334,
+            "question_interval": [
+              0.5,
+              0.9166666666666666
+            ]
+          },
+          "counterfactual_completed": {
+            "estimate": 0.16666666666666666,
+            "question_interval": [
+              0.0,
+              0.3333333333333333
+            ]
+          },
+          "counterfactual_correct": {
+            "estimate": 0.8333333333333334,
+            "question_interval": [
+              0.75,
+              0.9166666666666666
+            ]
+          },
+          "counterfactual_parsed": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "parsed": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "generation": {
+        "bullets": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.625,
+              "question_interval": [
+                0.4166666666666667,
+                0.8333333333333334
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.7083333333333334,
+              "question_interval": [
+                0.5,
+                0.9166666666666666
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.75,
+                0.9166666666666666
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.625,
+              "question_interval": [
+                0.4166666666666667,
+                0.8333333333333334
+              ]
+            },
+            "completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.7083333333333334,
+              "question_interval": [
+                0.5,
+                0.9166666666666666
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.75,
+                0.9166666666666666
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 1.0,
+              "question_interval": [
+                1.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "labeled": {
+          "semantic": {
+            "both_correct": {
+              "estimate": 0.041666666666666664,
+              "question_interval": [
+                0.0,
+                0.08333333333333333
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.4166666666666667,
+              "question_interval": [
+                0.3333333333333333,
+                0.5
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.375,
+              "question_interval": [
+                0.25,
+                0.5
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            }
+          },
+          "strict": {
+            "both_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_completed": {
+              "estimate": 0.8333333333333334,
+              "question_interval": [
+                0.6666666666666666,
+                1.0
+              ]
+            },
+            "counterfactual_correct": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterfactual_parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "parsed": {
+              "estimate": 0.0,
+              "question_interval": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "generation_by_family": {
+        "date-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.25,
+                "question_interval": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "fraction-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.875,
+                "question_interval": [
+                  0.75,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.875,
+                "question_interval": [
+                  0.75,
+                  1.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.125,
+                "question_interval": [
+                  0.0,
+                  0.25
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "word-order": {
+          "bullets": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.25,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.5,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.25,
+                  0.75
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.75,
+                "question_interval": [
+                  0.5,
+                  1.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.625,
+                "question_interval": [
+                  0.5,
+                  0.75
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "labeled": {
+            "semantic": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.5,
+                "question_interval": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.375,
+                "question_interval": [
+                  0.25,
+                  0.5
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "parsed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            "strict": {
+              "both_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_completed": {
+                "estimate": 1.0,
+                "question_interval": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "counterfactual_correct": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "counterfactual_parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "parsed": {
+                "estimate": 0.0,
+                "question_interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      },
+      "label_strata": {
+        "AB": {
+          "letter_correct": 6,
+          "letter_first_named_label": 6,
+          "letter_first_position": 10,
+          "ranker_correct": 10,
+          "ranker_first_position": 8,
+          "rows": 12,
+          "underlying_items": 3
+        },
+        "XY": {
+          "letter_correct": 8,
+          "letter_first_named_label": 2,
+          "letter_first_position": 6,
+          "ranker_correct": 7,
+          "ranker_first_position": 7,
+          "rows": 12,
+          "underlying_items": 3
+        }
+      },
+      "raw_context_preferences": {
+        "bullets": {
+          "counterfactual": {
+            "left_preferences": 10,
+            "mean_absolute_margin": 1.260874589284261,
+            "right_preferences": 14,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 14,
+            "mean_absolute_margin": 0.9218146006266276,
+            "right_preferences": 10,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 4,
+            "mean_absolute_margin": 0.5448455810546875,
+            "right_preferences": 20,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 12,
+            "mean_absolute_margin": 1.1653942267100017,
+            "right_preferences": 12,
+            "ties": 0
+          }
+        },
+        "labeled": {
+          "counterfactual": {
+            "left_preferences": 15,
+            "mean_absolute_margin": 1.0519932905832927,
+            "right_preferences": 9,
+            "ties": 0
+          },
+          "irrelevant": {
+            "left_preferences": 14,
+            "mean_absolute_margin": 0.9403179486592611,
+            "right_preferences": 10,
+            "ties": 0
+          },
+          "neutral_generic": {
+            "left_preferences": 10,
+            "mean_absolute_margin": 0.9212136268615723,
+            "right_preferences": 14,
+            "ties": 0
+          },
+          "task": {
+            "left_preferences": 15,
+            "mean_absolute_margin": 1.1708541711171467,
+            "right_preferences": 9,
+            "ties": 0
+          }
+        }
+      },
+      "raw_margin_shifts": {
+        "bullets": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 0.8935724894205729,
+            "question_interval": [
+              0.5776166915893555,
+              1.2095282872517903
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.7916666666666666,
+            "question_interval": [
+              0.5833333333333334,
+              1.0
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.6666666666666666,
+            "question_interval": [
+              0.5,
+              0.8333333333333334
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 1.7843876679738362,
+            "question_interval": [
+              1.164340337117513,
+              2.4044349988301597
+            ]
+          }
+        },
+        "labeled": {
+          "absolute_irrelevant_margin_shift": {
+            "estimate": 1.221925417582194,
+            "question_interval": [
+              0.46880896886189777,
+              1.9750418663024902
+            ]
+          },
+          "expected_question_shift_fraction": {
+            "estimate": 0.75,
+            "question_interval": [
+              0.6666666666666666,
+              0.8333333333333334
+            ]
+          },
+          "question_shift_exceeds_irrelevant_fraction": {
+            "estimate": 0.5833333333333334,
+            "question_interval": [
+              0.4583333333333333,
+              0.7083333333333334
+            ]
+          },
+          "signed_question_margin_shift": {
+            "estimate": 1.5006663004557292,
+            "question_interval": [
+              0.7777925332387289,
+              2.2235400676727295
+            ]
+          }
+        }
+      },
+      "selected_ranker": {
+        "both_correct_fraction": {
+          "estimate": 0.5833333333333334,
+          "question_interval": [
+            0.5,
+            0.6666666666666666
+          ]
+        },
+        "counterfactual_accuracy": {
+          "estimate": 0.7916666666666666,
+          "question_interval": [
+            0.75,
+            0.8333333333333334
+          ]
+        },
+        "directional_margin_advantage": {
+          "estimate": 0.8908151785532633,
+          "question_interval": [
+            0.2786709467569987,
+            1.502959410349528
+          ]
+        },
+        "task_accuracy": {
+          "estimate": 0.7083333333333334,
+          "question_interval": [
+            0.5,
+            0.9166666666666666
+          ]
+        }
+      },
+      "selected_ranker_by_family": {
+        "date-order": {
+          "both_correct_fraction": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": 2.7299630641937256,
+            "question_interval": [
+              1.4844484329223633,
+              3.975477695465088
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 1.0,
+            "question_interval": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "fraction-order": {
+          "both_correct_fraction": {
+            "estimate": 0.25,
+            "question_interval": [
+              0.0,
+              0.5
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": -0.24823570251464844,
+            "question_interval": [
+              -0.8391537666320801,
+              0.3426823616027832
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "word-order": {
+          "both_correct_fraction": {
+            "estimate": 0.5,
+            "question_interval": [
+              0.5,
+              0.5
+            ]
+          },
+          "counterfactual_accuracy": {
+            "estimate": 0.875,
+            "question_interval": [
+              0.75,
+              1.0
+            ]
+          },
+          "directional_margin_advantage": {
+            "estimate": 0.1907181739807129,
+            "question_interval": [
+              -0.24356365203857422,
+              0.625
+            ]
+          },
+          "task_accuracy": {
+            "estimate": 0.625,
+            "question_interval": [
+              0.5,
+              0.75
+            ]
+          }
+        }
+      }
+    }
+  }
+}
