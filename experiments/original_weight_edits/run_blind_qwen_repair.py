@@ -29,11 +29,12 @@ BASE_SHARD = "model.safetensors-00001-of-00001.safetensors"
 LAYERS = (19, 21, 23)
 WIDTH = 64
 SENTINEL_WEIGHT = 64.0
+SEARCH_SENTINEL_WEIGHT = 256.0
 BATCH = 8
-STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)
-FAULT_STRENGTHS = (*STRENGTHS, 2.56, 4.0)
-SPLIT_SEEDS = {"construction": 833005, "practice": 833006, "holdout": 833007}
-RANDOM_SEEDS = (833021, 833022, 833023)
+STRENGTHS = (0.01, 0.02, 0.025, 0.03, 0.035, 0.04, 0.06, 0.08)
+FAULT_STRENGTHS = (0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28, 2.56, 4.0)
+SPLIT_SEEDS = {"construction": 843005, "practice": 843006, "holdout": 843007}
+RANDOM_SEEDS = (843021, 843022, 843023)
 
 
 def timestamp():
@@ -70,14 +71,14 @@ def policy():
 def build_splits(seeds):
     """Use common numeric ranges and disjoint examples across the three splits."""
     groups = (
-        ("a color", ("red", "green", "blue", "yellow", "purple", "white", "black", "orange"),
-         ("table", "spoon", "ladder", "chair", "clock", "pencil", "brick", "door")),
-        ("an animal", ("dog", "cat", "horse", "fox", "tiger", "rabbit", "lion", "zebra"),
-         ("book", "piano", "hammer", "mirror", "bottle", "window", "brush", "shoe")),
-        ("a fruit", ("apple", "pear", "peach", "plum", "mango", "grape", "cherry", "banana"),
-         ("desk", "lamp", "needle", "broom", "rope", "radio", "scarf", "bucket")),
-        ("a vehicle", ("bus", "train", "truck", "car", "van", "bicycle", "scooter", "tractor"),
-         ("cup", "fork", "plate", "shirt", "flower", "guitar", "candle", "carpet")),
+        ("a color", ("pink", "brown", "gray", "cyan", "teal", "silver", "beige", "maroon"),
+         ("bookcase", "mug", "tire", "sofa", "shelf", "ruler", "stove", "drawer")),
+        ("an animal", ("bear", "wolf", "goat", "sheep", "cow", "mule", "donkey", "deer"),
+         ("jacket", "towel", "button", "pillow", "blanket", "basket", "screw", "wallet")),
+        ("a fruit", ("lemon", "lime", "melon", "kiwi", "papaya", "fig", "pineapple", "coconut"),
+         ("stool", "screen", "washer", "glove", "poster", "soap", "pen", "belt")),
+        ("a vehicle", ("jeep", "tram", "ferry", "sedan", "ship", "submarine", "helicopter", "taxi"),
+         ("saucepan", "knife", "jug", "fork", "quilt", "banjo", "tape", "curtain")),
     )
     suffix = "\nAnswer with the letter A or B only."
     sizes = {"construction": (12, 24), "practice": (12, 40), "holdout": (24, 32)}
@@ -194,7 +195,7 @@ class Runner:
                 "transformers": version("transformers"), "numpy": version("numpy")}
 
 
-def features(activations, n_target):
+def features(activations, n_target, *, sentinel_weight=SENTINEL_WEIGHT):
     """Fit a small linear gate to target activity and zero sentinel activity."""
     x = activations.astype(np.float64)
     rms = np.maximum(np.sqrt(np.mean(x * x, axis=0)), 1e-6)
@@ -202,7 +203,7 @@ def features(activations, n_target):
     indices = np.argsort(-contrast, kind="stable")[:WIDTH].tolist()
     z = x[:, indices] / rms[indices]
     target, unrelated = z[:n_target], z[n_target:]
-    gram = target.T @ target + SENTINEL_WEIGHT * (unrelated.T @ unrelated) + np.eye(WIDTH)
+    gram = target.T @ target + sentinel_weight * (unrelated.T @ unrelated) + np.eye(WIDTH)
     v = np.linalg.solve(gram, target.sum(axis=0)) / rms[indices]
     return indices, v
 
@@ -259,6 +260,8 @@ def prepare(run, pristine, fault_seed):
         "eligible_layers": list(LAYERS), "strengths": list(STRENGTHS),
         "fault_strengths": list(FAULT_STRENGTHS), "policy": policy(),
         "activation_gate": {"columns": WIDTH, "sentinel_weight": SENTINEL_WEIGHT},
+        "search_activation_gate": {"columns": WIDTH, "sentinel_weight": SEARCH_SENTINEL_WEIGHT},
+        "practice_selection": "minimum_sentinel_drift_at_half_best_target_gain",
         "practice_seed": seeds["practice"], "random_control_seeds": list(RANDOM_SEEDS),
         "practice_sha256": digest(public / "practice.json"),
         "holdout_sha256": digest(sealed / "holdout.json"),
@@ -323,9 +326,10 @@ def search(public, output):
     n = len(groups["target"])
     direction = runner.direction()
     attempts = []
-    best = None
+    projections = {}
     for layer in LAYERS:
-        indices, v = features(activation[layer], n)
+        indices, v = features(activation[layer], n, sentinel_weight=SEARCH_SENTINEL_WEIGHT)
+        projections[layer] = (indices, v)
         for strength in STRENGTHS:
             delta = strength * np.outer(direction, v)
             try:
@@ -337,21 +341,30 @@ def search(public, output):
             flips_other = flips(baseline["sentinel"], scores["sentinel"])
             target_gain = correct(scores["target"]) - correct(baseline["target"])
             margin_gain = mean_margin(scores["target"]) - mean_margin(baseline["target"])
+            drift = sum(abs(after["margin"] - before["margin"])
+                        for before, after in zip(baseline["sentinel"], scores["sentinel"]))
             attempts.append({"layer": layer, "strength": strength, "target_gain": target_gain,
                              "target_margin_gain": margin_gain, "sentinel_flips": flips_other,
+                             "sentinel_margin_drift": drift,
                              "rounded_frobenius_norm": norm, "rows": scores})
-            key = (-target_gain, norm, -margin_gain)
-            if flips_other == 0 and target_gain > 0 and (best is None or key < best[0]):
-                best = (key, len(attempts) - 1, layer, indices, delta)
         print(f"Practice search finished layer {layer}.", flush=True)
+    eligible = [(i, row) for i, row in enumerate(attempts)
+                if row.get("target_gain", 0) > 0 and row["sentinel_flips"] == 0]
+    max_gain = max((row["target_gain"] for _, row in eligible), default=0)
+    best = min(((row["sentinel_margin_drift"], -row["target_gain"], row["rounded_frobenius_norm"],
+                 -row["target_margin_gain"], i) for i, row in eligible if 2 * row["target_gain"] >= max_gain),
+               default=None)
     write(output / "search.json", {"baseline": baseline, "attempts": attempts,
-                                   "selected_attempt": None if best is None else best[1],
+                                   "selected_attempt": None if best is None else best[-1],
                                    "resources": runner.resources(),
                                    "practice_sha256": digest(public / "practice.json"),
                                    "protocol_sha256": digest(public / "protocol.json")})
     if best is None:
         raise RuntimeError("HOLD: no practice improvement preserved all practice sentinels")
-    _, _, layer, indices, delta = best
+    winner = attempts[best[-1]]
+    layer = winner["layer"]
+    indices, v = projections[layer]
+    delta = winner["strength"] * np.outer(direction, v)
     patch = patch_document(base, layer, indices, delta, "Best practice-only bounded directional intervention.")
     write(output / "repair_patch.json", patch)
     write(output / "repair_receipt.json", apply_safetensors_patch(base, patch, policy(), output / "repaired"))
