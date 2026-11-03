@@ -67,6 +67,6 @@ Final checks on 2026-11-03:
   summed wall seconds. These exclude coding, tests, reference inspection and
   other unmetered work, and combine distinct experiments.
 
-Implementation commit and validation-note commit identifiers are recorded in
-the final execution report. Changes remain on `dev/weightbridge-v0.2`; nothing
-was pushed or deployed.
+Implementation and evidence commit: `fd739a6746b01d97dae64248e674f7e4a6985574`.
+This verification-note update is committed separately. Both commits remain on
+`dev/weightbridge-v0.2`; nothing was pushed or deployed.
