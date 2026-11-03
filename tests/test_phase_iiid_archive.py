@@ -74,3 +74,18 @@ def test_export_rejects_optional_analysis_from_another_run(evidence):
     with pytest.raises(ValueError, match="does not bind"):
         export(material, run, output, description=description)
     assert not output.exists()
+
+
+def test_export_copies_verified_optional_analysis(evidence):
+    material, run, output = evidence
+    admission, description = run / "admission.json", run / "description.json"
+    report_path = run / "report.json"
+    report = json.loads(report_path.read_bytes())
+    json_dump_atomic(admission, {"report_sha256": file_hash(report_path), "model_sha256": report["base_sha256"],
+                                 **{key: report[key] for key in ("protocol_sha256", "material_manifest_sha256",
+                                                                "practice_decision_sha256")}})
+    json_dump_atomic(description, {"report_sha256": file_hash(report_path), "description_source_sha256": file_hash(
+        PROTOCOL.with_name("describe_grounding.py"))})
+    export(material, run, output, admission=admission, description=description)
+    assert (output / "run/admission.json").read_bytes() == admission.read_bytes()
+    assert (output / "run/description.json").read_bytes() == description.read_bytes()
