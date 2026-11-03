@@ -19,8 +19,9 @@ The deterministic Qwen checkpoint pilot is a separate track. It fits a bounded
 weight patch from damaged-model activations and practice scores, then reloads
 the patch in a separate evaluator with matched random controls. The next
 research gate after a single induced-fault trial is replication on blinded
-defect seeds, answer positions and wording. A natural-failure trial needs a
-fresh protocol and a held-out generation benchmark. [Qwen repair protocol](QWEN_BLIND_REPAIR.md)
+defect seeds, answer positions and wording. The [12-case Qwen cohort](QWEN_REPAIR_COHORT.md)
+defines the frozen protocol and budget-matched comparison. A natural-failure
+trial needs a fresh protocol and a held-out generation benchmark.
 
 ## Immediate next experiment
 
