@@ -1,0 +1,57 @@
+{
+  "conditions": {
+    "external_memory_only": {
+      "accuracy": 1.0,
+      "completion_rate": 1.0,
+      "correct": 320,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.553125,
+        "ci_low": 0.446875,
+        "confidence": 0.95,
+        "mean_difference": 0.5,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    },
+    "memory_plus_weight_edit": {
+      "accuracy": 1.0,
+      "completion_rate": 1.0,
+      "correct": 320,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.553125,
+        "ci_low": 0.446875,
+        "confidence": 0.95,
+        "mean_difference": 0.5,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    },
+    "no_memory_no_edit": {
+      "accuracy": 0.5,
+      "completion_rate": 1.0,
+      "correct": 160,
+      "n": 320
+    },
+    "weight_edit_only": {
+      "accuracy": 1.0,
+      "completion_rate": 1.0,
+      "correct": 320,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.553125,
+        "ci_low": 0.446875,
+        "confidence": 0.95,
+        "mean_difference": 0.5,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    }
+  },
+  "experiment_id": "mwc-ablation-20261103T024123Z-7de3ee2d",
+  "raw_results": "mwc_ablation.json"
+}

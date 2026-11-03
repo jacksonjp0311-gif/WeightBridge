@@ -1,0 +1,108 @@
+# Limitations and held work
+
+## Current HOLDs
+
+- **Published benchmark reproduction: HOLD.** No MATH-500, GSM8K or IFEval
+  benchmark dataset was downloaded or evaluated. The dataset preparation and
+  matrix scripts are present, but the `benchmark` optional dependencies are
+  not installed in the project environment. The Qwen checkpoint and candidate
+  were kept in an external temporary cache and are not included in the project.
+- **Qwen behavioral claim: HOLD / INCONCLUSIVE.** The paired smoke used two
+  hand-authored development prompts, one output each, and a 64-token cap. Every
+  output was truncated. A separate exploratory 256-token smoke also truncated
+  every generation. Neither can support an accuracy or loop-reduction claim.
+- **Qwen AI-directed edit: HOLD.** The diagnostic agent was exercised only on
+  the synthetic MLP. No Qwen patch was proposed by the agent or evaluated.
+- **Random Qwen control behavior: HOLD.** The control checkpoint has matching
+  changed-value counts but was not run through inference.
+- **LoRA or language-model conventional baseline: HOLD.** The measured
+  conventional baseline is full-batch SGD on the small synthetic MLP only.
+- **Private-memory integration: intentionally absent.** MWC uses generated
+  synthetic records only. There is no RecallTree connector or private notebook
+  ingestion path.
+
+## Environment and compute constraints
+
+The captured machine is Windows 11 Pro on an AMD Ryzen AI MAX+ 395 (16 physical
+cores, 32 logical processors), with 132.8 GB RAM and an integrated Radeon
+8060S. The graphics adapter reports shared memory, not dedicated VRAM; CUDA is
+unavailable. Local Qwen inference ran with CPU PyTorch and Transformers and
+fallback attention kernels at about 10 generated tokens/second in the smoke.
+No vLLM or CUDA runtime was available. The pinned single-file checkpoint is
+1.747 GB and remains outside the repository.
+
+At 10 tokens/second, generating the full 32,768-token cap for just the cited
+MATH-500 (500 × 4), GSM8K test (1,319 × 2), and IFEval (541 × 2) settings would
+take roughly 217 days of generation time before model loading, evaluation or
+other overhead. This is a cap-based resource estimate, not a measured
+runtime. A real evaluation may terminate earlier, but the 64-token smoke shows
+why the current CPU configuration cannot estimate that behavior reliably.
+
+The exact captured values and dependency versions are in
+[`SYSTEM_CAPABILITIES.md`](SYSTEM_CAPABILITIES.md) and
+[`system_capabilities.json`](../results/system_capabilities.json). RAM and disk
+availability are time-specific snapshots.
+
+## Scientific limits
+
+- The diagnostic agent is deterministic finite-difference search code. It is
+  not an LLM and spent zero model-generated tokens. The term “agent discovery”
+  here means a restricted procedure observed practice failures and selected a
+  host-validated patch without receiving the correct value.
+- The toy defect was deliberately injected and the permitted tensor was
+  specified by a host allowlist. Three seeds do not establish broad discovery.
+- External-memory-only changes inference-time decision behavior; it is not
+  parametric learning. The memory record contains the exact repair for the
+  same synthetic task family.
+- A successful patch application, matching hash, or restart load is not a
+  behavioral improvement. Toy persistence is demonstrated only on the toy
+  model; the Qwen rollback smoke reloads the original checkpoint but does not
+  prove a Qwen candidate improvement persisted.
+- The Qwen repetition estimator uses a repeated-block heuristic and tail
+  n-gram proxy. The small run has insufficient output and sample count to
+  validate either against the paper's loop metrics.
+- The 10-seed MWC confidence interval is clustered by seed, but only ten
+  independent synthetic seeds are available. Its exact memory transfer and
+  repeated defect structure limit inference to that task family.
+- No final holdout has been used for patch selection in the current canonical
+  toy runs. The first seed-731 record was marked as a duplicate replay; the
+  second isolated seed-731 run remains in aggregate plots with seeds 840/841.
+
+## Dataset, license and runtime notes
+
+The checkpoint is Qwen3.5-0.8B under its published Apache-2.0 terms. The
+authors' code/logs are attributed in
+[`REFERENCE_PROVENANCE.md`](../experiments/published_reproduction/REFERENCE_PROVENANCE.md).
+MATH-500's dataset card does not present a clear license in its metadata;
+dataset artifacts were not redistributed. GSM8K and IFEval have their source
+license metadata recorded in the prep documentation. Users must verify current
+terms before downloading, using or redistributing data and model weights.
+
+The safetensors scanner accepts unsharded and indexed-sharded model layouts;
+model-specific remote code is disabled in the inference adapter. Activation
+and attention probes are bounded and depend on backend support. The toy worker
+validates its JSON boundary but shares the current user's OS account and is not
+a hardened OS sandbox. A separate inference process limits code coupling but
+does not replace OS/container isolation.
+
+The inference adapter rejects local checkpoint files above its configured RSS
+budget, checks current RSS after model load, and stops generation if the budget
+is crossed. The matrix runner can terminate a child process at its wall-time
+limit. The Python interface cannot prevent a transient memory spike during
+model loading before the post-load check; use an OS/container memory limit when
+the process must be contained against allocation spikes.
+
+## Remaining engineering gaps
+
+- Actual benchmark downloads, exact-sampling full generation, MATH/GSM grading,
+  and IFEval official scoring have not run end-to-end here.
+- No GPU/ROCm backend support is implemented or validated in this environment.
+- No long-context, restart-equivalence or rollback-performance trial was run
+  on the p50 Qwen candidate.
+- No layer-specific activation intervention, singular-value survey or
+  causal circuit analysis has identified why the published patch works.
+- The ledger is append-only for a single writer but does not implement
+  multi-process locking or signed remote provenance.
+- There is no selection correction for repeated adaptive experimentation on a
+  common task family. The planned next toy experiment must freeze its holdout
+  and analysis gates before collection.

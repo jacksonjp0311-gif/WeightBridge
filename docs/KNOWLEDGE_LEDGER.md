@@ -1,0 +1,75 @@
+# Evidence-linked research knowledge ledger
+
+This ledger summarizes current recorded evidence. The authoritative raw
+records are append-only in [`results/experiment_ledger.jsonl`](../results/experiment_ledger.jsonl);
+per-run JSON, model receipts and raw generations are listed below. Corrections
+are appended and do not rewrite earlier records. The plotting runner
+canonicalizes only explicit supersession and duplicate measurement keys.
+
+## Run observations
+
+| Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |
+|---|---|---|---|---|
+| v0.1 demo was reproducible | A pre-specified sparse correction should alter the targeted synthetic defect | 75.30% to 98.45% on 2,000 seeded examples; confirms the original tooling demo | It was not discovered by an agent; repeat only for code regression checks | [`evaluation.json`](../results/v01_demo_reproduction/evaluation.json), [`candidate.npz.receipt.json`](../results/v01_demo_reproduction/candidate.npz.receipt.json) |
+| Published p50c patch reconstructs exactly | Public sparse values should reproduce the author's two target tensor hashes | 130,188 BF16 changes; both tensor hashes and full candidate hash match; source unchanged | Reconstruction alone says nothing about behavior | [`p50c_rebuild_summary.json`](../results/published_reproduction/p50c_rebuild_summary.json), [`p50c_host_receipt.json.gz`](../results/published_reproduction/p50c_host_receipt.json.gz) |
+| Qwen paired smoke is unscorable | A low-cost initial smoke can reveal gross generation differences | Both variants hit the 64-token cap on 2/2 prompts and completed 0 answers; no measured accuracy difference | Increase to full protocol only after GPU/runtime and dataset readiness; do not tune on these prompts | [`paired comparison`](../results/published_reproduction/qwen_runner_paired_comparison_v02.json), [`base run`](../results/published_reproduction/qwen_runner_baseline_v02/run.json), [`p50 run`](../results/published_reproduction/qwen_runner_p50c_v02/run.json) |
+| Restricted toy diagnosis found the injected correction three times | Activation and error evidence plus bounded candidate evaluation can identify a one-coordinate repair | Practice-only search selected output_bias[1] += -4; three isolated 64-item seeds scored 64/64 vs baseline 32/64; paired audit shows 32 rescues and 0 regressions per seed; random control had 0 rescues and 0 regressions | The allowlist and one-sided defect are narrow; test different defect families and coordinates | [`seed 731`](../results/original_weight_edits/run-20261103T023455Z/experiment_record.json), [`seed 840`](../results/original_weight_edits/run-20261103T024129Z/experiment_record.json), [`seed 841`](../results/original_weight_edits/run-20261103T025154Z/experiment_record.json), [`derived paired correctness`](../results/original_weight_edits/derived_paired_correctness_v2.json) |
+| Conventional SGD also solves the toy defect | A gradient baseline may solve the same task | 400-step SGD reached 100% on 320 examples and changed all 12 parameters | Not a language-model baseline or compute-matched comparison | [`gradient record`](../results/original_weight_edits/gradient-20261103T030417Z/experiment_record.json) |
+| Reused verified memory reduced search cost on the same synthetic pattern | The exact stored repair can shorten diagnosis | External-memory and memory+weight conditions scored 640/640; weight-only scored 628/640; no-edit scored 320/640. Weight-only used 8 candidate evaluations per seed; memory+weight used 2 | Memory condition is a decision-time logit bias; one repeated defect class and ten seeds do not establish general memory benefit | [`MWC batch 1`](../results/memory_ablation/run-20261103T024116Z/mwc_ablation.json), [`MWC batch 2`](../results/memory_ablation/run-20261103T025158Z/mwc_ablation.json) |
+| Candidate edits persist after file reload in toy runs | A saved candidate should retain its changed behavior across restart | Toy evaluator loads candidates from disk before scoring; all experiment receipts include candidate hashes | No persistent Qwen improvement has been demonstrated | Same toy records above |
+| Randomized Qwen control matches edit size | Matched count and magnitude control can separate targeted edit from arbitrary change | Same 130,188 changed-value count in layers 15 and 19, within the sampled edit-magnitude distribution | No behavioral evaluation; cannot infer a regression or null effect | [`random-control reconstruction`](../results/published_reproduction/qwen35_random_control_rebuild_summary.json) |
+
+## Cross-run patterns supported by current data
+
+- Three isolated toy runs associate the localized failure with one output-bias
+  entry; both selected the same -4 change. This is causal for the deliberately
+  constructed task because the intervention changed the relevant score and the
+  independent holdout improved. It is not evidence that language-model
+  transformer circuits are localized in the same way.
+- The same 10-seed MWC runs show the external record can provide a useful
+  diagnostic shortcut when its provenance exactly matches the defect. Since
+  external memory alone scored as well as memory plus weights, the evidence
+  does not show that the weight edit adds value over retrieval-time behavior
+  correction for this task.
+- Weight-only search can select a suboptimal magnitude: one seed retained 12
+  holdout errors with -3, while retrieved evidence supplied -4. This is a
+  concrete candidate-interference/magnitude-search case, not a general law.
+- Published p50c modifies a small fraction of Qwen state entries. No measured
+  Qwen accuracy, loop or locality outcome here establishes that its magnitude
+  caused a behavioral change.
+- Neither layer frequency nor a parameter-count/performance correlation can be
+  estimated from one published transformer patch plus a toy bias task.
+- Cost per validated improvement is task- and evaluator-dependent. The current
+  records are useful for future accounting, not a cross-method ranking.
+- A deterministic replay of frozen toy files recovered per-example rescue
+  and regression counts. The appended derivation record contributes no new
+  independent measurement.
+
+## Metric definitions
+
+For paired binary correctness (b_i,c_i\in\{0,1\}), accuracy is
+\(A=N^{-1}\sum_i c_i\), and the candidate difference is
+\(\bar d=N^{-1}\sum_i(c_i-b_i)\). Regression rate is
+\(\sum_i 1[b_i=1,c_i=0]/\sum_i 1[b_i=1]\); when the baseline has no correct
+items it is undefined. For MWC, uncertainty resamples the 10 independently
+generated task seeds as clusters, retaining the 64 paired examples inside each
+resampled seed. Changed fraction is the number of represented parameter
+values whose bits differ after dtype conversion divided by the model state
+entry count; touched coordinates that round to their base value are counted
+separately. Token-limit rate is the share of generations ending at max-new-
+tokens. The smoke's tail-repeat and repeated-block signals are diagnostic
+proxies and are not validated reasoning-loop metrics.
+
+## Next falsifiable experiment
+
+Evaluate the restricted diagnosis worker on 20 newly generated toy defect
+instances from four predeclared mechanisms (five independent seeds each),
+including defects outside `output_bias`. Freeze the practice data, allowlist,
+eight-proposal budget, evaluator, matched random control and holdout before
+running the agent. The test passes only if the agent's frozen candidate repairs
+at least 70% of holdouts, has no more than a 5% regression rate among baseline-
+correct items, and exceeds the random control by at least 20 percentage points
+with a seed-clustered paired 95% interval whose lower bound is above zero.
+Otherwise record FAIL or INCONCLUSIVE by the predeclared gate. This directly
+tests whether the current discovery result transfers beyond its injected
+coordinate while retaining provenance and evaluator separation.

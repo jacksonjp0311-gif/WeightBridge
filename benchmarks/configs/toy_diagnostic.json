@@ -1,0 +1,14 @@
+{
+  "schema": "weightbridge.benchmark_config.v1",
+  "name": "toy-hidden-output-bias-discovery-v1",
+  "dataset": "synthetic-separated-threshold-v1",
+  "architecture": "2-2-2 tanh MLP",
+  "defect": "output_bias[1] receives a bounded injected offset; exact value is not sent to agent",
+  "practice_per_class": 32,
+  "holdout_per_class": 32,
+  "default_seed": 840,
+  "holdout_access": "parent evaluator only after the agent process exits",
+  "agent_type": "deterministic diagnostic search algorithm, not an LLM",
+  "patch_policy": {"allow_tensors": ["output_bias"], "max_entries": 1, "max_abs_delta": 5.0},
+  "disposition_rule": "PASS requires a positive paired bootstrap 95% interval on the frozen holdout"
+}

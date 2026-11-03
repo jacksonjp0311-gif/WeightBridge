@@ -70,3 +70,30 @@ This is an *evaluation objective*, not an implemented differentiable optimizer. 
 ## First research success condition
 
 Reproduce the Qwen edit's qualitative loop reduction with exact public checkpoint/patch and pinned settings; compare with an equal-cost no-edit, random-patch and a conventional repair baseline; prove the candidate persisted after independent restart and could be rolled back. Only then try AI-generated **new** patches on previously unseen defects, using a separate frozen holdout.
+
+## v0.2 execution status addendum — 2026-11-03
+
+This section records what happened after the original plan was preserved; it
+does not rewrite the plan's hypotheses or turn its proposed milestones into
+completed results.
+
+- v0.1 source was copied from the desktop ZIP into this isolated workspace,
+  hash-checked, and committed as the first development-branch baseline.
+- The deterministic v0.1 demo was rerun and reproduced its 75.30% to 98.45%
+  synthetic result. The edit remains pre-specified rather than agent-discovered.
+- Local sharded/unsharded safetensors inspection, bounded host patching,
+  separate Transformers inference, read-only probes, experiment ledger,
+  synthetic diagnostic worker and synthetic-only MWC ablation are implemented.
+- The published p50c tensor edit was independently reconstructed against a
+  pinned base. Both published tensor hashes matched. The randomized control
+  checkpoint was built with matched changed-value counts but not behaviorally
+  evaluated.
+- Three isolated synthetic runs found the one-coordinate injected bias repair.
+  Ten synthetic MWC seeds show that exact prior experience can reduce this
+  narrow search budget. A separate practice-only SGD toy baseline also works.
+- Published Qwen benchmark metrics remain HOLD. The two-prompt CPU smoke was
+  truncated at 64 tokens; the earlier 256-token smoke was also truncated.
+  The complete MATH-500/GSM8K/IFEval matrix was not run.
+- The next falsifiable task is the predeclared 20-instance, four-mechanism toy
+  discovery study in `KNOWLEDGE_LEDGER.md`; a separate Qwen resource and data
+  readiness gate remains required.

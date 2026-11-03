@@ -1,0 +1,10 @@
+{
+  "schema": "weightbridge.development_prompts.v1",
+  "license": "Original hand-authored arithmetic prompts for this local tooling smoke test",
+  "prompts": [
+    {"id": "arith_42", "prompt": "What is 18 + 24?", "answer": "42"},
+    {"id": "distance_150", "prompt": "A train travels at 60 kilometers per hour for 2.5 hours. How far does it travel?", "answer": "150"}
+  ],
+  "instruction_suffix": "Please reason step by step, and put your final answer within \\boxed{}.",
+  "note": "These two examples are a manual smoke subset, not a benchmark or paper reproduction."
+}

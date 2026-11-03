@@ -1,0 +1,45 @@
+{
+  "candidate_trials": [
+    {
+      "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+      "changed_entries": 1,
+      "class_errors": {
+        "0": 0,
+        "1": 0
+      },
+      "max_abs_delta": 4.0,
+      "patch_sha256": "3f9af80ec4b876b0c6ca22b2bcc336c6643c4c40fb67dcb5f9eeb0385b1b35f6",
+      "practice_accuracy": 1.0,
+      "proposed_delta": -4.0,
+      "trial": 0
+    }
+  ],
+  "chosen_patch": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "changes": [
+      {
+        "index": [
+          1
+        ],
+        "op": "add",
+        "tensor": "output_bias",
+        "value": -4.0
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors",
+      "bd5cb38e2f9e69fab272a5bf481108bcd9d4e9b1347836be87f7a09a8bc5f03f"
+    ],
+    "projections": [],
+    "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record bd5cb38e2f9e69fa for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+    "schema": "weightbridge.patch.v1"
+  },
+  "evaluator_calls": 2,
+  "holdout_accessed": false,
+  "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record bd5cb38e2f9e69fa for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; hidden activation RMS=0.496560.",
+  "iteration_budget": 8,
+  "practice_baseline_accuracy": 0.5,
+  "practice_candidate_accuracy": 1.0,
+  "stop_reason": "practice_target_reached"
+}

@@ -1,0 +1,55 @@
+{
+  "attempted_generations": 2,
+  "baseline_run": "results\\published_reproduction\\qwen_runner_baseline_v02\\run.json",
+  "candidate_run": "results\\published_reproduction\\qwen_runner_p50c_v02\\run.json",
+  "comparison_id": "baseline-20261103T030018Z-c6681dcb__vs__published-p50c-20261103T030046Z-4cadde26",
+  "dataset_sha256": "e77bb9963821beac938af44e684a4e1bc3e4d42eae973e50335fe32806f6dccd",
+  "disposition": "INCONCLUSIVE",
+  "interpretation_limit": "A single frozen suite comparison supports only this task/sampling setup; it is not a general capability claim.",
+  "paired_accuracy": {
+    "baseline": 0.0,
+    "candidate": 0.0,
+    "difference_ci": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean_difference": 0.0,
+      "n": 2,
+      "resamples": 10000,
+      "seed": 17
+    },
+    "regression_rate": 0.0,
+    "regressions": 0,
+    "rescues": 0
+  },
+  "paired_answer_completion": {
+    "baseline": 0.0,
+    "candidate": 0.0,
+    "difference_ci": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean_difference": 0.0,
+      "n": 2,
+      "resamples": 10000,
+      "seed": 17
+    }
+  },
+  "paired_generations": 2,
+  "paired_token_limit_rate": {
+    "baseline": 1.0,
+    "candidate": 1.0,
+    "difference_ci": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean_difference": 0.0,
+      "n": 2,
+      "resamples": 10000,
+      "seed": 17
+    }
+  },
+  "schema": "weightbridge.hf_benchmark_comparison.v1",
+  "split": "practice",
+  "timestamp_utc": "2026-11-03T03:00:48.236745+00:00"
+}

@@ -40,7 +40,10 @@ def json_dump_atomic(path: str | Path, value: dict[str, Any]) -> None:
             fh.write("\n")
             fh.flush()
             os.fsync(fh.fileno())
-        os.replace(name, path)
+        try:
+            os.link(name, path)
+        except FileExistsError as exc:
+            raise EditRejected(f"Refusing to replace existing artifact: {path}") from exc
     finally:
         if os.path.exists(name):
             os.unlink(name)
@@ -84,7 +87,10 @@ def save_tensors_new(path: str | Path, tensors: dict[str, np.ndarray]) -> None:
         else:
             from safetensors.numpy import save_file
             save_file({k: np.ascontiguousarray(v) for k, v in tensors.items()}, name)
-        os.replace(name, path)
+        try:
+            os.link(name, path)
+        except FileExistsError as exc:
+            raise EditRejected(f"Candidate appeared during creation: {path}") from exc
     finally:
         if os.path.exists(name):
             os.unlink(name)
@@ -92,6 +98,10 @@ def save_tensors_new(path: str | Path, tensors: dict[str, np.ndarray]) -> None:
 
 def inspect_checkpoint(path: str | Path, *, max_tensors: int = 128, sample: int = 8192) -> dict[str, Any]:
     """Bounded summary of weights (not full weight dumps into LLM context)."""
+    path = Path(path)
+    if path.is_dir() or path.suffix == ".safetensors":
+        from .inspection.safetensors import inspect_safetensors
+        return inspect_safetensors(path, max_tensors=max_tensors)
     tensors = load_tensors(path)
     details = []
     for name in sorted(tensors)[:max_tensors]:
@@ -110,19 +120,20 @@ def inspect_checkpoint(path: str | Path, *, max_tensors: int = 128, sample: int 
 
 
 def _check_policy(policy: dict[str, Any]) -> tuple[set[str], int, float, float]:
-    if policy.get("schema") != "weightbridge.policy.v1":
+    if not isinstance(policy, dict) or policy.get("schema") != "weightbridge.policy.v1":
         raise EditRejected("Invalid policy schema")
     allow = policy.get("allow_tensors")
-    if not isinstance(allow, list) or not allow or not all(isinstance(x, str) and x for x in allow):
+    if (not isinstance(allow, list) or not allow or not all(isinstance(x, str) and x for x in allow)
+            or len(set(allow)) != len(allow)):
         raise EditRejected("Explicit nonempty tensor allowlist required")
     max_entries = policy.get("max_entries")
     fraction = policy.get("max_fraction")
     max_abs_delta = policy.get("max_abs_delta")
     if type(max_entries) is not int or max_entries < 1 or max_entries > 1000000:
         raise EditRejected("Invalid max_entries")
-    if not isinstance(fraction, (int, float)) or not 0 < fraction <= 1:
+    if type(fraction) not in {int, float} or not math.isfinite(fraction) or not 0 < fraction <= 1:
         raise EditRejected("Invalid max_fraction")
-    if not isinstance(max_abs_delta, (int, float)) or not math.isfinite(max_abs_delta) or max_abs_delta <= 0:
+    if type(max_abs_delta) not in {int, float} or not math.isfinite(max_abs_delta) or max_abs_delta <= 0:
         raise EditRejected("Invalid max_abs_delta")
     return set(allow), max_entries, float(fraction), float(max_abs_delta)
 
@@ -141,7 +152,7 @@ def apply_patch(base: str | Path, patch_doc: dict[str, Any], policy: dict[str, A
     if output.exists():
         raise EditRejected("Candidate already exists")
     actual_hash = file_hash(base)
-    if patch_doc.get("schema") != "weightbridge.patch.v1":
+    if not isinstance(patch_doc, dict) or patch_doc.get("schema") != "weightbridge.patch.v1":
         raise EditRejected("Invalid patch schema")
     if patch_doc.get("base_sha256") != actual_hash:
         raise EditRejected("Base checkpoint SHA-256 mismatch")
@@ -193,7 +204,7 @@ def apply_patch(base: str | Path, patch_doc: dict[str, Any], policy: dict[str, A
         arr = tensors[name]
         if not isinstance(idx, list) or len(idx) != arr.ndim or not all(type(i) is int for i in idx):
             raise EditRejected("Invalid index rank/type")
-        if op not in {"set", "add"} or isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+        if not isinstance(op, str) or op not in {"set", "add"} or type(value) not in {int, float} or not math.isfinite(value):
             raise EditRejected("Invalid operation or nonfinite value")
         if any(i < 0 or i >= arr.shape[axis] for axis, i in enumerate(idx)):
             raise EditRejected("Index out of bounds")

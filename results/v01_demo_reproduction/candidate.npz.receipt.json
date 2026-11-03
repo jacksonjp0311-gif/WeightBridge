@@ -1,0 +1,27 @@
+{
+  "base_sha256": "936a8734212d0a20f92769d501d5051fe5ed218c2d40da74551e71585f8fb716",
+  "candidate_path": "results\\v01_demo_reproduction\\candidate.npz",
+  "candidate_sha256": "251147744c69d4398a4c29b5908bc5e7c97efbf44fda80a910fa721d1febe275",
+  "changed_entries": 1,
+  "changed_fraction": 0.16666666666666666,
+  "changes": [
+    {
+      "after": 0.0,
+      "before": 1.5,
+      "index": [
+        1
+      ],
+      "tensor": "b"
+    }
+  ],
+  "evidence_ids": [
+    "synthetic-defect-001"
+  ],
+  "max_abs_delta": 1.5,
+  "note": "No live model deployment or self-learning claim",
+  "patch_sha256": "33b5ecad82f56b82d3313675fd0c16f59bc5a9d99cf01f5f8004f02e8e4c7d91",
+  "policy_sha256": "6690d9ceeea5936301028111cf23f9aef3e62d297d29a0677fa0b3a8d2f1ea0e",
+  "schema": "weightbridge.receipt.v1",
+  "status": "candidate_only_not_promoted",
+  "total_parameters": 6
+}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_directory_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "finish_reason": "max_new_tokens",
+  "generated_tokens": 8,
+  "generation_artifact": "results/published_reproduction/qwen_rollback_smoke.json",
+  "interpretation": "Original checkpoint was loaded in a fresh process after separate candidates had been created; this verifies the source remains available for rollback, not a Qwen behavior recovery.",
+  "model_load_seconds": 5.509050699998625,
+  "original_layer_hashes": {
+    "layer15": "ef60d2c687bab19464dca9c8bfd7777e46ad226df0c9e25643b0bab04b5a1cca",
+    "layer19": "638eedeb701b94aa861f4438e615c07ec6c60ee703db1bfee2de577bb6498c3e"
+  },
+  "original_weight_shard_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "peak_rss_bytes": 2275749888,
+  "schema": "weightbridge.rollback_smoke.v1"
+}

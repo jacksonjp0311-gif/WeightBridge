@@ -1,0 +1,47 @@
+{
+  "variant": "baseline",
+  "load_seconds": 2.567,
+  "parameter_count": 852985920,
+  "peak_process_rss_gib": 2.129,
+  "elapsed_seconds": 52.284,
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "max_new_tokens": 256,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "seed": 0
+  },
+  "rows": [
+    {
+      "id": "arith_42",
+      "variant": "baseline",
+      "seed": 0,
+      "prompt_tokens": 36,
+      "output_tokens": 256,
+      "finish_reason": "length",
+      "correct": false,
+      "boxed": "",
+      "tail_duplicate_8_rate": 0.008264,
+      "seconds": 24.706,
+      "tokens_per_second": 10.362,
+      "text": "Thinking Process:\n\n1.  **Analyze the Request:** The user is asking for the sum of two numbers, 18 and 24. The response must be a step-by-step reasoning process and the final answer enclosed in `\\boxed{}`.\n\n2.  **Identify the Numbers:**\n    *   Number A = 18\n    *   Number B = 24\n\n3.  **Perform the Addition:**\n    *   Units column: $8 + 4 = 12$ (Write down 2, carry over 1)\n    *   Tens column: $1 + 2 + 1 (\\text{carry}) = 4$\n    *   Result: 42\n\n4.  **Verify Calculation:**\n    *   $10 \\times 4 = 40$\n    *   $1 \\times 4 = 4$\n    *   $40 + 4 = 44$ -> Wait. Let's re-add carefully.\n        *   18\n        *   + 24\n        *   -----\n        *   8 + 4 = 12\n        *   1 +"
+    },
+    {
+      "id": "distance_150",
+      "variant": "baseline",
+      "seed": 0,
+      "prompt_tokens": 49,
+      "output_tokens": 256,
+      "finish_reason": "length",
+      "correct": false,
+      "boxed": "",
+      "tail_duplicate_8_rate": 0.0,
+      "seconds": 24.95,
+      "tokens_per_second": 10.26,
+      "text": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   **Given:**\n        *   Speed ($v$) = 60 km/h (kilometers per hour).\n        *   Time ($t$) = 2.5 hours.\n    *   **Goal:** Calculate the distance traveled ($d$).\n    *   **Constraint:** Reason step-by-step and put the final answer in $\\boxed{}$.\n\n2.  **Identify the Relevant Formula:**\n    *   The relationship between Distance, Speed, and Time is given by the formula:\n        $$d = v \\times t$$\n\n3.  **Perform the Calculation:**\n    *   Substitute the values into the formula:\n        $$d = 60 \\text{ km/h} \\times 2.5 \\text{ h}$$\n    *   Multiply 60 by 2.5:\n        *   Method A: $60 \\times 2 = 120$, $60 \\times 0.5 = 30$. Then $120 + 30 = 150$.\n        *   Method B:"
+    }
+  ]
+}

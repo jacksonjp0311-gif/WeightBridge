@@ -1,0 +1,23 @@
+{
+  "schema": "weightbridge.benchmark_config.v1",
+  "name": "qwen-cpu-paired-smoke-v1",
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "variants": ["original", "published-p50c"],
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "prompts": "../datasets/qwen_cpu_smoke_prompts.json",
+  "n_per_prompt": 1,
+  "seed": 0,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "presence_penalty": 1.5,
+  "thinking_enabled": true,
+  "max_new_tokens": 256,
+  "notes": [
+    "Two hand-authored development prompts, not a standard benchmark.",
+    "Reduced generation cap and sample count; not an exact reproduction.",
+    "The prior model run used Transformers PyTorch fallback on CPU, not the paper's vLLM CUDA path."
+  ]
+}

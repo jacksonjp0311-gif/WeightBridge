@@ -141,3 +141,23 @@ def test_projection_budget_rejected(tmp_path):
                               "direction": [1.0] + [0.0] * 9, "strength": 1.0}]}
     with pytest.raises(EditRejected, match="budget"):
         apply_patch(base, patch, policy, tmp_path / "reject.npz")
+
+
+@pytest.mark.parametrize("key,value", [("max_entries", True), ("max_fraction", True),
+                                       ("max_abs_delta", True)])
+def test_policy_rejects_boolean_numeric_limits(tmp_path, key, value):
+    base, patch, policy = fixture_inputs(tmp_path)
+    policy[key] = value
+    with pytest.raises(EditRejected, match="Invalid"):
+        apply_patch(base, patch, policy, tmp_path / "bad.npz")
+
+
+def test_patch_rejects_unhashable_operation_and_duplicate_allowlist(tmp_path):
+    base, patch, policy = fixture_inputs(tmp_path)
+    patch["changes"][0]["op"] = []
+    with pytest.raises(EditRejected, match="operation"):
+        apply_patch(base, patch, policy, tmp_path / "bad-op.npz")
+    patch["changes"][0]["op"] = "set"
+    policy["allow_tensors"] = ["b", "b"]
+    with pytest.raises(EditRejected, match="allowlist"):
+        apply_patch(base, patch, policy, tmp_path / "bad-policy.npz")

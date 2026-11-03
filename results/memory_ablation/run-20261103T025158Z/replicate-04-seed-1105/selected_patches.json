@@ -1,0 +1,100 @@
+{
+  "memory_weight_patch": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "changes": [
+      {
+        "index": [
+          1
+        ],
+        "op": "add",
+        "tensor": "output_bias",
+        "value": -4.0
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors",
+      "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+    ],
+    "projections": [],
+    "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+    "schema": "weightbridge.patch.v1"
+  },
+  "memory_weight_receipt": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "candidate_path": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\memory_ablation\\run-20261103T025158Z\\replicate-04-seed-1105\\memory_weight_candidate.npz",
+    "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+    "changed_entries": 1,
+    "changed_fraction": 0.08333333333333333,
+    "changes": [
+      {
+        "after": 0.5,
+        "before": 4.5,
+        "index": [
+          1
+        ],
+        "tensor": "output_bias"
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors",
+      "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+    ],
+    "max_abs_delta": 4.0,
+    "note": "No live model deployment or self-learning claim",
+    "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+    "policy_sha256": "c40c8b9cb5b53aab969362703517d71bcc0461f5cf9b9d6492348a4875f5788d",
+    "schema": "weightbridge.receipt.v1",
+    "status": "candidate_only_not_promoted",
+    "total_parameters": 12
+  },
+  "weight_only_patch": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "changes": [
+      {
+        "index": [
+          1
+        ],
+        "op": "add",
+        "tensor": "output_bias",
+        "value": -3.0
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors"
+    ],
+    "projections": [],
+    "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+    "schema": "weightbridge.patch.v1"
+  },
+  "weight_only_receipt": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "candidate_path": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\memory_ablation\\run-20261103T025158Z\\replicate-04-seed-1105\\weight_only_candidate.npz",
+    "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+    "changed_entries": 1,
+    "changed_fraction": 0.08333333333333333,
+    "changes": [
+      {
+        "after": 1.5,
+        "before": 4.5,
+        "index": [
+          1
+        ],
+        "tensor": "output_bias"
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors"
+    ],
+    "max_abs_delta": 3.0,
+    "note": "No live model deployment or self-learning claim",
+    "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+    "policy_sha256": "c40c8b9cb5b53aab969362703517d71bcc0461f5cf9b9d6492348a4875f5788d",
+    "schema": "weightbridge.receipt.v1",
+    "status": "candidate_only_not_promoted",
+    "total_parameters": 12
+  }
+}

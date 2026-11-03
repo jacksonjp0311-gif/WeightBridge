@@ -1,0 +1,120 @@
+{
+  "affected_parameters": {
+    "count": 1,
+    "fraction": 0.08333333333333333,
+    "tensor": "output_bias[1]"
+  },
+  "artifact_root": "results/memory_ablation/run-20261103T024116Z",
+  "artifacts": [
+    "mwc_ablation.json",
+    "memory_store",
+    "replicate-00-seed-1001",
+    "replicate-01-seed-1002",
+    "replicate-02-seed-1003",
+    "replicate-03-seed-1004",
+    "replicate-04-seed-1005"
+  ],
+  "disposition": "PASS",
+  "evaluation": {
+    "conditions": {
+      "external_memory_only": {
+        "accuracy": 1.0,
+        "completion_rate": 1.0,
+        "correct": 320,
+        "n": 320,
+        "paired_difference_vs_no_memory_no_edit": {
+          "ci_high": 0.553125,
+          "ci_low": 0.446875,
+          "confidence": 0.95,
+          "mean_difference": 0.5,
+          "n": 320,
+          "resamples": 10000,
+          "seed": 77123
+        }
+      },
+      "memory_plus_weight_edit": {
+        "accuracy": 1.0,
+        "completion_rate": 1.0,
+        "correct": 320,
+        "n": 320,
+        "paired_difference_vs_no_memory_no_edit": {
+          "ci_high": 0.553125,
+          "ci_low": 0.446875,
+          "confidence": 0.95,
+          "mean_difference": 0.5,
+          "n": 320,
+          "resamples": 10000,
+          "seed": 77123
+        }
+      },
+      "no_memory_no_edit": {
+        "accuracy": 0.5,
+        "completion_rate": 1.0,
+        "correct": 160,
+        "n": 320
+      },
+      "weight_edit_only": {
+        "accuracy": 1.0,
+        "completion_rate": 1.0,
+        "correct": 320,
+        "n": 320,
+        "paired_difference_vs_no_memory_no_edit": {
+          "ci_high": 0.553125,
+          "ci_low": 0.446875,
+          "confidence": 0.95,
+          "mean_difference": 0.5,
+          "n": 320,
+          "resamples": 10000,
+          "seed": 77123
+        }
+      }
+    },
+    "holdout_accessed_by_agent": false,
+    "practice_test_separated": true,
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "suite": "synthetic-separated-threshold-v1"
+  },
+  "experiment_id": "mwc-ablation-20261103T024123Z-7de3ee2d",
+  "hypothesis": "A verified synthetic experience should reduce diagnostic evaluator calls while an external-memory-only retrieval rule and a weight edit may both correct the same sparse output-bias defect.",
+  "limitations": [
+    "Synthetic deterministic failure family only.",
+    "External-memory-only condition uses a retrieval-time output-logit rule, not a weight edit.",
+    "One source experience and five synthetic task seeds do not establish general MWC benefit.",
+    "No conventional optimizer baseline or natural-language-model memory ablation."
+  ],
+  "memory_source_experiment": "toy-discovery-20261103T023455Z-8a4c7497",
+  "proposed_modification": {
+    "index": [
+      1
+    ],
+    "op": "add",
+    "tensor": "output_bias",
+    "value": -4.0
+  },
+  "resources": {
+    "agent_tokens": 0,
+    "cpu_seconds": 2.484375,
+    "peak_vram_bytes": null,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "practice_forward_examples": {
+      "external_memory_only": 0,
+      "memory_plus_weight_edit": 640,
+      "weight_edit_only": 2560
+    },
+    "python": "3.12.10",
+    "wall_seconds": 6.556933799991384,
+    "worker_peak_rss_bytes": null
+  },
+  "schema": "weightbridge.experiment.v1",
+  "source_model": {
+    "id": "synthetic-toy-mlp-v1",
+    "sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042"
+  },
+  "timestamp_utc": "2026-11-03T02:41:23.241553+00:00"
+}

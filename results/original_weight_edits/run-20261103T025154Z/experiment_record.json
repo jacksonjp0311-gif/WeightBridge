@@ -1,0 +1,320 @@
+{
+  "affected_parameters": {
+    "candidate_tensor_index": [
+      1
+    ],
+    "count": 1,
+    "fraction": 0.08333333333333333,
+    "tensor": "output_bias"
+  },
+  "agent": {
+    "activation_summary": {
+      "hidden_rms": 0.47940564177577194,
+      "hidden_shape": [
+        64,
+        2
+      ],
+      "logit_mean": 2.25,
+      "logit_rms": 3.502454374095829
+    },
+    "candidate_trials": [
+      {
+        "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 23,
+          "1": 0
+        },
+        "max_abs_delta": 1.0,
+        "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+        "practice_accuracy": 0.640625,
+        "proposed_delta": -1,
+        "trial": 0
+      },
+      {
+        "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 32,
+          "1": 0
+        },
+        "max_abs_delta": 1.0,
+        "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+        "practice_accuracy": 0.5,
+        "proposed_delta": 1,
+        "trial": 1
+      },
+      {
+        "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 12,
+          "1": 0
+        },
+        "max_abs_delta": 2.0,
+        "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+        "practice_accuracy": 0.8125,
+        "proposed_delta": -2,
+        "trial": 2
+      },
+      {
+        "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 32,
+          "1": 0
+        },
+        "max_abs_delta": 2.0,
+        "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+        "practice_accuracy": 0.5,
+        "proposed_delta": 2,
+        "trial": 3
+      },
+      {
+        "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 4,
+          "1": 0
+        },
+        "max_abs_delta": 3.0,
+        "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+        "practice_accuracy": 0.9375,
+        "proposed_delta": -3,
+        "trial": 4
+      },
+      {
+        "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 32,
+          "1": 0
+        },
+        "max_abs_delta": 3.0,
+        "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+        "practice_accuracy": 0.5,
+        "proposed_delta": 3,
+        "trial": 5
+      },
+      {
+        "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "changed_entries": 1,
+        "class_errors": {
+          "0": 0,
+          "1": 0
+        },
+        "max_abs_delta": 4.0,
+        "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+        "practice_accuracy": 1.0,
+        "proposed_delta": -4,
+        "trial": 6
+      }
+    ],
+    "chosen_patch": {
+      "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+      "changes": [
+        {
+          "index": [
+            1
+          ],
+          "op": "add",
+          "tensor": "output_bias",
+          "value": -4.0
+        }
+      ],
+      "evidence_ids": [
+        "practice-only-baseline",
+        "one-sided-class-errors"
+      ],
+      "projections": [],
+      "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+      "schema": "weightbridge.patch.v1"
+    },
+    "evaluator_calls": 8,
+    "holdout_accessed": false,
+    "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.479406.",
+    "iteration_budget": 8,
+    "practice_baseline_accuracy": 0.5,
+    "practice_candidate_accuracy": 1.0,
+    "stop_reason": "practice_target_reached",
+    "type": "deterministic_diagnostic_search_algorithm_not_llm",
+    "weight_inspection": {
+      "hidden_bias": {
+        "dtype": "float64",
+        "l2_norm": 1.4142135623730951,
+        "max": -1.0,
+        "mean": -1.0,
+        "min": -1.0,
+        "shape": [
+          2
+        ]
+      },
+      "input_weight": {
+        "dtype": "float64",
+        "l2_norm": 2.8284271247461903,
+        "max": 2.0,
+        "mean": 1.0,
+        "min": 0.0,
+        "shape": [
+          2,
+          2
+        ]
+      },
+      "output_bias": {
+        "dtype": "float64",
+        "l2_norm": 4.5,
+        "max": 4.5,
+        "mean": 2.25,
+        "min": 0.0,
+        "shape": [
+          2
+        ]
+      },
+      "output_weight": {
+        "dtype": "float64",
+        "l2_norm": 4.242640687119285,
+        "max": 3.0,
+        "mean": 0.0,
+        "min": -3.0,
+        "shape": [
+          2,
+          2
+        ]
+      }
+    }
+  },
+  "artifact_root": "results/original_weight_edits/run-20261103T025154Z",
+  "artifacts": [
+    "agent_result.json",
+    "agent_result.resources.json",
+    "agent_task_practice_only.json",
+    "agent_visible_practice.json",
+    "ai_candidate.npz",
+    "ai_candidate.npz.receipt.json",
+    "ai_patch.json",
+    "ai_receipt.json",
+    "base.npz",
+    "evaluation.json",
+    "hidden_holdout.json",
+    "random_control.npz",
+    "random_control.npz.receipt.json",
+    "random_control_patch.json",
+    "experiment_record.json"
+  ],
+  "control_modification": {
+    "candidate_sha256": "09fb94921b855bc5c2f0aede94f8d852d8d99e6b4ce14f20cafd374ffda8e452",
+    "delta": 4.0,
+    "index": [
+      1
+    ],
+    "parameter_count": 1,
+    "tensor": "output_bias"
+  },
+  "disposition": "PASS",
+  "evaluation": {
+    "dataset": "synthetic-separated-threshold-v1",
+    "holdout_accessed_by_agent": false,
+    "holdout_n": 64,
+    "metrics": {
+      "ai_candidate": {
+        "accuracy": 1.0,
+        "class_errors": {
+          "0": 0,
+          "1": 0
+        },
+        "completion_rate": 1.0,
+        "correct": 64,
+        "mean_output_norm": 1.8320317441266063,
+        "n": 64,
+        "reasoning_loop_rate": null,
+        "token_limit_rate": null
+      },
+      "baseline": {
+        "accuracy": 0.5,
+        "class_errors": {
+          "0": 32,
+          "1": 0
+        },
+        "completion_rate": 1.0,
+        "correct": 32,
+        "mean_output_norm": 4.811603871584108,
+        "n": 64,
+        "reasoning_loop_rate": null,
+        "token_limit_rate": null
+      },
+      "random_control": {
+        "accuracy": 0.5,
+        "class_errors": {
+          "0": 32,
+          "1": 0
+        },
+        "completion_rate": 1.0,
+        "correct": 32,
+        "mean_output_norm": 8.705084571483269,
+        "n": 64,
+        "reasoning_loop_rate": null,
+        "token_limit_rate": null
+      }
+    },
+    "paired_accuracy_difference_ci": {
+      "ci_high": 0.625,
+      "ci_low": 0.375,
+      "confidence": 0.95,
+      "mean_difference": 0.5,
+      "n": 64,
+      "resamples": 10000,
+      "seed": 841
+    },
+    "practice_n": 64,
+    "practice_test_separated": true,
+    "seed": 841,
+    "version": "1"
+  },
+  "experiment_id": "toy-discovery-20261103T025155Z-de88d976",
+  "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.479406.",
+  "measurement_key": "172f0f1a91d781c1b88f989e853d3d6e33e9a292b973582f00bd7debf6d18720",
+  "proposed_modification": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "changes": [
+      {
+        "index": [
+          1
+        ],
+        "op": "add",
+        "tensor": "output_bias",
+        "value": -4.0
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors"
+    ],
+    "projections": [],
+    "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+    "schema": "weightbridge.patch.v1"
+  },
+  "replicate_role": "single_seed_discovery",
+  "resources": {
+    "ai_tokens": 0,
+    "cpu_seconds": 0.34375,
+    "inference_tokens": null,
+    "peak_rss_bytes": 40476672,
+    "peak_vram_bytes": null,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "wall_seconds": 0.7926479000016116
+  },
+  "schema": "weightbridge.experiment.v1",
+  "scientific_scope": "one synthetic injected-bias task; no claim of general learning or intelligence",
+  "source_model": {
+    "id": "synthetic-toy-mlp-v1",
+    "sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "tensor_sha256": {
+      "hidden_bias": "e077172409ed971e7cbc8aaf3f5fc99ffd5806da65b60973369d000cf6a32fc6",
+      "input_weight": "3526e044854fd2fe9b6abfa1d8c95269c18f15184a5b2b6e6e0cef4e64e1a0c2",
+      "output_bias": "58a281fd7e98bbf1ae205cb83546bdfed10e6569aad9b3269b592f87d1e7436b",
+      "output_weight": "a4b5ca084a496034e92831a8b3d801b1f4c5ebdf3e3f1ee5c9f6b7b5e0111b92"
+    }
+  },
+  "timestamp_utc": "2026-11-03T02:51:55.607254+00:00"
+}

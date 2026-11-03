@@ -1,5 +1,7 @@
 # WeightBridge v0.1 — evidence-gated neural weight editing
 
+> This README preserves the original v0.1 guide. The v0.1 source and its verification artifacts remain in the first commit on `dev/weightbridge-v0.2`; the current additions are summarized in the v0.2 section at the end.
+
 A **working, isolated proof-of-concept** for reading model tensors, accepting an AI-proposed **sparse numerical or targeted directional patch as data**, validating the patch against a host-controlled policy, writing an immutable candidate and comparing the result on a frozen holdout. It runs fully offline on CPU.
 
 **Scope:** reproducible sandbox, not a method for teaching arbitrary LLMs new capabilities. The included synthetic classification task simulates a localized failure. Its successful edit is pre-specified to demonstrate patch application and evaluation; **an AI did not discover it**. No source in this package changes PEGASUS, ChatGPT, your installed models or their memories.
@@ -64,7 +66,7 @@ python -m weightbridge compare-demo --base demo-run/base.npz \
   --candidate demo-run/independent-candidate.npz --out demo-run/independent-eval.json
 ```
 
-Supports small unsharded `.safetensors` and NumPy `.npz` files; it does **not** yet patch full sharded Hugging Face checkpoints or support Qwen/Gemma decoding. For large models, reading all weights to inspect them is currently memory-intensive; build a lazily loaded architecture adapter before real-model trials.
+The **v0.1 baseline** supports small unsharded `.safetensors` and NumPy `.npz` files. The v0.2 branch adds indexed sharded safetensors inspection and candidate patching, bounded Hugging Face inference, activation and attention summaries, and controlled activation ablations. Model-specific runtimes remain optional. See `docs/LIMITATIONS.md` for measured compatibility and current HOLDs.
 
 ## What this builds toward
 
@@ -84,4 +86,55 @@ Review `docs/RESEARCH_PLAN.md` for the experimental roadmap and failure modes.
 - Original publicly released logs, not included or copied here: https://github.com/RikiyaT/lm_understand-logs
 - Related weight-editing baselines: https://github.com/zjunlp/EasyEdit
 
-This code is original research scaffolding. It is not an independent reproduction of the paper's benchmark results.
+This code is original research scaffolding. The authors' published p50c edit has been deterministically reconstructed and its two edited-tensor hashes verified. The bounded CPU smoke is not an independent reproduction of the paper's benchmark results.
+
+## v0.2 portable research platform
+
+The v0.1 implementation is preserved byte-for-byte in commit `321547d`. v0.2 adds:
+
+- Lazy, header-validated inspection of unsharded and indexed sharded safetensors. Inspection reports model/tokenizer metadata, tensor hashes, tensor roles, bounded numeric summaries and optional small-matrix SVD summaries.
+- A host-policy-gated HF patch path supporting sparse BF16/F16/F32/F64 edits, selected row/column slices, selected-column projections and bounded optional low-rank updates. Candidate checkpoints are new files/directories with hashes and receipts; there is no promotion API.
+- A separate read-only Transformers inference interface with seed, input, output and time limits; optional activation/attention summaries and reversible activation ablations.
+- Append-only experiment records, paired bootstrap intervals, a synthetic diagnostic worker process, and a synthetic-only Memory-to-Weights Consolidation store.
+- A deterministic reconstruction script and attributed copy of the authors' p50c sparse patch artifact.
+
+Install the core tools and run the tests/demo:
+
+```bash
+python -m pip install -e '.[test,safetensors]'
+python -m pytest -q
+python -m weightbridge inspect path/to/model-directory --max-tensors 16
+python -m weightbridge apply-hf --base path/to/model-directory \
+  --patch patch.json --policy host-policy.json --out candidate-directory
+python experiments/original_weight_edits/run_toy_discovery.py --seed 842
+python experiments/memory_ablation/run_mwc_ablation.py
+```
+
+The included toy run seeds are already present in the committed evidence
+ledger, so use a fresh seed for a new independent run (for example, `--seed
+842`). Historical outputs and hashes are preserved under `results/`; do not
+re-label a replay as an independent sample.
+
+For optional local generation, install `.[inference]`; the runtime requires PyTorch and Transformers. The pinned Qwen model was tested on CPU. The CUDA/vLLM benchmark path used by the authors is unavailable in the measured environment.
+
+Install `.[figures]` to regenerate the evidence-only figures and summary:
+
+```bash
+python -m pip install -e '.[figures]'
+python benchmarks/runners/plot_results.py
+```
+
+The generated plots and `results/benchmark_summary.json` are derived from the
+append-only experiment ledger and its raw artifacts. The authors' published
+scores are never placed in independently measured result columns.
+
+To reconstruct the authors' p50c checkpoint from the pinned original model:
+
+```bash
+python experiments/published_reproduction/rebuild_published_edit.py \
+  --base path/to/pinned-model.safetensors --out path/to/new-p50c.safetensors
+```
+
+The reconstruction verifies the pinned whole-file hash, base tensor hashes, edit bounds, and both published edited-tensor hashes. The original model checkpoint is not stored in this repository. Published scores remain author-reported values; our CPU prompt smoke and synthetic results are separately recorded under `results/`.
+
+Read `docs/ARCHITECTURE.md`, `docs/EXPERIMENT_PROTOCOL.md`, `docs/BENCHMARKS.md`, `docs/FINDINGS.md`, `docs/KNOWLEDGE_LEDGER.md`, `docs/LIMITATIONS.md`, and `docs/ROADMAP.md` for the implementation and evidence status.

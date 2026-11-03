@@ -1,2 +1,2 @@
-"""Evidence-gated, offline neural weight editing research scaffold."""
-__version__ = "0.1.0"
+"""Evidence-gated neural weight inspection and patch research platform."""
+__version__ = "0.2.0"

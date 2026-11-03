@@ -1,0 +1,13 @@
+{
+  "schema": "weightbridge.benchmark_config.v1",
+  "name": "synthetic-mwc-four-condition-v1",
+  "conditions": ["no_memory_no_edit", "external_memory_only", "weight_edit_only", "memory_plus_weight_edit"],
+  "seeds": [1001, 1002, 1003, 1004, 1005],
+  "practice_per_class": 32,
+  "holdout_per_class": 32,
+  "agent_candidate_budget": 8,
+  "memory_source": "prior verified synthetic WeightBridge experiment only",
+  "private_memory_ingestion": false,
+  "notes": ["External-memory-only applies a retrieved output-logit rule and leaves checkpoint bytes unchanged.",
+            "All final holdout evaluations happen after candidate selection."]
+}

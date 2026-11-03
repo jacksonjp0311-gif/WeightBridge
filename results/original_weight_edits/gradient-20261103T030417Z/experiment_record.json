@@ -1,0 +1,246 @@
+{
+  "affected_parameters": {
+    "fractions_by_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "parameter_counts_by_seed": [
+      12,
+      12,
+      12,
+      12,
+      12
+    ]
+  },
+  "artifact_root": "results/original_weight_edits/gradient-20261103T030417Z",
+  "disposition": "PASS",
+  "evaluation": {
+    "baseline_accuracy": 0.5,
+    "candidate_accuracy": 1.0,
+    "dataset": "synthetic-separated-threshold-v1",
+    "holdout_accessed_during_training": false,
+    "paired_difference_ci95": {
+      "ci_high": 0.55625,
+      "ci_low": 0.44375,
+      "confidence": 0.95,
+      "mean_difference": 0.5,
+      "n": 320,
+      "resamples": 10000,
+      "seed": 120501
+    },
+    "practice_test_separated": true,
+    "replicates": [
+      {
+        "artifacts": [
+          "replicate-00-seed-1201/base.npz",
+          "replicate-00-seed-1201/gradient_candidate.npz",
+          "replicate-00-seed-1201/evaluation.json",
+          "replicate-00-seed-1201/holdout_after_freeze.json"
+        ],
+        "baseline": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "correct": 32,
+          "n": 64
+        },
+        "changed_parameter_count": 12,
+        "gradient_candidate": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "15109fc6eca7b12cad0abbe3640e5a3aca8e1e6487a8768fa5ad89687c23d136",
+          "correct": 64,
+          "n": 64
+        },
+        "holdout_n": 64,
+        "parameter_fraction_changed": 1.0,
+        "practice_n": 64,
+        "seed": 1201,
+        "training": {
+          "learning_rate": 0.05,
+          "objective": "cross_entropy",
+          "optimizer": "full_batch_SGD",
+          "practice_loss_end": 0.046051084213051666,
+          "practice_loss_start": 0.8849698769708656,
+          "steps": 400
+        }
+      },
+      {
+        "artifacts": [
+          "replicate-01-seed-1202/base.npz",
+          "replicate-01-seed-1202/gradient_candidate.npz",
+          "replicate-01-seed-1202/evaluation.json",
+          "replicate-01-seed-1202/holdout_after_freeze.json"
+        ],
+        "baseline": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "correct": 32,
+          "n": 64
+        },
+        "changed_parameter_count": 12,
+        "gradient_candidate": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "fdec42639036e7f41bd6533d559164745b806acd106a0b4e3bc5483d34c372fe",
+          "correct": 64,
+          "n": 64
+        },
+        "holdout_n": 64,
+        "parameter_fraction_changed": 1.0,
+        "practice_n": 64,
+        "seed": 1202,
+        "training": {
+          "learning_rate": 0.05,
+          "objective": "cross_entropy",
+          "optimizer": "full_batch_SGD",
+          "practice_loss_end": 0.0482682799815691,
+          "practice_loss_start": 0.9473841836671975,
+          "steps": 400
+        }
+      },
+      {
+        "artifacts": [
+          "replicate-02-seed-1203/base.npz",
+          "replicate-02-seed-1203/gradient_candidate.npz",
+          "replicate-02-seed-1203/evaluation.json",
+          "replicate-02-seed-1203/holdout_after_freeze.json"
+        ],
+        "baseline": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "correct": 32,
+          "n": 64
+        },
+        "changed_parameter_count": 12,
+        "gradient_candidate": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "924362380ab124b02a6415151531bc738698f18489d8953edf147ba8bd7c5974",
+          "correct": 64,
+          "n": 64
+        },
+        "holdout_n": 64,
+        "parameter_fraction_changed": 1.0,
+        "practice_n": 64,
+        "seed": 1203,
+        "training": {
+          "learning_rate": 0.05,
+          "objective": "cross_entropy",
+          "optimizer": "full_batch_SGD",
+          "practice_loss_end": 0.059106165031393924,
+          "practice_loss_start": 0.9689215981257175,
+          "steps": 400
+        }
+      },
+      {
+        "artifacts": [
+          "replicate-03-seed-1204/base.npz",
+          "replicate-03-seed-1204/gradient_candidate.npz",
+          "replicate-03-seed-1204/evaluation.json",
+          "replicate-03-seed-1204/holdout_after_freeze.json"
+        ],
+        "baseline": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "correct": 32,
+          "n": 64
+        },
+        "changed_parameter_count": 12,
+        "gradient_candidate": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "f2e63276cfe753c74a966d2ed2e29a2d3873a51e783f7fa67b9f5b8bf9c1e594",
+          "correct": 64,
+          "n": 64
+        },
+        "holdout_n": 64,
+        "parameter_fraction_changed": 1.0,
+        "practice_n": 64,
+        "seed": 1204,
+        "training": {
+          "learning_rate": 0.05,
+          "objective": "cross_entropy",
+          "optimizer": "full_batch_SGD",
+          "practice_loss_end": 0.05534291196556921,
+          "practice_loss_start": 1.1485750926986715,
+          "steps": 400
+        }
+      },
+      {
+        "artifacts": [
+          "replicate-04-seed-1205/base.npz",
+          "replicate-04-seed-1205/gradient_candidate.npz",
+          "replicate-04-seed-1205/evaluation.json",
+          "replicate-04-seed-1205/holdout_after_freeze.json"
+        ],
+        "baseline": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "correct": 32,
+          "n": 64
+        },
+        "changed_parameter_count": 12,
+        "gradient_candidate": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "31b3f894de296e1219a0cb29bd10006160ea33d9878bbb9508089482de4bc5f8",
+          "correct": 64,
+          "n": 64
+        },
+        "holdout_n": 64,
+        "parameter_fraction_changed": 1.0,
+        "practice_n": 64,
+        "seed": 1205,
+        "training": {
+          "learning_rate": 0.05,
+          "objective": "cross_entropy",
+          "optimizer": "full_batch_SGD",
+          "practice_loss_end": 0.06196897111548223,
+          "practice_loss_start": 1.0370137874565466,
+          "steps": 400
+        }
+      }
+    ],
+    "seeds": [
+      1201,
+      1202,
+      1203,
+      1204,
+      1205
+    ]
+  },
+  "experiment_id": "toy-gradient-baseline-20261103T030418Z-bc248dcf",
+  "hypothesis": "Full-batch gradient descent on labeled practice rows can correct the injected output-bias defect, at a distinct training and parameter-change cost.",
+  "proposed_modification": {
+    "learning_rate": 0.05,
+    "objective": "cross_entropy",
+    "optimizer": "full_batch_SGD",
+    "steps": 400,
+    "type": "conventional_gradient_training"
+  },
+  "resources": {
+    "ai_tokens": 0,
+    "cpu_seconds": 0.234375,
+    "inference_tokens": 0,
+    "peak_rss_bytes": 40910848,
+    "peak_vram_bytes": null,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "wall_seconds": 0.26210429999628104
+  },
+  "schema": "weightbridge.experiment.v1",
+  "scientific_scope": "synthetic optimizer baseline only; not a Qwen or language-model fine-tuning comparison",
+  "source_model": {
+    "id": "synthetic-toy-mlp-v1",
+    "sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042"
+  },
+  "timestamp_utc": "2026-11-03T03:04:18.221732+00:00"
+}

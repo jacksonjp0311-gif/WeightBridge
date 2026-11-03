@@ -1,0 +1,64 @@
+{
+  "captured_at_utc": "2026-11-03T03:01:55.011193+00:00",
+  "cpu": {
+    "logical_processors": 32,
+    "name": "AMD Ryzen AI MAX+ 395 w/ Radeon 8060S",
+    "physical_cores": 16
+  },
+  "gpu": {
+    "adapter_reported_memory_bytes": 4293918720,
+    "cuda_available": false,
+    "memory_type": "integrated/shared system memory",
+    "name": "AMD Radeon(TM) 8060S Graphics",
+    "vram_measurement": "unavailable"
+  },
+  "limitations": [
+    "Integrated GPU has no CUDA runtime; GPU memory is shared and is not reported as dedicated VRAM.",
+    "Available RAM and free disk are snapshots and will vary.",
+    "datasets and math-verify extras are not installed in the project environment."
+  ],
+  "memory": {
+    "available_bytes_at_capture": 83966746624,
+    "total_bytes": 132766306304
+  },
+  "model_runtime": "Transformers CPU inference with PyTorch fallback attention kernels; no CUDA/vLLM runtime",
+  "os": {
+    "name": "Windows 11 Pro",
+    "version": "10.0.26200.0"
+  },
+  "pinned_model": {
+    "availability": "Downloaded in external TEMP cache for this session; not stored in project or committed",
+    "id": "Qwen/Qwen3.5-0.8B",
+    "checkpoint_state_entries_including_mtp": 873438784,
+    "transformers_runtime_parameters_excluding_mtp": 852985920,
+    "mtp_auxiliary_entries": 20452864,
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "single_file_bytes": 1746942600
+  },
+  "python_inference_environment": {
+    "causal_conv1d_available": false,
+    "cuda_available": false,
+    "datasets_available": false,
+    "flash_linear_attention_available": false,
+    "math_verify_available": false,
+    "psutil": "7.2.2",
+    "python": "3.12.10",
+    "safetensors": "0.8.0",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "vllm_available": false
+  },
+  "python_project_environment": {
+    "numpy": "2.5.4",
+    "psutil": "7.2.2",
+    "pytest": "9.2.0",
+    "python": "3.12.10",
+    "safetensors": "0.8.0",
+    "matplotlib_optional_figures": "3.11.2"
+  },
+  "schema": "weightbridge.system_capabilities.v1",
+  "storage": {
+    "free_bytes_at_capture": 499941556224,
+    "volume": "C:"
+  }
+}

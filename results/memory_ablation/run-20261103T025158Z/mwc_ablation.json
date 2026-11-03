@@ -1,0 +1,3279 @@
+{
+  "artifacts": [
+    "mwc_ablation.json",
+    "memory_store",
+    "replicate-00-seed-1101",
+    "replicate-01-seed-1102",
+    "replicate-02-seed-1103",
+    "replicate-03-seed-1104",
+    "replicate-04-seed-1105"
+  ],
+  "conditions": {
+    "external_memory_only": {
+      "accuracy": 1.0,
+      "completion_rate": 1.0,
+      "correct": 320,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.55625,
+        "ci_low": 0.446875,
+        "confidence": 0.95,
+        "mean_difference": 0.5,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    },
+    "memory_plus_weight_edit": {
+      "accuracy": 1.0,
+      "completion_rate": 1.0,
+      "correct": 320,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.55625,
+        "ci_low": 0.446875,
+        "confidence": 0.95,
+        "mean_difference": 0.5,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    },
+    "no_memory_no_edit": {
+      "accuracy": 0.5,
+      "completion_rate": 1.0,
+      "correct": 160,
+      "n": 320
+    },
+    "weight_edit_only": {
+      "accuracy": 0.9625,
+      "completion_rate": 1.0,
+      "correct": 308,
+      "n": 320,
+      "paired_difference_vs_no_memory_no_edit": {
+        "ci_high": 0.51875,
+        "ci_low": 0.409375,
+        "confidence": 0.95,
+        "mean_difference": 0.4625,
+        "n": 320,
+        "resamples": 10000,
+        "seed": 77123
+      }
+    }
+  },
+  "disposition": "PASS",
+  "experiment_id": "mwc-ablation-20261103T025205Z-6fd71066",
+  "holdout_accessed_by_agents": false,
+  "limitations": [
+    "Synthetic deterministic failure family only.",
+    "External-memory-only condition uses a retrieval-time output-logit rule, not a weight edit.",
+    "One source experience and five synthetic task seeds do not establish general MWC benefit.",
+    "No conventional optimizer baseline or natural-language-model memory ablation."
+  ],
+  "policy": {
+    "candidate_limit": 8,
+    "dataset_seeds": [
+      1101,
+      1102,
+      1103,
+      1104,
+      1105
+    ],
+    "max_abs_delta": 5.0,
+    "max_entries": 1
+  },
+  "practice_holdout_separated": true,
+  "prior_verified_experience": {
+    "intervention": {
+      "index": [
+        1
+      ],
+      "op": "add",
+      "tensor": "output_bias",
+      "value": -4.0
+    },
+    "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+    "model_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "observation_id": "toy-discovery-20261103T025155Z-de88d976",
+    "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5"
+  },
+  "replicates": [
+    {
+      "agent_results": {
+        "memory_plus_weight_edit": {
+          "activation_summary": {
+            "hidden_rms": 0.4827516418524737,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5382256547305295
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4.0,
+              "trial": 0
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors",
+              "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 2,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.482752.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.5758959999948274,
+          "worker_resources": {
+            "cpu_seconds": 0.203125,
+            "peak_rss_bytes": 36057088,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:00.118947+00:00",
+            "wall_seconds": 0.21203569998033345
+          }
+        },
+        "weight_edit_only": {
+          "activation_summary": {
+            "hidden_rms": 0.4827516418524737,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5382256547305295
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 1,
+              "trial": 0
+            },
+            {
+              "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 23,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+              "practice_accuracy": 0.640625,
+              "proposed_delta": -1,
+              "trial": 1
+            },
+            {
+              "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 2,
+              "trial": 2
+            },
+            {
+              "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 14,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+              "practice_accuracy": 0.78125,
+              "proposed_delta": -2,
+              "trial": 3
+            },
+            {
+              "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 3,
+              "trial": 4
+            },
+            {
+              "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 7,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+              "practice_accuracy": 0.890625,
+              "proposed_delta": -3,
+              "trial": 5
+            },
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4,
+              "trial": 6
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 8,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.482752.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.681894800014561,
+          "worker_resources": {
+            "cpu_seconds": 0.25,
+            "peak_rss_bytes": 36118528,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:51:59.540674+00:00",
+            "wall_seconds": 0.29713779999292456
+          }
+        }
+      },
+      "candidate_sha256": {
+        "memory_plus_weight_edit": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "weight_edit_only": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde"
+      },
+      "holdout_agent_access": false,
+      "holdout_n": 64,
+      "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+      "practice_evaluator_calls": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 2,
+        "weight_edit_only": 8
+      },
+      "practice_forward_examples": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 128,
+        "weight_edit_only": 512
+      },
+      "practice_n": 64,
+      "results": {
+        "external_memory_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "checkpoint_unchanged": true,
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "intervention_location": "external decision-time logit bias; checkpoint unmodified",
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "memory_plus_weight_edit": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "no_memory_no_edit": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "class_errors": {
+            "0": 32,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 32,
+          "n": 64,
+          "per_example_correct": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        "weight_edit_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "seed": 1101
+    },
+    {
+      "agent_results": {
+        "memory_plus_weight_edit": {
+          "activation_summary": {
+            "hidden_rms": 0.4980811543901072,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5622736820347565
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4.0,
+              "trial": 0
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors",
+              "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 2,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.498081.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.598835600016173,
+          "worker_resources": {
+            "cpu_seconds": 0.203125,
+            "peak_rss_bytes": 35905536,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:01.431923+00:00",
+            "wall_seconds": 0.21813429999747314
+          }
+        },
+        "weight_edit_only": {
+          "activation_summary": {
+            "hidden_rms": 0.4980811543901072,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5622736820347565
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 1,
+              "trial": 0
+            },
+            {
+              "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 23,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+              "practice_accuracy": 0.640625,
+              "proposed_delta": -1,
+              "trial": 1
+            },
+            {
+              "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 2,
+              "trial": 2
+            },
+            {
+              "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 11,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+              "practice_accuracy": 0.828125,
+              "proposed_delta": -2,
+              "trial": 3
+            },
+            {
+              "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 3,
+              "trial": 4
+            },
+            {
+              "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 5,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+              "practice_accuracy": 0.921875,
+              "proposed_delta": -3,
+              "trial": 5
+            },
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4,
+              "trial": 6
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 8,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.498081.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.6725528000097256,
+          "worker_resources": {
+            "cpu_seconds": 0.296875,
+            "peak_rss_bytes": 36040704,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:00.829835+00:00",
+            "wall_seconds": 0.29810250000446104
+          }
+        }
+      },
+      "candidate_sha256": {
+        "memory_plus_weight_edit": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "weight_edit_only": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde"
+      },
+      "holdout_agent_access": false,
+      "holdout_n": 64,
+      "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+      "practice_evaluator_calls": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 2,
+        "weight_edit_only": 8
+      },
+      "practice_forward_examples": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 128,
+        "weight_edit_only": 512
+      },
+      "practice_n": 64,
+      "results": {
+        "external_memory_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "checkpoint_unchanged": true,
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "intervention_location": "external decision-time logit bias; checkpoint unmodified",
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "memory_plus_weight_edit": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "no_memory_no_edit": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "class_errors": {
+            "0": 32,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 32,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true
+          ]
+        },
+        "weight_edit_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "seed": 1102
+    },
+    {
+      "agent_results": {
+        "memory_plus_weight_edit": {
+          "activation_summary": {
+            "hidden_rms": 0.48413518679491013,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5051118218847237
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4.0,
+              "trial": 0
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors",
+              "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 2,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.484135.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.5743055999919306,
+          "worker_resources": {
+            "cpu_seconds": 0.15625,
+            "peak_rss_bytes": 35966976,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:02.718654+00:00",
+            "wall_seconds": 0.20034219999797642
+          }
+        },
+        "weight_edit_only": {
+          "activation_summary": {
+            "hidden_rms": 0.48413518679491013,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5051118218847237
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 1,
+              "trial": 0
+            },
+            {
+              "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 23,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+              "practice_accuracy": 0.640625,
+              "proposed_delta": -1,
+              "trial": 1
+            },
+            {
+              "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 2,
+              "trial": 2
+            },
+            {
+              "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 16,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+              "practice_accuracy": 0.75,
+              "proposed_delta": -2,
+              "trial": 3
+            },
+            {
+              "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 3,
+              "trial": 4
+            },
+            {
+              "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 7,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+              "practice_accuracy": 0.890625,
+              "proposed_delta": -3,
+              "trial": 5
+            },
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4,
+              "trial": 6
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 8,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.484135.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.6655327999906149,
+          "worker_resources": {
+            "cpu_seconds": 0.265625,
+            "peak_rss_bytes": 36012032,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:02.141457+00:00",
+            "wall_seconds": 0.29469739997875877
+          }
+        }
+      },
+      "candidate_sha256": {
+        "memory_plus_weight_edit": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "weight_edit_only": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde"
+      },
+      "holdout_agent_access": false,
+      "holdout_n": 64,
+      "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+      "practice_evaluator_calls": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 2,
+        "weight_edit_only": 8
+      },
+      "practice_forward_examples": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 128,
+        "weight_edit_only": 512
+      },
+      "practice_n": 64,
+      "results": {
+        "external_memory_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "checkpoint_unchanged": true,
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "intervention_location": "external decision-time logit bias; checkpoint unmodified",
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "memory_plus_weight_edit": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "no_memory_no_edit": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "class_errors": {
+            "0": 32,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 32,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        "weight_edit_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "seed": 1103
+    },
+    {
+      "agent_results": {
+        "memory_plus_weight_edit": {
+          "activation_summary": {
+            "hidden_rms": 0.5055688143348899,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5644347123321425
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4.0,
+              "trial": 0
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors",
+              "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 2,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.505569.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.607429099996807,
+          "worker_resources": {
+            "cpu_seconds": 0.1875,
+            "peak_rss_bytes": 36003840,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:04.057520+00:00",
+            "wall_seconds": 0.21758589998353273
+          }
+        },
+        "weight_edit_only": {
+          "activation_summary": {
+            "hidden_rms": 0.5055688143348899,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.5644347123321425
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 1,
+              "trial": 0
+            },
+            {
+              "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 19,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+              "practice_accuracy": 0.703125,
+              "proposed_delta": -1,
+              "trial": 1
+            },
+            {
+              "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 2,
+              "trial": 2
+            },
+            {
+              "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 14,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+              "practice_accuracy": 0.78125,
+              "proposed_delta": -2,
+              "trial": 3
+            },
+            {
+              "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 3,
+              "trial": 4
+            },
+            {
+              "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 7,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+              "practice_accuracy": 0.890625,
+              "proposed_delta": -3,
+              "trial": 5
+            },
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4,
+              "trial": 6
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 8,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.505569.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.6839696999813896,
+          "worker_resources": {
+            "cpu_seconds": 0.25,
+            "peak_rss_bytes": 35987456,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:03.446562+00:00",
+            "wall_seconds": 0.30092200002400205
+          }
+        }
+      },
+      "candidate_sha256": {
+        "memory_plus_weight_edit": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "weight_edit_only": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde"
+      },
+      "holdout_agent_access": false,
+      "holdout_n": 64,
+      "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+      "practice_evaluator_calls": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 2,
+        "weight_edit_only": 8
+      },
+      "practice_forward_examples": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 128,
+        "weight_edit_only": 512
+      },
+      "practice_n": 64,
+      "results": {
+        "external_memory_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "checkpoint_unchanged": true,
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "intervention_location": "external decision-time logit bias; checkpoint unmodified",
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "memory_plus_weight_edit": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "no_memory_no_edit": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "class_errors": {
+            "0": 32,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 32,
+          "n": 64,
+          "per_example_correct": [
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        "weight_edit_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "seed": 1104
+    },
+    {
+      "agent_results": {
+        "memory_plus_weight_edit": {
+          "activation_summary": {
+            "hidden_rms": 0.48375785236036173,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.553950658285974
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4.0,
+              "trial": 0
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -4.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors",
+              "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 2,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.483758.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 1.0,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.6128409999946598,
+          "worker_resources": {
+            "cpu_seconds": 0.1875,
+            "peak_rss_bytes": 35827712,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:05.396525+00:00",
+            "wall_seconds": 0.2162047000019811
+          }
+        },
+        "weight_edit_only": {
+          "activation_summary": {
+            "hidden_rms": 0.48375785236036173,
+            "hidden_shape": [
+              64,
+              2
+            ],
+            "logit_mean": 2.25,
+            "logit_rms": 3.553950658285974
+          },
+          "candidate_trials": [
+            {
+              "candidate_sha256": "4604bab63c76d40162c309f16744088fb4e4f1390d7efc2301c4090f33be8d3e",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "526757338ec60c812c4af95355fd240ad8a8cfe380f34ad6fd37a0e8a944c256",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 1,
+              "trial": 0
+            },
+            {
+              "candidate_sha256": "110ee6f8d66f92f0bca4508871223e0d7a586883f2c3c8d2cb0abe683524f303",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 25,
+                "1": 0
+              },
+              "max_abs_delta": 1.0,
+              "patch_sha256": "df870ac87d45d920294641f69f418255d8d06d292c5813a826d18ac9c573bba3",
+              "practice_accuracy": 0.609375,
+              "proposed_delta": -1,
+              "trial": 1
+            },
+            {
+              "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 2,
+              "trial": 2
+            },
+            {
+              "candidate_sha256": "86c8636d4bdc621fd26a14047add51ad926321d31a59f60ac403b5a2dcdc264b",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 12,
+                "1": 0
+              },
+              "max_abs_delta": 2.0,
+              "patch_sha256": "8575156b36330521cd238fc73962e6debafc7600570fbc99618430a7ce878238",
+              "practice_accuracy": 0.8125,
+              "proposed_delta": -2,
+              "trial": 3
+            },
+            {
+              "candidate_sha256": "5a71f21d8b16e62426b4b15133fe8e601de43ef1c917eb8ec9038bba6c7ecefe",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 32,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "b6c06ebdf60d880af99a0c807dfe6a7203f6fa71002b05309ac5ad559e8fa75d",
+              "practice_accuracy": 0.5,
+              "proposed_delta": 3,
+              "trial": 4
+            },
+            {
+              "candidate_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 3,
+                "1": 0
+              },
+              "max_abs_delta": 3.0,
+              "patch_sha256": "a545b36964ce2ca3f45eaa0c8fd8c6613caf636ed2f7de5d1657d09f0784b571",
+              "practice_accuracy": 0.953125,
+              "proposed_delta": -3,
+              "trial": 5
+            },
+            {
+              "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+              "changed_entries": 1,
+              "class_errors": {
+                "0": 0,
+                "1": 0
+              },
+              "max_abs_delta": 4.0,
+              "patch_sha256": "7b5e09690693664b5247f40950d3924efd3546a58e294da3a2aaac440658f6f5",
+              "practice_accuracy": 1.0,
+              "proposed_delta": -4,
+              "trial": 6
+            }
+          ],
+          "chosen_patch": {
+            "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+            "changes": [
+              {
+                "index": [
+                  1
+                ],
+                "op": "add",
+                "tensor": "output_bias",
+                "value": -3.0
+              }
+            ],
+            "evidence_ids": [
+              "practice-only-baseline",
+              "one-sided-class-errors"
+            ],
+            "projections": [],
+            "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor.",
+            "schema": "weightbridge.patch.v1"
+          },
+          "evaluator_calls": 8,
+          "holdout_accessed": false,
+          "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.483758.",
+          "iteration_budget": 8,
+          "practice_baseline_accuracy": 0.5,
+          "practice_candidate_accuracy": 0.953125,
+          "stop_reason": "practice_target_reached",
+          "weight_inspection": {
+            "hidden_bias": {
+              "dtype": "float64",
+              "l2_norm": 1.4142135623730951,
+              "max": -1.0,
+              "mean": -1.0,
+              "min": -1.0,
+              "shape": [
+                2
+              ]
+            },
+            "input_weight": {
+              "dtype": "float64",
+              "l2_norm": 2.8284271247461903,
+              "max": 2.0,
+              "mean": 1.0,
+              "min": 0.0,
+              "shape": [
+                2,
+                2
+              ]
+            },
+            "output_bias": {
+              "dtype": "float64",
+              "l2_norm": 4.5,
+              "max": 4.5,
+              "mean": 2.25,
+              "min": 0.0,
+              "shape": [
+                2
+              ]
+            },
+            "output_weight": {
+              "dtype": "float64",
+              "l2_norm": 4.242640687119285,
+              "max": 3.0,
+              "mean": 0.0,
+              "min": -3.0,
+              "shape": [
+                2,
+                2
+              ]
+            }
+          },
+          "worker_elapsed_seconds": 0.679741500003729,
+          "worker_resources": {
+            "cpu_seconds": 0.28125,
+            "peak_rss_bytes": 36061184,
+            "peak_vram_bytes": null,
+            "platform": "Windows-11-10.0.26200-SP0",
+            "python": "3.12.10",
+            "recorded_at": "2026-11-03T02:52:04.781322+00:00",
+            "wall_seconds": 0.3041439999942668
+          }
+        }
+      },
+      "candidate_sha256": {
+        "memory_plus_weight_edit": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+        "weight_edit_only": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c"
+      },
+      "holdout_agent_access": false,
+      "holdout_n": 64,
+      "memory_record_id": "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f",
+      "practice_evaluator_calls": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 2,
+        "weight_edit_only": 8
+      },
+      "practice_forward_examples": {
+        "external_memory_only": 0,
+        "memory_plus_weight_edit": 128,
+        "weight_edit_only": 512
+      },
+      "practice_n": 64,
+      "results": {
+        "external_memory_only": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "checkpoint_unchanged": true,
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "intervention_location": "external decision-time logit bias; checkpoint unmodified",
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "memory_plus_weight_edit": {
+          "accuracy": 1.0,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+          "class_errors": {
+            "0": 0,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 64,
+          "n": 64,
+          "per_example_correct": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "no_memory_no_edit": {
+          "accuracy": 0.5,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+          "class_errors": {
+            "0": 32,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 32,
+          "n": 64,
+          "per_example_correct": [
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "weight_edit_only": {
+          "accuracy": 0.8125,
+          "candidate_reloaded_from_file": true,
+          "checkpoint_sha256": "4f4f6d2f1dd18a0f77ab238f62b7751ccc950574bd773e152ac9a7f718d9a85c",
+          "class_errors": {
+            "0": 12,
+            "1": 0
+          },
+          "completion_rate": 1.0,
+          "correct": 52,
+          "n": 64,
+          "per_example_correct": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "seed": 1105
+    }
+  ],
+  "resources": {
+    "agent_tokens": 0,
+    "cpu_seconds": 2.765625,
+    "parent_peak_rss_bytes": 43552768,
+    "peak_vram_bytes": null,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "practice_forward_examples": {
+      "external_memory_only": 0,
+      "memory_plus_weight_edit": 640,
+      "weight_edit_only": 2560
+    },
+    "python": "3.12.10",
+    "wall_seconds": 6.725933299981989,
+    "worker_peak_rss_bytes": 36118528
+  },
+  "schema": "weightbridge.mwc_ablation.v1",
+  "timestamp_utc": "2026-11-03T02:52:05.585534+00:00"
+}

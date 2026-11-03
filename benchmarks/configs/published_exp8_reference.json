@@ -1,0 +1,32 @@
+{
+  "schema": "weightbridge.benchmark_config.v1",
+  "name": "published-exp8-reference",
+  "source": "https://rikiyat.github.io/blog/weight-space-programming/",
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "published_sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "thinking_enabled": true,
+    "max_new_tokens": 32768
+  },
+  "published_samples_per_problem": {
+    "MATH-500": 4,
+    "GSM8K": 2,
+    "IFEval": 2
+  },
+  "datasets_and_evaluators": {
+    "MATH-500": {"dataset": "HuggingFaceH4/MATH-500", "split": "test", "grader": "math-verify 0.9.0"},
+    "GSM8K": {"dataset": "openai/gsm8k", "config": "main", "split": "test", "grader": "math-verify 0.9.0"},
+    "IFEval": {"dataset": "google/IFEval", "split": "train (541 prompts)", "grader": "Google instruction_following_eval instruction registry"}
+  },
+  "dataset_preparation": "benchmarks/runners/prepare_exp8_datasets.py; generated JSON is content-hashed, source revisions and dataset fingerprints recorded",
+  "math_prompt_suffix": "Please reason step by step, and put your final answer within \\boxed{}.",
+  "reported_only_not_independent_measurements": {
+    "base": {"MATH-500": 0.079, "GSM8K": 0.138, "IFEval": 0.210, "MATH-500_token_limit": 0.930},
+    "p50": {"MATH-500": 0.481, "GSM8K": 0.671, "IFEval": 0.623, "MATH-500_token_limit": 0.331}
+  },
+  "status": "reference_protocol; full benchmark reproduction HOLD"
+}

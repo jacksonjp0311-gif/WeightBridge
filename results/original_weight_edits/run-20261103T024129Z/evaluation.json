@@ -1,0 +1,41 @@
+{
+  "ai_candidate": {
+    "accuracy": 1.0,
+    "class_errors": {
+      "0": 0,
+      "1": 0
+    },
+    "completion_rate": 1.0,
+    "correct": 64,
+    "mean_output_norm": 1.9918574525104442,
+    "n": 64,
+    "reasoning_loop_rate": null,
+    "token_limit_rate": null
+  },
+  "baseline": {
+    "accuracy": 0.5,
+    "class_errors": {
+      "0": 32,
+      "1": 0
+    },
+    "completion_rate": 1.0,
+    "correct": 32,
+    "mean_output_norm": 4.762997036051118,
+    "n": 64,
+    "reasoning_loop_rate": null,
+    "token_limit_rate": null
+  },
+  "random_control": {
+    "accuracy": 0.5,
+    "class_errors": {
+      "0": 32,
+      "1": 0
+    },
+    "completion_rate": 1.0,
+    "correct": 32,
+    "mean_output_norm": 8.630305115953018,
+    "n": 64,
+    "reasoning_loop_rate": null,
+    "token_limit_rate": null
+  }
+}

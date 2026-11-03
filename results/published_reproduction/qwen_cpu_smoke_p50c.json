@@ -1,0 +1,47 @@
+{
+  "variant": "published_p50",
+  "load_seconds": 2.563,
+  "parameter_count": 852985920,
+  "peak_process_rss_gib": 2.129,
+  "elapsed_seconds": 51.867,
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "max_new_tokens": 256,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "seed": 0
+  },
+  "rows": [
+    {
+      "id": "arith_42",
+      "variant": "published_p50",
+      "seed": 0,
+      "prompt_tokens": 36,
+      "output_tokens": 256,
+      "finish_reason": "length",
+      "correct": false,
+      "boxed": "",
+      "tail_duplicate_8_rate": 0.0,
+      "seconds": 24.808,
+      "tokens_per_second": 10.319,
+      "text": "Thinking Process:\n\n1.  **Analyze the Request:** The user is asking for the sum of two numbers, $18 + 24$. They want a step-by-step reasoning and the final answer in a specific format.\n\n2.  **Perform the Calculation:**\n    *   Number 1: 18\n    *   Number 2: 24\n    *   Units digit addition: $8 + 4 = 12$ (carry 1)\n    *   Tens digit addition: $1 + 2 + \\text{carry} = 3 + 1 = 4$\n    *   Result: 42\n\n3.  **Formulate the Output:**\n    *   State the addition clearly.\n    *   Show the steps (column addition or mental math).\n    *   Provide the final result inside `\\boxed{}`.\n\n4.  **Drafting the response:**\n    *   To find the sum of 18 and 24, we add them together.\n    *   $18 + 24 = 42$.\n    *   Alternatively, break it down: $10 + 20 = 3"
+    },
+    {
+      "id": "distance_150",
+      "variant": "published_p50",
+      "seed": 0,
+      "prompt_tokens": 49,
+      "output_tokens": 256,
+      "finish_reason": "length",
+      "correct": false,
+      "boxed": null,
+      "tail_duplicate_8_rate": 0.0,
+      "seconds": 24.446,
+      "tokens_per_second": 10.472,
+      "text": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   **Given:**\n        *   Speed ($v$) = 60 km/h (kilometers per hour).\n        *   Time ($t$) = 2.5 hours.\n    *   **Goal:** Calculate the distance ($d$).\n    *   **Format:** Step-by-step reasoning and a boxed final answer.\n\n2.  **Identify the Relevant Formula:**\n    *   The relationship between distance, speed, and time is given by the formula: $d = v \\times t$.\n    *   Where:\n        *   $d$ is distance in units of length/time (km or m).\n        *   $v$ is speed in units of length/time (km/h or m/s).\n        *   $t$ is time in units of time (hours or seconds).\n\n3.  **Perform the Calculation:**\n    *   Substitute the given values into the formula:\n        $$d = 60 \\text{ km/h} \\times 2.5 \\text{ h}$$\n    *   *Calculation method 1:* Multiply"
+    }
+  ]
+}

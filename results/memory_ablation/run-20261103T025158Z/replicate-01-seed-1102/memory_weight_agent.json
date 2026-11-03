@@ -1,0 +1,98 @@
+{
+  "activation_summary": {
+    "hidden_rms": 0.4980811543901072,
+    "hidden_shape": [
+      64,
+      2
+    ],
+    "logit_mean": 2.25,
+    "logit_rms": 3.5622736820347565
+  },
+  "candidate_trials": [
+    {
+      "candidate_sha256": "8c7d945ce345de33f352367f67a54e9dac0cdf259e26c26b4c4e8c3070dbcfde",
+      "changed_entries": 1,
+      "class_errors": {
+        "0": 0,
+        "1": 0
+      },
+      "max_abs_delta": 4.0,
+      "patch_sha256": "30e0a9be5fffbebce91a56ba771958ed5915d96ae27e955c52c4178795f11038",
+      "practice_accuracy": 1.0,
+      "proposed_delta": -4.0,
+      "trial": 0
+    }
+  ],
+  "chosen_patch": {
+    "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+    "changes": [
+      {
+        "index": [
+          1
+        ],
+        "op": "add",
+        "tensor": "output_bias",
+        "value": -4.0
+      }
+    ],
+    "evidence_ids": [
+      "practice-only-baseline",
+      "one-sided-class-errors",
+      "05e8cd833aaa69f710dde6e3de3bf97b3c8ff4897ee4598fd7974c1bda61bb6f"
+    ],
+    "projections": [],
+    "reason": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0.",
+    "schema": "weightbridge.patch.v1"
+  },
+  "evaluator_calls": 2,
+  "holdout_accessed": false,
+  "hypothesis": "Practice failures are one-sided and the output-layer intercept is a plausible shared cause; test bounded scalar shifts on the authorized output_bias tensor. Retrieved verified synthetic experience: Verified record 05e8cd833aaa69f7 for the same synthetic model hash found a one-entry intervention on output_bias[1], delta -4.0. Observed practice errors by true class: {'0': 32, '1': 0}; output-bias mean=2.250000; hidden activation RMS=0.498081.",
+  "iteration_budget": 8,
+  "practice_baseline_accuracy": 0.5,
+  "practice_candidate_accuracy": 1.0,
+  "stop_reason": "practice_target_reached",
+  "weight_inspection": {
+    "hidden_bias": {
+      "dtype": "float64",
+      "l2_norm": 1.4142135623730951,
+      "max": -1.0,
+      "mean": -1.0,
+      "min": -1.0,
+      "shape": [
+        2
+      ]
+    },
+    "input_weight": {
+      "dtype": "float64",
+      "l2_norm": 2.8284271247461903,
+      "max": 2.0,
+      "mean": 1.0,
+      "min": 0.0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "output_bias": {
+      "dtype": "float64",
+      "l2_norm": 4.5,
+      "max": 4.5,
+      "mean": 2.25,
+      "min": 0.0,
+      "shape": [
+        2
+      ]
+    },
+    "output_weight": {
+      "dtype": "float64",
+      "l2_norm": 4.242640687119285,
+      "max": 3.0,
+      "mean": 0.0,
+      "min": -3.0,
+      "shape": [
+        2,
+        2
+      ]
+    }
+  }
+}

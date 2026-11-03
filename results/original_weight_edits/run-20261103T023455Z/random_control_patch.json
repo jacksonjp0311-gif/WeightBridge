@@ -1,0 +1,19 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "changes": [
+    {
+      "index": [
+        1
+      ],
+      "op": "add",
+      "tensor": "output_bias",
+      "value": 4.0
+    }
+  ],
+  "evidence_ids": [
+    "random-control-seed-20261102"
+  ],
+  "projections": [],
+  "reason": "seeded random one-entry control matched by tensor, count and edit magnitude",
+  "schema": "weightbridge.patch.v1"
+}

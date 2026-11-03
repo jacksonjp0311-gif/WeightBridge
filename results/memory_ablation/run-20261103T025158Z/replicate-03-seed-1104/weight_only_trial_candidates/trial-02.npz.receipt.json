@@ -1,0 +1,28 @@
+{
+  "base_sha256": "d531414b120d79bdcf70e0c5a64c6b2499690275dc68d19ff77e5fb2d4e83042",
+  "candidate_path": "C:\\Users\\jacks\\Documents\\Codex\\2026-11-02\\codex-master-task-weightbridge-v0-2\\results\\memory_ablation\\run-20261103T025158Z\\replicate-03-seed-1104\\weight_only_trial_candidates\\trial-02.npz",
+  "candidate_sha256": "d5f3a3fb7a9f5887abf32b7b678a1305a62ef5b8147e05b77372c6c8cf05c664",
+  "changed_entries": 1,
+  "changed_fraction": 0.08333333333333333,
+  "changes": [
+    {
+      "after": 6.5,
+      "before": 4.5,
+      "index": [
+        1
+      ],
+      "tensor": "output_bias"
+    }
+  ],
+  "evidence_ids": [
+    "practice-only-baseline",
+    "one-sided-class-errors"
+  ],
+  "max_abs_delta": 2.0,
+  "note": "No live model deployment or self-learning claim",
+  "patch_sha256": "6e69ce8ffbb3748bf8d5605f3da525bc5e690942bf394dc6cdc108580e01a56e",
+  "policy_sha256": "c40c8b9cb5b53aab969362703517d71bcc0461f5cf9b9d6492348a4875f5788d",
+  "schema": "weightbridge.receipt.v1",
+  "status": "candidate_only_not_promoted",
+  "total_parameters": 12
+}
