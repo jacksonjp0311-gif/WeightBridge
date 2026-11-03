@@ -171,3 +171,6 @@ deployed; candidates remain isolated research artifacts.
   The bounded-run reporter replayed the stored holdout arrays and accepted
   practice candidate hashes. See the
   [comparison and raw evidence paths](../results/original_weight_edits/local-qwen-mcp-smoke-comparison.json).
+- The first Windows archive replay matched all JSON values but changed the
+  comparison file's line endings. The source, evidence and comparison files
+  now have explicit LF checkout rules where their exact bytes are checked.
