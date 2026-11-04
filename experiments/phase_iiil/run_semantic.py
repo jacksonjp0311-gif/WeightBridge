@@ -139,7 +139,10 @@ def _replay_stable_sample(adapter, runner, plan, basis, pool, *, batch, rounds, 
         eligible = [anchor for anchor in pool.eligible_anchors
                     if anchor.key not in rejected
                     and cells.get((anchor.group, anchor.wording), anchor.key) == anchor.key]
-        sample = select_preservation(eligible, **sampling)
+        settings = dict(sampling)
+        if "slopes" in settings:
+            settings["slopes"] = {anchor.key: sampling["slopes"][anchor.key] for anchor in eligible}
+        sample = select_preservation(eligible, **settings)
         if not sample.complete:
             return sample, verified, attempts
         needed = [anchor for anchor in sample.anchors if anchor.key not in verified]
