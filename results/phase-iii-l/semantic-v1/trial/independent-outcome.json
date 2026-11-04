@@ -1,0 +1,43 @@
+{
+  "candidate_lock_sha256": "bbe4960998a67bfbf82069b020911e981f8272c9a6a3d4326573d63304bb5e38",
+  "disposition": "FAIL",
+  "family_gain_interval": {
+    "clusters": 8,
+    "estimand": "paired target accuracy change",
+    "high": 0.375,
+    "low": 0.0,
+    "resamples": 4000
+  },
+  "hidden_gate_passed": false,
+  "hidden_opened": true,
+  "hidden_verification_started": true,
+  "lost_valid": 0,
+  "meta": {
+    "action": "hold",
+    "promotion_authority": false,
+    "reason": "failed_independent_endpoint",
+    "schema": "weightbridge.fork_decision.v1"
+  },
+  "reason": "failed_independent_endpoint",
+  "regressions": 1,
+  "schema": "weightbridge.phase_iiil.independent_outcome.v1",
+  "target_item_gain": 3,
+  "workers": {
+    "base": {
+      "resources": {
+        "cpu_seconds": 254.71875,
+        "peak_rss_bytes": 2562326528,
+        "wall_seconds": 56.533100400003605
+      },
+      "sha256": "c9cbe396bb87fd8e139e4fac0060938ce26ba937575840d8af6ab8834e3ae1b5"
+    },
+    "candidate": {
+      "resources": {
+        "cpu_seconds": 258.140625,
+        "peak_rss_bytes": 2578898944,
+        "wall_seconds": 57.325934800028335
+      },
+      "sha256": "4f61d15de919995dfe7b6514789771602c603d236d1172559a3550f0780d26aa"
+    }
+  }
+}

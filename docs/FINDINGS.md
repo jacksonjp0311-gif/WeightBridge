@@ -490,3 +490,17 @@ smaller update corrected a repeatable error and preserved every protected
 response on separate development validation. Fresh selection preserved
 prior responses and gained no target items. The held residual allowance
 covered five of seven items. [Phase III-K evidence](PHASE_III_K.md)
+
+## Semantic transfer and gradient consensus
+
+The Phase III-L parent solved 1/16 comparisons across both wordings and
+operand orders. Equal subgroup counts still produced much larger historical
+gradient effects on close comparisons with shorter correct answers. A
+shared-right consensus update produced distinct BF16 weights and improved
+practice to 4/16 with zero losses of prior correctness. It preserved all
+25 previously correct responses on separate validation and improved fresh
+selection from 0/16 to 1/16. The sealed evaluation gained three comparisons
+and regressed one previously correct response. That violation rejected the
+candidate. The public truth-flip families still had no jointly correct pair.
+The bounded maximin witness coincided with a simpler equal-group mean at
+the larger dose. [Phase III-L evidence](PHASE_III_L.md)

@@ -1,0 +1,1932 @@
+{
+  "candidate_lock_sha256": "bbe4960998a67bfbf82069b020911e981f8272c9a6a3d4326573d63304bb5e38",
+  "disposition": "HOLD",
+  "errors": {},
+  "hidden_opened": false,
+  "host_resources": {
+    "cpu_seconds": 5.859375,
+    "peak_rss_bytes": 44670976,
+    "wall_seconds": 211.61536230001366
+  },
+  "meta": {
+    "action": "independent_verify",
+    "promotion_authority": false,
+    "reason": "selection_pass",
+    "schema": "weightbridge.fork_decision.v1"
+  },
+  "parent": {
+    "selection": {
+      "all_four_repeatable_errors": [
+        "semantic-decimal/selection/target/00/variant-0",
+        "semantic-decimal/selection/target/00/variant-1",
+        "semantic-decimal/selection/target/01/variant-1",
+        "semantic-decimal/selection/target/02/variant-0",
+        "semantic-decimal/selection/target/02/variant-1",
+        "semantic-decimal/selection/target/03/variant-0",
+        "semantic-decimal/selection/target/03/variant-1",
+        "semantic-decimal/selection/target/04/variant-0",
+        "semantic-decimal/selection/target/04/variant-1",
+        "semantic-decimal/selection/target/05/variant-0",
+        "semantic-decimal/selection/target/06/variant-0",
+        "semantic-decimal/selection/target/06/variant-1"
+      ],
+      "by_order": {
+        "0": {
+          "competing_operand": 28,
+          "completed": 32,
+          "correct": 4,
+          "first_operand": 16,
+          "longer_operand": 16,
+          "presentations": 32,
+          "second_operand": 16,
+          "shorter_operand": 16,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 32
+        },
+        "1": {
+          "competing_operand": 29,
+          "completed": 32,
+          "correct": 3,
+          "first_operand": 13,
+          "longer_operand": 13,
+          "presentations": 32,
+          "second_operand": 19,
+          "shorter_operand": 19,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 32
+        }
+      },
+      "by_wording": {
+        "0": {
+          "competing_operand": 31,
+          "completed": 32,
+          "correct": 1,
+          "first_operand": 15,
+          "longer_operand": 15,
+          "presentations": 32,
+          "second_operand": 17,
+          "shorter_operand": 17,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 32
+        },
+        "1": {
+          "competing_operand": 26,
+          "completed": 32,
+          "correct": 6,
+          "first_operand": 14,
+          "longer_operand": 14,
+          "presentations": 32,
+          "second_operand": 18,
+          "shorter_operand": 18,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 32
+        }
+      },
+      "comparisons": {
+        "semantic-decimal/selection/target/00/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/00",
+          "response_ids": [
+            "semantic-decimal/selection/target/00/variant-0/order-0/0",
+            "semantic-decimal/selection/target/00/variant-0/order-0/1",
+            "semantic-decimal/selection/target/00/variant-0/order-1/0",
+            "semantic-decimal/selection/target/00/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/00/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/00",
+          "response_ids": [
+            "semantic-decimal/selection/target/00/variant-1/order-0/0",
+            "semantic-decimal/selection/target/00/variant-1/order-0/1",
+            "semantic-decimal/selection/target/00/variant-1/order-1/0",
+            "semantic-decimal/selection/target/00/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/01/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 1,
+          "counterfactual": 0,
+          "group": "negative-far/longer",
+          "order_consistent": false,
+          "pair_id": "semantic-decimal/selection/target/01",
+          "response_ids": [
+            "semantic-decimal/selection/target/01/variant-0/order-0/0",
+            "semantic-decimal/selection/target/01/variant-0/order-0/1",
+            "semantic-decimal/selection/target/01/variant-0/order-1/0",
+            "semantic-decimal/selection/target/01/variant-0/order-1/1"
+          ],
+          "wording_consistent": false
+        },
+        "semantic-decimal/selection/target/01/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-far/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/01",
+          "response_ids": [
+            "semantic-decimal/selection/target/01/variant-1/order-0/0",
+            "semantic-decimal/selection/target/01/variant-1/order-0/1",
+            "semantic-decimal/selection/target/01/variant-1/order-1/0",
+            "semantic-decimal/selection/target/01/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/02/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/02",
+          "response_ids": [
+            "semantic-decimal/selection/target/02/variant-0/order-0/0",
+            "semantic-decimal/selection/target/02/variant-0/order-0/1",
+            "semantic-decimal/selection/target/02/variant-0/order-1/0",
+            "semantic-decimal/selection/target/02/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/02/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/02",
+          "response_ids": [
+            "semantic-decimal/selection/target/02/variant-1/order-0/0",
+            "semantic-decimal/selection/target/02/variant-1/order-0/1",
+            "semantic-decimal/selection/target/02/variant-1/order-1/0",
+            "semantic-decimal/selection/target/02/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/03/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-far/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/03",
+          "response_ids": [
+            "semantic-decimal/selection/target/03/variant-0/order-0/0",
+            "semantic-decimal/selection/target/03/variant-0/order-0/1",
+            "semantic-decimal/selection/target/03/variant-0/order-1/0",
+            "semantic-decimal/selection/target/03/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/03/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-far/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/03",
+          "response_ids": [
+            "semantic-decimal/selection/target/03/variant-1/order-0/0",
+            "semantic-decimal/selection/target/03/variant-1/order-0/1",
+            "semantic-decimal/selection/target/03/variant-1/order-1/0",
+            "semantic-decimal/selection/target/03/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/04/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/04",
+          "response_ids": [
+            "semantic-decimal/selection/target/04/variant-0/order-0/0",
+            "semantic-decimal/selection/target/04/variant-0/order-0/1",
+            "semantic-decimal/selection/target/04/variant-0/order-1/0",
+            "semantic-decimal/selection/target/04/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/04/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/04",
+          "response_ids": [
+            "semantic-decimal/selection/target/04/variant-1/order-0/0",
+            "semantic-decimal/selection/target/04/variant-1/order-0/1",
+            "semantic-decimal/selection/target/04/variant-1/order-1/0",
+            "semantic-decimal/selection/target/04/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/05/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-far/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/05",
+          "response_ids": [
+            "semantic-decimal/selection/target/05/variant-0/order-0/0",
+            "semantic-decimal/selection/target/05/variant-0/order-0/1",
+            "semantic-decimal/selection/target/05/variant-0/order-1/0",
+            "semantic-decimal/selection/target/05/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/05/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 2,
+          "counterfactual": 1,
+          "group": "negative-far/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/05",
+          "response_ids": [
+            "semantic-decimal/selection/target/05/variant-1/order-0/0",
+            "semantic-decimal/selection/target/05/variant-1/order-0/1",
+            "semantic-decimal/selection/target/05/variant-1/order-1/0",
+            "semantic-decimal/selection/target/05/variant-1/order-1/1"
+          ],
+          "wording_consistent": false
+        },
+        "semantic-decimal/selection/target/06/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/06",
+          "response_ids": [
+            "semantic-decimal/selection/target/06/variant-0/order-0/0",
+            "semantic-decimal/selection/target/06/variant-0/order-0/1",
+            "semantic-decimal/selection/target/06/variant-0/order-1/0",
+            "semantic-decimal/selection/target/06/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/06/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/selection/target/06",
+          "response_ids": [
+            "semantic-decimal/selection/target/06/variant-1/order-0/0",
+            "semantic-decimal/selection/target/06/variant-1/order-0/1",
+            "semantic-decimal/selection/target/06/variant-1/order-1/0",
+            "semantic-decimal/selection/target/06/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/selection/target/07/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 3,
+          "counterfactual": 0,
+          "group": "negative-far/shorter",
+          "order_consistent": false,
+          "pair_id": "semantic-decimal/selection/target/07",
+          "response_ids": [
+            "semantic-decimal/selection/target/07/variant-0/order-0/0",
+            "semantic-decimal/selection/target/07/variant-0/order-0/1",
+            "semantic-decimal/selection/target/07/variant-0/order-1/0",
+            "semantic-decimal/selection/target/07/variant-0/order-1/1"
+          ],
+          "wording_consistent": false
+        },
+        "semantic-decimal/selection/target/07/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 1,
+          "counterfactual": 1,
+          "group": "negative-far/longer",
+          "order_consistent": false,
+          "pair_id": "semantic-decimal/selection/target/07",
+          "response_ids": [
+            "semantic-decimal/selection/target/07/variant-1/order-0/0",
+            "semantic-decimal/selection/target/07/variant-1/order-0/1",
+            "semantic-decimal/selection/target/07/variant-1/order-1/0",
+            "semantic-decimal/selection/target/07/variant-1/order-1/1"
+          ],
+          "wording_consistent": false
+        }
+      },
+      "completed_presentations": 88,
+      "controls": {
+        "copy": {
+          "correct": 8,
+          "items": 4,
+          "presentations": 8,
+          "solved": 4,
+          "valid": 8
+        },
+        "mixed-sign": {
+          "correct": 8,
+          "items": 2,
+          "presentations": 8,
+          "solved": 2,
+          "valid": 8
+        },
+        "positive-far": {
+          "correct": 8,
+          "items": 2,
+          "presentations": 8,
+          "solved": 2,
+          "valid": 8
+        }
+      },
+      "eligible_fit_items": {
+        "semantic-decimal/selection/target/00/variant-0": [
+          "semantic-decimal/selection/target/00/variant-0/order-0",
+          "semantic-decimal/selection/target/00/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/00/variant-1": [
+          "semantic-decimal/selection/target/00/variant-1/order-0",
+          "semantic-decimal/selection/target/00/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/01/variant-0": [
+          "semantic-decimal/selection/target/01/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/01/variant-1": [
+          "semantic-decimal/selection/target/01/variant-1/order-0",
+          "semantic-decimal/selection/target/01/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/02/variant-0": [
+          "semantic-decimal/selection/target/02/variant-0/order-0",
+          "semantic-decimal/selection/target/02/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/02/variant-1": [
+          "semantic-decimal/selection/target/02/variant-1/order-0",
+          "semantic-decimal/selection/target/02/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/03/variant-0": [
+          "semantic-decimal/selection/target/03/variant-0/order-0",
+          "semantic-decimal/selection/target/03/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/03/variant-1": [
+          "semantic-decimal/selection/target/03/variant-1/order-0",
+          "semantic-decimal/selection/target/03/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/04/variant-0": [
+          "semantic-decimal/selection/target/04/variant-0/order-0",
+          "semantic-decimal/selection/target/04/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/04/variant-1": [
+          "semantic-decimal/selection/target/04/variant-1/order-0",
+          "semantic-decimal/selection/target/04/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/05/variant-0": [
+          "semantic-decimal/selection/target/05/variant-0/order-0",
+          "semantic-decimal/selection/target/05/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/06/variant-0": [
+          "semantic-decimal/selection/target/06/variant-0/order-0",
+          "semantic-decimal/selection/target/06/variant-0/order-1"
+        ],
+        "semantic-decimal/selection/target/06/variant-1": [
+          "semantic-decimal/selection/target/06/variant-1/order-0",
+          "semantic-decimal/selection/target/06/variant-1/order-1"
+        ],
+        "semantic-decimal/selection/target/07/variant-1": [
+          "semantic-decimal/selection/target/07/variant-1/order-1"
+        ]
+      },
+      "families": {
+        "semantic-decimal/selection/target/00": {
+          "counterfactual": "semantic-decimal/selection/target/00/variant-1",
+          "original": "semantic-decimal/selection/target/00/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/01": {
+          "counterfactual": "semantic-decimal/selection/target/01/variant-1",
+          "original": "semantic-decimal/selection/target/01/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/02": {
+          "counterfactual": "semantic-decimal/selection/target/02/variant-1",
+          "original": "semantic-decimal/selection/target/02/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/03": {
+          "counterfactual": "semantic-decimal/selection/target/03/variant-1",
+          "original": "semantic-decimal/selection/target/03/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/04": {
+          "counterfactual": "semantic-decimal/selection/target/04/variant-1",
+          "original": "semantic-decimal/selection/target/04/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/05": {
+          "counterfactual": "semantic-decimal/selection/target/05/variant-1",
+          "original": "semantic-decimal/selection/target/05/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/06": {
+          "counterfactual": "semantic-decimal/selection/target/06/variant-1",
+          "original": "semantic-decimal/selection/target/06/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/selection/target/07": {
+          "counterfactual": "semantic-decimal/selection/target/07/variant-1",
+          "original": "semantic-decimal/selection/target/07/variant-0",
+          "status": "neither_correct"
+        }
+      },
+      "fork_token_kinds": {},
+      "order_consistent": 13,
+      "pair_families": 8,
+      "presentations": 88,
+      "repeatable_errors": [
+        "semantic-decimal/selection/target/00/variant-0",
+        "semantic-decimal/selection/target/00/variant-1",
+        "semantic-decimal/selection/target/01/variant-0",
+        "semantic-decimal/selection/target/01/variant-1",
+        "semantic-decimal/selection/target/02/variant-0",
+        "semantic-decimal/selection/target/02/variant-1",
+        "semantic-decimal/selection/target/03/variant-0",
+        "semantic-decimal/selection/target/03/variant-1",
+        "semantic-decimal/selection/target/04/variant-0",
+        "semantic-decimal/selection/target/04/variant-1",
+        "semantic-decimal/selection/target/05/variant-0",
+        "semantic-decimal/selection/target/06/variant-0",
+        "semantic-decimal/selection/target/06/variant-1",
+        "semantic-decimal/selection/target/07/variant-1"
+      ],
+      "status_counts": {
+        "correct": 31,
+        "incorrect": 57
+      },
+      "subgroups": {
+        "negative-close/longer": {
+          "competing_operand": 16,
+          "completed": 16,
+          "correct": 0,
+          "first_operand": 8,
+          "longer_operand": 0,
+          "presentations": 16,
+          "second_operand": 8,
+          "shorter_operand": 16,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        },
+        "negative-close/shorter": {
+          "competing_operand": 16,
+          "completed": 16,
+          "correct": 0,
+          "first_operand": 8,
+          "longer_operand": 16,
+          "presentations": 16,
+          "second_operand": 8,
+          "shorter_operand": 0,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        },
+        "negative-far/longer": {
+          "competing_operand": 14,
+          "completed": 16,
+          "correct": 2,
+          "first_operand": 6,
+          "longer_operand": 2,
+          "presentations": 16,
+          "second_operand": 10,
+          "shorter_operand": 14,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        },
+        "negative-far/shorter": {
+          "competing_operand": 11,
+          "completed": 16,
+          "correct": 5,
+          "first_operand": 7,
+          "longer_operand": 11,
+          "presentations": 16,
+          "second_operand": 9,
+          "shorter_operand": 5,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        }
+      },
+      "target_comparisons": 16,
+      "target_correct": 0,
+      "target_observations": [
+        {
+          "fork": null,
+          "generated_choice": "-17.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/00/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/00/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/00/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/00/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7567",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/00/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7567",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/00/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7567",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/00/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.7567",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/00/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-14.7",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/01/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-11.8587",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/01/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-14.7",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/01/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-14.7",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/01/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.8587",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/01/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.8587",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/01/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.8587",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/01/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.8587",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/01/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6382",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/02/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6382",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/02/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6382",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/02/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6382",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/02/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/02/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/02/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/02/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-46.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/02/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-88.8631",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/03/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-88.8631",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/03/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-88.8631",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/03/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-88.8631",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/03/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.8",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/03/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.8",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/03/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.8",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/03/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.8",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/03/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/04/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/04/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/04/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/04/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5639",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/04/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5639",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/04/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5639",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/04/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-45.5639",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/04/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/04",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/05/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/05/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/05/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/05/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-89.2461",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/05/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/05/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-89.2461",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/05/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-85.2",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/05/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/05",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/06/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/06/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/06/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/selection/target/06/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6489",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/06/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6489",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/06/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6489",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/06/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-17.6489",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/selection/target/06/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/06",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-58.6532",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/07/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/07/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/07/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/selection/target/07/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/07/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-52.6532",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/07/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/07/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-55.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/selection/target/07/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/selection/target/07",
+          "status": "incorrect",
+          "teacher_choice": null
+        }
+      ],
+      "truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 8,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "valid_presentations": 88,
+      "wording_consistent": 12
+    },
+    "transfer-validation": {
+      "all_four_repeatable_errors": [
+        "semantic-decimal/transfer-validation/target/00/variant-0",
+        "semantic-decimal/transfer-validation/target/00/variant-1",
+        "semantic-decimal/transfer-validation/target/01/variant-1",
+        "semantic-decimal/transfer-validation/target/02/variant-0",
+        "semantic-decimal/transfer-validation/target/02/variant-1",
+        "semantic-decimal/transfer-validation/target/03/variant-0",
+        "semantic-decimal/transfer-validation/target/03/variant-1"
+      ],
+      "by_order": {
+        "0": {
+          "competing_operand": 16,
+          "completed": 16,
+          "correct": 0,
+          "first_operand": 8,
+          "longer_operand": 8,
+          "presentations": 16,
+          "second_operand": 8,
+          "shorter_operand": 8,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        },
+        "1": {
+          "competing_operand": 15,
+          "completed": 16,
+          "correct": 1,
+          "first_operand": 9,
+          "longer_operand": 9,
+          "presentations": 16,
+          "second_operand": 7,
+          "shorter_operand": 7,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        }
+      },
+      "by_wording": {
+        "0": {
+          "competing_operand": 16,
+          "completed": 16,
+          "correct": 0,
+          "first_operand": 8,
+          "longer_operand": 8,
+          "presentations": 16,
+          "second_operand": 8,
+          "shorter_operand": 8,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        },
+        "1": {
+          "competing_operand": 15,
+          "completed": 16,
+          "correct": 1,
+          "first_operand": 9,
+          "longer_operand": 9,
+          "presentations": 16,
+          "second_operand": 7,
+          "shorter_operand": 7,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 16
+        }
+      },
+      "comparisons": {
+        "semantic-decimal/transfer-validation/target/00/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/00/variant-0/order-0/0",
+            "semantic-decimal/transfer-validation/target/00/variant-0/order-0/1",
+            "semantic-decimal/transfer-validation/target/00/variant-0/order-1/0",
+            "semantic-decimal/transfer-validation/target/00/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/00/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/00/variant-1/order-0/0",
+            "semantic-decimal/transfer-validation/target/00/variant-1/order-0/1",
+            "semantic-decimal/transfer-validation/target/00/variant-1/order-1/0",
+            "semantic-decimal/transfer-validation/target/00/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/01/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 1,
+          "counterfactual": 0,
+          "group": "negative-far/longer",
+          "order_consistent": false,
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/01/variant-0/order-0/0",
+            "semantic-decimal/transfer-validation/target/01/variant-0/order-0/1",
+            "semantic-decimal/transfer-validation/target/01/variant-0/order-1/0",
+            "semantic-decimal/transfer-validation/target/01/variant-0/order-1/1"
+          ],
+          "wording_consistent": false
+        },
+        "semantic-decimal/transfer-validation/target/01/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-far/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/01/variant-1/order-0/0",
+            "semantic-decimal/transfer-validation/target/01/variant-1/order-0/1",
+            "semantic-decimal/transfer-validation/target/01/variant-1/order-1/0",
+            "semantic-decimal/transfer-validation/target/01/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/02/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-close/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/02/variant-0/order-0/0",
+            "semantic-decimal/transfer-validation/target/02/variant-0/order-0/1",
+            "semantic-decimal/transfer-validation/target/02/variant-0/order-1/0",
+            "semantic-decimal/transfer-validation/target/02/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/02/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-close/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/02/variant-1/order-0/0",
+            "semantic-decimal/transfer-validation/target/02/variant-1/order-0/1",
+            "semantic-decimal/transfer-validation/target/02/variant-1/order-1/0",
+            "semantic-decimal/transfer-validation/target/02/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/03/variant-0": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 0,
+          "group": "negative-far/shorter",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/03/variant-0/order-0/0",
+            "semantic-decimal/transfer-validation/target/03/variant-0/order-0/1",
+            "semantic-decimal/transfer-validation/target/03/variant-0/order-1/0",
+            "semantic-decimal/transfer-validation/target/03/variant-0/order-1/1"
+          ],
+          "wording_consistent": true
+        },
+        "semantic-decimal/transfer-validation/target/03/variant-1": {
+          "all_correct": false,
+          "all_valid": true,
+          "correct_presentations": 0,
+          "counterfactual": 1,
+          "group": "negative-far/longer",
+          "order_consistent": true,
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "response_ids": [
+            "semantic-decimal/transfer-validation/target/03/variant-1/order-0/0",
+            "semantic-decimal/transfer-validation/target/03/variant-1/order-0/1",
+            "semantic-decimal/transfer-validation/target/03/variant-1/order-1/0",
+            "semantic-decimal/transfer-validation/target/03/variant-1/order-1/1"
+          ],
+          "wording_consistent": true
+        }
+      },
+      "completed_presentations": 56,
+      "controls": {
+        "copy": {
+          "correct": 8,
+          "items": 4,
+          "presentations": 8,
+          "solved": 4,
+          "valid": 8
+        },
+        "mixed-sign": {
+          "correct": 8,
+          "items": 2,
+          "presentations": 8,
+          "solved": 2,
+          "valid": 8
+        },
+        "positive-far": {
+          "correct": 8,
+          "items": 2,
+          "presentations": 8,
+          "solved": 2,
+          "valid": 8
+        }
+      },
+      "eligible_fit_items": {
+        "semantic-decimal/transfer-validation/target/00/variant-0": [
+          "semantic-decimal/transfer-validation/target/00/variant-0/order-0",
+          "semantic-decimal/transfer-validation/target/00/variant-0/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/00/variant-1": [
+          "semantic-decimal/transfer-validation/target/00/variant-1/order-0",
+          "semantic-decimal/transfer-validation/target/00/variant-1/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/01/variant-0": [
+          "semantic-decimal/transfer-validation/target/01/variant-0/order-0"
+        ],
+        "semantic-decimal/transfer-validation/target/01/variant-1": [
+          "semantic-decimal/transfer-validation/target/01/variant-1/order-0",
+          "semantic-decimal/transfer-validation/target/01/variant-1/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/02/variant-0": [
+          "semantic-decimal/transfer-validation/target/02/variant-0/order-0",
+          "semantic-decimal/transfer-validation/target/02/variant-0/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/02/variant-1": [
+          "semantic-decimal/transfer-validation/target/02/variant-1/order-0",
+          "semantic-decimal/transfer-validation/target/02/variant-1/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/03/variant-0": [
+          "semantic-decimal/transfer-validation/target/03/variant-0/order-0",
+          "semantic-decimal/transfer-validation/target/03/variant-0/order-1"
+        ],
+        "semantic-decimal/transfer-validation/target/03/variant-1": [
+          "semantic-decimal/transfer-validation/target/03/variant-1/order-0",
+          "semantic-decimal/transfer-validation/target/03/variant-1/order-1"
+        ]
+      },
+      "families": {
+        "semantic-decimal/transfer-validation/target/00": {
+          "counterfactual": "semantic-decimal/transfer-validation/target/00/variant-1",
+          "original": "semantic-decimal/transfer-validation/target/00/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/transfer-validation/target/01": {
+          "counterfactual": "semantic-decimal/transfer-validation/target/01/variant-1",
+          "original": "semantic-decimal/transfer-validation/target/01/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/transfer-validation/target/02": {
+          "counterfactual": "semantic-decimal/transfer-validation/target/02/variant-1",
+          "original": "semantic-decimal/transfer-validation/target/02/variant-0",
+          "status": "neither_correct"
+        },
+        "semantic-decimal/transfer-validation/target/03": {
+          "counterfactual": "semantic-decimal/transfer-validation/target/03/variant-1",
+          "original": "semantic-decimal/transfer-validation/target/03/variant-0",
+          "status": "neither_correct"
+        }
+      },
+      "fork_token_kinds": {},
+      "order_consistent": 7,
+      "pair_families": 4,
+      "presentations": 56,
+      "repeatable_errors": [
+        "semantic-decimal/transfer-validation/target/00/variant-0",
+        "semantic-decimal/transfer-validation/target/00/variant-1",
+        "semantic-decimal/transfer-validation/target/01/variant-0",
+        "semantic-decimal/transfer-validation/target/01/variant-1",
+        "semantic-decimal/transfer-validation/target/02/variant-0",
+        "semantic-decimal/transfer-validation/target/02/variant-1",
+        "semantic-decimal/transfer-validation/target/03/variant-0",
+        "semantic-decimal/transfer-validation/target/03/variant-1"
+      ],
+      "status_counts": {
+        "correct": 25,
+        "incorrect": 31
+      },
+      "subgroups": {
+        "negative-close/longer": {
+          "competing_operand": 8,
+          "completed": 8,
+          "correct": 0,
+          "first_operand": 4,
+          "longer_operand": 0,
+          "presentations": 8,
+          "second_operand": 4,
+          "shorter_operand": 8,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 8
+        },
+        "negative-close/shorter": {
+          "competing_operand": 8,
+          "completed": 8,
+          "correct": 0,
+          "first_operand": 4,
+          "longer_operand": 8,
+          "presentations": 8,
+          "second_operand": 4,
+          "shorter_operand": 0,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 8
+        },
+        "negative-far/longer": {
+          "competing_operand": 7,
+          "completed": 8,
+          "correct": 1,
+          "first_operand": 5,
+          "longer_operand": 1,
+          "presentations": 8,
+          "second_operand": 3,
+          "shorter_operand": 7,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 8
+        },
+        "negative-far/shorter": {
+          "competing_operand": 8,
+          "completed": 8,
+          "correct": 0,
+          "first_operand": 4,
+          "longer_operand": 8,
+          "presentations": 8,
+          "second_operand": 4,
+          "shorter_operand": 0,
+          "teacher_correct": 0,
+          "teacher_greedy_disagreements": 0,
+          "teacher_preferences": 0,
+          "valid": 8
+        }
+      },
+      "target_comparisons": 8,
+      "target_correct": 0,
+      "target_observations": [
+        {
+          "fork": null,
+          "generated_choice": "-27.7365",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7365",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7365",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7365",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-27.7",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/00/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/00",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.3",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.3",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-84.3",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-81.8373",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "correct",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-87.8373",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-87.8373",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-87.8373",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-87.8373",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/01/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/01",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6463",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6463",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6463",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6463",
+          "group": "negative-close/shorter",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-69.6",
+          "group": "negative-close/longer",
+          "id": "semantic-decimal/transfer-validation/target/02/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/02",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-67.4374",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-0/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-67.4374",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-0/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-67.4374",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-0/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-67.4374",
+          "group": "negative-far/shorter",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-0/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-64.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-1/order-0/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-64.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-1/order-0/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-64.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-1/order-1/0",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        },
+        {
+          "fork": null,
+          "generated_choice": "-64.5",
+          "group": "negative-far/longer",
+          "id": "semantic-decimal/transfer-validation/target/03/variant-1/order-1/1",
+          "pair_id": "semantic-decimal/transfer-validation/target/03",
+          "status": "incorrect",
+          "teacher_choice": null
+        }
+      ],
+      "truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "valid_presentations": 56,
+      "wording_consistent": 7
+    }
+  },
+  "reason": "hidden_verification_required",
+  "schema": "weightbridge.phase_iiil.assessment.v1",
+  "selection": {
+    "B2": {
+      "candidate_target_correct": 1,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 7,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 1
+      },
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [
+        "semantic-decimal/selection/target/07/variant-0"
+      ],
+      "family_gain_interval": {
+        "clusters": 8,
+        "estimand": "paired target accuracy change",
+        "high": 0.1875,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 8,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": true,
+      "regressions": [],
+      "target_comparisons": 16,
+      "target_gain": 1
+    }
+  },
+  "transfer": {
+    "B2": {
+      "candidate_target_correct": 0,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "candidate_valid_rate": 1.0,
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.0,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": true,
+      "protected_presentations": 25,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 0
+    }
+  },
+  "winner": "B2",
+  "worker_resources": {
+    "selection-B2.json": {
+      "cpu_seconds": 257.21875,
+      "endpoint": {
+        "batched_decode_steps": 132,
+        "cpu_seconds": 241.046875,
+        "generate_batches": 11,
+        "generated_examples": 88,
+        "padded_prompt_token_positions": 6896,
+        "peak_rss_bytes": 2586931200,
+        "wall_seconds": 40.94197710003937
+      },
+      "peak_rss_bytes": 2586931200,
+      "wall_seconds": 56.58989190001739
+    },
+    "selection-base.json": {
+      "cpu_seconds": 261.515625,
+      "endpoint": {
+        "batched_decode_steps": 132,
+        "cpu_seconds": 245.640625,
+        "generate_batches": 11,
+        "generated_examples": 88,
+        "padded_prompt_token_positions": 6896,
+        "peak_rss_bytes": 2574852096,
+        "wall_seconds": 41.75274849997368
+      },
+      "peak_rss_bytes": 2574852096,
+      "wall_seconds": 57.308274600014556
+    },
+    "transfer-validation-B2.json": {
+      "cpu_seconds": 173.8125,
+      "endpoint": {
+        "batched_decode_steps": 84,
+        "cpu_seconds": 157.90625,
+        "generate_batches": 7,
+        "generated_examples": 56,
+        "padded_prompt_token_positions": 4368,
+        "peak_rss_bytes": 2572197888,
+        "wall_seconds": 26.874660399975255
+      },
+      "peak_rss_bytes": 2572197888,
+      "wall_seconds": 42.451809799997136
+    },
+    "transfer-validation-base.json": {
+      "cpu_seconds": 169.453125,
+      "endpoint": {
+        "batched_decode_steps": 84,
+        "cpu_seconds": 153.359375,
+        "generate_batches": 7,
+        "generated_examples": 56,
+        "padded_prompt_token_positions": 4368,
+        "peak_rss_bytes": 2567639040,
+        "wall_seconds": 26.093823900038842
+      },
+      "peak_rss_bytes": 2567639040,
+      "wall_seconds": 41.73034170002211
+    }
+  }
+}

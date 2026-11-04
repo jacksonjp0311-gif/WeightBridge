@@ -28,6 +28,14 @@ sensitivity run. The Qwen preservation-validation pass and independent
 zero-gain failure are separate events on the same candidate. Four arm
 aliases reused two exact rounded states. [Phase III-K findings](PHASE_III_K.md)
 
+Phase III-L records one semantic-consensus cohort with an initial replay
+HOLD, a bounded development-only sampling repair, four distinct live probes,
+and one candidate assessed on transfer validation, selection and sealed
+evaluation. These are stages of the same study. The candidate gained on
+selection and sealed targets, then failed the sealed zero-regression gate.
+The aligned parent scoring probe and Phase III-K retrospective audit are
+diagnostics attached to this cohort. [Phase III-L findings](PHASE_III_L.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |

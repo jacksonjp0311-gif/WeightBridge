@@ -1,0 +1,120 @@
+{
+  "schema": "weightbridge.phase_iiil.compute.v1",
+  "components": {
+    "initial_fit": {
+      "cpu_seconds": 1207.421875,
+      "peak_rss_bytes": 2812428288,
+      "wall_seconds": 228.2450881000259
+    },
+    "repaired_fit": {
+      "cpu_seconds": 2627.3125,
+      "peak_rss_bytes": 3005792256,
+      "wall_seconds": 499.9791148999939
+    },
+    "initial_transfer_parent": {
+      "cpu_seconds": 172.59375,
+      "peak_rss_bytes": 2567815168,
+      "wall_seconds": 42.53685440000845
+    },
+    "assessment_host": {
+      "cpu_seconds": 5.859375,
+      "peak_rss_bytes": 44670976,
+      "wall_seconds": 211.61536230001366
+    },
+    "aligned_parent_diagnostic": {
+      "backward_calls": 0,
+      "cpu_seconds": 194.484375,
+      "forward_calls": 16,
+      "padded_input_token_positions": 11264,
+      "peak_rss_bytes": 2412040192,
+      "wall_seconds": 48.165699500008486
+    },
+    "exact_reconstruction": {
+      "cpu_seconds": 14.390625,
+      "peak_rss_bytes": 209186816,
+      "wall_seconds": 15.443452900042757
+    },
+    "selection-B2.json": {
+      "cpu_seconds": 257.21875,
+      "endpoint": {
+        "batched_decode_steps": 132,
+        "cpu_seconds": 241.046875,
+        "generate_batches": 11,
+        "generated_examples": 88,
+        "padded_prompt_token_positions": 6896,
+        "peak_rss_bytes": 2586931200,
+        "wall_seconds": 40.94197710003937
+      },
+      "peak_rss_bytes": 2586931200,
+      "wall_seconds": 56.58989190001739
+    },
+    "selection-base.json": {
+      "cpu_seconds": 261.515625,
+      "endpoint": {
+        "batched_decode_steps": 132,
+        "cpu_seconds": 245.640625,
+        "generate_batches": 11,
+        "generated_examples": 88,
+        "padded_prompt_token_positions": 6896,
+        "peak_rss_bytes": 2574852096,
+        "wall_seconds": 41.75274849997368
+      },
+      "peak_rss_bytes": 2574852096,
+      "wall_seconds": 57.308274600014556
+    },
+    "transfer-validation-B2.json": {
+      "cpu_seconds": 173.8125,
+      "endpoint": {
+        "batched_decode_steps": 84,
+        "cpu_seconds": 157.90625,
+        "generate_batches": 7,
+        "generated_examples": 56,
+        "padded_prompt_token_positions": 4368,
+        "peak_rss_bytes": 2572197888,
+        "wall_seconds": 26.874660399975255
+      },
+      "peak_rss_bytes": 2572197888,
+      "wall_seconds": 42.451809799997136
+    },
+    "transfer-validation-base.json": {
+      "cpu_seconds": 169.453125,
+      "endpoint": {
+        "batched_decode_steps": 84,
+        "cpu_seconds": 153.359375,
+        "generate_batches": 7,
+        "generated_examples": 56,
+        "padded_prompt_token_positions": 4368,
+        "peak_rss_bytes": 2567639040,
+        "wall_seconds": 26.093823900038842
+      },
+      "peak_rss_bytes": 2567639040,
+      "wall_seconds": 41.73034170002211
+    },
+    "hidden_base": {
+      "cpu_seconds": 254.71875,
+      "peak_rss_bytes": 2562326528,
+      "wall_seconds": 56.533100400003605
+    },
+    "hidden_candidate": {
+      "cpu_seconds": 258.140625,
+      "peak_rss_bytes": 2578898944,
+      "wall_seconds": 57.325934800028335
+    },
+    "interrupted_0": {
+      "cpu_seconds": 290.83,
+      "peak_rss_bytes": 2582675456
+    },
+    "interrupted_1_host": {
+      "cpu_seconds": 3.86
+    },
+    "interrupted_2": {
+      "cpu_seconds": 162.39,
+      "peak_rss_bytes": 2511003648
+    }
+  },
+  "recorded_cpu_seconds": 6054.001875,
+  "recorded_stage_wall_seconds": 1357.9249253001763,
+  "maximum_recorded_peak_rss_bytes": 3005792256,
+  "scope": "Completed experimental processes plus observed CPU samples from interrupted preflights. Reused parent receipts counted only in initial_fit. Child workers counted separately from host. Test and assistant costs excluded. Interrupted-process CPU samples provide a lower bound, with no recorded wall duration.",
+  "ai_costs": "unavailable"
+}

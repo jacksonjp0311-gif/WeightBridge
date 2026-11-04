@@ -1,0 +1,479 @@
+{
+  "agreement": {
+    "group_cosine_order": [
+      "close-short",
+      "close-long",
+      "far-short",
+      "far-long"
+    ],
+    "group_cosines": [
+      [
+        0.9999999999999998,
+        -0.12850431424205605,
+        -0.04401497917762443,
+        0.16740165116619013
+      ],
+      [
+        -0.12850431424205605,
+        0.9999999999999996,
+        0.14270228919775643,
+        -0.352943722004618
+      ],
+      [
+        -0.04401497917762443,
+        0.14270228919775643,
+        1.0,
+        0.06833465685381698
+      ],
+      [
+        0.16740165116619013,
+        -0.352943722004618,
+        0.06833465685381698,
+        0.9999999999999996
+      ]
+    ],
+    "group_item_counts": {
+      "close-long": 2,
+      "close-short": 2,
+      "far-long": 2,
+      "far-short": 2
+    },
+    "group_mean_norms": {
+      "close-long": 0.9999993156305239,
+      "close-short": 0.9591692707512327,
+      "far-long": 0.9999957362453626,
+      "far-short": 0.90990110221537
+    },
+    "group_nonzero_counts": {
+      "close-long": 2,
+      "close-short": 2,
+      "far-long": 2,
+      "far-short": 2
+    },
+    "groups": [
+      "close-short",
+      "close-long",
+      "far-short",
+      "far-long"
+    ],
+    "item_cosines": [
+      [
+        1.0,
+        -0.0101210307361854,
+        -0.05503399235816565,
+        0.0035540149566915596,
+        0.8400113799069024,
+        -0.010182803064689928,
+        -0.0806257182257927,
+        0.003704109845770533
+      ],
+      [
+        -0.0101210307361854,
+        0.9999999999999999,
+        0.12969020819136448,
+        -0.3533786586886061,
+        -0.23637567287558042,
+        0.9999972625230316,
+        0.12987910446908463,
+        -0.3526551584847064
+      ],
+      [
+        -0.05503399235816565,
+        0.12969020819136448,
+        0.9999999999999993,
+        0.09021617660278138,
+        0.007122868272367001,
+        0.12978148910143486,
+        0.655840031625491,
+        0.09051143640955282
+      ],
+      [
+        0.0035540149566915596,
+        -0.3533786586886061,
+        0.09021617660278138,
+        1.0,
+        0.31759661533434835,
+        -0.3532276298620314,
+        0.03390836449476623,
+        0.9999829450178097
+      ],
+      [
+        0.8400113799069024,
+        -0.23637567287558042,
+        0.007122868272367001,
+        0.31759661533434835,
+        1.0,
+        -0.23634971342892486,
+        -0.025119305041672296,
+        0.3174086000847252
+      ],
+      [
+        -0.010182803064689928,
+        0.9999972625230316,
+        0.12978148910143486,
+        -0.3532276298620314,
+        -0.23634971342892486,
+        0.9999999999999998,
+        0.13002872370915874,
+        -0.35250645534988134
+      ],
+      [
+        -0.0806257182257927,
+        0.12987910446908463,
+        0.655840031625491,
+        0.03390836449476623,
+        -0.025119305041672296,
+        0.13002872370915874,
+        0.9999999999999998,
+        0.03407408041290378
+      ],
+      [
+        0.003704109845770533,
+        -0.3526551584847064,
+        0.09051143640955282,
+        0.9999829450178097,
+        0.3174086000847252,
+        -0.35250645534988134,
+        0.03407408041290378,
+        0.9999999999999999
+      ]
+    ],
+    "item_groups": [
+      "close-short",
+      "close-long",
+      "far-short",
+      "far-long",
+      "close-short",
+      "close-long",
+      "far-short",
+      "far-long"
+    ],
+    "item_ids": [
+      "semantic-decimal/adaptation/target/00/variant-1",
+      "semantic-decimal/adaptation/target/02/variant-1",
+      "semantic-decimal/adaptation/target/01/variant-1",
+      "semantic-decimal/adaptation/target/07/variant-0",
+      "semantic-decimal/adaptation/target/04/variant-1",
+      "semantic-decimal/adaptation/target/06/variant-0",
+      "semantic-decimal/adaptation/target/03/variant-1",
+      "semantic-decimal/adaptation/target/05/variant-1"
+    ],
+    "item_norms": [
+      135.2316782890088,
+      46.62095631449879,
+      43.19827687360306,
+      53.38843376401563,
+      123.70221261595422,
+      49.17222188876261,
+      41.418064694166176,
+      59.77012572843802
+    ],
+    "mean_gradient_cosine_order": [
+      "historical",
+      "raw_margin_mean",
+      "equal_group_unit_margin_mean"
+    ],
+    "mean_gradient_cosines": [
+      [
+        1.0,
+        0.9738497528176947,
+        0.7596102847503097
+      ],
+      [
+        0.9738497528176947,
+        0.9999999999999999,
+        0.8834776247491003
+      ],
+      [
+        0.7596102847503097,
+        0.8834776247491003,
+        0.9999999999999998
+      ]
+    ],
+    "missing_groups": [],
+    "schema": "weightbridge.projected_gradient_agreement.v1",
+    "supported_groups": [
+      "close-short",
+      "close-long",
+      "far-short",
+      "far-long"
+    ],
+    "zero_gradient_groups": []
+  },
+  "angles": {
+    "historical:maximin": {
+      "angle_degrees": 40.176600746781354,
+      "cosine": 0.7640595659863322
+    },
+    "historical:weighted_mean": {
+      "angle_degrees": 40.176600746781354,
+      "cosine": 0.7640595659863322
+    },
+    "weighted_mean:maximin": {
+      "angle_degrees": 0.0,
+      "cosine": 1.0
+    }
+  },
+  "directions": {
+    "historical": {
+      "group_normalized_improvement": {
+        "close-long": 0.001527024709042078,
+        "close-short": 0.019979754774737155,
+        "far-long": 0.005858695618969616,
+        "far-short": 0.002425341742214502
+      },
+      "group_raw_mean_improvement": {
+        "close-long": 0.07313953247262078,
+        "close-short": 2.586446013086502,
+        "far-long": 0.3314874103319959,
+        "far-short": 0.10299947923308185
+      },
+      "item_directional_slope": {
+        "semantic-decimal/adaptation/target/00/variant-1": 123.4092791096857,
+        "semantic-decimal/adaptation/target/01/variant-1": 5.658179709353049,
+        "semantic-decimal/adaptation/target/02/variant-1": 3.2589310305883843,
+        "semantic-decimal/adaptation/target/03/variant-1": 3.7730940574472163,
+        "semantic-decimal/adaptation/target/04/variant-1": 113.42182541722971,
+        "semantic-decimal/adaptation/target/05/variant-1": 16.03778824067035,
+        "semantic-decimal/adaptation/target/06/variant-0": 3.438180052508352,
+        "semantic-decimal/adaptation/target/07/variant-0": 14.3152634482024
+      },
+      "item_predicted_margin_change": {
+        "semantic-decimal/adaptation/target/00/variant-1": 2.6955195650396537,
+        "semantic-decimal/adaptation/target/01/variant-1": 0.12358660725597337,
+        "semantic-decimal/adaptation/target/02/variant-1": 0.0711819436710119,
+        "semantic-decimal/adaptation/target/03/variant-1": 0.08241235121019033,
+        "semantic-decimal/adaptation/target/04/variant-1": 2.47737246113335,
+        "semantic-decimal/adaptation/target/05/variant-1": 0.35029920192846276,
+        "semantic-decimal/adaptation/target/06/variant-0": 0.07509712127422968,
+        "semantic-decimal/adaptation/target/07/variant-0": 0.3126756187355291
+      },
+      "limiting_groups": [
+        "close-long"
+      ],
+      "projection": {
+        "iterations": 2,
+        "max_normalized_violation": 8.673617379884035e-19,
+        "max_violation": 1.1102230246251565e-16,
+        "radius_violation": 0.0,
+        "status": "projected_feasible",
+        "target_alignment": 0.021752697623746303,
+        "update_norm": 0.021842114178820267
+      },
+      "protected_predicted_margins": [
+        0.3343578892104803,
+        0.2907207383755789,
+        3.5299924866883985,
+        4.27811031661982,
+        1.1671801745899137,
+        0.5831441845842587,
+        4.703536937416309,
+        4.414126510681234
+      ],
+      "status": "projected_feasible",
+      "update_norm": 0.021842114178820267,
+      "worst_group_normalized_improvement": 0.001527024709042078
+    },
+    "maximin": {
+      "analytic_upper_bound": 0.010408325929388566,
+      "analytic_upper_bound_group_weights": {
+        "close-long": 0.25,
+        "close-short": 0.25,
+        "far-long": 0.25,
+        "far-short": 0.25
+      },
+      "group_normalized_improvement": {
+        "close-long": 0.00962035380603629,
+        "close-short": 0.010846405168794072,
+        "far-long": 0.005863797702231762,
+        "far-short": 0.009907084278227672
+      },
+      "group_raw_mean_improvement": {
+        "close-long": 0.46078399883405957,
+        "close-short": 1.4038242165078452,
+        "far-long": 0.3317858320472643,
+        "far-short": 0.4194916559246843
+      },
+      "item_directional_slope": {
+        "semantic-decimal/adaptation/target/00/variant-1": 71.5669225880748,
+        "semantic-decimal/adaptation/target/01/variant-1": 21.838047216184794,
+        "semantic-decimal/adaptation/target/02/variant-1": 22.03070514234936,
+        "semantic-decimal/adaptation/target/03/variant-1": 19.37887170983724,
+        "semantic-decimal/adaptation/target/04/variant-1": 66.36504364054238,
+        "semantic-decimal/adaptation/target/05/variant-1": 17.233179792887427,
+        "semantic-decimal/adaptation/target/06/variant-0": 23.243369929507413,
+        "semantic-decimal/adaptation/target/07/variant-0": 15.366252274839107
+      },
+      "item_predicted_margin_change": {
+        "semantic-decimal/adaptation/target/00/variant-1": 1.4567671552446473,
+        "semantic-decimal/adaptation/target/01/variant-1": 0.4445203002835391,
+        "semantic-decimal/adaptation/target/02/variant-1": 0.44844191279508294,
+        "semantic-decimal/adaptation/target/03/variant-1": 0.3944630115658294,
+        "semantic-decimal/adaptation/target/04/variant-1": 1.3508812777710428,
+        "semantic-decimal/adaptation/target/05/variant-1": 0.35078677963005434,
+        "semantic-decimal/adaptation/target/06/variant-0": 0.4731260848730362,
+        "semantic-decimal/adaptation/target/07/variant-0": 0.31278488446447433
+      },
+      "limiting_groups": [
+        "far-long"
+      ],
+      "numerical_search_ceiling": 0.005863867046229369,
+      "protected_predicted_margins": [
+        0.29072073826574363,
+        0.2907207383755791,
+        4.288396396235032,
+        5.213170223760595,
+        1.1566868961026504,
+        0.6053319590102616,
+        5.379341212730397,
+        5.343583899057979
+      ],
+      "search_steps": [
+        {
+          "iterations": 256,
+          "level": 0.008136061815810164,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.006999929759020963,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.006431863730626363,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.006147830716429062,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.006005814209330412,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.0059348059557810875,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005899301829006425,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005881549765619094,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.0058726737339254275,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005868235718078594,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005866016710155178,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005864907206193469,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005864352454212615,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005864075078222189,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005863936390226976,
+          "status": "no_feasible_witness"
+        },
+        {
+          "iterations": 256,
+          "level": 0.005863867046229369,
+          "status": "no_feasible_witness"
+        }
+      ],
+      "status": "positive_common_witness",
+      "update_norm": 0.020355313636014696,
+      "witnessed_lower_bound": 0.005863797702231762,
+      "worst_group_normalized_improvement": 0.005863797702231762
+    },
+    "weighted_mean": {
+      "group_normalized_improvement": {
+        "close-long": 0.00962035380603629,
+        "close-short": 0.010846405168794072,
+        "far-long": 0.005863797702231762,
+        "far-short": 0.009907084278227672
+      },
+      "group_raw_mean_improvement": {
+        "close-long": 0.46078399883405957,
+        "close-short": 1.4038242165078452,
+        "far-long": 0.3317858320472643,
+        "far-short": 0.4194916559246843
+      },
+      "item_directional_slope": {
+        "semantic-decimal/adaptation/target/00/variant-1": 71.5669225880748,
+        "semantic-decimal/adaptation/target/01/variant-1": 21.838047216184794,
+        "semantic-decimal/adaptation/target/02/variant-1": 22.03070514234936,
+        "semantic-decimal/adaptation/target/03/variant-1": 19.37887170983724,
+        "semantic-decimal/adaptation/target/04/variant-1": 66.36504364054238,
+        "semantic-decimal/adaptation/target/05/variant-1": 17.233179792887427,
+        "semantic-decimal/adaptation/target/06/variant-0": 23.243369929507413,
+        "semantic-decimal/adaptation/target/07/variant-0": 15.366252274839107
+      },
+      "item_predicted_margin_change": {
+        "semantic-decimal/adaptation/target/00/variant-1": 1.4567671552446473,
+        "semantic-decimal/adaptation/target/01/variant-1": 0.4445203002835391,
+        "semantic-decimal/adaptation/target/02/variant-1": 0.44844191279508294,
+        "semantic-decimal/adaptation/target/03/variant-1": 0.3944630115658294,
+        "semantic-decimal/adaptation/target/04/variant-1": 1.3508812777710428,
+        "semantic-decimal/adaptation/target/05/variant-1": 0.35078677963005434,
+        "semantic-decimal/adaptation/target/06/variant-0": 0.4731260848730362,
+        "semantic-decimal/adaptation/target/07/variant-0": 0.31278488446447433
+      },
+      "limiting_groups": [
+        "far-long"
+      ],
+      "projection": {
+        "iterations": 5,
+        "max_normalized_violation": 2.2760677891031644e-12,
+        "max_violation": 1.0983534914910109e-10,
+        "radius_violation": 0.0,
+        "status": "projected_feasible",
+        "target_alignment": 0.01958400724154489,
+        "update_norm": 0.020355313636014696
+      },
+      "protected_predicted_margins": [
+        0.29072073826574363,
+        0.2907207383755791,
+        4.288396396235032,
+        5.213170223760595,
+        1.1566868961026504,
+        0.6053319590102616,
+        5.379341212730397,
+        5.343583899057979
+      ],
+      "status": "projected_feasible",
+      "update_norm": 0.020355313636014696,
+      "worst_group_normalized_improvement": 0.005863797702231762
+    }
+  },
+  "schema": "weightbridge.gradient_consensus.v1"
+}

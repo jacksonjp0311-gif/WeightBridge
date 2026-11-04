@@ -1,0 +1,233 @@
+{
+  "artifacts": {
+    "arm-A1.json": "1961acd47c2c3493d7ae399724bfa65d0034cb94c3da45c30a487d78a3a3f6ba",
+    "arm-A2.json": "4bef14753324f16d004064b0bec0dc643eded2bda4d6b0fada7f706599c09cb1",
+    "arm-B1.json": "28e489bd4847464291cb48792251f8dd6c282d2581cde2567f72e06f8cf39d28",
+    "arm-B2.json": "a1127d5f73cc32a5e04eebbe78dc47cb919ec951f18555d3581483eccc383848",
+    "basis.json": "661312071ff65e0dbeb54f24fca8e4bdead5c6367c47360780ea0976636f4a9a",
+    "calibration-decisions.json": "650b7edb81f7a5872366e14064bedb9ff470e43f87f0ab2d846f4506aeb7e1a5",
+    "calibration-sensitivities.json": "4f90ba1b798f19cd0bc5f0e311eb040cb699bc3b69bf6b735bec5cde785490d8",
+    "calibration.json": "4c0a5e5ab107e4c1f6917ad9aaea863c414f80d16e51de0a82497938655a5327",
+    "fork-diagnosis.json": "8f53e06b08482ff24775a74e8321eb7c6d6ce780c9b4073078710a0d7d2dfb4b",
+    "geometry-1.json": "549e9777a07ab0f96752cefc0c99b354e549d4c9fa3a44227a7bdfbe6d46da96",
+    "geometry-2.json": "c9033390b8e9f4b536c2291e0565531cf45dd099905916c6c7df0f85e4332291",
+    "parent-adaptation.json": "b708fbda7015f17ecb8e86ab33691a15a2a903eb2bdce55df982b534e0a96d1c",
+    "parent-calibration.json": "a044f9efa5b3c6f3aee6fe08bb4d6abaa147ea10ad6a79441e2b37b018938264",
+    "parent-diagnostics.json": "21cdfdf9f383d9cab0446378888145c022fa5dfe054413a88fa72aa3e71cb989",
+    "parent-preservation-fit.json": "21893908a995291155f15ad13f37bf93e270c66cc3268476cb524f5cf6675f4f",
+    "patches/B2-patch.json": "82f742f9592e20b48e5b2fa4126f1dac4f18cf0a4173ac2e215a2773e38de762",
+    "patches/B2-policy.json": "671e961e405e46b295e5fa2bbc1e1f9adbcf26028a7951774136cc9daa89fb72",
+    "patches/B2-receipt.json": "01fcadf8fd01dc00635abf35ed362df99717ec80527ca4dc93b91cd032e072d9",
+    "preservation-decisions.json": "25284056cdf817d8318636a8374a3000a4fed5cd3b98399e467b7ed5759041dd",
+    "preservation-sensitivities.json": "1b6cf91efb7179f455a05b0e308253009a631dbfba7fceb7c9318cedafa6f8ec",
+    "probe-reference.json": "a03f952c4ca8ec98a5257bc8470f9794a4c1397acf4ddb44aeab584e9dfb6eb1",
+    "projected-agreement.json": "e6701f735671dc408b5027f94718953bca9cfd2e5dbecc488d7cdb2018d342b9",
+    "sampling.json": "e2de79d8e027bd6f60c5f4fee57196cb1c3341ae5f48dc0aaa13be8ff34801e0",
+    "secants.json": "e1240096074494fee298f72e995ff77f78aef197213a923cbc3eeceb73cb7d87",
+    "teacher-forced-parent.json": "9fc2e90a9eeedef642e965a71cddd62e26fe497923cfb2c7a382285c1286ee91"
+  },
+  "candidates": {
+    "B2": {
+      "changed_entries": 15223,
+      "checkpoint_sha256": "9f48b191217fd7cabc5935aacd39a127ffb6c06be3878181b2a8b1fca1b68cfd",
+      "realized_update_norm": 0.02039388666323515,
+      "receipt_sha256": "8fd4c4511f3ed29c670b94bf038e636fe8f33f1df2023d6546877b08812b8459",
+      "tensor_sha256": "c675aea5316fa36a97d1a5a6f39be8ea74adb2216e613b8f092e8d65208b34dc"
+    }
+  },
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "detail": {
+    "allowance": 0.165720738375579,
+    "columns": [
+      2,
+      9,
+      11,
+      22,
+      24,
+      26,
+      28,
+      43,
+      46,
+      57,
+      72,
+      84,
+      104,
+      125,
+      580,
+      598
+    ],
+    "fit_items": [
+      "semantic-decimal/adaptation/target/00/variant-1",
+      "semantic-decimal/adaptation/target/02/variant-1",
+      "semantic-decimal/adaptation/target/01/variant-1",
+      "semantic-decimal/adaptation/target/07/variant-0",
+      "semantic-decimal/adaptation/target/04/variant-1",
+      "semantic-decimal/adaptation/target/06/variant-0",
+      "semantic-decimal/adaptation/target/03/variant-1",
+      "semantic-decimal/adaptation/target/05/variant-1"
+    ],
+    "floor": 0.125,
+    "matched_pairs_distinct": {
+      "1": true,
+      "2": true
+    },
+    "reason": "comparison_complete",
+    "shared_right_factor": [
+      -0.2010888680568947,
+      0.22294817446745482,
+      -0.3783896571614807,
+      -0.19445450690613264,
+      0.20974999484778012,
+      -0.27440171139893443,
+      0.25689572787774495,
+      0.28076777910811407,
+      -0.25809966774618764,
+      0.21044898995060982,
+      0.24831992520139465,
+      -0.28722444184833695,
+      -0.25018510982650666,
+      0.23436802969989273,
+      -0.21671611502631835,
+      -0.21259598362254656
+    ],
+    "supported_groups": [
+      "close-long",
+      "close-short",
+      "far-long",
+      "far-short"
+    ],
+    "unique_complete_evaluations": 4
+  },
+  "hidden_opened": false,
+  "manifest_sha256": "a00b78bfb6ee4ca17e77d5a14dc83fba66693429bbd24818bd2b94eafce394fc",
+  "optimization_splits": [
+    "adaptation",
+    "preservation-fit",
+    "calibration"
+  ],
+  "qualification": {
+    "disposition": "PASS",
+    "excluded_repeatable_outputs": {},
+    "gates": {
+      "parse_rate": true,
+      "positive_controls": true,
+      "preservation_controls": true,
+      "repeatable_errors": true,
+      "solved_target": true
+    },
+    "parsed": [
+      88,
+      88
+    ],
+    "repeatable_errors": {
+      "semantic-decimal/adaptation/target/00/variant-0/order-0": "-70.2",
+      "semantic-decimal/adaptation/target/00/variant-0/order-1": "-70.2",
+      "semantic-decimal/adaptation/target/00/variant-1/order-0": "-70.2362",
+      "semantic-decimal/adaptation/target/00/variant-1/order-1": "-70.2362",
+      "semantic-decimal/adaptation/target/01/variant-0/order-0": "-14.3",
+      "semantic-decimal/adaptation/target/01/variant-0/order-1": "-14.3",
+      "semantic-decimal/adaptation/target/01/variant-1/order-1": "-17.5407",
+      "semantic-decimal/adaptation/target/02/variant-0/order-0": "-78.6481",
+      "semantic-decimal/adaptation/target/02/variant-0/order-1": "-78.6481",
+      "semantic-decimal/adaptation/target/02/variant-1/order-0": "-78.6",
+      "semantic-decimal/adaptation/target/02/variant-1/order-1": "-78.6",
+      "semantic-decimal/adaptation/target/03/variant-0/order-1": "-24.3",
+      "semantic-decimal/adaptation/target/03/variant-1/order-0": "-28.5434",
+      "semantic-decimal/adaptation/target/04/variant-0/order-0": "-35.4",
+      "semantic-decimal/adaptation/target/04/variant-0/order-1": "-35.4",
+      "semantic-decimal/adaptation/target/04/variant-1/order-0": "-35.4586",
+      "semantic-decimal/adaptation/target/04/variant-1/order-1": "-35.4586",
+      "semantic-decimal/adaptation/target/05/variant-1/order-1": "-45.2",
+      "semantic-decimal/adaptation/target/06/variant-0/order-1": "-42.6",
+      "semantic-decimal/adaptation/target/06/variant-1/order-0": "-42.6486",
+      "semantic-decimal/adaptation/target/06/variant-1/order-1": "-42.6486",
+      "semantic-decimal/adaptation/target/07/variant-0/order-0": "-75.2",
+      "semantic-decimal/adaptation/target/07/variant-0/order-1": "-75.2"
+    },
+    "solved": {
+      "positive": [
+        "semantic-decimal/adaptation/positive/00/order-0",
+        "semantic-decimal/adaptation/positive/00/order-1",
+        "semantic-decimal/adaptation/positive/01/order-0",
+        "semantic-decimal/adaptation/positive/01/order-1",
+        "semantic-decimal/adaptation/positive/02/order-0",
+        "semantic-decimal/adaptation/positive/02/order-1",
+        "semantic-decimal/adaptation/positive/03/order-0",
+        "semantic-decimal/adaptation/positive/03/order-1"
+      ],
+      "preserve": [
+        "semantic-decimal/adaptation/preserve/00",
+        "semantic-decimal/adaptation/preserve/01",
+        "semantic-decimal/adaptation/preserve/02",
+        "semantic-decimal/adaptation/preserve/03"
+      ],
+      "target": [
+        "semantic-decimal/adaptation/target/03/variant-1/order-1",
+        "semantic-decimal/adaptation/target/05/variant-0/order-1",
+        "semantic-decimal/adaptation/target/07/variant-1/order-0",
+        "semantic-decimal/adaptation/target/07/variant-1/order-1"
+      ]
+    }
+  },
+  "resources": {
+    "cpu_seconds": 2627.3125,
+    "peak_rss_bytes": 3005792256,
+    "wall_seconds": 499.9791148999939
+  },
+  "reused_parent_receipts": [
+    "adaptation",
+    "calibration",
+    "preservation-fit"
+  ],
+  "schema": "weightbridge.phase_iiil.fit.v1",
+  "sources": {
+    "experiments/phase_iiif/run_matrix.py": "824d46f4696ae86440e1022b572842aa1ff9a06d7681f6c7cf076f22bd7ba698",
+    "experiments/phase_iiig/roster_decimal_targeted.py": "c8e1e5cf6a9c3217f102730aab5ee4bb95c027a5206f9b25723b1159c4076098",
+    "experiments/phase_iiih/run_decimal_endpoint.py": "708fcdc40b12ecee0699cbbe0bcb43d3bf6442dc31d5ce4d02f50fcf38f3c59b",
+    "experiments/phase_iiii/baseline.py": "a0bf8b37ba238c98ff23ca818eac94fe9666aca3df8d6d3b13dbf9c286783128",
+    "experiments/phase_iiii/decimal_protocol.json": "ff5fa72b0f1956af125f63163a9f05d5bb0af24a1dc42fc2a32abf6c657580be",
+    "experiments/phase_iiii/decimal_roster.py": "2f6d92c04423d84df5fab37370366f7fa5ef0a90f7e9cc486249e0bad8664e07",
+    "experiments/phase_iiii/run_causal_fork.py": "7082f0526da2e023176a63201b6069443d7da23914f053bb83196c7b03a6b0d7",
+    "experiments/phase_iiii/verification.py": "2fdd983d9b24b4ebee899358bb3a4015fa59f135224c5009ef4d7d5ef06825ad",
+    "experiments/phase_iiij/baseline.py": "37d3859ca8bc5087dc8d7ac3f6c05aaf3316aeaf5e33ea8ca73d384edbda25fd",
+    "experiments/phase_iiij/decimal_protocol.json": "66e34da5f417e8bc8efd5310f015319fa4a39fcbc53d2f97e74c292bf71d8887",
+    "experiments/phase_iiij/decimal_roster.py": "e20700ba35a7d043787a850e03a979e034f88d3b8575fd3a100c8b9d28bec207",
+    "experiments/phase_iiij/run_preservation.py": "4512543e6b82ba1ac1b55fb56597045a81c2e43bdc841606026526309a23ca8d",
+    "experiments/phase_iiij/secondary_protocol.json": "ca6a3abfc16abfc528ed699d188b70f441eba694b76f15655da12416adb02679",
+    "experiments/phase_iiij/verification.py": "9108e69030b942d3c01ff10b6955b51170159c5bb9159693e97677a110d4ef0a",
+    "experiments/phase_iiik/baseline.py": "f411f528eece6b01a3bfe4c1a39b9b1180c3f46ae10a8058cb03f3b14d139ada",
+    "experiments/phase_iiik/decimal_protocol.json": "a1e7216849ef325411d75fef3333213de86a53fbc923e0d4621018b6580fcd90",
+    "experiments/phase_iiik/decimal_roster.py": "da02ca216048e5491237ccabf867ff484e5df5a34e65c0a2bc01e65e0254021d",
+    "experiments/phase_iiik/run_jspace.py": "8ee2cee7f636384b3f91d62f43b3acfa435c63919a496cf87ded699681157fbf",
+    "experiments/phase_iiik/verification.py": "f48dd4112b782beb763925f2a39f19c2ea3d404ef381b68fe426901f2ed6d0ec",
+    "experiments/phase_iiil/replay_repair.json": "7fa28f2c838f9db050ec72ab4b7eaaf98fc15d1fa11d3cbc3f0738eff490333e",
+    "experiments/phase_iiil/run_semantic.py": "a5bba92293c7c299a7b5fa4aafc6cfdfbca9e24bd44b8abe8a43da9d36cfd401",
+    "experiments/phase_iiil/semantic_diagnostics.py": "e9ef87e590f4c46d6b178ab2c165e02241263a9b938567c417905414ef4ea88e",
+    "experiments/phase_iiil/semantic_protocol.json": "1d6befe6a32c0543ba3889f4067af191eed9e2b70accb05db074f1a04460b9b5",
+    "experiments/phase_iiil/semantic_roster.py": "2d55ae46e90310a70999ed9ae814889af336bcf97affa6d584a8a29db559ed5e",
+    "experiments/phase_iiil/source_manifest.py": "8f9147c4a2d17a51db775fc7df82a968e21ce638dd5b61725fd0665f2182715d",
+    "weightbridge/adaptation/behavior_endpoint.py": "0db02a3c30206434fb30c9f325729bbd817e45fe1c46b5f485df9f9cb5ace2d2",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+    "weightbridge/adaptation/counterexample_update.py": "fa5ff103e0bddb8ee5cb2679a7689b52d29a1646e138d0a3025d26f02e3f5a1d",
+    "weightbridge/adaptation/endpoint_lineage.py": "cf3ec29ae84cf1371d8643f16207f0125ce702efa24c32bdf40c502e6b1c76a2",
+    "weightbridge/adaptation/endpoint_update.py": "c6c5038119435c9620619f2f5c124a03cdb668588b75ad3a31941195bb462a50",
+    "weightbridge/adaptation/fork_policy.py": "647aef6757061b8e0cd9b2acf28a82703d1b44706f305b7ee5788628f2f8b35e",
+    "weightbridge/adaptation/fork_update.py": "6907e231558f669c3309c24890fb7d964ee2c1b2e7e27431327fa08e4db01bcb",
+    "weightbridge/adaptation/generative_fork.py": "f31fd4759265acc7ae103f8ab94ca96ab9f8fad16348476b9ef65bf54e147c0a",
+    "weightbridge/adaptation/jspace_update.py": "26fb722fdf6472b03cd83e3ed8c9c2779f75092d69c906540e2d887836cadab0",
+    "weightbridge/adaptation/lineage.py": "afbcc68c6caccaa90a5fcf9f3341fa9462f457ae7a459ccea26ce354ef54872c",
+    "weightbridge/adaptation/meta_controller.py": "02ffd594df6cda5c63b2021297de3d5449dfadcf67553dd3aec6aaa430ddc9f7",
+    "weightbridge/adaptation/model_adapter.py": "fa844ed2eca8963391f23890edf7a5beb24fd0d729d86dc5405dadaf8bfda604",
+    "weightbridge/adaptation/preservation_geometry.py": "3198844521fb3461eac449c1a13a0137984f7f6b9032ed4aa35346b51db1a0b5",
+    "weightbridge/adaptation/preservation_policy.py": "e2bf8456f2261631a603cd8dd8698427860ab059268e4f0b4ef4feb48dbbb790",
+    "weightbridge/adaptation/robust_jspace.py": "3c87521b63dd34e71bdcba3d5d10127c3884267cb5958e8f44ffbd386e52ef7a",
+    "weightbridge/adaptation/semantic_consensus.py": "c577c8356248bcf88ec72fcc25425fc327d9b8f454f432630e00c519cf9ddf86",
+    "weightbridge/adaptation/semantic_update.py": "f232ca92b9870134374eb38ec6c835f8ec6e4599d02a2134cb9b40f1cb25bab1",
+    "weightbridge/adaptation/universal_awl.py": "9c1dc7e19911d0ae01559427ff07624d2a63a7f4639b366522066911afa14a85",
+    "weightbridge/adaptation/universal_update.py": "0dd65c3af5381dc0dc2ae3d99dbc5fb95724d0eae96cc30ecb4f4de5bbd90a61",
+    "weightbridge/core.py": "0917c6801ffc9cca18a560de87bb5e71c8df85af65094238f88d083e210a7128",
+    "weightbridge/inference/huggingface.py": "a563b044166d203666821759a328a5ab679386e857ce4cf35957ab0a10b8d624",
+    "weightbridge/inspection/safetensors.py": "c1e1e391b54d75398a4ac7a3f057891770e22b4fcf481ebc1c12acbb18db3859",
+    "weightbridge/patches/huggingface.py": "ccc5f60b8075f8aa4b0e1f157826d2c9f2c7fcd2ee9df22a444c75417923dfd3"
+  }
+}

@@ -192,3 +192,14 @@ The residual allowance describes a small calibration cohort and the
 reference probe. Both paired local feasibility and semantic generation
 must be measured before drawing conclusions about correction behavior.
 [Phase III-K evidence](PHASE_III_K.md)
+
+Phase III-L evaluates one roster seed and one Qwen checkpoint. It changes
+the historical fork-CE direction to normalized margin gradients while
+balancing groups, so the behavioral comparison cannot isolate aggregation
+alone. The projected cosine matrix is exact in the fixed-right subspace.
+The wider affine CE matrix is a seeded sketch. Positive subgroup-average
+slopes and eight protected anchors left individual errors and a prohibited
+sealed regression. Rejected BF16 states retain exact tensor hashes, norms
+and support counts, while a full elementwise cross-arm delta is unavailable
+from their archive. The sealed data remain host-held.
+[Phase III-L evidence](PHASE_III_L.md)

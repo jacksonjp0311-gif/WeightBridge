@@ -20,6 +20,7 @@
 | Phase III-I. Causal fork adaptation | PRACTICE GAINS / SINGLE-CYCLE HOLD | A trajectory-constrained Qwen update gained five targets across both wordings and regressed three previously correct responses. No update qualified for selection. The trained conventional merge exceeded its frozen cap. See the [Phase III-I study](PHASE_III_I.md). |
 | Phase III-J. Counterexample-guided adaptation | PRACTICE PASS / SELECTION FAIL / PERSISTENCE HOLD | The rounded E3 update gained three practice items with zero regressions. Fresh selection gained one item and regressed two previously correct responses. See the [Phase III-J study](PHASE_III_J.md). |
 | Phase III-K. Robust J-space | PRACTICE AND VALIDATION PASS / SELECTION FAIL | One rounded Qwen correction survived separate preservation validation. Fresh selection preserved every previously correct response and gained no target items. See the [Phase III-K study](PHASE_III_K.md). |
+| Phase III-L. Semantic transfer and gradient consensus | PRACTICE, VALIDATION AND SELECTION PASS / SEALED FAIL | The shared-right consensus edit gained three strict practice comparisons and one on selection. The sealed evaluation gained three and regressed one previously correct presentation. Sequential learning remains on HOLD. See the [Phase III-L study](PHASE_III_L.md). |
 
 The separate breakpoint solver study completed 20 paired toy tasks. The
 deterministic selector fully repaired 20/20 and the Qwen selector repaired

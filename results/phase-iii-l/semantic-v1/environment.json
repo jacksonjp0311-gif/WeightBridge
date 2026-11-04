@@ -1,0 +1,19 @@
+{
+  "schema": "weightbridge.phase_iiil.environment.v1",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "operating_system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "5.22.1",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.3",
+    "pytest": "9.2.0",
+    "huggingface-hub": "2.4.0"
+  },
+  "experiment_threads": 6,
+  "device": "cpu",
+  "precision": "native BF16"
+}

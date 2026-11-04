@@ -67,6 +67,10 @@ Phase III-K measures directional sensitivity across correct response
 trajectories, calibrates positive preservation slack, and tests a separate
 validation gate for stored candidates. [Phase III-K findings and replay](docs/PHASE_III_K.md)
 
+Phase III-L compares mean and group-consensus update directions in the same
+rank-one parameter space. Its decimal tests check both wordings, both operand
+orders and truth-flipping relatives. [Phase III-L findings and replay](docs/PHASE_III_L.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

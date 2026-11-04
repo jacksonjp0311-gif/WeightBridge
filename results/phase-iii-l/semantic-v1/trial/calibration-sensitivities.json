@@ -1,0 +1,274 @@
+{
+  "attempts": [
+    {
+      "replay": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/calibration/target/01/variant-0/order-0",
+            "margin": 0.375,
+            "position": 2,
+            "projected_gradient_norm": 38.21359640972807,
+            "prompt_id": "semantic-decimal/calibration/target/01/variant-0/order-0/1",
+            "raw_direction_slope": 5.189018942924413,
+            "replay_margin": 0.25,
+            "rival_token_id": 22,
+            "token_id": 19,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/calibration/positive/02/order-0",
+            "margin": 0.5,
+            "position": 1,
+            "projected_gradient_norm": 54.368589969325114,
+            "prompt_id": "semantic-decimal/calibration/positive/02/order-0/0",
+            "raw_direction_slope": -4.8146364685649035,
+            "replay_margin": 0.625,
+            "rival_token_id": 18,
+            "token_id": 21,
+            "wording": 0
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/calibration/positive/03/order-1",
+            "margin": 0.75,
+            "position": 0,
+            "projected_gradient_norm": 90.0318839994792,
+            "prompt_id": "semantic-decimal/calibration/positive/03/order-1/0",
+            "raw_direction_slope": 10.728053048387391,
+            "replay_margin": 0.75,
+            "rival_token_id": 471,
+            "token_id": 220,
+            "wording": 0
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/calibration/preserve/02",
+            "margin": 1.625,
+            "position": 10,
+            "projected_gradient_norm": 87.04434915850759,
+            "prompt_id": "semantic-decimal/calibration/preserve/02/0",
+            "raw_direction_slope": 45.00372696979416,
+            "replay_margin": 1.75,
+            "rival_token_id": 271,
+            "token_id": 198,
+            "wording": 0
+          },
+          {
+            "group": "target",
+            "item": "semantic-decimal/calibration/target/01/variant-0/order-0",
+            "margin": 1.125,
+            "position": 5,
+            "projected_gradient_norm": 92.41067078954292,
+            "prompt_id": "semantic-decimal/calibration/target/01/variant-0/order-0/0",
+            "raw_direction_slope": 47.83293441866993,
+            "replay_margin": 1.25,
+            "rival_token_id": 271,
+            "token_id": 198,
+            "wording": 0
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/calibration/positive/00/order-1",
+            "margin": 0.625,
+            "position": 1,
+            "projected_gradient_norm": 51.886886553069424,
+            "prompt_id": "semantic-decimal/calibration/positive/00/order-1/1",
+            "raw_direction_slope": 3.7537750214922094,
+            "replay_margin": 0.625,
+            "rival_token_id": 20,
+            "token_id": 23,
+            "wording": 1
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/calibration/positive/03/order-1",
+            "margin": 0.75,
+            "position": 0,
+            "projected_gradient_norm": 93.41712559284787,
+            "prompt_id": "semantic-decimal/calibration/positive/03/order-1/1",
+            "raw_direction_slope": 11.12355993218333,
+            "replay_margin": 0.75,
+            "rival_token_id": 471,
+            "token_id": 220,
+            "wording": 1
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/calibration/preserve/02",
+            "margin": 1.625,
+            "position": 10,
+            "projected_gradient_norm": 85.91325310727923,
+            "prompt_id": "semantic-decimal/calibration/preserve/02/1",
+            "raw_direction_slope": 44.42430999391004,
+            "replay_margin": 1.75,
+            "rival_token_id": 271,
+            "token_id": 198,
+            "wording": 1
+          }
+        ],
+        "rejected": [],
+        "resources": {
+          "backward_calls": 8,
+          "cpu_seconds": 14.984375,
+          "forward_calls": 1,
+          "peak_rss_bytes": 2752380928,
+          "wall_seconds": 4.384957700036466
+        },
+        "schema": "weightbridge.preservation_vjps.v1"
+      },
+      "sample": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/calibration/target/01/variant-0/order-0",
+            "margin": 0.375,
+            "position": 2,
+            "prompt_id": "semantic-decimal/calibration/target/01/variant-0/order-0/1",
+            "token_id": 19,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/calibration/positive/02/order-0",
+            "margin": 0.5,
+            "position": 1,
+            "prompt_id": "semantic-decimal/calibration/positive/02/order-0/0",
+            "token_id": 21,
+            "wording": 0
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/calibration/positive/03/order-1",
+            "margin": 0.75,
+            "position": 0,
+            "prompt_id": "semantic-decimal/calibration/positive/03/order-1/0",
+            "token_id": 220,
+            "wording": 0
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/calibration/preserve/02",
+            "margin": 1.625,
+            "position": 10,
+            "prompt_id": "semantic-decimal/calibration/preserve/02/0",
+            "token_id": 198,
+            "wording": 0
+          },
+          {
+            "group": "target",
+            "item": "semantic-decimal/calibration/target/01/variant-0/order-0",
+            "margin": 1.125,
+            "position": 5,
+            "prompt_id": "semantic-decimal/calibration/target/01/variant-0/order-0/0",
+            "token_id": 198,
+            "wording": 0
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/calibration/positive/00/order-1",
+            "margin": 0.625,
+            "position": 1,
+            "prompt_id": "semantic-decimal/calibration/positive/00/order-1/1",
+            "token_id": 23,
+            "wording": 1
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/calibration/positive/03/order-1",
+            "margin": 0.75,
+            "position": 0,
+            "prompt_id": "semantic-decimal/calibration/positive/03/order-1/1",
+            "token_id": 220,
+            "wording": 1
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/calibration/preserve/02",
+            "margin": 1.625,
+            "position": 10,
+            "prompt_id": "semantic-decimal/calibration/preserve/02/1",
+            "token_id": 198,
+            "wording": 1
+          }
+        ],
+        "complete": true,
+        "eligible_decisions": 228,
+        "item_counts": [
+          [
+            "semantic-decimal/calibration/positive/00/order-1",
+            1
+          ],
+          [
+            "semantic-decimal/calibration/positive/02/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/calibration/positive/03/order-1",
+            2
+          ],
+          [
+            "semantic-decimal/calibration/preserve/02",
+            2
+          ],
+          [
+            "semantic-decimal/calibration/target/01/variant-0/order-0",
+            2
+          ]
+        ],
+        "measured_decisions": 0,
+        "missing_groups": [],
+        "missing_strata": [],
+        "mode": "stratified",
+        "represented_items": 5,
+        "represented_strata": [
+          [
+            "target",
+            1
+          ],
+          [
+            "positive",
+            0
+          ],
+          [
+            "mixed-sign",
+            0
+          ],
+          [
+            "copy",
+            0
+          ],
+          [
+            "target",
+            0
+          ],
+          [
+            "positive",
+            1
+          ],
+          [
+            "mixed-sign",
+            1
+          ],
+          [
+            "copy",
+            1
+          ]
+        ],
+        "selected_risks": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "unavailable_strata": [],
+        "unmeasured_decisions": 228
+      }
+    }
+  ]
+}

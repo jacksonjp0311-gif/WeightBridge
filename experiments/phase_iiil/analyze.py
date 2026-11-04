@@ -172,6 +172,10 @@ def summarize(trial, material):
     reused = {f"parent-{name}.json" for name in report.get("reused_parent_receipts", [])}
     counted = {record: _measured_work(records[record]) for record in report["artifacts"] if record not in reused}
     counted = {record: counts for record, counts in counted.items() if counts}
+    total_work = Counter()
+    for scopes in counted.values():
+        for counts in scopes.values():
+            total_work.update(counts)
     verified_subgroups = {}
     for gate, split in (("transfer", "transfer-validation"), ("selection", "selection")):
         outcomes = {}
@@ -198,6 +202,7 @@ def summarize(trial, material):
             "verified_subgroups": verified_subgroups, "independent": independent,
             "resources": {"fitting": report["resources"], "teacher_forced": teacher["resources"],
                           "fork_diagnosis": fork_data.get("resources"), "fitting_stage_counts": counted,
+                          "fitting_work_totals": dict(sorted(total_work.items())),
                           "reused_parent_measurements": sorted(reused),
                           "verification": assessment["worker_resources"]}}
 
@@ -240,7 +245,7 @@ def plot(summary, output):
         behavior.set_title("Complete practice generation")
         behavior.yaxis.set_major_locator(MaxNLocator(integer=True))
         behavior.axhline(0, color="#777777", linewidth=.7)
-        behavior.legend(frameon=False)
+        behavior.legend(loc="upper center", bbox_to_anchor=(.5, -.13), frameon=False)
         groups = list(measured[0][1]["adaptation_subgroups"])
         gains = [[row["adaptation_subgroups"][group]["candidate_correct_presentations"]
                   - row["adaptation_subgroups"][group]["parent_correct_presentations"] for group in groups]

@@ -1,0 +1,22 @@
+{
+  "schema": "weightbridge.phase_iiil.tests.v1",
+  "full_suite": {
+    "passed": 402,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "wall_seconds": 35.878,
+    "skips": [
+      {
+        "test": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ],
+    "environment": "environment.json"
+  },
+  "optional_mcp_environment": {
+    "passed": 6,
+    "wall_seconds": 2.73,
+    "command": ".venv/Scripts/python.exe -m pytest -q tests/test_mcp_agent_tools.py"
+  }
+}
