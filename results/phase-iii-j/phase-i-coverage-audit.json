@@ -1,0 +1,83 @@
+{
+  "anchors": [
+    {
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/08/0",
+      "item": "causal-fork-decimal/practice/larger-decimal/target/08",
+      "margin": 0.25,
+      "position": 5,
+      "tier": "positive-close",
+      "token_id": 198,
+      "trajectory_index": 2,
+      "wording": 0
+    },
+    {
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/05/0",
+      "item": "causal-fork-decimal/practice/larger-decimal/target/05",
+      "margin": 0.5,
+      "position": 2,
+      "tier": "negative-far",
+      "token_id": 18,
+      "trajectory_index": 0,
+      "wording": 0
+    },
+    {
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/05/1",
+      "item": "causal-fork-decimal/practice/larger-decimal/target/05",
+      "margin": 0.375,
+      "position": 2,
+      "tier": "negative-far",
+      "token_id": 18,
+      "trajectory_index": 1,
+      "wording": 1
+    },
+    {
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/08/1",
+      "item": "causal-fork-decimal/practice/larger-decimal/target/08",
+      "margin": 0.875,
+      "position": 5,
+      "tier": "positive-close",
+      "token_id": 198,
+      "trajectory_index": 3,
+      "wording": 1
+    }
+  ],
+  "disposition": "HOLD",
+  "regressions": [
+    {
+      "explicit_anchor": false,
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/10/0",
+      "sampled_trajectory": false,
+      "tier": "positive-close"
+    },
+    {
+      "explicit_anchor": false,
+      "group": "target",
+      "id": "causal-fork-decimal/practice/larger-decimal/target/10/1",
+      "sampled_trajectory": false,
+      "tier": "positive-close"
+    },
+    {
+      "explicit_anchor": false,
+      "group": "positive",
+      "id": "causal-fork-decimal/practice/larger-decimal/positive/02/1",
+      "sampled_trajectory": false,
+      "tier": "positive-far"
+    }
+  ],
+  "report_sha256": "6cc58e8a21b5039e5445c2c6306e3d3eb538d909d7a91500f8331f55d522f3c1",
+  "sampled_trajectory_groups": {
+    "positive": 2,
+    "preserve": 2,
+    "target": 4
+  },
+  "scan_sha256": "fe9bf5d2510f1c494e396688f8537a3622b13b86c1e620798241f373a9d2f097",
+  "schema": "weightbridge.phase_iiij.phase_i_audit.v1",
+  "selected_anchor_groups": {
+    "target": 4
+  }
+}
