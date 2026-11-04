@@ -1,0 +1,34 @@
+{
+  "checked_commit": "a7dc03beb1e184a4106aa15813a7522956de3cbf",
+  "compute_v2_replay_exact": true,
+  "dual_arithmetic_rechecked_independently": true,
+  "joint_analysis_replay_exact": true,
+  "ledger_artifact_hashes_exact": true,
+  "model_runtime_used": false,
+  "prior_K_L_M_N_archives_replay_exact": true,
+  "resources": {
+    "cpu_seconds": 14.359375,
+    "wall_seconds": 13.998220700013917
+  },
+  "schema": "weightbridge.phase_iiio.clean_checkout.v1",
+  "scope": "Fresh git clone replay and isolated deterministic O tests. No new model observations or private evaluation access; analyst cost separate from experimental cost.",
+  "test_files": [
+    "tests/test_joint_feasibility.py",
+    "tests/test_joint_update.py",
+    "tests/test_phase_iiio_analysis.py",
+    "tests/test_phase_iiio_compute.py",
+    "tests/test_phase_iiio_roster.py",
+    "tests/test_phase_iiio_verification.py"
+  ],
+  "tests": {
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "passed": 65,
+    "skipped": 0,
+    "tests": 65,
+    "xml_sha256": "11ab5146d197657a6dca865ac90f4e0631968d358dee46599b29b71fc98a2046"
+  },
+  "unopened_rosters_absent": true,
+  "working_tree_clean": true
+}

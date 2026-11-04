@@ -251,7 +251,10 @@ the separate MCP suite passed **23 tests**. The final full suite passed
 **563 tests with the same optional skip**, in 46.24 seconds. Analysis tests verify
 independent dual arithmetic, native per-fork completeness and unmeasured
 behavior handling. The final post-report suite and clean-checkout receipts
-are recorded separately under the result directory. Runtime test CPU is
+are recorded separately under the result directory. A clean checkout of
+`a7dc03b` exactly replays K/L/M/N, the O analysis, independent dual arithmetic,
+compute accounting and ledger artifact hashes; all **65 O tests pass** there.
+Runtime test CPU is
 53.65625 seconds; the final main process peak is 376,717,312 bytes. These costs
 are not added to experimental compute. The initial compute report is preserved;
 `compute-v2.json` additionally itemizes the two temporary secants and their
@@ -265,6 +268,12 @@ the archives exactly. No audit tolerance changed. An existing BIC test's old
 wall-time anomaly did not recur in the bounded O preflight; its cause remains
 unproven. New tamper fixtures explicitly forge invalid bytes rather than asking
 the write-once evidence writer to overwrite a receipt.
+
+Post-fit analysis validation also corrected an independent-checker assumption:
+the solver's bound is the maximum of a dual-objective bound and a Cauchy-ratio
+bound, rather than necessarily the former. Both are now recomputed separately
+and tested against tampering. This reporting fix changed no fitting source,
+model observation or frozen gate. `analysis-validation.json` records it.
 
 ## Interpretation, limitations and capacity decision
 
@@ -327,4 +336,7 @@ Primary evidence: [analysis](../results/phase-iii-o/joint-v1/analysis.json),
 [raw systems](../results/phase-iii-o/joint-v1/trial/joint-feasibility.json),
 [fit report](../results/phase-iii-o/joint-v1/trial/fit-report.json),
 [assessment](../results/phase-iii-o/joint-v1/trial/assessment.json),
-[historical audit](../results/phase-iii-o/previous-audit.json).
+[historical audit](../results/phase-iii-o/previous-audit.json),
+[final tests](../results/phase-iii-o/joint-v1/tests-final.json),
+[clean checkout](../results/phase-iii-o/joint-v1/clean-checkout.json),
+[complete compute accounting](../results/phase-iii-o/joint-v1/compute-v2.json).

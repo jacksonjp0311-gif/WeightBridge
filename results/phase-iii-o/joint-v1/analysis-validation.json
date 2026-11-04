@@ -1,0 +1,12 @@
+{
+  "analyzer_sha256": "5fc31f2d69e34e3b71bc5472939966b4be0840befd24b2386746888e7f6b5c31",
+  "clean_replay_receipt_sha256": "94b6176de1f08a890064519f553a0bdbaea85dc074be4192861b600bbd0fe3a2",
+  "correction": "Fix only model-free analyzer arithmetic and add adversarial dual-component tests; fitting sources and original trial artifacts unchanged.",
+  "finding": "The initial independent analyzer assumed the combined norm lower bound equaled the square-root dual-objective bound. The solver also uses a Cauchy-ratio bound, which can be stronger. The analyzer now independently recomputes both and their maximum, including padding.",
+  "fit_report_sha256": "4a07fec76d0f23ff647fecff578ac7d4626ee7d605922f72deacba27416f5267",
+  "public_analysis_sha256": "dbcce6d3e90105a9b308b70c62191230a07c7218b4e2d67eea07203cd862e083",
+  "raw_system_sha256": "b62bdae0c318cdc248c1d37305a746c23aa2797f8ee459ccdde8a9368c66d2d2",
+  "regression_test": "test_nonconverged_cauchy_ratio_bound_can_exceed_dual_objective_bound and independent arithmetic tamper tests",
+  "schema": "weightbridge.phase_iiio.analysis_validation.v1",
+  "scope": "Post-fit reporting validation only; no model refit, protocol change, new inference or changed experimental evidence."
+}
