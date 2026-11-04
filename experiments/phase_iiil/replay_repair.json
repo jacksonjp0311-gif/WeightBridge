@@ -1,0 +1,7 @@
+{
+  "schema": "weightbridge.phase_iiil.replay_repair.v1",
+  "first_fit_report_sha256": "04ca82ac5724cb6b406d276b43bc981ece06f6b5f1978f424adb4795013e1a81",
+  "maximum_sampling_rounds": 3,
+  "replacement_rule": "Keep anchors that passed individual prefix replay. Exclude anchors whose replay has a nonpositive margin or a changed token. Resample only their original group and wording cells, with the same rankings and cap. Apply to preservation and calibration. Both update arms receive the same final anchors.",
+  "scope": "Development evidence collection only. Reuse hash-verified unchanged-parent measurements from the first fit. No transfer-validation, selection, or hidden outcomes enter the repair or fitting."
+}

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 _FIT = (
     *(f"experiments/phase_iiil/{name}" for name in (
         "semantic_protocol.json", "semantic_roster.py", "semantic_diagnostics.py", "run_semantic.py", "source_manifest.py",
+        "replay_repair.json",
     )),
     *(f"weightbridge/adaptation/{name}.py" for name in ("semantic_consensus", "semantic_update")),
 )
