@@ -1,0 +1,160 @@
+{
+  "schema": "weightbridge.phase_iiik.robust_jspace.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "adaptation": "weightbridge-iiik-jspace-v1-adaptation",
+    "preservation-fit": "weightbridge-iiik-jspace-v1-preservation-fit",
+    "calibration": "weightbridge-iiik-jspace-v1-calibration",
+    "preservation-validation": "weightbridge-iiik-jspace-v1-preservation-validation",
+    "selection": "weightbridge-iiik-jspace-v1-selection"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {
+    "adaptation": {
+      "target": 16,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-fit": {
+      "target": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "calibration": {
+      "target": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-validation": {
+      "target": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target": 16,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target": 16,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 900
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [
+      0,
+      1
+    ],
+    "max_candidate_evaluations": 6,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {
+    "max_repeatable_error_items": 4
+  },
+  "probe_design": {
+    "fixed_layer": 23,
+    "doses": [
+      0.0125,
+      0.0225
+    ],
+    "directional_secant_radius": 0.0125,
+    "anchors": 8,
+    "calibration_anchors": 8,
+    "validation_diagnostic_anchors": 8,
+    "preservation_groups": [
+      "target",
+      "positive",
+      "mixed-sign",
+      "copy"
+    ],
+    "positive_floor_grid": [
+      0.015625,
+      0.0625,
+      0.125
+    ],
+    "adverse_item_quantile": 0.8,
+    "A": "One lowest eligible margin per presentation then historical global low-margin selection from the preservation-fit pool, eight anchors. Existing inequality solver, zero floor.",
+    "B": "Same preservation-fit pool and capacity. One anchor per required group and wording cell using directional adverse movement divided by available parent margin. Existing inequality solver, zero floor.",
+    "C": "Same B anchors and solver. Add calibration-only positive floor and empirical adverse allowance.",
+    "D": "Reuse only C candidates that pass the complete practice gate. Require at least one positive local safe width and strictly positive minimum measured anchor margin. Rank by largest minimum measured margin above the calibrated floor, then largest maximum safe width, highest practice item gain, smallest realized BF16 norm, and earlier dose. If none eligible abstain.",
+    "E": "Lock the selected D candidate before opening the preservation-validation outcomes. Independently reload it and require zero previously correct response regressions and zero valid-response losses on that partition before independent selection. No further fitting.",
+    "max_gain_comparator": "Compare D against the C practice passer with largest target gain, then smallest realized norm and earlier dose. Report when neither exists or they coincide.",
+    "floor_rule": "Choose the largest positive grid value no greater than half the 25th percentile of calibration-anchor parent margins, using the lower empirical order statistic. If none meets the bound, abstain for C through E. Use the same floor for all active B anchors in C.",
+    "allowance_rule": "Estimate one common adverse allowance as the nonnegative 80th percentile (higher empirical order statistic) of worst adverse margin residual per underlying calibration item, using the rounded preferred rank-one direction at the directional secant radius. Use no validation observations in floor or allowance selection.",
+    "calibration_scope": "Residual allowances are diagnostics for one short preferred direction and a small number of independent underlying items. Compute a separate preservation-validation residual audit only after A\u2013D are locked, at the same calibration direction and dose; use these VJPs only for audit, never for solving or refitting.",
+    "sampler_controls": "Also record stratified low-margin and unstratified directional selections on the identical pool and capacity. These are coverage/risk-prediction diagnostics, not extra decoded arms.",
+    "practice_gate": "Require one new correct target item in both wordings and one correction of a repeatable negative error across both wordings on adaptation. Require zero losses of valid responses and zero regressions of previously correct presentations on both adaptation and preservation-fit.",
+    "duplicate_policy": "Deduplicate exactly rounded tensor states across A\u2013C. Reuse behavioral observations only for identical states. Report the nominal dose, realized BF16 norm, support, and arm-specific active-constraint margin checks.",
+    "compute_limits": "Six unique A/B/C full practice probes maximum. Each probe decodes both adaptation and preservation-fit. Separate full validation decode only for D survivor. Directional and calibration temporary probes measure logits only. No secondary geometry study in this CPU pilot.",
+    "fitting_scope": "First four adaptation items with replay-matched forks in both wordings. Preservation gradient VJPs only on selected anchors in preservation-fit and calibration. Neither preservation-validation nor selection or hidden is routed into optimization."
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "larger-decimal",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "larger-decimal-easy",
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 220,
+      "max_backward_calls": 64,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025,
+      "max_rank": 1,
+      "max_candidates": 6
+    },
+    "data": {
+      "practice": "iiik-jspace-development-v1",
+      "evaluation": "iiik-jspace-hidden-v1"
+    },
+    "methods": [
+      "constrained"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "candidate_lock": "Only the locked D practice survivor may reach E. E requires an independent preservation-validation pass before scoring independent selection. Selection and hidden retain prior positive improvement and zero-regression gates. Require exact restart and rollback before lineage."
+}

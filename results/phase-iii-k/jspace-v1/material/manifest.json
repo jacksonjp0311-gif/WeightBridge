@@ -1,0 +1,57 @@
+{
+  "protocol_sha256": "a1e7216849ef325411d75fef3333213de86a53fbc923e0d4621018b6580fcd90",
+  "schema": "weightbridge.phase_iiik.decimal_roster.v1",
+  "sources": {
+    "experiments/phase_iiig/roster_decimal_targeted.py": "c8e1e5cf6a9c3217f102730aab5ee4bb95c027a5206f9b25723b1159c4076098",
+    "experiments/phase_iiik/decimal_protocol.json": "a1e7216849ef325411d75fef3333213de86a53fbc923e0d4621018b6580fcd90",
+    "experiments/phase_iiik/decimal_roster.py": "da02ca216048e5491237ccabf867ff484e5df5a34e65c0a2bc01e65e0254021d",
+    "results/phase-iii-g/decimal-v5/material/practice.json": "41da50a2c13c645c644834696f7a4edbc90bf97f58029d81c1a99faf35388113",
+    "results/phase-iii-g/decimal-v5/material/selection.json": "b7b7e8c2369025f70a19cae80bba80574c1f143ff0bcdf9fef5908b882803f78",
+    "results/phase-iii-g/negative-decimal-v6/material/practice.json": "b7ec082978ce5b0bf0db6778f1e55193faf08661733caade1719b4dfe46a0a3a",
+    "results/phase-iii-g/negative-decimal-v6/material/selection.json": "a0d6f1f9b297d16695176cbedbb092aee0357cdf8a4cdd6f836912c345bf1e00",
+    "results/phase-iii-h/decimal-endpoint-v1/material/practice.json": "106165410aed623423abe3b5ab1d295004aa23ae8d3156c99cee114f2dbc95ce",
+    "results/phase-iii-h/decimal-endpoint-v1/material/selection.json": "6a150bdbbd9e9045d90d4e27f8d702cd47438e7e60eafd9b934b747ac517f9d8",
+    "results/phase-iii-i/causal-fork-v1/material/practice.json": "e3ddbcb12d956b64a1e98ae9e5a4269c51b83d157eca9534ba6855b18bf8450a",
+    "results/phase-iii-i/causal-fork-v1/material/selection.json": "b1a0182416825053b1e16e2b2294af0f32b547ef6bf98eb4cdeb0808a9a061f0",
+    "results/phase-iii-j/preservation-v1/material/practice.json": "571e5c71d3dfa09dc8e1a06b2c7d36e32203bc12c29241a6b39f639cf45b911b",
+    "results/phase-iii-j/preservation-v1/material/selection.json": "1e4d5f290cbb27e4d84da38ea9d207800da737c30c67178a0b9af798259da983"
+  },
+  "splits": {
+    "adaptation": {
+      "items": 24,
+      "rows": 48,
+      "seed_commitment": "9fcc0cda676ddfd61e98c27aafb18957490827cd0504cec2d7b096bb62fe0ebc",
+      "sha256": "bd82f880d8733c0088d9eb80900517f11e4157e9ac056ab1179edde89efc5c2d"
+    },
+    "calibration": {
+      "items": 12,
+      "rows": 24,
+      "seed_commitment": "98f092ead4827726151e0f5bec706fdd487864639c530cd93cc5b961ce400f29",
+      "sha256": "eec4b70cc2fd73c606292eea88e002c4cf61085050ab10054012cf1f61ebbbff"
+    },
+    "hidden": {
+      "items": 24,
+      "rows": 48,
+      "seed_commitment": "30088f8edf653d4352916075c1ac325622dce10767446033c78b7b1566f1ef86",
+      "sha256": "2f3ed0274ad43095949f149f618d27ad79cf8fc75b7cb7b8bbf9057a90e14c83"
+    },
+    "preservation-fit": {
+      "items": 12,
+      "rows": 24,
+      "seed_commitment": "25053a3f70062cb28c1478a8dd454c90c7789ec29a82e0fed7575c57e1bdf5a5",
+      "sha256": "d94647edba372301e004f9a7fa1bc409c9ed55f1c5a3dec9852027a07388ec68"
+    },
+    "preservation-validation": {
+      "items": 12,
+      "rows": 24,
+      "seed_commitment": "c405ac7bdd6c30ce3916de23371fe59102960ed644d50cbdf926f7e93545ed0a",
+      "sha256": "4a5181f237587fe0f38f6db5314114d779295059143fcee8179fd7f5f8832f1a"
+    },
+    "selection": {
+      "items": 24,
+      "rows": 48,
+      "seed_commitment": "d8a4ea6f088b76cf7b284fa9524ce4118686ee085e77613b693fcd9cd0232019",
+      "sha256": "8279d4ffa4a9b561d8d3fba89cfa906eb6e01c4441013af6aebd1f7866b9864d"
+    }
+  }
+}
