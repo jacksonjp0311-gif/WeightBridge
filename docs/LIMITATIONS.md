@@ -185,3 +185,10 @@ along a particular direction. Rounding, changing competitors and subsequent
 decoding can invalidate those predictions. Practice counterexamples are
 eligible for refitting and cannot serve as independent confirmation.
 [Phase III-J evidence](PHASE_III_J.md)
+
+Phase III-K measures a finite directional secant at one rounded dose.
+The resulting ranking may change for other update directions and radii.
+The residual allowance describes a small calibration cohort and the
+reference probe. Both paired local feasibility and semantic generation
+must be measured before drawing conclusions about correction behavior.
+[Phase III-K evidence](PHASE_III_K.md)

@@ -480,3 +480,13 @@ two repeatable errors corrected, three net targets gained, and zero
 regressions. The exact checkpoint gained one target on fresh selection
 and regressed two previously correct responses. The frozen gate rejected
 it. [Phase III-J evidence](PHASE_III_J.md)
+
+## Robust J-space
+
+Group-stratified directional sampling covered all eight required cells
+across eight underlying items. At the two tested radii the historical,
+directional and buffered fits produced identical rounded weights. The
+smaller update corrected a repeatable error and preserved every protected
+response on separate development validation. Fresh selection preserved
+prior responses and gained no target items. The held residual allowance
+covered five of seven items. [Phase III-K evidence](PHASE_III_K.md)

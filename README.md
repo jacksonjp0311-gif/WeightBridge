@@ -63,6 +63,10 @@ inequalities, and refitting from practice regressions. Each rounded probe
 must pass the same complete-generation guard before checkpoint creation.
 [Phase III-J findings and replay](docs/PHASE_III_J.md)
 
+Phase III-K measures directional sensitivity across correct response
+trajectories, calibrates positive preservation slack, and tests a separate
+validation gate for stored candidates. [Phase III-K findings and replay](docs/PHASE_III_K.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

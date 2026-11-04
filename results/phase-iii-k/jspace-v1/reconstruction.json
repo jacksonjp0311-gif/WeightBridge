@@ -1,0 +1,21 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "candidate_sha256": "e9b0be56d4d48d71121212f27c970cb80798214c3077b3bfa6ba3f9752ec151f",
+  "changed_entries": 14295,
+  "disposition": "PASS",
+  "exact_candidate_reconstruction": true,
+  "generation_evaluations": 0,
+  "original_checkpoint_sha256_rechecked": true,
+  "patch_sha256": "c836fc6a1d57af382e48ca369bdafb8a71f7a567c64a720b78aaac74ab8d6319",
+  "policy_sha256": "671e961e405e46b295e5fa2bbc1e1f9adbcf26028a7951774136cc9daa89fb72",
+  "resources": {
+    "cpu_seconds": 14.875,
+    "peak_rss_bytes": 208506880,
+    "wall_seconds": 15.59829259995604
+  },
+  "schema": "weightbridge.phase_iiik.reconstruction.v1",
+  "source_report_sha256": "0d3a8f1a75e571b125abbe2b69bd66add49028fef23279d9e3b0e36c442114e7",
+  "tensor_sha256": {
+    "model.language_model.layers.23.mlp.down_proj.weight": "3fad3abec32e8f6276b04eab33f3a780255a58de1ee36caa22259e3a7090840b"
+  }
+}

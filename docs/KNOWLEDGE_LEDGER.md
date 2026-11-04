@@ -23,6 +23,11 @@ portability run. The Qwen trial includes a practice-qualified BF16 update
 and its failed independent selection. The interrupted attempt is bound as
 execution evidence for the same cohort. [Phase III-J findings](PHASE_III_J.md)
 
+Phase III-K adds a matched Qwen robust J-space trial and a SmolLM2 native
+sensitivity run. The Qwen preservation-validation pass and independent
+zero-gain failure are separate events on the same candidate. Four arm
+aliases reused two exact rounded states. [Phase III-K findings](PHASE_III_K.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |
