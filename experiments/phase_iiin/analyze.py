@@ -184,6 +184,10 @@ def summarize(trial, material):
                     for name, row in arms.items() if name.endswith(str(dose)) and row["realized_norm"] is not None}
         matching[str(dose)] = compare_realized_norms(selected, intended_norm=norm,
             relative_tolerance=config["probe_design"]["norm_relative_tolerance"]) if selected else None
+    actual_pairwise = stored_update_cosines(deltas) if deltas else {}
+    if "stored-pairwise.json" in records and records["stored-pairwise.json"] != {
+            "norm_matching": matching, "actual_delta_cosines": actual_pairwise}:
+        raise ValueError("Stored norm matching and cosines differ from archived rounded deltas")
     development, development_generations = {}, {}
     before_dev = None
     parent_file = "verification/development-transfer-base.json"
@@ -233,7 +237,7 @@ def summarize(trial, material):
         "gradient_compatibility": records.get("directions.json", {}).get("pairs"),
         "sampling": sampling, "arms": arms, "unique_decoded_probes": unique,
         "practice_passers": [name for name, row in arms.items() if row.get("practice_gate", {}).get("passed") and not row["duplicate_of"]],
-        "stored_norm_matching": matching, "stored_update_comparison": stored_update_cosines(deltas) if deltas else {},
+        "stored_norm_matching": matching, "stored_update_comparison": actual_pairwise,
         "matched_allocation_contrasts": contrasts, "development": development,
         "preservation": assessment["preservation"], "independent_selection": assessment["selection"], "independent": independent,
         "resources": {"fitting": report["resources"], "fitting_stage_counts": work,
