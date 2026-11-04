@@ -1,0 +1,361 @@
+{
+  "candidate_tensor_sha256": "3fad3abec32e8f6276b04eab33f3a780255a58de1ee36caa22259e3a7090840b",
+  "corrected_repeatable_items": [
+    "jspace-decimal/adaptation/larger-decimal/target/01"
+  ],
+  "fitted_presentations": [
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -7.219817161560059,
+          "token_id": 15,
+          "token_text": "0"
+        },
+        {
+          "log_probability": -2.8448171615600586,
+          "token_id": 198,
+          "token_text": "\n"
+        },
+        {
+          "log_probability": -7.344817161560059,
+          "token_id": 248046,
+          "token_text": "<|im_end|>"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.09481720626354218,
+        "token_id": 23,
+        "token_text": "8"
+      },
+      "candidate_margin": -1.5,
+      "candidate_token": 23,
+      "correct_answer": "-80.7",
+      "correct_answer_length": "shorter",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/00",
+      "measured_accepted_token": false,
+      "operands": [
+        "-80.7",
+        "-80.7818"
+      ],
+      "parent_answer": "-80.7818",
+      "predicted_margin_slope": 100.73526009740407,
+      "shared_token_ids": [
+        471,
+        23,
+        15,
+        13,
+        22
+      ],
+      "tier": "negative-close",
+      "wording": 0
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -7.380109786987305,
+          "token_id": 15,
+          "token_text": "0"
+        },
+        {
+          "log_probability": -2.5051095485687256,
+          "token_id": 198,
+          "token_text": "\n"
+        },
+        {
+          "log_probability": -6.505109786987305,
+          "token_id": 248046,
+          "token_text": "<|im_end|>"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.13010960817337036,
+        "token_id": 23,
+        "token_text": "8"
+      },
+      "candidate_margin": -1.125,
+      "candidate_token": 23,
+      "correct_answer": "-80.7",
+      "correct_answer_length": "shorter",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/00",
+      "measured_accepted_token": false,
+      "operands": [
+        "-80.7",
+        "-80.7818"
+      ],
+      "parent_answer": "-80.7818",
+      "predicted_margin_slope": 106.86972557912024,
+      "shared_token_ids": [
+        471,
+        23,
+        15,
+        13,
+        22
+      ],
+      "tier": "negative-close",
+      "wording": 1
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -6.601095676422119,
+          "token_id": 15,
+          "token_text": "0"
+        },
+        {
+          "log_probability": -1.4760955572128296,
+          "token_id": 198,
+          "token_text": "\n"
+        },
+        {
+          "log_probability": -7.101095676422119,
+          "token_id": 248046,
+          "token_text": "<|im_end|>"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.3510955572128296,
+        "token_id": 18,
+        "token_text": "3"
+      },
+      "candidate_margin": 0.25,
+      "candidate_token": 198,
+      "correct_answer": "-10.4",
+      "correct_answer_length": "shorter",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/01",
+      "measured_accepted_token": true,
+      "operands": [
+        "-10.4352",
+        "-10.4"
+      ],
+      "parent_answer": "-10.4352",
+      "predicted_margin_slope": 119.52105437405653,
+      "shared_token_ids": [
+        471,
+        16,
+        15,
+        13,
+        19
+      ],
+      "tier": "negative-close",
+      "wording": 0
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -7.1018452644348145,
+          "token_id": 15,
+          "token_text": "0"
+        },
+        {
+          "log_probability": -1.2268450260162354,
+          "token_id": 198,
+          "token_text": "\n"
+        },
+        {
+          "log_probability": -6.4768452644348145,
+          "token_id": 248046,
+          "token_text": "<|im_end|>"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.4768450856208801,
+        "token_id": 18,
+        "token_text": "3"
+      },
+      "candidate_margin": 0.75,
+      "candidate_token": 198,
+      "correct_answer": "-10.4",
+      "correct_answer_length": "shorter",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/01",
+      "measured_accepted_token": true,
+      "operands": [
+        "-10.4352",
+        "-10.4"
+      ],
+      "parent_answer": "-10.4352",
+      "predicted_margin_slope": 123.7947062835339,
+      "shared_token_ids": [
+        471,
+        16,
+        15,
+        13,
+        19
+      ],
+      "tier": "negative-close",
+      "wording": 1
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -1.2267318964004517,
+          "token_id": 15,
+          "token_text": "0"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.35173192620277405,
+        "token_id": 16,
+        "token_text": "1"
+      },
+      "candidate_margin": -0.625,
+      "candidate_token": 16,
+      "correct_answer": "-20.0811",
+      "correct_answer_length": "longer",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/02",
+      "measured_accepted_token": false,
+      "operands": [
+        "-20.0811",
+        "-20.1"
+      ],
+      "parent_answer": "-20.1",
+      "predicted_margin_slope": 23.263865830364153,
+      "shared_token_ids": [
+        471,
+        17,
+        15,
+        13
+      ],
+      "tier": "negative-close",
+      "wording": 0
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -0.976638913154602,
+          "token_id": 15,
+          "token_text": "0"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.47663891315460205,
+        "token_id": 16,
+        "token_text": "1"
+      },
+      "candidate_margin": -0.25,
+      "candidate_token": 16,
+      "correct_answer": "-20.0811",
+      "correct_answer_length": "longer",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/02",
+      "measured_accepted_token": false,
+      "operands": [
+        "-20.0811",
+        "-20.1"
+      ],
+      "parent_answer": "-20.1",
+      "predicted_margin_slope": 24.180488491554136,
+      "shared_token_ids": [
+        471,
+        17,
+        15,
+        13
+      ],
+      "tier": "negative-close",
+      "wording": 1
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -2.019932270050049,
+          "token_id": 15,
+          "token_text": "0"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.14493216574192047,
+        "token_id": 16,
+        "token_text": "1"
+      },
+      "candidate_margin": -1.625,
+      "candidate_token": 16,
+      "correct_answer": "-47.0821",
+      "correct_answer_length": "longer",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/03",
+      "measured_accepted_token": false,
+      "operands": [
+        "-47.1",
+        "-47.0821"
+      ],
+      "parent_answer": "-47.1",
+      "predicted_margin_slope": 19.861622993946412,
+      "shared_token_ids": [
+        471,
+        19,
+        22,
+        13
+      ],
+      "tier": "negative-close",
+      "wording": 0
+    },
+    {
+      "accepted_tokens": [
+        {
+          "log_probability": -1.8084473609924316,
+          "token_id": 15,
+          "token_text": "0"
+        }
+      ],
+      "actual_token": {
+        "log_probability": -0.18344739079475403,
+        "token_id": 16,
+        "token_text": "1"
+      },
+      "candidate_margin": -1.375,
+      "candidate_token": 16,
+      "correct_answer": "-47.0821",
+      "correct_answer_length": "longer",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/03",
+      "measured_accepted_token": false,
+      "operands": [
+        "-47.1",
+        "-47.0821"
+      ],
+      "parent_answer": "-47.1",
+      "predicted_margin_slope": 19.934985186217826,
+      "shared_token_ids": [
+        471,
+        19,
+        22,
+        13
+      ],
+      "tier": "negative-close",
+      "wording": 1
+    }
+  ],
+  "mean_slope_by_correct_answer_length": {
+    "longer": 21.81024062552063,
+    "shorter": 112.73018658352868
+  },
+  "observed_arm": "A1",
+  "repeatable_unfitted_errors": [
+    {
+      "correct_answer": "-34.5568",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/06",
+      "operands": [
+        "-34.5568",
+        "-39.4"
+      ],
+      "parent_answer": "-39.4",
+      "tier": "negative-far"
+    },
+    {
+      "correct_answer": "-58.5601",
+      "item": "jspace-decimal/adaptation/larger-decimal/target/07",
+      "operands": [
+        "-66.6",
+        "-58.5601"
+      ],
+      "parent_answer": "-66.6",
+      "tier": "negative-far"
+    }
+  ],
+  "schema": "weightbridge.phase_iiil.phase_k_fork_audit.v1",
+  "selection": "independent_selection_gate",
+  "source_commit": "4b10f9dfe415439eb7e260714ea75eaee20f80b3",
+  "source_sha256": {
+    "arm-A1.json": "07dba559d272f89b67f25a0564ffdc7a0d5801ed30e429a1b4bb102208fe5729",
+    "arm-C1.json": "542e1d406543aff14124c5b51cbdb40af04277859999efb60f878acc66351232",
+    "diagnosis.json": "3c685d8f2a849e3a51c640fb171084691db8ea87a651c716c97190b7b66c1620",
+    "parent-adaptation.json": "ffec2d40b60e6b5286f84b184eb756e4c50e7ff6b0251be65ae1d4a7a326e700",
+    "report.json": "0d3a8f1a75e571b125abbe2b69bd66add49028fef23279d9e3b0e36c442114e7"
+  }
+}
