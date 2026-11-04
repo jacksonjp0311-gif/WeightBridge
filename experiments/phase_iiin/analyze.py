@@ -135,6 +135,14 @@ def summarize(trial, material):
                    "calibration_sufficient": record["calibration_sufficient"], "floor": record["floor"],
                    "numerical_rejections": _numerical_rejections(record, config),
                    "numeric_resources": record["resources"], "probe_resources": probe.get("resources")}
+            if delta is not None:
+                right = np.asarray(record["right_factor"], dtype=float)
+                residual = delta - np.outer(delta @ right, right)
+                row["stored_geometry"] = {"proposed_rank": 1,
+                    "selected_delta_numerical_rank": int(np.linalg.matrix_rank(delta)),
+                    "off_fixed_right_norm": float(np.linalg.norm(residual)),
+                    "relative_off_fixed_right_norm": float(np.linalg.norm(residual) / np.linalg.norm(delta)),
+                    "scope": "BF16 rounding may add components outside the unrounded rank-one subspace."}
             if alias:
                 if alias not in arms or owners.get(digest) != alias:
                     raise ValueError("Alias does not bind an earlier identical stored state")
@@ -251,7 +259,9 @@ def plot(summary, out):
     import matplotlib.pyplot as plt
     from matplotlib.ticker import MaxNLocator
     measured = [(name, row) for name, row in summary["arms"].items() if row.get("practice_gate")]
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.4), layout="constrained")
+    fig, grid = plt.subplots(2, 2, figsize=(11, 9), layout="constrained")
+    fig.suptitle("Phase III-N: recorded generation and gradient measurements", fontsize=15)
+    axes = grid.ravel()
     names = [name for name, _ in measured]
     x = np.arange(len(names))
     for axis, metric, title in ((axes[0], "target_gain", "Strict four-form comparison gains"),
@@ -270,6 +280,37 @@ def plot(summary, out):
                       transform=axis.transAxes, va="top", fontsize=8)
     if not measured:
         axes[0].text(.5, .5, "No eligible complete-generation probes", ha="center")
+    basis = summary.get("basis", {})
+    if basis:
+        labels = [item.split("/target/")[-1].replace("/variant-", "/") for item in basis["item_ids"]]
+        matrix = axes[2].imshow(basis["projected_item_cosines"], vmin=-1, vmax=1, cmap="RdBu_r")
+        axes[2].set_xticks(range(len(labels)), labels, rotation=90, fontsize=7)
+        axes[2].set_yticks(range(len(labels)), labels, fontsize=7)
+        axes[2].set_title("Measured corrective-gradient cosine (fixed right factor)")
+        fig.colorbar(matrix, ax=axes[2], fraction=.046, pad=.025)
+    else:
+        axes[2].text(.5, .5, "No qualifying gradient measurements", ha="center")
+    numeric = [(name, row) for name, row in summary["arms"].items() if row["realized_norm"] is not None]
+    if numeric:
+        positions = np.arange(len(numeric))
+        for certified, color, marker, label in ((True, "#1f77b4", "o", "Stored, calibrated"),
+                (False, "#a65e16", "x", "Stored, calibration HOLD")):
+            indices = [i for i, (_, row) in enumerate(numeric) if row["calibration_sufficient"] == certified]
+            if indices:
+                axes[3].scatter(indices, [numeric[i][1]["realized_norm"] for i in indices],
+                                color=color, marker=marker, label=label)
+        axes[3].plot(positions, [row["intended_norm"] for _, row in numeric], color="black",
+                     marker="_", markersize=15, linestyle="none", label="Frozen target")
+        axes[3].set_xticks(positions, [name for name, _ in numeric])
+        axes[3].set_title("Measured intervention strength")
+        axes[3].set_ylabel("Frobenius norm of actual stored delta")
+        axes[3].legend(frameon=False)
+        refused = [name for name, row in numeric if not row["calibration_sufficient"]]
+        if refused:
+            axes[3].text(.03, .96, "Not decoded: " + ", ".join(refused),
+                         transform=axes[3].transAxes, va="top", fontsize=9)
+    else:
+        axes[3].text(.5, .5, "No admissible stored state", ha="center")
     fig.savefig(out, dpi=170)
     plt.close(fig)
 

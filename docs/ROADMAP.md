@@ -104,3 +104,25 @@ recorded.
 - Keep integration with RecallTree, MemoryAtlas, Genome, ExperimentForge and
   private PEGASUS data out of scope until separately authorized and backed by
   these isolated results.
+
+
+## After Phase III-N
+
+Completed: paired supervision allocation, fixed inherited geometry,
+comparison-weighted native gradients, pair-aware numerical synthesis,
+matched BF16 probes, full generation, five independent development reloads,
+exact B2 reconstruction and original restoration. One complete practice
+counterfactual family is recorded.
+
+HOLD: complete-family transfer on fresh development, separate preservation
+validation, independent selection, hidden verification, lineage admission,
+and sequential learning. Paired allocation did not outperform one-sided
+allocation on fresh strict gains at the larger norm.
+
+Next: freeze a small joint per-presentation feasibility experiment with
+preservation, within the existing 0.025 maximum. Test whether the current
+0.020 dose lies below a selective paired correction threshold. Require an
+actual rounded witness before a separately frozen dose or geometry trial.
+Use fresh families excluding every disclosed Phase III-N transformation.
+Do not refit the finished study or expand rank solely because it held.
+[Phase III-N](PHASE_III_N.md)

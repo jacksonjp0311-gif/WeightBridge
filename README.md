@@ -76,6 +76,13 @@ gradient normalization. It checks actual BF16 norm matching and requires
 complete counterfactual families before independent selection.
 [Phase III-M study](docs/PHASE_III_M.md)
 
+Phase III-N compares eight one-sided comparisons with four paired
+counterfactual families in the exact same weight geometry. Paired supervision
+completed one practice family and preserved required practice/development responses. It gained
+two strict comparisons on fresh development, matching the one-sided control,
+but completed no fresh family. The study held before independent selection
+and hidden verification. [Phase III-N study and reproduction](docs/PHASE_III_N.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

@@ -1,0 +1,476 @@
+{
+  "attempts": [
+    {
+      "replay": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/preservation-fit/target/00/variant-1/order-1",
+            "margin": 0.125,
+            "position": 4,
+            "projected_gradient_norm": 47.749111320566364,
+            "prompt_id": "semantic-decimal/preservation-fit/target/00/variant-1/order-1/1",
+            "raw_direction_slope": 2.2779874273605043,
+            "replay_margin": 0.125,
+            "rival_token_id": 21,
+            "token_id": 20,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-0",
+            "margin": 0.75,
+            "position": 1,
+            "projected_gradient_norm": 43.51290586613242,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-0/0",
+            "raw_direction_slope": -10.733909127022716,
+            "replay_margin": 0.75,
+            "rival_token_id": 19,
+            "token_id": 22,
+            "wording": 0
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+            "margin": 7.25,
+            "position": 5,
+            "projected_gradient_norm": 112.5494824028044,
+            "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+            "raw_direction_slope": -87.13260114556692,
+            "replay_margin": 7.25,
+            "rival_token_id": 198,
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/preservation-fit/preserve/03",
+            "margin": 4.375,
+            "position": 0,
+            "projected_gradient_norm": 98.30026973108589,
+            "prompt_id": "semantic-decimal/preservation-fit/preserve/03/1",
+            "raw_direction_slope": -39.6772631836005,
+            "replay_margin": 4.375,
+            "rival_token_id": 198,
+            "token_id": 220,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-1",
+            "margin": 7.0,
+            "position": 5,
+            "projected_gradient_norm": 115.73036687406469,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-1/1",
+            "raw_direction_slope": -89.59241058746625,
+            "replay_margin": 7.0,
+            "rival_token_id": 198,
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/adaptation/positive/03/order-0",
+            "margin": 6.125,
+            "position": 5,
+            "projected_gradient_norm": 102.36412011426128,
+            "prompt_id": "semantic-decimal/adaptation/positive/03/order-0/0",
+            "raw_direction_slope": -66.84041370333101,
+            "replay_margin": 6.125,
+            "rival_token_id": 198,
+            "token_id": 15,
+            "wording": 0
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/adaptation/preserve/01",
+            "margin": 8.125,
+            "position": 8,
+            "projected_gradient_norm": 97.81399615907071,
+            "prompt_id": "semantic-decimal/adaptation/preserve/01/0",
+            "raw_direction_slope": -75.75084478938204,
+            "replay_margin": 8.125,
+            "rival_token_id": 198,
+            "token_id": 18,
+            "wording": 0
+          }
+        ],
+        "rejected": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/adaptation/target/01/variant-0/order-0",
+            "margin": 0.125,
+            "position": 2,
+            "prompt_id": "semantic-decimal/adaptation/target/01/variant-0/order-0/0",
+            "replay_margin": 0.0,
+            "replay_token_id": 20,
+            "token_id": 20,
+            "wording": 0
+          }
+        ],
+        "resources": {
+          "backward_calls": 7,
+          "cpu_seconds": 14.3125,
+          "forward_calls": 1,
+          "peak_rss_bytes": 2663870464,
+          "wall_seconds": 4.45109180000145
+        },
+        "schema": "weightbridge.preservation_vjps.v1"
+      },
+      "sample": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/preservation-fit/target/00/variant-1/order-1",
+            "margin": 0.125,
+            "position": 4,
+            "prompt_id": "semantic-decimal/preservation-fit/target/00/variant-1/order-1/1",
+            "token_id": 20,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-0",
+            "margin": 0.75,
+            "position": 1,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-0/0",
+            "token_id": 22,
+            "wording": 0
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+            "margin": 7.25,
+            "position": 5,
+            "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/preservation-fit/preserve/03",
+            "margin": 4.375,
+            "position": 0,
+            "prompt_id": "semantic-decimal/preservation-fit/preserve/03/1",
+            "token_id": 220,
+            "wording": 1
+          },
+          {
+            "group": "target",
+            "item": "semantic-decimal/adaptation/target/01/variant-0/order-0",
+            "margin": 0.125,
+            "position": 2,
+            "prompt_id": "semantic-decimal/adaptation/target/01/variant-0/order-0/0",
+            "token_id": 20,
+            "wording": 0
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-1",
+            "margin": 7.0,
+            "position": 5,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-1/1",
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/adaptation/positive/03/order-0",
+            "margin": 6.125,
+            "position": 5,
+            "prompt_id": "semantic-decimal/adaptation/positive/03/order-0/0",
+            "token_id": 15,
+            "wording": 0
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/adaptation/preserve/01",
+            "margin": 8.125,
+            "position": 8,
+            "prompt_id": "semantic-decimal/adaptation/preserve/01/0",
+            "token_id": 18,
+            "wording": 0
+          }
+        ],
+        "complete": true,
+        "eligible_decisions": 672,
+        "item_counts": [
+          [
+            "semantic-decimal/adaptation/positive/02/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/positive/02/order-1",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/positive/03/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/preserve/01",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/target/01/variant-0/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/positive/03/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/preserve/03",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/target/00/variant-1/order-1",
+            1
+          ]
+        ],
+        "measured_decisions": 672,
+        "missing_groups": [],
+        "missing_strata": [],
+        "mode": "stratified_directional",
+        "represented_items": 8,
+        "represented_strata": [
+          [
+            "target",
+            1
+          ],
+          [
+            "positive",
+            0
+          ],
+          [
+            "mixed-sign",
+            1
+          ],
+          [
+            "copy",
+            1
+          ],
+          [
+            "target",
+            0
+          ],
+          [
+            "positive",
+            1
+          ],
+          [
+            "mixed-sign",
+            0
+          ],
+          [
+            "copy",
+            0
+          ]
+        ],
+        "selected_risks": [
+          2.0,
+          0.3333333333333333,
+          0.1724137931034483,
+          0.14285714285714285,
+          1.0,
+          0.17857142857142858,
+          0.16326530612244897,
+          0.13846153846153847
+        ],
+        "unavailable_strata": [],
+        "unmeasured_decisions": 0
+      }
+    },
+    {
+      "replay": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/adaptation/target/15/variant-0/order-1",
+            "margin": 1.5,
+            "position": 0,
+            "projected_gradient_norm": 82.76041298779609,
+            "prompt_id": "semantic-decimal/adaptation/target/15/variant-0/order-1/0",
+            "raw_direction_slope": -10.693140915754693,
+            "replay_margin": 1.5,
+            "rival_token_id": 220,
+            "token_id": 471,
+            "wording": 0
+          }
+        ],
+        "rejected": [],
+        "resources": {
+          "backward_calls": 1,
+          "cpu_seconds": 5.546875,
+          "forward_calls": 1,
+          "peak_rss_bytes": 2663870464,
+          "wall_seconds": 2.7293109000311233
+        },
+        "schema": "weightbridge.preservation_vjps.v1"
+      },
+      "sample": {
+        "anchors": [
+          {
+            "group": "target",
+            "item": "semantic-decimal/preservation-fit/target/00/variant-1/order-1",
+            "margin": 0.125,
+            "position": 4,
+            "prompt_id": "semantic-decimal/preservation-fit/target/00/variant-1/order-1/1",
+            "token_id": 20,
+            "wording": 1
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-0",
+            "margin": 0.75,
+            "position": 1,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-0/0",
+            "token_id": 22,
+            "wording": 0
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+            "margin": 7.25,
+            "position": 5,
+            "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/preservation-fit/preserve/03",
+            "margin": 4.375,
+            "position": 0,
+            "prompt_id": "semantic-decimal/preservation-fit/preserve/03/1",
+            "token_id": 220,
+            "wording": 1
+          },
+          {
+            "group": "target",
+            "item": "semantic-decimal/adaptation/target/15/variant-0/order-1",
+            "margin": 1.5,
+            "position": 0,
+            "prompt_id": "semantic-decimal/adaptation/target/15/variant-0/order-1/0",
+            "token_id": 471,
+            "wording": 0
+          },
+          {
+            "group": "positive",
+            "item": "semantic-decimal/adaptation/positive/02/order-1",
+            "margin": 7.0,
+            "position": 5,
+            "prompt_id": "semantic-decimal/adaptation/positive/02/order-1/1",
+            "token_id": 18,
+            "wording": 1
+          },
+          {
+            "group": "mixed-sign",
+            "item": "semantic-decimal/adaptation/positive/03/order-0",
+            "margin": 6.125,
+            "position": 5,
+            "prompt_id": "semantic-decimal/adaptation/positive/03/order-0/0",
+            "token_id": 15,
+            "wording": 0
+          },
+          {
+            "group": "copy",
+            "item": "semantic-decimal/adaptation/preserve/01",
+            "margin": 8.125,
+            "position": 8,
+            "prompt_id": "semantic-decimal/adaptation/preserve/01/0",
+            "token_id": 18,
+            "wording": 0
+          }
+        ],
+        "complete": true,
+        "eligible_decisions": 69,
+        "item_counts": [
+          [
+            "semantic-decimal/adaptation/positive/02/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/positive/02/order-1",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/positive/03/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/preserve/01",
+            1
+          ],
+          [
+            "semantic-decimal/adaptation/target/15/variant-0/order-1",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/positive/03/order-0",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/preserve/03",
+            1
+          ],
+          [
+            "semantic-decimal/preservation-fit/target/00/variant-1/order-1",
+            1
+          ]
+        ],
+        "measured_decisions": 69,
+        "missing_groups": [],
+        "missing_strata": [],
+        "mode": "stratified_directional",
+        "represented_items": 8,
+        "represented_strata": [
+          [
+            "target",
+            1
+          ],
+          [
+            "positive",
+            0
+          ],
+          [
+            "mixed-sign",
+            1
+          ],
+          [
+            "copy",
+            1
+          ],
+          [
+            "target",
+            0
+          ],
+          [
+            "positive",
+            1
+          ],
+          [
+            "mixed-sign",
+            0
+          ],
+          [
+            "copy",
+            0
+          ]
+        ],
+        "selected_risks": [
+          2.0,
+          0.3333333333333333,
+          0.1724137931034483,
+          0.14285714285714285,
+          0.16666666666666666,
+          0.17857142857142858,
+          0.16326530612244897,
+          0.13846153846153847
+        ],
+        "unavailable_strata": [],
+        "unmeasured_decisions": 0
+      }
+    }
+  ]
+}

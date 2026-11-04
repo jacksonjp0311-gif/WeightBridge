@@ -245,3 +245,37 @@ prediction. Neither crossed the eight-case gate. A single clean transfer
 case shows feasibility, while the case-level comparison gives little
 evidence that this mix improves transfer on the tested faults.
 [Ablation evidence](QWEN_WORDING_ABLATION.md)
+
+
+### Phase III-N: paired supervision allocation
+
+**Observation.** The parent completes every adaptation presentation validly,
+but solves only one of forty-eight strict comparisons and no complete family.
+Close-family projected gradient norm ratios are about 3.2; far-family paired
+cosines are about -0.41 and -0.38.
+
+**Hypothesis.** Opposing-outcome supervision can reduce one-sided correction
+and improve complete-family transfer under the same numerical geometry.
+
+**Intervention.** A uses eight comparisons from eight families. B/C use both
+comparisons from four families. All share fixed-right rank-one proposals,
+margin gradients, stored-norm targets and preservation. C additionally
+maximizes the weakest averaged predicted margin.
+
+**Result.** B2 gains thirteen strict practice comparisons and one complete
+family with zero prohibited losses. Fresh development gains two strict
+comparisons, equal to A2, and no complete family. Later gates remain closed.
+
+**Interpretation.** Pairing changes local slopes and improves practice
+coherence, but this study does not establish complete rule transfer.
+
+**Limitations.** Family diversity and fork exposure differ; six development
+families and one model are insufficient for broad conclusions. BF16 and
+nonlinear execution limit the local bound. No independent selection or
+hidden qualification ran.
+
+**Next experiment.** Freeze a joint per-presentation reachability study
+before another dose or geometry change. This is one study with an aborted
+implementation attempt, not multiple independent positive observations.
+Evidence key: `ffe0a122b7e2cdacc2f5560fd2bdd739a47d7902af86305e888d64b33a1b3ac7`.
+[Report and raw evidence](PHASE_III_N.md)

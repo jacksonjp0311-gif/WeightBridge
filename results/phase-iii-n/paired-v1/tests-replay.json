@@ -1,0 +1,20 @@
+{
+  "adjustments": [
+    "Two new C-preview mock fixtures initially lacked newly required replay-context status/resources fields after the batch repair. Their assertions were preserved; fixture inputs were completed. The final full suite passed."
+  ],
+  "coverage": "Includes context-sensitive native replay, refusal without matching original context, no supervision from context-only rows, exact restoration, staged hidden boundaries and write-once interrupted/restarted evidence.",
+  "errors": 0,
+  "failures": 0,
+  "mcp_tests": {
+    "code_unchanged": true,
+    "passed": 23,
+    "receipt": "tests.json"
+  },
+  "passed": 490,
+  "previous_receipt": "tests.json",
+  "schema": "weightbridge.phase_iiin.tests.v2",
+  "skipped": 1,
+  "source_commit": "40002d6",
+  "tests": 491,
+  "wall_seconds": 43.12
+}

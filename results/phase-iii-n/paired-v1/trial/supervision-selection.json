@@ -1,0 +1,713 @@
+{
+  "arms": {
+    "A": {
+      "comparison_count": 8,
+      "comparison_ids": [
+        "semantic-decimal/adaptation/target/00/variant-1",
+        "semantic-decimal/adaptation/target/02/variant-1",
+        "semantic-decimal/adaptation/target/07/variant-1",
+        "semantic-decimal/adaptation/target/01/variant-1",
+        "semantic-decimal/adaptation/target/04/variant-1",
+        "semantic-decimal/adaptation/target/08/variant-1",
+        "semantic-decimal/adaptation/target/09/variant-1",
+        "semantic-decimal/adaptation/target/03/variant-1"
+      ],
+      "comparison_weight": 0.125,
+      "family_count": 8,
+      "family_ids": [
+        "semantic-decimal/adaptation/target/00",
+        "semantic-decimal/adaptation/target/02",
+        "semantic-decimal/adaptation/target/07",
+        "semantic-decimal/adaptation/target/01",
+        "semantic-decimal/adaptation/target/04",
+        "semantic-decimal/adaptation/target/08",
+        "semantic-decimal/adaptation/target/09",
+        "semantic-decimal/adaptation/target/03"
+      ],
+      "group_counts": {
+        "close-long": 2,
+        "close-short": 2,
+        "far-long": 2,
+        "far-short": 2
+      }
+    },
+    "B": {
+      "comparison_count": 8,
+      "comparison_ids": [
+        "semantic-decimal/adaptation/target/00/variant-1",
+        "semantic-decimal/adaptation/target/00/variant-0",
+        "semantic-decimal/adaptation/target/02/variant-0",
+        "semantic-decimal/adaptation/target/02/variant-1",
+        "semantic-decimal/adaptation/target/11/variant-0",
+        "semantic-decimal/adaptation/target/11/variant-1",
+        "semantic-decimal/adaptation/target/13/variant-1",
+        "semantic-decimal/adaptation/target/13/variant-0"
+      ],
+      "comparison_weight": 0.125,
+      "family_count": 4,
+      "family_ids": [
+        "semantic-decimal/adaptation/target/00",
+        "semantic-decimal/adaptation/target/02",
+        "semantic-decimal/adaptation/target/11",
+        "semantic-decimal/adaptation/target/13"
+      ],
+      "group_counts": {
+        "close-long": 2,
+        "close-short": 2,
+        "far-long": 2,
+        "far-short": 2
+      }
+    },
+    "C": {
+      "comparison_count": 8,
+      "comparison_ids": [
+        "semantic-decimal/adaptation/target/00/variant-1",
+        "semantic-decimal/adaptation/target/00/variant-0",
+        "semantic-decimal/adaptation/target/02/variant-0",
+        "semantic-decimal/adaptation/target/02/variant-1",
+        "semantic-decimal/adaptation/target/11/variant-0",
+        "semantic-decimal/adaptation/target/11/variant-1",
+        "semantic-decimal/adaptation/target/13/variant-1",
+        "semantic-decimal/adaptation/target/13/variant-0"
+      ],
+      "comparison_weight": 0.125,
+      "family_count": 4,
+      "family_ids": [
+        "semantic-decimal/adaptation/target/00",
+        "semantic-decimal/adaptation/target/02",
+        "semantic-decimal/adaptation/target/11",
+        "semantic-decimal/adaptation/target/13"
+      ],
+      "group_counts": {
+        "close-long": 2,
+        "close-short": 2,
+        "far-long": 2,
+        "far-short": 2
+      }
+    }
+  },
+  "causal_limitation": "A has more families; the contrast compares supervision allocation, not pairing alone",
+  "comparison_budget": 8,
+  "paired_family_budget": 4,
+  "paired_rule": "equal close/far family count; descending weakest-member fork count; stable family ties",
+  "population": [
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/00/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/00",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/00/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/00",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/01/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/01",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/01/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/01/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/01/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/01/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/01/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/01",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/02/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/02/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/02/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/02/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/02/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/02",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/02/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/02/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/02/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/02/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/02/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/02",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/03/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/03",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/03/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/03/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/03/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/03/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/03/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/03/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/03/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/03/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/03",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/04/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/04/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/04/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/04/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/04/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/04",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/04/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/04/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/04/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/04/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/04/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/04",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/05/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/05",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/05/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/05/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/05/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/05/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/05/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/05/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/05/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/05/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/05",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/06/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/06/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/06/variant-0/order-0/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/06",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/06/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/06/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/06/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/06/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/06/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/06",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/07/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/07",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/07/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/07/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/07/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/07/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/07/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/07/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/07/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/07",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/08/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/08/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/08/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/08/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/08/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/08",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/08/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/08/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/08/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/08/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/08/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/08",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/09/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/09",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/09/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/09/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-0/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/09",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/10/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/10/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/10/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/10/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/10/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/10",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/10/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/10/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/10/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/10/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/10/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/10",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/11/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/11/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/11/variant-0/order-0/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/11",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/11/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/11/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/11/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/11/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/11/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/11",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/11/variant-1/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/12/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/12/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/12/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/12/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/12/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/12",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/12/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/12/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/12/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/12/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/12/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/12",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/13/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/13/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/13/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/13/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/13/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/13",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/13/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/13/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/13/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/13",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/13/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/13/variant-1/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/14/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/14/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/14/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/14/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/14/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/14",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/14/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/14/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/14/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/14/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/14/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/14",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/15/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/15/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/15/variant-0/order-0/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/15",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/15/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/15/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/15/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/15/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/15/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/15",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/15/variant-1/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/16/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/16/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/16/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/16/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/16/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/16",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/16/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/16/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/16/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/16/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/16/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/16",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/17/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/17",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/17/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/17/variant-0/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/17/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/17/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/17/variant-1/order-0/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/17",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/17/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/17/variant-1/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/18/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/18/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/18/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/18/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/18/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/18",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/18/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/18/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/18/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/18/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/18/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/18",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/19/variant-0",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/19",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/19/variant-0/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/19/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/19/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/19/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/19",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/19/variant-1/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/20/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/20/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/20/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/20/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/20/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/20",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/20/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/20/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/20/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/20/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/20/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/20",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/21/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/21/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/21/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/21",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/21/variant-0/order-0/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/21/variant-1",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/21",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/21/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/21/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/21/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/21/variant-1/order-1/1"
+      ]
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/22/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/22/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/22/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/22/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/22/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/22",
+      "group": "close-short",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/22/variant-1",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/22/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/22/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/22/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/22/variant-1/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/22",
+      "group": "close-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/23/variant-0",
+      "eligible": true,
+      "eligible_error_prompt_ids": [
+        "semantic-decimal/adaptation/target/23/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/23/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/23/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/23/variant-0/order-1/1"
+      ],
+      "family_id": "semantic-decimal/adaptation/target/23",
+      "group": "far-long",
+      "parent_correct_preservation_prompt_ids": []
+    },
+    {
+      "comparison_id": "semantic-decimal/adaptation/target/23/variant-1",
+      "eligible": false,
+      "eligible_error_prompt_ids": [],
+      "family_id": "semantic-decimal/adaptation/target/23",
+      "group": "far-short",
+      "parent_correct_preservation_prompt_ids": [
+        "semantic-decimal/adaptation/target/23/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/23/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/23/variant-1/order-1/1"
+      ]
+    }
+  ],
+  "reason": "qualified_equal_comparison_allocations",
+  "schema": "weightbridge.paired_supervision_selection.v1",
+  "selection_rule": "group round-robin; descending qualified fork count; stable identity ties",
+  "status": "READY"
+}

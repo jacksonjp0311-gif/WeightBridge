@@ -1,0 +1,90 @@
+{
+  "ai_token_tool_cost": "unavailable",
+  "all_attempt_cpu_accounting_complete": false,
+  "all_generated_native_tokens": 29376,
+  "all_generated_response_records": 2448,
+  "all_recorded_backward_calls_lower_bound": 64,
+  "all_recorded_batched_decode_steps": 3672,
+  "all_recorded_model_forward_calls_lower_bound": 3930,
+  "assessment_wall_seconds_including_workers": 320.2742020000005,
+  "completed_fit_and_assessment_wall_seconds": 1575.9904738999903,
+  "completed_fit_wall_seconds": 1255.7162718999898,
+  "completed_run_and_diagnostic_cpu_seconds": 8477.59375,
+  "components": {
+    "B2_reconstruction": {
+      "cpu_seconds": 14.34375,
+      "peak_rss_bytes": 209616896,
+      "wall_seconds": 15.381413299997803
+    },
+    "assessment_host": {
+      "cpu_seconds": 16.3125,
+      "peak_rss_bytes": 47202304,
+      "wall_seconds": 320.2742020000005
+    },
+    "completed_fitting": {
+      "cpu_seconds": 6855.65625,
+      "peak_rss_bytes": 3167199232,
+      "wall_seconds": 1255.7162718999898
+    },
+    "development-transfer-A1.json": {
+      "cpu_seconds": 212.890625,
+      "peak_rss_bytes": 2576084992,
+      "wall_seconds": 48.71707259997493
+    },
+    "development-transfer-A2.json": {
+      "cpu_seconds": 213.015625,
+      "peak_rss_bytes": 2567774208,
+      "wall_seconds": 48.55562210001517
+    },
+    "development-transfer-B1.json": {
+      "cpu_seconds": 215.109375,
+      "peak_rss_bytes": 2565890048,
+      "wall_seconds": 48.9617780999979
+    },
+    "development-transfer-B2.json": {
+      "cpu_seconds": 214.328125,
+      "peak_rss_bytes": 2573811712,
+      "wall_seconds": 48.98197550000623
+    },
+    "development-transfer-C1.json": {
+      "cpu_seconds": 215.34375,
+      "peak_rss_bytes": 2569728000,
+      "wall_seconds": 48.813229999970645
+    },
+    "development-transfer-base.json": {
+      "cpu_seconds": 214.859375,
+      "peak_rss_bytes": 2570600448,
+      "wall_seconds": 48.78729639999801
+    },
+    "parent_replay_diagnostic": {
+      "backward_calls": 0,
+      "cpu_seconds": 305.625,
+      "forward_calls": 29,
+      "peak_rss_bytes": 2464100352,
+      "wall_seconds": 66.24307899997802
+    },
+    "posthoc_linear_bounds": {
+      "backward_calls": 0,
+      "cpu_seconds": 0.109375,
+      "forward_calls": 0,
+      "generated_response_count": 0,
+      "process_rss_bytes_at_completion": 38719488,
+      "wall_seconds": 0.0975600000238046
+    }
+  },
+  "compute_per_verified_improvement": null,
+  "decoded_candidate_changed_entry_events": 74686,
+  "decoded_candidate_distinct_changed_parameter_positions": 16067,
+  "initial_attempt_recorded_cpu_lower_bound": 1097.046875,
+  "largest_recorded_peak_rss_bytes": 3167199232,
+  "missing_scope": "Initial uncaught replay exception did not retain partial gradient or whole-process CPU. Known costs are included once; exact grand total is unavailable.",
+  "primary_fitting_backwards": 64,
+  "primary_fitting_batched_decode_steps": 2532,
+  "primary_fitting_explicit_forwards": 209,
+  "schema": "weightbridge.phase_iiin.compute.v1",
+  "scope": "Fit process once, host CPU plus fresh worker CPU once, no nested CPU duplication. Host wall includes child wall. Initial repeated baselines are actual extra compute, not independent evidence. Tests, imports outside measurement regions, assistant cost and orchestration are excluded.",
+  "source_sha256": "d519927986e0f03c6c211ea625716e273fe7fc402f5f81dd9eeefe823d192107",
+  "total_recorded_cpu_seconds_lower_bound": 9574.640625,
+  "unique_complete_candidate_practice_probes": 5,
+  "verified_independent_improvements": 0
+}

@@ -83,3 +83,24 @@ See `docs/EXPERIMENT_PROTOCOL.md` for metric definitions and `docs/LIMITATIONS.m
   parameter fraction and per-entry magnitude. Every touched matrix coordinate
   counts against the change budget, even if target-dtype conversion rounds it
   back to its original value.
+
+
+## Paired counterfactual supervision
+
+Phase III-N reuses AWL v3, model adapters, fixed-right affine compilation,
+BF16 probing, trajectory protection and independent stage locks.
+`paired_supervision.py` defines comparison evidence, equal-budget allocation,
+pair-gradient diagnostics and a bounded pair-aware numerical witness.
+`paired_update.py` averages native margin derivatives per comparison while
+retaining the original diagnostic batch context. Context-only rows receive
+no supervision. A native replay mismatch refuses fitting.
+
+`experiments/phase_iiin/` freezes semantic families into seven separate roles.
+The fitter reads only adaptation, preservation fit and calibration. A shared
+full-generation contract screens every actual rounded candidate. Fresh-process
+development must add a complete eight-presentation family before later data
+can open. Trusted verifier functions reuse the previous state machine in an
+isolated namespace; source hashes and N fit/lock schemas bind study identity.
+The execution wrapper preserves failure receipts and requires fresh restart
+paths. Neither the optimizer nor the numerical bound diagnostic can promote
+or deploy a checkpoint. [Phase III-N](PHASE_III_N.md)

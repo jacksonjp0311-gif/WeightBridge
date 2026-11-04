@@ -1,0 +1,192 @@
+{
+  "actual_delta_cosines": {
+    "A1:A2": {
+      "cosine": 0.9933904737185887,
+      "difference_norm": 0.007688234723824448,
+      "different_entries": 13856,
+      "identical_stored_update": false
+    },
+    "A1:B1": {
+      "cosine": 0.9195896460418335,
+      "difference_norm": 0.005021544419109534,
+      "different_entries": 12006,
+      "identical_stored_update": false
+    },
+    "A1:B2": {
+      "cosine": 0.9165003730572325,
+      "difference_norm": 0.009765076132099737,
+      "different_entries": 14218,
+      "identical_stored_update": false
+    },
+    "A1:C1": {
+      "cosine": 0.7301579577739856,
+      "difference_norm": 0.0092218669315896,
+      "different_entries": 13653,
+      "identical_stored_update": false
+    },
+    "A1:C2": {
+      "cosine": 0.60405569620862,
+      "difference_norm": 0.015986850311263814,
+      "different_entries": 14582,
+      "identical_stored_update": false
+    },
+    "A2:B2": {
+      "cosine": 0.9191294770869256,
+      "difference_norm": 0.008027653583913975,
+      "different_entries": 13169,
+      "identical_stored_update": false
+    },
+    "A2:C2": {
+      "cosine": 0.6052418754426143,
+      "difference_norm": 0.017807564141482563,
+      "different_entries": 14783,
+      "identical_stored_update": false
+    },
+    "B1:A2": {
+      "cosine": 0.9196019028028327,
+      "difference_norm": 0.00985946180765037,
+      "different_entries": 14343,
+      "identical_stored_update": false
+    },
+    "B1:B2": {
+      "cosine": 0.9931142002143848,
+      "difference_norm": 0.007633496169121261,
+      "different_entries": 13906,
+      "identical_stored_update": false
+    },
+    "B1:C1": {
+      "cosine": 0.8580276552889714,
+      "difference_norm": 0.006667477772387099,
+      "different_entries": 13033,
+      "identical_stored_update": false
+    },
+    "B1:C2": {
+      "cosine": 0.7588305350568586,
+      "difference_norm": 0.013343619364247062,
+      "different_entries": 14452,
+      "identical_stored_update": false
+    },
+    "B2:C2": {
+      "cosine": 0.7610557835028067,
+      "difference_norm": 0.013805256832952839,
+      "different_entries": 14590,
+      "identical_stored_update": false
+    },
+    "C1:A2": {
+      "cosine": 0.7309607297698298,
+      "difference_norm": 0.013828725754547933,
+      "different_entries": 14791,
+      "identical_stored_update": false
+    },
+    "C1:B2": {
+      "cosine": 0.858138515620781,
+      "difference_norm": 0.01116516942204626,
+      "different_entries": 14474,
+      "identical_stored_update": false
+    },
+    "C1:C2": {
+      "cosine": 0.957768523996601,
+      "difference_norm": 0.008809658815222367,
+      "different_entries": 13630,
+      "identical_stored_update": false
+    }
+  },
+  "norm_matching": {
+    "1": {
+      "cohort_range": 8.214648202649333e-05,
+      "cohort_status": "MATCHED",
+      "individual": {
+        "A1": {
+          "absolute_target_error": 6.12523630490313e-05,
+          "realized_norm": 0.012561252363049032,
+          "relative_target_error": 0.004900189043922504,
+          "within_target_tolerance": true
+        },
+        "B1": {
+          "absolute_target_error": 2.089411897746203e-05,
+          "realized_norm": 0.012479105881022539,
+          "relative_target_error": 0.0016715295181969625,
+          "within_target_tolerance": true
+        },
+        "C1": {
+          "absolute_target_error": 4.4800774080358194e-05,
+          "realized_norm": 0.012544800774080359,
+          "relative_target_error": 0.0035840619264286555,
+          "within_target_tolerance": true
+        }
+      },
+      "intended_norm": 0.0125,
+      "pairs": {
+        "A1:B1": {
+          "absolute_norm_difference": 8.214648202649333e-05,
+          "matched": true,
+          "relative_norm_difference": 0.006571718562119466,
+          "same_stored_tensor": false
+        },
+        "A1:C1": {
+          "absolute_norm_difference": 1.6451588968673103e-05,
+          "matched": true,
+          "relative_norm_difference": 0.0013161271174938483,
+          "same_stored_tensor": false
+        },
+        "B1:C1": {
+          "absolute_norm_difference": 6.569489305782023e-05,
+          "matched": true,
+          "relative_norm_difference": 0.005255591444625618,
+          "same_stored_tensor": false
+        }
+      },
+      "relative_cohort_range": 0.006571718562119466,
+      "relative_tolerance": 0.02,
+      "schema": "weightbridge.realized_norm_comparison.v1"
+    },
+    "2": {
+      "cohort_range": 0.0001669694677857228,
+      "cohort_status": "MATCHED",
+      "individual": {
+        "A2": {
+          "absolute_target_error": 3.0054514406501615e-05,
+          "realized_norm": 0.020030054514406502,
+          "relative_target_error": 0.0015027257203250807,
+          "within_target_tolerance": true
+        },
+        "B2": {
+          "absolute_target_error": 0.00011462529000498198,
+          "realized_norm": 0.01988537470999502,
+          "relative_target_error": 0.005731264500249099,
+          "within_target_tolerance": true
+        },
+        "C2": {
+          "absolute_target_error": 5.2344177780740825e-05,
+          "realized_norm": 0.02005234417778074,
+          "relative_target_error": 0.0026172088890370412,
+          "within_target_tolerance": true
+        }
+      },
+      "intended_norm": 0.02,
+      "pairs": {
+        "A2:B2": {
+          "absolute_norm_difference": 0.0001446798044114836,
+          "matched": true,
+          "relative_norm_difference": 0.00723399022057418,
+          "same_stored_tensor": false
+        },
+        "A2:C2": {
+          "absolute_norm_difference": 2.228966337423921e-05,
+          "matched": true,
+          "relative_norm_difference": 0.0011144831687119605,
+          "same_stored_tensor": false
+        },
+        "B2:C2": {
+          "absolute_norm_difference": 0.0001669694677857228,
+          "matched": true,
+          "relative_norm_difference": 0.00834847338928614,
+          "same_stored_tensor": false
+        }
+      },
+      "relative_cohort_range": 0.00834847338928614,
+      "relative_tolerance": 0.02,
+      "schema": "weightbridge.realized_norm_comparison.v1"
+    }
+  }
+}

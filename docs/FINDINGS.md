@@ -517,3 +517,27 @@ development gain here. Objective choice supplied no strict development
 gain advantage. All complete truth-flip gains were zero. The family gate
 held before independent selection and hidden access.
 [Phase III-M findings](PHASE_III_M.md)
+
+
+## Paired counterfactual supervision
+
+Phase III-N kept the exact Phase III-M columns and right factor. At the
+larger matched norm, paired supervision gained thirteen strict practice
+comparisons and completed one previously incomplete opposing-outcome family;
+one-sided supervision gained ten comparisons and completed no family. Both
+preserved every required correct fitting response. The newly complete family
+was outside the paired gradient fit but remained observed practice data.
+
+On six fresh development families, both larger-dose candidates gained two
+strict comparisons and neither completed a new family. The smaller paired
+mean and pair-aware candidate had zero strict development gain. All five
+reloaded candidates had zero prohibited development regressions. C2 was
+withheld at calibration, so its generated behavior is unmeasured. No candidate
+reached independent selection or hidden verification. This supports a
+practice correction and rejects qualification of complete rule transfer in
+this trial. It does not establish that paired supervision is generally useless.
+
+A batch-packing change exposed a BF16 tie during fitting. Strict refusal,
+unchanged-parent diagnosis, and replay using the original diagnostic context
+resolved it without relaxing data or endpoint gates. The failed attempt is
+retained. [Phase III-N evidence](PHASE_III_N.md)

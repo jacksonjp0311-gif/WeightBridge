@@ -1,0 +1,57 @@
+{
+  "mcp": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 5.359,
+    "passed": 23,
+    "skipped": 0,
+    "slowest_tests": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "wall_seconds": 2.342
+      },
+      {
+        "name": "test_stratified_cohort_gate_uses_holdout_arrays_and_matched_random",
+        "wall_seconds": 0.637
+      },
+      {
+        "name": "test_runner_refuses_template_before_creating_a_task",
+        "wall_seconds": 0.604
+      }
+    ],
+    "xml_sha256": "6820a07b5f990361f943923dc5f7faf1b04632d93c0febd0f494a0d12c2734b3"
+  },
+  "postprocessing_adjustments": [
+    "Model environment lacks optional Matplotlib; plot rendered from verified analysis with existing repository .venv Matplotlib3.11.2. No dependency installation.",
+    "Compute summarizer initially required peak RSS for the cheap post-hoc bound, which records completion RSS instead. It now reports the largest available recorded peak without inventing missing peak data. No experiment measurements or gates changed."
+  ],
+  "previous_receipts": [
+    "tests.json",
+    "tests-replay.json"
+  ],
+  "qualification": "Software PASS; behavioral qualification remains HOLD.",
+  "runtime": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 9818.455,
+    "passed": 498,
+    "skipped": 1,
+    "slowest_tests": [
+      {
+        "name": "test_bic_exports_the_exact_rounded_model_measured_in_practice",
+        "wall_seconds": 9771.178
+      },
+      {
+        "name": "test_two_retained_repairs_and_rejection_of_a_third",
+        "wall_seconds": 2.535
+      },
+      {
+        "name": "test_llama_role_discovery_checks_actual_affine_runtime_and_gradient",
+        "wall_seconds": 1.448
+      }
+    ],
+    "xml_sha256": "5e34be60ddc3d4943ea8f680be547376bc2b2e1602fb4fb5cb2e8a2f222c8489"
+  },
+  "schema": "weightbridge.phase_iiin.tests.v3",
+  "wall_time_anomaly": "One existing BIC rounded-export test recorded 9771.178 wall seconds. It passed. Cause unverified. Earlier full 490-test run passed in43.13seconds. TestCPU was not measured."
+}

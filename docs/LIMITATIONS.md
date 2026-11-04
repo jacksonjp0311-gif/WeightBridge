@@ -213,3 +213,24 @@ refusal. Full truth-flipping family correction never qualified. Four mean
 directions leave most of the allowed rank-one space unexplored, and the
 fitter selected one comparison per family rather than paired supervision.
 [Phase III-M evidence](PHASE_III_M.md)
+
+
+Phase III-N matches eight comparisons per main arm, not family diversity or
+qualified presentation counts: A uses eight families/thirty forks, B/C four
+families/twenty-six forks. One checkpoint and roster seed are tested. There
+are only six fresh development families, and none became completely correct.
+The pair-aware objective uses average fork margins within comparisons, not
+a guarantee on every token or all complete trajectories. Its larger-dose
+state was not decoded because calibration failed. No same-family four-item
+supplemental arm, new LoRA comparison, broader geometry or sequential learning
+study ran.
+
+BF16 rounding makes stored deltas depart from the unrounded rank-one
+subspace. Two-row local norm bounds exclude this rounding, preservation,
+nonlinear effects and alternative valid generation trajectories. They cannot
+certify neural unreachability. Earlier task archives and disclosed evaluation
+examples must not be reused as new hidden tests. The initial failed run lost
+whole-process and partial-gradient CPU totals; overall recorded compute is
+a lower bound. The final unit suite also recorded a large unexplained wall
+anomaly in one existing passing BIC test. Test CPU and assistant costs are
+not included in experimental totals. [Phase III-N](PHASE_III_N.md)

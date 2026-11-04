@@ -1,0 +1,10 @@
+{
+  "allow_tensors": [
+    "model.language_model.layers.23.mlp.down_proj.weight"
+  ],
+  "max_abs_delta": 0.025,
+  "max_entries": 16384,
+  "max_fraction": 0.01,
+  "max_rank": 1,
+  "schema": "weightbridge.policy.v1"
+}
