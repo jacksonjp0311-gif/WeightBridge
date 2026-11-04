@@ -1,0 +1,264 @@
+{
+  "schema": "weightbridge.phase_iiip.optimized_right.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "adaptation": "weightbridge-iiip-right-v1-adaptation",
+    "preservation-fit": "weightbridge-iiip-right-v1-preservation-fit",
+    "calibration": "weightbridge-iiip-right-v1-calibration",
+    "development-transfer": "weightbridge-iiip-right-v1-development-transfer",
+    "preservation-validation": "weightbridge-iiip-right-v1-preservation-validation",
+    "selection": "weightbridge-iiip-right-v1-selection"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {
+    "adaptation": {
+      "target_pairs": 16,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-fit": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "calibration": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "development-transfer": {
+      "target_pairs": 6,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-validation": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 900
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [
+      0,
+      1
+    ],
+    "max_candidate_evaluations": 4,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {
+    "max_repeatable_error_items": 4,
+    "max_comparisons": 4,
+    "max_forks": 16,
+    "paired_families": 2,
+    "families_per_distance": 1,
+    "minimum_replay_forks_per_comparison": 2,
+    "maximum_parent_correct_trajectories": 128
+  },
+  "probe_design": {
+    "fixed_layer": 23,
+    "target_norms": [
+      null,
+      0.0245
+    ],
+    "norm_relative_tolerance": 0.02,
+    "norm_absolute_tolerance": 1e-08,
+    "norm_search_steps": 10,
+    "directional_secant_radius": 0.0125,
+    "anchors": 8,
+    "calibration_anchors": 8,
+    "preservation_groups": [
+      "target",
+      "positive",
+      "mixed-sign",
+      "copy"
+    ],
+    "positive_floor_grid": [
+      0.015625,
+      0.0625,
+      0.125
+    ],
+    "adverse_item_quantile": 0.8,
+    "maximum_sampling_rounds": 3,
+    "arms": {
+      "A": {
+        "objective": "individual_fork_minimum_norm",
+        "formulation": "fixed_right_target_and_preservation",
+        "generation_eligible": true
+      },
+      "C": {
+        "objective": "individual_fork_minimum_norm",
+        "formulation": "optimized_right_target_and_preservation",
+        "generation_eligible": true
+      }
+    },
+    "gradient_unit": "Each required individual native-context fork retains its full selected-column block, strongest rejected token, accepted set, parent margin and exact original context. No averaging of required target inequalities. Context-only rows carry no supervision. Selected preservation and calibration anchors retain full blocks as well.",
+    "right_factor": "Reference A reuses exact Phase III-M unit factor. Experimental C optimizes a unit16-dimensional right factor within the same authorized layer23 columns. Deterministic factor sign and normalization preserve the rank-one matrix; no copied external direction, added rank, column, layer or changed parent.",
+    "fit_selection": "Select exactly one close and one far dual-error family from authorized adaptation only; both opposing comparisons must each have at least two valid incorrect replay-qualified forks spanning both frozen wordings. All eight parent presentations must be valid. Every parent-wrong valid presentation in a selected family must have a semantic replay-matched fork; a missing, accepted-already or inconsistent wrong fork disqualifies that family. Rank families by descending weakest member fork count, then frozen family ID. Keep every eligible fork within the selected comparisons (at most16). Parent-correct presentations are preservation obligations. Missing a distance or quota gives HOLD.",
+    "preservation": "Use shared parent-correct adaptation and preservation-fit trajectories and inherited fixed-right directional sampling to select common eight anchors covering four groups and both wordings. Full selected-column gradients reproject those same decisions for each right factor. All parent-correct practice responses remain protected under the full-generation guard; no later partition is fitting evidence.",
+    "uncertainty": "For each genuinely distinct candidate direction and radius, measure adverse preservation residuals using calibration only, up to two passes. Full selected-block calibration derivatives are reprojected to that candidate right factor. Use existing positive-floor and buffered inequality rules, actual BF16 native target and protected margins, and exact restoration. Failed calibration blocks decoding.",
+    "measured_slack": "Every active sampled stored-precision decision must preserve the original greedy token and exceed the positive calibration floor. The hard complete-generation guard covers all authorized correct responses.",
+    "norm_matching": "A1/C1 use the respective minimum feasible protected witness, not artificially equal objective amplitudes. Record distinct minimum norms separately. A2/C2 attempt common actual stored BF16 norm .0245 at2% tolerance through deterministic ten-step witness-ray search, with proposed and stored norms <=.025. Every scaled proposal must retain all individual target and buffered protected inequalities. No weakening constraints, over-cap witness rescaling, extra candidate, or larger support to manufacture matching. Unattainable cells are UNMATCHED/HOLD. Candidate construction solves targets at required_floor+1e-6 and protection at selected_floor+direction_allowance+1e-6 to avoid tolerance-only eligibility; unbuffered minima remain diagnostics. Fix orientation once at the initial floor, then per-cell refit only u for at most two calibration allowance passes. No new right factor may be selected using native or generation outcomes.",
+    "practice_gate": "Positive strict-comparison gain and repeatable semantic correction, zero parent-correct or validity losses on adaptation/preservationfit, actual valid rate>=.9, actual stored native margins for every fitted errorfork>=.0625, positive measured preservation slack, calibrated authorized BF16 norm/support and exact restoration.",
+    "development_transfer_gate": "Independently reload each distinct practice passer. Require positive strict comparison gain, zero prohibited regressions or validity losses, valid rate >=.9, and at least one newly complete truth-flipping family (eight correct presentations). Never refit using this partition.",
+    "finalist_ranking": "After development transfer lock one survivor by complete family gain, strict comparison gain, smallest realized norm, then lexical arm ID. Only this locked finalist may reach preservation validation or independent selection.",
+    "data_boundary": "Fitting receives only adaptation, preservation-fit and calibration. Development transfer is post-fit. Preservation validation and selection are inaccessible until the appropriate lock passes. Hidden is host-held. No outcome may become fitting data in this study.",
+    "geometry": "Same source-bound M layer23 affine tensor, exact16columns, BF16 and rankone. Only right-factor orientation may change; the reference factor remains unchanged. Relaxed full selected-block matrices are diagnostics only and may not be installed, exported or credited with behavior.",
+    "deduplication": "At most four unique full practice generation candidates A1/C1/A2/C2. Repeated exact stored BF16 tensor hashes share observations; refused and duplicate states retain explicit reasons and unmeasured behavior remains null. No unregistered replacements.",
+    "pair_diagnostics": "Record every required native fork and full block. Solve selected-block target-only and target-plus-preservation convex relaxations through bounded small Gram interface, and fixed-right minima. Independently check dual arithmetic. Check rho_block <= rho_free_rank_one <= rho_fixed_right to numerical tolerance when corresponding witnesses exist; a relaxed feasible witness is not rank-one feasibility.",
+    "budget_reduction": "Exactly one qualifying close and one qualifying far family, four comparisons and at most16wrong forks; unchanged family selection rule. No rank/layer/model expansion and no supplemental complete-generation slots.",
+    "target_margin": 0.0625,
+    "target_fork_rule": "Every selected validated incorrect fork must have both predicted and measured stored-precision accepted-versus-strongest-rejected margin >=.0625 under the unchanged original diagnostic batch context before full generation. Do not silently change target fork identity, accepted set or native prefix. Every actual response remains checked by full generation.",
+    "joint_solver": {
+      "max_sweeps": 4096,
+      "tolerance": 1e-08,
+      "method": "Hildreth nonnegative dual coordinate ascent over normalized constraint-row Gram matrix; independently recompute primal/dual residuals and conservative numerical norm lower bound",
+      "failure": "Separate numerical dual lower bound above radius from bounded no-witness; neither establishes nonlinear global impossibility."
+    },
+    "all_eight_outcomes": "For each fitted family retain all eight rows: parent/candidate correctness, fork margin when applicable, predicted/measured target margin, native tokens and first divergence, completed semantic answer. Parent-correct rows are preservation obligations, never invented target errors.",
+    "candidate_slots": {
+      "A1": "fixed-right minimum feasible protected witness",
+      "C1": "optimized-right minimum feasible protected witness",
+      "A2": "fixed-right stored-norm matched 0.0245 witness ray",
+      "C2": "optimized-right stored-norm matched 0.0245 witness ray"
+    },
+    "block_relaxation": {
+      "maximum_rows": 64,
+      "maximum_block_shape": [
+        1024,
+        16
+      ],
+      "max_sweeps": 4096,
+      "tolerance": 1e-08,
+      "algorithm": "Small selected-block Frobenius Gram dual; reconstruct only diagnostic matrix; no flattening through dimension-bounded joint solver",
+      "certificate": "Independent original-row dual arithmetic with conservative floating-point padding, optional spectral rank-one lower bound and explicit zero denominator",
+      "admission": "Conservative checked bound above .025 stops orientation search for that local system. Complete protected diagnostic even when target-only blocks search. A below-cap relaxed witness only permits a bounded rank-one search. A target-only over-cap checked bound stops all orientation searches, while protected numerical relaxation still records its bound. A protected over-cap bound stops that protected orientation search. Neither relaxed matrix may be installed, even for a diagnostic generation."
+    },
+    "outer_search": {
+      "maximum_starts": 4,
+      "maximum_iterations": 8,
+      "maximum_line_search_steps": 4,
+      "inner_max_sweeps": 4096,
+      "inner_tolerance": 1e-08,
+      "starts": [
+        "inherited canonical unit factor",
+        "relaxed diagnostic leading right singular vector",
+        "positive-rhs-weighted block aggregate leading right singular vector",
+        "relaxed-balanced canonical unit sum of first two relaxed right singular vectors"
+      ],
+      "method": "Bounded multistart sphere retraction v-step*tangent/||tangent||, normalize and canonicalize sign preserving uvT. Start at .25, backtrack by .5 up to4trials; accept converged inner objective decrease > tolerance*max(1,abs(F)). Stop small tangent, unavailable KKT or no backtrack decrease.",
+      "ranking": "Rank witnessed points by actual unrounded norm, then lexical frozen start name, then earliest iteration; candidate admission remains separate.",
+      "failure": "Over-cap inner minima remain diagnostic information; no witness found within bounded search is not global rank-one infeasibility.",
+      "orientation_frozen_after_search": true,
+      "target_only_and_protected_searches_separate": true,
+      "settings": {
+        "starts": 4,
+        "iterations": 8,
+        "line_steps": 4,
+        "initial_step": 0.25,
+        "inner_max_sweeps": 4096,
+        "tolerance": 1e-08
+      },
+      "maximum_inner_solves_per_system": 132,
+      "early_stop": "A conservative independently checked selected-block or optional rank-one spectral norm lower bound above .025 blocks orientation search for that local system. No global impossibility claim."
+    },
+    "numerical_feasibility_buffer": 1e-06
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "larger-decimal",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "larger-decimal-easy",
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 480,
+      "max_backward_calls": 96,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025,
+      "max_rank": 1,
+      "max_candidates": 4
+    },
+    "data": {
+      "practice": "iiip-right-development-v1",
+      "evaluation": "iiip-right-hidden-v1"
+    },
+    "methods": [
+      "constrained"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "candidate_lock": "No automatic lineage acceptance. Post-fit development transfer locks one finalist. Require separate preservation and selection gates before host-held hidden verification. A successful hidden result remains a research candidate requiring operator review.",
+  "development_gate": {
+    "min_target_gain": 1,
+    "min_complete_family_gain": 1,
+    "max_regressions": 0
+  },
+  "preservation_gate": {
+    "max_regressions": 0,
+    "min_protected_presentations": 1
+  },
+  "fixed_geometry": {
+    "basis_path": "results/phase-iii-m/factorial-v1/trial/basis.json",
+    "basis_sha256": "41386d5e0de458d9e1a87ef03673799b63f7ad28ce2ba58aaca47080605f9694",
+    "fit_report_path": "results/phase-iii-m/factorial-v1/trial/fit-report.json",
+    "fit_report_sha256": "9d3fe42845ea378019a47dfd3c0e165752843a64e9e3786af2c64d1e66acda3d"
+  },
+  "study_question": "Does optimizing the rank-one right factor lower the individual target-plus-preservation correction cost below the unchanged .025 cap, and survive native BF16 plus complete-generation and independent gates?",
+  "receipt_compatibility": "Retain trusted inherited endpoint and verification state machine; Phase III-P source-bound fit and stage identities. Track A fitting never receives Track B artifacts, directions, rosters, behavior or parent checkpoint.",
+  "capacity_decision": "Report target-only and protected relaxed/fixed/free-right systems separately. Numerical witness, native correction, completed practice behavior, fresh complete-family transfer and independent qualification remain separate. No automatic rank/layer/model expansion or lineage admission.",
+  "track": "A",
+  "starting_commit": "59f207e2271ef7471f0a80389143d7055c2459f8"
+}
