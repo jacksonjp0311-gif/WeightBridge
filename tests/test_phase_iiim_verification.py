@@ -119,3 +119,25 @@ def test_selection_worker_requires_eligible_preservation_lock(trial):
     with pytest.raises(ValueError, match="earlier private verification lock"):
         verify.worker(trial.base, trial.base_sha, trial.material, "selection", trial.out / "unscored.json",
                       file_hash(trial.material / "manifest.json"))
+
+
+def test_interrupted_development_worker_records_hold_without_advancing(monkeypatch, trial):
+    _fit(trial)
+    _processes(monkeypatch, trial)
+
+    def fail(*args, **kwargs):
+        raise RuntimeError("deterministic fixture interruption")
+
+    monkeypatch.setattr(verify, "_launch", fail)
+    result = verify.assess(trial.base, trial.material, trial.out)
+    assert result["reason"] == "incomplete_independent_verifier" and result["disposition"] == "HOLD"
+    assert not result["winner"] and not result["selection"] and not result["hidden_opened"]
+    lock = verify._read(trial.out / result["active_lock"])
+    assert not verify.replay_lock(trial.out, trial.material, lock)["eligible"]
+
+
+def test_changed_fitting_source_is_rejected_before_evaluation(monkeypatch, trial):
+    _fit(trial)
+    monkeypatch.setattr(verify, "source_hashes", lambda **kwargs: {"changed-source": "b" * 64})
+    with pytest.raises(ValueError, match="bind source"):
+        verify.validate_fit_report(trial.out, trial.material)

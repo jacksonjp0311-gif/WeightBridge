@@ -97,3 +97,18 @@ def test_unsupported_runtime_logits_and_invalid_native_termination_tokens_are_ex
     tokenizer.eos_token_id = None
     with pytest.raises(ValueError, match="native EOS"):
         _token_set(tokenizer)
+
+
+def test_runtime_hook_preserves_transformers_output_mapping_and_attribute_semantics():
+    outputs = pytest.importorskip("transformers.modeling_outputs")
+
+    class Native(torch.nn.Module):
+        def forward(self):
+            return outputs.CausalLMOutput(logits=torch.ones((1, 1, 5), dtype=torch.bfloat16))
+
+    model = Native()
+    with termination_bias(model, (2, 4), .125):
+        result = model()
+        assert result.logits[0, 0, 2].item() == 1.125
+        assert result["logits"][0, 0, 4].item() == 1.125
+    assert not model._forward_hooks
