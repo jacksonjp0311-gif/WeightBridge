@@ -1,0 +1,199 @@
+{
+  "schema": "weightbridge.phase_iiim.factorial.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "adaptation": "weightbridge-iiim-factorial-v1-adaptation",
+    "preservation-fit": "weightbridge-iiim-factorial-v1-preservation-fit",
+    "calibration": "weightbridge-iiim-factorial-v1-calibration",
+    "development-transfer": "weightbridge-iiim-factorial-v1-development-transfer",
+    "preservation-validation": "weightbridge-iiim-factorial-v1-preservation-validation",
+    "selection": "weightbridge-iiim-factorial-v1-selection"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {
+    "adaptation": {
+      "target_pairs": 12,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-fit": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "calibration": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "development-transfer": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-validation": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 900
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [
+      0,
+      1
+    ],
+    "max_candidate_evaluations": 8,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {
+    "max_repeatable_error_items": 8,
+    "max_forks": 32,
+    "minimum_supported_groups": 4,
+    "comparisons_per_group": 2
+  },
+  "probe_design": {
+    "fixed_layer": 23,
+    "target_norms": [
+      0.0125,
+      0.02
+    ],
+    "norm_relative_tolerance": 0.02,
+    "norm_absolute_tolerance": 1e-08,
+    "norm_search_steps": 10,
+    "directional_secant_radius": 0.0125,
+    "anchors": 8,
+    "calibration_anchors": 8,
+    "preservation_groups": [
+      "target",
+      "positive",
+      "mixed-sign",
+      "copy"
+    ],
+    "positive_floor_grid": [
+      0.015625,
+      0.0625,
+      0.125
+    ],
+    "adverse_item_quantile": 0.8,
+    "maximum_sampling_rounds": 3,
+    "arms": {
+      "A": {
+        "objective": "ce",
+        "scaling": "raw"
+      },
+      "B": {
+        "objective": "ce",
+        "scaling": "unit"
+      },
+      "C": {
+        "objective": "margin",
+        "scaling": "raw"
+      },
+      "D": {
+        "objective": "margin",
+        "scaling": "unit"
+      }
+    },
+    "gradient_unit": "One comparison gradient is the arithmetic mean of all selected replay-qualified forks, tied across wording and order. Each selected comparison contributes equal total raw weight irrespective of presentation count.",
+    "right_factor": "Derive shared selected columns and fixed unit right factor from the equal-comparison mean improving CE gradient. Retain for all factorial arms.",
+    "fit_selection": "Round-robin close-short, close-long, far-short, far-long. Prefer four replay-matched forks, then frozen comparison ID. Use at most one comparison per truth-flipping family, at most eight comparisons and 32 forks. Record absent groups and do not invent examples. Require exactly two comparisons in each of all four groups before fitting; otherwise HOLD.",
+    "preservation": "One shared prospective anchor set covers four groups and both wordings. Rank by maximum adverse measured direction-specific BF16 secant over the four unconstrained factorial directions. Keep replay-qualified anchors fixed, replace failed replay cells at most three rounds. Both adaptation-correct and preservation-fit trajectories enter the pool.",
+    "uncertainty": "For each arm and target norm independently, solve and match at allowance zero, measure adverse calibration residuals on the actual rounded proposal against its projected delta prediction, raise allowance only for this cell, then resolve/match and independently remeasure. At most two calibration passes per cell. Final adverse quantile must not exceed used allowance, otherwise UNCERTIFIED HOLD cell. No cross-direction universal allowance.",
+    "measured_slack": "Every active sampled stored-precision decision must preserve the original greedy token and exceed the positive calibration floor. The hard complete-generation guard covers all authorized correct responses.",
+    "norm_matching": "Bounded deterministic numerical search over constrained proposals. Every trial inspects actual rounded BF16 support, norm, hash, authorization and linearized constraints. No norm above .025. Retain closest admissible proposal. MATCHED only if relative norm error <=.02 or absolute <=1e-8, otherwise UNMATCHED and exclude from matched causal contrasts. Report all stored deltas and pairwise cosines. At every adjustment remeasure all eight active native prefix margins, requiring strict excess above the positive floor and exact parent restoration. At most two norm searches per cell. Record all logit forwards and active constraints.",
+    "practice_gate": "Positive strict comparison gain, at least one repeatable error corrected across both orders and wordings, zero previously correct or validity losses on adaptation and preservation-fit, valid rate >=.9, positive measured anchor slack, authorized BF16 norm/support.",
+    "development_transfer_gate": "Independently reload each distinct practice passer. Require positive strict comparison gain, zero prohibited regressions or validity losses, valid rate >=.9, and at least one newly complete truth-flipping family (eight correct presentations). Never refit using this partition.",
+    "finalist_ranking": "After development transfer lock one survivor by complete family gain, strict comparison gain, smallest realized norm, then lexical arm ID. Only this locked finalist may reach preservation validation or independent selection.",
+    "data_boundary": "Fitting receives only adaptation, preservation-fit and calibration. Development transfer is post-fit. Preservation validation and selection are inaccessible until the appropriate lock passes. Hidden is host-held. No outcome may become fitting data in this study.",
+    "geometry": "Primary layer23, shared columns, fixed right, rank one. No secondary rank/layer study or imbalanced-fitting extension in this CPU trial.",
+    "deduplication": "Exact rounded tensor identity shares one behavioral observation. Eight unique complete candidate practice probes maximum. Report duplicate and unmatched cells without treating them as separate causal observations.",
+    "optional_runtime_diagnostic": "A post-fit, unmodified-parent diagnostic may apply fixed +0.125 or -0.125 logit bias to EOS/newline only, with at most two adaptation endpoint evaluations. It supplies no candidate selection evidence and no persistent changes."
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "larger-decimal",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "larger-decimal-easy",
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 480,
+      "max_backward_calls": 96,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025,
+      "max_rank": 1,
+      "max_candidates": 8
+    },
+    "data": {
+      "practice": "iiim-factorial-development-v1",
+      "evaluation": "iiim-factorial-hidden-v1"
+    },
+    "methods": [
+      "constrained"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "candidate_lock": "No automatic lineage acceptance. Post-fit development transfer locks one finalist. Require separate preservation and selection gates before host-held hidden verification. A successful hidden result remains a research candidate requiring operator review.",
+  "development_gate": {
+    "min_target_gain": 1,
+    "min_complete_family_gain": 1,
+    "max_regressions": 0
+  },
+  "preservation_gate": {
+    "max_regressions": 0,
+    "min_protected_presentations": 1
+  }
+}

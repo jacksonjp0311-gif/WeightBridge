@@ -1,0 +1,89 @@
+{
+  "protocol_sha256": "0471d6b18cf1313076d6bd821b6b4babf78fdbbec5c4a49274b2d6f51a286902",
+  "schema": "weightbridge.phase_iiim.semantic_roster.v1",
+  "sources": {
+    "experiments/phase_iiig/roster_decimal_targeted.py": "c8e1e5cf6a9c3217f102730aab5ee4bb95c027a5206f9b25723b1159c4076098",
+    "experiments/phase_iiik/decimal_roster.py": "da02ca216048e5491237ccabf867ff484e5df5a34e65c0a2bc01e65e0254021d",
+    "experiments/phase_iiil/semantic_roster.py": "2d55ae46e90310a70999ed9ae814889af336bcf97affa6d584a8a29db559ed5e",
+    "experiments/phase_iiim/semantic_protocol.json": "0471d6b18cf1313076d6bd821b6b4babf78fdbbec5c4a49274b2d6f51a286902",
+    "experiments/phase_iiim/semantic_roster.py": "d3eeabebac160aa6ba18ff3ca039ab9ff75f5d66db561ec9e245a189daee2bef",
+    "results/phase-iii-g/decimal-v5/material/practice.json": "41da50a2c13c645c644834696f7a4edbc90bf97f58029d81c1a99faf35388113",
+    "results/phase-iii-g/decimal-v5/material/selection.json": "b7b7e8c2369025f70a19cae80bba80574c1f143ff0bcdf9fef5908b882803f78",
+    "results/phase-iii-g/negative-decimal-v6/material/practice.json": "b7ec082978ce5b0bf0db6778f1e55193faf08661733caade1719b4dfe46a0a3a",
+    "results/phase-iii-g/negative-decimal-v6/material/selection.json": "a0d6f1f9b297d16695176cbedbb092aee0357cdf8a4cdd6f836912c345bf1e00",
+    "results/phase-iii-h/decimal-endpoint-v1/material/practice.json": "106165410aed623423abe3b5ab1d295004aa23ae8d3156c99cee114f2dbc95ce",
+    "results/phase-iii-h/decimal-endpoint-v1/material/selection.json": "6a150bdbbd9e9045d90d4e27f8d702cd47438e7e60eafd9b934b747ac517f9d8",
+    "results/phase-iii-i/causal-fork-v1/material/practice.json": "e3ddbcb12d956b64a1e98ae9e5a4269c51b83d157eca9534ba6855b18bf8450a",
+    "results/phase-iii-i/causal-fork-v1/material/selection.json": "b1a0182416825053b1e16e2b2294af0f32b547ef6bf98eb4cdeb0808a9a061f0",
+    "results/phase-iii-j/preservation-v1/material/practice.json": "571e5c71d3dfa09dc8e1a06b2c7d36e32203bc12c29241a6b39f639cf45b911b",
+    "results/phase-iii-j/preservation-v1/material/selection.json": "1e4d5f290cbb27e4d84da38ea9d207800da737c30c67178a0b9af798259da983",
+    "results/phase-iii-k/jspace-v1/material/adaptation.json": "bd82f880d8733c0088d9eb80900517f11e4157e9ac056ab1179edde89efc5c2d",
+    "results/phase-iii-k/jspace-v1/material/calibration.json": "eec4b70cc2fd73c606292eea88e002c4cf61085050ab10054012cf1f61ebbbff",
+    "results/phase-iii-k/jspace-v1/material/preservation-fit.json": "d94647edba372301e004f9a7fa1bc409c9ed55f1c5a3dec9852027a07388ec68",
+    "results/phase-iii-k/jspace-v1/material/preservation-validation.json": "4a5181f237587fe0f38f6db5314114d779295059143fcee8179fd7f5f8832f1a",
+    "results/phase-iii-k/jspace-v1/material/selection.json": "8279d4ffa4a9b561d8d3fba89cfa906eb6e01c4441013af6aebd1f7866b9864d",
+    "results/phase-iii-l/semantic-v1/material/adaptation.json": "e6abdfcf733b682d05dac44fb1a748ccc3c6583bd4e1a4b09acc221c5b2f2abe",
+    "results/phase-iii-l/semantic-v1/material/calibration.json": "6e5c29bffd523013e6df778c2d601212eb5b5154a0ea61ae8991cf6290e9cbea",
+    "results/phase-iii-l/semantic-v1/material/preservation-fit.json": "2b9e1f40b628ffba590fd342b5d7e5cddef0daecb7c8229685f5c74cc4e9ec89",
+    "results/phase-iii-l/semantic-v1/material/selection.json": "634ad5d665381d0625b3467b4339c81e61f75fe71e2b402c5bdf9dad1148a70d",
+    "results/phase-iii-l/semantic-v1/material/transfer-validation.json": "9e542be22613ec356ac21d90fdd2a3b22c06d4db08b2fe09ac727280bcbb73f3"
+  },
+  "splits": {
+    "adaptation": {
+      "items": 60,
+      "pairs": 12,
+      "rows": 120,
+      "seed_commitment": "b13b02622fac80319aa19a2af4858836029558ed86c8ae10161eb0ec000a4b16",
+      "semantic_comparisons": 24,
+      "sha256": "47912f5d7b4778f841ba58a62d4cff23ced6541b9e5662e1a5203f39ec49b849"
+    },
+    "calibration": {
+      "items": 28,
+      "pairs": 4,
+      "rows": 56,
+      "seed_commitment": "f2e48640fb5af824093991a8c45e012b33eb49e09d683a93aeac8f6087dc4d8d",
+      "semantic_comparisons": 8,
+      "sha256": "6b900475dcef3c189c6e9dac6ed99c2810fe10762a645d8168dff02dfbd3772c"
+    },
+    "development-transfer": {
+      "items": 28,
+      "pairs": 4,
+      "rows": 56,
+      "seed_commitment": "9df0c5a71491cc2fcc9f217adcb44bbccd671f78277fb0bbd6fe7a8a14ef44f9",
+      "semantic_comparisons": 8,
+      "sha256": "adef3f792f067f35b8d0deec4784e3445f55ed8a3dbd3b319faa66513014fc43"
+    },
+    "hidden": {
+      "items": 44,
+      "pairs": 8,
+      "rows": 88,
+      "seed_commitment": "248069e25950e2a5e6d3739e7fd57e8771478d7370aeee7440c634bfb62634a1",
+      "semantic_comparisons": 16,
+      "sha256": "69b68ad31bbaab67c33bfbc4f3254f1acc65cae0bd08a54a3ae8ba2a9f7de389"
+    },
+    "preservation-fit": {
+      "items": 28,
+      "pairs": 4,
+      "rows": 56,
+      "seed_commitment": "64109d7d63b814de2ee3d2b62c24c13cfec263cabd497a8db1bc57eb99fc7013",
+      "semantic_comparisons": 8,
+      "sha256": "4c5d0d3d7d67d57bdcb0dd25014b765fd9a2df3deebdf9d9c2efa48a240e85d8"
+    },
+    "preservation-validation": {
+      "items": 28,
+      "pairs": 4,
+      "rows": 56,
+      "seed_commitment": "7ef8b8658a6c370e22100c4ee14b5dcf93c53b3ee0859806c3c2f0aadffb13c9",
+      "semantic_comparisons": 8,
+      "sha256": "d698d71d0db51e2e22a2f3de48f9e582b7bfe139b381ae4e977bdf97f808c6f4"
+    },
+    "selection": {
+      "items": 44,
+      "pairs": 8,
+      "rows": 88,
+      "seed_commitment": "7f80ded0020078fc09cc98b98415035a7526faac9c9c6e9aed29f2bcf6df7fb3",
+      "semantic_comparisons": 16,
+      "sha256": "13b88204232d79bd54a3a2a0030f8bc6ef37359343657d726d2dca85ce4152e4"
+    }
+  }
+}
