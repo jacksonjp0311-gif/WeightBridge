@@ -1,0 +1,23 @@
+{
+  "schema": "weightbridge.phase_iiij.geometry_followup.v1",
+  "activation": "Only after all main practice arms terminate and only if the parent and first-fork diagnosis qualify. Run on the same frozen practice and host-held independent rosters for paired comparison; no selection results are read before these two arms finish.",
+  "max_evaluations": 2,
+  "alternate": {
+    "arm": "L17",
+    "layer": 17,
+    "nominal_dose": 0.05,
+    "preservation": "Use the original C stratified anchors and inequality solver. Same targets, rank, and full generation gate."
+  },
+  "conventional": {
+    "arm": "LoRA",
+    "layer": 23,
+    "steps": 4,
+    "rank": 4,
+    "lr": 0.005,
+    "seed": 16379,
+    "max_update_entries": 3670016,
+    "max_update_norm": 0.35,
+    "float_training_norm": 0.33,
+    "policy": "Project merged low-rank delta into the .33 floating-point ball after each optimizer step. The .35 realized stored-precision cap remains authoritative. Train on complete accepted target and preservation continuations, then measure the full practice endpoint if within the cap."
+  }
+}

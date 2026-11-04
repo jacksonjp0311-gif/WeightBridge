@@ -1,0 +1,128 @@
+{
+  "schema": "weightbridge.phase_iiij.preservation.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "practice": "weightbridge-iiij-preservation-v1-practice",
+    "selection": "weightbridge-iiij-preservation-v1-selection"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {
+    "target": 16,
+    "positive": 4,
+    "preserve": 4
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 900
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [
+      0,
+      1
+    ],
+    "max_candidate_evaluations": 11,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {
+    "max_repeatable_error_items": 4,
+    "max_solved_target_items": 4,
+    "max_rows": 32
+  },
+  "probe_design": {
+    "fixed_layer": 23,
+    "fixed_dose": 0.05,
+    "doses": [
+      0.005,
+      0.0125,
+      0.025,
+      0.05
+    ],
+    "historical_anchor_count": 4,
+    "historical_target_trajectory_items": 2,
+    "stratified_anchors_per_group_wording": 1,
+    "preservation_groups": [
+      "target",
+      "positive",
+      "mixed-sign",
+      "copy"
+    ],
+    "safety_floor": 0.0,
+    "refinements": 2,
+    "new_anchors_per_refinement": 2,
+    "max_main_evaluations": 9,
+    "A": "First-fork rank-one projection with four global low-margin anchors, using first two solved target items, first solved positive item and first solved copy item in frozen roster order.",
+    "B": "Same rank-one projection and fixed nominal .05 dose, with one lowest eligible margin in each preservation group and wording cell.",
+    "C": "Same evidence as B, solve individual token-margin inequalities in the fixed right-factor rank-one space, projected inside the .05 norm ball.",
+    "D": "Start with C. If a complete practice probe regresses previously correct outputs, add up to two verified decisions in frozen roster order and refit from parent. At most two refits.",
+    "E": "Freeze the C/D anchor set before the dose stage. Rank decoded C/D observations by practice pass, fewer prohibited regressions, more repeatable errors corrected, higher item gain, then earlier arm. If none decoded use C. Refit the same formulation at each frozen dose and deduplicate stored tensors.",
+    "risk_sampling": "Record a risk-ranked subset of gradient-measured decisions using directional slopes and parent margins. This is diagnostic only; full-trajectory gradient scanning is outside this CPU pilot.",
+    "fit_selection": "First four repeatable-error items whose two observed forks validate, in frozen roster order. No independent results inform construction, radius, or arm choice.",
+    "practice_gate": "Require at least one additional target solved across both wordings and a both-wording correction of a repeatable wrong negative. Require zero losses of valid outputs and zero regressions of previously correct presentations.",
+    "primary_limits": "Nine unique complete practice measurements maximum, one rank-one region per arm, 16,384 touched entries maximum, .055 maximum realized norm to allow for BF16 rounding. Nominal doses are Frobenius ball radii.",
+    "limitations": "A uses the historical four-anchor pool and B uses eight anchors to cover four groups and two forms. A versus B changes coverage and anchor count. Hold both fixed in B versus C. Risk-weighted sampling is a bounded diagnostic comparison."
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "larger-decimal",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "larger-decimal-easy",
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 200,
+      "max_backward_calls": 64,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.055,
+      "max_rank": 1,
+      "max_candidates": 11
+    },
+    "data": {
+      "practice": "iiij-preservation-practice-v1",
+      "evaluation": "iiij-preservation-hidden-v1"
+    },
+    "methods": [
+      "constrained"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "candidate_lock": "Each unique practice passer must survive fresh-process selection with positive gain and zero prohibited regressions. Rank by selection gain, lowest norm, then arm ID. Open hidden only for the locked finalist and parent. Exact restart and rollback are required."
+}
