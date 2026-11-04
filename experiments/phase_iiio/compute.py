@@ -48,6 +48,11 @@ def summarize(root):
             delta = np.asarray(record["rounded_delta"])
             deltas.append(delta != 0)
             changed_events += int(np.count_nonzero(delta))
+    diagnostic_changes = {}
+    for name, record in read("trial/secants.json").items():
+        diagnostic_changes[name] = {key: record[key] for key in (
+            "nominal_radius", "realized_update_norm", "changed_entries",
+            "candidate_tensor_sha256", "restored_exactly")}
     for path in root.glob("reconstruction-*.json"):
         components[path.stem] = json.loads(path.read_bytes())["resources"]
     cpu = sum(value["cpu_seconds"] for value in components.values())
@@ -64,6 +69,9 @@ def summarize(root):
         "all_generated_native_tokens": tokens, "unique_complete_candidate_practice_probes": analysis["unique_decoded_probes"],
         "decoded_candidate_changed_entry_events": changed_events,
         "decoded_candidate_distinct_changed_parameter_positions": int(np.count_nonzero(np.logical_or.reduce(deltas))) if deltas else 0,
+        "temporary_preservation_secants": diagnostic_changes,
+        "diagnostic_changed_entry_events": sum(row["changed_entries"] for row in diagnostic_changes.values()),
+        "diagnostic_distinct_changed_parameter_positions": None,
         "verified_independent_improvements": int(bool(analysis.get("independent", {}).get("disposition") == "PASS")) if analysis.get("independent") else 0,
         "compute_per_verified_improvement": None, "ai_token_tool_cost": "unavailable",
         "scope": "Completed fit process once, host CPU and independent workers once; host wall already includes worker wall. Numerical failures are included. Tests, orchestration, analyst replay CPU and unavailable assistant costs are outside these experimental measurements. Separate interrupted execution receipts remain separate evidence and are not silently treated as zero."}

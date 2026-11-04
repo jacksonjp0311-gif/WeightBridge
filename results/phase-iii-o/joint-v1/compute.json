@@ -1,0 +1,36 @@
+{
+  "ai_token_tool_cost": "unavailable",
+  "all_generated_native_tokens": 3168,
+  "all_generated_response_records": 264,
+  "all_recorded_backward_calls": 32,
+  "all_recorded_batched_decode_steps": 396,
+  "all_recorded_model_forward_calls": 474,
+  "assessment_wall_seconds_including_workers": 3.447462300013285,
+  "completed_fit_and_assessment_wall_seconds": 356.2051309000235,
+  "completed_fit_wall_seconds": 352.7576686000102,
+  "completed_study_cpu_seconds": 1869.890625,
+  "components": {
+    "assessment_host": {
+      "cpu_seconds": 3.359375,
+      "peak_rss_bytes": 43597824,
+      "wall_seconds": 3.447462300013285
+    },
+    "completed_fitting": {
+      "cpu_seconds": 1866.53125,
+      "peak_rss_bytes": 2675830784,
+      "wall_seconds": 352.7576686000102
+    }
+  },
+  "compute_per_verified_improvement": null,
+  "decoded_candidate_changed_entry_events": 0,
+  "decoded_candidate_distinct_changed_parameter_positions": 0,
+  "largest_recorded_peak_rss_bytes": 2675830784,
+  "primary_fitting_backwards": 32,
+  "primary_fitting_batched_decode_steps": 396,
+  "primary_fitting_explicit_forwards": 78,
+  "schema": "weightbridge.phase_iiio.compute.v1",
+  "scope": "Completed fit process once, host CPU and independent workers once; host wall already includes worker wall. Numerical failures are included. Tests, orchestration, analyst replay CPU and unavailable assistant costs are outside these experimental measurements. Separate interrupted execution receipts remain separate evidence and are not silently treated as zero.",
+  "source_sha256": "e215ca5770aba3fcdc4ff1781e72cb49948f7ae230c423391c3854a069b2406d",
+  "unique_complete_candidate_practice_probes": 0,
+  "verified_independent_improvements": 0
+}

@@ -59,9 +59,28 @@ def verify_joint_systems(joint):
         square = float(point @ point)
         objective = float(rhs @ dual - .5 * square)
         padding = float(64 * np.finfo(float).eps * (1 + np.abs(rhs) @ dual + .5 * square))
-        lower = float(np.sqrt(max(0., 2 * (objective - padding))))
+        objective_lower = float(np.sqrt(max(0., 2 * (objective - padding))))
+        numerator = float(rhs @ dual)
+        numerator_padding = float(64 * np.finfo(float).eps * (1 + np.abs(rhs) @ dual))
+        denominator = float(np.linalg.norm(point))
+        denominator_padding = float(64 * np.finfo(float).eps * (1 + denominator))
+        directional_lower = float(max(0., numerator - numerator_padding) / (denominator + denominator_padding))
+        lower = max(objective_lower, directional_lower)
+        components = {
+            "dual_objective": objective, "dual_objective_norm_lower_bound": objective_lower,
+            "dual_direction_norm_lower_bound": directional_lower,
+            "dual_direction_numerator": numerator, "dual_direction_denominator": denominator,
+            "certified_norm_lower_bound": lower,
+        }
         if (not np.isclose(objective, certificate["dual_objective"], rtol=1e-10, atol=1e-12)
-                or not np.isclose(lower, recorded["certified_norm_lower_bound"], rtol=1e-10, atol=1e-12)):
+                or not np.isclose(lower, recorded["certified_norm_lower_bound"], rtol=1e-10, atol=1e-12)
+                or any(not np.isclose(value, certificate[name], rtol=1e-10, atol=1e-12)
+                       for name, value in components.items())
+                or not np.isclose(padding, certificate["dual_roundoff_padding"], rtol=1e-10, atol=1e-18)
+                or not np.isclose(numerator_padding, certificate["dual_direction_roundoff_padding"]["numerator"],
+                                  rtol=1e-10, atol=1e-18)
+                or not np.isclose(denominator_padding, certificate["dual_direction_roundoff_padding"]["denominator"],
+                                  rtol=1e-10, atol=1e-18)):
             raise ValueError("Joint numerical norm lower bound does not follow from the recorded dual")
 
 
@@ -314,13 +333,14 @@ def plot(summary, out):
                              if joint[k].get("certified_norm_lower_bound") is not None else np.nan for k in keys], width=.34,
                     label="Numerical dual lower bound")
         axes[0].bar(x + .18, [joint[k].get("best_primal_norm") if joint[k].get("best_primal_norm") is not None else np.nan
-                             for k in keys], width=.34, label="Feasible primal norm, if found")
+                             for k in keys], width=.34, label="Approximate minimum norm")
         axes[0].set_xticks(x, [key.replace("_", "\n") for key in keys], fontsize=9)
         axes[0].axhline(.025, color="red", linestyle="--", label="Authorized cap")
         axes[0].legend(frameon=False, fontsize=8)
     else:
         axes[0].text(.5, .5, "No qualified numerical systems", ha="center")
     axes[0].set_title("Recorded local linear bounds")
+    axes[0].set_ylabel("Unrounded update Frobenius norm")
     measured = [(name, row) for name, row in summary["arms"].items() if row.get("practice_gate")]
     if measured:
         x = np.arange(len(measured))
@@ -330,6 +350,7 @@ def plot(summary, out):
         axes[1].legend(frameon=False, fontsize=8)
     else:
         axes[1].text(.5, .5, "No numerically qualified generation candidates\nBehavioral outcomes remain unmeasured", ha="center", va="center")
+        axes[1].set_axis_off()
     axes[1].set_title("Actual complete practice generation")
     fig.savefig(out, dpi=170)
     plt.close(fig)

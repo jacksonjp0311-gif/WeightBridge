@@ -234,3 +234,19 @@ whole-process and partial-gradient CPU totals; overall recorded compute is
 a lower bound. The final unit suite also recorded a large unexplained wall
 anomaly in one existing passing BIC test. Test CPU and assistant costs are
 not included in experimental totals. [Phase III-N](PHASE_III_N.md)
+
+Phase III-O's numerical norm certificates concern a supplied finite local
+linear system with a fixed right factor and positive target margin. They use
+floating-point residuals and conservative padding, not interval arithmetic.
+They do not establish nonlinear infeasibility, impossibility across other
+right factors, or inability to learn the task. Native BF16 rounding can leave
+the exact unrounded rank-one subspace. A locally required token correction
+may not cover all semantically valid alternative generation paths.
+
+Two fresh fitted families and eight sampled preservation decisions are a
+small diagnostic study. Neither candidate generation nor any later evaluation
+partition opened. The two restored BF16 preservation secants are not model
+improvements. No candidate target-precision failure, generation failure,
+independent regression or new persistent success can be inferred from this
+numerical HOLD. The average-constrained QP diagnostic is distinct from the
+historical mean-direction proposal. [Phase III-O](PHASE_III_O.md)

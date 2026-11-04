@@ -541,3 +541,22 @@ A batch-packing change exposed a BF16 tie during fitting. Strict refusal,
 unchanged-parent diagnosis, and replay using the original diagnostic context
 resolved it without relaxing data or endpoint gates. The failed attempt is
 retained. [Phase III-N evidence](PHASE_III_N.md)
+
+## Joint individual decisions versus averages
+
+Phase III-O measured sixteen repeatably wrong first-fork decisions from two
+fresh opposing-outcome families. The approximate minimum norm is 0.023666
+when four comparison averages are constrained, 0.035805 when every individual
+decision is constrained, and 0.036063 after adding eight protected decisions.
+Numerical dual bounds exceed the frozen 0.025 cap for the latter two systems.
+Every individual target halfspace fits below the cap alone. Both close and far
+families exceed it when their eight decisions are required jointly.
+
+The result supports a local coupling limitation hidden by averaging.
+Preservation contributes a much smaller additional cost in this cohort.
+No candidate qualified for full generation; transfer, precision effects on
+candidate target correction and persistent improvement remain untested.
+This does not establish general neural or rank-one unreachability. The next
+recommended test changes the fixed right factor under a separately frozen
+rank-one study while keeping the layer, columns, cap and behavioral gates.
+[Report and raw numerical evidence](PHASE_III_O.md)

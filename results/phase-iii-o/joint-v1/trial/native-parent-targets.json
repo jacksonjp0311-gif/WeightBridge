@@ -1,0 +1,281 @@
+{
+  "context_only_rows_have_target_weight": false,
+  "original_context_batches": [
+    {
+      "prefix_lengths": [
+        83,
+        84,
+        83,
+        84,
+        82,
+        83,
+        82,
+        83
+      ],
+      "prompt_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1"
+      ]
+    },
+    {
+      "prefix_lengths": [
+        84,
+        83,
+        84,
+        80,
+        81,
+        80,
+        81,
+        80
+      ],
+      "prompt_ids": [
+        "semantic-decimal/adaptation/target/08/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/08/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/08/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-0/0"
+      ]
+    },
+    {
+      "prefix_lengths": [
+        81,
+        80,
+        81,
+        82,
+        83,
+        82,
+        83,
+        83
+      ],
+      "prompt_ids": [
+        "semantic-decimal/adaptation/target/09/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/10/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/10/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/10/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/10/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/10/variant-1/order-0/0"
+      ]
+    }
+  ],
+  "resources": {
+    "backward_calls": 0,
+    "cpu_seconds": 35.09375,
+    "forward_calls": 3,
+    "peak_rss_bytes": 2585792512,
+    "wall_seconds": 5.959675499994773
+  },
+  "rows": [
+    {
+      "accepted_token_ids": [
+        15,
+        198,
+        248046
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 5,
+      "greedy_token_id": 21,
+      "measured_margin": -2.5,
+      "parent_actual_token_id": 21,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+      "strongest_rejected_token_id": 21
+    },
+    {
+      "accepted_token_ids": [
+        15,
+        198,
+        248046
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 5,
+      "greedy_token_id": 21,
+      "measured_margin": -2.0,
+      "parent_actual_token_id": 21,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+      "strongest_rejected_token_id": 21
+    },
+    {
+      "accepted_token_ids": [
+        15,
+        198,
+        248046
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 5,
+      "greedy_token_id": 21,
+      "measured_margin": -2.0,
+      "parent_actual_token_id": 21,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+      "strongest_rejected_token_id": 21
+    },
+    {
+      "accepted_token_ids": [
+        15,
+        198,
+        248046
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 5,
+      "greedy_token_id": 21,
+      "measured_margin": -1.5,
+      "parent_actual_token_id": 21,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+      "strongest_rejected_token_id": 21
+    },
+    {
+      "accepted_token_ids": [
+        17
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 4,
+      "greedy_token_id": 18,
+      "measured_margin": -0.875,
+      "parent_actual_token_id": 18,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+      "strongest_rejected_token_id": 18
+    },
+    {
+      "accepted_token_ids": [
+        17
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 4,
+      "greedy_token_id": 18,
+      "measured_margin": -0.5,
+      "parent_actual_token_id": 18,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+      "strongest_rejected_token_id": 18
+    },
+    {
+      "accepted_token_ids": [
+        17
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 4,
+      "greedy_token_id": 18,
+      "measured_margin": -0.375,
+      "parent_actual_token_id": 18,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+      "strongest_rejected_token_id": 18
+    },
+    {
+      "accepted_token_ids": [
+        17
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 4,
+      "greedy_token_id": 18,
+      "measured_margin": -0.25,
+      "parent_actual_token_id": 18,
+      "prompt_id": "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+      "strongest_rejected_token_id": 18
+    },
+    {
+      "accepted_token_ids": [
+        19
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 22,
+      "measured_margin": -0.5,
+      "parent_actual_token_id": 22,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+      "strongest_rejected_token_id": 22
+    },
+    {
+      "accepted_token_ids": [
+        19
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 22,
+      "measured_margin": -0.25,
+      "parent_actual_token_id": 22,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+      "strongest_rejected_token_id": 22
+    },
+    {
+      "accepted_token_ids": [
+        19
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 22,
+      "measured_margin": -0.625,
+      "parent_actual_token_id": 22,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+      "strongest_rejected_token_id": 22
+    },
+    {
+      "accepted_token_ids": [
+        19
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 22,
+      "measured_margin": -0.25,
+      "parent_actual_token_id": 22,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+      "strongest_rejected_token_id": 22
+    },
+    {
+      "accepted_token_ids": [
+        16
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 19,
+      "measured_margin": -0.75,
+      "parent_actual_token_id": 19,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-1/order-0/0",
+      "strongest_rejected_token_id": 19
+    },
+    {
+      "accepted_token_ids": [
+        16
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 19,
+      "measured_margin": -0.125,
+      "parent_actual_token_id": 19,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-1/order-0/1",
+      "strongest_rejected_token_id": 19
+    },
+    {
+      "accepted_token_ids": [
+        16
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 19,
+      "measured_margin": -0.625,
+      "parent_actual_token_id": 19,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+      "strongest_rejected_token_id": 19
+    },
+    {
+      "accepted_token_ids": [
+        16
+      ],
+      "accepted_token_selected": false,
+      "first_fork_position": 2,
+      "greedy_token_id": 19,
+      "measured_margin": -0.25,
+      "parent_actual_token_id": 19,
+      "prompt_id": "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+      "strongest_rejected_token_id": 19
+    }
+  ],
+  "schema": "weightbridge.native_joint_margins.v1"
+}

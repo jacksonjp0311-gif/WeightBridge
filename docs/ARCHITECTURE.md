@@ -104,3 +104,25 @@ isolated namespace; source hashes and N fit/lock schemas bind study identity.
 The execution wrapper preserves failure receipts and requires fresh restart
 paths. Neither the optimizer nor the numerical bound diagnostic can promote
 or deploy a checkpoint. [Phase III-N](PHASE_III_N.md)
+
+## Individual-fork joint feasibility
+
+Phase III-O adds `adaptation/joint_feasibility.py`, a bounded minimum-norm
+solver for explicit individual target and preservation margin inequalities.
+It reports within-radius witnesses separately from unrestricted diagnostic
+minima, numerical dual bounds, exact contradictory rows and exhausted search.
+The independent analyzer checks the raw-system multipliers and bounds rather
+than trusting the solver status alone.
+
+`adaptation/joint_update.py` reuses native adapter execution and temporary
+stored-affine probing. Every required fork must pass both predicted and actual
+BF16 margin checks before complete-generation screening. No average margin or
+numerical witness can admit a checkpoint. Exact restoration, hashing, hard
+endpoint guards and host-owned stage locks remain in force.
+
+`experiments/phase_iiio/` binds the fresh seven-partition protocol and inherited
+geometry to source hashes. It shares the existing AWL v3 and verification
+infrastructure without modifying historical fitters or evaluator namespaces.
+The capacity decision recommends a subsequent experiment; it cannot authorize
+broader geometry, hidden-data access, lineage promotion or production changes.
+[Phase III-O](PHASE_III_O.md)

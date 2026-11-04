@@ -1,5 +1,6 @@
 from copy import deepcopy
 import json
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
@@ -22,6 +23,43 @@ def test_joint_system_dual_certificate_replays_and_tampered_bound_refused():
     changed["target_only"]["certified_norm_lower_bound"] /= 2
     with pytest.raises(ValueError, match="does not replay"):
         analyze.verify_joint_systems(changed)
+
+
+def _nonconverged_system():
+    return {"target_rows": [[1., 0.], [-.8, .6]], "target_parent_margins": [-.01, -.01],
+        "target_floor": .0625, "preservation_rows": [], "preservation_parent_margins": [],
+        "preservation_floor": .125, "radius": .025, "max_sweeps": 1, "tolerance": 1e-12,
+        "target_ids": ["a", "b"], "preservation_ids": []}
+
+
+def test_nonconverged_cauchy_ratio_bound_can_exceed_dual_objective_bound():
+    system = _nonconverged_system()
+    record = solve_joint_feasibility(**system).record()
+    assert not record["converged"]
+    certificate = record["certificate"]
+    assert certificate["dual_direction_norm_lower_bound"] > certificate["dual_objective_norm_lower_bound"] + .01
+    assert record["certified_norm_lower_bound"] == certificate["dual_direction_norm_lower_bound"]
+    analyze.verify_joint_systems({"target_only": record, "systems": {"target_only": system}})
+    changed = deepcopy(record)
+    changed["certificate"]["dual_direction_norm_lower_bound"] *= .5
+    with pytest.raises(ValueError, match="does not replay"):
+        analyze.verify_joint_systems({"target_only": changed, "systems": {"target_only": system}})
+
+
+@pytest.mark.parametrize("field", ["dual_direction_numerator", "dual_direction_denominator",
+                                 "dual_objective_norm_lower_bound", "original_dual_multipliers"])
+def test_bound_arithmetic_is_checked_independently_of_solver_replay(monkeypatch, field):
+    system = _nonconverged_system()
+    changed = solve_joint_feasibility(**system).record()
+    if field == "original_dual_multipliers":
+        changed["certificate"][field][0] *= 1.5
+    else:
+        changed["certificate"][field] *= 1.5
+    # Simulate a self-consistent replay implementation bug; the independent
+    # arithmetic must still reject its unearned certificate component.
+    monkeypatch.setattr(analyze, "solve_joint_feasibility", lambda **_: SimpleNamespace(record=lambda: changed))
+    with pytest.raises(ValueError, match="does not follow"):
+        analyze.verify_joint_systems({"target_only": changed, "systems": {"target_only": system}})
 
 
 def test_every_individual_native_target_is_required_not_average():

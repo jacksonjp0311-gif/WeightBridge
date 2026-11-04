@@ -1,0 +1,67 @@
+{
+  "adjustments": [
+    "Windows-written protocol/source line endings canonicalized to LF before frozen data and source capture.",
+    "Setting OMP/MKL environment variables to6 changed4 PhaseIII-N floating rounding-residual metadata values by at most1.39e-17. Restoring original BLAS environment reproduced exact archives; no history or audit tolerance changed. Evidence in audit-environment-diagnostic.json.",
+    "Three new tamper fixtures initially used the write-once writer, which correctly refused replacement. Fixtures explicitly forged bytes to test validator refusal; no evaluation expectations or engine gates changed."
+  ],
+  "claims": "Software PASS is separate from scientific qualification.",
+  "historical_replay": "K/L/M/N canonical exact under original numerical environment, plus N local numerical certificates",
+  "legacy_BIC_preflight": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 3.882,
+    "passed": 1,
+    "skip_details": [],
+    "skipped": 0,
+    "xml_sha256": "3af798fa0b2a458fd7ec815da091b4d0c0b22054c59b182ace4396a1dc12dedf"
+  },
+  "mcp": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 9.769,
+    "passed": 23,
+    "skip_details": [],
+    "skipped": 0,
+    "xml_sha256": "a9a4ca1931ec770899baa1db4af4d7cb55466edf9a518525784bd557c62af10e"
+  },
+  "mcp_process": {
+    "exit_code": 0,
+    "resources": {
+      "cpu_seconds": 3.625,
+      "peak_rss_bytes": 91353088,
+      "wall_seconds": 10.44084070000099
+    },
+    "schema": "weightbridge.phase_iiio.mcp_test_process.v1",
+    "scope": "Test main process; child broker CPU not independently sampled."
+  },
+  "runtime": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 68.768,
+    "passed": 554,
+    "skip_details": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ],
+    "skipped": 1,
+    "xml_sha256": "c2dbf726d5242ba98e9c48e4b80198f2aa9e737465070189292f29ee47dfc556"
+  },
+  "runtime_process": {
+    "blas_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    },
+    "exit_code": 0,
+    "initial_torch_threads": 6,
+    "resources": {
+      "cpu_seconds": 62.5,
+      "peak_rss_bytes": 379383808,
+      "wall_seconds": 69.9346834999742
+    },
+    "schema": "weightbridge.phase_iiio.test_process.v1",
+    "scope": "Pytest main process; child process CPU is separate. Torch-only initial thread limit, original BLAS environment."
+  },
+  "schema": "weightbridge.phase_iiio.tests.v1"
+}

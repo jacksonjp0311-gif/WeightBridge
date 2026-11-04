@@ -279,3 +279,39 @@ before another dose or geometry change. This is one study with an aborted
 implementation attempt, not multiple independent positive observations.
 Evidence key: `ffe0a122b7e2cdacc2f5560fd2bdd739a47d7902af86305e888d64b33a1b3ac7`.
 [Report and raw evidence](PHASE_III_N.md)
+
+### Phase III-O: joint individual-fork feasibility
+
+**Observation.** Sixteen validated wrong decisions from two fresh families are
+each individually reachable below the local 0.025 cap. Constraining their four
+comparison averages needs approximately 0.023666; all individual decisions
+jointly need 0.035805 before preservation and 0.036063 with eight protected
+anchors. Numerical dual bounds independently exclude the frozen radius.
+
+**Hypothesis.** Averaging hides conflicting requirements among the individual
+generative decisions needed for complete opposing-outcome correction.
+
+**Intervention.** Measure native per-presentation margin derivatives in the
+unchanged M fixed-right, layer-23, rank-one geometry. Solve averaged, individual
+and preservation-compatible minimum-norm systems at the same positive target
+floor. Reject proposals before generation if any required fork fails.
+
+**Result.** Both fitted families individually exceed the cap when all required
+decisions are combined. All four authorized generation cells are refused.
+Two temporary preservation secants restore exactly. No candidate checkpoint
+or later behavioral evaluation exists; HOLD is retained.
+
+**Interpretation.** The fresh local-system evidence supports a joint-target
+geometry obstruction, with preservation adding comparatively little cost.
+It does not establish global neural unreachability or explain every historical
+failure. Unmeasured behavior is not a zero-gain observation.
+
+**Limitations.** Parent linearization, approximate native derivatives, numerical
+certificates, fixed right factor, two families and sampled protection. BF16
+candidate correction and fresh transfer were not tested.
+
+**Next experiment.** Freeze an optimized-right-factor rank-one study without
+changing the current layer, columns, cap or endpoint gates. This run is counted
+once. Evidence key:
+`4a07fec76d0f23ff647fecff578ac7d4626ee7d605922f72deacba27416f5267`.
+[Report and raw evidence](PHASE_III_O.md)

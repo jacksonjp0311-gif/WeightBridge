@@ -1,0 +1,76 @@
+{
+  "mcp": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 4.647,
+    "passed": 23,
+    "skip_details": [],
+    "skipped": 0,
+    "tests": 23,
+    "xml_sha256": "5d04bcb8e3bb73340dfd5002bb3e2fa174070942334579a2b77a9811b745053d"
+  },
+  "mcp_process": {
+    "exit_code": 0,
+    "resources": {
+      "cpu_seconds": 3.25,
+      "peak_rss_bytes": 89108480,
+      "wall_seconds": 5.177792800008319
+    },
+    "schema": "weightbridge.phase_iiio.mcp_test_process.v1",
+    "scope": "Final MCP test main process; broker-child CPU not independently sampled."
+  },
+  "prior_receipt_sha256": "e6454e35f061639f11ee3de2d4c85bf1bffc0f6fdfc69e609def95e778bc6c22",
+  "runtime": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 46.035,
+    "passed": 563,
+    "skip_details": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ],
+    "skipped": 1,
+    "tests": 564,
+    "xml_sha256": "2fc2025a676fedf6d98ea4d68f3c9ee0470107cd782dd1a1a707b8fc50e87d73"
+  },
+  "runtime_process": {
+    "blas_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    },
+    "exit_code": 0,
+    "initial_torch_threads": 6,
+    "resources": {
+      "cpu_seconds": 53.65625,
+      "peak_rss_bytes": 376717312,
+      "wall_seconds": 46.89004320005188
+    },
+    "schema": "weightbridge.phase_iiio.test_process.v1",
+    "scope": "Final pytest main process; child process CPU separate. Torch-only initial thread limit; original BLAS environment."
+  },
+  "schema": "weightbridge.phase_iiio.tests.v2",
+  "scope": "Final full runtime suite and optional MCP suite. Test costs separate from scientific compute; software passes do not imply model improvement.",
+  "tested_source_sha256": {
+    "experiments/phase_iiio/analyze.py": "5fc31f2d69e34e3b71bc5472939966b4be0840befd24b2386746888e7f6b5c31",
+    "experiments/phase_iiio/archive_trial.py": "c8808d89469e67f2866311b08df8c434c07694a574180c5b2206be47ebe457c0",
+    "experiments/phase_iiio/audit_previous.py": "f3ec1fc8340e3dfeac8edb4a1964da956369ad391cad5c35d06da670d35490ae",
+    "experiments/phase_iiio/compute.py": "1b62663eee65e2471b913d3b3b810f73d2e9eb9e565a1cbbcef17008dfb7dbf0",
+    "experiments/phase_iiio/execute.py": "a6812c0c3721190bb7ae2ffe1a84c64cfed1ff4a5858f9e83f0f8d91ecbc04af",
+    "experiments/phase_iiio/reconstruct.py": "0f7bc015152cef3e8e7914461f0c6e54d73c9215f885212acfa518cf6f99122f",
+    "experiments/phase_iiio/run_joint.py": "35e7bb197b29758ca6d9c99e48ba45b0c7ab6098f51b637fb0e74e3d6bc693af",
+    "experiments/phase_iiio/semantic_metrics.py": "5b9998a39eb7cd4222ce4610f314895e15fa0b0e32f18971f8be82e8d0f73179",
+    "experiments/phase_iiio/semantic_roster.py": "af84d4b2bc1b767e572e2cae682c1fef803aae7104c727b53af4509659128c7a",
+    "experiments/phase_iiio/source_manifest.py": "25c1eec61fea6c125f92208c8414d8f5bf1ef7b8b99514c425d30d16f56eeaf4",
+    "experiments/phase_iiio/verification.py": "ac247dc5b0b062492150727829a48f886ddc13d16f43a30157771315499f9fad",
+    "tests/test_joint_feasibility.py": "b41f9eb33ec693512e1a5f60f9b01451c1bed7bf0b11bedb12a8c8ab38d4850d",
+    "tests/test_joint_update.py": "59e43a6acd3929b9b25336f87d5747d56dfc3168803d4b880593cd547581b0cf",
+    "tests/test_phase_iiio_analysis.py": "81eb7090662fbe3bcce180d03f813bbea8f4c32ea18def1508afc79c106f5038",
+    "tests/test_phase_iiio_compute.py": "0ccfd751ade75401e3e166a91214441225c63d4fccb2d093a7e14e9a264b20fc",
+    "tests/test_phase_iiio_roster.py": "b57a82d46b8fbe2d5060b81c1e03278a881dfb8143c726c9e2a5072c0eadf045",
+    "tests/test_phase_iiio_verification.py": "734e6a75171c2f0e5d9f543fae1bb6b456056a0bdcde81e682dcd5d184d7348b",
+    "weightbridge/adaptation/joint_feasibility.py": "2056c2c624921ac0e6197fd37b8c67965d63af73566e6849a21284289a775e6b",
+    "weightbridge/adaptation/joint_update.py": "a787c329d56a3905c07c6a84edb02afb37c6694255b016307b70738a9d1751d3"
+  }
+}

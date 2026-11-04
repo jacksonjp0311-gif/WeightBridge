@@ -126,3 +126,21 @@ actual rounded witness before a separately frozen dose or geometry trial.
 Use fresh families excluding every disclosed Phase III-N transformation.
 Do not refit the finished study or expand rank solely because it held.
 [Phase III-N](PHASE_III_N.md)
+
+## After Phase III-O
+
+Completed: fresh per-presentation native fork measurements, averaged-versus-
+individual minimum-norm systems, preservation-compatible systems, numerical
+dual certificates and independent arithmetic replay. The fixed-right local
+individual-target minimum exceeds the 0.025 cap globally and for each fitted
+family. The host correctly stops before candidate generation and later data.
+
+HOLD: verified persistent single-cycle improvement, complete-family transfer,
+independent selection, sealed evaluation and sequential learning.
+
+Next: a separately preregistered optimized-right-factor rank-one feasibility
+study. Keep the authorized columns, layer, norm envelope and complete-generation
+guard. Test whether a new unit right factor lowers joint individual-target cost
+and survives BF16 plus full decoding with zero prohibited regressions. Do not
+raise the norm cap or expand rank in the completed O study. A numerical witness
+alone remains insufficient for retention. [Phase III-O](PHASE_III_O.md)

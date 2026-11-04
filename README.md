@@ -83,6 +83,13 @@ two strict comparisons on fresh development, matching the one-sided control,
 but completed no fresh family. The study held before independent selection
 and hidden verification. [Phase III-N study and reproduction](docs/PHASE_III_N.md)
 
+Phase III-O tests each required first-fork decision separately before proposing
+another edit. Averaged local constraints fit below the 0.025 norm cap; satisfying
+all sixteen individual decisions requires about 0.03580, before preservation.
+The study held with zero candidate generation probes. These numerical bounds
+apply to the frozen local update space, not the model's general ability to
+learn. [Phase III-O findings and reproduction](docs/PHASE_III_O.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

@@ -1,0 +1,30 @@
+{
+  "blas_environment": {
+    "MKL_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null
+  },
+  "device": "cpu",
+  "free_storage_preflight_bytes": 189244776448,
+  "gpu_used": false,
+  "logical_cpu_processors": 32,
+  "machine": "AMD64",
+  "model_inference_threads": 6,
+  "os": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "huggingface-hub": "2.4.0",
+    "numpy": "2.5.4",
+    "psutil": "7.2.2",
+    "pytest": "9.2.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.3",
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "physical_cpu_cores": 16,
+  "precision": "native BF16",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "schema": "weightbridge.phase_iiio.environment.v1",
+  "scope": "Existing isolated pinned Qwen reference checkpoint; no production model or private memory access.",
+  "source_model_downloads": 0,
+  "system_ram_bytes": 132766306304
+}
