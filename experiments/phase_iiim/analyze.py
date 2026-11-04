@@ -22,6 +22,15 @@ from weightbridge.adaptation.preservation_geometry import DecisionAnchor
 from weightbridge.adaptation.robust_jspace import estimate_window
 
 
+def _family_changes(parent, candidate):
+    prior, after = semantic_summary(parent), semantic_summary(candidate)
+    return {
+        family: sum(int(after["comparisons"][item]["all_correct"]) - int(prior["comparisons"][item]["all_correct"])
+                    for item in (members["original"], members["counterfactual"]))
+        for family, members in prior["families"].items()
+    }
+
+
 def _practice(record, parent, protected, frozen, contract, config, anchors, prompts):
     probe = record["probe"]
     scored = probe["endpoint"]
@@ -43,15 +52,10 @@ def _practice(record, parent, protected, frozen, contract, config, anchors, prom
     if (not probe.get("restored_exactly") or scored["guard"] != gate or preservation != scored["preservation_fit_guard"]
             or active != record["active_measurements"]):
         raise ValueError("Practice gate does not replay from exact endpoint and active-margin evidence")
-    prior, after = semantic_summary(parent), semantic_summary(measured)
-    family_changes = {
-        family: sum(int(after["comparisons"][item]["all_correct"]) - int(prior["comparisons"][item]["all_correct"])
-                    for item in (members["original"], members["counterfactual"]))
-        for family, members in prior["families"].items()
-    }
+    after = semantic_summary(measured)
     return {
         "practice_gate": gate, "subgroups": _subgroup_outcomes(parent, measured, gate),
-        "truth_flip_matrix": after["truth_flip_matrix"], "family_comparison_changes": family_changes,
+        "truth_flip_matrix": after["truth_flip_matrix"], "family_comparison_changes": _family_changes(parent, measured),
         "fit_regressions": preservation["prohibited_regressions"],
         "fit_validity_losses": preservation["lost_valid_presentations"],
         "minimum_measured_margin": min(row["measured_margin"] for row in active),
@@ -181,9 +185,10 @@ def _preferred_geometry(record, basis, directions, secants, anchors):
     }
 
 
-def _factorial_effects(arms, dose, norms):
+def _factorial_effects(arms, dose, norms, *, gate_key="practice_gate",
+                      scope="Frozen practice factorial. Independent generalization is reported by separate gates."):
     names = [f"{arm}{dose}" for arm in "ABCD"]
-    ready = all(name in arms and "practice_gate" in arms[name] for name in names)
+    ready = all(name in arms and gate_key in arms[name] for name in names)
     identities = [arms.get(name, {}).get("tensor_sha256") for name in names]
     distinct = all(identities) and len(set(identities)) == 4
     matched = bool(norms and norms["cohort_status"] == "MATCHED")
@@ -193,10 +198,10 @@ def _factorial_effects(arms, dose, norms):
     coefficients = {"objective": [-.5, -.5, .5, .5], "normalization": [-.5, .5, -.5, .5],
                     "interaction": [1., -1., -1., 1.]}
     metrics = {
-        "strict_comparison_gain": [arms[name]["practice_gate"]["target_gain"] for name in names],
-        "local_response_corrections": [len(arms[name]["practice_gate"]["local_corrected_target_presentations"]) for name in names],
-        "complete_family_gain": [arms[name]["practice_gate"]["complete_family_gain"] for name in names],
-        "prohibited_regressions": [len(arms[name]["practice_gate"]["regressions"]) + len(arms[name]["fit_regressions"])
+        "strict_comparison_gain": [arms[name][gate_key]["target_gain"] for name in names],
+        "local_response_corrections": [len(arms[name][gate_key]["local_corrected_target_presentations"]) for name in names],
+        "complete_family_gain": [arms[name][gate_key]["complete_family_gain"] for name in names],
+        "prohibited_regressions": [len(arms[name][gate_key]["regressions"]) + len(arms[name]["fit_regressions"])
                                   for name in names],
     }
     effects = {metric: {effect: float(np.asarray(weights) @ values) for effect, weights in coefficients.items()}
@@ -215,7 +220,7 @@ def _factorial_effects(arms, dose, norms):
                              "estimand": "paired strict-comparison accuracy effect"}
     return {"informative": True, "all_decoded": True, "four_distinct_states": True,
             "cohort_matched": True, "effects_on_counts": effects, "family_cluster_intervals": intervals,
-            "scope": "Frozen practice factorial. Independent generalization is reported by separate gates."}
+            "scope": scope}
 
 
 def _pair_contrasts(arms, dose, norms):
@@ -237,6 +242,96 @@ def _pair_contrasts(arms, dose, norms):
                 - len(arms[a]["practice_gate"]["regressions"]) - len(arms[a]["fit_regressions"]))
         result[factor] = row
     return result
+
+
+def _behavior_agreement(first, second):
+    """Compare generated behavior separately from numerical direction agreement."""
+    before, after = first["rows"], second["rows"]
+    if [row["id"] for row in before] != [row["id"] for row in after]:
+        raise ValueError("Behavioral agreement requires the same frozen presentations")
+    both_valid = [(a, b) for a, b in zip(before, after, strict=True) if a["valid"] and b["valid"]]
+    return {
+        "presentations": len(before), "both_valid": len(both_valid),
+        "same_valid_semantic_answer": sum(a["exact"] == b["exact"] for a, b in both_valid),
+        "same_correctness": sum(a["correct"] == b["correct"] for a, b in zip(before, after, strict=True)),
+        "same_generated_token_sequence": sum(a["generated_token_ids"] == b["generated_token_ids"]
+                                             for a, b in zip(before, after, strict=True)),
+        "different_correctness_ids": [a["id"] for a, b in zip(before, after, strict=True) if a["correct"] != b["correct"]],
+    }
+
+
+def _termination_diagnostics(record, basis, parent_classes, diagnosis):
+    """Join recorded-parent-prefix decisions to complete candidate generations."""
+    probe = record["probe"]
+    endpoint_rows = {row["id"]: row for row in probe["endpoint"]["measurement"]["rows"]}
+    meanings = semantic_summary(probe["endpoint"]["measurement"])
+    originals = {row["prompt_id"]: row for row in diagnosis["forks"]}
+    initial = {row["prompt_id"]: row for row in parent_classes["rows"]}
+    after = {row["prompt_id"]: row for row in probe["endpoint"]["fork_token_classes"]["rows"]}
+    tokens = parent_classes["numeric_surface_tokenizations"]
+    digits = {sequence[0] for text, sequence in tokens.items() if text.isdigit() and len(sequence) == 1}
+    newline = set(parent_classes["newline_tokenization"])
+    eos = set()
+    for fork in diagnosis["forks"]:
+        token = fork["decoding"]["eos_token_id"]
+        eos.update(token if isinstance(token, list) else (token,))
+
+    def kind(token):
+        return "eos" if token in eos else "newline" if token in newline else "digit" if token in digits else "other"
+
+    predicted = probe["fork"]["candidate_predicted_ids"]
+    if len(predicted) != len(basis["forks"]):
+        raise ValueError("Fork decision order differs from the frozen basis")
+    rows, counts = [], {name: {"accepted_changes": 0, "completed_correct": 0, "visited_parent_prefix": 0}
+                        for name in ("digit", "newline", "eos", "other")}
+    for fork, token in zip(basis["forks"], predicted, strict=True):
+        prompt_id = fork["prompt_id"]
+        original, before, current, output = originals[prompt_id], initial[prompt_id], after[prompt_id], endpoint_rows[prompt_id]
+        if (before["accepted_token_ids"] != fork["accepted_token_ids"]
+                or current["accepted_token_ids"] != fork["accepted_token_ids"]):
+            raise ValueError("Token-class probabilities do not share the diagnosed accepted continuations")
+        accepted = token in fork["accepted_token_ids"]
+        changed = token != fork["actual_token_id"]
+        category = kind(token)
+        shared = original["shared_token_ids"]
+        generated = output["generated_token_ids"]
+        visited = bool(len(generated) > len(shared) and generated[:len(shared)] == shared)
+        family = meanings["families"][fork["metadata"]["pair_id"]]
+        counterpart = family["counterfactual"] if fork["comparison_id"] == family["original"] else family["original"]
+        if accepted and changed:
+            counts[category]["accepted_changes"] += 1
+            counts[category]["completed_correct"] += bool(output["correct"])
+            counts[category]["visited_parent_prefix"] += visited
+        rows.append({
+            "prompt_id": prompt_id, "comparison_id": fork["comparison_id"], "pair_id": fork["metadata"]["pair_id"],
+            "parent_token_id": fork["actual_token_id"], "parent_kind": kind(fork["actual_token_id"]),
+            "candidate_prefix_token_id": token, "candidate_prefix_kind": category,
+            "accepted_prefix_token": accepted, "changed_prefix_token": changed,
+            "full_generation_visited_parent_prefix": visited,
+            "full_generation_token_at_original_fork": generated[len(shared)] if visited else None,
+            "completed_correct": bool(output["correct"]),
+            "counterfactual_comparison_correct": bool(meanings["comparisons"][counterpart]["all_correct"]),
+            "complete_truth_flip_family": family["status"] == "both_correct",
+            "probability_changes": {name: current[name] - before[name] for name in (
+                "accepted_probability", "numeric_subset_probability", "termination_subset_probability")},
+            "parent_probabilities": {name: before[name] for name in (
+                "accepted_probability", "numeric_subset_probability", "termination_subset_probability")},
+            "candidate_probabilities": {name: current[name] for name in (
+                "accepted_probability", "numeric_subset_probability", "termination_subset_probability")},
+            "prefix_replay_argmax_agreement": current["greedy_token_id"] == token,
+        })
+    first = probe.get("first_divergences", ())
+    return {
+        "accepted_changed_prefix_tokens_by_kind": counts, "fork_rows": rows,
+        "first_divergence_parent_phases": dict(Counter(row.get("parent_phase", "unclassified") for row in first)),
+        "first_divergence_candidate_token_kinds": dict(Counter(kind(row.get("candidate_token_id")) for row in first)),
+        "mean_probability_changes": {name: float(np.mean([row["probability_changes"][name] for row in rows]))
+                                     for name in ("accepted_probability", "numeric_subset_probability", "termination_subset_probability")},
+        "scope": (
+            "Prefix decisions and probability changes use the recorded parent fork. A candidate can visit another path. "
+            "The numeric subset consists of native standalone digit and decimal-point tokens, "
+            "and the termination subset consists of native newline/EOS. These subsets do not exhaust all number continuations."),
+    }
 
 
 def _work_counts(value, path=""):
@@ -281,7 +376,7 @@ def summarize(trial, material):
     sampling = records.get("sampling.json", {})
     anchors = tuple(DecisionAnchor(**row) for row in sampling.get("anchors", ()))
     prompts = records.get("probe-reference.json", {}).get("prompt_ids", ())
-    arms, owners, deltas = {}, {}, {}
+    arms, owners, deltas, generations = {}, {}, {}, {}
     stage_work = {}
     for filename in report["artifacts"]:
         if not filename.startswith("arm-"):
@@ -322,14 +417,19 @@ def summarize(trial, material):
                 if alias not in arms or owners.get(digest) != alias:
                     raise ValueError("Candidate alias does not bind the identical stored state")
                 for key in ("practice_gate", "subgroups", "truth_flip_matrix", "family_comparison_changes",
-                            "fit_regressions", "fit_validity_losses", "minimum_measured_margin", "fork", "fork_token_classes"):
+                            "fit_regressions", "fit_validity_losses", "minimum_measured_margin", "fork", "fork_token_classes",
+                            "termination_diagnostics"):
                     row[key] = arms[alias][key]
+                generations[name] = generations[alias]
             elif "endpoint" in probe:
                 if (not digest or digest in owners or record["norm_match"]["status"] != "MATCHED"
                         or not record["calibration_sufficient"]):
                     raise ValueError("Decoded candidate is duplicated, unmatched, or lacks directional calibration")
                 owners[digest] = name
                 row.update(_practice(record, parent, protected, frozen, contract, config, anchors, prompts))
+                row["termination_diagnostics"] = _termination_diagnostics(
+                    record, basis, records["token-class-parent.json"], records["fork-diagnosis.json"])
+                generations[name] = probe["endpoint"]["measurement"]
             arms[name] = row
             # The numeric cell counts its cached prefix probes exactly once.
             # Candidate diagnostics and actual generation have separate counters.
@@ -355,6 +455,29 @@ def summarize(trial, material):
         pair_contrasts[str(dose)] = _pair_contrasts(arms, dose, comparison)
     if records.get("stored-pairwise.json", pairwise) != pairwise:
         raise ValueError("Stored pairwise intervention differences do not reconstruct from archived deltas")
+    behavior_pairwise = {}
+    names = tuple(generations)
+    for index, first in enumerate(names):
+        for second in names[index + 1:]:
+            behavior_pairwise[f"{first}:{second}"] = _behavior_agreement(generations[first], generations[second])
+    development_arms, development_subgroups = {}, {}
+    development_parent = records.get("verification/development-transfer-base.json")
+    if development_parent is not None:
+        before = development_parent["measurement"]
+        for name, gate in assessment["development"].items():
+            observed = records.get(f"verification/development-transfer-{name}.json")
+            if observed is None:
+                continue
+            measured = observed["measurement"]
+            development_arms[name] = {
+                "tensor_sha256": arms[name]["tensor_sha256"], "development_gate": gate,
+                "fit_regressions": [], "family_comparison_changes": _family_changes(before, measured)}
+            development_subgroups[name] = _subgroup_outcomes(before, measured, gate)
+    development_effects = {
+        str(dose): _factorial_effects(development_arms, dose, pairwise["norm_matching"][str(dose)],
+            gate_key="development_gate",
+            scope="Frozen development-transfer factorial. This population can rank finalists and is separate from independent selection.")
+        for dose in range(1, len(config["probe_design"]["target_norms"]) + 1)}
     total_work = Counter()
     for scopes in stage_work.values():
         for values in scopes.values():
@@ -376,7 +499,9 @@ def summarize(trial, material):
         "unique_decoded_probes": unique_decodes,
         "practice_passers": [name for name, row in arms.items() if row.get("practice_gate", {}).get("passed")
                              and not row["duplicate_of"]],
-        "stored_pairwise": pairwise, "factorial_effects": effects, "pair_contrasts": pair_contrasts,
+        "stored_pairwise": pairwise, "behavior_pairwise": behavior_pairwise,
+        "factorial_effects": effects, "pair_contrasts": pair_contrasts,
+        "development_factorial_effects": development_effects, "development_subgroups": development_subgroups,
         "development": assessment["development"], "preservation": assessment["preservation"],
         "selection": assessment["selection"], "independent": independent,
         "resources": {"fitting": report["resources"], "fitting_stage_counts": stage_work,
@@ -410,7 +535,8 @@ def plot(summary, out):
         for i in range(4):
             for j in range(4):
                 value = values[i, j]
-                agreement.text(j, i, f"{value:.2f}" if np.isfinite(value) else "undefined",
+                text = f"{value:.4f}" if i != j and abs(value) > .995 else f"{value:.2f}"
+                agreement.text(j, i, text if np.isfinite(value) else "undefined",
                                ha="center", va="center", color="white" if abs(value) > .65 else "black")
         fig.colorbar(image, ax=agreement, fraction=.045)
         agreement.set_title("Unconstrained factorial direction cosine")
@@ -428,6 +554,10 @@ def plot(summary, out):
         behavior.yaxis.set_major_locator(MaxNLocator(integer=True))
         behavior.axhline(0, color="#777777", linewidth=.7)
         behavior.set_title("Complete frozen practice generation")
+        excluded = [name for name, row in summary["arms"].items() if "practice_gate" not in row]
+        if excluded:
+            behavior.text(.03, .95, "No generation probe for " + ", ".join(excluded),
+                          transform=behavior.transAxes, va="top", fontsize=9)
         behavior.legend(loc="upper center", bbox_to_anchor=(.5, -.15), frameon=False)
         groups = list(measured[0][1]["subgroups"])
         changes = [[row["subgroups"][group]["candidate_correct_presentations"]
@@ -459,7 +589,7 @@ def plot(summary, out):
                          marker="o" if matched else "x")
         dose.set_xticks(x, [name for name, _ in numeric], rotation=20)
         dose.set_ylabel("Actual BF16 update norm")
-        dose.set_title("Measured norms; admissibility checked separately")
+        dose.set_title("Measured norms and separate admissibility")
         dose.legend(loc="upper left", frameon=False)
     else:
         dose.set_axis_off()

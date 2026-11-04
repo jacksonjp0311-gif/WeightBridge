@@ -504,3 +504,16 @@ and regressed one previously correct response. That violation rejected the
 candidate. The public truth-flip families still had no jointly correct pair.
 The bounded maximin witness coincided with a simpler equal-group mean at
 the larger dose. [Phase III-L evidence](PHASE_III_L.md)
+
+## Objective and normalization decomposition
+
+Phase III-M kept one comparison gradient per semantic item and compared
+CE/RAW, CE/UNIT, MARGIN/RAW and MARGIN/UNIT in the same selected-column
+rank-one space. The larger-dose BF16 norms differed by only 0.08615% of
+the target. Practice gains were 3, 3, 4 and 3 strict comparisons. Fresh
+development gains were 3, 1, 3 and 1, with zero prohibited regressions.
+Normalization changed correction allocation and reduced measured strict
+development gain here. Objective choice supplied no strict development
+gain advantage. All complete truth-flip gains were zero. The family gate
+held before independent selection and hidden access.
+[Phase III-M findings](PHASE_III_M.md)

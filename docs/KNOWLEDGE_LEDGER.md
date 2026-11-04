@@ -36,6 +36,14 @@ selection and sealed targets, then failed the sealed zero-regression gate.
 The aligned parent scoring probe and Phase III-K retrospective audit are
 diagnostics attached to this cohort. [Phase III-L findings](PHASE_III_L.md)
 
+Phase III-M records one four-arm, two-norm cohort. Seven unique states
+received full practice generation and six reloaded for development transfer.
+All six gained strict comparisons without prohibited regressions, and none
+completed an opposing-question family. Later partitions remained gated.
+The unchanged-parent termination diagnostic and prior-archive audit are
+attached diagnostics rather than new independent adaptation observations.
+[Phase III-M findings](PHASE_III_M.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |

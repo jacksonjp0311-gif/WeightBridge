@@ -1,0 +1,2618 @@
+{
+  "arm": "A1",
+  "calibration_passes": [
+    {
+      "allowance_used": 0.0,
+      "norm_match": {
+        "amplitude_limit": 0.025,
+        "attempts": [
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.828125,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2789007360,
+                "wall_seconds": 1.8494187000324018
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.0125,
+            "changed_entries": 14731,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.277339482004189,
+            "norm_matching_error": 6.0176802878376956e-05,
+            "proposed_norm": 0.0125,
+            "realized_norm": 0.012560176802878378,
+            "relative_norm_error": 0.0048141442302701565,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.0125,
+              "update_norm": 0.0125
+            },
+            "stored_update_cosine": 0.9952509654644722,
+            "tensor_sha256": "c4aefa4a39ed8db5917929dabaacc560878e8db972ef51f684e6832ab5514be6"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.453125,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2789007360,
+                "wall_seconds": 1.764267100021243
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012440111508955248,
+            "changed_entries": 14716,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.27720849637833495,
+            "norm_matching_error": 9.0731540213565e-06,
+            "proposed_norm": 0.012440111508955248,
+            "realized_norm": 0.012490926845978644,
+            "relative_norm_error": 0.00072585232170852,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012440111508955248,
+              "update_norm": 0.012440111508955248
+            },
+            "stored_update_cosine": 0.9951993214227615,
+            "tensor_sha256": "b0f099423d26be5e0981354c75516c016126077d8a376075f9d15cd2487fd372"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.234375,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2803929088,
+                "wall_seconds": 1.7528884999919683
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012449147751754153,
+            "changed_entries": 14721,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772282600741258,
+            "norm_matching_error": 2.130974687562792e-06,
+            "proposed_norm": 0.012449147751754153,
+            "realized_norm": 0.012502130974687563,
+            "relative_norm_error": 0.00017047797500502337,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012449147751754153,
+              "update_norm": 0.012449147751754153
+            },
+            "stored_update_cosine": 0.9952073075686816,
+            "tensor_sha256": "450358919fcbd6efcb6d7b702f11035368be9cb776b8257399fa4c03686a6bbd"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 9.84375,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.6562456999672577
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.01244702580799957,
+            "changed_entries": 14718,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772236190466784,
+            "norm_matching_error": 2.3397953790357112e-06,
+            "proposed_norm": 0.01244702580799957,
+            "realized_norm": 0.012497660204620965,
+            "relative_norm_error": 0.0001871836303228569,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447025807999569,
+              "update_norm": 0.01244702580799957
+            },
+            "stored_update_cosine": 0.9952041002797221,
+            "tensor_sha256": "0a902f460f486f1a111276fe479c7216d68f5212c17b992245f4c09bfa073db6"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.140625,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.7224266999983229
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012448086779876862,
+            "changed_entries": 14719,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.27722593956040215,
+            "norm_matching_error": 5.938323798838907e-07,
+            "proposed_norm": 0.012448086779876862,
+            "realized_norm": 0.012500593832379885,
+            "relative_norm_error": 4.7506590390711256e-05,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012448086779876862,
+              "update_norm": 0.012448086779876862
+            },
+            "stored_update_cosine": 0.9952061977721514,
+            "tensor_sha256": "e0335ca7d073397f2c7e38dd375ce68ddc79d90d23b3698d6d89ecf6d9c04211"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.3125,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.7524126999778673
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012447495441809517,
+            "changed_entries": 14718,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772246462102861,
+            "norm_matching_error": 1.6061141021248004e-06,
+            "proposed_norm": 0.012447495441809517,
+            "realized_norm": 0.012498393885897876,
+            "relative_norm_error": 0.00012848912816998403,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447495441809519,
+              "update_norm": 0.012447495441809517
+            },
+            "stored_update_cosine": 0.9952046213764892,
+            "tensor_sha256": "1a62646c4501f0990286448b84953df718332af2c91db187dbb492c6c9c82fd8"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 9.984375,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.70044919999782
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012447791110843189,
+            "changed_entries": 14718,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772252928853441,
+            "norm_matching_error": 9.532246781837617e-09,
+            "proposed_norm": 0.012447791110843189,
+            "realized_norm": 0.012499990467753219,
+            "relative_norm_error": 7.625797425470093e-07,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447791110843189,
+              "update_norm": 0.012447791110843189
+            },
+            "stored_update_cosine": 0.9952057633421705,
+            "tensor_sha256": "1c2974bbbedfea44e78367ad8ca943e0a8cdd84981ac95436415422b289c55ba"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 9.9375,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.6894096999894828
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012447800603283769,
+            "changed_entries": 14718,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772253136468168,
+            "norm_matching_error": 9.44104633186782e-09,
+            "proposed_norm": 0.012447800603283769,
+            "realized_norm": 0.012499990558953669,
+            "relative_norm_error": 7.552837065494256e-07,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447800603283769,
+              "update_norm": 0.012447800603283769
+            },
+            "stored_update_cosine": 0.9952057634077428,
+            "tensor_sha256": "53a7a8442eeb5c96fd7bdc428773de1fbda2b29005dcc1c082458c0e9fef49e8"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.015625,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.7107475000084378
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012447810004911847,
+            "changed_entries": 14718,
+            "duplicate_stored_state": false,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772253342096681,
+            "norm_matching_error": 9.43933298191979e-09,
+            "proposed_norm": 0.012447810004911847,
+            "realized_norm": 0.012499990560667019,
+            "relative_norm_error": 7.551466385535832e-07,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447810004911847,
+              "update_norm": 0.012447810004911847
+            },
+            "stored_update_cosine": 0.9952057634089747,
+            "tensor_sha256": "f7866ed0d1fe7e02bc3a3a22e0454291301a2a4cb1b412a3b8b0dbc520b3e918"
+          },
+          {
+            "active_constraint_count": 0,
+            "active_measurement": {
+              "resources": {
+                "backward_calls": 0,
+                "cpu_seconds": 10.015625,
+                "forward_calls": 1,
+                "peak_rss_bytes": 2804088832,
+                "wall_seconds": 1.7107475000084378
+              },
+              "rows": [
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+                  "margin": 0.125,
+                  "parent_token_id": 20,
+                  "position": 2,
+                  "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+                  "replay_argmax_token_id": 20,
+                  "strongest_rival_token_id": 24,
+                  "wording": 1
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.25,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.375,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/preservation-fit/preserve/02",
+                  "margin": 6.0,
+                  "parent_token_id": 18,
+                  "position": 8,
+                  "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 1
+                },
+                {
+                  "group": "target",
+                  "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+                  "margin": 1.125,
+                  "parent_token_id": 471,
+                  "position": 0,
+                  "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+                  "replay_argmax_token_id": 471,
+                  "strongest_rival_token_id": 220,
+                  "wording": 0
+                },
+                {
+                  "group": "positive",
+                  "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+                  "margin": 5.625,
+                  "parent_token_id": 18,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+                  "replay_argmax_token_id": 18,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "mixed-sign",
+                  "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+                  "margin": 5.5,
+                  "parent_token_id": 16,
+                  "position": 5,
+                  "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+                  "replay_argmax_token_id": 16,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                },
+                {
+                  "group": "copy",
+                  "item": "semantic-decimal/adaptation/preserve/03",
+                  "margin": 7.25,
+                  "parent_token_id": 23,
+                  "position": 9,
+                  "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+                  "replay_argmax_token_id": 23,
+                  "strongest_rival_token_id": 198,
+                  "wording": 0
+                }
+              ],
+              "schema": "weightbridge.jspace_candidate_margins.v1"
+            },
+            "admissible": false,
+            "amplitude": 0.012447819404840828,
+            "changed_entries": 14718,
+            "duplicate_stored_state": true,
+            "feasible": false,
+            "minimum_predicted_margin": 0.2772253547688032,
+            "norm_matching_error": 9.43933298191979e-09,
+            "proposed_norm": 0.012447819404840828,
+            "realized_norm": 0.012499990560667019,
+            "relative_norm_error": 7.551466385535832e-07,
+            "required_margin": 0.125,
+            "solver": {
+              "iterations": 0,
+              "max_normalized_violation": 0.0,
+              "max_violation": 0.0,
+              "radius_violation": 0.0,
+              "status": "preferred_feasible",
+              "target_alignment": 0.012447819404840826,
+              "update_norm": 0.012447819404840828
+            },
+            "stored_update_cosine": 0.9952057634089748,
+            "tensor_sha256": "f7866ed0d1fe7e02bc3a3a22e0454291301a2a4cb1b412a3b8b0dbc520b3e918"
+          }
+        ],
+        "intended_norm": 0.0125,
+        "maximum_norm": 0.025,
+        "probe_budget": 10,
+        "reason": "no_admissible_stored_state",
+        "relative_tolerance": 0.02,
+        "schema": "weightbridge.stored_norm_match.v1",
+        "selected": null,
+        "status": "UNMATCHED",
+        "unique_admissible_states": 0,
+        "unique_stored_states": 9
+      }
+    }
+  ],
+  "calibration_sufficient": false,
+  "direction_specific_allowance": 0.0,
+  "floor": 0.125,
+  "intended_norm": 0.0125,
+  "norm_match": {
+    "amplitude_limit": 0.025,
+    "attempts": [
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.828125,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2789007360,
+            "wall_seconds": 1.8494187000324018
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.0125,
+        "changed_entries": 14731,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.277339482004189,
+        "norm_matching_error": 6.0176802878376956e-05,
+        "proposed_norm": 0.0125,
+        "realized_norm": 0.012560176802878378,
+        "relative_norm_error": 0.0048141442302701565,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.0125,
+          "update_norm": 0.0125
+        },
+        "stored_update_cosine": 0.9952509654644722,
+        "tensor_sha256": "c4aefa4a39ed8db5917929dabaacc560878e8db972ef51f684e6832ab5514be6"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.453125,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2789007360,
+            "wall_seconds": 1.764267100021243
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012440111508955248,
+        "changed_entries": 14716,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.27720849637833495,
+        "norm_matching_error": 9.0731540213565e-06,
+        "proposed_norm": 0.012440111508955248,
+        "realized_norm": 0.012490926845978644,
+        "relative_norm_error": 0.00072585232170852,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012440111508955248,
+          "update_norm": 0.012440111508955248
+        },
+        "stored_update_cosine": 0.9951993214227615,
+        "tensor_sha256": "b0f099423d26be5e0981354c75516c016126077d8a376075f9d15cd2487fd372"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.234375,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2803929088,
+            "wall_seconds": 1.7528884999919683
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012449147751754153,
+        "changed_entries": 14721,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772282600741258,
+        "norm_matching_error": 2.130974687562792e-06,
+        "proposed_norm": 0.012449147751754153,
+        "realized_norm": 0.012502130974687563,
+        "relative_norm_error": 0.00017047797500502337,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012449147751754153,
+          "update_norm": 0.012449147751754153
+        },
+        "stored_update_cosine": 0.9952073075686816,
+        "tensor_sha256": "450358919fcbd6efcb6d7b702f11035368be9cb776b8257399fa4c03686a6bbd"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 9.84375,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.6562456999672577
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.01244702580799957,
+        "changed_entries": 14718,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772236190466784,
+        "norm_matching_error": 2.3397953790357112e-06,
+        "proposed_norm": 0.01244702580799957,
+        "realized_norm": 0.012497660204620965,
+        "relative_norm_error": 0.0001871836303228569,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447025807999569,
+          "update_norm": 0.01244702580799957
+        },
+        "stored_update_cosine": 0.9952041002797221,
+        "tensor_sha256": "0a902f460f486f1a111276fe479c7216d68f5212c17b992245f4c09bfa073db6"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.140625,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.7224266999983229
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012448086779876862,
+        "changed_entries": 14719,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.27722593956040215,
+        "norm_matching_error": 5.938323798838907e-07,
+        "proposed_norm": 0.012448086779876862,
+        "realized_norm": 0.012500593832379885,
+        "relative_norm_error": 4.7506590390711256e-05,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012448086779876862,
+          "update_norm": 0.012448086779876862
+        },
+        "stored_update_cosine": 0.9952061977721514,
+        "tensor_sha256": "e0335ca7d073397f2c7e38dd375ce68ddc79d90d23b3698d6d89ecf6d9c04211"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.3125,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.7524126999778673
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012447495441809517,
+        "changed_entries": 14718,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772246462102861,
+        "norm_matching_error": 1.6061141021248004e-06,
+        "proposed_norm": 0.012447495441809517,
+        "realized_norm": 0.012498393885897876,
+        "relative_norm_error": 0.00012848912816998403,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447495441809519,
+          "update_norm": 0.012447495441809517
+        },
+        "stored_update_cosine": 0.9952046213764892,
+        "tensor_sha256": "1a62646c4501f0990286448b84953df718332af2c91db187dbb492c6c9c82fd8"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 9.984375,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.70044919999782
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012447791110843189,
+        "changed_entries": 14718,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772252928853441,
+        "norm_matching_error": 9.532246781837617e-09,
+        "proposed_norm": 0.012447791110843189,
+        "realized_norm": 0.012499990467753219,
+        "relative_norm_error": 7.625797425470093e-07,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447791110843189,
+          "update_norm": 0.012447791110843189
+        },
+        "stored_update_cosine": 0.9952057633421705,
+        "tensor_sha256": "1c2974bbbedfea44e78367ad8ca943e0a8cdd84981ac95436415422b289c55ba"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 9.9375,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.6894096999894828
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012447800603283769,
+        "changed_entries": 14718,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772253136468168,
+        "norm_matching_error": 9.44104633186782e-09,
+        "proposed_norm": 0.012447800603283769,
+        "realized_norm": 0.012499990558953669,
+        "relative_norm_error": 7.552837065494256e-07,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447800603283769,
+          "update_norm": 0.012447800603283769
+        },
+        "stored_update_cosine": 0.9952057634077428,
+        "tensor_sha256": "53a7a8442eeb5c96fd7bdc428773de1fbda2b29005dcc1c082458c0e9fef49e8"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.015625,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.7107475000084378
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012447810004911847,
+        "changed_entries": 14718,
+        "duplicate_stored_state": false,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772253342096681,
+        "norm_matching_error": 9.43933298191979e-09,
+        "proposed_norm": 0.012447810004911847,
+        "realized_norm": 0.012499990560667019,
+        "relative_norm_error": 7.551466385535832e-07,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447810004911847,
+          "update_norm": 0.012447810004911847
+        },
+        "stored_update_cosine": 0.9952057634089747,
+        "tensor_sha256": "f7866ed0d1fe7e02bc3a3a22e0454291301a2a4cb1b412a3b8b0dbc520b3e918"
+      },
+      {
+        "active_constraint_count": 0,
+        "active_measurement": {
+          "resources": {
+            "backward_calls": 0,
+            "cpu_seconds": 10.015625,
+            "forward_calls": 1,
+            "peak_rss_bytes": 2804088832,
+            "wall_seconds": 1.7107475000084378
+          },
+          "rows": [
+            {
+              "group": "target",
+              "item": "semantic-decimal/preservation-fit/target/01/variant-1/order-0",
+              "margin": 0.125,
+              "parent_token_id": 20,
+              "position": 2,
+              "prompt_id": "semantic-decimal/preservation-fit/target/01/variant-1/order-0/1",
+              "replay_argmax_token_id": 20,
+              "strongest_rival_token_id": 24,
+              "wording": 1
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.25,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.375,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/1",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/preservation-fit/preserve/02",
+              "margin": 6.0,
+              "parent_token_id": 18,
+              "position": 8,
+              "prompt_id": "semantic-decimal/preservation-fit/preserve/02/1",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 1
+            },
+            {
+              "group": "target",
+              "item": "semantic-decimal/adaptation/target/01/variant-1/order-1",
+              "margin": 1.125,
+              "parent_token_id": 471,
+              "position": 0,
+              "prompt_id": "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+              "replay_argmax_token_id": 471,
+              "strongest_rival_token_id": 220,
+              "wording": 0
+            },
+            {
+              "group": "positive",
+              "item": "semantic-decimal/preservation-fit/positive/02/order-1",
+              "margin": 5.625,
+              "parent_token_id": 18,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/02/order-1/0",
+              "replay_argmax_token_id": 18,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "mixed-sign",
+              "item": "semantic-decimal/preservation-fit/positive/03/order-0",
+              "margin": 5.5,
+              "parent_token_id": 16,
+              "position": 5,
+              "prompt_id": "semantic-decimal/preservation-fit/positive/03/order-0/0",
+              "replay_argmax_token_id": 16,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            },
+            {
+              "group": "copy",
+              "item": "semantic-decimal/adaptation/preserve/03",
+              "margin": 7.25,
+              "parent_token_id": 23,
+              "position": 9,
+              "prompt_id": "semantic-decimal/adaptation/preserve/03/0",
+              "replay_argmax_token_id": 23,
+              "strongest_rival_token_id": 198,
+              "wording": 0
+            }
+          ],
+          "schema": "weightbridge.jspace_candidate_margins.v1"
+        },
+        "admissible": false,
+        "amplitude": 0.012447819404840828,
+        "changed_entries": 14718,
+        "duplicate_stored_state": true,
+        "feasible": false,
+        "minimum_predicted_margin": 0.2772253547688032,
+        "norm_matching_error": 9.43933298191979e-09,
+        "proposed_norm": 0.012447819404840828,
+        "realized_norm": 0.012499990560667019,
+        "relative_norm_error": 7.551466385535832e-07,
+        "required_margin": 0.125,
+        "solver": {
+          "iterations": 0,
+          "max_normalized_violation": 0.0,
+          "max_violation": 0.0,
+          "radius_violation": 0.0,
+          "status": "preferred_feasible",
+          "target_alignment": 0.012447819404840826,
+          "update_norm": 0.012447819404840828
+        },
+        "stored_update_cosine": 0.9952057634089748,
+        "tensor_sha256": "f7866ed0d1fe7e02bc3a3a22e0454291301a2a4cb1b412a3b8b0dbc520b3e918"
+      }
+    ],
+    "intended_norm": 0.0125,
+    "maximum_norm": 0.025,
+    "probe_budget": 10,
+    "reason": "no_admissible_stored_state",
+    "relative_tolerance": 0.02,
+    "schema": "weightbridge.stored_norm_match.v1",
+    "selected": null,
+    "status": "UNMATCHED",
+    "unique_admissible_states": 0,
+    "unique_stored_states": 9
+  },
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "constrained"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiim-factorial-hidden-v1",
+      "limits": {
+        "max_backward_calls": 96,
+        "max_candidates": 8,
+        "max_forward_calls": 480,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 1,
+        "max_update_entries": 16384,
+        "max_update_norm": 0.025
+      },
+      "methods": [
+        "constrained"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiim-factorial-development-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 96,
+      "max_candidates": 8,
+      "max_forward_calls": 480,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025
+    },
+    "max_columns": 16,
+    "method": "constrained",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "probe": {
+    "reason": "unmatched_or_uncertified_stored_candidate"
+  },
+  "resources": {
+    "backward_calls": 0,
+    "cpu_seconds": 100.890625,
+    "forward_calls": 9,
+    "peak_rss_bytes": 2804088832,
+    "wall_seconds": 17.29527630005032
+  }
+}

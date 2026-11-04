@@ -1,0 +1,439 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "candidates": {
+    "A2": {
+      "changed_entries": 15349,
+      "checkpoint_sha256": "a717bcd831ed827353a529cb390119a640c6a677da0383d93d455e9d8468e097",
+      "realized_update_norm": 0.020038071233635137,
+      "receipt_sha256": "e79fa2007224415b4115aab8ec69ee5c1a5a00c5b0570b1afe765a0ee180c8eb",
+      "tensor_sha256": "1221f76461f50566a083670edcba75b543b4346ef9f242152217662e7a792baa"
+    },
+    "B1": {
+      "changed_entries": 14533,
+      "checkpoint_sha256": "08a413e89883d857a8495688e5b3c26cbf2828b426f3b0c3e2321468523fe0bc",
+      "realized_update_norm": 0.012549984590581788,
+      "receipt_sha256": "f5a8c5ee0a43715e61d36b928e361f9382e66bf01e34e6e7a53c5fa57d6dae46",
+      "tensor_sha256": "904e8ae8d80c18b482881ef0f4b97e81326f70817ea002229d72bad7572862f2"
+    },
+    "B2": {
+      "changed_entries": 15161,
+      "checkpoint_sha256": "66132478aab5e3204409fb390baff8b802bbf528407122166bb25d9dc7755bf3",
+      "realized_update_norm": 0.02002734874175589,
+      "receipt_sha256": "37a63c1b05c8571fcea06c29821852856c69c6d001b9b53f7f7412eb2730cbb0",
+      "tensor_sha256": "9538ba0c1b9b8c0076fafc9e7316828123788f26df37ad293b63cf3918e87080"
+    },
+    "C2": {
+      "changed_entries": 15358,
+      "checkpoint_sha256": "7e97531f102338f2c98ef40ed73927c31cc9052cc5309693dc464dcb788a1b58",
+      "realized_update_norm": 0.020020841484551855,
+      "receipt_sha256": "20bd986f196878abddcf13ca82984e97659a84057c653a306a10fad88a46426a",
+      "tensor_sha256": "e78d7743fc1246e4c33c0ccc0fc8874edc051541dc8257ebf117cd39642ec27b"
+    },
+    "D1": {
+      "changed_entries": 14520,
+      "checkpoint_sha256": "ce157c824ddec8bc7a2c5177eb7e94cb2a77f57ddf2688d8f4cf5106ebc5ff6c",
+      "realized_update_norm": 0.012543382875702613,
+      "receipt_sha256": "ee92e0f2733e8c6a0c9a6837e13caf303b7e8a1d7fa3b725f27b4c91e1aac587",
+      "tensor_sha256": "0c050f532a35cd8ccfce2a8f8217f0a4f5773ea0033bbac73a231e83a7a8ba55"
+    },
+    "D2": {
+      "changed_entries": 15191,
+      "checkpoint_sha256": "cb4ded6f2da7ffb94255005c36e873aa64f84396168b741c43ff2fc753195623",
+      "realized_update_norm": 0.020025074574047223,
+      "receipt_sha256": "af13c83101ad47e52ce7d027d6d0d2e3594bab59833fa0668499250857cf81b7",
+      "tensor_sha256": "e0fb8f3b59d0a84791ee01bf701de53ddb559d9e5417e401ba6e27431d6c58c2"
+    }
+  },
+  "development": {
+    "A2": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 3,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 1,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 2
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [
+        "semantic-decimal/development-transfer/target/00/variant-0",
+        "semantic-decimal/development-transfer/target/02/variant-0"
+      ],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/00/variant-0",
+        "semantic-decimal/development-transfer/target/02/variant-0",
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.5,
+        "low": 0.125,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/0",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-1/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-0/0",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 3
+    },
+    "B1": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 1,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 3,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 0
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.375,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 1
+    },
+    "B2": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 1,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 3,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 0
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.375,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 1
+    },
+    "C2": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 3,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 1,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 2
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [
+        "semantic-decimal/development-transfer/target/00/variant-0",
+        "semantic-decimal/development-transfer/target/02/variant-0"
+      ],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/00/variant-0",
+        "semantic-decimal/development-transfer/target/02/variant-0",
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.5,
+        "low": 0.125,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/0",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-1/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-0/0",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 3
+    },
+    "D1": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 1,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 3,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 0
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.375,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 1
+    },
+    "D2": {
+      "candidate_complete_families": 0,
+      "candidate_target_correct": 1,
+      "candidate_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 3,
+        "only_counterfactual_correct": 1,
+        "only_original_correct": 0
+      },
+      "candidate_valid_rate": 1.0,
+      "complete_family_gain": 0,
+      "corrected_repeatable_target_comparisons": [],
+      "corrected_target_comparisons": [
+        "semantic-decimal/development-transfer/target/03/variant-1"
+      ],
+      "family_gain_interval": {
+        "clusters": 4,
+        "estimand": "paired target accuracy change",
+        "high": 0.375,
+        "low": 0.0,
+        "resamples": 4000
+      },
+      "local_corrected_target_presentations": [
+        "semantic-decimal/development-transfer/target/00/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/00/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-0/1",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/0",
+        "semantic-decimal/development-transfer/target/01/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/01/variant-1/order-0/1",
+        "semantic-decimal/development-transfer/target/02/variant-0/order-1/1",
+        "semantic-decimal/development-transfer/target/03/variant-1/order-0/0"
+      ],
+      "lost_complete_families": [],
+      "lost_target_comparisons": [],
+      "lost_valid": [],
+      "newly_completed_families": [],
+      "parent_complete_families": 0,
+      "parent_target_correct": 0,
+      "parent_truth_flip_matrix": {
+        "both_correct": 0,
+        "neither_correct": 4,
+        "only_counterfactual_correct": 0,
+        "only_original_correct": 0
+      },
+      "passed": false,
+      "regressions": [],
+      "target_comparisons": 8,
+      "target_gain": 1
+    }
+  },
+  "eligible": false,
+  "errors": {},
+  "fit_report_sha256": "9d3fe42845ea378019a47dfd3c0e165752843a64e9e3786af2c64d1e66acda3d",
+  "manifest_sha256": "ff39e865b299455fb2eb847bc8ebfc058bffca7c8340ca5ebcedad28d1d02c54",
+  "preservation": {},
+  "reports": {
+    "development-transfer-A2.json": "63f1d42eb86ab15fbb419292ef4058792dea98a6e5b64ff85fc8ddccecb64704",
+    "development-transfer-B1.json": "b02be6a1be703e230fb59726273d57561cc8e2c682e498f193508a0b3c7057a8",
+    "development-transfer-B2.json": "f924c94d0d340bea9e0e946971be8dbb85d44ab9671d69fa2ebff9d925dbd568",
+    "development-transfer-C2.json": "5b1b23c9ac0e4a431c5f21844084f5e850a1e3c95b56abe10dcae53fb4082dd4",
+    "development-transfer-D1.json": "8143e40336290d733ea6344fbe9d329d8405261733c3ef01f33b243993bb917a",
+    "development-transfer-D2.json": "42d737261a40f99bad29a0c9294274c9c65f6f6da7de219a1318bfebe8f5efde",
+    "development-transfer-base.json": "fb1f88ad1e7d1bee37a1de9955e9ad6d88fb9662961d0f5bcee9c493d32dd397"
+  },
+  "schema": "weightbridge.phase_iiim.stage_lock.v1",
+  "selection": {},
+  "sources": {
+    "experiments/phase_iiif/run_matrix.py": "824d46f4696ae86440e1022b572842aa1ff9a06d7681f6c7cf076f22bd7ba698",
+    "experiments/phase_iiig/roster_decimal_targeted.py": "c8e1e5cf6a9c3217f102730aab5ee4bb95c027a5206f9b25723b1159c4076098",
+    "experiments/phase_iiih/run_decimal_endpoint.py": "708fcdc40b12ecee0699cbbe0bcb43d3bf6442dc31d5ce4d02f50fcf38f3c59b",
+    "experiments/phase_iiii/baseline.py": "a0bf8b37ba238c98ff23ca818eac94fe9666aca3df8d6d3b13dbf9c286783128",
+    "experiments/phase_iiii/decimal_protocol.json": "ff5fa72b0f1956af125f63163a9f05d5bb0af24a1dc42fc2a32abf6c657580be",
+    "experiments/phase_iiii/decimal_roster.py": "2f6d92c04423d84df5fab37370366f7fa5ef0a90f7e9cc486249e0bad8664e07",
+    "experiments/phase_iiii/run_causal_fork.py": "7082f0526da2e023176a63201b6069443d7da23914f053bb83196c7b03a6b0d7",
+    "experiments/phase_iiii/verification.py": "2fdd983d9b24b4ebee899358bb3a4015fa59f135224c5009ef4d7d5ef06825ad",
+    "experiments/phase_iiij/baseline.py": "37d3859ca8bc5087dc8d7ac3f6c05aaf3316aeaf5e33ea8ca73d384edbda25fd",
+    "experiments/phase_iiij/decimal_protocol.json": "66e34da5f417e8bc8efd5310f015319fa4a39fcbc53d2f97e74c292bf71d8887",
+    "experiments/phase_iiij/decimal_roster.py": "e20700ba35a7d043787a850e03a979e034f88d3b8575fd3a100c8b9d28bec207",
+    "experiments/phase_iiij/run_preservation.py": "4512543e6b82ba1ac1b55fb56597045a81c2e43bdc841606026526309a23ca8d",
+    "experiments/phase_iiij/secondary_protocol.json": "ca6a3abfc16abfc528ed699d188b70f441eba694b76f15655da12416adb02679",
+    "experiments/phase_iiij/verification.py": "9108e69030b942d3c01ff10b6955b51170159c5bb9159693e97677a110d4ef0a",
+    "experiments/phase_iiik/baseline.py": "f411f528eece6b01a3bfe4c1a39b9b1180c3f46ae10a8058cb03f3b14d139ada",
+    "experiments/phase_iiik/decimal_protocol.json": "a1e7216849ef325411d75fef3333213de86a53fbc923e0d4621018b6580fcd90",
+    "experiments/phase_iiik/decimal_roster.py": "da02ca216048e5491237ccabf867ff484e5df5a34e65c0a2bc01e65e0254021d",
+    "experiments/phase_iiik/run_jspace.py": "8ee2cee7f636384b3f91d62f43b3acfa435c63919a496cf87ded699681157fbf",
+    "experiments/phase_iiik/verification.py": "f48dd4112b782beb763925f2a39f19c2ea3d404ef381b68fe426901f2ed6d0ec",
+    "experiments/phase_iiil/replay_repair.json": "7fa28f2c838f9db050ec72ab4b7eaaf98fc15d1fa11d3cbc3f0738eff490333e",
+    "experiments/phase_iiil/run_semantic.py": "a5bba92293c7c299a7b5fa4aafc6cfdfbca9e24bd44b8abe8a43da9d36cfd401",
+    "experiments/phase_iiil/semantic_diagnostics.py": "e9ef87e590f4c46d6b178ab2c165e02241263a9b938567c417905414ef4ea88e",
+    "experiments/phase_iiil/semantic_protocol.json": "1d6befe6a32c0543ba3889f4067af191eed9e2b70accb05db074f1a04460b9b5",
+    "experiments/phase_iiil/semantic_roster.py": "2d55ae46e90310a70999ed9ae814889af336bcf97affa6d584a8a29db559ed5e",
+    "experiments/phase_iiil/source_manifest.py": "8f9147c4a2d17a51db775fc7df82a968e21ce638dd5b61725fd0665f2182715d",
+    "experiments/phase_iiil/verification.py": "dff04d0079919e3a488019f9a303c35828223247e3663b0e5fbf559d195d6452",
+    "experiments/phase_iiim/run_factorial.py": "45b87ec862f8f3a30c26a3691e9d6ded579eace0ed592cf51ac4666779348a9f",
+    "experiments/phase_iiim/semantic_metrics.py": "8b560d693da2b93f957950d65c3228aa7b8f9fb53f15166452e89a986b7ff87d",
+    "experiments/phase_iiim/semantic_protocol.json": "0471d6b18cf1313076d6bd821b6b4babf78fdbbec5c4a49274b2d6f51a286902",
+    "experiments/phase_iiim/semantic_roster.py": "d3eeabebac160aa6ba18ff3ca039ab9ff75f5d66db561ec9e245a189daee2bef",
+    "experiments/phase_iiim/source_manifest.py": "2dd4b950cd57b4d83e5d67f4929b1c3de0ac73aab17b92a2d98273548809db84",
+    "experiments/phase_iiim/verification.py": "9de4fd092f848b9bc3f4f6d2dba48caeca88f933eecc45c508ba24676330ad11",
+    "weightbridge/adaptation/behavior_endpoint.py": "0db02a3c30206434fb30c9f325729bbd817e45fe1c46b5f485df9f9cb5ace2d2",
+    "weightbridge/adaptation/content_scoring.py": "48193335707a46f65af1658f709f7e54a55f0d48f614a8a663ece3779139df71",
+    "weightbridge/adaptation/counterexample_update.py": "fa5ff103e0bddb8ee5cb2679a7689b52d29a1646e138d0a3025d26f02e3f5a1d",
+    "weightbridge/adaptation/endpoint_lineage.py": "cf3ec29ae84cf1371d8643f16207f0125ce702efa24c32bdf40c502e6b1c76a2",
+    "weightbridge/adaptation/endpoint_update.py": "c6c5038119435c9620619f2f5c124a03cdb668588b75ad3a31941195bb462a50",
+    "weightbridge/adaptation/factorial_geometry.py": "67e33eacc51a218adbe66408cf1a33210b8254a5eb8426837bd20582ceb7e392",
+    "weightbridge/adaptation/factorial_probe.py": "61d67d7fd19515ac5b471385ab358f1cc68cc31c1d571d137dad820caddf8456",
+    "weightbridge/adaptation/factorial_update.py": "8a7f19a9d3b4eb6ccfe8c17a8bb58f88ad0dd1989fa7379f1d3b08a39c794201",
+    "weightbridge/adaptation/fork_policy.py": "647aef6757061b8e0cd9b2acf28a82703d1b44706f305b7ee5788628f2f8b35e",
+    "weightbridge/adaptation/fork_update.py": "6907e231558f669c3309c24890fb7d964ee2c1b2e7e27431327fa08e4db01bcb",
+    "weightbridge/adaptation/generative_fork.py": "f31fd4759265acc7ae103f8ab94ca96ab9f8fad16348476b9ef65bf54e147c0a",
+    "weightbridge/adaptation/jspace_update.py": "26fb722fdf6472b03cd83e3ed8c9c2779f75092d69c906540e2d887836cadab0",
+    "weightbridge/adaptation/lineage.py": "afbcc68c6caccaa90a5fcf9f3341fa9462f457ae7a459ccea26ce354ef54872c",
+    "weightbridge/adaptation/meta_controller.py": "02ffd594df6cda5c63b2021297de3d5449dfadcf67553dd3aec6aaa430ddc9f7",
+    "weightbridge/adaptation/model_adapter.py": "fa844ed2eca8963391f23890edf7a5beb24fd0d729d86dc5405dadaf8bfda604",
+    "weightbridge/adaptation/preservation_geometry.py": "3198844521fb3461eac449c1a13a0137984f7f6b9032ed4aa35346b51db1a0b5",
+    "weightbridge/adaptation/preservation_policy.py": "e2bf8456f2261631a603cd8dd8698427860ab059268e4f0b4ef4feb48dbbb790",
+    "weightbridge/adaptation/robust_jspace.py": "3c87521b63dd34e71bdcba3d5d10127c3884267cb5958e8f44ffbd386e52ef7a",
+    "weightbridge/adaptation/semantic_consensus.py": "c577c8356248bcf88ec72fcc25425fc327d9b8f454f432630e00c519cf9ddf86",
+    "weightbridge/adaptation/semantic_update.py": "f232ca92b9870134374eb38ec6c835f8ec6e4599d02a2134cb9b40f1cb25bab1",
+    "weightbridge/adaptation/universal_awl.py": "9c1dc7e19911d0ae01559427ff07624d2a63a7f4639b366522066911afa14a85",
+    "weightbridge/adaptation/universal_update.py": "0dd65c3af5381dc0dc2ae3d99dbc5fb95724d0eae96cc30ecb4f4de5bbd90a61",
+    "weightbridge/core.py": "0917c6801ffc9cca18a560de87bb5e71c8df85af65094238f88d083e210a7128",
+    "weightbridge/inference/huggingface.py": "a563b044166d203666821759a328a5ab679386e857ce4cf35957ab0a10b8d624",
+    "weightbridge/inspection/safetensors.py": "c1e1e391b54d75398a4ac7a3f057891770e22b4fcf481ebc1c12acbb18db3859",
+    "weightbridge/patches/huggingface.py": "ccc5f60b8075f8aa4b0e1f157826d2c9f2c7fcd2ee9df22a444c75417923dfd3"
+  },
+  "stage": "development",
+  "winner": null,
+  "winner_sha256": null
+}

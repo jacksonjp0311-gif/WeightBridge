@@ -71,6 +71,11 @@ Phase III-L compares mean and group-consensus update directions in the same
 rank-one parameter space. Its decimal tests check both wordings, both operand
 orders and truth-flipping relatives. [Phase III-L findings and replay](docs/PHASE_III_L.md)
 
+Phase III-M separates first-fork objective choice from per-comparison
+gradient normalization. It checks actual BF16 norm matching and requires
+complete counterfactual families before independent selection.
+[Phase III-M study](docs/PHASE_III_M.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

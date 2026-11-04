@@ -203,3 +203,13 @@ sealed regression. Rejected BF16 states retain exact tensor hashes, norms
 and support counts, while a full elementwise cross-arm delta is unavailable
 from their archive. The sealed data remain host-held.
 [Phase III-L evidence](PHASE_III_L.md)
+
+Phase III-M normalizes projected fixed-right gradients, with eight fitted
+comparisons and four development families. This is one small study. Its
+complete larger-dose factorial does not establish which factor caused the
+old Phase III-L transfer or which will generalize elsewhere. The smaller
+CE/RAW cell was withheld after a precision-sensitive measured-margin
+refusal. Full truth-flipping family correction never qualified. Four mean
+directions leave most of the allowed rank-one space unexplored, and the
+fitter selected one comparison per family rather than paired supervision.
+[Phase III-M evidence](PHASE_III_M.md)

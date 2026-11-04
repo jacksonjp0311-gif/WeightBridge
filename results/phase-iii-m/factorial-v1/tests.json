@@ -1,0 +1,27 @@
+{
+  "schema": "weightbridge.phase_iiim.tests.v1",
+  "runtime_suite": {
+    "passed": 452,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "wall_seconds": 39.981,
+    "skip_details": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ]
+  },
+  "mcp_suite": {
+    "passed": 6,
+    "wall_seconds": 2.63,
+    "environment": "repository .venv"
+  },
+  "invocation_adjustment": "Initial PowerShell --junitxml expression passed the XML path as a positional test target. No tests ran in that invocation. The corrected separate argument completed the full suite.",
+  "previous_archives": {
+    "phase_iii_k": "exact canonical analysis replay",
+    "phase_iii_l": "exact canonical analysis replay",
+    "receipt": "../previous-audit.json"
+  }
+}

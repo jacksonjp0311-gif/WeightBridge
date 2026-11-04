@@ -1,0 +1,57 @@
+{
+  "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "candidate_sha256": "66132478aab5e3204409fb390baff8b802bbf528407122166bb25d9dc7755bf3",
+  "changed_entries": 15161,
+  "changes": [
+    {
+      "axis": "columns",
+      "indices": [
+        2,
+        9,
+        11,
+        12,
+        22,
+        24,
+        26,
+        28,
+        43,
+        46,
+        57,
+        72,
+        84,
+        104,
+        125,
+        580
+      ],
+      "op": "slice_set",
+      "parameter_updates": 16384,
+      "tensor": "model.language_model.layers.23.mlp.down_proj.weight",
+      "values_sha256": "f04569262a356446c2782599c2c3d0879eb09af13efa5b59a61a99f42697fcdb"
+    }
+  ],
+  "evidence_ids": [],
+  "max_abs_delta": 0.0015106201171875,
+  "note": "Candidate is isolated and has not been promoted or deployed",
+  "parameter_fraction_changed": 1.7357827792542815e-05,
+  "patch_sha256": "818a59e4f07927d3d755e95a30b482c97f1c8b0601072de32f7af2af75a65b65",
+  "policy_sha256": "2452e70060a5ce2fe839cf5eb263a689d3ea7a22aafd565c0b7c7842481121b9",
+  "schema": "weightbridge.receipt.v2",
+  "source_shards": [
+    "model.safetensors-00001-of-00001.safetensors"
+  ],
+  "status": "candidate_only_not_promoted",
+  "tensor_receipts": {
+    "model.language_model.layers.23.mlp.down_proj.weight": {
+      "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+      "bytes_changed": 16444,
+      "candidate_sha256": "9538ba0c1b9b8c0076fafc9e7316828123788f26df37ad293b63cf3918e87080",
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        3584
+      ]
+    }
+  },
+  "total_parameters": 873438784,
+  "touched_entries": 16384
+}
