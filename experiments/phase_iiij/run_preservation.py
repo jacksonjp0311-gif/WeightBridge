@@ -203,17 +203,18 @@ def _fit(base, adapter, runner, capabilities, practice_rows, practice, qualifica
                                        baseline_endpoint=practice, batch_size=batch_size, reference=reference)
         record(arm, active_plan, observed, {**extra, **captured, "trajectory_prompt_ids": prompt_ids}, patch)
 
-    def constrained(arm, active_plan, active_basis, anchors, gradients, method, radius, *, collect=False, main=True):
+    def constrained(arm, active_plan, active_basis, anchors, gradients, method, radius, *, collect=False, main=True,
+                    record_extra=None):
         anchors = tuple(anchors)
+        detail = {"anchors": [asdict(anchor) for anchor in anchors], "nominal_radius": radius,
+                  **(record_extra or {})}
         if any(anchor.key not in gradients for anchor in anchors):
-            record(arm, active_plan, {"reason": "missing_anchor_sensitivity"},
-                   {"anchors": [asdict(anchor) for anchor in anchors], "nominal_radius": radius})
+            record(arm, active_plan, {"reason": "missing_anchor_sensitivity"}, detail)
             return
         update, geometry = construct_update(active_basis, tuple(gradients[anchor.key] for anchor in anchors),
                                             radius=radius, floor=design["safety_floor"], method=method)
-        probe(arm, active_plan, update, anchors,
-              {"anchors": [asdict(anchor) for anchor in anchors], "nominal_radius": radius,
-               "geometry": geometry, "reason": geometry.get("reason", "no_feasible_update")},
+        probe(arm, active_plan, update, anchors, {**detail, "geometry": geometry,
+              "reason": geometry.get("reason", "no_feasible_update")},
               collect=collect, main=main)
 
     fixed_dose = design["fixed_dose"]
@@ -245,10 +246,8 @@ def _fit(base, adapter, runner, capabilities, practice_rows, practice, qualifica
                 sensitivities.update(gradients)
                 json_dump_atomic(out / f"sensitivities-{name}.json", detail)
             active.extend(added)
-            constrained(name, plan, basis, active, sensitivities, "inequality", fixed_dose, collect=True)
-            arms[name]["refines"] = past
-            arms[name]["added_anchors"] = [asdict(anchor) for anchor in added]
-            json_dump_atomic(out / f"arm-{name}.json", arms[name])
+            constrained(name, plan, basis, active, sensitivities, "inequality", fixed_dose, collect=True,
+                        record_extra={"refines": past, "added_anchors": [asdict(anchor) for anchor in added]})
             past = name
         formulation = "C"
         ranked = []

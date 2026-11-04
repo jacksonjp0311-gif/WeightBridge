@@ -4,6 +4,7 @@ from pathlib import Path
 import pytest
 
 from experiments.phase_iiig.roster_decimal_targeted import _identity
+from experiments.phase_iiij import archive_trial
 from experiments.phase_iiij.decimal_roster import PROTOCOL, _blocked_identities, load_split, read_manifest
 from experiments.phase_iiij.run_preservation import _preservation_group, _rank_measurement, _read_practice
 
@@ -40,3 +41,17 @@ def test_mixed_sign_is_distinct_and_qualified_result_wins_dose_formulation():
     qualifies = {"passed": True, "prohibited_regressions": [],
                  "corrected_repeatable_negative_items": ["a"], "target_item_gain": 1}
     assert _rank_measurement(qualifies) > _rank_measurement(more_but_regresses)
+
+
+def test_archive_refuses_hidden_evidence_even_if_report_requests_it(tmp_path, monkeypatch):
+    source = tmp_path / "trial"
+    source.mkdir()
+    monkeypatch.setattr(archive_trial, "source_hashes", lambda: {})
+    (source / "report.json").write_text(json.dumps({
+        "schema": "weightbridge.phase_iiij.preservation_report.v1", "sources": {},
+        "artifacts": {"verification/hidden-base.json": "digest"},
+    }), encoding="utf-8")
+    archive = tmp_path / "archive"
+    with pytest.raises(ValueError, match="public evidence allowlist"):
+        archive_trial.archive_trial(source, archive)
+    assert not archive.exists()

@@ -1,0 +1,14 @@
+Initial attempt traceback, with local checkout and scratch directory prefixes abbreviated.
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<checkout>/experiments/phase_iiij/run_preservation.py", line 380, in <module>
+    result = run(args.base, args.material, args.out, args.practice, args.selection_base)
+  File "<checkout>/experiments/phase_iiij/run_preservation.py", line 321, in run
+    arms, candidates, detail = _fit(base, adapter, runner, capabilities, practice_rows, practice,
+  File "<checkout>/experiments/phase_iiij/run_preservation.py", line 251, in _fit
+    json_dump_atomic(out / f"arm-{name}.json", arms[name])
+  File "<checkout>/weightbridge/core.py", line 35, in json_dump_atomic
+    raise EditRejected(f"Refusing to replace existing artifact: {path}")
+weightbridge.core.EditRejected: Refusing to replace existing artifact: <scratch>/arm-D1.json

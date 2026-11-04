@@ -1,0 +1,27 @@
+{
+  "artifact_hashes": {
+    "arm-A.json": "9bf7d5ed6906c3841ecb9f21f580944292eecb52a18706dcc589258a771bfd55",
+    "arm-B.json": "4e1c020c35032d01a9efd3d2cebf58b02c2af7c023caffb9586220dd19319599",
+    "arm-C.json": "9533ba2a5a673a03965969f55960ef1a98c18f7df176aeeb7ab4f48249aca72a",
+    "arm-D1.json": "2db87c9d720349a8ce836cffe2ca36133e9db80466ae847492a658c6d0a52fd6",
+    "basis-L23.json": "34f4d716e0a05d0a9a07755b2b3396bd53219e75d89aadb6c248f61c9c129802",
+    "diagnosis.json": "4837ba0648cb613198fcd493e1a5950ee8aae540a3c1aa0a877703295e695669",
+    "parent-decisions.json": "f14813c48fdbdc0bcdc93f03051bdfb05748f1aa07784cc44e57cd4ce79989ae",
+    "practice.json": "efbbacadbd700668d2f576992b7165f80808e6874b96a56e2fb2a878f1e3228d",
+    "reference-A.json": "07c488587764d0c80f1de93644079c513070905ab6c3acf1084ce05720ddce84",
+    "reference-B.json": "5a7d6bd94197b3ecee8c9c936cf927a840e7a0a425d0cb5914e15d04cd237bd9",
+    "reference-D1.json": "fccf4065820ec00402eaa0310c07073ec22ef3609f3948c8688af97ffeb20631",
+    "risk-diagnostic.json": "07e0de7518b83845d9dc552493b3abcc8abcf239ae0d9d499eeb492fa0b5d74b",
+    "sampling.json": "eb8b9d00cb808921516994e45ffe7278019440bee161d2dec824cdb744dc982f",
+    "sensitivities-D1.json": "e8a3ac40ef9fee506d4d5f367d64c39d3b91925db5c51bdff8742f8a1bd3df75",
+    "sensitivities-initial.json": "dbb4258f592faa9fa9713863dd9f45769b049a0ddcc98cfe0cdd45704448f01f"
+  },
+  "description": "The first run completed practice arms A, B, C and D1. It then attempted to write arm-D1.json a second time to append metadata. The atomic writer rejected the duplicate. The original checkpoint and frozen protocol were reused in a fresh scratch directory after fixing metadata attachment before the first write.",
+  "disposition": "FAIL",
+  "frozen_protocol_sha256": "66e34da5f417e8bc8efd5310f015319fa4a39fcbc53d2f97e74c292bf71d8887",
+  "hidden_opened": false,
+  "reason": "write_once_artifact_rejected_second_write",
+  "runner_before_fix_sha256": "ae7d9560ad91445d55cf27c486349c92cb6e82a0bc2dabd74a1dbaa23f867be6",
+  "schema": "weightbridge.phase_iiij.interrupted_attempt.v1",
+  "selection_opened_by_fitter": false
+}
