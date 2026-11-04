@@ -178,3 +178,10 @@ for the complete generation guard or independent evaluation. The regional
 scan estimates reachability along constructed directions in three affine
 regions. Other regions and update geometries remain untested by that scan.
 [Phase III-I evidence](PHASE_III_I.md)
+
+Phase III-J samples a finite set of token decisions even when each practice
+group and wording has an anchor. Local intervals assume linear logit margins
+along a particular direction. Rounding, changing competitors and subsequent
+decoding can invalidate those predictions. Practice counterexamples are
+eligible for refitting and cannot serve as independent confirmation.
+[Phase III-J evidence](PHASE_III_J.md)

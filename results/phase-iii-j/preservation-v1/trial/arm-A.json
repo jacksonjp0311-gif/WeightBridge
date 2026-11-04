@@ -1,0 +1,2900 @@
+{
+  "anchors": [
+    {
+      "group": "target",
+      "item": "preservation-decimal/practice/larger-decimal/target/05",
+      "margin": 0.125,
+      "position": 2,
+      "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/0",
+      "token_id": 16,
+      "wording": 0
+    },
+    {
+      "group": "target",
+      "item": "preservation-decimal/practice/larger-decimal/target/05",
+      "margin": 0.125,
+      "position": 2,
+      "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/1",
+      "token_id": 16,
+      "wording": 1
+    },
+    {
+      "group": "target",
+      "item": "preservation-decimal/practice/larger-decimal/target/04",
+      "margin": 0.875,
+      "position": 2,
+      "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/0",
+      "token_id": 16,
+      "wording": 0
+    },
+    {
+      "group": "target",
+      "item": "preservation-decimal/practice/larger-decimal/target/04",
+      "margin": 1.0,
+      "position": 2,
+      "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/1",
+      "token_id": 16,
+      "wording": 1
+    }
+  ],
+  "counterexamples": {
+    "counterexamples": [
+      {
+        "candidate_margin": -3.25,
+        "candidate_replay_token_id": 198,
+        "candidate_status": "incorrect",
+        "candidate_token_id": 198,
+        "eligible": true,
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/10",
+        "margin": 2.25,
+        "parent_margin": 2.25,
+        "position": 5,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/10/0",
+        "reason": "inserted",
+        "token_id": 21,
+        "wording": 0
+      },
+      {
+        "candidate_margin": -4.25,
+        "candidate_replay_token_id": 198,
+        "candidate_status": "incorrect",
+        "candidate_token_id": 198,
+        "eligible": true,
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/10",
+        "margin": 1.625,
+        "parent_margin": 1.625,
+        "position": 5,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/10/1",
+        "reason": "inserted",
+        "token_id": 21,
+        "wording": 1
+      },
+      {
+        "candidate_margin": -2.25,
+        "candidate_replay_token_id": 198,
+        "candidate_status": "incorrect",
+        "candidate_token_id": 198,
+        "eligible": false,
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/11",
+        "margin": 2.625,
+        "parent_margin": 2.625,
+        "position": 5,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/11/0",
+        "reason": "refinement_limit",
+        "token_id": 17,
+        "wording": 0
+      },
+      {
+        "candidate_margin": -2.875,
+        "candidate_replay_token_id": 198,
+        "candidate_status": "incorrect",
+        "candidate_token_id": 198,
+        "eligible": false,
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/11",
+        "margin": 2.375,
+        "parent_margin": 2.375,
+        "position": 5,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/11/1",
+        "reason": "refinement_limit",
+        "token_id": 17,
+        "wording": 1
+      }
+    ],
+    "resources": {
+      "backward_calls": 0,
+      "cpu_seconds": 5.140625,
+      "forward_calls": 1,
+      "peak_rss_bytes": 2782220288,
+      "wall_seconds": 0.8972259000292979
+    },
+    "schema": "weightbridge.practice_counterexamples.v1"
+  },
+  "geometry": {
+    "anchors": [
+      {
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/05",
+        "margin": 0.125,
+        "position": 2,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/0",
+        "token_id": 16,
+        "wording": 0
+      },
+      {
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/05",
+        "margin": 0.125,
+        "position": 2,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/1",
+        "token_id": 16,
+        "wording": 1
+      },
+      {
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/04",
+        "margin": 0.875,
+        "position": 2,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/0",
+        "token_id": 16,
+        "wording": 0
+      },
+      {
+        "group": "target",
+        "item": "preservation-decimal/practice/larger-decimal/target/04",
+        "margin": 1.0,
+        "position": 2,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/1",
+        "token_id": 16,
+        "wording": 1
+      }
+    ],
+    "floor": 0.0,
+    "local_feasibility": {
+      "all_target_interval": null,
+      "alpha_preserve_max": 0.05,
+      "per_protected": [
+        {
+          "lower": 0.0,
+          "lower_open": false,
+          "upper": 0.05,
+          "upper_open": false
+        },
+        {
+          "lower": 0.0,
+          "lower_open": false,
+          "upper": 0.05,
+          "upper_open": false
+        },
+        {
+          "lower": 0.0,
+          "lower_open": false,
+          "upper": 0.05,
+          "upper_open": false
+        },
+        {
+          "lower": 0.0,
+          "lower_open": false,
+          "upper": 0.05,
+          "upper_open": false
+        }
+      ],
+      "per_target": [
+        {
+          "alpha_target_min": 0.01491121875469008,
+          "floor": 0.0,
+          "parent_margin": -1.75,
+          "reason": "local_witness",
+          "safe_interval": {
+            "lower": 0.01491121875469008,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          },
+          "slope": 117.36129881734624,
+          "target_interval": {
+            "lower": 0.01491121875469008,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          }
+        },
+        {
+          "alpha_target_min": 0.014105854113898678,
+          "floor": 0.0,
+          "parent_margin": -1.75,
+          "reason": "local_witness",
+          "safe_interval": {
+            "lower": 0.014105854113898678,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          },
+          "slope": 124.06196646225787,
+          "target_interval": {
+            "lower": 0.014105854113898678,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          }
+        },
+        {
+          "alpha_target_min": 0.014025245076240807,
+          "floor": 0.0,
+          "parent_margin": -1.625,
+          "reason": "local_witness",
+          "safe_interval": {
+            "lower": 0.014025245076240807,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          },
+          "slope": 115.8625030198438,
+          "target_interval": {
+            "lower": 0.014025245076240807,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          }
+        },
+        {
+          "alpha_target_min": 0.009201835683484804,
+          "floor": 0.0,
+          "parent_margin": -1.125,
+          "reason": "local_witness",
+          "safe_interval": {
+            "lower": 0.009201835683484804,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          },
+          "slope": 122.25821441466493,
+          "target_interval": {
+            "lower": 0.009201835683484804,
+            "lower_open": true,
+            "upper": 0.05,
+            "upper_open": false
+          }
+        },
+        {
+          "alpha_target_min": 0.09055540464755035,
+          "floor": 0.0,
+          "parent_margin": -0.625,
+          "reason": "no_target_crossing_within_radius",
+          "safe_interval": null,
+          "slope": 6.901851992518341,
+          "target_interval": null
+        },
+        {
+          "alpha_target_min": 0.07203186266810456,
+          "floor": 0.0,
+          "parent_margin": -0.5,
+          "reason": "no_target_crossing_within_radius",
+          "safe_interval": null,
+          "slope": 6.941372629829245,
+          "target_interval": null
+        },
+        {
+          "alpha_target_min": 0.1311356935484759,
+          "floor": 0.0,
+          "parent_margin": -1.25,
+          "reason": "no_target_crossing_within_radius",
+          "safe_interval": null,
+          "slope": 9.5321110993928,
+          "target_interval": null
+        },
+        {
+          "alpha_target_min": 0.07669614712831199,
+          "floor": 0.0,
+          "parent_margin": -0.75,
+          "reason": "no_target_crossing_within_radius",
+          "safe_interval": null,
+          "slope": 9.778848456953861,
+          "target_interval": null
+        }
+      ],
+      "protected_interval": {
+        "lower": 0.0,
+        "lower_open": false,
+        "upper": 0.05,
+        "upper_open": false
+      }
+    },
+    "method": "nullspace",
+    "preservation_predictions": [
+      {
+        "parent_margin": 0.125,
+        "position": 2,
+        "predicted_margin": 0.1250000000000004,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/0",
+        "slope": 7.549516567451064e-15
+      },
+      {
+        "parent_margin": 0.125,
+        "position": 2,
+        "predicted_margin": 0.1250000000000004,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/05/1",
+        "slope": 7.882583474838611e-15
+      },
+      {
+        "parent_margin": 1.0,
+        "position": 2,
+        "predicted_margin": 1.0000000000000004,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/0",
+        "slope": 8.854028621385623e-15
+      },
+      {
+        "parent_margin": 1.0,
+        "position": 2,
+        "predicted_margin": 1.0000000000000004,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/04/1",
+        "slope": 8.604228440844963e-15
+      }
+    ],
+    "radius": 0.05,
+    "reason": "local_candidate",
+    "schema": "weightbridge.constrained_fork_update.v1",
+    "solver": {
+      "status": "nullspace_projected"
+    },
+    "target_predictions": [
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/00",
+        "parent_margin": -1.75,
+        "predicted_margin": 4.118064940867312,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+        "slope": 117.36129881734624
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/00",
+        "parent_margin": -1.75,
+        "predicted_margin": 4.453098323112893,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+        "slope": 124.06196646225787
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/01",
+        "parent_margin": -1.625,
+        "predicted_margin": 4.168125150992189,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+        "slope": 115.8625030198438
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/01",
+        "parent_margin": -1.125,
+        "predicted_margin": 4.987910720733246,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+        "slope": 122.25821441466493
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/02",
+        "parent_margin": -0.625,
+        "predicted_margin": -0.27990740037408296,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+        "slope": 6.901851992518341
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/02",
+        "parent_margin": -0.5,
+        "predicted_margin": -0.15293136850853778,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+        "slope": 6.941372629829245
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/03",
+        "parent_margin": -1.25,
+        "predicted_margin": -0.77339444503036,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+        "slope": 9.5321110993928
+      },
+      {
+        "item": "preservation-decimal/practice/larger-decimal/target/03",
+        "parent_margin": -0.75,
+        "predicted_margin": -0.261057577152307,
+        "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+        "slope": 9.778848456953861
+      }
+    ],
+    "unrounded_norm": 0.049999999999999996
+  },
+  "layer": 23,
+  "nominal_radius": 0.05,
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "constrained"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiij-preservation-hidden-v1",
+      "limits": {
+        "max_backward_calls": 64,
+        "max_candidates": 11,
+        "max_forward_calls": 200,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 1,
+        "max_update_entries": 16384,
+        "max_update_norm": 0.055
+      },
+      "methods": [
+        "constrained"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiij-preservation-practice-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 64,
+      "max_candidates": 11,
+      "max_forward_calls": 200,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.055
+    },
+    "max_columns": 16,
+    "method": "constrained",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "probe": {
+    "candidate_tensor_sha256": "89deb0f66e4df9c581b63222d5ce2d0ce51fea1003856898ed2885378039e033",
+    "changed_entries": 15920,
+    "dose": null,
+    "endpoint": {
+      "guard": {
+        "candidate": {
+          "positive": {
+            "completed": 8,
+            "correct": 8,
+            "grammar_valid": 8,
+            "items": 4,
+            "items_correct": 4,
+            "out_of_option": 0,
+            "presentations": 8,
+            "valid": 8
+          },
+          "preserve": {
+            "completed": 8,
+            "correct": 8,
+            "grammar_valid": 8,
+            "items": 4,
+            "items_correct": 4,
+            "out_of_option": 0,
+            "presentations": 8,
+            "valid": 8
+          },
+          "target": {
+            "completed": 32,
+            "correct": 21,
+            "grammar_valid": 32,
+            "items": 16,
+            "items_correct": 10,
+            "out_of_option": 0,
+            "presentations": 32,
+            "valid": 32
+          }
+        },
+        "changed_presentations": [
+          "preservation-decimal/practice/larger-decimal/target/00/0",
+          "preservation-decimal/practice/larger-decimal/target/00/1",
+          "preservation-decimal/practice/larger-decimal/target/01/0",
+          "preservation-decimal/practice/larger-decimal/target/01/1",
+          "preservation-decimal/practice/larger-decimal/target/10/0",
+          "preservation-decimal/practice/larger-decimal/target/10/1",
+          "preservation-decimal/practice/larger-decimal/target/11/0",
+          "preservation-decimal/practice/larger-decimal/target/11/1"
+        ],
+        "corrected_repeatable_negative_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01"
+        ],
+        "corrected_repeatable_target_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01"
+        ],
+        "corrected_target_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01"
+        ],
+        "lost_valid_presentations": [],
+        "parent": {
+          "positive": {
+            "completed": 8,
+            "correct": 8,
+            "grammar_valid": 8,
+            "items": 4,
+            "items_correct": 4,
+            "out_of_option": 0,
+            "presentations": 8,
+            "valid": 8
+          },
+          "preserve": {
+            "completed": 8,
+            "correct": 8,
+            "grammar_valid": 8,
+            "items": 4,
+            "items_correct": 4,
+            "out_of_option": 0,
+            "presentations": 8,
+            "valid": 8
+          },
+          "target": {
+            "completed": 32,
+            "correct": 21,
+            "grammar_valid": 32,
+            "items": 16,
+            "items_correct": 10,
+            "out_of_option": 0,
+            "presentations": 32,
+            "valid": 32
+          }
+        },
+        "passed": false,
+        "prohibited_regressions": [
+          "preservation-decimal/practice/larger-decimal/target/10/0",
+          "preservation-decimal/practice/larger-decimal/target/10/1",
+          "preservation-decimal/practice/larger-decimal/target/11/0",
+          "preservation-decimal/practice/larger-decimal/target/11/1"
+        ],
+        "target_item_gain": 0,
+        "target_presentation_gain": 0
+      },
+      "measurement": {
+        "endpoint": {
+          "completion_conditions": "Observed newline or EOS; reaching the cap without either is incomplete",
+          "decode": {
+            "batch_size": 8,
+            "do_sample": false,
+            "max_input_tokens": 128,
+            "max_new_tokens": 12,
+            "num_beams": 1
+          },
+          "id": "weightbridge.decimal_first_line.v1",
+          "max_candidate_evaluations": 11,
+          "output_grammar": "One exact bounded decimal on the first line; comparison output must be a displayed operand",
+          "preservation": "no lost correctness or validity on any parent-correct or parent-valid presentation",
+          "prompt_representation": "bare",
+          "required_wordings": [
+            0,
+            1
+          ],
+          "schema": "weightbridge.behavioral_endpoint.v1"
+        },
+        "resources": {
+          "batched_decode_steps": 72,
+          "cpu_seconds": 131.1875,
+          "generate_batches": 6,
+          "generated_examples": 48,
+          "padded_prompt_token_positions": 3736,
+          "peak_rss_bytes": 2782220288,
+          "wall_seconds": 22.275919599982444
+        },
+        "rows": [
+          {
+            "answer": "-10.2",
+            "completed": true,
+            "correct": true,
+            "exact": "-10.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              15,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/00/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/00",
+            "operands": [
+              "-10.2",
+              "-10.2461"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -10.2 or -10.2461\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -10.2\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-10.2",
+            "completed": true,
+            "correct": true,
+            "exact": "-10.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              15,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/00/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/00",
+            "operands": [
+              "-10.2",
+              "-10.2461"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -10.2 or -10.2461\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -10.2\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-15.1",
+            "completed": true,
+            "correct": true,
+            "exact": "-15.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              20,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/01/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/01",
+            "operands": [
+              "-15.1832",
+              "-15.1"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -15.1832 or -15.1\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -15.1\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-15.1",
+            "completed": true,
+            "correct": true,
+            "exact": "-15.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              20,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/01/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/01",
+            "operands": [
+              "-15.1832",
+              "-15.1"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -15.1832 or -15.1\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -15.1\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-67.5431",
+            "completed": true,
+            "correct": false,
+            "exact": "-67.6",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              21,
+              22,
+              13,
+              21,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/02/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/02",
+            "operands": [
+              "-67.5431",
+              "-67.6"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -67.5431 or -67.6\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -67.6\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-67.5431",
+            "completed": true,
+            "correct": false,
+            "exact": "-67.6",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              21,
+              22,
+              13,
+              21,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/02/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/02",
+            "operands": [
+              "-67.5431",
+              "-67.6"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -67.5431 or -67.6\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -67.6\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-68.3531",
+            "completed": true,
+            "correct": false,
+            "exact": "-68.4",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              21,
+              23,
+              13,
+              19,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/03/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/03",
+            "operands": [
+              "-68.4",
+              "-68.3531"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -68.4 or -68.3531\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -68.4\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-68.3531",
+            "completed": true,
+            "correct": false,
+            "exact": "-68.4",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              21,
+              23,
+              13,
+              19,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/03/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/03",
+            "operands": [
+              "-68.4",
+              "-68.3531"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -68.4 or -68.3531\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -68.4\nValues: 2.4",
+            "tier": "negative-close",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-71.6",
+            "completed": true,
+            "correct": true,
+            "exact": "-71.6",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              22,
+              16,
+              13,
+              21,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/04/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/04",
+            "operands": [
+              "-71.6",
+              "-78.6095"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -71.6 or -78.6095\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -71.6\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-71.6",
+            "completed": true,
+            "correct": true,
+            "exact": "-71.6",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              22,
+              16,
+              13,
+              21,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/04/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/04",
+            "operands": [
+              "-71.6",
+              "-78.6095"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -71.6 or -78.6095\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -71.6\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-11.1",
+            "completed": true,
+            "correct": true,
+            "exact": "-11.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              16,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/05/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/05",
+            "operands": [
+              "-14.9625",
+              "-11.1"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -14.9625 or -11.1\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -11.1\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-11.1",
+            "completed": true,
+            "correct": true,
+            "exact": "-11.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              16,
+              16,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/05/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/05",
+            "operands": [
+              "-14.9625",
+              "-11.1"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -14.9625 or -11.1\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -11.1\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-30.7842",
+            "completed": true,
+            "correct": false,
+            "exact": "-37.5",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              18,
+              22,
+              13,
+              20,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/06/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/06",
+            "operands": [
+              "-30.7842",
+              "-37.5"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -30.7842 or -37.5\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -37.5\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-30.7842",
+            "completed": true,
+            "correct": false,
+            "exact": "-37.5",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              18,
+              22,
+              13,
+              20,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/06/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/06",
+            "operands": [
+              "-30.7842",
+              "-37.5"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -30.7842 or -37.5\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -37.5\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "-41.2321",
+            "completed": true,
+            "correct": false,
+            "exact": "-44.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              19,
+              19,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/07/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/07",
+            "operands": [
+              "-44.2",
+              "-41.2321"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -44.2 or -41.2321\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " -44.2\nValues: 2.4",
+            "tier": "negative-far",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "-41.2321",
+            "completed": true,
+            "correct": true,
+            "exact": "-41.2321",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              471,
+              19,
+              16,
+              13,
+              17,
+              18,
+              17,
+              16,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/07/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/07",
+            "operands": [
+              "-44.2",
+              "-41.2321"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -44.2 or -41.2321\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " -41.2321\nValues: ",
+            "tier": "negative-far",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "28.1",
+            "completed": true,
+            "correct": true,
+            "exact": "28.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              23,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              17
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/08/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/08",
+            "operands": [
+              "28.1",
+              "28.0787"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 28.1 or 28.0787\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 28.1\nValues: 2.2",
+            "tier": "positive-close",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "28.1",
+            "completed": true,
+            "correct": true,
+            "exact": "28.1",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              23,
+              13,
+              16,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              17
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/08/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/08",
+            "operands": [
+              "28.1",
+              "28.0787"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 28.1 or 28.0787\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 28.1\nValues: 2.2",
+            "tier": "positive-close",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "20.7",
+            "completed": true,
+            "correct": true,
+            "exact": "20.7",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              15,
+              13,
+              22,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              17
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/09/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/09",
+            "operands": [
+              "20.6719",
+              "20.7"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 20.6719 or 20.7\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 20.7\nValues: 2.2",
+            "tier": "positive-close",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "20.7",
+            "completed": true,
+            "correct": true,
+            "exact": "20.7",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              15,
+              13,
+              22,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/09/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/09",
+            "operands": [
+              "20.6719",
+              "20.7"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 20.6719 or 20.7\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 20.7\nValues: 2.\n",
+            "tier": "positive-close",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "56.5692",
+            "completed": true,
+            "correct": false,
+            "exact": "56.5",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              21,
+              13,
+              20,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/10/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/10",
+            "operands": [
+              "56.5692",
+              "56.5"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 56.5692 or 56.5\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " 56.5\nValues: 2.4",
+            "tier": "positive-close",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "56.5692",
+            "completed": true,
+            "correct": false,
+            "exact": "56.5",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              21,
+              13,
+              20,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/10/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/10",
+            "operands": [
+              "56.5692",
+              "56.5"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 56.5692 or 56.5\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " 56.5\nValues: 2.4",
+            "tier": "positive-close",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "29.2215",
+            "completed": true,
+            "correct": false,
+            "exact": "29.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              24,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              17
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/11/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/11",
+            "operands": [
+              "29.2",
+              "29.2215"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 29.2 or 29.2215\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " 29.2\nValues: 2.2",
+            "tier": "positive-close",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "29.2215",
+            "completed": true,
+            "correct": false,
+            "exact": "29.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              17,
+              24,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              17
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/11/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/11",
+            "operands": [
+              "29.2",
+              "29.2215"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 29.2 or 29.2215\nAnswer:",
+            "status": "incorrect",
+            "stop_reason": "token_budget",
+            "text": " 29.2\nValues: 2.2",
+            "tier": "positive-close",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "1.4",
+            "completed": true,
+            "correct": true,
+            "exact": "1.4",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              13,
+              19,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198,
+              15666
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/12/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/12",
+            "operands": [
+              "1.4",
+              "-10.4819"
+            ],
+            "prefix_tokens": 77,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 1.4 or -10.4819\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 1.4\nValues: 2.\nAnswer",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "1.4",
+            "completed": true,
+            "correct": true,
+            "exact": "1.4",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              13,
+              19,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198,
+              15666
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/12/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/12",
+            "operands": [
+              "1.4",
+              "-10.4819"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 1.4 or -10.4819\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 1.4\nValues: 2.\nAnswer",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "4.8",
+            "completed": true,
+            "correct": true,
+            "exact": "4.8",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              19,
+              13,
+              23,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19,
+              20
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/13/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/13",
+            "operands": [
+              "-7.9176",
+              "4.8"
+            ],
+            "prefix_tokens": 76,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -7.9176 or 4.8\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 4.8\nValues: 2.45",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "4.8",
+            "completed": true,
+            "correct": true,
+            "exact": "4.8",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              19,
+              13,
+              23,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198,
+              15666
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/13/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/13",
+            "operands": [
+              "-7.9176",
+              "4.8"
+            ],
+            "prefix_tokens": 77,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -7.9176 or 4.8\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 4.8\nValues: 2.\nAnswer",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "13.2696",
+            "completed": true,
+            "correct": true,
+            "exact": "13.2696",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              18,
+              13,
+              17,
+              21,
+              24,
+              21,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/14/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/14",
+            "operands": [
+              "13.2696",
+              "-9.2"
+            ],
+            "prefix_tokens": 77,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 13.2696 or -9.2\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 13.2696\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "13.2696",
+            "completed": true,
+            "correct": true,
+            "exact": "13.2696",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              18,
+              13,
+              17,
+              21,
+              24,
+              21,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/14/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/14",
+            "operands": [
+              "13.2696",
+              "-9.2"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 13.2696 or -9.2\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 13.2696\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "18.4685",
+            "completed": true,
+            "correct": true,
+            "exact": "18.4685",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              23,
+              13,
+              19,
+              21,
+              23,
+              20,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/15/0",
+            "item": "preservation-decimal/practice/larger-decimal/target/15",
+            "operands": [
+              "-15.8",
+              "18.4685"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -15.8 or 18.4685\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 18.4685\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "18.4685",
+            "completed": true,
+            "correct": true,
+            "exact": "18.4685",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              23,
+              13,
+              19,
+              21,
+              23,
+              20,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "target",
+            "id": "preservation-decimal/practice/larger-decimal/target/15/1",
+            "item": "preservation-decimal/practice/larger-decimal/target/15",
+            "operands": [
+              "-15.8",
+              "18.4685"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -15.8 or 18.4685\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 18.4685\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "53.2",
+            "completed": true,
+            "correct": true,
+            "exact": "53.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              18,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/00/0",
+            "item": "preservation-decimal/practice/larger-decimal/positive/00",
+            "operands": [
+              "53.2",
+              "30.1022"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 53.2 or 30.1022\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 53.2\nValues: 2.4",
+            "tier": "positive-far",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "53.2",
+            "completed": true,
+            "correct": true,
+            "exact": "53.2",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              18,
+              13,
+              17,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              19
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/00/1",
+            "item": "preservation-decimal/practice/larger-decimal/positive/00",
+            "operands": [
+              "53.2",
+              "30.1022"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 53.2 or 30.1022\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 53.2\nValues: 2.4",
+            "tier": "positive-far",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "1.3",
+            "completed": true,
+            "correct": true,
+            "exact": "1.3",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              13,
+              18,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198,
+              15666
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/01/0",
+            "item": "preservation-decimal/practice/larger-decimal/positive/01",
+            "operands": [
+              "1.3",
+              "-2.8481"
+            ],
+            "prefix_tokens": 76,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 1.3 or -2.8481\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 1.3\nValues: 2.\nAnswer",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "1.3",
+            "completed": true,
+            "correct": true,
+            "exact": "1.3",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              13,
+              18,
+              198,
+              6032,
+              25,
+              220,
+              17,
+              13,
+              198,
+              15666
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/01/1",
+            "item": "preservation-decimal/practice/larger-decimal/positive/01",
+            "operands": [
+              "1.3",
+              "-2.8481"
+            ],
+            "prefix_tokens": 77,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 1.3 or -2.8481\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 1.3\nValues: 2.\nAnswer",
+            "tier": "mixed-sign",
+            "truth_precision": "shorter",
+            "truth_side": 0,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "59.1439",
+            "completed": true,
+            "correct": true,
+            "exact": "59.1439",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              24,
+              13,
+              16,
+              19,
+              18,
+              24,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/02/0",
+            "item": "preservation-decimal/practice/larger-decimal/positive/02",
+            "operands": [
+              "36.2",
+              "59.1439"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 36.2 or 59.1439\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 59.1439\nValues: ",
+            "tier": "positive-far",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "59.1439",
+            "completed": true,
+            "correct": true,
+            "exact": "59.1439",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              20,
+              24,
+              13,
+              16,
+              19,
+              18,
+              24,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/02/1",
+            "item": "preservation-decimal/practice/larger-decimal/positive/02",
+            "operands": [
+              "36.2",
+              "59.1439"
+            ],
+            "prefix_tokens": 79,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: 36.2 or 59.1439\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 59.1439\nValues: ",
+            "tier": "positive-far",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "10.2216",
+            "completed": true,
+            "correct": true,
+            "exact": "10.2216",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              15,
+              13,
+              17,
+              17,
+              16,
+              21,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/03/0",
+            "item": "preservation-decimal/practice/larger-decimal/positive/03",
+            "operands": [
+              "-7.7",
+              "10.2216"
+            ],
+            "prefix_tokens": 77,
+            "prompt": "Select the numerically larger decimal. Copy that number exactly. Give only the number.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -7.7 or 10.2216\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 10.2216\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "10.2216",
+            "completed": true,
+            "correct": true,
+            "exact": "10.2216",
+            "family": "larger-decimal",
+            "generated_token_ids": [
+              220,
+              16,
+              15,
+              13,
+              17,
+              17,
+              16,
+              21,
+              198,
+              6032,
+              25,
+              220
+            ],
+            "grammar_valid": true,
+            "group": "positive",
+            "id": "preservation-decimal/practice/larger-decimal/positive/03/1",
+            "item": "preservation-decimal/practice/larger-decimal/positive/03",
+            "operands": [
+              "-7.7",
+              "10.2216"
+            ],
+            "prefix_tokens": 78,
+            "prompt": "Which of the two decimals is greater on the number line? Write that option without explanation.\nValues: 2.45 or 5.2\nAnswer: 5.2\nValues: -2.25 or -4.2\nAnswer: -2.25\nValues: -7.7 or 10.2216\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 10.2216\nValues: ",
+            "tier": "mixed-sign",
+            "truth_precision": "longer",
+            "truth_side": 1,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "4967.2771",
+            "completed": true,
+            "correct": true,
+            "exact": "4967.2771",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              19,
+              24,
+              21,
+              22,
+              13,
+              17,
+              22,
+              22,
+              16,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/00/0",
+            "item": "preservation-decimal/practice/copy/preserve/00",
+            "operands": [
+              "4967.2771"
+            ],
+            "prefix_tokens": 71,
+            "prompt": "Repeat the decimal. Give only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 4967.2771\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 4967.2771\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "4967.2771",
+            "completed": true,
+            "correct": true,
+            "exact": "4967.2771",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              19,
+              24,
+              21,
+              22,
+              13,
+              17,
+              22,
+              22,
+              16,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/00/1",
+            "item": "preservation-decimal/practice/copy/preserve/00",
+            "operands": [
+              "4967.2771"
+            ],
+            "prefix_tokens": 72,
+            "prompt": "Copy each decimal exactly and output only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 4967.2771\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 4967.2771\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "5726.8935",
+            "completed": true,
+            "correct": true,
+            "exact": "5726.8935",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              20,
+              22,
+              17,
+              21,
+              13,
+              23,
+              24,
+              18,
+              20,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/01/0",
+            "item": "preservation-decimal/practice/copy/preserve/01",
+            "operands": [
+              "5726.8935"
+            ],
+            "prefix_tokens": 71,
+            "prompt": "Repeat the decimal. Give only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 5726.8935\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 5726.8935\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "5726.8935",
+            "completed": true,
+            "correct": true,
+            "exact": "5726.8935",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              20,
+              22,
+              17,
+              21,
+              13,
+              23,
+              24,
+              18,
+              20,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/01/1",
+            "item": "preservation-decimal/practice/copy/preserve/01",
+            "operands": [
+              "5726.8935"
+            ],
+            "prefix_tokens": 72,
+            "prompt": "Copy each decimal exactly and output only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 5726.8935\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 5726.8935\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "5541.5563",
+            "completed": true,
+            "correct": true,
+            "exact": "5541.5563",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              20,
+              20,
+              19,
+              16,
+              13,
+              20,
+              20,
+              21,
+              18,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/02/0",
+            "item": "preservation-decimal/practice/copy/preserve/02",
+            "operands": [
+              "5541.5563"
+            ],
+            "prefix_tokens": 71,
+            "prompt": "Repeat the decimal. Give only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 5541.5563\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 5541.5563\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "5541.5563",
+            "completed": true,
+            "correct": true,
+            "exact": "5541.5563",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              20,
+              20,
+              19,
+              16,
+              13,
+              20,
+              20,
+              21,
+              18,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/02/1",
+            "item": "preservation-decimal/practice/copy/preserve/02",
+            "operands": [
+              "5541.5563"
+            ],
+            "prefix_tokens": 72,
+            "prompt": "Copy each decimal exactly and output only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 5541.5563\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 5541.5563\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 1
+          },
+          {
+            "answer": "6145.4696",
+            "completed": true,
+            "correct": true,
+            "exact": "6145.4696",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              21,
+              16,
+              19,
+              20,
+              13,
+              19,
+              21,
+              24,
+              21,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/03/0",
+            "item": "preservation-decimal/practice/copy/preserve/03",
+            "operands": [
+              "6145.4696"
+            ],
+            "prefix_tokens": 71,
+            "prompt": "Repeat the decimal. Give only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 6145.4696\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 6145.4696\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 0
+          },
+          {
+            "answer": "6145.4696",
+            "completed": true,
+            "correct": true,
+            "exact": "6145.4696",
+            "family": "copy",
+            "generated_token_ids": [
+              220,
+              21,
+              16,
+              19,
+              20,
+              13,
+              19,
+              21,
+              24,
+              21,
+              198,
+              10942
+            ],
+            "grammar_valid": true,
+            "group": "preserve",
+            "id": "preservation-decimal/practice/copy/preserve/03/1",
+            "item": "preservation-decimal/practice/copy/preserve/03",
+            "operands": [
+              "6145.4696"
+            ],
+            "prefix_tokens": 72,
+            "prompt": "Copy each decimal exactly and output only the number.\nDecimal: 1738.24\nAnswer: 1738.24\nDecimal: 4769.561\nAnswer: 4769.561\nDecimal: 6145.4696\nAnswer:",
+            "status": "correct",
+            "stop_reason": "token_budget",
+            "text": " 6145.4696\nDecimal",
+            "tier": null,
+            "truth_precision": null,
+            "truth_side": null,
+            "valid": true,
+            "wording": 1
+          }
+        ]
+      }
+    },
+    "first_divergences": [
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/00/0",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 19,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/00/1",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 19,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/01/0",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 23,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/01/1",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 23,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/05/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 9
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/05/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 9
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/08/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 19,
+        "position": 11
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/08/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 19,
+        "position": 11
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/09/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 19,
+        "position": 11
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/09/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 19,
+        "position": 11
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/10/0",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 21,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/10/1",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 21,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/11/0",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 17,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 198,
+        "id": "preservation-decimal/practice/larger-decimal/target/11/1",
+        "parent_phase": "inside_answer",
+        "parent_token_id": 17,
+        "position": 5
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/12/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/12/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/13/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/target/13/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/positive/01/0",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      },
+      {
+        "candidate_token_id": 17,
+        "id": "preservation-decimal/practice/larger-decimal/positive/01/1",
+        "parent_phase": "after_completion",
+        "parent_token_id": 16,
+        "position": 8
+      }
+    ],
+    "fork": {
+      "accepted_next_token_count": 4,
+      "candidate_actual_margin_loss": 0.46034231781959534,
+      "candidate_cross_entropy": 0.48226046562194824,
+      "candidate_decision_margins": [
+        3.5,
+        3.625,
+        4.125,
+        4.375,
+        -0.25,
+        -0.125,
+        -0.875,
+        -0.25
+      ],
+      "candidate_margin_loss": 0.46468618512153625,
+      "candidate_predicted_ids": [
+        198,
+        198,
+        198,
+        198,
+        21,
+        21,
+        19,
+        19
+      ],
+      "candidate_strongest_rival_ids": [
+        271,
+        271,
+        23,
+        271,
+        21,
+        21,
+        19,
+        19
+      ],
+      "cross_entropy_gain": 1.0002191066741943,
+      "parent_actual_margin_loss": 1.4495352506637573,
+      "parent_cross_entropy": 1.4824795722961426,
+      "parent_decision_margins": [
+        -1.75,
+        -1.75,
+        -1.625,
+        -1.125,
+        -0.625,
+        -0.5,
+        -1.25,
+        -0.75
+      ],
+      "parent_margin_loss": 1.4495352506637573,
+      "probe_count": 8
+    },
+    "layer_index": 23,
+    "max_abs_delta": 0.00205230712890625,
+    "method": "nullspace",
+    "proposed_norm": 0.05000000000000002,
+    "rank": 1,
+    "realized_update_norm": 0.0500105593597544,
+    "reason": "endpoint_rejected",
+    "resources": {
+      "backward_calls": 0,
+      "cpu_seconds": 154.984375,
+      "forward_calls": 2,
+      "peak_rss_bytes": 2782220288,
+      "wall_seconds": 28.215831899957266
+    },
+    "restored_exactly": true,
+    "schema": "weightbridge.fork_probe.v1",
+    "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight",
+    "touched_entries": 16384,
+    "trajectory": {
+      "candidate_positive_margin_positions": 24,
+      "mean_kl": 0.14271268068843238,
+      "mean_margin_shrink_penalty": 1.0572916666666667,
+      "new_nonpositive_margin_positions": 0,
+      "positions": 24,
+      "trajectories": [
+        {
+          "candidate_argmax_ids": [
+            471,
+            16,
+            16,
+            13,
+            16,
+            198
+          ],
+          "candidate_margins": [
+            1.25,
+            2.75,
+            0.125,
+            3.5,
+            3.625,
+            4.0
+          ],
+          "kl": [
+            0.05766308629886149,
+            0.0034561631985063133,
+            0.005246621321049522,
+            0.02219789506925057,
+            0.025005566219573623,
+            0.3282910394954632
+          ],
+          "margin_shrink_penalty": [
+            0.25,
+            0.0,
+            0.0,
+            2.625,
+            3.0,
+            0.0
+          ],
+          "parent_margins": [
+            1.5,
+            2.75,
+            0.125,
+            6.125,
+            6.625,
+            1.625
+          ],
+          "token_ids": [
+            471,
+            16,
+            16,
+            13,
+            16,
+            198
+          ]
+        },
+        {
+          "candidate_argmax_ids": [
+            471,
+            16,
+            16,
+            13,
+            16,
+            198
+          ],
+          "candidate_margins": [
+            1.125,
+            2.625,
+            0.25,
+            2.875,
+            2.75,
+            4.25
+          ],
+          "kl": [
+            0.11197437272992743,
+            0.006273143534859176,
+            0.006003237571359455,
+            0.04170541785331029,
+            0.06011444595973896,
+            0.27478170672992985
+          ],
+          "margin_shrink_penalty": [
+            0.5,
+            0.375,
+            0.0,
+            2.75,
+            4.0,
+            0.0
+          ],
+          "parent_margins": [
+            1.625,
+            3.0,
+            0.25,
+            5.625,
+            6.75,
+            1.75
+          ],
+          "token_ids": [
+            471,
+            16,
+            16,
+            13,
+            16,
+            198
+          ]
+        },
+        {
+          "candidate_argmax_ids": [
+            471,
+            22,
+            16,
+            13,
+            21,
+            198
+          ],
+          "candidate_margins": [
+            1.625,
+            3.25,
+            0.875,
+            6.125,
+            5.875,
+            3.625
+          ],
+          "kl": [
+            0.060884035954658966,
+            0.002395215018317278,
+            0.003345649837466238,
+            0.001645418081993013,
+            0.0026398207339038767,
+            1.1159020943551008
+          ],
+          "margin_shrink_penalty": [
+            0.25,
+            0.25,
+            0.125,
+            2.5,
+            2.125,
+            0.0
+          ],
+          "parent_margins": [
+            1.875,
+            3.5,
+            1.0,
+            8.625,
+            8.0,
+            0.875
+          ],
+          "token_ids": [
+            471,
+            22,
+            16,
+            13,
+            21,
+            198
+          ]
+        },
+        {
+          "candidate_argmax_ids": [
+            471,
+            22,
+            16,
+            13,
+            21,
+            198
+          ],
+          "candidate_margins": [
+            1.5,
+            3.25,
+            1.0,
+            5.5,
+            5.125,
+            4.0
+          ],
+          "kl": [
+            0.13069211656572327,
+            0.0021369579111648294,
+            0.005459437093674534,
+            0.002987603481161388,
+            0.005409800403643493,
+            1.1488934911037398
+          ],
+          "margin_shrink_penalty": [
+            0.5,
+            0.25,
+            0.125,
+            2.5,
+            3.25,
+            0.0
+          ],
+          "parent_margins": [
+            2.0,
+            3.5,
+            1.125,
+            8.0,
+            8.375,
+            1.0
+          ],
+          "token_ids": [
+            471,
+            22,
+            16,
+            13,
+            21,
+            198
+          ]
+        }
+      ]
+    }
+  },
+  "reason": "local_candidate",
+  "trajectory_prompt_ids": [
+    "preservation-decimal/practice/larger-decimal/target/05/0",
+    "preservation-decimal/practice/larger-decimal/target/05/1",
+    "preservation-decimal/practice/larger-decimal/target/04/0",
+    "preservation-decimal/practice/larger-decimal/target/04/1"
+  ]
+}

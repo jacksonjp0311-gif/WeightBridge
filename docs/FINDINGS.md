@@ -470,3 +470,13 @@ The guard rejected the update and exact parent restoration passed. The
 layer scan chose the same region as the fixed baseline. The conventional
 LoRA merge exceeded its frozen norm cap before decoding. The held-out
 candidate outcome remains unmeasured. [Phase III-I evidence](PHASE_III_I.md)
+
+## Counterexample-guided preservation
+
+Group-aware sampling covered all eight group and wording cells but still
+missed four sensitive decisions with higher parent margins. Counterexample
+refitting and a smaller constrained update produced a practice pass with
+two repeatable errors corrected, three net targets gained, and zero
+regressions. The exact checkpoint gained one target on fresh selection
+and regressed two previously correct responses. The frozen gate rejected
+it. [Phase III-J evidence](PHASE_III_J.md)

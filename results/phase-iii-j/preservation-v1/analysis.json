@@ -1,0 +1,1212 @@
+{
+  "schema": "weightbridge.phase_iiij.analysis.v1",
+  "report_sha256": "40a5d8618968d55bd84f817ef22d7e5a7c59fb5d1318e8cefbad1346af320901",
+  "single_cycle": "FAIL",
+  "practice_correction": "PASS",
+  "independent_selection": "FAIL",
+  "persistent_improvement": "HOLD",
+  "sequential_readiness": "HOLD",
+  "arms": {
+    "A": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.0500105593597544,
+      "changed_entries": 15920,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 154.984375,
+        "forward_calls": 2,
+        "peak_rss_bytes": 2782220288,
+        "wall_seconds": 28.215831899957266
+      },
+      "candidate_tensor_sha256": "89deb0f66e4df9c581b63222d5ce2d0ce51fea1003856898ed2885378039e033",
+      "counterexample_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 5.140625,
+        "forward_calls": 1,
+        "peak_rss_bytes": 2782220288,
+        "wall_seconds": 0.8972259000292979
+      },
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 4
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.05,
+      "local_all_target_interval": null,
+      "solver": {
+        "status": "nullspace_projected"
+      },
+      "endpoint_pass": false,
+      "target_gain": 0,
+      "repeatable_corrections": [
+        "preservation-decimal/practice/larger-decimal/target/00",
+        "preservation-decimal/practice/larger-decimal/target/01"
+      ],
+      "lost_validity": [],
+      "regressions": [
+        "preservation-decimal/practice/larger-decimal/target/10/0",
+        "preservation-decimal/practice/larger-decimal/target/10/1",
+        "preservation-decimal/practice/larger-decimal/target/11/0",
+        "preservation-decimal/practice/larger-decimal/target/11/1"
+      ],
+      "regression_counts_by_roster_group": {
+        "target": 4
+      },
+      "fork_ce_gain": 1.0002191066741943,
+      "accepted_fork_argmaxes": 4,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 10,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01"
+        ],
+        "lost_items": [
+          "preservation-decimal/practice/larger-decimal/target/10",
+          "preservation-decimal/practice/larger-decimal/target/11"
+        ],
+        "paired_item_bootstrap_95_descriptive": [
+          -0.25,
+          0.25
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "B": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.05000973721371265,
+      "changed_entries": 15942,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 163.125,
+        "forward_calls": 2,
+        "peak_rss_bytes": 2944270336,
+        "wall_seconds": 29.699978800024837
+      },
+      "candidate_tensor_sha256": "42056f2da2ccb566e929005796c4fc843bf59e7310e4fe98283d2d86b6832fbb",
+      "counterexample_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 5.359375,
+        "forward_calls": 1,
+        "peak_rss_bytes": 2944270336,
+        "wall_seconds": 0.9078220000374131
+      },
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 2,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.05,
+      "local_all_target_interval": null,
+      "solver": {
+        "status": "nullspace_projected"
+      },
+      "endpoint_pass": false,
+      "target_gain": 1,
+      "repeatable_corrections": [
+        "preservation-decimal/practice/larger-decimal/target/00",
+        "preservation-decimal/practice/larger-decimal/target/01"
+      ],
+      "lost_validity": [],
+      "regressions": [
+        "preservation-decimal/practice/larger-decimal/target/10/0",
+        "preservation-decimal/practice/larger-decimal/target/10/1",
+        "preservation-decimal/practice/larger-decimal/target/11/0",
+        "preservation-decimal/practice/larger-decimal/target/11/1"
+      ],
+      "regression_counts_by_roster_group": {
+        "target": 4
+      },
+      "fork_ce_gain": 0.8696002960205078,
+      "accepted_fork_argmaxes": 5,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 11,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01",
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [
+          "preservation-decimal/practice/larger-decimal/target/10",
+          "preservation-decimal/practice/larger-decimal/target/11"
+        ],
+        "paired_item_bootstrap_95_descriptive": [
+          -0.1875,
+          0.3125
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "C": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.050015597546400406,
+      "changed_entries": 15957,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 160.5,
+        "forward_calls": 2,
+        "peak_rss_bytes": 2945056768,
+        "wall_seconds": 29.305739099974744
+      },
+      "candidate_tensor_sha256": "648c5c26f09094ef8dbca77dadfc7293941a6fa46761303bbefc3fd9140c814a",
+      "counterexample_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 5.109375,
+        "forward_calls": 1,
+        "peak_rss_bytes": 2945056768,
+        "wall_seconds": 0.8649931999971159
+      },
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 2,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.05,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 0,
+        "max_normalized_violation": 0.0,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "preferred_feasible",
+        "target_alignment": 0.049999999999999996,
+        "update_norm": 0.05
+      },
+      "endpoint_pass": false,
+      "target_gain": 1,
+      "repeatable_corrections": [
+        "preservation-decimal/practice/larger-decimal/target/00",
+        "preservation-decimal/practice/larger-decimal/target/01"
+      ],
+      "lost_validity": [],
+      "regressions": [
+        "preservation-decimal/practice/larger-decimal/target/10/0",
+        "preservation-decimal/practice/larger-decimal/target/10/1",
+        "preservation-decimal/practice/larger-decimal/target/11/0",
+        "preservation-decimal/practice/larger-decimal/target/11/1"
+      ],
+      "regression_counts_by_roster_group": {
+        "target": 4
+      },
+      "fork_ce_gain": 1.0367555618286133,
+      "accepted_fork_argmaxes": 6,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 11,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01",
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [
+          "preservation-decimal/practice/larger-decimal/target/10",
+          "preservation-decimal/practice/larger-decimal/target/11"
+        ],
+        "paired_item_bootstrap_95_descriptive": [
+          -0.1875,
+          0.3125
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        }
+      ]
+    },
+    "D1": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.025395357899259376,
+      "changed_entries": 15259,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 160.4375,
+        "forward_calls": 3,
+        "peak_rss_bytes": 3096539136,
+        "wall_seconds": 29.188121699960902
+      },
+      "candidate_tensor_sha256": "c80b1774c5155327b5e1a8a193cad12fa937194675843f9c54a2a6d4fca66203",
+      "counterexample_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.0,
+        "forward_calls": 0,
+        "peak_rss_bytes": 3096539136,
+        "wall_seconds": 0.0001954999752342701
+      },
+      "added_anchors": [
+        {
+          "group": "target",
+          "item": "preservation-decimal/practice/larger-decimal/target/10",
+          "margin": 2.25,
+          "position": 5,
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/10/0",
+          "token_id": 21,
+          "wording": 0
+        },
+        {
+          "group": "target",
+          "item": "preservation-decimal/practice/larger-decimal/target/10",
+          "margin": 1.625,
+          "position": 5,
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/10/1",
+          "token_id": 21,
+          "wording": 1
+        }
+      ],
+      "anchor_group_counts": {
+        "target": 4,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.025363325605216105,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 7,
+        "max_normalized_violation": 1.3877787807814457e-17,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "projected_feasible",
+        "target_alignment": 0.02092986920237641,
+        "update_norm": 0.025363325605216123
+      },
+      "endpoint_pass": false,
+      "target_gain": 2,
+      "repeatable_corrections": [
+        "preservation-decimal/practice/larger-decimal/target/00",
+        "preservation-decimal/practice/larger-decimal/target/01"
+      ],
+      "lost_validity": [],
+      "regressions": [
+        "preservation-decimal/practice/larger-decimal/target/10/1"
+      ],
+      "regression_counts_by_roster_group": {
+        "target": 1
+      },
+      "fork_ce_gain": 0.7770380973815918,
+      "accepted_fork_argmaxes": 4,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 12,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01",
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [
+          "preservation-decimal/practice/larger-decimal/target/10"
+        ],
+        "paired_item_bootstrap_95_descriptive": [
+          -0.125,
+          0.375
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        }
+      ]
+    },
+    "D2": {
+      "reason": "no_novel_verified_counterexample",
+      "layer": 23,
+      "nominal_radius": null,
+      "realized_norm": null,
+      "changed_entries": null,
+      "duplicate_of": null,
+      "probe_resources": null,
+      "candidate_tensor_sha256": null,
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {},
+      "training_resources": null
+    },
+    "E1": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.005,
+      "realized_norm": 0.00507512225617088,
+      "changed_entries": 12386,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 160.609375,
+        "forward_calls": 3,
+        "peak_rss_bytes": 3096539136,
+        "wall_seconds": 29.445739399990998
+      },
+      "candidate_tensor_sha256": "dae93735df6281828d86e84c80e588651b1e6be73fce5714634905f00874fd3f",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 4,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 0,
+      "local_preservation_max": 0.005,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 0,
+        "max_normalized_violation": 0.0,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "preferred_feasible",
+        "target_alignment": 0.005000000000000001,
+        "update_norm": 0.005
+      },
+      "endpoint_pass": false,
+      "target_gain": 1,
+      "repeatable_corrections": [],
+      "lost_validity": [],
+      "regressions": [],
+      "regression_counts_by_roster_group": {},
+      "fork_ce_gain": 0.22480058670043945,
+      "accepted_fork_argmaxes": 0,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 11,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [],
+        "paired_item_bootstrap_95_descriptive": [
+          0.0,
+          0.1875
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "E2": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": 0.0125,
+      "realized_norm": 0.012555907287631228,
+      "changed_entries": 14627,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 162.03125,
+        "forward_calls": 3,
+        "peak_rss_bytes": 3105067008,
+        "wall_seconds": 29.441463500028476
+      },
+      "candidate_tensor_sha256": "82cdd99cc58c640316504ec53d10937ed524609897f150bff50a4c8e310b4c8e",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 4,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 1,
+      "local_preservation_max": 0.0125,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 0,
+        "max_normalized_violation": 0.0,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "preferred_feasible",
+        "target_alignment": 0.012499999999999999,
+        "update_norm": 0.0125
+      },
+      "endpoint_pass": false,
+      "target_gain": 1,
+      "repeatable_corrections": [],
+      "lost_validity": [],
+      "regressions": [],
+      "regression_counts_by_roster_group": {},
+      "fork_ce_gain": 0.5574855804443359,
+      "accepted_fork_argmaxes": 1,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 11,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [],
+        "paired_item_bootstrap_95_descriptive": [
+          0.0,
+          0.1875
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "E3": {
+      "reason": "endpoint_pass",
+      "layer": 23,
+      "nominal_radius": 0.025,
+      "realized_norm": 0.01668667045678512,
+      "changed_entries": 14962,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 161.171875,
+        "forward_calls": 3,
+        "peak_rss_bytes": 3105067008,
+        "wall_seconds": 29.268534899980295
+      },
+      "candidate_tensor_sha256": "f93826f8abe44d6789562e8801d9cef32274d6acc76ac4b9941241f905076ec6",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 4,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.016640581972553133,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 3,
+        "max_normalized_violation": 6.938893903907228e-18,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "projected_feasible",
+        "target_alignment": 0.016044678304097056,
+        "update_norm": 0.016640581972553133
+      },
+      "endpoint_pass": true,
+      "target_gain": 3,
+      "repeatable_corrections": [
+        "preservation-decimal/practice/larger-decimal/target/00",
+        "preservation-decimal/practice/larger-decimal/target/01"
+      ],
+      "lost_validity": [],
+      "regressions": [],
+      "regression_counts_by_roster_group": {},
+      "fork_ce_gain": 0.6607794761657715,
+      "accepted_fork_argmaxes": 4,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 13,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/00",
+          "preservation-decimal/practice/larger-decimal/target/01",
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [],
+        "paired_item_bootstrap_95_descriptive": [
+          0.0,
+          0.375
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    },
+    "E4": {
+      "reason": "duplicate_stored_candidate",
+      "layer": 23,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.025395357899259376,
+      "changed_entries": 15259,
+      "duplicate_of": "D1",
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 2.375,
+        "forward_calls": 0,
+        "peak_rss_bytes": 3105067008,
+        "wall_seconds": 2.4287423999630846
+      },
+      "candidate_tensor_sha256": "c80b1774c5155327b5e1a8a193cad12fa937194675843f9c54a2a6d4fca66203",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 4,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 4,
+      "local_preservation_max": 0.025363325605216105,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 7,
+        "max_normalized_violation": 1.3877787807814457e-17,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "projected_feasible",
+        "target_alignment": 0.02092986920237641,
+        "update_norm": 0.025363325605216123
+      }
+    },
+    "L17": {
+      "reason": "endpoint_rejected",
+      "layer": 17,
+      "nominal_radius": 0.05,
+      "realized_norm": 0.05002949045303012,
+      "changed_entries": 14644,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 160.765625,
+        "forward_calls": 2,
+        "peak_rss_bytes": 3638710272,
+        "wall_seconds": 29.19362659996841
+      },
+      "candidate_tensor_sha256": "167c947beb150bd12a892fd0eba20fecf8b89cf983840f065eb964feafdcce81",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {
+        "target": 2,
+        "positive": 2,
+        "mixed-sign": 2,
+        "copy": 2
+      },
+      "training_resources": null,
+      "local_crossings": 1,
+      "local_preservation_max": 0.05,
+      "local_all_target_interval": null,
+      "solver": {
+        "iterations": 0,
+        "max_normalized_violation": 0.0,
+        "max_violation": 0.0,
+        "radius_violation": 0.0,
+        "status": "preferred_feasible",
+        "target_alignment": 0.05,
+        "update_norm": 0.05
+      },
+      "endpoint_pass": false,
+      "target_gain": 1,
+      "repeatable_corrections": [],
+      "lost_validity": [],
+      "regressions": [],
+      "regression_counts_by_roster_group": {},
+      "fork_ce_gain": 0.43874621391296387,
+      "accepted_fork_argmaxes": 1,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 11,
+        "items": 16,
+        "corrected_items": [
+          "preservation-decimal/practice/larger-decimal/target/07"
+        ],
+        "lost_items": [],
+        "paired_item_bootstrap_95_descriptive": [
+          0.0,
+          0.1875
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": true,
+          "completed_correct": true
+        }
+      ]
+    },
+    "LoRA": {
+      "reason": "endpoint_rejected",
+      "layer": 23,
+      "nominal_radius": null,
+      "realized_norm": 0.30729650711071477,
+      "changed_entries": 2872109,
+      "duplicate_of": null,
+      "probe_resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 157.3125,
+        "forward_calls": 2,
+        "peak_rss_bytes": 7022026752,
+        "wall_seconds": 29.15988729998935
+      },
+      "candidate_tensor_sha256": "52906a15f0b1eee1f983decc6e5e0fcbc3426f1d61fb9bc5678d676782115796",
+      "counterexample_resources": null,
+      "added_anchors": [],
+      "anchor_group_counts": {},
+      "training_resources": {
+        "backward_calls": 16,
+        "cpu_seconds": 598.25,
+        "forward_calls": 16,
+        "peak_rss_bytes": 7022026752,
+        "wall_seconds": 106.28070199996
+      },
+      "endpoint_pass": false,
+      "target_gain": -1,
+      "repeatable_corrections": [],
+      "lost_validity": [],
+      "regressions": [
+        "preservation-decimal/practice/larger-decimal/target/05/0",
+        "preservation-decimal/practice/larger-decimal/target/05/1"
+      ],
+      "regression_counts_by_roster_group": {
+        "target": 2
+      },
+      "fork_ce_gain": -0.04616236686706543,
+      "accepted_fork_argmaxes": 0,
+      "practice_targets": {
+        "parent": 10,
+        "candidate": 9,
+        "items": 16,
+        "corrected_items": [],
+        "lost_items": [
+          "preservation-decimal/practice/larger-decimal/target/05"
+        ],
+        "paired_item_bootstrap_95_descriptive": [
+          -0.1875,
+          0.0
+        ]
+      },
+      "completed": 48,
+      "valid": 48,
+      "decode_steps": 72,
+      "actual_fork_paths": [
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/00/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/01/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/02/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/0",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        },
+        {
+          "prompt_id": "preservation-decimal/practice/larger-decimal/target/03/1",
+          "retained": true,
+          "accepted": false,
+          "completed_correct": false
+        }
+      ]
+    }
+  },
+  "independent_outcome": null,
+  "winner": null,
+  "unique_decoded_probes": 9,
+  "passing_practice_probes": 1,
+  "selection_pairs": {
+    "E3": {
+      "parent": 9,
+      "candidate": 10,
+      "items": 16,
+      "corrected_items": [
+        "preservation-decimal/selection/larger-decimal/target/04",
+        "preservation-decimal/selection/larger-decimal/target/05"
+      ],
+      "lost_items": [
+        "preservation-decimal/selection/larger-decimal/target/07"
+      ],
+      "paired_item_bootstrap_95_descriptive": [
+        -0.125,
+        0.25
+      ]
+    }
+  },
+  "interrupted_replay": {
+    "failed_execution": "write_once_artifact_rejected_second_write",
+    "replayed_probes": {
+      "arm-A.json": {
+        "candidate_tensor_exact": true,
+        "response_rows_exact": true
+      },
+      "arm-B.json": {
+        "candidate_tensor_exact": true,
+        "response_rows_exact": true
+      },
+      "arm-C.json": {
+        "candidate_tensor_exact": true,
+        "response_rows_exact": true
+      },
+      "arm-D1.json": {
+        "candidate_tensor_exact": true,
+        "response_rows_exact": true
+      }
+    },
+    "recorded_stage_wall_seconds": 158.79072720004478,
+    "recorded_stage_cpu_seconds": 822.078125
+  },
+  "resources": {
+    "host": {
+      "cpu_seconds": 2344.375,
+      "peak_rss_bytes": 7022026752,
+      "wall_seconds": 500.0395367000019
+    },
+    "practice_parent": {
+      "cpu_seconds": 160.515625,
+      "peak_rss_bytes": 2561785856,
+      "wall_seconds": 40.57110530004138
+    },
+    "selection": {
+      "E3": {
+        "cpu_seconds": 147.28125,
+        "peak_rss_bytes": 2567135232,
+        "wall_seconds": 37.80196240002988
+      },
+      "base": {
+        "cpu_seconds": 159.109375,
+        "peak_rss_bytes": 2560643072,
+        "wall_seconds": 40.519268699979875
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "layer": 23,
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "constrained"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiij-preservation-hidden-v1",
+      "limits": {
+        "max_backward_calls": 64,
+        "max_candidates": 11,
+        "max_forward_calls": 200,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 1,
+        "max_update_entries": 16384,
+        "max_update_norm": 0.055
+      },
+      "methods": [
+        "constrained"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiij-preservation-practice-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 64,
+      "max_candidates": 11,
+      "max_forward_calls": 200,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.055
+    },
+    "max_columns": 16,
+    "method": "constrained",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "probe": {
+    "reason": "no_novel_verified_counterexample"
+  },
+  "refines": "D1"
+}

@@ -58,6 +58,11 @@ answer. It compares whole-answer fitting with fork losses, affine region
 selection, trajectory constraints, and a conventional Adam-trained adapter.
 [Phase III-I findings and replay](docs/PHASE_III_I.md)
 
+Phase III-J tests group-aware trajectory sampling, bounded margin
+inequalities, and refitting from practice regressions. Each rounded probe
+must pass the same complete-generation guard before checkpoint creation.
+[Phase III-J findings and replay](docs/PHASE_III_J.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

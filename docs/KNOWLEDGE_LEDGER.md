@@ -18,6 +18,11 @@ tested forks. Sampled margin preservation did not cover the three
 regressed presentations that blocked the strongest Qwen probe.
 [Evidence, limitations and next experiment](PHASE_III_I.md)
 
+Phase III-J adds a completed Qwen preservation trial and a SmolLM2 sampling
+portability run. The Qwen trial includes a practice-qualified BF16 update
+and its failed independent selection. The interrupted attempt is bound as
+execution evidence for the same cohort. [Phase III-J findings](PHASE_III_J.md)
+
 ## Run observations
 
 | Observation | Hypothesis / intervention | Result and interpretation | Limits / next test | Evidence |
