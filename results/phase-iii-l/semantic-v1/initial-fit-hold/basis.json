@@ -1,0 +1,500 @@
+{
+  "ce_item_gradient_agreement": {
+    "exact": false,
+    "group_cosine": {
+      "cosine": [
+        [
+          1.0,
+          -0.06960501561504394,
+          -0.02955756203108282,
+          0.117919927568196
+        ],
+        [
+          -0.06960501561504394,
+          0.9999999999999998,
+          0.09761472973684582,
+          -0.24861620949134405
+        ],
+        [
+          -0.02955756203108282,
+          0.09761472973684582,
+          1.0,
+          0.054307079182041335
+        ],
+        [
+          0.117919927568196,
+          -0.24861620949134405,
+          0.054307079182041335,
+          0.9999999999999997
+        ]
+      ],
+      "counts": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "groups": [
+        "close-short",
+        "close-long",
+        "far-short",
+        "far-long"
+      ]
+    },
+    "item_cosine": [
+      [
+        0.9999999999999998,
+        -0.004803028269027526,
+        -0.02721347596169031,
+        0.001809391553904578,
+        0.7351711412627087,
+        -0.005480382142286147,
+        -0.0506659288734203,
+        -0.002012328619948976
+      ],
+      [
+        -0.004803028269027526,
+        0.9999999999999999,
+        0.08701943468943167,
+        -0.24232941813840198,
+        -0.12219561610537161,
+        0.9915818112820514,
+        0.0833166924685179,
+        -0.2424465471797808
+      ],
+      [
+        -0.02721347596169031,
+        0.08701943468943167,
+        1.0,
+        0.07413638319714001,
+        0.00528039667704058,
+        0.08649564087879996,
+        0.5421001246377772,
+        0.07420777302256287
+      ],
+      [
+        0.001809391553904578,
+        -0.24232941813840198,
+        0.07413638319714001,
+        0.9999999999999999,
+        0.21424583350005644,
+        -0.24945452634367404,
+        0.01960548068415665,
+        0.9638135638982963
+      ],
+      [
+        0.7351711412627087,
+        -0.12219561610537161,
+        0.00528039667704058,
+        0.21424583350005644,
+        1.0,
+        -0.12630696557258886,
+        -0.02410089730609651,
+        0.22130703971920987
+      ],
+      [
+        -0.005480382142286147,
+        0.9915818112820514,
+        0.08649564087879996,
+        -0.24945452634367404,
+        -0.12630696557258886,
+        0.9999999999999999,
+        0.08530576030796048,
+        -0.24912068029549547
+      ],
+      [
+        -0.0506659288734203,
+        0.0833166924685179,
+        0.5421001246377772,
+        0.01960548068415665,
+        -0.02410089730609651,
+        0.08530576030796048,
+        1.0,
+        0.021063876572482113
+      ],
+      [
+        -0.002012328619948976,
+        -0.2424465471797808,
+        0.07420777302256287,
+        0.9638135638982963,
+        0.22130703971920987,
+        -0.24912068029549547,
+        0.021063876572482113,
+        1.0
+      ]
+    ],
+    "method": "signed_input_column_sketch",
+    "seed": 20261103,
+    "width": 32
+  },
+  "ce_item_gradient_norms": [
+    150.67782245608439,
+    64.05594006489984,
+    62.177559047502946,
+    79.45094605540054,
+    133.873125053947,
+    65.72671885469477,
+    62.0844046922983,
+    88.46852281781598
+  ],
+  "columns": [
+    2,
+    9,
+    11,
+    22,
+    24,
+    26,
+    28,
+    43,
+    46,
+    57,
+    72,
+    84,
+    104,
+    125,
+    580,
+    598
+  ],
+  "excluded_fork_prompt_ids": [],
+  "historical_basis_formulation": "presentation-weighted mean fork CE from streamed item VJPs",
+  "historical_target_gradient_norm": 51.52845694188166,
+  "item_groups": [
+    "close-short",
+    "close-long",
+    "far-short",
+    "far-long",
+    "close-short",
+    "close-long",
+    "far-short",
+    "far-long"
+  ],
+  "item_historical_slopes": [
+    119.84467635081646,
+    1.616679321448758,
+    5.857894668005937,
+    18.905767119496275,
+    113.7918045082058,
+    1.7067329529625146,
+    3.794218136758447,
+    21.176555392582515
+  ],
+  "item_ids": [
+    "semantic-decimal/adaptation/target/00/variant-1",
+    "semantic-decimal/adaptation/target/02/variant-1",
+    "semantic-decimal/adaptation/target/01/variant-1",
+    "semantic-decimal/adaptation/target/07/variant-0",
+    "semantic-decimal/adaptation/target/04/variant-1",
+    "semantic-decimal/adaptation/target/06/variant-0",
+    "semantic-decimal/adaptation/target/03/variant-1",
+    "semantic-decimal/adaptation/target/05/variant-1"
+  ],
+  "item_prompt_ids": {
+    "semantic-decimal/adaptation/target/00/variant-1": [
+      "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+      "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+      "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+      "semantic-decimal/adaptation/target/00/variant-1/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/01/variant-1": [
+      "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+      "semantic-decimal/adaptation/target/01/variant-1/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/02/variant-1": [
+      "semantic-decimal/adaptation/target/02/variant-1/order-0/0",
+      "semantic-decimal/adaptation/target/02/variant-1/order-0/1",
+      "semantic-decimal/adaptation/target/02/variant-1/order-1/0",
+      "semantic-decimal/adaptation/target/02/variant-1/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/03/variant-1": [
+      "semantic-decimal/adaptation/target/03/variant-1/order-0/0",
+      "semantic-decimal/adaptation/target/03/variant-1/order-0/1"
+    ],
+    "semantic-decimal/adaptation/target/04/variant-1": [
+      "semantic-decimal/adaptation/target/04/variant-1/order-0/0",
+      "semantic-decimal/adaptation/target/04/variant-1/order-0/1",
+      "semantic-decimal/adaptation/target/04/variant-1/order-1/0",
+      "semantic-decimal/adaptation/target/04/variant-1/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/05/variant-1": [
+      "semantic-decimal/adaptation/target/05/variant-1/order-1/0",
+      "semantic-decimal/adaptation/target/05/variant-1/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/06/variant-0": [
+      "semantic-decimal/adaptation/target/06/variant-0/order-1/0",
+      "semantic-decimal/adaptation/target/06/variant-0/order-1/1"
+    ],
+    "semantic-decimal/adaptation/target/07/variant-0": [
+      "semantic-decimal/adaptation/target/07/variant-0/order-0/0",
+      "semantic-decimal/adaptation/target/07/variant-0/order-0/1",
+      "semantic-decimal/adaptation/target/07/variant-0/order-1/0",
+      "semantic-decimal/adaptation/target/07/variant-0/order-1/1"
+    ]
+  },
+  "presentation_historical_slopes": [
+    114.58770797895568,
+    120.14573742087154,
+    120.15966213038048,
+    124.48559787305801,
+    1.4655500745366261,
+    1.4916927920403107,
+    1.7579604699107652,
+    1.7515139493073277,
+    5.8419737362155875,
+    5.873815599796291,
+    17.822303689111187,
+    17.729213473773818,
+    20.006717436708634,
+    20.064833878391465,
+    112.27481177321795,
+    114.82447681454722,
+    112.25471287392183,
+    115.81321657113631,
+    1.7236493242212765,
+    1.689816581703755,
+    3.768929875616969,
+    3.819506397899924,
+    21.00563489205065,
+    21.347475893114385
+  ],
+  "presentation_items": [
+    "semantic-decimal/adaptation/target/00/variant-1",
+    "semantic-decimal/adaptation/target/00/variant-1",
+    "semantic-decimal/adaptation/target/00/variant-1",
+    "semantic-decimal/adaptation/target/00/variant-1",
+    "semantic-decimal/adaptation/target/02/variant-1",
+    "semantic-decimal/adaptation/target/02/variant-1",
+    "semantic-decimal/adaptation/target/02/variant-1",
+    "semantic-decimal/adaptation/target/02/variant-1",
+    "semantic-decimal/adaptation/target/01/variant-1",
+    "semantic-decimal/adaptation/target/01/variant-1",
+    "semantic-decimal/adaptation/target/07/variant-0",
+    "semantic-decimal/adaptation/target/07/variant-0",
+    "semantic-decimal/adaptation/target/07/variant-0",
+    "semantic-decimal/adaptation/target/07/variant-0",
+    "semantic-decimal/adaptation/target/04/variant-1",
+    "semantic-decimal/adaptation/target/04/variant-1",
+    "semantic-decimal/adaptation/target/04/variant-1",
+    "semantic-decimal/adaptation/target/04/variant-1",
+    "semantic-decimal/adaptation/target/06/variant-0",
+    "semantic-decimal/adaptation/target/06/variant-0",
+    "semantic-decimal/adaptation/target/03/variant-1",
+    "semantic-decimal/adaptation/target/03/variant-1",
+    "semantic-decimal/adaptation/target/05/variant-1",
+    "semantic-decimal/adaptation/target/05/variant-1"
+  ],
+  "presentation_parent_margins": [
+    -2.125,
+    -1.75,
+    -1.375,
+    -1.0,
+    -0.75,
+    -0.375,
+    -0.625,
+    -0.25,
+    -0.25,
+    -0.375,
+    -1.0,
+    -0.125,
+    -1.0,
+    -0.5,
+    -1.375,
+    -1.125,
+    -1.5,
+    -0.75,
+    -0.625,
+    -0.375,
+    -0.375,
+    -0.5,
+    -1.25,
+    -1.0
+  ],
+  "presentation_prompt_ids": [
+    "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+    "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+    "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/02/variant-1/order-0/0",
+    "semantic-decimal/adaptation/target/02/variant-1/order-0/1",
+    "semantic-decimal/adaptation/target/02/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/02/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/01/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/01/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/07/variant-0/order-0/0",
+    "semantic-decimal/adaptation/target/07/variant-0/order-0/1",
+    "semantic-decimal/adaptation/target/07/variant-0/order-1/0",
+    "semantic-decimal/adaptation/target/07/variant-0/order-1/1",
+    "semantic-decimal/adaptation/target/04/variant-1/order-0/0",
+    "semantic-decimal/adaptation/target/04/variant-1/order-0/1",
+    "semantic-decimal/adaptation/target/04/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/04/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/06/variant-0/order-1/0",
+    "semantic-decimal/adaptation/target/06/variant-0/order-1/1",
+    "semantic-decimal/adaptation/target/03/variant-1/order-0/0",
+    "semantic-decimal/adaptation/target/03/variant-1/order-0/1",
+    "semantic-decimal/adaptation/target/05/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/05/variant-1/order-1/1"
+  ],
+  "projected_margin_gradient_agreement": {
+    "exact": true,
+    "group_cosine": {
+      "cosine": [
+        [
+          0.9999999999999998,
+          -0.12850431424205605,
+          -0.04401497917762443,
+          0.16740165116619013
+        ],
+        [
+          -0.12850431424205605,
+          0.9999999999999996,
+          0.14270228919775643,
+          -0.352943722004618
+        ],
+        [
+          -0.04401497917762443,
+          0.14270228919775643,
+          1.0,
+          0.06833465685381698
+        ],
+        [
+          0.16740165116619013,
+          -0.352943722004618,
+          0.06833465685381698,
+          0.9999999999999996
+        ]
+      ],
+      "counts": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "groups": [
+        "close-short",
+        "close-long",
+        "far-short",
+        "far-long"
+      ]
+    },
+    "item_cosine": [
+      [
+        1.0,
+        -0.0101210307361854,
+        -0.05503399235816563,
+        0.0035540149566915596,
+        0.8400113799069024,
+        -0.010182803064689928,
+        -0.0806257182257927,
+        0.003704109845770533
+      ],
+      [
+        -0.0101210307361854,
+        0.9999999999999999,
+        0.12969020819136445,
+        -0.3533786586886061,
+        -0.23637567287558042,
+        0.9999972625230316,
+        0.12987910446908463,
+        -0.3526551584847064
+      ],
+      [
+        -0.05503399235816563,
+        0.12969020819136445,
+        0.9999999999999992,
+        0.09021617660278135,
+        0.007122868272366992,
+        0.12978148910143483,
+        0.6558400316254908,
+        0.09051143640955282
+      ],
+      [
+        0.0035540149566915596,
+        -0.3533786586886061,
+        0.09021617660278135,
+        1.0,
+        0.31759661533434835,
+        -0.3532276298620314,
+        0.03390836449476623,
+        0.9999829450178097
+      ],
+      [
+        0.8400113799069024,
+        -0.23637567287558042,
+        0.007122868272366992,
+        0.31759661533434835,
+        1.0,
+        -0.23634971342892486,
+        -0.025119305041672296,
+        0.3174086000847252
+      ],
+      [
+        -0.010182803064689928,
+        0.9999972625230316,
+        0.12978148910143483,
+        -0.3532276298620314,
+        -0.23634971342892486,
+        0.9999999999999998,
+        0.13002872370915874,
+        -0.35250645534988134
+      ],
+      [
+        -0.0806257182257927,
+        0.12987910446908463,
+        0.6558400316254908,
+        0.03390836449476623,
+        -0.025119305041672296,
+        0.13002872370915874,
+        0.9999999999999998,
+        0.03407408041290378
+      ],
+      [
+        0.003704109845770533,
+        -0.3526551584847064,
+        0.09051143640955282,
+        0.9999829450178097,
+        0.3174086000847252,
+        -0.35250645534988134,
+        0.03407408041290378,
+        0.9999999999999999
+      ]
+    ],
+    "item_gradient_norms": [
+      135.2316782890088,
+      46.62095631449879,
+      43.19827687360306,
+      53.38843376401563,
+      123.70221261595422,
+      49.17222188876261,
+      41.418064694166176,
+      59.77012572843802
+    ]
+  },
+  "reason": "measured",
+  "resources": {
+    "backward_calls": 32,
+    "cpu_seconds": 72.4375,
+    "forward_calls": 7,
+    "peak_rss_bytes": 2583724032,
+    "wall_seconds": 14.154754900024273
+  },
+  "right_factor": [
+    -0.2010888680568947,
+    0.22294817446745482,
+    -0.3783896571614807,
+    -0.19445450690613264,
+    0.20974999484778012,
+    -0.27440171139893443,
+    0.25689572787774495,
+    0.28076777910811407,
+    -0.25809966774618764,
+    0.21044898995060982,
+    0.24831992520139465,
+    -0.28722444184833695,
+    -0.25018510982650666,
+    0.23436802969989273,
+    -0.21671611502631835,
+    -0.21259598362254656
+  ],
+  "schema": "weightbridge.semantic_rank_one_basis.v1",
+  "top_selected_singular_value": 33.137345006074284
+}
