@@ -1,0 +1,157 @@
+{
+  "schema": "weightbridge.phase_iiil.semantic_consensus.v1",
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "seeds": {
+    "adaptation": "weightbridge-iiil-semantic-v1-adaptation",
+    "preservation-fit": "weightbridge-iiil-semantic-v1-preservation-fit",
+    "calibration": "weightbridge-iiil-semantic-v1-calibration",
+    "transfer-validation": "weightbridge-iiil-semantic-v1-transfer-validation",
+    "selection": "weightbridge-iiil-semantic-v1-selection"
+  },
+  "target_family": "larger-decimal",
+  "roster_counts": {
+    "adaptation": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    },
+    "preservation-fit": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "calibration": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "transfer-validation": {
+      "target_pairs": 4,
+      "positive": 4,
+      "preserve": 4
+    },
+    "selection": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    },
+    "hidden": {
+      "target_pairs": 8,
+      "positive": 4,
+      "preserve": 4
+    }
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "auto",
+    "cpu_threads": 6,
+    "batch_size": 8,
+    "max_input_tokens": 128,
+    "max_new_tokens": 12,
+    "worker_timeout_seconds": 900
+  },
+  "endpoint": {
+    "prompt_mode": "bare_prefill",
+    "answer_prefix": "Answer:",
+    "grammar": "One signed decimal value on the first completed line, compared by exact decimal value. In comparison tasks a valid number outside the displayed pair is an endpoint violation.",
+    "completion": "Observed newline or EOS within the generation budget",
+    "decoding": "Unrestricted greedy decoding with one beam",
+    "wordings": [
+      0,
+      1
+    ],
+    "max_candidate_evaluations": 4,
+    "min_valid_rate": 0.9
+  },
+  "qualification": {
+    "min_parse_rate": 0.9,
+    "min_positive_solved": 3,
+    "min_preserve_solved": 3,
+    "min_target_solved": 2,
+    "min_repeatable_errors": 2
+  },
+  "fit_limits": {
+    "max_repeatable_error_items": 8,
+    "max_forks": 32,
+    "minimum_supported_groups": 2
+  },
+  "probe_design": {
+    "fixed_layer": 23,
+    "doses": [
+      0.0125,
+      0.0225
+    ],
+    "directional_secant_radius": 0.0125,
+    "anchors": 8,
+    "calibration_anchors": 8,
+    "preservation_groups": [
+      "target",
+      "positive",
+      "mixed-sign",
+      "copy"
+    ],
+    "positive_floor_grid": [
+      0.015625,
+      0.0625,
+      0.125
+    ],
+    "adverse_item_quantile": 0.8,
+    "target_selection": "Round-robin over close-short, close-long, far-short and far-long. Within group prefer errors across both operand orders, then frozen comparison ID. Use both wordings for any fit order whose two semantic forks are replay-matched. Use at most one fit comparison per truth-flip family.",
+    "A": "Historical raw mean first-fork CE direction projected to the shared rank-one feasible region.",
+    "B": "Maximin over subgroup means of unit-normalized projected item corrective margins. No positive witnessed bound yields no candidate. Equal-group weighted mean is a geometry comparator only.",
+    "constraints": "Both arms use identical anchors chosen by maximum adverse measured BF16 secant over the historical and equal-group normalized margin directions. Both use the same positive floor and maximum empirical adverse allowance calibrated for these directions at both doses. Each evaluated anchor must retain positive measured excess above the common floor. Calibration is empirical and does not bound novel directions.",
+    "practice_gate": "At least one new strictly correct semantic comparison (both wordings and orders), at least one originally valid wrong in both wordings of an order now correct in all four presentations, zero previously correct regressions and zero lost valid responses on both fitting populations.",
+    "transfer_gate": "Reload each distinct practice passer before transfer validation. Require zero previously correct presentation regressions, zero lost valid responses and at least one previously correct protected presentation. Record strict comparison and truth-flip pair gains without selecting by them.",
+    "selection_policy": "Assess every surviving distinct state in a fresh process. Require at least one net new strictly correct comparison, zero previously correct presentation regressions and zero lost valid responses. Rank passers by most strict gain, then smallest realized BF16 norm and lexical arm ID. Only a hash-locked winner authorizes hidden verification.",
+    "hidden_policy": "Require two net new strictly correct comparisons with zero prohibited regressions or validity losses, independent restart and exact rollback. No data used in fitting or refitting.",
+    "deduplication": "Deduplicate exact rounded tensor states. No added radius or alternate geometry. Two matching radii and at most four complete candidate practice probes.",
+    "semantic_unit": "The truth-flip family is the resampling and split unit. Each comparison has two orders with both wordings. Item gradients are per semantic comparison, with one comparison per family."
+  },
+  "intent": {
+    "schema": "weightbridge.awl.v3",
+    "objective": {
+      "family": "larger-decimal",
+      "metric": "exact_answer",
+      "min_gain": 2
+    },
+    "preserve": [
+      "larger-decimal-easy",
+      "copy"
+    ],
+    "risk": {
+      "max_regressions": 0,
+      "max_harm_probability": 0.12
+    },
+    "limits": {
+      "max_forward_calls": 360,
+      "max_backward_calls": 96,
+      "max_memory_bytes": 10737418240,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025,
+      "max_rank": 1,
+      "max_candidates": 4
+    },
+    "data": {
+      "practice": "iiil-semantic-development-v1",
+      "evaluation": "iiil-semantic-hidden-v1"
+    },
+    "methods": [
+      "constrained"
+    ],
+    "verify": {
+      "fresh_evaluation": true,
+      "checkpoint_reload": true,
+      "compare_baselines": true,
+      "persistent": true
+    }
+  },
+  "selection_gate": {
+    "min_target_gain": 1,
+    "max_regressions": 0
+  },
+  "hidden_gate": {
+    "min_target_gain": 2,
+    "max_regressions": 0
+  },
+  "candidate_lock": "Only fresh-process transfer-validation and selection passers are eligible; revalidate exact hashes and scores before hidden evaluation."
+}
