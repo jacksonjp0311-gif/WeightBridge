@@ -1,0 +1,26 @@
+{
+  "artifacts": {
+    "fork-diagnosis.json": "502984d74b80494adc8062b8170bc603b052ca4ebde0d9afbcaefe8b023ea0de",
+    "parent-adaptation.json": "9fab0db2fff6347b8ab346d3c9ddd708348ce77787da04a34e0d940769a3ffe3",
+    "parent-calibration.json": "75503490437da83e661e1ad2b908dfbdba6e39f8806e9ff5a6b0bf9d1157f02c",
+    "parent-preservation-fit.json": "5ad2f51f1b1beb58685c2457bb32f792d7c45690b93015292846ebf08e287db6",
+    "reference-geometry.json": "5b4911a27b37af939b1bfcf3216e08946aae562bea861ed03248d87dc1558e28",
+    "supervision-selection.json": "6c831b07851449c0ecd4eee4859b99fcc194dc30a1e1678e114df492b3cd3f9e"
+  },
+  "candidate_generation_count": 0,
+  "disposition": "HOLD",
+  "exception_message": "Paired margin replay disagrees with the observed greedy decision",
+  "exception_type": "ValueError",
+  "hidden_opened": false,
+  "integrity": "Immutable partial attempt retained; no fitting or evaluation criteria relaxed. Parent tensor was checked in fitter finally block.",
+  "reason": "strict_gradient_replay_refusal",
+  "resources": {
+    "cpu_accounting_complete": false,
+    "filesystem_command_elapsed_seconds": 218.1218123435974,
+    "recorded_cpu_seconds_lower_bound": 1097.046875,
+    "scope": "Parent measurements and fork diagnosis were recorded. The initial unwrapped exception did not retain whole-process CPU or partial gradient work. No exact CPU total is claimed."
+  },
+  "schema": "weightbridge.phase_iiin.failed_attempt.v1",
+  "selection_opened": false,
+  "source_commit": "f2abe4b"
+}

@@ -25,7 +25,7 @@ from weightbridge.adaptation.factorial_geometry import match_stored_norm, stored
 from weightbridge.adaptation.factorial_probe import StoredAffineSpace
 from weightbridge.adaptation.factorial_update import measure_fork_token_classes
 from weightbridge.adaptation.generative_fork import GenerativeFork
-from weightbridge.adaptation.paired_update import fit_paired_basis
+from weightbridge.adaptation.paired_update import PairedReplayError, fit_paired_basis
 from weightbridge.adaptation.paired_supervision import ComparisonEvidence, select_supervision, mean_direction, pair_gradient_diagnostics, solve_pair_maximin
 from weightbridge.adaptation.fork_update import AffineUpdate, prepare_probe_reference, probe_update
 from weightbridge.adaptation.robust_jspace import MarginObservation, calibrate_residuals, solve_robust
@@ -206,6 +206,11 @@ def _fit(base, adapter, runner, capabilities, populations, config, out):
         return {"reason": selection.record()["reason"]}, {}
     names = tuple(dict.fromkeys(item for ids in selection.arm_items.values() for item in ids))
     forks = tuple(fork for item in names for fork in eligible[item])
+    diagnostic_forks = tuple(_restore_fork(row) for row in diagnosis["forks"] if row["status"] == "semantic")
+    replay_batches = tuple(diagnostic_forks[start:start + contract.batch_size]
+                           for start in range(0, len(diagnostic_forks), contract.batch_size))
+    gradient_forward_bound = sum(sum(any(f.prompt_id in {member.prompt_id for member in eligible[item]}
+                                         for f in batch) for batch in replay_batches) for item in names)
     plan = _plan(config, capabilities, config["probe_design"]["fixed_layer"])
     columns, right, reference = _reference_geometry(config, plan)
     json_dump_atomic(out / "reference-geometry.json", reference)
@@ -217,7 +222,7 @@ def _fit(base, adapter, runner, capabilities, populations, config, out):
     # Includes all direction scans, parent-prefix caches, native token diagnostics,
     # six candidate probes and both numerical matching/calibration passes.
     forward_bound = (7 * ceil(protected_count / chunk) + ceil(calibration_count / chunk)
-        + 6 + ceil(len(forks) / chunk) + 3 * (2 * fork_batches + 1)
+        + 6 + diagnosis["resources"]["forward_calls"] + gradient_forward_bound + 3 * (2 * fork_batches + 1)
         + 6 * (2 * design["norm_search_steps"] + 2 + 2 * fork_batches + 1))
     if (protected_count > config["fit_limits"]["maximum_parent_correct_trajectories"]
             or len(names) > config["fit_limits"]["max_comparisons"]
@@ -233,10 +238,15 @@ def _fit(base, adapter, runner, capabilities, populations, config, out):
     for prompt, record in metadata.items():
         record["actual_token_class"] = fork_classes[prompt]["actual_category"]
         record["accepted_token_classes"] = fork_classes[prompt]["accepted_categories"]
-    basis, gradients, evidence = fit_paired_basis(adapter, runner, plan, forks, groups,
-        columns=columns, right_factor=right,
-        item_by_prompt={fork.prompt_id: item for item in names for fork in eligible[item]},
-        metadata_by_prompt=metadata, batch_size=contract.batch_size, max_forks=config["fit_limits"]["max_forks"])
+    try:
+        basis, gradients, evidence = fit_paired_basis(adapter, runner, plan, forks, groups,
+            columns=columns, right_factor=right,
+            item_by_prompt={fork.prompt_id: item for item in names for fork in eligible[item]},
+            metadata_by_prompt=metadata, batch_size=contract.batch_size, max_forks=config["fit_limits"]["max_forks"],
+            replay_batches=replay_batches)
+    except PairedReplayError as error:
+        json_dump_atomic(out / "gradient-failure.json", error.evidence)
+        raise
     evidence["reference_geometry"] = reference
     json_dump_atomic(out / "basis.json", evidence)
     ids, margins = evidence["item_ids"], np.asarray(evidence["comparison_parent_margins"])

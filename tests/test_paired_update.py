@@ -128,3 +128,47 @@ def test_pinned_reference_geometry_checks_tensor_identity_before_runtime():
     plan.region.tensor_name = "different.weight"
     with pytest.raises(ValueError, match="source checkpoint"):
         run_paired._reference_geometry(config, plan)
+
+
+def test_original_diagnostic_context_restores_replay_without_weighting_context_rows(fixed_fixture, monkeypatch):
+    torch, raw, runner, plan, forks, _ = fixed_fixture
+    original = paired_update.next_token_logits
+
+    def packing_sensitive(runtime, prefixes):
+        logits = original(runtime, prefixes)
+        return logits if len(prefixes) == 3 else logits + torch.tensor([0., 8.])
+
+    monkeypatch.setattr(paired_update, "next_token_logits", packing_sensitive)
+    selected = (forks[0], forks[2])
+    with pytest.raises(paired_update.PairedReplayError) as error:
+        fit(runner, plan, selected)
+    assert error.value.evidence["resources"]["forward_calls"] == 1
+    basis, gradients, evidence = fit(runner, plan, selected, replay_batches=(forks,))
+    np.testing.assert_allclose(gradients, [[-1., 1.], [0., 0.]])
+    assert basis.target_ids == ("p0", "p2")
+    assert evidence["item_prompt_ids"] == {"a": ["p0"], "b": ["p2"]}
+    assert evidence["resources"]["forward_calls"] == 2
+    assert evidence["resources"]["backward_calls"] == 2
+    assert evidence["packing"]["mode"] == "original_diagnostic_context"
+    assert not evidence["packing"]["context_only_rows_have_supervision_weight"]
+    assert _tensor_bytes(runner.model.weight, torch) == raw
+
+
+def test_context_replay_mismatch_remains_a_hard_failure(fixed_fixture, monkeypatch):
+    torch, raw, runner, plan, forks, _ = fixed_fixture
+    original = paired_update.next_token_logits
+    monkeypatch.setattr(paired_update, "next_token_logits", lambda runtime, prefixes:
+                        original(runtime, prefixes) + torch.tensor([0., 8.]))
+    runner.model.weight.requires_grad_(False)
+    with pytest.raises(paired_update.PairedReplayError) as error:
+        fit(runner, plan, forks, replay_batches=(forks,))
+    assert error.value.evidence["mismatched_prompt_ids"] == ["p0", "p1"]
+    assert error.value.evidence["resources"]["backward_calls"] == 0
+    assert not runner.model.weight.requires_grad
+    assert _tensor_bytes(runner.model.weight, torch) == raw
+
+
+def test_context_packing_cannot_omit_or_change_selected_fork(fixed_fixture):
+    _, _, runner, plan, forks, _ = fixed_fixture
+    with pytest.raises(ValueError, match="omitted"):
+        fit(runner, plan, forks, replay_batches=((forks[0], forks[1]),))

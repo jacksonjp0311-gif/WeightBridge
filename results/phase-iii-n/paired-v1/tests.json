@@ -1,0 +1,38 @@
+{
+  "adjustments": [
+    "Initial private roster freeze preceded canonical LF normalization of the Windows-written protocol. It was preserved without model measurement. The canonical LF protocol and fresh private commitments were frozen and committed before model execution.",
+    "An initial MCP invocation named a nonexistent test file and ran no tests. Correct test_mcp_agent_tools.py and test_mcp_cohort_protocol.py invocation passed."
+  ],
+  "archived_analysis_replay": [
+    "phase-iii-k",
+    "phase-iii-l",
+    "phase-iii-m"
+  ],
+  "claim": "Software tests do not establish model improvement.",
+  "environments": {
+    "mcp": "repository .venv",
+    "runtime": "weightbridge-reference-inspection/venv Python3.12 CPU"
+  },
+  "mcp_suite": {
+    "errors": 0,
+    "failures": 0,
+    "skip_details": [],
+    "skipped": 0,
+    "tests": 23,
+    "wall_seconds": 4.815
+  },
+  "runtime_suite": {
+    "errors": 0,
+    "failures": 0,
+    "skip_details": [
+      {
+        "reason": "could not import 'mcp': No module named 'mcp'",
+        "test": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools"
+      }
+    ],
+    "skipped": 1,
+    "tests": 487,
+    "wall_seconds": 42.304
+  },
+  "schema": "weightbridge.phase_iiin.tests.v1"
+}

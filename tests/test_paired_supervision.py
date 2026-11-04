@@ -190,8 +190,9 @@ def test_pair_preview_failure_keeps_other_allocations_available(preview_update, 
                 "comparison_parent_margins": [-1, -1]}
     monkeypatch.setattr(experiment, "endpoint_runner", lambda runner, contract: runner)
     monkeypatch.setattr(experiment, "diagnose", lambda *args: ([], {"forks": [
-        {"prompt_id": prompt, "actual_category": "digit", "accepted_categories": ["digit"]}
-        for prompt in ("p0", "p1")]}))
+        {"prompt_id": prompt, "status": "semantic", "actual_category": "digit", "accepted_categories": ["digit"]}
+        for prompt in ("p0", "p1")], "resources": {"forward_calls": 0}}))
+    monkeypatch.setattr(experiment, "_restore_fork", lambda row: SimpleNamespace(prompt_id=row["prompt_id"]))
     monkeypatch.setattr(experiment, "_eligible_comparisons", lambda *args: (
         [], forks, {"a": "close-short", "b": "close-long"}, {"a": "fa", "b": "fb"}))
     monkeypatch.setattr(experiment, "select_supervision", lambda *args: selection)
