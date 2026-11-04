@@ -71,13 +71,16 @@ def public_records(source, material):
         raise ValueError("Public trial assessment does not bind the frozen fitting report and lock")
     for name, digest in report["artifacts"].items():
         records[name] = _public_bytes(root, name, _FIT_FILES, digest)
+    worker_resources = {}
     for name, digest in lock["reports"].items():
         path = name if name.startswith("verification/") else f"verification/{name}"
         records[path] = _public_bytes(root, path, _WORKER_FILES, digest)
+        receipt = json.loads(records[path])
+        worker_resources[Path(name).name] = {**receipt["resources"], "endpoint": receipt["measurement"]["resources"]}
     replay = replay_lock(root, material, lock)
     parents = {split: summarize(measurement) for split, measurement in replay["parents"].items() if measurement is not None}
     if (assessment["parent"] != parents or assessment["errors"] != lock["errors"]
-            or assessment["hidden_opened"] is not False):
+            or assessment["worker_resources"] != worker_resources or assessment["hidden_opened"] is not False):
         raise ValueError("Public parent assessment does not replay from its verifier receipts")
     if (root / "independent-outcome.json").exists():
         if not lock["winner"]:

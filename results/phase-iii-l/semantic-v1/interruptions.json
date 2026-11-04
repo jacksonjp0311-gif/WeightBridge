@@ -1,0 +1,35 @@
+{
+  "schema": "weightbridge.phase_iiil.execution_interruptions.v1",
+  "model_outcomes_used_in_repair": [
+    "initial-fit-hold/preservation-sensitivities.json"
+  ],
+  "attempts": [
+    {
+      "stage": "initial runner preflight",
+      "reason": "Stopped during parent measurement after identifying a mismatch between the semantic gate and legacy probe fields.",
+      "observed_cpu_seconds": 290.83,
+      "observed_peak_rss_bytes": 2582675456,
+      "completed_candidate_evaluations": 0
+    },
+    {
+      "stage": "assessment of first fit hold",
+      "reason": "Interrupted when the replay repair was scheduled. The transfer-validation parent worker saved a receipt. No selection result was saved or used.",
+      "transfer_parent_receipt": "initial-transfer-parent.json",
+      "transfer_parent_sha256": "afc7f7b43452c4d74c0654778e3ed05cb13fb0f150528a966d86096d5b2c7e7e",
+      "transfer_parent_resources": {
+        "cpu_seconds": 172.59375,
+        "peak_rss_bytes": 2567815168,
+        "wall_seconds": 42.53685440000845
+      },
+      "observed_other_cpu_seconds": 3.86,
+      "completed_candidate_evaluations": 0
+    },
+    {
+      "stage": "repair preflight",
+      "reason": "Stopped before constraint sampling after identifying stale directional keys in the filtered replay pool. The regression test and filtered mapping landed before the final retry.",
+      "observed_cpu_seconds": 162.39,
+      "observed_peak_rss_bytes": 2511003648,
+      "completed_candidate_evaluations": 0
+    }
+  ]
+}

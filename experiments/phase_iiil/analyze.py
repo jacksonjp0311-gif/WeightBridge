@@ -29,6 +29,22 @@ def _checked_measurement(measurement, rows, contract):
     return measurement
 
 
+def _subgroup_outcomes(parent, candidate, gate):
+    before, after = summarize_semantics(parent), summarize_semantics(candidate)
+    results = {}
+    for name, group in before["subgroups"].items():
+        items = [item for item, row in before["comparisons"].items() if row["group"] == name]
+        prior = {row["id"] for row in before["target_observations"] if row["group"] == name}
+        results[name] = {"presentations": group["presentations"], "comparisons": len(items),
+            "parent_correct_presentations": group["correct"],
+            "candidate_correct_presentations": after["subgroups"][name]["correct"],
+            "parent_strict_correct": sum(before["comparisons"][item]["all_correct"] for item in items),
+            "candidate_strict_correct": sum(after["comparisons"][item]["all_correct"] for item in items),
+            "regressed_presentations": [row for row in gate["regressions"] if row in prior],
+            "new_strict_corrections": [item for item in gate["corrected_target_comparisons"] if item in items]}
+    return results
+
+
 def _practice_replay(record, probe, parent, protected, contract, anchors, prompts, frozen):
     scored = probe["endpoint"]
     candidate = _checked_measurement(scored["measurement"], frozen["adaptation"], contract)
@@ -46,12 +62,32 @@ def _practice_replay(record, probe, parent, protected, contract, anchors, prompt
     if (not probe["restored_exactly"] or any(recorded[key] != value for key, value in fields.items())
             or fit != scored["preservation_fit_guard"] or active != record["active_measurements"]):
         raise ValueError("Public practice result does not reproduce its semantic, preservation, or rounded-margin gate")
-    return {"practice_gate": fields, "fit_regressions": fit["prohibited_regressions"],
+    return {"practice_gate": fields, "adaptation_subgroups": _subgroup_outcomes(parent, candidate, fields),
+            "fit_regressions": fit["prohibited_regressions"],
             "fit_validity_losses": fit["lost_valid_presentations"],
             "minimum_measured_margin": min((row["measured_margin"] for row in active), default=None),
             "measured_robust_floor_count": sum(row["meets_robust_floor"] for row in active),
             "active_anchor_count": len(active), "endpoint_resources": {"adaptation": candidate["resources"],
                                                                          "preservation_fit": candidate_fit["resources"]}}
+
+
+def _measured_work(value, path=""):
+    work = {}
+    count_keys = {"forward_calls", "backward_calls", "batched_decode_steps", "generate_batches", "generated_examples"}
+    if not isinstance(value, dict):
+        return work
+    for key, child in value.items():
+        name = f"{path}/{key}" if path else key
+        if key == "resources" and isinstance(child, dict):
+            counts = {k: v for k, v in child.items() if k in count_keys}
+            if counts:
+                work[name] = counts
+        elif isinstance(child, dict):
+            work.update(_measured_work(child, name))
+        elif isinstance(child, list) and key in ("rounds", "attempts"):
+            for index, attempt in enumerate(child):
+                work.update(_measured_work(attempt, f"{name}/{index}"))
+    return work
 
 
 def summarize(trial, material):
@@ -104,7 +140,7 @@ def summarize(trial, material):
                                         anchors, prompts, frozen))
             row["fork"] = probe.get("fork")
         elif duplicate:
-            for key in ("practice_gate", "fit_regressions", "fit_validity_losses", "fork"):
+            for key in ("practice_gate", "adaptation_subgroups", "fit_regressions", "fit_validity_losses", "fork"):
                 row[key] = arms[duplicate][key]
         arms[name] = row
     decoded = [row for row in arms.values() if "practice_gate" in row and not row["duplicate_of"]]
@@ -113,12 +149,38 @@ def summarize(trial, material):
     matched = {}
     for index, direction in directions.items():
         a, b = arms.get(f"A{index}", {}), arms.get(f"B{index}", {})
-        matched[index] = {"both_decoded": all("practice_gate" in row for row in (a, b)),
+        matched[index] = {"both_have_behavior_measurement": all("practice_gate" in row for row in (a, b)),
+                          "both_decoded": all("practice_gate" in row and not row["duplicate_of"] for row in (a, b)),
                           "distinct_stored_tensors": bool(a.get("candidate_tensor_sha256") and b.get("candidate_tensor_sha256")
                                                           and a["candidate_tensor_sha256"] != b["candidate_tensor_sha256"]),
                           **direction["angles"]["historical:maximin"]}
     fork_count = Counter(row.get("actual_category") for row in fork_data.get("forks", []) if row.get("actual_category"))
+    fork_by_group = {}
+    for observation in baseline["target_observations"]:
+        fork = observation["fork"]
+        if fork is None:
+            continue
+        group = fork_by_group.setdefault(observation["group"], dict.fromkeys(
+            ("forks", "replay_matched", "at_first_distinguishing_digit", "at_answer_length_boundary",
+             "accepted_termination"), 0))
+        group["forks"] += 1
+        group["replay_matched"] += fork["replay_status"] == "matched"
+        for key in ("at_first_distinguishing_digit", "at_answer_length_boundary"):
+            group[key] += fork[key]
+        group["accepted_termination"] += any(token["kind"] in ("newline", "eos") for token in fork["accepted_tokens"])
     independent = records.get("independent-outcome.json")
+    reused = {f"parent-{name}.json" for name in report.get("reused_parent_receipts", [])}
+    counted = {record: _measured_work(records[record]) for record in report["artifacts"] if record not in reused}
+    counted = {record: counts for record, counts in counted.items() if counts}
+    verified_subgroups = {}
+    for gate, split in (("transfer", "transfer-validation"), ("selection", "selection")):
+        outcomes = {}
+        for arm, comparison in assessment[gate].items():
+            parent = records.get(f"verification/{split}-base.json")
+            candidate = records.get(f"verification/{split}-{arm}.json")
+            if parent and candidate:
+                outcomes[arm] = _subgroup_outcomes(parent["measurement"], candidate["measurement"], comparison)
+        verified_subgroups[gate] = outcomes
     return {"schema": "weightbridge.phase_iiil.analysis.v1",
             "fit_report_sha256": hashlib.sha256(raw["fit-report.json"]).hexdigest(),
             "assessment_sha256": hashlib.sha256(raw["assessment.json"]).hexdigest(),
@@ -126,15 +188,18 @@ def summarize(trial, material):
             "reason": independent["reason"] if independent else assessment["reason"],
             "hidden_opened": independent.get("hidden_opened") if independent else False, "winner": assessment["winner"],
             "parent_qualification": report["qualification"], "parent_diagnostics": baseline,
-            "fork_counts": dict(sorted(fork_count.items())), "fit_detail": report["detail"],
+            "fork_counts": dict(sorted(fork_count.items())), "fork_types_by_group": fork_by_group, "fit_detail": report["detail"],
             "basis": records.get("basis.json"), "projected_agreement": records.get("projected-agreement.json"),
             "directions": directions, "matched_pairs": matched, "sampling": sampling or None,
             "calibration": records.get("calibration.json"), "arms": arms, "unique_decoded_probes": len(decoded),
             "practice_passers": [name for name, row in arms.items()
                                  if not row["duplicate_of"] and row.get("practice_gate", {}).get("passed")],
-            "transfer": assessment["transfer"], "selection": assessment["selection"], "independent": independent,
+            "transfer": assessment["transfer"], "selection": assessment["selection"],
+            "verified_subgroups": verified_subgroups, "independent": independent,
             "resources": {"fitting": report["resources"], "teacher_forced": teacher["resources"],
-                          "fork_diagnosis": fork_data.get("resources"), "verification": assessment["worker_resources"]}}
+                          "fork_diagnosis": fork_data.get("resources"), "fitting_stage_counts": counted,
+                          "reused_parent_measurements": sorted(reused),
+                          "verification": assessment["worker_resources"]}}
 
 
 def plot(summary, output):
@@ -149,7 +214,7 @@ def plot(summary, output):
     agreement = summary["projected_agreement"]
     if not measured and not (agreement and agreement["group_cosines"]):
         return False
-    fig, (matrix, behavior) = plt.subplots(1, 2, figsize=(10.2, 4), layout="constrained")
+    fig, (matrix, behavior, subgroup) = plt.subplots(1, 3, figsize=(13.7, 4), layout="constrained")
     if agreement and agreement["group_cosines"]:
         labels = agreement["group_cosine_order"]
         values = np.array(agreement["group_cosines"], dtype=float)
@@ -176,8 +241,22 @@ def plot(summary, output):
         behavior.yaxis.set_major_locator(MaxNLocator(integer=True))
         behavior.axhline(0, color="#777777", linewidth=.7)
         behavior.legend(frameon=False)
+        groups = list(measured[0][1]["adaptation_subgroups"])
+        gains = [[row["adaptation_subgroups"][group]["candidate_correct_presentations"]
+                  - row["adaptation_subgroups"][group]["parent_correct_presentations"] for group in groups]
+                 for _, row in measured]
+        span = max(1, max(abs(value) for row in gains for value in row))
+        subgroup.imshow(gains, cmap="RdBu", vmin=-span, vmax=span, aspect="auto")
+        subgroup.set_xticks(range(len(groups)), [name.removeprefix("negative-").replace("/", "\n") for name in groups])
+        subgroup.set_yticks(range(len(names)), names)
+        for i, row in enumerate(gains):
+            for j, value in enumerate(row):
+                subgroup.text(j, i, f"{value:+d}" if value else "0", ha="center", va="center",
+                              color="white" if abs(value) > .55 * span else "black")
+        subgroup.set_title("Net correct presentations by subgroup")
     else:
         behavior.set_axis_off()
+        subgroup.set_axis_off()
     fig.savefig(output, dpi=165, metadata={"Description": "Phase III-L measured agreement and full greedy outcomes."})
     plt.close(fig)
     return True
