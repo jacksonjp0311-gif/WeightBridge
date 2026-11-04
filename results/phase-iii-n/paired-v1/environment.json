@@ -1,0 +1,25 @@
+{
+  "device": "cpu",
+  "hardware": {
+    "free_storage_preflight_bytes": 206378741760,
+    "logical_processors": 32,
+    "physical_cores": 16,
+    "system_ram_bytes": 132766306304
+  },
+  "inference_threads": 6,
+  "machine": "AMD64",
+  "os": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "huggingface-hub": "2.4.0",
+    "numpy": "2.5.4",
+    "pytest": "9.2.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.3",
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "precision": "native BF16",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "schema": "weightbridge.phase_iiin.environment.v1",
+  "scope": "No additional model download or private production model access. Model and numerical envelope reused from pinned M."
+}

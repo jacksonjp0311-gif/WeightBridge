@@ -1,0 +1,67 @@
+{
+  "k_l_audit": {
+    "limitations": [
+      "Phase III-L changed CE to margin and item normalization together.",
+      "Equal subgroup counts make equal-group and global unit means equivalent.",
+      "The stored intervention norms differed, so causal direction effects were confounded.",
+      "The sealed failure is preserved as aggregate evidence and supplies no new fitting examples."
+    ],
+    "phase_l_realized_norms": {
+      "A2": 0.021876569714522322,
+      "B2": 0.02039388666323515
+    },
+    "public_complete_truthflip_families": {
+      "development_validation": 0,
+      "practice": 0,
+      "selection": 0
+    },
+    "replayed": [
+      "phase-iii-k",
+      "phase-iii-l"
+    ],
+    "schema": "weightbridge.phase_iiim.previous_audit.v1",
+    "source_sha256": {
+      "experiments/phase_iiil/run_semantic.py": "a5bba92293c7c299a7b5fa4aafc6cfdfbca9e24bd44b8abe8a43da9d36cfd401",
+      "experiments/phase_iiil/semantic_protocol.json": "1d6befe6a32c0543ba3889f4067af191eed9e2b70accb05db074f1a04460b9b5",
+      "experiments/phase_iiil/verification.py": "dff04d0079919e3a488019f9a303c35828223247e3663b0e5fbf559d195d6452",
+      "results/phase-iii-k/jspace-v1/analysis.json": "35eba20d64fc395ccbbe180253a5c3e7c78a8969fd8f3765eff781b71af0c934",
+      "results/phase-iii-k/jspace-v1/material/manifest.json": "d5234a3f3b7d3df11b0199cc77f2c4095806dff0ed0c3fb4c6c42cc75fea9113",
+      "results/phase-iii-k/jspace-v1/trial/candidate-lock.json": "5a748076b4eb853314c440397fb50a06a15efe39391e551f95fa0924333c30c5",
+      "results/phase-iii-l/semantic-v1/analysis.json": "2e740e54a8f3947ad3540a1f93da2ec0348af6c9b384f358c5d08d766362a3b3",
+      "results/phase-iii-l/semantic-v1/material/manifest.json": "a00b78bfb6ee4ca17e77d5a14dc83fba66693429bbd24818bd2b94eafce394fc",
+      "results/phase-iii-l/semantic-v1/trial/candidate-lock.json": "bbe4960998a67bfbf82069b020911e981f8272c9a6a3d4326573d63304bb5e38",
+      "results/phase-iii-l/semantic-v1/trial/fit-report.json": "3d37b0e1a518eb3056fec857401a27fc980be03a2d6ec340ec264b0a1cb3d8f6",
+      "results/phase-iii-l/semantic-v1/trial/independent-outcome.json": "6868dc4ef084c44569392b3955af2f16c14f674b9f69f095fbb0c37b4eee3a95",
+      "weightbridge/adaptation/semantic_consensus.py": "c577c8356248bcf88ec72fcc25425fc327d9b8f454f432630e00c519cf9ddf86",
+      "weightbridge/adaptation/semantic_update.py": "f232ca92b9870134374eb38ec6c835f8ec6e4599d02a2134cb9b40f1cb25bab1"
+    },
+    "starting_commit": "07cb0bdcf099de444f798527d4ba32f15532f04b",
+    "verified_findings": {
+      "larger_maximin_matches_normalized_group_mean": true,
+      "no_accepted_checkpoint": true,
+      "no_complete_public_truthflip": true,
+      "practice_1_to_4": true,
+      "realized_norms_differ": true,
+      "sealed_gain3_regression1_rejected": true,
+      "selection_0_to_1_zero_regression": true,
+      "validation_25_preserved": true
+    }
+  },
+  "phase_m_analysis_canonical_exact": true,
+  "phase_m_disposition": "HOLD",
+  "replayed": [
+    "phase-iii-k",
+    "phase-iii-l",
+    "phase-iii-m"
+  ],
+  "schema": "weightbridge.phase_iiin.previous_audit.v1",
+  "scope": "Published aggregate old hidden outcome is audit evidence only; no old hidden rows were opened.",
+  "source_sha256": {
+    "results/phase-iii-m/factorial-v1/analysis.json": "f909cb5a76b545c29760ef58130a52383b715af751600f66f7a8ceb98fecfb95",
+    "results/phase-iii-m/factorial-v1/material/manifest.json": "ff39e865b299455fb2eb847bc8ebfc058bffca7c8340ca5ebcedad28d1d02c54",
+    "results/phase-iii-m/factorial-v1/trial/assessment.json": "2d6fe763cc8fc8ff29fe028a2dd4fd65817fcb37aa41cf3d2d529dab8d61dca1",
+    "results/phase-iii-m/factorial-v1/trial/basis.json": "41386d5e0de458d9e1a87ef03673799b63f7ad28ce2ba58aaca47080605f9694",
+    "results/phase-iii-m/factorial-v1/trial/fit-report.json": "9d3fe42845ea378019a47dfd3c0e165752843a64e9e3786af2c64d1e66acda3d"
+  },
+  "starting_commit": "178db583894278b9fc52150f8789a1a5f2eadb49"
+}
