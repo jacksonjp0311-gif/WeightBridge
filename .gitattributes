@@ -93,3 +93,8 @@
 /experiments/phase_iiir_replication/*.py text eol=lf
 /experiments/phase_iiir_replication/*.json text eol=lf
 /results/phase-iii-r-replication/** -text whitespace=cr-at-eol
+/experiments/phase_iiis_tool_transfer/*.py text eol=lf
+/experiments/phase_iiis_tool_transfer/*.json text eol=lf
+/results/phase-iii-s-tool-transfer/** -text whitespace=cr-at-eol
+# Preserve the exact mixed-newline bytes already bound by disposable S receipts.
+/experiments/phase_iiis_tool_transfer/measurement.py -text whitespace=cr-at-eol
