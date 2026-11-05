@@ -1,0 +1,123 @@
+{
+  "elapsed_wall_seconds_summed_including_standby": 29937.69350410014,
+  "electricity_cost": null,
+  "exact_total_cpu_seconds": null,
+  "known_cpu_seconds_lower_bound": 49338.828125,
+  "model_weights_published": false,
+  "other_measured_checks": {
+    "independent_merge_byte_audit_cpu_seconds": 19.890625,
+    "independent_merge_byte_audit_wall_seconds_approximate": 20.3,
+    "software_validation_receipt": "../tests/final-q-v1/tests.json"
+  },
+  "paid_external_compute_used": false,
+  "schema": "weightbridge.q_baseline.compute_accounting.v1",
+  "scientific_scope": "Pinned Qwen preflight, training, generation, merge and verification. Decode work separate from explicit model forward calls. Replayed rows are not independent samples. Nested worker scopes are not double-counted. The interrupted run has unmeasured partial work.",
+  "scopes": [
+    {
+      "elapsed_wall_seconds": 12.551929800014477,
+      "known_cpu_seconds": 12.15625,
+      "scope_note": null,
+      "source_file": "inventory-receipt.json",
+      "source_sha256": "985cf0a86c60a50865b46d39359eed3615af546289148f0dabe0fa7d6306734b",
+      "stage": "inventory"
+    },
+    {
+      "elapsed_wall_seconds": 75.21601400000509,
+      "known_cpu_seconds": 274.875,
+      "scope_note": null,
+      "source_file": "training-cost.json",
+      "source_sha256": "ef4ca54410fd7f7116fa443f6f136c1e79768e3ffd7828befa1331de1a60f5d8",
+      "stage": "chat timing"
+    },
+    {
+      "elapsed_wall_seconds": 43.842673900013324,
+      "known_cpu_seconds": 127.3125,
+      "scope_note": null,
+      "source_file": "training-cost.json",
+      "source_sha256": "1a92f3ab5c19ce6746a84875dac46dfb81ecfc9f7a921aebec80348d3ce0f0be",
+      "stage": "bare timing"
+    },
+    {
+      "elapsed_wall_seconds": 586.716069600021,
+      "known_cpu_seconds": 2881.0,
+      "scope_note": "Audited lower bound; smoke upper bound 3461.0985568 CPU seconds",
+      "source_file": "smoke-admission.json",
+      "source_sha256": "3c8ca72f3d832151e2108cc6199ea5d2b880b03a9dc6853acb7f98ca19dbdb9b",
+      "stage": "disposable smoke"
+    },
+    {
+      "elapsed_wall_seconds": 3.516435099998489,
+      "known_cpu_seconds": 4.484375,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "run-0-process.json",
+      "source_sha256": "17f54f901f47adea312eda724ed486b1c77d43a9e19ee9c80f504838cd4c6ea3",
+      "stage": "refused launch"
+    },
+    {
+      "elapsed_wall_seconds": 22020.967451200006,
+      "known_cpu_seconds": 3054.625,
+      "scope_note": "Elapsed includes Windows standby",
+      "source_file": "run-0-retry1-process.json",
+      "source_sha256": "38aaf326cabbf8ffbd7c13191d7f8cfc9163c2e0110c24e054e84f1f92bce5e1",
+      "stage": "interrupted low-rate training"
+    },
+    {
+      "elapsed_wall_seconds": 3216.263238100044,
+      "known_cpu_seconds": 20068.65625,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "run-1-process.json",
+      "source_sha256": "70e26e2d0d3ddc2e3eb69fa011e73ee3a9ed1b91d0038ca594ddbdef545ac513",
+      "stage": "completed training"
+    },
+    {
+      "elapsed_wall_seconds": 1103.538988800021,
+      "known_cpu_seconds": 6475.390625,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "assessment-host-process.json",
+      "source_sha256": "2630b4227e06cc1b01145ea33366a7012eaef8dd2a368083572cd0a90d481c12",
+      "stage": "screening"
+    },
+    {
+      "elapsed_wall_seconds": 154.97187020001002,
+      "known_cpu_seconds": 830.28125,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "adapter-replay-process.json",
+      "source_sha256": "3504b07079911e62163dbc83f3c0f6da99e8cdd32486bb8594e4ef424955d313",
+      "stage": "exact adapter replay"
+    },
+    {
+      "elapsed_wall_seconds": 69.45335510000587,
+      "known_cpu_seconds": 128.765625,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "merge-process.json",
+      "source_sha256": "12956e3abc461ec52e90a838e3b652d24a347e42caa5aaf90a0dcf5b12cda703",
+      "stage": "BF16 merge"
+    },
+    {
+      "elapsed_wall_seconds": 1413.8628889999818,
+      "known_cpu_seconds": 8577.625,
+      "scope_note": "Enclosing observed process tree and host once",
+      "source_file": "independent-process.json",
+      "source_sha256": "f317359ada3cbda7af863a765e44698683a3c4b59b5bc056f504f30d2aef3ff4",
+      "stage": "merged screening and protected qualification"
+    },
+    {
+      "elapsed_wall_seconds": 1236.792589300021,
+      "known_cpu_seconds": 6903.65625,
+      "scope_note": null,
+      "source_file": "final-verification.json",
+      "source_sha256": "735807c9f56c560660004fa60bd5c110fb84afb8354544c88c646b54e56c6cdf",
+      "stage": "final reconstruction and rollback replay"
+    }
+  ],
+  "work": {
+    "batched_decode_steps": 11808,
+    "explicit_backward_calls_lower_bound": 620,
+    "explicit_forward_calls_lower_bound": 648,
+    "generate_batches": 738,
+    "generated_examples": 5904,
+    "optimizer_steps_recorded": 183,
+    "padded_prompt_token_positions": 456160,
+    "partial_interrupted_step_calls": null
+  }
+}

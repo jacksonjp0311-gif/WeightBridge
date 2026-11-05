@@ -1,0 +1,507 @@
+{
+  "protected_raw_rows_published": false,
+  "workers": [
+    {
+      "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+      "receipt_sha256": "8ff762a499771d1f76651ff80aa87b716d6d9f3eabba9ad16a076ea369dc1ae6",
+      "resources": {
+        "cpu_seconds": 999.09375,
+        "peak_rss_bytes": 2572013568,
+        "wall_seconds": 177.9957141999621
+      },
+      "summary": {
+        "comparisons": 64,
+        "complete_families": 32,
+        "complete_family_ids": [
+          "baseline-decimal/hidden/target/0000",
+          "baseline-decimal/hidden/target/0001",
+          "baseline-decimal/hidden/target/0002",
+          "baseline-decimal/hidden/target/0003",
+          "baseline-decimal/hidden/target/0004",
+          "baseline-decimal/hidden/target/0005",
+          "baseline-decimal/hidden/target/0006",
+          "baseline-decimal/hidden/target/0007",
+          "baseline-decimal/hidden/target/0008",
+          "baseline-decimal/hidden/target/0009",
+          "baseline-decimal/hidden/target/0010",
+          "baseline-decimal/hidden/target/0011",
+          "baseline-decimal/hidden/target/0012",
+          "baseline-decimal/hidden/target/0013",
+          "baseline-decimal/hidden/target/0014",
+          "baseline-decimal/hidden/target/0015",
+          "baseline-decimal/hidden/target/0016",
+          "baseline-decimal/hidden/target/0017",
+          "baseline-decimal/hidden/target/0018",
+          "baseline-decimal/hidden/target/0019",
+          "baseline-decimal/hidden/target/0020",
+          "baseline-decimal/hidden/target/0021",
+          "baseline-decimal/hidden/target/0022",
+          "baseline-decimal/hidden/target/0023",
+          "baseline-decimal/hidden/target/0024",
+          "baseline-decimal/hidden/target/0025",
+          "baseline-decimal/hidden/target/0026",
+          "baseline-decimal/hidden/target/0027",
+          "baseline-decimal/hidden/target/0028",
+          "baseline-decimal/hidden/target/0029",
+          "baseline-decimal/hidden/target/0030",
+          "baseline-decimal/hidden/target/0031"
+        ],
+        "completed_first_lines": 256,
+        "correct": 256,
+        "decode_termination": {
+          "token_budget": 256
+        },
+        "families": 32,
+        "groups": {
+          "negative-close": {
+            "correct": 128,
+            "presentations": 128,
+            "valid": 128
+          },
+          "negative-far": {
+            "correct": 128,
+            "presentations": 128,
+            "valid": 128
+          }
+        },
+        "presentations": 256,
+        "strict_comparison_ids": [
+          "baseline-decimal/hidden/target/0000/variant-0",
+          "baseline-decimal/hidden/target/0000/variant-1",
+          "baseline-decimal/hidden/target/0001/variant-0",
+          "baseline-decimal/hidden/target/0001/variant-1",
+          "baseline-decimal/hidden/target/0002/variant-0",
+          "baseline-decimal/hidden/target/0002/variant-1",
+          "baseline-decimal/hidden/target/0003/variant-0",
+          "baseline-decimal/hidden/target/0003/variant-1",
+          "baseline-decimal/hidden/target/0004/variant-0",
+          "baseline-decimal/hidden/target/0004/variant-1",
+          "baseline-decimal/hidden/target/0005/variant-0",
+          "baseline-decimal/hidden/target/0005/variant-1",
+          "baseline-decimal/hidden/target/0006/variant-0",
+          "baseline-decimal/hidden/target/0006/variant-1",
+          "baseline-decimal/hidden/target/0007/variant-0",
+          "baseline-decimal/hidden/target/0007/variant-1",
+          "baseline-decimal/hidden/target/0008/variant-0",
+          "baseline-decimal/hidden/target/0008/variant-1",
+          "baseline-decimal/hidden/target/0009/variant-0",
+          "baseline-decimal/hidden/target/0009/variant-1",
+          "baseline-decimal/hidden/target/0010/variant-0",
+          "baseline-decimal/hidden/target/0010/variant-1",
+          "baseline-decimal/hidden/target/0011/variant-0",
+          "baseline-decimal/hidden/target/0011/variant-1",
+          "baseline-decimal/hidden/target/0012/variant-0",
+          "baseline-decimal/hidden/target/0012/variant-1",
+          "baseline-decimal/hidden/target/0013/variant-0",
+          "baseline-decimal/hidden/target/0013/variant-1",
+          "baseline-decimal/hidden/target/0014/variant-0",
+          "baseline-decimal/hidden/target/0014/variant-1",
+          "baseline-decimal/hidden/target/0015/variant-0",
+          "baseline-decimal/hidden/target/0015/variant-1",
+          "baseline-decimal/hidden/target/0016/variant-0",
+          "baseline-decimal/hidden/target/0016/variant-1",
+          "baseline-decimal/hidden/target/0017/variant-0",
+          "baseline-decimal/hidden/target/0017/variant-1",
+          "baseline-decimal/hidden/target/0018/variant-0",
+          "baseline-decimal/hidden/target/0018/variant-1",
+          "baseline-decimal/hidden/target/0019/variant-0",
+          "baseline-decimal/hidden/target/0019/variant-1",
+          "baseline-decimal/hidden/target/0020/variant-0",
+          "baseline-decimal/hidden/target/0020/variant-1",
+          "baseline-decimal/hidden/target/0021/variant-0",
+          "baseline-decimal/hidden/target/0021/variant-1",
+          "baseline-decimal/hidden/target/0022/variant-0",
+          "baseline-decimal/hidden/target/0022/variant-1",
+          "baseline-decimal/hidden/target/0023/variant-0",
+          "baseline-decimal/hidden/target/0023/variant-1",
+          "baseline-decimal/hidden/target/0024/variant-0",
+          "baseline-decimal/hidden/target/0024/variant-1",
+          "baseline-decimal/hidden/target/0025/variant-0",
+          "baseline-decimal/hidden/target/0025/variant-1",
+          "baseline-decimal/hidden/target/0026/variant-0",
+          "baseline-decimal/hidden/target/0026/variant-1",
+          "baseline-decimal/hidden/target/0027/variant-0",
+          "baseline-decimal/hidden/target/0027/variant-1",
+          "baseline-decimal/hidden/target/0028/variant-0",
+          "baseline-decimal/hidden/target/0028/variant-1",
+          "baseline-decimal/hidden/target/0029/variant-0",
+          "baseline-decimal/hidden/target/0029/variant-1",
+          "baseline-decimal/hidden/target/0030/variant-0",
+          "baseline-decimal/hidden/target/0030/variant-1",
+          "baseline-decimal/hidden/target/0031/variant-0",
+          "baseline-decimal/hidden/target/0031/variant-1"
+        ],
+        "strict_comparisons": 64,
+        "valid_completed_first_lines": 256
+      },
+      "work": {
+        "batched_decode_steps": 512,
+        "cpu_seconds": 989.671875,
+        "generate_batches": 32,
+        "generated_examples": 256,
+        "padded_prompt_token_positions": 21200,
+        "peak_rss_bytes": 2572013568,
+        "wall_seconds": 168.36036629998125
+      },
+      "worker": "hidden-reconstructed"
+    },
+    {
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "receipt_sha256": "354a03863c5cf5b2b1650647bf106a17907de8841cf0f21e1abd49033670dc17",
+      "resources": {
+        "cpu_seconds": 979.875,
+        "peak_rss_bytes": 2585714688,
+        "wall_seconds": 174.42846519994782
+      },
+      "summary": {
+        "comparisons": 64,
+        "complete_families": 0,
+        "complete_family_ids": [],
+        "completed_first_lines": 256,
+        "correct": 26,
+        "decode_termination": {
+          "token_budget": 256
+        },
+        "families": 32,
+        "groups": {
+          "negative-close": {
+            "correct": 0,
+            "presentations": 128,
+            "valid": 128
+          },
+          "negative-far": {
+            "correct": 26,
+            "presentations": 128,
+            "valid": 128
+          }
+        },
+        "presentations": 256,
+        "strict_comparison_ids": [],
+        "strict_comparisons": 0,
+        "valid_completed_first_lines": 256
+      },
+      "work": {
+        "batched_decode_steps": 512,
+        "cpu_seconds": 970.46875,
+        "generate_batches": 32,
+        "generated_examples": 256,
+        "padded_prompt_token_positions": 21200,
+        "peak_rss_bytes": 2585714688,
+        "wall_seconds": 164.87863809999544
+      },
+      "worker": "hidden-rollback"
+    },
+    {
+      "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+      "receipt_sha256": "23905c82f131d0b2c7529b50c538f161e180a3611591a174c37377aeb325899a",
+      "resources": {
+        "cpu_seconds": 1123.265625,
+        "peak_rss_bytes": 2574802944,
+        "wall_seconds": 199.45017430000007
+      },
+      "summary": {
+        "comparisons": 0,
+        "complete_families": 0,
+        "complete_family_ids": [],
+        "completed_first_lines": 320,
+        "correct": 320,
+        "decode_termination": {
+          "token_budget": 320
+        },
+        "families": 0,
+        "groups": {
+          "copy": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "integer-add": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "integer-successor": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "mixed-sign": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "positive-far": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          }
+        },
+        "presentations": 320,
+        "strict_comparison_ids": [],
+        "strict_comparisons": 0,
+        "valid_completed_first_lines": 320
+      },
+      "work": {
+        "batched_decode_steps": 640,
+        "cpu_seconds": 1113.53125,
+        "generate_batches": 40,
+        "generated_examples": 320,
+        "padded_prompt_token_positions": 21312,
+        "peak_rss_bytes": 2574802944,
+        "wall_seconds": 189.66080779995536
+      },
+      "worker": "preservation-validation-reconstructed"
+    },
+    {
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "receipt_sha256": "3e3698ce8c973494b2001c2f2f09c7675946963a1605975ae7f29ee9f41fc097",
+      "resources": {
+        "cpu_seconds": 1139.15625,
+        "peak_rss_bytes": 2593705984,
+        "wall_seconds": 201.55261910002446
+      },
+      "summary": {
+        "comparisons": 0,
+        "complete_families": 0,
+        "complete_family_ids": [],
+        "completed_first_lines": 320,
+        "correct": 320,
+        "decode_termination": {
+          "token_budget": 320
+        },
+        "families": 0,
+        "groups": {
+          "copy": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "integer-add": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "integer-successor": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "mixed-sign": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "positive-far": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          }
+        },
+        "presentations": 320,
+        "strict_comparison_ids": [],
+        "strict_comparisons": 0,
+        "valid_completed_first_lines": 320
+      },
+      "work": {
+        "batched_decode_steps": 640,
+        "cpu_seconds": 1130.09375,
+        "generate_batches": 40,
+        "generated_examples": 320,
+        "padded_prompt_token_positions": 21312,
+        "peak_rss_bytes": 2593705984,
+        "wall_seconds": 192.20908830000553
+      },
+      "worker": "preservation-validation-rollback"
+    },
+    {
+      "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+      "receipt_sha256": "096700b78e157ecaed04095b49153613b801350ec0809e1bc51cc7c7cfd44ea8",
+      "resources": {
+        "cpu_seconds": 995.140625,
+        "peak_rss_bytes": 2585702400,
+        "wall_seconds": 177.14450619998388
+      },
+      "summary": {
+        "comparisons": 64,
+        "complete_families": 32,
+        "complete_family_ids": [
+          "baseline-decimal/selection/target/0000",
+          "baseline-decimal/selection/target/0001",
+          "baseline-decimal/selection/target/0002",
+          "baseline-decimal/selection/target/0003",
+          "baseline-decimal/selection/target/0004",
+          "baseline-decimal/selection/target/0005",
+          "baseline-decimal/selection/target/0006",
+          "baseline-decimal/selection/target/0007",
+          "baseline-decimal/selection/target/0008",
+          "baseline-decimal/selection/target/0009",
+          "baseline-decimal/selection/target/0010",
+          "baseline-decimal/selection/target/0011",
+          "baseline-decimal/selection/target/0012",
+          "baseline-decimal/selection/target/0013",
+          "baseline-decimal/selection/target/0014",
+          "baseline-decimal/selection/target/0015",
+          "baseline-decimal/selection/target/0016",
+          "baseline-decimal/selection/target/0017",
+          "baseline-decimal/selection/target/0018",
+          "baseline-decimal/selection/target/0019",
+          "baseline-decimal/selection/target/0020",
+          "baseline-decimal/selection/target/0021",
+          "baseline-decimal/selection/target/0022",
+          "baseline-decimal/selection/target/0023",
+          "baseline-decimal/selection/target/0024",
+          "baseline-decimal/selection/target/0025",
+          "baseline-decimal/selection/target/0026",
+          "baseline-decimal/selection/target/0027",
+          "baseline-decimal/selection/target/0028",
+          "baseline-decimal/selection/target/0029",
+          "baseline-decimal/selection/target/0030",
+          "baseline-decimal/selection/target/0031"
+        ],
+        "completed_first_lines": 256,
+        "correct": 256,
+        "decode_termination": {
+          "token_budget": 256
+        },
+        "families": 32,
+        "groups": {
+          "negative-close": {
+            "correct": 128,
+            "presentations": 128,
+            "valid": 128
+          },
+          "negative-far": {
+            "correct": 128,
+            "presentations": 128,
+            "valid": 128
+          }
+        },
+        "presentations": 256,
+        "strict_comparison_ids": [
+          "baseline-decimal/selection/target/0000/variant-0",
+          "baseline-decimal/selection/target/0000/variant-1",
+          "baseline-decimal/selection/target/0001/variant-0",
+          "baseline-decimal/selection/target/0001/variant-1",
+          "baseline-decimal/selection/target/0002/variant-0",
+          "baseline-decimal/selection/target/0002/variant-1",
+          "baseline-decimal/selection/target/0003/variant-0",
+          "baseline-decimal/selection/target/0003/variant-1",
+          "baseline-decimal/selection/target/0004/variant-0",
+          "baseline-decimal/selection/target/0004/variant-1",
+          "baseline-decimal/selection/target/0005/variant-0",
+          "baseline-decimal/selection/target/0005/variant-1",
+          "baseline-decimal/selection/target/0006/variant-0",
+          "baseline-decimal/selection/target/0006/variant-1",
+          "baseline-decimal/selection/target/0007/variant-0",
+          "baseline-decimal/selection/target/0007/variant-1",
+          "baseline-decimal/selection/target/0008/variant-0",
+          "baseline-decimal/selection/target/0008/variant-1",
+          "baseline-decimal/selection/target/0009/variant-0",
+          "baseline-decimal/selection/target/0009/variant-1",
+          "baseline-decimal/selection/target/0010/variant-0",
+          "baseline-decimal/selection/target/0010/variant-1",
+          "baseline-decimal/selection/target/0011/variant-0",
+          "baseline-decimal/selection/target/0011/variant-1",
+          "baseline-decimal/selection/target/0012/variant-0",
+          "baseline-decimal/selection/target/0012/variant-1",
+          "baseline-decimal/selection/target/0013/variant-0",
+          "baseline-decimal/selection/target/0013/variant-1",
+          "baseline-decimal/selection/target/0014/variant-0",
+          "baseline-decimal/selection/target/0014/variant-1",
+          "baseline-decimal/selection/target/0015/variant-0",
+          "baseline-decimal/selection/target/0015/variant-1",
+          "baseline-decimal/selection/target/0016/variant-0",
+          "baseline-decimal/selection/target/0016/variant-1",
+          "baseline-decimal/selection/target/0017/variant-0",
+          "baseline-decimal/selection/target/0017/variant-1",
+          "baseline-decimal/selection/target/0018/variant-0",
+          "baseline-decimal/selection/target/0018/variant-1",
+          "baseline-decimal/selection/target/0019/variant-0",
+          "baseline-decimal/selection/target/0019/variant-1",
+          "baseline-decimal/selection/target/0020/variant-0",
+          "baseline-decimal/selection/target/0020/variant-1",
+          "baseline-decimal/selection/target/0021/variant-0",
+          "baseline-decimal/selection/target/0021/variant-1",
+          "baseline-decimal/selection/target/0022/variant-0",
+          "baseline-decimal/selection/target/0022/variant-1",
+          "baseline-decimal/selection/target/0023/variant-0",
+          "baseline-decimal/selection/target/0023/variant-1",
+          "baseline-decimal/selection/target/0024/variant-0",
+          "baseline-decimal/selection/target/0024/variant-1",
+          "baseline-decimal/selection/target/0025/variant-0",
+          "baseline-decimal/selection/target/0025/variant-1",
+          "baseline-decimal/selection/target/0026/variant-0",
+          "baseline-decimal/selection/target/0026/variant-1",
+          "baseline-decimal/selection/target/0027/variant-0",
+          "baseline-decimal/selection/target/0027/variant-1",
+          "baseline-decimal/selection/target/0028/variant-0",
+          "baseline-decimal/selection/target/0028/variant-1",
+          "baseline-decimal/selection/target/0029/variant-0",
+          "baseline-decimal/selection/target/0029/variant-1",
+          "baseline-decimal/selection/target/0030/variant-0",
+          "baseline-decimal/selection/target/0030/variant-1",
+          "baseline-decimal/selection/target/0031/variant-0",
+          "baseline-decimal/selection/target/0031/variant-1"
+        ],
+        "strict_comparisons": 64,
+        "valid_completed_first_lines": 256
+      },
+      "work": {
+        "batched_decode_steps": 512,
+        "cpu_seconds": 985.671875,
+        "generate_batches": 32,
+        "generated_examples": 256,
+        "padded_prompt_token_positions": 21152,
+        "peak_rss_bytes": 2585702400,
+        "wall_seconds": 167.33890800003428
+      },
+      "worker": "selection-reconstructed"
+    },
+    {
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "receipt_sha256": "0c51002a78c184b10d7703a1a64f019f55a7146041d639c503b863ba5a7a88bd",
+      "resources": {
+        "cpu_seconds": 984.5625,
+        "peak_rss_bytes": 2583986176,
+        "wall_seconds": 175.3329065000289
+      },
+      "summary": {
+        "comparisons": 64,
+        "complete_families": 0,
+        "complete_family_ids": [],
+        "completed_first_lines": 256,
+        "correct": 31,
+        "decode_termination": {
+          "token_budget": 256
+        },
+        "families": 32,
+        "groups": {
+          "negative-close": {
+            "correct": 1,
+            "presentations": 128,
+            "valid": 128
+          },
+          "negative-far": {
+            "correct": 30,
+            "presentations": 128,
+            "valid": 128
+          }
+        },
+        "presentations": 256,
+        "strict_comparison_ids": [],
+        "strict_comparisons": 0,
+        "valid_completed_first_lines": 256
+      },
+      "work": {
+        "batched_decode_steps": 512,
+        "cpu_seconds": 975.1875,
+        "generate_batches": 32,
+        "generated_examples": 256,
+        "padded_prompt_token_positions": 21152,
+        "peak_rss_bytes": 2583986176,
+        "wall_seconds": 165.7667532999767
+      },
+      "worker": "selection-rollback"
+    }
+  ]
+}

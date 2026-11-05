@@ -6,6 +6,12 @@ column search. It starts from published Phase III-P commit
 `dev/phase-iii-q-baseline` branch. Historical evidence, accepted lineage and the
 original checkpoint remain unchanged.
 
+**Disposition: `VERIFIED_BASELINE_PASS`.** The completed `3e-4` recipe
+produced a locked BF16 checkpoint that corrected every tested independent
+opposing-answer family, preserved every required response, and reproduced
+its complete greedy outputs after exact reconstruction. The low-rate arm
+was interrupted and supplies no learning-rate comparison.
+
 ## Question and scope
 
 Can conventional supervised LoRA training produce a persistent improvement in
@@ -192,11 +198,117 @@ compute was used.
 | Step 64 | 3.86612 | 3.89828 | 425,661,705 | 0.516876 |
 | Step 128 | 3.92829 | 3.96006 | 426,620,449 | 0.517094 |
 
-These are round-trip BF16 previews computed from actual saved FP32 factors;
-the base weights were not changed. The [training journal](../results/phase-iii-q-baseline/baseline-v1/run-1)
-retains every step and both adapter receipts. Fresh generation screening is
-in progress. The accepted lineage and protected evaluation stages remain
-unchanged at this checkpoint in the report.
+These are round-trip BF16 previews computed from actual saved FP32 factors.
+The [training journal](../results/phase-iii-q-baseline/baseline-v1/run-1)
+retains every step and both adapter receipts.
+
+## Generated answers and stored checkpoint
+
+Both saved adapters answered 208/208 practice presentations and 336/336
+development presentations correctly. The latter includes 256 target responses
+and 80 controls. Neither candidate lost a previously correct response or
+valid answer. They tied on all behavioral ranks, so the frozen earlier-step
+tie-break locked step 64. Its saved adapter SHA-256 is
+`23f5209e5cbebf9ab4e7284023776548dce9a4be0265ead86b83a20cf8890b56`.
+A fresh process exactly reproduced all 208 practice token sequences, text,
+and stop reasons before the merge.
+
+The separately authorized merged BF16 checkpoint has SHA-256
+`ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191`.
+An independent byte audit confirmed 425,661,705 changed BF16 entries in 186
+authorized tensors. The realized norm is 3.8982769786, or 0.418575% of the
+full parent parameter norm. All other 302 tensors and six nonweight assets
+matched the parent byte for byte. The effective update is dense across its
+authorized text regions even though only 5,411,328 factor parameters trained.
+
+The merged model preserved all 544 scored first lines from the adapter's
+practice and development evaluations. It changed the full continuation on
+28 rows, all after the first line. Thus the merged model passed the declared
+endpoint but did not produce identical full continuations to the adapter.
+The merged checkpoint, with its own identity, is the only representation
+used for independent behavioral qualification.
+
+| Merged-model evaluation | Correct target presentations, parent → merged | Strict comparisons | Complete opposing families | Prohibited losses |
+|---|---:|---:|---:|---:|
+| Practice target probe | 23/128 → 128/128 | 0/32 → 32/32 | 0/16 → 16/16 | 0 |
+| Fresh development targets | 30/256 → 256/256 | 0/64 → 64/64 | 0/32 → 32/32 | 0 |
+| Independent selection | 31/256 → 256/256 | 0/64 → 64/64 | 0/32 → 32/32 | 0 |
+| Sealed verification | 26/256 → 256/256 | 0/64 → 64/64 | 0/32 → 32/32 | 0 |
+
+The 80 replay control presentations in each screening roster stayed correct.
+The independent preservation suite retained **320/320** correct responses,
+64 presentations each for copying, addition, successor, mixed-sign and
+positive comparisons. There were zero lost valid responses in any measured
+gate. The strict comparison unit is all four wording/order presentations;
+a complete family requires both strict comparisons, eight correct responses.
+Every reported behavioral pass here concerns a completed first answer line.
+The full greedy decodes reached the sixteen-token budget, with zero EOS stops.
+
+All frozen behavioral gates passed. A fresh process rebuilt the entire merged
+checkpoint to the same SHA-256 and reproduced the numerical merge receipt
+byte for byte. Fresh independent processes then replayed all 832 protected
+outputs from the rebuilt model and all 832 original outputs after rollback
+by reselecting the immutable parent. Token IDs, text and stop reasons matched
+exactly in all three suites. These replayed rows are verification, not new
+independent samples. No checkpoint was admitted to lineage or deployed.
+
+Public [screening receipts](../results/phase-iii-q-baseline/baseline-v1/screening)
+include the raw scored practice/development outputs, numerical and ranking
+receipts, and [measured figures](../results/phase-iii-q-baseline/baseline-v1/screening/figures).
+The development examples are now disclosed and cannot serve as independent
+data. Protected rosters and per-row protected outputs remain host-private.
+
+See the [protected aggregate gates](../results/phase-iii-q-baseline/baseline-v1/qualification),
+[independent outcome figure](../results/phase-iii-q-baseline/baseline-v1/qualification/independent-outcomes.png),
+and [final verification receipt](../results/phase-iii-q-baseline/baseline-v1/final-verification/final-verification.json).
+The first independent receipt's HOLD indicates that reconstruction was
+pending at that time. The later write-once final receipt resolves it without
+overwriting the earlier evidence. The final receipt SHA-256 is
+`735807c9f56c560660004fa60bd5c110fb84afb8354544c88c646b54e56c6cdf`.
+
+## Computation and validation
+
+The [compute ledger](../results/phase-iii-q-baseline/baseline-v1/compute-accounting.json)
+accounts for each enclosing experiment process tree once. The observed lower
+bound is 49,338.828125 CPU seconds across preflight, smoke, both attempted
+training arms, generation, merging and final replay. Exact total CPU is
+unknown because some startup and interrupted work was not observed. The
+summed elapsed scope time is 29,937.694 seconds, including the interrupted
+run's standby interval. It is not active compute time. The completed training
+run used 3,216.263 elapsed seconds and 20,068.656 observed CPU seconds;
+screening used 1,103.539 and 6,475.391 respectively; final reconstruction and
+replay used 1,236.793 elapsed seconds and at least 6,903.656 CPU seconds.
+
+The model work ledger records at least 648 explicit forward calls and 620
+backward calls, 183 recorded optimizer steps including the disposable runs,
+and 5,904 complete generation records across 11,808 batched decode steps.
+Decode steps are reported separately from explicit loss forwards. A partial
+interrupted step is unmeasured. CPU accounting excludes the separately
+recorded software validation and read-only archival audit. No paid or remote
+model compute was used; electricity cost was not measured.
+
+The Windows host has a Ryzen AI Max+ 395, 16 physical and 32 logical cores,
+and 132,766,306,304 bytes of reported RAM. The pinned model runtime used six
+CPU threads and native BF16 with FP32 adapter factors. CUDA was unavailable.
+The reference PyTorch fallback kernels ran without changing dependencies.
+
+The final [runtime suite](../results/phase-iii-q-baseline/tests/final-q-v1/tests.json)
+passed 832 tests with two optional-dependency skips, for Matplotlib and MCP.
+The separate MCP suite passed all 23 tests. Figures were rendered with the
+existing plotting environment. The 127 frozen source files verified before
+and after the study. The original Phase III-P archive was not rewritten.
+
+## Interpretation
+
+The complete-answer training recipe transfers to the tested fresh families
+and preserves the measured controls. This shows that a conventional adapter
+can produce the desired behavior under the narrow, frozen endpoint. It does
+not identify which of the earlier geometry, data, and objective restrictions
+caused their failures. It also does not establish a new general mathematical
+ability, preservation outside the measured suites, or continual learning.
+The interrupted arm leaves the learning-rate contrast unmeasured. The next
+scientific step is a fresh, prospectively frozen replication of the winning
+recipe before reducing rank, module coverage, or supervision.
 
 Receipts: [smoke report](../results/phase-iii-q-baseline/smoke-report.json),
 [raw gate](../results/phase-iii-q-baseline/baseline-v1/smoke/smoke-gate.json),
@@ -209,9 +321,8 @@ preserves both failed launch attempts and the relevant Windows power events.
 The full protocol is
 [`experiments/phase_iiiq_baseline/protocol.json`](../experiments/phase_iiiq_baseline/protocol.json).
 Training curves are diagnostic; only actual complete generated answers can
-establish behavioral improvement. A baseline pass would establish one
-bounded learning result, not a universal adaptation algorithm or a success
-of the earlier custom editor.
+establish behavioral improvement. The recorded pass supplies a bounded
+reference for later direct-edit comparisons.
 
 ## Reproduction
 
@@ -231,14 +342,18 @@ $wbInventory = 'results/phase-iii-q-baseline/preflight/inventory-v1/architecture
   --rows "$wbStudy/material/smoke.json" --out "$wbStudy/smoke"
 ```
 
-Replay the smoke evidence with `experiments.phase_iiiq_baseline.admit_smoke`
-before `initialize authorize-main`. Use the resulting `smoke-admission.json`
-as the `--smoke-gate` for both main authorization and `run_training`. Main
-training receives only `training-bundle.json`; it does not receive the
-material directory. The host chooses a new output directory for each attempt.
-For the surviving recipe, the command is:
+Replay the smoke evidence and authorize the exact training bundle. Main
+training receives only that bundle; it does not receive the material
+directory. Use a fresh output directory for each attempt. The surviving
+recipe is run index 1:
 
 ```powershell
+& $wbPython -m experiments.phase_iiiq_baseline.admit_smoke `
+  --protocol "$wbStudy/protocol.json" --authorization "$wbStudy/smoke-authorization.json" `
+  --bundle "$wbStudy/smoke-bundle.json" --rows "$wbStudy/material/smoke.json" `
+  --smoke "$wbStudy/smoke" --out "$wbStudy/smoke-admission.json"
+& $wbPython -m experiments.phase_iiiq_baseline.initialize authorize-main `
+  --out $wbStudy --smoke-gate "$wbStudy/smoke-admission.json"
 & $wbPython -m experiments.phase_iiiq_baseline.run_training `
   --base $wbBase --protocol "$wbStudy/protocol.json" `
   --authorization "$wbStudy/main-authorization.json" --bundle "$wbStudy/training-bundle.json" `
@@ -253,3 +368,20 @@ into an eligible checkpoint. No public command opens selection or hidden
 without the host's frozen inputs and prior receipts. Reproducing a private
 qualification score requires that operator-held material; the public archive
 contains commitments and permitted evidence, not private rosters or weights.
+
+For the recorded finalist, the [host qualification command](../results/phase-iii-q-baseline/baseline-v1/qualification-command.py)
+replays the saved adapter, merges it under the separate authorization, and
+runs the original gated `study finish` verifier. After all behavioral gates
+pass, run the final verifier against the locked stored representation:
+
+```powershell
+& $wbPython -m experiments.phase_iiiq_baseline.verify_final `
+  --base $wbBase --merged "$wbStudy/merged-checkpoint" `
+  --merge-receipt "$wbStudy/merge-receipt.json" --merge-authorization "$wbStudy/merge-authorization.json" `
+  --protocol "$wbStudy/protocol.json" --material "$wbStudy/material" `
+  --assessment "$wbStudy/assessment" --out "$wbStudy/final-verification"
+```
+
+This produces an append-only verification receipt without accepting or
+deploying the candidate. Exact replay establishes checkpoint persistence,
+not bitwise reproducibility of a new training run on different hardware.

@@ -100,8 +100,10 @@ zero-regression learning result. [Phase III-P code and evidence](docs/PHASE_III_
 Phase III-Q introduces a separately authorized conventional supervised LoRA
 baseline with complete-answer training and frozen original weights. It tests
 broader text-backbone adapters before further custom optimization. The old
-direct-edit norm and column limits remain unchanged. Model improvement is
-unproven until actual generation and independent preservation gates pass.
+direct-edit norm and column limits remain unchanged. The isolated BF16
+checkpoint improved from 26/256 to 256/256 correct sealed answer lines,
+preserved all 320 protected control presentations, and passed exact
+reconstruction and rollback. This is one verified decimal-task baseline.
 [Phase III-Q baseline protocol and results](docs/PHASE_III_Q_BASELINE.md)
 
 ## Install and try it

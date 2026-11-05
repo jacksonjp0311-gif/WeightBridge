@@ -1,0 +1,60 @@
+{
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 3,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793880399.9087152,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 15676,
+        "peak_rss_bytes": 5070848,
+        "pid": 47616
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793880399.9251766,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7659520,
+        "parent_pid_at_discovery": 47616,
+        "peak_rss_bytes": 7663616,
+        "pid": 63572
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 987.234375,
+        "create_time": 1793880399.9779232,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2572288000,
+        "parent_pid_at_discovery": 47616,
+        "peak_rss_bytes": 2585714688,
+        "pid": 55300
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 1063.3125,
+      "host_cpu_seconds": 76.03125,
+      "observed_tree_cpu_seconds": 987.28125,
+      "peak_rss_bytes": 2598449152,
+      "wall_seconds": 181.260682299966
+    }
+  },
+  "log_sha256": "bddc2c788684045cb7435cce10e0944adba567b1618b4266c15d1890259cf4f4",
+  "module": "evaluate",
+  "name": "hidden-rollback",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  }
+}

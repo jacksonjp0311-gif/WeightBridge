@@ -1,0 +1,60 @@
+{
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 3,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.0,
+        "create_time": 1793880032.6259024,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 15676,
+        "peak_rss_bytes": 5070848,
+        "pid": 39584
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793880032.643808,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7671808,
+        "parent_pid_at_discovery": 39584,
+        "peak_rss_bytes": 7675904,
+        "pid": 40652
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 991.859375,
+        "create_time": 1793880032.6939187,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2570776576,
+        "parent_pid_at_discovery": 39584,
+        "peak_rss_bytes": 2583986176,
+        "pid": 30456
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 1067.734375,
+      "host_cpu_seconds": 75.84375,
+      "observed_tree_cpu_seconds": 991.890625,
+      "peak_rss_bytes": 2596732928,
+      "wall_seconds": 182.18204829999013
+    }
+  },
+  "log_sha256": "7bfd5293d36ac7484e3ac9fab46de8c01a85873a81d53e7bbaf160f11e43eb58",
+  "module": "evaluate",
+  "name": "selection-rollback",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  }
+}

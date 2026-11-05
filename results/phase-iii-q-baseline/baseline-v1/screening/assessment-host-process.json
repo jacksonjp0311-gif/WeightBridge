@@ -1,0 +1,181 @@
+{
+  "aggregate_lifetime_peak_limit_bytes": 155692564480,
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 15,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793876514.1498597,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 5083136,
+        "parent_pid_at_discovery": 49612,
+        "peak_rss_bytes": 5083136,
+        "pid": 45124
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793876514.1662116,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7782400,
+        "parent_pid_at_discovery": 45124,
+        "peak_rss_bytes": 7782400,
+        "pid": 59212
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 3.609375,
+        "create_time": 1793876514.2154007,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 48672768,
+        "parent_pid_at_discovery": 45124,
+        "peak_rss_bytes": 51486720,
+        "pid": 37300
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793876515.5154457,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5070848,
+        "pid": 51960
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 660.9375,
+        "create_time": 1793876515.5408263,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2570432512,
+        "parent_pid_at_discovery": 51960,
+        "peak_rss_bytes": 2590089216,
+        "pid": 7032
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.0,
+        "create_time": 1793876641.6702616,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5070848,
+        "pid": 39344
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 1066.75,
+        "create_time": 1793876641.6946871,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2580365312,
+        "parent_pid_at_discovery": 39344,
+        "peak_rss_bytes": 2584678400,
+        "pid": 50236
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793876836.6031308,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4993024,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5079040,
+        "pid": 31452
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 771.015625,
+        "create_time": 1793876836.628556,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2601488384,
+        "parent_pid_at_discovery": 31452,
+        "peak_rss_bytes": 2609684480,
+        "pid": 26628
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793876991.9590693,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4988928,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5074944,
+        "pid": 28692
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 1231.90625,
+        "create_time": 1793876991.9857473,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2604785664,
+        "parent_pid_at_discovery": 28692,
+        "peak_rss_bytes": 2623205376,
+        "pid": 7240
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793877225.6416285,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4997120,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5083136,
+        "pid": 41432
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 772.828125,
+        "create_time": 1793877225.6673505,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2620878848,
+        "parent_pid_at_discovery": 41432,
+        "peak_rss_bytes": 2624258048,
+        "pid": 24408
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793877381.662726,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4993024,
+        "parent_pid_at_discovery": 37300,
+        "peak_rss_bytes": 5079040,
+        "pid": 24852
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 1242.015625,
+        "create_time": 1793877381.68861,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2606620672,
+        "parent_pid_at_discovery": 24852,
+        "peak_rss_bytes": 2637295616,
+        "pid": 31468
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 6475.390625,
+      "host_cpu_seconds": 726.109375,
+      "observed_tree_cpu_seconds": 5749.28125,
+      "peak_rss_bytes": 15764021248,
+      "wall_seconds": 1103.538988800021
+    }
+  },
+  "schema": "weightbridge.supervised_baseline.assessment_process_tree.v1",
+  "scope": "The aggregate memory statistic sums lifetime peaks of sequential processes; worker measurements are the physical per-process peaks.",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  },
+  "worker_memory_budget_bytes": 25769803776
+}

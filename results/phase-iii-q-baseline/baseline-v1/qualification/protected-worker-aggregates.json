@@ -1,0 +1,455 @@
+{
+  "enclosing_independent_process_tree_resources": {
+    "cpu_accounting_complete_for_observed_processes": true,
+    "cpu_seconds": 8577.625,
+    "host_cpu_seconds": 983.78125,
+    "observed_tree_cpu_seconds": 7593.84375,
+    "peak_rss_bytes": 20752056320,
+    "wall_seconds": 1413.8628889999818
+  },
+  "independent_result_sha256": "d00a244d969acbc76e352793a919211dd6aa8cbe10d4cf5481c30481ac46fd9d",
+  "outcomes": {
+    "hidden": {
+      "comparisons": 64,
+      "complete_families": [
+        0,
+        32
+      ],
+      "completion_stop_counts": [
+        {
+          "token_budget": 256
+        },
+        {
+          "token_budget": 256
+        }
+      ],
+      "correct_responses": [
+        26,
+        256
+      ],
+      "families": 32,
+      "lost_valid": 0,
+      "paired_worker_batched_decode_steps": 1024,
+      "paired_worker_cpu_seconds": 1974.421875,
+      "paired_worker_wall_seconds": 351.05677739996463,
+      "passed": true,
+      "presentations": 256,
+      "prohibited_regressions": 0,
+      "strict_comparisons": [
+        0,
+        64
+      ],
+      "valid_completed": [
+        256,
+        256
+      ]
+    },
+    "preservation-validation": {
+      "comparisons": 0,
+      "complete_families": [
+        0,
+        0
+      ],
+      "completion_stop_counts": [
+        {
+          "token_budget": 320
+        },
+        {
+          "token_budget": 320
+        }
+      ],
+      "correct_responses": [
+        320,
+        320
+      ],
+      "families": 0,
+      "lost_valid": 0,
+      "paired_worker_batched_decode_steps": 1280,
+      "paired_worker_cpu_seconds": 1916.984375,
+      "paired_worker_wall_seconds": 343.17495889996644,
+      "passed": true,
+      "presentations": 320,
+      "prohibited_regressions": 0,
+      "strict_comparisons": [
+        0,
+        0
+      ],
+      "valid_completed": [
+        320,
+        320
+      ]
+    },
+    "selection": {
+      "comparisons": 64,
+      "complete_families": [
+        0,
+        32
+      ],
+      "completion_stop_counts": [
+        {
+          "token_budget": 256
+        },
+        {
+          "token_budget": 256
+        }
+      ],
+      "correct_responses": [
+        31,
+        256
+      ],
+      "families": 32,
+      "lost_valid": 0,
+      "paired_worker_batched_decode_steps": 1024,
+      "paired_worker_cpu_seconds": 1898.828125,
+      "paired_worker_wall_seconds": 338.4452638999792,
+      "passed": true,
+      "presentations": 256,
+      "prohibited_regressions": 0,
+      "strict_comparisons": [
+        0,
+        64
+      ],
+      "valid_completed": [
+        256,
+        256
+      ]
+    }
+  },
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "protected_worker_totals": {
+    "batched_decode_steps": 3328,
+    "decode_termination": {
+      "token_budget": 1664
+    },
+    "generate_batches": 208,
+    "generated_presentations": 1664,
+    "maximum_worker_rss_bytes": 2585534464,
+    "worker_cpu_seconds": 5790.234375,
+    "worker_wall_seconds": 1032.6770001999103
+  },
+  "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "representation_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+  "schema": "weightbridge.supervised_baseline.protected_worker_aggregates.v1",
+  "scope": "Post-hoc summaries and resource counters only. Worker-body totals are nested in the enclosing process tree and must not be added to it.",
+  "through_independent_evaluation": {
+    "elapsed_component_wall_seconds": 28569.290297100088,
+    "known_cpu_lower_bound_seconds": 42020.828125,
+    "maximum_reported_resource_scope_bytes": 20752056320,
+    "scope": "Smoke, failed and surviving training attempts, screening, adapter replay, merge, and independent evaluation. Includes interruption elapsed time. Each process tree counted once. Memory components include summed lifetime peaks, not simultaneous RSS. Reconstruction and tests excluded.",
+    "total_exact_cpu_seconds": null
+  },
+  "workers": {
+    "hidden": {
+      "merged": {
+        "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+        "decode_work": {
+          "batched_decode_steps": 512,
+          "cpu_seconds": 971.84375,
+          "generate_batches": 32,
+          "generated_examples": 256,
+          "padded_prompt_token_positions": 21200,
+          "peak_rss_bytes": 2578599936,
+          "wall_seconds": 164.9044788000174
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 981.203125,
+          "peak_rss_bytes": 2578599936,
+          "wall_seconds": 174.5690850999672
+        },
+        "roster_sha256": "b8c2b664cfa1b0dc4bdbc72755b3b46b26ee07bfcb733e64078ba3d6abe9ea87",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        },
+        "worker_receipt_sha256": "99b532cd59cb47989abdb2d382d79ce71ec0c963f738849f201a6a0fdc06369d"
+      },
+      "parent": {
+        "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "decode_work": {
+          "batched_decode_steps": 512,
+          "cpu_seconds": 983.9375,
+          "generate_batches": 32,
+          "generated_examples": 256,
+          "padded_prompt_token_positions": 21200,
+          "peak_rss_bytes": 2585534464,
+          "wall_seconds": 166.9538418999873
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 993.21875,
+          "peak_rss_bytes": 2585534464,
+          "wall_seconds": 176.48769229999743
+        },
+        "roster_sha256": "b8c2b664cfa1b0dc4bdbc72755b3b46b26ee07bfcb733e64078ba3d6abe9ea87",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "completed_first_lines": 256,
+          "correct": 26,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 0,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 26,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        },
+        "worker_receipt_sha256": "add074b40ba3492cd27498d0562330d5beb502f5f007b6d0cb69fae046512e89"
+      }
+    },
+    "preservation-validation": {
+      "merged": {
+        "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+        "decode_work": {
+          "batched_decode_steps": 640,
+          "cpu_seconds": 948.015625,
+          "generate_batches": 40,
+          "generated_examples": 320,
+          "padded_prompt_token_positions": 21312,
+          "peak_rss_bytes": 2573340672,
+          "wall_seconds": 161.70377680001548
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 957.484375,
+          "peak_rss_bytes": 2573340672,
+          "wall_seconds": 171.4867293999996
+        },
+        "roster_sha256": "4b56876c8266a74606b3d656809c307fa5efa5d74c29c81772dc567faf05d1b7",
+        "summary": {
+          "comparisons": 0,
+          "complete_families": 0,
+          "completed_first_lines": 320,
+          "correct": 320,
+          "decode_termination": {
+            "token_budget": 320
+          },
+          "families": 0,
+          "groups": {
+            "copy": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-add": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-successor": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "mixed-sign": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "positive-far": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            }
+          },
+          "presentations": 320,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 320
+        },
+        "worker_receipt_sha256": "d24c08c3069b447d8bff382fb8f2d1ef006e7a41fb526600a0de87fb05b33ea0"
+      },
+      "parent": {
+        "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "decode_work": {
+          "batched_decode_steps": 640,
+          "cpu_seconds": 950.078125,
+          "generate_batches": 40,
+          "generated_examples": 320,
+          "padded_prompt_token_positions": 21312,
+          "peak_rss_bytes": 2577375232,
+          "wall_seconds": 162.14114149997476
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 959.5,
+          "peak_rss_bytes": 2577375232,
+          "wall_seconds": 171.68822949996684
+        },
+        "roster_sha256": "4b56876c8266a74606b3d656809c307fa5efa5d74c29c81772dc567faf05d1b7",
+        "summary": {
+          "comparisons": 0,
+          "complete_families": 0,
+          "completed_first_lines": 320,
+          "correct": 320,
+          "decode_termination": {
+            "token_budget": 320
+          },
+          "families": 0,
+          "groups": {
+            "copy": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-add": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-successor": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "mixed-sign": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "positive-far": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            }
+          },
+          "presentations": 320,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 320
+        },
+        "worker_receipt_sha256": "2e89cc21562e8163532c7b6dbbeedb74aa7a699be33b0526c26feeb8c7ab7b9b"
+      }
+    },
+    "selection": {
+      "merged": {
+        "checkpoint_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+        "decode_work": {
+          "batched_decode_steps": 512,
+          "cpu_seconds": 964.796875,
+          "generate_batches": 32,
+          "generated_examples": 256,
+          "padded_prompt_token_positions": 21152,
+          "peak_rss_bytes": 2581061632,
+          "wall_seconds": 163.7312431000173
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 974.25,
+          "peak_rss_bytes": 2581061632,
+          "wall_seconds": 173.5081439000205
+        },
+        "roster_sha256": "3e69a62c643ce9c525703a508fe4f47e20373a4314c25c979f1e046f9dbdb841",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        },
+        "worker_receipt_sha256": "e4eaf34da0eb92f5a4768fbe1d164f34bdff34e7efdcd413ea08341a1b5ec037"
+      },
+      "parent": {
+        "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+        "decode_work": {
+          "batched_decode_steps": 512,
+          "cpu_seconds": 915.203125,
+          "generate_batches": 32,
+          "generated_examples": 256,
+          "padded_prompt_token_positions": 21152,
+          "peak_rss_bytes": 2582847488,
+          "wall_seconds": 155.47430090000853
+        },
+        "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+        "representation": "stored_checkpoint",
+        "resources": {
+          "cpu_seconds": 924.578125,
+          "peak_rss_bytes": 2582847488,
+          "wall_seconds": 164.93711999995867
+        },
+        "roster_sha256": "3e69a62c643ce9c525703a508fe4f47e20373a4314c25c979f1e046f9dbdb841",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "completed_first_lines": 256,
+          "correct": 31,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 30,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        },
+        "worker_receipt_sha256": "93d8d779498b6c29c4a8b278b058b42720097c172fcad3c82ae64045840c7dc0"
+      }
+    }
+  }
+}

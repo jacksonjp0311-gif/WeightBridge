@@ -1,0 +1,81 @@
+{
+  "addendum_sha256": "5cff670de0c260717cd2b4d47b172b5d88860e21bb1016db63b9c0b1bf97c8b9",
+  "additional_training_authority": false,
+  "authorization_sha256": "6f9bc1466743a595c08d3294d319d3f394c370ec4fc4f876d23ecc3d596866ba",
+  "bundle_sha256": "2e4fa662145316155607b448ec4d1b94d9b42de7f2a7b8005919df25e3299d86",
+  "earlier_pretraining_failure": {
+    "log_sha256": "f9b2c0be1447b8a553b0a59a311c9ef0ea15bdbc729f48c981b99e1b2021c4cd",
+    "process_receipt_sha256": "17f54f901f47adea312eda724ed486b1c77d43a9e19ee9c80f504838cd4c6ea3",
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 4.484375,
+      "host_cpu_seconds": 1.296875,
+      "observed_tree_cpu_seconds": 3.1875,
+      "peak_rss_bytes": 230248448,
+      "wall_seconds": 3.516435099998489
+    },
+    "status": "PRETRAINING_PROCESS_FAILURE"
+  },
+  "eligible_checkpoints": [
+    "run-1-step-0064",
+    "run-1-step-0128"
+  ],
+  "frozen_assessor_sha256": "73a8944d424f1d585b5288ee1aab379cfd34523f5f7cb6f69afee8be9edd4025",
+  "host_assessor_sha256": "ce24f1d3c9831cccae88c738c74fb8275f574c30884e5a2d657913a3598108fc",
+  "interrupted_run": {
+    "attempt_directory": "run-0-retry1",
+    "candidate_outcomes": null,
+    "completed_steps": 17,
+    "last_durable_counts": {
+      "answer_tokens": 2328,
+      "backward_calls": 68,
+      "examples_seen": 272,
+      "forward_calls": 68,
+      "input_tokens": 23087,
+      "optimizer_steps": 17,
+      "padded_input_token_positions": 25096
+    },
+    "log_sha256": "18e39b4cd19ca5d3333d039b557afb0f31d142bc947c126a3b1a4a507f010e99",
+    "process_receipt_sha256": "38aaf326cabbf8ffbd7c13191d7f8cfc9163c2e0110c24e054e84f1f92bce5e1",
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 3054.625,
+      "host_cpu_seconds": 208.03125,
+      "observed_tree_cpu_seconds": 2846.59375,
+      "peak_rss_bytes": 7160557568,
+      "wall_seconds": 22020.967451200006
+    },
+    "run_index": 0,
+    "started_sha256": "c638906b376dff29ff408bbdc10850a8c41def761058ba7acdf967c3a5c668e1",
+    "status": "WALL_BUDGET_HOLD",
+    "step_sha256": {
+      "0001.json": "cdbf79d81ca5f853ab59297a5ae31a9c390af437215dd2c99b55b8407855f3d2",
+      "0002.json": "ed7f3840262a1a2aa2bb063406d6e09e17c27920e45dbdd8e1b63468b0ef560b",
+      "0003.json": "48021ce3a1795312e39639a63300df24ea0cea5dfb6397efdf8cbabd253ab9d7",
+      "0004.json": "27880212e265bf5b2ebf68249d57af4cfc9001c518791cbe4735e67c2ddaea2f",
+      "0005.json": "b07d1a546e39349801647167c198b70b663c57940e1b731e667fc645d2ea7adb",
+      "0006.json": "1385540760fc7f08366c57d5c7c45f8a91d663a9acb337c4cd7346f7f24f9140",
+      "0007.json": "3189854e9195d1e5de6b4defe38ce80af72647858b035210b7360301348acb52",
+      "0008.json": "ed537ad7ec08e913543833e4d44eb1c8a3e2181b028d5f7641f7c0ab4f183cad",
+      "0009.json": "5abfb20d1499337f273fd0a0e0b1a8383d063102a7621356f716756ffea371c4",
+      "0010.json": "51f27d1e16596eaf471f058f9f169ebc6ed4d1f4887961f8af1f3b287ef65750",
+      "0011.json": "dd4d8151eaccff35b76089891f4d5315b0def123f8db3cc9a321a7949c5a474f",
+      "0012.json": "2700ee41b37543f76900a3f24ad3c7ec95b808e39e8b38b8c0e9eb43f0bbbedd",
+      "0013.json": "e1d8a02936f934437cf1b28044e6c0cfb8dbb3189113cf2b34b7d86719123e38",
+      "0014.json": "fd5fa613599243620b0cdff84302fe925b82849868aae2a1388807dcb99c27eb",
+      "0015.json": "1432fd329d585abfd98d63ea2f7823b98b0ec4a2d67942e7c91ae2c1988d8c9c",
+      "0016.json": "1e21d21291e33bfbb562ef23020d29f38ff2a611a25fc8f45dcc027ffd955b38",
+      "0017.json": "ba59c1d1aa345d01314195e31f4eeeff8d43124d4404a0e9d546e83e872d4dc3"
+    }
+  },
+  "learning_rate_comparison": null,
+  "lineage_authority": false,
+  "material_manifest_sha256": "42d340dd49a5acbba37cbfdb448a7d644ee6aeaca4ede9a4b1b3a472f54f42db",
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "production_authority": false,
+  "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "schema": "weightbridge.supervised_baseline.resource_assessment_binding.v1",
+  "smoke_gate_sha256": "3c8ca72f3d832151e2108cc6199ea5d2b880b03a9dc6853acb7f98ca19dbdb9b",
+  "surviving_process_sha256": "70e26e2d0d3ddc2e3eb69fa011e73ee3a9ed1b91d0038ca594ddbdef545ac513",
+  "surviving_run_index": 1
+}

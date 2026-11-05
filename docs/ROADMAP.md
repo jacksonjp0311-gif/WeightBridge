@@ -169,11 +169,16 @@ is silently included in the completed trial. [Phase III-P](PHASE_III_P.md)
 
 ### Phase III-Q baseline supersedes the unrun column proposal
 
-The operator has replaced that proposed column search with a conventional
-supervised LoRA baseline. The column experiment remains unrun. The new study
-uses a separate frozen-base training policy, broad text-only adapters, complete
-answer supervision and unchanged strict behavioral preservation. It will
-first test pipeline fit, then fresh transfer, merged BF16 persistence and the
-independent gates. A failed bounded run will be classified by training,
-transfer, preservation, merge or resource evidence rather than declared a
-general learning impossibility. [Phase III-Q baseline](PHASE_III_Q_BASELINE.md)
+The operator replaced that proposed column search with a conventional
+supervised LoRA baseline. The column experiment remains unrun. The completed
+high-rate recipe passed practice, development, preservation, independent
+selection, sealed verification, exact BF16 reconstruction and rollback.
+The low-rate arm was interrupted, so the learning-rate comparison is
+unmeasured. No model was deployed or admitted to lineage.
+
+Next: preregister a replication of the winning recipe on new training and
+evaluation families. If the same complete-family improvement and zero-loss
+preservation repeat, vary one capacity factor at a time: supervision volume,
+module coverage or rank. Sequential learning remains untested. The baseline
+does not establish that a restricted direct edit can match it.
+[Phase III-Q baseline](PHASE_III_Q_BASELINE.md)

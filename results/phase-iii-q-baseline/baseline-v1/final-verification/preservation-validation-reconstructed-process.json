@@ -1,0 +1,60 @@
+{
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 3,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.0625,
+        "create_time": 1793879433.5071845,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 5058560,
+        "parent_pid_at_discovery": 15676,
+        "peak_rss_bytes": 5083136,
+        "pid": 3888
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.0625,
+        "create_time": 1793879433.5243511,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7675904,
+        "parent_pid_at_discovery": 3888,
+        "peak_rss_bytes": 7680000,
+        "pid": 41396
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 1130.703125,
+        "create_time": 1793879433.5742178,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2573242368,
+        "parent_pid_at_discovery": 3888,
+        "peak_rss_bytes": 2574802944,
+        "pid": 28152
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 1221.703125,
+      "host_cpu_seconds": 90.875,
+      "observed_tree_cpu_seconds": 1130.828125,
+      "peak_rss_bytes": 2587566080,
+      "wall_seconds": 206.3917220000294
+    }
+  },
+  "log_sha256": "cf58228b32105d14293096c7b81f618afdba86482673e685022769009843f249",
+  "module": "evaluate",
+  "name": "preservation-validation-reconstructed",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  }
+}
