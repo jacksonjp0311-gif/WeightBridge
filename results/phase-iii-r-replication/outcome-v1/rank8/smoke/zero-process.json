@@ -1,0 +1,51 @@
+{
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 3,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793895488.1856723,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 4993024,
+        "parent_pid_at_discovery": 4712,
+        "peak_rss_bytes": 5079040,
+        "pid": 54644
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793895488.2017887,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7663616,
+        "parent_pid_at_discovery": 54644,
+        "peak_rss_bytes": 7667712,
+        "pid": 63944
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 303.015625,
+        "create_time": 1793895488.2507868,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2613956608,
+        "parent_pid_at_discovery": 54644,
+        "peak_rss_bytes": 2621878272,
+        "pid": 29780
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 332.65625,
+      "host_cpu_seconds": 29.578125,
+      "observed_tree_cpu_seconds": 303.078125,
+      "peak_rss_bytes": 2634625024,
+      "wall_seconds": 76.01186379999854
+    }
+  },
+  "log_sha256": "6b7408ac4420fd8b62d0d3cfc62709e32a96cd993e2fad5d81c2bb20ae3503b6",
+  "worker": "zero"
+}

@@ -1,0 +1,497 @@
+{
+  "adapter_files": {
+    "adapter.safetensors": "798ed00453e94e20e6dcd69a9899ff9d6acd3d9b584a4494822c444d500ad0c4",
+    "optimizer.pt": "ebf3cd2b464a16bafe329d82b05902e9d38d7bfc95eefd664e5de2309b890de9",
+    "receipt.json": "b2940a52b0d8697d8cec7493dab0c8e15bddf1baed267ac7ecd195b5e3b1372f",
+    "recovery.json": "05c47d1ee2afa1c3a43c6c859d127c05b39bf93c224d844f3297c175d49ae59c"
+  },
+  "adapter_sha256": "752ec310264c8c1c578d13feb2a59406a1d24364d79a1e92e2720af60402af8b",
+  "development_gate": {
+    "candidate": {
+      "comparisons": 64,
+      "complete_families": 32,
+      "complete_family_ids": [
+        "baseline-decimal/development/target/0000",
+        "baseline-decimal/development/target/0001",
+        "baseline-decimal/development/target/0002",
+        "baseline-decimal/development/target/0003",
+        "baseline-decimal/development/target/0004",
+        "baseline-decimal/development/target/0005",
+        "baseline-decimal/development/target/0006",
+        "baseline-decimal/development/target/0007",
+        "baseline-decimal/development/target/0008",
+        "baseline-decimal/development/target/0009",
+        "baseline-decimal/development/target/0010",
+        "baseline-decimal/development/target/0011",
+        "baseline-decimal/development/target/0012",
+        "baseline-decimal/development/target/0013",
+        "baseline-decimal/development/target/0014",
+        "baseline-decimal/development/target/0015",
+        "baseline-decimal/development/target/0016",
+        "baseline-decimal/development/target/0017",
+        "baseline-decimal/development/target/0018",
+        "baseline-decimal/development/target/0019",
+        "baseline-decimal/development/target/0020",
+        "baseline-decimal/development/target/0021",
+        "baseline-decimal/development/target/0022",
+        "baseline-decimal/development/target/0023",
+        "baseline-decimal/development/target/0024",
+        "baseline-decimal/development/target/0025",
+        "baseline-decimal/development/target/0026",
+        "baseline-decimal/development/target/0027",
+        "baseline-decimal/development/target/0028",
+        "baseline-decimal/development/target/0029",
+        "baseline-decimal/development/target/0030",
+        "baseline-decimal/development/target/0031"
+      ],
+      "completed_first_lines": 336,
+      "correct": 336,
+      "decode_termination": {
+        "token_budget": 336
+      },
+      "families": 32,
+      "groups": {
+        "copy": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-add": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-successor": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "mixed-sign": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "negative-close": {
+          "correct": 128,
+          "presentations": 128,
+          "valid": 128
+        },
+        "negative-far": {
+          "correct": 128,
+          "presentations": 128,
+          "valid": 128
+        },
+        "positive-far": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        }
+      },
+      "presentations": 336,
+      "strict_comparison_ids": [
+        "baseline-decimal/development/target/0000/variant-0",
+        "baseline-decimal/development/target/0000/variant-1",
+        "baseline-decimal/development/target/0001/variant-0",
+        "baseline-decimal/development/target/0001/variant-1",
+        "baseline-decimal/development/target/0002/variant-0",
+        "baseline-decimal/development/target/0002/variant-1",
+        "baseline-decimal/development/target/0003/variant-0",
+        "baseline-decimal/development/target/0003/variant-1",
+        "baseline-decimal/development/target/0004/variant-0",
+        "baseline-decimal/development/target/0004/variant-1",
+        "baseline-decimal/development/target/0005/variant-0",
+        "baseline-decimal/development/target/0005/variant-1",
+        "baseline-decimal/development/target/0006/variant-0",
+        "baseline-decimal/development/target/0006/variant-1",
+        "baseline-decimal/development/target/0007/variant-0",
+        "baseline-decimal/development/target/0007/variant-1",
+        "baseline-decimal/development/target/0008/variant-0",
+        "baseline-decimal/development/target/0008/variant-1",
+        "baseline-decimal/development/target/0009/variant-0",
+        "baseline-decimal/development/target/0009/variant-1",
+        "baseline-decimal/development/target/0010/variant-0",
+        "baseline-decimal/development/target/0010/variant-1",
+        "baseline-decimal/development/target/0011/variant-0",
+        "baseline-decimal/development/target/0011/variant-1",
+        "baseline-decimal/development/target/0012/variant-0",
+        "baseline-decimal/development/target/0012/variant-1",
+        "baseline-decimal/development/target/0013/variant-0",
+        "baseline-decimal/development/target/0013/variant-1",
+        "baseline-decimal/development/target/0014/variant-0",
+        "baseline-decimal/development/target/0014/variant-1",
+        "baseline-decimal/development/target/0015/variant-0",
+        "baseline-decimal/development/target/0015/variant-1",
+        "baseline-decimal/development/target/0016/variant-0",
+        "baseline-decimal/development/target/0016/variant-1",
+        "baseline-decimal/development/target/0017/variant-0",
+        "baseline-decimal/development/target/0017/variant-1",
+        "baseline-decimal/development/target/0018/variant-0",
+        "baseline-decimal/development/target/0018/variant-1",
+        "baseline-decimal/development/target/0019/variant-0",
+        "baseline-decimal/development/target/0019/variant-1",
+        "baseline-decimal/development/target/0020/variant-0",
+        "baseline-decimal/development/target/0020/variant-1",
+        "baseline-decimal/development/target/0021/variant-0",
+        "baseline-decimal/development/target/0021/variant-1",
+        "baseline-decimal/development/target/0022/variant-0",
+        "baseline-decimal/development/target/0022/variant-1",
+        "baseline-decimal/development/target/0023/variant-0",
+        "baseline-decimal/development/target/0023/variant-1",
+        "baseline-decimal/development/target/0024/variant-0",
+        "baseline-decimal/development/target/0024/variant-1",
+        "baseline-decimal/development/target/0025/variant-0",
+        "baseline-decimal/development/target/0025/variant-1",
+        "baseline-decimal/development/target/0026/variant-0",
+        "baseline-decimal/development/target/0026/variant-1",
+        "baseline-decimal/development/target/0027/variant-0",
+        "baseline-decimal/development/target/0027/variant-1",
+        "baseline-decimal/development/target/0028/variant-0",
+        "baseline-decimal/development/target/0028/variant-1",
+        "baseline-decimal/development/target/0029/variant-0",
+        "baseline-decimal/development/target/0029/variant-1",
+        "baseline-decimal/development/target/0030/variant-0",
+        "baseline-decimal/development/target/0030/variant-1",
+        "baseline-decimal/development/target/0031/variant-0",
+        "baseline-decimal/development/target/0031/variant-1"
+      ],
+      "strict_comparisons": 64,
+      "valid_completed_first_lines": 336
+    },
+    "complete_family_gain": 32,
+    "correct_response_gain": 221,
+    "lost_valid_presentations": [],
+    "newly_complete_families": [
+      "baseline-decimal/development/target/0000",
+      "baseline-decimal/development/target/0001",
+      "baseline-decimal/development/target/0002",
+      "baseline-decimal/development/target/0003",
+      "baseline-decimal/development/target/0004",
+      "baseline-decimal/development/target/0005",
+      "baseline-decimal/development/target/0006",
+      "baseline-decimal/development/target/0007",
+      "baseline-decimal/development/target/0008",
+      "baseline-decimal/development/target/0009",
+      "baseline-decimal/development/target/0010",
+      "baseline-decimal/development/target/0011",
+      "baseline-decimal/development/target/0012",
+      "baseline-decimal/development/target/0013",
+      "baseline-decimal/development/target/0014",
+      "baseline-decimal/development/target/0015",
+      "baseline-decimal/development/target/0016",
+      "baseline-decimal/development/target/0017",
+      "baseline-decimal/development/target/0018",
+      "baseline-decimal/development/target/0019",
+      "baseline-decimal/development/target/0020",
+      "baseline-decimal/development/target/0021",
+      "baseline-decimal/development/target/0022",
+      "baseline-decimal/development/target/0023",
+      "baseline-decimal/development/target/0024",
+      "baseline-decimal/development/target/0025",
+      "baseline-decimal/development/target/0026",
+      "baseline-decimal/development/target/0027",
+      "baseline-decimal/development/target/0028",
+      "baseline-decimal/development/target/0029",
+      "baseline-decimal/development/target/0030",
+      "baseline-decimal/development/target/0031"
+    ],
+    "parent": {
+      "comparisons": 64,
+      "complete_families": 0,
+      "complete_family_ids": [],
+      "completed_first_lines": 336,
+      "correct": 115,
+      "decode_termination": {
+        "token_budget": 336
+      },
+      "families": 32,
+      "groups": {
+        "copy": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-add": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-successor": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "mixed-sign": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "negative-close": {
+          "correct": 1,
+          "presentations": 128,
+          "valid": 128
+        },
+        "negative-far": {
+          "correct": 34,
+          "presentations": 128,
+          "valid": 128
+        },
+        "positive-far": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        }
+      },
+      "presentations": 336,
+      "strict_comparison_ids": [],
+      "strict_comparisons": 0,
+      "valid_completed_first_lines": 336
+    },
+    "passed": true,
+    "prohibited_regressions": [],
+    "repeatable_comparisons_corrected": [
+      "baseline-decimal/development/target/0000/variant-0",
+      "baseline-decimal/development/target/0000/variant-1",
+      "baseline-decimal/development/target/0001/variant-0",
+      "baseline-decimal/development/target/0001/variant-1",
+      "baseline-decimal/development/target/0002/variant-0",
+      "baseline-decimal/development/target/0002/variant-1",
+      "baseline-decimal/development/target/0004/variant-0",
+      "baseline-decimal/development/target/0004/variant-1",
+      "baseline-decimal/development/target/0006/variant-0",
+      "baseline-decimal/development/target/0006/variant-1",
+      "baseline-decimal/development/target/0008/variant-0",
+      "baseline-decimal/development/target/0008/variant-1",
+      "baseline-decimal/development/target/0009/variant-0",
+      "baseline-decimal/development/target/0010/variant-0",
+      "baseline-decimal/development/target/0010/variant-1",
+      "baseline-decimal/development/target/0012/variant-0",
+      "baseline-decimal/development/target/0012/variant-1",
+      "baseline-decimal/development/target/0014/variant-0",
+      "baseline-decimal/development/target/0016/variant-0",
+      "baseline-decimal/development/target/0016/variant-1",
+      "baseline-decimal/development/target/0018/variant-0",
+      "baseline-decimal/development/target/0018/variant-1",
+      "baseline-decimal/development/target/0020/variant-0",
+      "baseline-decimal/development/target/0020/variant-1",
+      "baseline-decimal/development/target/0022/variant-0",
+      "baseline-decimal/development/target/0022/variant-1",
+      "baseline-decimal/development/target/0024/variant-0",
+      "baseline-decimal/development/target/0024/variant-1",
+      "baseline-decimal/development/target/0026/variant-0",
+      "baseline-decimal/development/target/0026/variant-1",
+      "baseline-decimal/development/target/0028/variant-0",
+      "baseline-decimal/development/target/0028/variant-1",
+      "baseline-decimal/development/target/0030/variant-0",
+      "baseline-decimal/development/target/0030/variant-1"
+    ],
+    "strict_comparison_gain": 64
+  },
+  "lineage_authority": false,
+  "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+  "practice_gate": {
+    "candidate": {
+      "comparisons": 32,
+      "complete_families": 16,
+      "complete_family_ids": [
+        "baseline-decimal/train/target/0000",
+        "baseline-decimal/train/target/0001",
+        "baseline-decimal/train/target/0002",
+        "baseline-decimal/train/target/0003",
+        "baseline-decimal/train/target/0004",
+        "baseline-decimal/train/target/0005",
+        "baseline-decimal/train/target/0006",
+        "baseline-decimal/train/target/0007",
+        "baseline-decimal/train/target/0008",
+        "baseline-decimal/train/target/0009",
+        "baseline-decimal/train/target/0010",
+        "baseline-decimal/train/target/0011",
+        "baseline-decimal/train/target/0012",
+        "baseline-decimal/train/target/0013",
+        "baseline-decimal/train/target/0014",
+        "baseline-decimal/train/target/0015"
+      ],
+      "completed_first_lines": 208,
+      "correct": 208,
+      "decode_termination": {
+        "token_budget": 208
+      },
+      "families": 16,
+      "groups": {
+        "copy": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-add": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-successor": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "mixed-sign": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "negative-close": {
+          "correct": 64,
+          "presentations": 64,
+          "valid": 64
+        },
+        "negative-far": {
+          "correct": 64,
+          "presentations": 64,
+          "valid": 64
+        },
+        "positive-far": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        }
+      },
+      "presentations": 208,
+      "strict_comparison_ids": [
+        "baseline-decimal/train/target/0000/variant-0",
+        "baseline-decimal/train/target/0000/variant-1",
+        "baseline-decimal/train/target/0001/variant-0",
+        "baseline-decimal/train/target/0001/variant-1",
+        "baseline-decimal/train/target/0002/variant-0",
+        "baseline-decimal/train/target/0002/variant-1",
+        "baseline-decimal/train/target/0003/variant-0",
+        "baseline-decimal/train/target/0003/variant-1",
+        "baseline-decimal/train/target/0004/variant-0",
+        "baseline-decimal/train/target/0004/variant-1",
+        "baseline-decimal/train/target/0005/variant-0",
+        "baseline-decimal/train/target/0005/variant-1",
+        "baseline-decimal/train/target/0006/variant-0",
+        "baseline-decimal/train/target/0006/variant-1",
+        "baseline-decimal/train/target/0007/variant-0",
+        "baseline-decimal/train/target/0007/variant-1",
+        "baseline-decimal/train/target/0008/variant-0",
+        "baseline-decimal/train/target/0008/variant-1",
+        "baseline-decimal/train/target/0009/variant-0",
+        "baseline-decimal/train/target/0009/variant-1",
+        "baseline-decimal/train/target/0010/variant-0",
+        "baseline-decimal/train/target/0010/variant-1",
+        "baseline-decimal/train/target/0011/variant-0",
+        "baseline-decimal/train/target/0011/variant-1",
+        "baseline-decimal/train/target/0012/variant-0",
+        "baseline-decimal/train/target/0012/variant-1",
+        "baseline-decimal/train/target/0013/variant-0",
+        "baseline-decimal/train/target/0013/variant-1",
+        "baseline-decimal/train/target/0014/variant-0",
+        "baseline-decimal/train/target/0014/variant-1",
+        "baseline-decimal/train/target/0015/variant-0",
+        "baseline-decimal/train/target/0015/variant-1"
+      ],
+      "strict_comparisons": 32,
+      "valid_completed_first_lines": 208
+    },
+    "complete_family_gain": 16,
+    "correct_response_gain": 115,
+    "lost_valid_presentations": [],
+    "newly_complete_families": [
+      "baseline-decimal/train/target/0000",
+      "baseline-decimal/train/target/0001",
+      "baseline-decimal/train/target/0002",
+      "baseline-decimal/train/target/0003",
+      "baseline-decimal/train/target/0004",
+      "baseline-decimal/train/target/0005",
+      "baseline-decimal/train/target/0006",
+      "baseline-decimal/train/target/0007",
+      "baseline-decimal/train/target/0008",
+      "baseline-decimal/train/target/0009",
+      "baseline-decimal/train/target/0010",
+      "baseline-decimal/train/target/0011",
+      "baseline-decimal/train/target/0012",
+      "baseline-decimal/train/target/0013",
+      "baseline-decimal/train/target/0014",
+      "baseline-decimal/train/target/0015"
+    ],
+    "parent": {
+      "comparisons": 32,
+      "complete_families": 0,
+      "complete_family_ids": [],
+      "completed_first_lines": 208,
+      "correct": 93,
+      "decode_termination": {
+        "token_budget": 208
+      },
+      "families": 16,
+      "groups": {
+        "copy": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-add": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "integer-successor": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "mixed-sign": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        },
+        "negative-close": {
+          "correct": 1,
+          "presentations": 64,
+          "valid": 64
+        },
+        "negative-far": {
+          "correct": 12,
+          "presentations": 64,
+          "valid": 64
+        },
+        "positive-far": {
+          "correct": 16,
+          "presentations": 16,
+          "valid": 16
+        }
+      },
+      "presentations": 208,
+      "strict_comparison_ids": [],
+      "strict_comparisons": 0,
+      "valid_completed_first_lines": 208
+    },
+    "passed": true,
+    "prohibited_regressions": [],
+    "repeatable_comparisons_corrected": [
+      "baseline-decimal/train/target/0000/variant-0",
+      "baseline-decimal/train/target/0000/variant-1",
+      "baseline-decimal/train/target/0001/variant-0",
+      "baseline-decimal/train/target/0001/variant-1",
+      "baseline-decimal/train/target/0002/variant-0",
+      "baseline-decimal/train/target/0004/variant-0",
+      "baseline-decimal/train/target/0004/variant-1",
+      "baseline-decimal/train/target/0006/variant-0",
+      "baseline-decimal/train/target/0006/variant-1",
+      "baseline-decimal/train/target/0007/variant-0",
+      "baseline-decimal/train/target/0008/variant-0",
+      "baseline-decimal/train/target/0008/variant-1",
+      "baseline-decimal/train/target/0010/variant-0",
+      "baseline-decimal/train/target/0010/variant-1",
+      "baseline-decimal/train/target/0011/variant-0",
+      "baseline-decimal/train/target/0011/variant-1",
+      "baseline-decimal/train/target/0012/variant-0",
+      "baseline-decimal/train/target/0012/variant-1",
+      "baseline-decimal/train/target/0013/variant-1",
+      "baseline-decimal/train/target/0014/variant-0",
+      "baseline-decimal/train/target/0014/variant-1"
+    ],
+    "strict_comparison_gain": 32
+  },
+  "production_authority": false,
+  "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+  "schema": "weightbridge.supervised_baseline.finalist.v1"
+}

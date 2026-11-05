@@ -1,0 +1,1751 @@
+{
+  "behavioral_series": {
+    "Bank A": [
+      {
+        "label": "Selection \u00b7 Parent",
+        "model": "Parent",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 256,
+          "correct": 34,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 33,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        }
+      },
+      {
+        "gate_passed": true,
+        "label": "Selection \u00b7 Rank 8",
+        "lost_correct": 0,
+        "lost_valid": 0,
+        "model": "Rank 8",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "complete_family_ids_count": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 64,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        }
+      },
+      {
+        "label": "Hidden \u00b7 Parent",
+        "model": "Parent",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 256,
+          "correct": 37,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 36,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        }
+      },
+      {
+        "gate_passed": true,
+        "label": "Hidden \u00b7 Rank 8",
+        "lost_correct": 0,
+        "lost_valid": 0,
+        "model": "Rank 8",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "complete_family_ids_count": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 64,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        }
+      }
+    ],
+    "Bank B": [],
+    "Development": [
+      {
+        "label": "Parent",
+        "model": "Parent",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 336,
+          "correct": 115,
+          "decode_termination": {
+            "token_budget": 336
+          },
+          "families": 32,
+          "groups": {
+            "copy": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-add": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-successor": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "mixed-sign": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 34,
+              "presentations": 128,
+              "valid": 128
+            },
+            "positive-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            }
+          },
+          "presentations": 336,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 336
+        }
+      },
+      {
+        "gate_passed": false,
+        "label": "Rank 8 \u00b7 step 64",
+        "lost_correct": 2,
+        "lost_valid": 1,
+        "model": "Rank 8",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 31,
+          "complete_family_ids_count": 31,
+          "completed_first_lines": 336,
+          "correct": 333,
+          "decode_termination": {
+            "token_budget": 336
+          },
+          "families": 32,
+          "groups": {
+            "copy": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-add": {
+              "correct": 14,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-successor": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "mixed-sign": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 127,
+              "presentations": 128,
+              "valid": 127
+            },
+            "positive-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            }
+          },
+          "presentations": 336,
+          "strict_comparison_ids_count": 63,
+          "strict_comparisons": 63,
+          "valid_completed_first_lines": 335
+        }
+      },
+      {
+        "gate_passed": true,
+        "label": "Rank 8 \u00b7 step 128",
+        "lost_correct": 0,
+        "lost_valid": 0,
+        "model": "Rank 8",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "complete_family_ids_count": 32,
+          "completed_first_lines": 336,
+          "correct": 336,
+          "decode_termination": {
+            "token_budget": 336
+          },
+          "families": 32,
+          "groups": {
+            "copy": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-add": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-successor": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "mixed-sign": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "positive-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            }
+          },
+          "presentations": 336,
+          "strict_comparison_ids_count": 64,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 336
+        }
+      },
+      {
+        "gate_passed": false,
+        "label": "Rank 4 \u00b7 step 64",
+        "lost_correct": 1,
+        "lost_valid": 1,
+        "model": "Rank 4",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 29,
+          "complete_family_ids_count": 29,
+          "completed_first_lines": 336,
+          "correct": 332,
+          "decode_termination": {
+            "token_budget": 336
+          },
+          "families": 32,
+          "groups": {
+            "copy": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-add": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-successor": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "mixed-sign": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-close": {
+              "correct": 127,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 125,
+              "presentations": 128,
+              "valid": 127
+            },
+            "positive-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            }
+          },
+          "presentations": 336,
+          "strict_comparison_ids_count": 61,
+          "strict_comparisons": 61,
+          "valid_completed_first_lines": 335
+        }
+      },
+      {
+        "gate_passed": false,
+        "label": "Rank 4 \u00b7 step 128",
+        "lost_correct": 1,
+        "lost_valid": 2,
+        "model": "Rank 4",
+        "summary": {
+          "comparisons": 64,
+          "complete_families": 31,
+          "complete_family_ids_count": 31,
+          "completed_first_lines": 336,
+          "correct": 334,
+          "decode_termination": {
+            "token_budget": 336
+          },
+          "families": 32,
+          "groups": {
+            "copy": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-add": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "integer-successor": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "mixed-sign": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 126,
+              "presentations": 128,
+              "valid": 126
+            },
+            "positive-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            }
+          },
+          "presentations": 336,
+          "strict_comparison_ids_count": 63,
+          "strict_comparisons": 63,
+          "valid_completed_first_lines": 334
+        }
+      }
+    ]
+  },
+  "decode_note": "Each behavioral series retains valid_completed_first_lines and decode_termination separately. A scored completed first line is not EOS termination.",
+  "figures": [
+    {
+      "file": "training-loss.png",
+      "sha256": "0647ef12481eb5318e754fd6f963f8eecd8bf06d81766c555d0adc1c30d006da"
+    },
+    {
+      "file": "behavioral-outcomes.png",
+      "sha256": "bb0c28981e80afd20405b1f0e03e44dc42a5dee32256a92f015ca178e94f9419"
+    },
+    {
+      "file": "finalist-efficiency.png",
+      "sha256": "84e05bf5a171e249148abe17a86e0acd09f572edea410e0d2cde9258ab7949ef"
+    }
+  ],
+  "input_sha256": {
+    "arm-summary.json": "d6a868144884fb21bfa9a9dbc035c784fbc7f02a6c0511d3c7a203a3b1c69245",
+    "export-manifest.json": "bea238b5c1355a0c82720502d932fc570b061f2a2473cc034ba19018d827f268",
+    "rank4/training/steps/0001.json": "23e350f7c3e372b3ed907a1a0281b3d3ac0d81695e3f764624da343a6813d73f",
+    "rank4/training/steps/0002.json": "c3f08ca138dbd3e32d57534b5a842677e8c283123d25c1c3bda523ce58af7d5b",
+    "rank4/training/steps/0003.json": "34433da42a073e3438a3c320059323aa5f8d7671776c25140d6b85aadf89ccc2",
+    "rank4/training/steps/0004.json": "ebb3dcd5615e444662b5c58828b3709cca9b72d9d7e9b77846660f1b915eb68b",
+    "rank4/training/steps/0005.json": "4ab92e3cdd47f5da2d9697dcb79dbf53b405694b0962f8caceba31fc52bf1114",
+    "rank4/training/steps/0006.json": "6029f366aa393815110136692a0cbb55322f747014545e004023b78d557622ff",
+    "rank4/training/steps/0007.json": "def682f1c89e865700c00889ef4b55a577151cbb3b14906bf8567f43a46718bf",
+    "rank4/training/steps/0008.json": "5577146b816c2eec3a354d4180fb61e16c58d03575d6dac5e8cd19264efeb668",
+    "rank4/training/steps/0009.json": "a014688a0dc6d73772333f5f30db6abdd57101d2b34c29889bcc0e3a4a4ffdfa",
+    "rank4/training/steps/0010.json": "883d68e9e8a451ac339033d9c96681ebcfd186efed591931b6f2369a4c501abb",
+    "rank4/training/steps/0011.json": "800984824aeeaa7895c510c1c1d845cdf39373e190e21fbc41eff1412ea2373e",
+    "rank4/training/steps/0012.json": "b08b87584c5079a5ba7e5085217d4fc352b2384c757dd640258c08f7e22f2c01",
+    "rank4/training/steps/0013.json": "a95ee2763cac62085574eabf73f5c57466be0724719b7d612df1c8f75c9e2342",
+    "rank4/training/steps/0014.json": "6de7a58c04f8ab6f1c81cb315a246170012a7d322bd2ea5a6e4af446b9d2fcbe",
+    "rank4/training/steps/0015.json": "a7f179e89efdc920caaaec717ed3c3991c53784686852b20ebf9ac5e616bc915",
+    "rank4/training/steps/0016.json": "0ad0dc256a66b8f1f95201c23742bc37d8109e81d0227fbbafc7a9b2a3bb7d1c",
+    "rank4/training/steps/0017.json": "69c4309d4c392a96bb1da4dcec963c910d60b1aa80d4ac7e3607a0567ee5d106",
+    "rank4/training/steps/0018.json": "3897dae7510359b03f20cecbf5e92698f18df9ed5db5f8659d19ed770d6c8b60",
+    "rank4/training/steps/0019.json": "3f65b64d3814b542651243e283c8dbab93054e6eab4b1f547fe629a013f97007",
+    "rank4/training/steps/0020.json": "c78895cb673db6fdbb680f02a85eee8ce151808fb9185a60b8e04a59406773e3",
+    "rank4/training/steps/0021.json": "06cd5b80f5c34e79efbf63d1bcaf36d1825d4ee7c086ca61f130ef60ab58aa94",
+    "rank4/training/steps/0022.json": "6bfc86ae9be71ebe37e10e6cf1ab9ca3ff48c137fc2a299bc3e2f15d67262327",
+    "rank4/training/steps/0023.json": "467abc67b081266f8c572b8114e4a7c72c40e667b9cb4a4138a654d8746db3e0",
+    "rank4/training/steps/0024.json": "4493fe208d7a146506521cd70204bb9b5afaea0018e9e55067694d7998e931f1",
+    "rank4/training/steps/0025.json": "f990b62b11c94e92287d1e7ab2c3eef296ad3bd071fa1f61104770e06814ee42",
+    "rank4/training/steps/0026.json": "d518d8550e2745f03a118dc93617753b4319e20404f01754a3f3868a252a8c02",
+    "rank4/training/steps/0027.json": "8a0156c40d913fd8ec7fdf39732b575c2e433fbe5593381995805b3b59dc0193",
+    "rank4/training/steps/0028.json": "f2b04e6c792942baa6ace63fba614fa00281ab26f3e1cb97da46afe9217cbc90",
+    "rank4/training/steps/0029.json": "88d25a193dc1b5048f2f1592d3cee8c0f7d976e77fd6c190c5d28bf3b8b666ce",
+    "rank4/training/steps/0030.json": "0417e74e27e01bdc3bfc2f7bb0503204f92bf2bd490a912af8b0cd9ae5499046",
+    "rank4/training/steps/0031.json": "0c4ab279d3e8f94e4bb8929fe2e40703a0b904a611b833d201aafd034e8543c8",
+    "rank4/training/steps/0032.json": "8de9be8f582b60094a8d35c6bf3acd11181fb2458f2198d0882a3ca9200dbfac",
+    "rank4/training/steps/0033.json": "5b8e6439b29b36458988a67e224af7439233ade812ce258f497826ef71cf3e33",
+    "rank4/training/steps/0034.json": "24d2af6a5eac50292e86e6b08e44ff8c84981ee0e192fa541304a15c35162fef",
+    "rank4/training/steps/0035.json": "9b8edf3172a015b8b742192b6c261a3a33efdbac10d7e177120d41371e8baaa3",
+    "rank4/training/steps/0036.json": "1a925d2b30055735508b13eab0d1256676359eaf81773d8128ce0568e0a8817c",
+    "rank4/training/steps/0037.json": "4a9bf7582c36a631a3bf98b5a3523abf066e0f2502d7e692712930e6309cfff8",
+    "rank4/training/steps/0038.json": "37e90dc1d1ea8387169d0a42e86c83bc39db90b9056db97555dd13b7f0a36c74",
+    "rank4/training/steps/0039.json": "2ae34c130f8584ad88d38bae1386864202d21e780a10c9fabc04a3a24bb03f02",
+    "rank4/training/steps/0040.json": "077b59f5231a48a7b86a2b7a856d441bd7297993abbb3dec7c863d807b93d82a",
+    "rank4/training/steps/0041.json": "a2384f79878a5d1d8ca5a3abc4a996329f58be60bee5c4af30f24d3784e8ed04",
+    "rank4/training/steps/0042.json": "3d0ad0b69569d39e77c1929240540464d043178a1154f9526f97c170ac5629aa",
+    "rank4/training/steps/0043.json": "dda796bdc9c25afd4e68c2c00b128a55720423e4a8a74621dd0994cadc20b1a1",
+    "rank4/training/steps/0044.json": "c9a8fab24a33dcf0463c24e74af18236b784d5273be64792a74a6b2bfcf00165",
+    "rank4/training/steps/0045.json": "6a702397d0fc38e825f514c4d2808143bdd0f67e8fa4e8d603b47a98222034f6",
+    "rank4/training/steps/0046.json": "16f81421cc054e29dddf0f9c8f6c5390b9125a023da86a1af1453ca4898f741e",
+    "rank4/training/steps/0047.json": "fc64c6bb807fe49e010fb01e9b16ff6b592487d00aa51cbf9df105ed30478c2b",
+    "rank4/training/steps/0048.json": "f9f0dc92c2c2a39e9696b61d7480ee17c5f5b2bba9687e0b25e045ed19cef999",
+    "rank4/training/steps/0049.json": "1b10f9e4403a30f508a22751449d4bf4c861fee16dc8579c09e55febb564007d",
+    "rank4/training/steps/0050.json": "4f005ceafe106e4db1791b9394f6e7a145f141753e2142ab97496c6c28ae347f",
+    "rank4/training/steps/0051.json": "86d080b0832df2ef3c2b14cbf622036edbe97ff54782fc68ee19434ab701eb85",
+    "rank4/training/steps/0052.json": "09ac23111fba583aba19b54e33346d2be4eefb3681f573ba3a7724267e51d0e4",
+    "rank4/training/steps/0053.json": "7f449420dc132b43c5eecbeabec07ee1d74fe4eeb99982d096bf9ed98c21a4e4",
+    "rank4/training/steps/0054.json": "19fa1cae965cfd222752afb2d1fb36c4ac80fbc324ec3052e51c1c2259f904e0",
+    "rank4/training/steps/0055.json": "3b0d5de761379108256934a336dd63e53557414f8dc1f43a56e559859af13825",
+    "rank4/training/steps/0056.json": "32da0ba23e5b43e795bca8a7c7a50c32c81191776d1af5a1ae054019e89282b0",
+    "rank4/training/steps/0057.json": "3ddad47fd3040244db1e63b39d46e8eb2d8e5f86def57c76c4e6aee89fd66bc2",
+    "rank4/training/steps/0058.json": "16161df4ef024fdd8da8169965f9520442d1aa5100b846bbf8c80363a021f67f",
+    "rank4/training/steps/0059.json": "222685775b2ecbc5092087fef451f418ce0000c20ccdbd9c0378c59e66f2761f",
+    "rank4/training/steps/0060.json": "275a0158d30f43615d35339e51777a899fafee6b222e46ab57db82a4ede62312",
+    "rank4/training/steps/0061.json": "652d37b126b6dc95ce2f63efee6f36f432085f4446c75c12daae5e88cbcc5259",
+    "rank4/training/steps/0062.json": "ccaa56a5e8ed5032e8a8321bcbd06af77644b8f119e55b053e95a194b6304d86",
+    "rank4/training/steps/0063.json": "f64958bf41e1a78a27db9d611e0bc898d74a6b3313a224fff6968e740d415e28",
+    "rank4/training/steps/0064.json": "72984052965b6697c33f0a43ad98eeff7d8cb7618d7d0644465105f60c773d36",
+    "rank4/training/steps/0065.json": "ea06e04e24c4840b7485750ef3218d62855ecd8a6a25f2ad20e810461b151177",
+    "rank4/training/steps/0066.json": "62ab1ac5d308f9225534991b07d5801be114c0e166c4be1885b78be829cbebf1",
+    "rank4/training/steps/0067.json": "0a49dd2a29100d4bf7bb83c09503f5b73e3b55f11e47964f43254df3afa7790a",
+    "rank4/training/steps/0068.json": "9faad6d0e944e066a020e150124d99485662a2967abacab0977b3a7e06c22704",
+    "rank4/training/steps/0069.json": "c260f59ec36c208f36575142bcfe8bcaa817259580466f66133fbd41c1a58ebd",
+    "rank4/training/steps/0070.json": "4447f473b07afc8f1bde5d14bc0afb088e7d33bc9e780ad0a7701e1d01fd7cba",
+    "rank4/training/steps/0071.json": "3c91b52761ecf8637117208af38decc5fde44ff91308b1b4bc5e311d38898d18",
+    "rank4/training/steps/0072.json": "da83c3c8a7f8414e5e415aca6fef6fc090a7391f61b2c9825399995171ddc661",
+    "rank4/training/steps/0073.json": "01de53499a6542d69f194f69dc1b99d38efa303800b887ca0f392cda575774cc",
+    "rank4/training/steps/0074.json": "b9c870f8ceb90eadc34b388249d4cf215ec134d0ca004ce094303d1ab320016d",
+    "rank4/training/steps/0075.json": "9b05d169f1d1736fc9764e55cb3a0b7c24820512527d223b15ed97df9ee3ccbc",
+    "rank4/training/steps/0076.json": "ddb3bb281852142fc4ab5be015b126018f00774ce3fffc17214080461a48e4d8",
+    "rank4/training/steps/0077.json": "5749399fe5cd04c1d3c0034a776e0067c95b038dc04d2f13a4e226d9d66e0e6a",
+    "rank4/training/steps/0078.json": "80c76e15f20cc729b691a34ebd4cc8a522f91206ed2f4041e7d4b08f99f21c68",
+    "rank4/training/steps/0079.json": "22fe428893bbf1eab1529b0a4b9a9d86129eed77ef748269880cfc81bb08adfb",
+    "rank4/training/steps/0080.json": "fae2d0fb1bc44a74301ecddabd1d77671fd87bf96f2fc5b88228a49f8a641485",
+    "rank4/training/steps/0081.json": "a185c1d0284a59af676d33b795a96ecc0354dd47674d7c54a413bfc17de1865c",
+    "rank4/training/steps/0082.json": "66a347f4d883343af745fda4d4483d3b5e8cf2ad4220755a9e6c5178f79a46e0",
+    "rank4/training/steps/0083.json": "279e51632585f2438b8efb2a819ca1b32445311e1d3d54a952b244625ff5e44f",
+    "rank4/training/steps/0084.json": "6c418ba25efe18cd34b79f686aa5f675c7a41c3e74a1761a3dfde565009e50dd",
+    "rank4/training/steps/0085.json": "18fc4906106a0c784cd724de12e4d0794cec3c46964b26297a1e105f5458034b",
+    "rank4/training/steps/0086.json": "1e8488b111ff32f7c24ab796483444ef4b738297f2e7916c275207dbea6211ee",
+    "rank4/training/steps/0087.json": "c4ea68c52aac92285ed145f86f2b3fe3af6f2dee8714d63efc4af1a2ab8da718",
+    "rank4/training/steps/0088.json": "5439b1b45ca531dc8dd77bf407732de5739eae9b0a18375c20e2f8e3da14d482",
+    "rank4/training/steps/0089.json": "50d8bd2db334c5467fe00ee689dec344b9be3d94e86ddad03b33f042fbcc8b0c",
+    "rank4/training/steps/0090.json": "81c4b323ec8a899e871a3daa57b7af169646ba2f1e0e9b00721af4a455c9be1b",
+    "rank4/training/steps/0091.json": "2703661ad2a241eaa62a5f2f7f3023a9349be821c0b6f59ff219e2385fe98160",
+    "rank4/training/steps/0092.json": "6ce53ff3fbd1b1b5ca221b0946f4352e1c43fa6a66307a67a95d2ab922ab3a60",
+    "rank4/training/steps/0093.json": "7d7eaefbc0b88ef82cdf02de4970debff5c8efcf325ea73f125bffbea4c074f3",
+    "rank4/training/steps/0094.json": "fe96457e8ee35128ba2314536044c660d807b93de1ccc3d2621611c4521c1913",
+    "rank4/training/steps/0095.json": "6b3db2099cdf054e6eba60e81bdccdd782ad9638672dcd1d781fc58b6289498c",
+    "rank4/training/steps/0096.json": "4894e0937768af9c0141d0b7b33c959fc167dd2d5f24d547ce1b85d4f18387b3",
+    "rank4/training/steps/0097.json": "29c0e7234ee7cdc9855ec96bda7d6c7defb593680d027cf8c848724ea8348515",
+    "rank4/training/steps/0098.json": "377b9a3511f250f95e26d1c5edee18deefcdcc3d1465979a6bbde769b9b21868",
+    "rank4/training/steps/0099.json": "907d06e27ac2ac97e44822fba87cf9f5205dcb97e25c5e5ccf744129dd4e9ed8",
+    "rank4/training/steps/0100.json": "40b305a03921a9f654e73038c59cf6c01ab282a252528286f91f44fd4084aa23",
+    "rank4/training/steps/0101.json": "81b1a6f1a4b7b0db51835bc9f56154e88c5ebee8c2cfa4d77de8a66401e53c29",
+    "rank4/training/steps/0102.json": "d09904efab4f8b7c4c609fa4887300037c38b739f1e85d59cb592613cdbd5386",
+    "rank4/training/steps/0103.json": "2ba038f034503faaf222b58694b006d18b7e10c7dde0b3cd2cd21b825816d105",
+    "rank4/training/steps/0104.json": "0f8036134d26898e07a0216f20ae7957bf3acde83d57a1d94688994ce741d9b3",
+    "rank4/training/steps/0105.json": "4e5a40ed2ac83cfcc66abdcc09dfd38471a831e8393501619d3f0dc26310c40e",
+    "rank4/training/steps/0106.json": "3b714a849906cde42d496bbeb23efa69a7a40c892212beaf0bf0e422324073c6",
+    "rank4/training/steps/0107.json": "72bd1658509b90999a86c73121aaffae581005c67d94b729c9b5feef19a2f0ad",
+    "rank4/training/steps/0108.json": "650d53b67b1ea24acb8b5f0e4460cdb02bc4879ed7e83c0c51955d2f0d668556",
+    "rank4/training/steps/0109.json": "ddaed6da85b35303f26b10b9675d1ff755acc5ece17e27c39f7f9de3ffb41e06",
+    "rank4/training/steps/0110.json": "46ac675b921446d86e33228c053bf738286632b5fac0e1c43cfb482b8f6926cc",
+    "rank4/training/steps/0111.json": "1c790bf78de82b8fd535d4ddb6546417895e855050a5cb6106a76c4ae3e9a14c",
+    "rank4/training/steps/0112.json": "9748001487e6a9042d3a929bb45dcce2a4e164ebd18b774f17c3288953cb0585",
+    "rank4/training/steps/0113.json": "589b3007d064294379433a8cbd32b5456bf2ffb9e2646da6a10654e11a58ca56",
+    "rank4/training/steps/0114.json": "bbe6b2c2fc80da323c2feed2ef81a6fa9bce5b4dd16a5dec403cc12722f47a72",
+    "rank4/training/steps/0115.json": "aeb32d232898e4cc95bad65263e0c0e0bb3bf31fd63b807d3dbb1635c852b806",
+    "rank4/training/steps/0116.json": "96c10d51f838a4004f99e9013e499ad55ebe08b5df1b99f4c351acd32cea7032",
+    "rank4/training/steps/0117.json": "a0fa10f15caab34cc684d5ddf16f34d6080468f25de5a6312b999418e4e0434b",
+    "rank4/training/steps/0118.json": "72df989e7dda73da6594aa0eef63aa6fb81b274eb426a770ef8cffa80a331984",
+    "rank4/training/steps/0119.json": "a71eff6d82aac0d8e6d0d16bdf922a1ed278c91b044b7289f66e2dca7f7ee543",
+    "rank4/training/steps/0120.json": "22f6f69a249fbb2c60b7374562ab4cbb35f1d0803d57a88b6eae09a3c6ffa0bd",
+    "rank4/training/steps/0121.json": "7ab92703c7787e73b2ea0c4747f90cf919b17759941d57de15607931ffd8ba66",
+    "rank4/training/steps/0122.json": "0cc5457a1e7f0954c31cf200da21e9f411f4a3dfade968f00af1684c88ba54ef",
+    "rank4/training/steps/0123.json": "69331cc8f588b5504fafbfcc1572b45fc92f0e2b786e868cc8774d0b53dc7525",
+    "rank4/training/steps/0124.json": "2a0fa913969115d9c296b2628bc6e6be2a5b6db9054c8a17daae5a5678b1db57",
+    "rank4/training/steps/0125.json": "4f57f680a3ba2314f056495f1a14e744d153b5eed0d4dfbccd9419b226e38b3d",
+    "rank4/training/steps/0126.json": "61911cd380411ae1f278dac4969db997a37180806266e5cc9f3d2b7a18f15579",
+    "rank4/training/steps/0127.json": "2997735e09d0136003c5dae3d7d82523b606501448801f0ccae497cf0f937c72",
+    "rank4/training/steps/0128.json": "c471a88fe5defb1756706df06a6e0df6c5d8dcde9a95e321297826c630774270",
+    "rank8/training/steps/0001.json": "c6a92f41970c4b848a0f5152d9ae0c33fd025c0d3619bdf03f47e743a35dfe02",
+    "rank8/training/steps/0002.json": "5f77611f816c073b9040f834e4c32be30b876dfa691755dd3d2f6693b1ddcd3a",
+    "rank8/training/steps/0003.json": "4d39b4fa714b43e0a4e90ab2753696f7d84074c7ba196a87711fe1945b449f0e",
+    "rank8/training/steps/0004.json": "cbf8e1adc2ded86de68fdcccda50e7e62b52b774cd1fba26711eba17ce8e70ba",
+    "rank8/training/steps/0005.json": "8ffdcd654168b0e69797371164c379a524b71daea2348c3e669ed53225c95d0e",
+    "rank8/training/steps/0006.json": "c388ea7e977bcdae440878e9f8268e6700971179a8ea0b858681068ef3778378",
+    "rank8/training/steps/0007.json": "94ac16ed60b1bedd3a6f7aa801b0affcb04b2892c331924a4fcfc96efa9aad0a",
+    "rank8/training/steps/0008.json": "dda0c19d7741caf3ebdb0b10659f4800162b7d8882dfb808eb98902e1fb84b2f",
+    "rank8/training/steps/0009.json": "bc94b822de94153fe4469ec5bbd8ed67674470e277abbeaf5aaa31af83c10caa",
+    "rank8/training/steps/0010.json": "548f9d58fc35985f66a15208c649ff04fef793d2ff6b69569f2fe0f0dd9035e9",
+    "rank8/training/steps/0011.json": "4f746a93e30c1c152c994774a06934611278473277a711c5026db33e7cdfec76",
+    "rank8/training/steps/0012.json": "19c283b5d9d71d02f46d6887e5c1dc8d7c66970ac084be5c8f6b1cc309378f77",
+    "rank8/training/steps/0013.json": "849dbccdf863dfff7e2206fd40aade7f240439673c44170c25dcb56ef5f55386",
+    "rank8/training/steps/0014.json": "71fd53881592b88727dc615793d65390de04767205205ffef5e4d45401db07d0",
+    "rank8/training/steps/0015.json": "29b4a63a8370df607c7afddaf43e0249bb947b935fab7fd34f7deb9dc35fd940",
+    "rank8/training/steps/0016.json": "982f00d7932cc49edd11f265903392e21cea0f04aafd1daae5088cb2d2085bd3",
+    "rank8/training/steps/0017.json": "4ad2f95f7d01a02207085619754eb90fde965086c05d425c0aa01559d2cb213a",
+    "rank8/training/steps/0018.json": "b936483eda39514701a86a8f67aeb738ebd038af299413fce97c046f51920eca",
+    "rank8/training/steps/0019.json": "d090fbfa4d7a246a7cbab07d1683995b306d40201a1b24f807f2226799030b3c",
+    "rank8/training/steps/0020.json": "b73c6ce8caad1562d521537dc404cc321ad064ab4fdbbe8ffe6d2814e4b44d91",
+    "rank8/training/steps/0021.json": "a949e737a0d8def42d130180a080b7e89b92a1f7c2802736b465aa2375fdd7c3",
+    "rank8/training/steps/0022.json": "811ca81d6daaa0da96251fd58207882074e0a632944817593e9759bffa16b06c",
+    "rank8/training/steps/0023.json": "7bc51ccc8e5616b55c1987f1c5590dbe74fb4a5303b3a5cb073bd9da55b77483",
+    "rank8/training/steps/0024.json": "19a4b0a744ade3e14098d9a93ee6ea322f8f6864094cce6e354209367a1c3b29",
+    "rank8/training/steps/0025.json": "bcea26d19f2f0d090856ed4874ad4bfcc9b18dfe0074092414cef5ce9fb7b293",
+    "rank8/training/steps/0026.json": "9dfa14e585051e8295a3aaac406dbf49bdbcb59c27894bbf3d210fa867b7978c",
+    "rank8/training/steps/0027.json": "7bb5310735bf632ae95b6788f9d735f4fd5ef313557be12f9ed9fc80f55c0df0",
+    "rank8/training/steps/0028.json": "dc5e74bf02e84a46bbff3f9659e15bbb410cdc57294aeeb2c1c4afa26483aa31",
+    "rank8/training/steps/0029.json": "22efe833ae66297e863da92d1f6fbc2c2ea31653cbbfa44bd6216ee6eb7d47a3",
+    "rank8/training/steps/0030.json": "b3144569cd1e3cc96bbc1881ca2da7c64ef3c6957cb98ac3b3890ee88d25f4e7",
+    "rank8/training/steps/0031.json": "972ebf27ea17db003039b74b8cc8ac477b179f34d6c66692bfb8efa41bb3ab48",
+    "rank8/training/steps/0032.json": "a4655d0d2967344cf6c25d1912f59c535dc0f657057167eb14d35a500642f8bb",
+    "rank8/training/steps/0033.json": "fe77f16fb6980aaa3cbdcba3182307500e10a67c454d8753e3357e3f491010bc",
+    "rank8/training/steps/0034.json": "9b79a6e3f6deb3da1676990526b6b4f73756d83548b77207383c0c493c80dc53",
+    "rank8/training/steps/0035.json": "c7716eb8344beb7dd3b37b94e4730f810249db17d09a93eb0beb94b60e1303ba",
+    "rank8/training/steps/0036.json": "51360ff04262a7d9880735574466dbae8d0fdb19b10f3bb7e0df7cd5d0be2005",
+    "rank8/training/steps/0037.json": "03f03082bf14f5be98541758b5003a0e360b81c80df78319371b98af9d404150",
+    "rank8/training/steps/0038.json": "199053481b17385181f5d1b60d7c503dd714e8a9b00deab014371cb8e2e4f1f0",
+    "rank8/training/steps/0039.json": "c6eb454f4ab7a2562cc45880ce322dda573cb40822ac2d4b0cfd49515516affa",
+    "rank8/training/steps/0040.json": "ce84490018911ddab2b59850e51a8c5eba427770acbf6c77c985fdcd023dbd26",
+    "rank8/training/steps/0041.json": "1e5ec877bf858347cd4a26083f1a461436ffd9abf1561fce85d06b141c12457d",
+    "rank8/training/steps/0042.json": "6f8e26a0961a5c4a6eafca15daf575d486070e8aeac188d59364f35ff0c3a5e8",
+    "rank8/training/steps/0043.json": "62660d3e9e9cd26def7ee97f835722b24c0228995356514786f8eaa1503614c9",
+    "rank8/training/steps/0044.json": "363c11bff60a8c28b246920fb69aafdd3c774542b2aecf903d1dbbe29a2c094a",
+    "rank8/training/steps/0045.json": "ffa0f86d75956528e04b33da61ea05a9b978b86db25426fd28d7722521fc848f",
+    "rank8/training/steps/0046.json": "d02ae779ea6b0d520edd503c99119713dbf054bf3a48adaa1beceac4ff7a6cea",
+    "rank8/training/steps/0047.json": "c7ce66cffdd4c610c29e7d2c8e63c8baa0792b91cf40d0d3f50515a7b4d728ed",
+    "rank8/training/steps/0048.json": "7ff1987719848810e715ee4c026da6aca40d127a75eb4a05b975ff5b68821ee1",
+    "rank8/training/steps/0049.json": "f7ca57189e561bcff39699f88eb180b5f36791e081d7083e909472dbdca20187",
+    "rank8/training/steps/0050.json": "bfdff6b5b47ad721eba42a9438d5a6d445955144d766ecf103dd8ae24d2af330",
+    "rank8/training/steps/0051.json": "b40187037de7f9ab9c3314d4f7e8756575bc3244d839e63f56e6235bbdeeae47",
+    "rank8/training/steps/0052.json": "1c4b7660bb51c4eb195b765e5e0d84354ff93d36e5f43486d2bd9b0bdf5f037f",
+    "rank8/training/steps/0053.json": "c0c26d59e4ceb4e0544005cfb1fcb98cc36253326e78bfa04c9ae31e61f53d14",
+    "rank8/training/steps/0054.json": "442db4d2079c86e6bbf6758c86adb148599abfaa55b2d2fa3f4ead187817c67b",
+    "rank8/training/steps/0055.json": "34715aa3f9442e47a4972c53d1bb4296c70daa793a1dd6b29323514342e991c4",
+    "rank8/training/steps/0056.json": "461ff6e61abb8a50707b02a606776d67036e3ef035f397d88ea53691f028e64c",
+    "rank8/training/steps/0057.json": "80fb67d3f7623f65f7b4ad507a65cd3822a4c5ccdd5d328d170f23cf6b08d4ab",
+    "rank8/training/steps/0058.json": "0de8bb1e5e2bb3f42862f36fe3857764576d5baeedde016737a241518eeed1fb",
+    "rank8/training/steps/0059.json": "c971cfe638e51edc1ec115424d9dbbbc11e993f114e2c74c432faa105ceea7be",
+    "rank8/training/steps/0060.json": "cecb41dd370c56e1cfb674d4d900e99261718bf77a519a6722c7580d851dffc6",
+    "rank8/training/steps/0061.json": "851e90fb5bfee3978a279f5d5bda25e0cafc4cb7e24eda6c112350c348ce1a34",
+    "rank8/training/steps/0062.json": "9f217364716a4b0cc03106b780c46060173a418bfcd521be39c7dace926ba0b7",
+    "rank8/training/steps/0063.json": "21f24d66cf883dfa9c8d8787041535c55322f0a219a946858ec01776ae8eb5ab",
+    "rank8/training/steps/0064.json": "c47420d3f2ebd8b0ed4e32fd8c2ff89698844d44b8b6d6326b1fff1d6e3ad194",
+    "rank8/training/steps/0065.json": "1e18aba2f17783f17c2c475547a74eb3452cbb614c749dc9b5faf3fc98123067",
+    "rank8/training/steps/0066.json": "1ff4145b895de1427f46ffd158c900c639477452042885f3bef3e4e3d07d7346",
+    "rank8/training/steps/0067.json": "c101b4b86bef6f2c27582f0c93751af88e3d4f7af3674a56e4cd3472288a0120",
+    "rank8/training/steps/0068.json": "813d49458c3de589a48aea8c0ccebacc426f18af491b561ea560abb5aabd0a39",
+    "rank8/training/steps/0069.json": "208f767a3153e861228e1b2c9178b4e5da7efa32c164875f477f24e3f54cc3df",
+    "rank8/training/steps/0070.json": "f962c98f821e7dea1a5d89a815e6196ebaaa68303257c2aaa2e0f9124c15a9fe",
+    "rank8/training/steps/0071.json": "f4d5be8772ade84f549623cb4f0e554d6f8e08c1e6a6639371e3f39cdaa124a5",
+    "rank8/training/steps/0072.json": "82201e3a9f31f0745b34a3364998bf96ab06fbc2c9520ae42f0eb847d71c4015",
+    "rank8/training/steps/0073.json": "871719d7d3b34747d56561f59441c753406ce211e0db5afc573ccb04f51d656c",
+    "rank8/training/steps/0074.json": "14c9b37f3e186e353fa73cc0209f4bc406d31c6eefdeeb520065cdc852363bc3",
+    "rank8/training/steps/0075.json": "72183ccaa169cd576797863cdbf35514eb93d00f9a0537d5b95691cf962f6cb2",
+    "rank8/training/steps/0076.json": "145d1004e9b54772f1cf08befae014ad56a2b97dc5af38cb7c2fc367a0a38994",
+    "rank8/training/steps/0077.json": "ab83da49e788459e19d02e3ae181d59e08ed0ae9db627098a347becb2a104a85",
+    "rank8/training/steps/0078.json": "811a524c94a844d400a06214c1e5e8c95df97fa42d79016bd4fe2bbf9f4ffbaf",
+    "rank8/training/steps/0079.json": "e085e5acc913b72727991a2cc9be8c2b2a34fc101b388331c6b3ac017b4a0f23",
+    "rank8/training/steps/0080.json": "d79270ec35b0d859a2c29ad94280c85dfdbafdd683c66dfaee865cf8f4ac33be",
+    "rank8/training/steps/0081.json": "e7dd6772dd3dd35e5e698f0dcd6bdf82e369c6e8115f3536a5fc7ba2949f33ad",
+    "rank8/training/steps/0082.json": "36f857ae7233500f8b1b5cbd862f905a5984666a922a97e8523f72b20a23813c",
+    "rank8/training/steps/0083.json": "5107b7cbcab827f8f000bc07e2eaace512535f49ea3d5d0fca1cd49ef15306fd",
+    "rank8/training/steps/0084.json": "39eaeb62d50c167616f645d08cbc9c1bab8d2a195951fb8535175968ab5140ab",
+    "rank8/training/steps/0085.json": "2b238e4b8983f43f55910c0342d2f67b01faf29381818d3011123e46258a2c9e",
+    "rank8/training/steps/0086.json": "a394055573b8d9a309097a05039c560f80492ffe3b17e7e3748605d27136e09b",
+    "rank8/training/steps/0087.json": "c69ece8488cb8284fee7f6e5866414cfdf36bc78820db291d5e9797f22dceff0",
+    "rank8/training/steps/0088.json": "9699d97eb836116ce31183bc86c9fc27bd5c88d1ef14cae0bd3df965fd8adca4",
+    "rank8/training/steps/0089.json": "777fb99af5feadc250c1f385abe1d63ebccb3d36a6d22c5c03818b52bde91ba3",
+    "rank8/training/steps/0090.json": "8fbc33b0931060df6cb121e6772f6fd0bd0ad82bd9924785131d4353c4d310a6",
+    "rank8/training/steps/0091.json": "6043af80f3cf9c6164473921e8f12de40e314f193e83e2eba46ec08317a0531f",
+    "rank8/training/steps/0092.json": "a103341612bc10119cb12444eb0d9db092f5c679a72fe19d1bcf42a6943000bd",
+    "rank8/training/steps/0093.json": "f1d991aa80ac903277923e167a40af33aaa0e92b3c11068e4e7a61e7302d3917",
+    "rank8/training/steps/0094.json": "b0efeb6b507d4c230504dae189d4258312ff7cdc73b7d073aebf508415c1766b",
+    "rank8/training/steps/0095.json": "8403d8b9a7439f4cdcb86b2703531ad41c105aaa74269038b3faecc6626f817f",
+    "rank8/training/steps/0096.json": "4ef9c15c379b08bbd1cdfb4c6ecab88ed86f29f6d849b77ce96c9b13a9fdfeb1",
+    "rank8/training/steps/0097.json": "087d611b4f8efb3036cc75fb8d33f9f7c368f686ffac0a980272de2d68ead72b",
+    "rank8/training/steps/0098.json": "8948c59135a4ba176f5658bc96d258704a43aa9c9add2e31d81aa8b31e6e8225",
+    "rank8/training/steps/0099.json": "ad3c2f60a2222280b87ec51d6339c7864262a0061cc6379b9b038e9166c48eaf",
+    "rank8/training/steps/0100.json": "0a1c44f473be47c98f93f3f1eb0040d3acce0683cd4d62caaf25e8bdcca377c1",
+    "rank8/training/steps/0101.json": "7dd83a91750b5ed93ccf4a20d5f06fbd461037d869526c99c891dd689902a2a4",
+    "rank8/training/steps/0102.json": "9d2120091a1c0c8ede152fa50dd6199d33fe99bf38a69910a4d1cb26f3215969",
+    "rank8/training/steps/0103.json": "f082421a790c0ee5b620580868179babab79a220da301e4b9e16d9b21de2fa32",
+    "rank8/training/steps/0104.json": "1cc0582eb128423002aaa971e3c473170ce600c9f0b3b259fc16cfe26dc5ea9d",
+    "rank8/training/steps/0105.json": "9f44e791e6b83a87b2916cd5c4ae4d438401fc1aad24939b2d3132962dddf1c3",
+    "rank8/training/steps/0106.json": "b7937bb580d07eef6d300784d666b61013f8bcbaf35533ec481b797ca92478f2",
+    "rank8/training/steps/0107.json": "a10add169fb47a4685224dcd18406ef7b6c898023528b3a6411d48d1b64aa270",
+    "rank8/training/steps/0108.json": "43e15dacfc6a9adb181c8ce36577290fa96ca6525104f8843b1e2b3566552bad",
+    "rank8/training/steps/0109.json": "9251508f853acc1f1e899d32b915bb466e8c17375de39bf93b1a7804d54565be",
+    "rank8/training/steps/0110.json": "1ed9925fb396151dd51214a8c2caceaee709d18c7094ac808f22142c4e294de4",
+    "rank8/training/steps/0111.json": "7bcb642a59e607fe7bded0fb13e057b3b1c0923a6859a7ecbc2eea91a7ad1c4f",
+    "rank8/training/steps/0112.json": "26f6f153abd1432c7cb0292f51fb6670b1f51ab15ab25b9f2ffddf748468c364",
+    "rank8/training/steps/0113.json": "d1aabae2ab28cb8ac7428dafdaf341491a3e245e1a01ccdcaa94b56f5d1cf68d",
+    "rank8/training/steps/0114.json": "731db14fe873f380bed1442edb83c02924a265445802b0d5a511d795911fb39c",
+    "rank8/training/steps/0115.json": "3865ec0e6358d621d8c1d6f5420d8b45ee8c9e6a1705b6ca037f11efe3931c69",
+    "rank8/training/steps/0116.json": "8c19f5a067944d2ef88a161a94dd00aa9ae277f00b373c991c370a7a1331f06e",
+    "rank8/training/steps/0117.json": "55c4d1b5eabab6684d7b991ebcd0bf122fc775f9c901f63d8b9e6ed76941a24d",
+    "rank8/training/steps/0118.json": "232cf7e86456691c7beee83093a189994c76e7dc38052f67073035f75c02f329",
+    "rank8/training/steps/0119.json": "fb358ca878d2a96cf8288e76c6d0da85868625982851f86114e9415340fb2352",
+    "rank8/training/steps/0120.json": "3396c2ae5b22e9a04471a85ad1e313a17441a96d76cfec71dd964d9d6d129d77",
+    "rank8/training/steps/0121.json": "25709b49bb9cf654f06189cdbb2b9b3818414410702d1445974473f67967da4e",
+    "rank8/training/steps/0122.json": "6408810c17caabe8c32d6b6515ffbc35c21025238a4bc14f77fb53edfafee6a5",
+    "rank8/training/steps/0123.json": "d8fbec3ac3fe4ef89ea32e6335584cfbb20dbabd648f4353dcc19306aacdfe51",
+    "rank8/training/steps/0124.json": "ad9166d70e9cf6062ed484df06ccb6e9a8222397944ca81e9e9ed2e60faaf6d2",
+    "rank8/training/steps/0125.json": "40ea921ba2729280ae3c7ec09520482ce8fcc888d57b83ff1b4f8cc55847afa0",
+    "rank8/training/steps/0126.json": "2df1fc4a7a8f5ea923029e23af3957ea963d7d7f0e41a224630765cbbbddaa02",
+    "rank8/training/steps/0127.json": "42741b2fa70f3eeb4b7a5549d52ce7a17d0ed6ed8b153fb79e9e64a60936e393",
+    "rank8/training/steps/0128.json": "0ee7429483e6868c6b42daf14f6963af06caa91aae80b28ffd9d4899157b7096"
+  },
+  "missing_measurements": "Omitted or UNMEASURED, never fabricated as zero.",
+  "plotter_sha256": "9115cfea1ecee30a25ee2a0a53ef2259b4d6df01887498c2ed5b6815c6131d72",
+  "schema": "weightbridge.phase_iiir.figures.v1",
+  "selected_efficiency": {
+    "rank8": {
+      "adapter_bytes": 21750832,
+      "effective_unrounded_norm": 4.126247257943652,
+      "factor_parameters": 5411328,
+      "merged_BF16_norm": 4.156839644102188,
+      "merged_changed_entries": 430288456,
+      "rounding_residual_norm": 0.5179038208402077,
+      "step": 128
+    }
+  },
+  "source": "Public export only; all numbers are recorded measurements.",
+  "training_points": {
+    "rank4": [
+      {
+        "loss": 0.12442890536040067,
+        "step": 1
+      },
+      {
+        "loss": 0.09718479567766189,
+        "step": 2
+      },
+      {
+        "loss": 0.09866951242194955,
+        "step": 3
+      },
+      {
+        "loss": 0.0634531339773765,
+        "step": 4
+      },
+      {
+        "loss": 0.048448936817677396,
+        "step": 5
+      },
+      {
+        "loss": 0.011640825761216028,
+        "step": 6
+      },
+      {
+        "loss": 0.0010037849253580055,
+        "step": 7
+      },
+      {
+        "loss": 9.561005640195497e-05,
+        "step": 8
+      },
+      {
+        "loss": 5.3200305033729455e-05,
+        "step": 9
+      },
+      {
+        "loss": 2.7485965425252547e-05,
+        "step": 10
+      },
+      {
+        "loss": 2.123093336970408e-05,
+        "step": 11
+      },
+      {
+        "loss": 3.33702315533663e-05,
+        "step": 12
+      },
+      {
+        "loss": 0.11631241537692072,
+        "step": 13
+      },
+      {
+        "loss": 0.00014291456543780382,
+        "step": 14
+      },
+      {
+        "loss": 0.00013327206890019973,
+        "step": 15
+      },
+      {
+        "loss": 0.00010608128341809328,
+        "step": 16
+      },
+      {
+        "loss": 0.00021508745619009228,
+        "step": 17
+      },
+      {
+        "loss": 0.0008179891522607646,
+        "step": 18
+      },
+      {
+        "loss": 7.228264331021831e-05,
+        "step": 19
+      },
+      {
+        "loss": 0.005139324637948572,
+        "step": 20
+      },
+      {
+        "loss": 0.00014774582029154196,
+        "step": 21
+      },
+      {
+        "loss": 4.892578701949551e-05,
+        "step": 22
+      },
+      {
+        "loss": 5.303510530554206e-05,
+        "step": 23
+      },
+      {
+        "loss": 8.917109044264144e-05,
+        "step": 24
+      },
+      {
+        "loss": 7.967388275991667e-05,
+        "step": 25
+      },
+      {
+        "loss": 6.151789820882783e-05,
+        "step": 26
+      },
+      {
+        "loss": 0.00013187783145654332,
+        "step": 27
+      },
+      {
+        "loss": 5.673224959944273e-05,
+        "step": 28
+      },
+      {
+        "loss": 0.00014087173911075747,
+        "step": 29
+      },
+      {
+        "loss": 0.12316969423582823,
+        "step": 30
+      },
+      {
+        "loss": 8.097070422587017e-05,
+        "step": 31
+      },
+      {
+        "loss": 0.0001003117793599452,
+        "step": 32
+      },
+      {
+        "loss": 0.00021314249530880028,
+        "step": 33
+      },
+      {
+        "loss": 0.008980411588061241,
+        "step": 34
+      },
+      {
+        "loss": 0.00045569988248987144,
+        "step": 35
+      },
+      {
+        "loss": 0.0005439155728539445,
+        "step": 36
+      },
+      {
+        "loss": 1.9577560198269096e-05,
+        "step": 37
+      },
+      {
+        "loss": 0.029897552774789372,
+        "step": 38
+      },
+      {
+        "loss": 1.431194270391105e-05,
+        "step": 39
+      },
+      {
+        "loss": 3.246671967320124e-05,
+        "step": 40
+      },
+      {
+        "loss": 8.50819797051372e-06,
+        "step": 41
+      },
+      {
+        "loss": 3.3005299661049826e-05,
+        "step": 42
+      },
+      {
+        "loss": 6.0379331282724735e-05,
+        "step": 43
+      },
+      {
+        "loss": 1.9424806483854168e-05,
+        "step": 44
+      },
+      {
+        "loss": 2.523644982899826e-05,
+        "step": 45
+      },
+      {
+        "loss": 0.00015884468876086458,
+        "step": 46
+      },
+      {
+        "loss": 0.0031276742542523084,
+        "step": 47
+      },
+      {
+        "loss": 7.408870410994286e-05,
+        "step": 48
+      },
+      {
+        "loss": 2.680215510871618e-05,
+        "step": 49
+      },
+      {
+        "loss": 0.0006292234069462666,
+        "step": 50
+      },
+      {
+        "loss": 1.0089682057566407e-05,
+        "step": 51
+      },
+      {
+        "loss": 7.240130115110498e-06,
+        "step": 52
+      },
+      {
+        "loss": 1.0412997983634066e-05,
+        "step": 53
+      },
+      {
+        "loss": 1.6579116487800225e-05,
+        "step": 54
+      },
+      {
+        "loss": 1.1537298223318005e-05,
+        "step": 55
+      },
+      {
+        "loss": 6.0440648986402444e-05,
+        "step": 56
+      },
+      {
+        "loss": 1.3449796199872344e-05,
+        "step": 57
+      },
+      {
+        "loss": 1.0765728310575671e-05,
+        "step": 58
+      },
+      {
+        "loss": 0.00015121393185528874,
+        "step": 59
+      },
+      {
+        "loss": 1.842175099951974e-05,
+        "step": 60
+      },
+      {
+        "loss": 9.227539241806865e-05,
+        "step": 61
+      },
+      {
+        "loss": 9.540678927750315e-06,
+        "step": 62
+      },
+      {
+        "loss": 5.41127199808629e-06,
+        "step": 63
+      },
+      {
+        "loss": 6.0652704302232125e-06,
+        "step": 64
+      },
+      {
+        "loss": 1.3299942461568117e-05,
+        "step": 65
+      },
+      {
+        "loss": 1.366163987489001e-05,
+        "step": 66
+      },
+      {
+        "loss": 4.8181177689224295e-05,
+        "step": 67
+      },
+      {
+        "loss": 3.780419949315511e-05,
+        "step": 68
+      },
+      {
+        "loss": 5.600187534634403e-06,
+        "step": 69
+      },
+      {
+        "loss": 1.1704912066834748e-05,
+        "step": 70
+      },
+      {
+        "loss": 1.286633620813203e-05,
+        "step": 71
+      },
+      {
+        "loss": 1.7446054206644834e-05,
+        "step": 72
+      },
+      {
+        "loss": 1.168690933327342e-05,
+        "step": 73
+      },
+      {
+        "loss": 1.396189168985189e-05,
+        "step": 74
+      },
+      {
+        "loss": 0.00011773160111224169,
+        "step": 75
+      },
+      {
+        "loss": 9.711555177590795e-06,
+        "step": 76
+      },
+      {
+        "loss": 6.2195459303712315e-06,
+        "step": 77
+      },
+      {
+        "loss": 6.426149427389991e-06,
+        "step": 78
+      },
+      {
+        "loss": 1.379962389961944e-05,
+        "step": 79
+      },
+      {
+        "loss": 1.2547728530876157e-05,
+        "step": 80
+      },
+      {
+        "loss": 9.984862193077058e-06,
+        "step": 81
+      },
+      {
+        "loss": 0.00025679474685459447,
+        "step": 82
+      },
+      {
+        "loss": 4.878691751913502e-06,
+        "step": 83
+      },
+      {
+        "loss": 8.969971437932505e-06,
+        "step": 84
+      },
+      {
+        "loss": 1.0060938551277458e-05,
+        "step": 85
+      },
+      {
+        "loss": 6.338365357953228e-06,
+        "step": 86
+      },
+      {
+        "loss": 4.067757556815475e-06,
+        "step": 87
+      },
+      {
+        "loss": 3.5598879446529187e-06,
+        "step": 88
+      },
+      {
+        "loss": 7.475751742901662e-06,
+        "step": 89
+      },
+      {
+        "loss": 5.013997688614811e-06,
+        "step": 90
+      },
+      {
+        "loss": 4.3949445461698314e-06,
+        "step": 91
+      },
+      {
+        "loss": 9.613355955066669e-06,
+        "step": 92
+      },
+      {
+        "loss": 5.7946338251927455e-06,
+        "step": 93
+      },
+      {
+        "loss": 4.9126360544617286e-06,
+        "step": 94
+      },
+      {
+        "loss": 7.547071109523832e-06,
+        "step": 95
+      },
+      {
+        "loss": 1.2793613085892818e-05,
+        "step": 96
+      },
+      {
+        "loss": 2.1445040494604152e-05,
+        "step": 97
+      },
+      {
+        "loss": 7.871646172780427e-06,
+        "step": 98
+      },
+      {
+        "loss": 4.921620402723527e-06,
+        "step": 99
+      },
+      {
+        "loss": 8.83947614973069e-06,
+        "step": 100
+      },
+      {
+        "loss": 3.54303969228955e-05,
+        "step": 101
+      },
+      {
+        "loss": 1.0653071305049316e-05,
+        "step": 102
+      },
+      {
+        "loss": 8.961809453467141e-06,
+        "step": 103
+      },
+      {
+        "loss": 1.9809465017700974e-05,
+        "step": 104
+      },
+      {
+        "loss": 8.696343105839333e-06,
+        "step": 105
+      },
+      {
+        "loss": 6.4405496258573756e-06,
+        "step": 106
+      },
+      {
+        "loss": 5.302637137353806e-06,
+        "step": 107
+      },
+      {
+        "loss": 5.722741658811739e-06,
+        "step": 108
+      },
+      {
+        "loss": 5.073894755655498e-06,
+        "step": 109
+      },
+      {
+        "loss": 1.1176155949076318e-05,
+        "step": 110
+      },
+      {
+        "loss": 0.00015915556929298842,
+        "step": 111
+      },
+      {
+        "loss": 5.386125586364474e-06,
+        "step": 112
+      },
+      {
+        "loss": 3.986484372536983e-06,
+        "step": 113
+      },
+      {
+        "loss": 1.2912258879998048e-05,
+        "step": 114
+      },
+      {
+        "loss": 5.279189147889459e-06,
+        "step": 115
+      },
+      {
+        "loss": 6.41992556481547e-06,
+        "step": 116
+      },
+      {
+        "loss": 6.307081213928771e-06,
+        "step": 117
+      },
+      {
+        "loss": 7.71192053226507e-06,
+        "step": 118
+      },
+      {
+        "loss": 1.1985869879454719e-05,
+        "step": 119
+      },
+      {
+        "loss": 6.060739311455711e-06,
+        "step": 120
+      },
+      {
+        "loss": 1.1718493036217598e-05,
+        "step": 121
+      },
+      {
+        "loss": 7.234985248162827e-06,
+        "step": 122
+      },
+      {
+        "loss": 7.544328005858171e-06,
+        "step": 123
+      },
+      {
+        "loss": 9.414101691451084e-06,
+        "step": 124
+      },
+      {
+        "loss": 1.0820001298944354e-05,
+        "step": 125
+      },
+      {
+        "loss": 1.352960264833608e-05,
+        "step": 126
+      },
+      {
+        "loss": 1.601633451080989e-05,
+        "step": 127
+      },
+      {
+        "loss": 4.698891726323767e-06,
+        "step": 128
+      }
+    ],
+    "rank8": [
+      {
+        "loss": 0.12442890536040067,
+        "step": 1
+      },
+      {
+        "loss": 0.08981090790033341,
+        "step": 2
+      },
+      {
+        "loss": 0.06692313978858028,
+        "step": 3
+      },
+      {
+        "loss": 0.03596424337189931,
+        "step": 4
+      },
+      {
+        "loss": 0.008291424612717745,
+        "step": 5
+      },
+      {
+        "loss": 0.002657888397983957,
+        "step": 6
+      },
+      {
+        "loss": 4.766373356266042e-05,
+        "step": 7
+      },
+      {
+        "loss": 0.22324650192636747,
+        "step": 8
+      },
+      {
+        "loss": 0.00015473413196101732,
+        "step": 9
+      },
+      {
+        "loss": 0.00013045441038619693,
+        "step": 10
+      },
+      {
+        "loss": 0.00043119268867281057,
+        "step": 11
+      },
+      {
+        "loss": 0.0013953388176164375,
+        "step": 12
+      },
+      {
+        "loss": 0.00015881763050907416,
+        "step": 13
+      },
+      {
+        "loss": 0.00019599101787823583,
+        "step": 14
+      },
+      {
+        "loss": 3.5046217968023055e-05,
+        "step": 15
+      },
+      {
+        "loss": 3.238390955699241e-05,
+        "step": 16
+      },
+      {
+        "loss": 6.415877324734749e-05,
+        "step": 17
+      },
+      {
+        "loss": 4.2061470705573276e-05,
+        "step": 18
+      },
+      {
+        "loss": 6.900620812995107e-06,
+        "step": 19
+      },
+      {
+        "loss": 2.0628744065094355e-05,
+        "step": 20
+      },
+      {
+        "loss": 4.0911330412141036e-05,
+        "step": 21
+      },
+      {
+        "loss": 1.0645503613749782e-05,
+        "step": 22
+      },
+      {
+        "loss": 2.46449335776745e-05,
+        "step": 23
+      },
+      {
+        "loss": 3.386153663072265e-05,
+        "step": 24
+      },
+      {
+        "loss": 0.025983722513449378,
+        "step": 25
+      },
+      {
+        "loss": 0.00027832746785556194,
+        "step": 26
+      },
+      {
+        "loss": 0.003909185591456823,
+        "step": 27
+      },
+      {
+        "loss": 2.0595683125391776e-05,
+        "step": 28
+      },
+      {
+        "loss": 2.3200613755529664e-05,
+        "step": 29
+      },
+      {
+        "loss": 7.639729745698367e-06,
+        "step": 30
+      },
+      {
+        "loss": 0.0007179912328025592,
+        "step": 31
+      },
+      {
+        "loss": 1.4675955868328125e-05,
+        "step": 32
+      },
+      {
+        "loss": 0.0012228261759940759,
+        "step": 33
+      },
+      {
+        "loss": 3.144023068285007e-05,
+        "step": 34
+      },
+      {
+        "loss": 7.662660612770763e-05,
+        "step": 35
+      },
+      {
+        "loss": 0.0018062200996902934,
+        "step": 36
+      },
+      {
+        "loss": 0.009195087375698036,
+        "step": 37
+      },
+      {
+        "loss": 4.167870482776208e-06,
+        "step": 38
+      },
+      {
+        "loss": 1.6983003448990851e-06,
+        "step": 39
+      },
+      {
+        "loss": 3.5378064934223272e-06,
+        "step": 40
+      },
+      {
+        "loss": 9.360890949210443e-05,
+        "step": 41
+      },
+      {
+        "loss": 0.00012714284254831945,
+        "step": 42
+      },
+      {
+        "loss": 0.004227667181981518,
+        "step": 43
+      },
+      {
+        "loss": 1.293854258485091e-05,
+        "step": 44
+      },
+      {
+        "loss": 1.840455998507633e-05,
+        "step": 45
+      },
+      {
+        "loss": 6.217794874497817e-05,
+        "step": 46
+      },
+      {
+        "loss": 0.020264582403450464,
+        "step": 47
+      },
+      {
+        "loss": 0.11997582731789004,
+        "step": 48
+      },
+      {
+        "loss": 0.0001376775839652516,
+        "step": 49
+      },
+      {
+        "loss": 0.0012125922103223274,
+        "step": 50
+      },
+      {
+        "loss": 0.0008894582772817168,
+        "step": 51
+      },
+      {
+        "loss": 9.80938602348086e-05,
+        "step": 52
+      },
+      {
+        "loss": 3.6645906058691086e-05,
+        "step": 53
+      },
+      {
+        "loss": 3.817784367016401e-05,
+        "step": 54
+      },
+      {
+        "loss": 2.428387946166953e-05,
+        "step": 55
+      },
+      {
+        "loss": 4.922972235171504e-05,
+        "step": 56
+      },
+      {
+        "loss": 1.4124964319717385e-05,
+        "step": 57
+      },
+      {
+        "loss": 2.0720295169802972e-05,
+        "step": 58
+      },
+      {
+        "loss": 0.00030941895602154545,
+        "step": 59
+      },
+      {
+        "loss": 2.500142086242026e-05,
+        "step": 60
+      },
+      {
+        "loss": 0.07780983348570808,
+        "step": 61
+      },
+      {
+        "loss": 3.617124833672695e-05,
+        "step": 62
+      },
+      {
+        "loss": 2.2361032320490764e-05,
+        "step": 63
+      },
+      {
+        "loss": 1.7240403083035433e-05,
+        "step": 64
+      },
+      {
+        "loss": 0.01591727860458839,
+        "step": 65
+      },
+      {
+        "loss": 0.0001992599132599456,
+        "step": 66
+      },
+      {
+        "loss": 0.000408723289068757,
+        "step": 67
+      },
+      {
+        "loss": 0.00012524647477709722,
+        "step": 68
+      },
+      {
+        "loss": 1.3880188036495357e-05,
+        "step": 69
+      },
+      {
+        "loss": 3.1746772591206184e-05,
+        "step": 70
+      },
+      {
+        "loss": 1.527543805050801e-05,
+        "step": 71
+      },
+      {
+        "loss": 8.769252270689857e-05,
+        "step": 72
+      },
+      {
+        "loss": 2.6238369283242147e-05,
+        "step": 73
+      },
+      {
+        "loss": 0.00019527152532766983,
+        "step": 74
+      },
+      {
+        "loss": 3.5912117422252346e-05,
+        "step": 75
+      },
+      {
+        "loss": 2.656780255575272e-05,
+        "step": 76
+      },
+      {
+        "loss": 1.5328547395167422e-05,
+        "step": 77
+      },
+      {
+        "loss": 1.1977947379536684e-05,
+        "step": 78
+      },
+      {
+        "loss": 0.0006723157357080356,
+        "step": 79
+      },
+      {
+        "loss": 8.488465913103482e-05,
+        "step": 80
+      },
+      {
+        "loss": 3.3547830877852275e-05,
+        "step": 81
+      },
+      {
+        "loss": 8.31196297426652e-06,
+        "step": 82
+      },
+      {
+        "loss": 0.0008722169043434919,
+        "step": 83
+      },
+      {
+        "loss": 6.541713253768866e-05,
+        "step": 84
+      },
+      {
+        "loss": 6.32993932518408e-06,
+        "step": 85
+      },
+      {
+        "loss": 2.198104855754512e-06,
+        "step": 86
+      },
+      {
+        "loss": 3.966857898026669e-06,
+        "step": 87
+      },
+      {
+        "loss": 3.233370114304943e-06,
+        "step": 88
+      },
+      {
+        "loss": 1.784549786694994e-05,
+        "step": 89
+      },
+      {
+        "loss": 4.688178313238633e-06,
+        "step": 90
+      },
+      {
+        "loss": 2.6995656744096172e-06,
+        "step": 91
+      },
+      {
+        "loss": 1.854695895996304e-05,
+        "step": 92
+      },
+      {
+        "loss": 5.1750678742837085e-06,
+        "step": 93
+      },
+      {
+        "loss": 5.447886828254635e-06,
+        "step": 94
+      },
+      {
+        "loss": 2.6548279565684457e-06,
+        "step": 95
+      },
+      {
+        "loss": 4.765278331000272e-05,
+        "step": 96
+      },
+      {
+        "loss": 3.38389645312039e-05,
+        "step": 97
+      },
+      {
+        "loss": 5.070828649422766e-06,
+        "step": 98
+      },
+      {
+        "loss": 1.030472549580415e-05,
+        "step": 99
+      },
+      {
+        "loss": 0.00011459092565364558,
+        "step": 100
+      },
+      {
+        "loss": 6.744112954865919e-05,
+        "step": 101
+      },
+      {
+        "loss": 4.17723682468412e-06,
+        "step": 102
+      },
+      {
+        "loss": 2.9308988435635305e-06,
+        "step": 103
+      },
+      {
+        "loss": 5.830582448118273e-06,
+        "step": 104
+      },
+      {
+        "loss": 6.930129842658062e-06,
+        "step": 105
+      },
+      {
+        "loss": 2.8376317933852198e-06,
+        "step": 106
+      },
+      {
+        "loss": 1.0325192207099897e-05,
+        "step": 107
+      },
+      {
+        "loss": 3.0446244575098204e-06,
+        "step": 108
+      },
+      {
+        "loss": 4.09215886835104e-06,
+        "step": 109
+      },
+      {
+        "loss": 1.3604372700940478e-06,
+        "step": 110
+      },
+      {
+        "loss": 4.914829031045399e-06,
+        "step": 111
+      },
+      {
+        "loss": 2.495939710491296e-05,
+        "step": 112
+      },
+      {
+        "loss": 1.600684273116399e-06,
+        "step": 113
+      },
+      {
+        "loss": 1.5756360639329614e-05,
+        "step": 114
+      },
+      {
+        "loss": 5.139225052820014e-06,
+        "step": 115
+      },
+      {
+        "loss": 8.507572583008976e-06,
+        "step": 116
+      },
+      {
+        "loss": 2.1541473473353363e-06,
+        "step": 117
+      },
+      {
+        "loss": 3.969296034560074e-06,
+        "step": 118
+      },
+      {
+        "loss": 9.551337725229935e-06,
+        "step": 119
+      },
+      {
+        "loss": 1.4154836552515369e-05,
+        "step": 120
+      },
+      {
+        "loss": 2.1950028281025882e-06,
+        "step": 121
+      },
+      {
+        "loss": 2.3500915371447e-06,
+        "step": 122
+      },
+      {
+        "loss": 2.021509230807694e-06,
+        "step": 123
+      },
+      {
+        "loss": 5.162833197820927e-05,
+        "step": 124
+      },
+      {
+        "loss": 8.766297749692361e-06,
+        "step": 125
+      },
+      {
+        "loss": 1.9535028937313874e-05,
+        "step": 126
+      },
+      {
+        "loss": 9.66269542097006e-06,
+        "step": 127
+      },
+      {
+        "loss": 1.8126226556376745e-06,
+        "step": 128
+      }
+    ]
+  }
+}

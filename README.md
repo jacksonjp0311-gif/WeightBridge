@@ -106,6 +106,17 @@ preserved all 320 protected control presentations, and passed exact
 reconstruction and rollback. This is one verified decimal-task baseline.
 [Phase III-Q baseline protocol and results](docs/PHASE_III_Q_BASELINE.md)
 
+Phase III-R independently replicates that rank-eight recipe on fresh families.
+The reloaded merged checkpoint scores 256/256 answer lines on both independent
+selection and sealed verification, retains all 320 preservation controls, and
+passes exact reconstruction and rollback. The rank-four comparison trained
+half as many factor parameters on the same data and schedule. Its step-128
+adapter reached 63/64 development comparisons and 31/32 complete families,
+but lost one parent-correct response and two valid outputs. Neither rank-four
+checkpoint qualified, so Bank B remained unopened. These results concern the
+declared completed-first-line endpoint at one initialization seed.
+[Phase III-R replication and comparison](docs/PHASE_III_R_REPLICATION.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

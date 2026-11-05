@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from experiments.phase_iiiq_baseline import study as qstudy
 from experiments.phase_iiiq_baseline.integrity import PARENT, verify_sources
+from experiments.phase_iiir_replication import study as rstudy
 
 ARMS = ("rank8", "rank4")
 STAGES = ("preservation-validation", "selection", "hidden")
@@ -140,6 +141,47 @@ def replay_screening(root, arm):
             "worker_count": workers, "complete_assessment": not bool(recorded["errors"])}
 
 
+def replay_development_retention(root):
+    """Replay the pre-merge paired gate from the two locked adapter workers.
+
+    The early rank-four failure is public development evidence, not a Bank B
+    observation. Its inputs are adapters on the original BF16 parent; the later
+    merged comparison, when reached, remains a separate gate.
+    """
+    path = root/"rank4/adapter-development-retention.json"
+    if not path.is_file():
+        return None
+    rstudy._matched_arms(root/"rank8/protocol.json", root/"rank4/protocol.json")
+    workers, identities = [], {}
+    rosters = [root/arm/"assessment/rosters/development.json" for arm in ARMS]
+    if sha(rosters[0]) != sha(rosters[1]):
+        raise ValueError("Public paired development rosters differ")
+    for arm, roster in zip(ARMS, rosters, strict=True):
+        folder, protocol = root/arm/"assessment", root/arm/"protocol.json"
+        screening = read(folder/"assessment.json")
+        winner = screening["winner"]
+        if winner is None:
+            raise ValueError("Paired development comparison lacks a locked finalist")
+        selected = screening["candidates"][winner]
+        worker_path = folder/"evaluation"/f"development-{winner}.json"
+        worker = qstudy._validated_worker(worker_path, roster, protocol, PARENT,
+                                           selected["adapter_sha256"], "development")
+        workers.append(worker)
+        identities[arm] = {"candidate_id": winner, "adapter_sha256": selected["adapter_sha256"],
+                           "evaluation_sha256": sha(worker_path)}
+    measured = rstudy.retention(workers[0]["measurement"], workers[1]["measurement"])
+    if read(path) != measured:
+        raise ValueError("Paired adapter development retention does not replay")
+    return {"passed": measured["passed"], "receipt_sha256": sha(path), "inputs": identities,
+        "representation": "fp32_adapter_on_bf16_parent", "independent_bank_evidence": False,
+        "lost_rank8_correct_responses": len(measured["prohibited_regressions"]),
+        "lost_rank8_valid_responses": len(measured["lost_valid_presentations"]),
+        "lost_controls": len(measured["lost_required_controls"]),
+        "strict_comparison_gain": measured["strict_comparison_gain"],
+        "complete_family_gain": measured["complete_family_gain"],
+        "complete_continuation_disagreement_count": len(measured["complete_continuation_disagreements"])}
+
+
 def verify(public_export, out):
     wall, cpu = time.perf_counter(), time.process_time()
     root, out = Path(public_export).resolve(), Path(out).resolve()
@@ -174,7 +216,12 @@ def verify(public_export, out):
                 stages[stage] = None if gate is None else {"passed": gate["passed"],
                     "evidence_type": "Published aggregate; private rows not independently replayed here"}
             outcomes[arm] = {"screening": replay, "independent_stages": stages}
-        result.update(passed=True, disposition="PUBLIC_ARCHIVE_REPLAY_PASS", outcomes=outcomes)
+        paired = replay_development_retention(root)
+        summary_paired = summaries["rank4"].get("adapter_development_retention")
+        if (paired is None) != (summary_paired is None) or (paired is not None and summary_paired["passed"] != paired["passed"]):
+            raise ValueError("Paired development summary differs from measured eligibility")
+        result.update(passed=True, disposition="PUBLIC_ARCHIVE_REPLAY_PASS", outcomes=outcomes,
+                      paired_adapter_development=paired)
     except Exception as error:
         result["error"] = {"type": type(error).__name__, "message": str(error)}
     result["resources"] = {"wall_seconds": time.perf_counter()-wall, "cpu_seconds": time.process_time()-cpu}
@@ -197,6 +244,7 @@ def self_test():
     with tempfile.TemporaryDirectory() as path:
         root = Path(path)
         assert replay_screening(root, "rank8")["status"] == "UNMEASURED"
+        assert replay_development_retention(root) is None
         try:
             inside(root, "../escape.json")
         except ValueError:

@@ -1,0 +1,72 @@
+{
+  "aggregate": {
+    "authorization_sha256": "b44f2b97e92da8dbcb66859bdabd921e55b49aa0b38373ad0910d8e375f0cbac",
+    "candidate": {
+      "comparisons": 64,
+      "complete_families": 32,
+      "complete_family_ids_count": 32,
+      "completed_first_lines": 256,
+      "correct": 256,
+      "decode_termination": {
+        "token_budget": 256
+      },
+      "families": 32,
+      "groups": {
+        "negative-close": {
+          "correct": 128,
+          "presentations": 128,
+          "valid": 128
+        },
+        "negative-far": {
+          "correct": 128,
+          "presentations": 128,
+          "valid": 128
+        }
+      },
+      "presentations": 256,
+      "strict_comparison_ids_count": 64,
+      "strict_comparisons": 64,
+      "valid_completed_first_lines": 256
+    },
+    "complete_family_gain": 32,
+    "correct_response_gain": 222,
+    "lost_valid_presentations_count": 0,
+    "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+    "newly_complete_families_count": 32,
+    "parent": {
+      "comparisons": 64,
+      "complete_families": 0,
+      "complete_family_ids_count": 0,
+      "completed_first_lines": 256,
+      "correct": 34,
+      "decode_termination": {
+        "token_budget": 256
+      },
+      "families": 32,
+      "groups": {
+        "negative-close": {
+          "correct": 1,
+          "presentations": 128,
+          "valid": 128
+        },
+        "negative-far": {
+          "correct": 33,
+          "presentations": 128,
+          "valid": 128
+        }
+      },
+      "presentations": 256,
+      "strict_comparison_ids_count": 0,
+      "strict_comparisons": 0,
+      "valid_completed_first_lines": 256
+    },
+    "passed": true,
+    "prohibited_regressions_count": 0,
+    "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+    "repeatable_comparisons_corrected_count": 38,
+    "representation_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "strict_comparison_gain": 64
+  },
+  "private_receipt_sha256": "1c33667efdbd4af95d73278e0cb53e3c56c53c0a75a630e2c1b6d5f5ba052e23",
+  "projection": "Protected rows, identifiers and private paths omitted; original host receipt retained privately."
+}

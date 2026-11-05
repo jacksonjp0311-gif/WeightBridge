@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "actual_data_order": true,
+    "actual_module_count": true,
+    "actual_parameter_count": true,
+    "all_factors_changed": true,
+    "all_factors_received_gradients": true,
+    "exact_forward_backward_schedule": true,
+    "exact_main_exposure": true,
+    "frozen_base_unchanged": true,
+    "process_training_passed": true
+  },
+  "data_order": {
+    "adapter_rng": "independent torch.Generator(cpu), randomized A then zero B, native sorted module order",
+    "batches": 128,
+    "cross_rank_initial_factors_identical": false,
+    "data_order_sha256": "a8ce00975c4117ceb924a3174eef969dd549a2416a0b41246291a3952061ca9d",
+    "examples_seen": 2048,
+    "initialization_seed": 606117,
+    "order_rng": "independent random.Random(str(seed) + '/epoch-' + str(epoch))",
+    "ordered_row_ids_sha256": "fe6f70b2ef5e66f61401e6191faca5ce8fed69cc8a829b690ebf27791fee3e9c",
+    "schema": "weightbridge.phase_iiir.data_order.v1",
+    "seed": 606117
+  },
+  "launch_claim_sha256": "a97e826678002f70fcc151cc00e93f9499f95b3b7e93ea5d5b645791d0f76298",
+  "no_replacement_run": true,
+  "passed": true,
+  "process_receipt_sha256": "84df6692af0de08343d7358e044804537963b254212ea140d41d2aa9e92a6275",
+  "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+  "rank": 8,
+  "replication_receipt_path": null,
+  "replication_receipt_sha256": null,
+  "resources": {
+    "cpu_accounting_complete_for_observed_processes": true,
+    "cpu_seconds": 19433.96875,
+    "host_cpu_seconds": 1232.59375,
+    "observed_tree_cpu_seconds": 18201.375,
+    "peak_rss_bytes": 7291002880,
+    "wall_seconds": 3123.877223299991
+  },
+  "schema": "weightbridge.phase_iiir.main_execution.v1",
+  "smoke_gate_path": "C:\\Users\\jacks\\AppData\\Local\\Temp\\wb-iiir-replication\\replication-v1\\rank8\\smoke\\smoke-gate.json",
+  "status": "COMPLETED"
+}

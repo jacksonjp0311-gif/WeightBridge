@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "actual_data_order": true,
+    "actual_module_count": true,
+    "actual_parameter_count": true,
+    "all_factors_changed": true,
+    "all_factors_received_gradients": true,
+    "exact_forward_backward_schedule": true,
+    "exact_main_exposure": true,
+    "frozen_base_unchanged": true,
+    "process_training_passed": true
+  },
+  "data_order": {
+    "adapter_rng": "independent torch.Generator(cpu), randomized A then zero B, native sorted module order",
+    "batches": 128,
+    "cross_rank_initial_factors_identical": false,
+    "data_order_sha256": "a8ce00975c4117ceb924a3174eef969dd549a2416a0b41246291a3952061ca9d",
+    "examples_seen": 2048,
+    "initialization_seed": 606117,
+    "order_rng": "independent random.Random(str(seed) + '/epoch-' + str(epoch))",
+    "ordered_row_ids_sha256": "fe6f70b2ef5e66f61401e6191faca5ce8fed69cc8a829b690ebf27791fee3e9c",
+    "schema": "weightbridge.phase_iiir.data_order.v1",
+    "seed": 606117
+  },
+  "launch_claim_sha256": "490b3d1272ec7f81c1d0c4ea14819d70904800c6b332c18f5c83d32dcd17b478",
+  "no_replacement_run": true,
+  "passed": true,
+  "process_receipt_sha256": "f208aa95a1aa8f2caa09d1dd26a029b2e5cd3a781ddff430bae35d70f3657d2f",
+  "protocol_sha256": "ef051f29db9f8ccecc3eb76323ed4ed30f2d94957ab06655fa52617349669a24",
+  "rank": 4,
+  "replication_receipt_path": "C:\\Users\\jacks\\AppData\\Local\\Temp\\wb-iiir-replication\\replication-v1\\replication-verification.json",
+  "replication_receipt_sha256": "4cebc10752a1ca1149458b5395a18a1df4c1278eb864f1922e893d03e3fef2d0",
+  "resources": {
+    "cpu_accounting_complete_for_observed_processes": true,
+    "cpu_seconds": 19431.59375,
+    "host_cpu_seconds": 1276.046875,
+    "observed_tree_cpu_seconds": 18155.546875,
+    "peak_rss_bytes": 7211921408,
+    "wall_seconds": 3106.7092085999902
+  },
+  "schema": "weightbridge.phase_iiir.main_execution.v1",
+  "smoke_gate_path": "C:\\Users\\jacks\\AppData\\Local\\Temp\\wb-iiir-replication\\replication-v1\\rank4\\smoke\\smoke-gate.json",
+  "status": "COMPLETED"
+}

@@ -1,0 +1,91 @@
+{
+  "aggregate": {
+    "disposition": "VERIFIED_BASELINE_PASS",
+    "exact_reconstruction": {
+      "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "expected_checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "merge_receipt_sha256": "09f5b8481c4d14b18893451d68c9d2a2095d1f8467ee41643a872fbd1a6cbd18",
+      "merge_verification_sha256": "d62f581756afbfe56f5f077bde58c305711ae370c88185a697db8fc17a0f7df6",
+      "numerical_merge_receipt_exact": true,
+      "passed": true
+    },
+    "independent_sha256": "4ba326cbdf4e84d8b684e51c79231ca21d2205f674199a0a7d96ca8e517bee48",
+    "lineage_accepted": false,
+    "locked_adapter_sha256": "798ed00453e94e20e6dcd69a9899ff9d6acd3d9b584a4494822c444d500ad0c4",
+    "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "passed": true,
+    "production_authority": false,
+    "protected_generations_private": true,
+    "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+    "reason": "all_frozen_behavior_and_reconstruction_gates_replayed",
+    "replays": {
+      "hidden": {
+        "passed": true,
+        "reconstructed": {
+          "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+          "evaluation_sha256": "b97e921b58e0a4fb047848a33a5948fa241e820fc57a2b82f4c7ed0d68e15650",
+          "exact_native_generation": true,
+          "observations": 256
+        },
+        "rollback": {
+          "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+          "evaluation_sha256": "80f7167dda005c287ca7dad8a978a0098e989fe3023d75a545363ebd828a7c8b",
+          "exact_native_generation": true,
+          "observations": 256
+        }
+      },
+      "preservation-validation": {
+        "passed": true,
+        "reconstructed": {
+          "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+          "evaluation_sha256": "c85002ae24e6ecba23b5ead11d838057c095b874a21290b7d9adac1b5a72de5f",
+          "exact_native_generation": true,
+          "observations": 320
+        },
+        "rollback": {
+          "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+          "evaluation_sha256": "468fcac01a4c36795b051f455503925402e2c33523de6a0581a72a067544b84d",
+          "exact_native_generation": true,
+          "observations": 320
+        }
+      },
+      "selection": {
+        "passed": true,
+        "reconstructed": {
+          "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+          "evaluation_sha256": "035a24b5884f273a7cd6baea8f16f02d1b85cd9153811f21b1dcbdef74c74945",
+          "exact_native_generation": true,
+          "observations": 256
+        },
+        "rollback": {
+          "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+          "evaluation_sha256": "91f012a2d4c7b2cb89e26109d953afc2147855790e86cffacaab5e72f087b4c2",
+          "exact_native_generation": true,
+          "observations": 256
+        }
+      }
+    },
+    "representation_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "resources": {
+      "exact_total_cpu_seconds": null,
+      "host_cpu_seconds": 414.265625,
+      "known_cpu_lower_bound_seconds": 5701.296875,
+      "observed_conservative_peak_rss_bytes": 2599354368,
+      "wall_seconds": 1045.7590487999842
+    },
+    "rollback": {
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "method": "fresh-process original checkpoint re-selection",
+      "passed": true
+    },
+    "schema": "weightbridge.supervised_baseline.final_verification.v1",
+    "worker_limits": {
+      "cpu_limit": 30000,
+      "memory_limit": 25769803776,
+      "wall_limit": 1200
+    }
+  },
+  "private_receipt_sha256": "f4cdf7d231e80469f2a688715bed67ec45cd87b0ea98f5b2b5010678d2504edf",
+  "projection": "Protected rows, identifiers and private paths omitted; original host receipt retained privately."
+}

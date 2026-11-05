@@ -1,0 +1,12 @@
+{
+  "adapter_rng": "independent torch.Generator(cpu), randomized A then zero B, native sorted module order",
+  "batches": 128,
+  "cross_rank_initial_factors_identical": false,
+  "data_order_sha256": "a8ce00975c4117ceb924a3174eef969dd549a2416a0b41246291a3952061ca9d",
+  "examples_seen": 2048,
+  "initialization_seed": 606117,
+  "order_rng": "independent random.Random(str(seed) + '/epoch-' + str(epoch))",
+  "ordered_row_ids_sha256": "fe6f70b2ef5e66f61401e6191faca5ce8fed69cc8a829b690ebf27791fee3e9c",
+  "schema": "weightbridge.phase_iiir.data_order.v1",
+  "seed": 606117
+}

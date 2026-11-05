@@ -1,0 +1,284 @@
+{
+  "action": "verify",
+  "arm": "rank8",
+  "error": null,
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 24,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793901931.0574937,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 5115904,
+        "parent_pid_at_discovery": 34164,
+        "peak_rss_bytes": 5115904,
+        "pid": 39296
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793901931.073308,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7794688,
+        "parent_pid_at_discovery": 39296,
+        "peak_rss_bytes": 7794688,
+        "pid": 50304
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 415.796875,
+        "create_time": 1793901931.1255095,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 57835520,
+        "parent_pid_at_discovery": 39296,
+        "peak_rss_bytes": 57835520,
+        "pid": 32624
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793901938.2961607,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5070848,
+        "pid": 67872
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793901938.3119323,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7675904,
+        "parent_pid_at_discovery": 67872,
+        "peak_rss_bytes": 7680000,
+        "pid": 38588
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 102.796875,
+        "create_time": 1793901938.361663,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2274721792,
+        "parent_pid_at_discovery": 67872,
+        "peak_rss_bytes": 2281947136,
+        "pid": 49616
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793902009.7440217,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4993024,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5079040,
+        "pid": 29220
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793902009.7603867,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7667712,
+        "parent_pid_at_discovery": 29220,
+        "peak_rss_bytes": 7671808,
+        "pid": 46292
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 945.8125,
+        "create_time": 1793902009.8088193,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2569285632,
+        "parent_pid_at_discovery": 29220,
+        "peak_rss_bytes": 2576310272,
+        "pid": 65184
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793902183.7001524,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4984832,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5070848,
+        "pid": 12956
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793902183.7167487,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7655424,
+        "parent_pid_at_discovery": 12956,
+        "peak_rss_bytes": 7659520,
+        "pid": 3752
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 945.203125,
+        "create_time": 1793902183.7655475,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2564030464,
+        "parent_pid_at_discovery": 12956,
+        "peak_rss_bytes": 2574761984,
+        "pid": 23328
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793902357.5598605,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4993024,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5079040,
+        "pid": 28092
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793902357.5764606,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7671808,
+        "parent_pid_at_discovery": 28092,
+        "peak_rss_bytes": 7675904,
+        "pid": 55312
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 822.84375,
+        "create_time": 1793902357.6274185,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2577874944,
+        "parent_pid_at_discovery": 28092,
+        "peak_rss_bytes": 2586599424,
+        "pid": 66256
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793902510.9565387,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4980736,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5066752,
+        "pid": 50452
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793902510.9735465,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7659520,
+        "parent_pid_at_discovery": 50452,
+        "peak_rss_bytes": 7663616,
+        "pid": 54128
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 821.046875,
+        "create_time": 1793902511.0250473,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2565783552,
+        "parent_pid_at_discovery": 50452,
+        "peak_rss_bytes": 2578919424,
+        "pid": 29060
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.046875,
+        "create_time": 1793902663.7272937,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4988928,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5074944,
+        "pid": 56296
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.015625,
+        "create_time": 1793902663.7439544,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7651328,
+        "parent_pid_at_discovery": 56296,
+        "peak_rss_bytes": 7655424,
+        "pid": 37916
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 824.234375,
+        "create_time": 1793902663.798005,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2566258688,
+        "parent_pid_at_discovery": 56296,
+        "peak_rss_bytes": 2584801280,
+        "pid": 26540
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793902817.146996,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 4988928,
+        "parent_pid_at_discovery": 32624,
+        "peak_rss_bytes": 5074944,
+        "pid": 60368
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.0625,
+        "create_time": 1793902817.163386,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 8085504,
+        "parent_pid_at_discovery": 60368,
+        "peak_rss_bytes": 8093696,
+        "pid": 46016
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 824.6875,
+        "create_time": 1793902817.2128189,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 2574540800,
+        "parent_pid_at_discovery": 60368,
+        "peak_rss_bytes": 2581966848,
+        "pid": 42808
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 6486.796875,
+      "host_cpu_seconds": 783.890625,
+      "observed_tree_cpu_seconds": 5702.90625,
+      "peak_rss_bytes": 17925668864,
+      "wall_seconds": 1048.4206424999866
+    }
+  },
+  "no_promotion_authority": true,
+  "outcome": {
+    "disposition": "VERIFIED_REPLICATION_PASS",
+    "lineage_authority": false,
+    "passed": true,
+    "production_authority": false,
+    "reason": null,
+    "winner": null
+  },
+  "outcome_sha256": "2a3d95f9e9b3966b091440c8816cd5bf9dfa8e077ea0418e3e5cfcf146148e36",
+  "passed": true,
+  "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+  "schema": "weightbridge.phase_iiir.stage_execution.v1",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  },
+  "within_resource_limits": true
+}

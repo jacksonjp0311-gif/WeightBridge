@@ -178,6 +178,7 @@ def arm_summary(root, arm):
         "training_status": "UNMEASURED", "training_counts": None, "trainable_parameters": None,
         "training_body_resources": None, "selected_checkpoint": None, "checkpoints": {}, "merged": None,
         "independent_stages": {stage: None for stage in STAGES},
+        "adapter_development_retention": None,
         "adapter_vs_merged_continuations": {stage: None for stage in ("practice", "development")}}
     for name in ("completed.json", "failed.json"):
         source = path/"training"/name
@@ -229,6 +230,9 @@ def arm_summary(root, arm):
                 result["adapter_vs_merged_continuations"][stage] = {
                     **continuation_comparison(read(before), read(after)),
                     "adapter_measurement_sha256": sha(before), "merged_measurement_sha256": sha(after)}
+    paired = path/"adapter-development-retention.json"
+    if paired.is_file():
+        result["adapter_development_retention"] = protected(read(paired))
     return result
 
 
@@ -265,6 +269,7 @@ def export(study, out, *, additional_scopes=()):
             copy(relative)
     project("replication-verification.json")
     for arm in ARMS:
+        copy(f"{arm}/adapter-development-retention.json")  # shared public development only, never a bank
         for name in ("protocol.json", "material/manifest.json", "prospective-data-order.json", "main-data-order.json",
                      "main-authorization-plan.json", "main-authorization.json", "smoke-authorization.json", "merge-authorization.json",
                      "main-launch-claim.json", "smoke-launch-claim.json", "training-process.json", "main-execution.json",
@@ -347,7 +352,7 @@ def self_test():
         artifact = root/"artifact-study"
         allowed = ("rank8/smoke/zero/parent-measurement.json", "rank8/smoke/training/steps/0001.json",
                    "rank8/smoke/fresh-1/fresh-adapter-check.json", "rank8/smoke/zero-process.json",
-                   "rank8/main-launch-claim.json", "execution/rank8-assess.json")
+                   "rank8/main-launch-claim.json", "execution/rank8-assess.json", "rank4/adapter-development-retention.json")
         for relative in allowed:
             write(artifact/relative, {"schema": "self-test", "passed": True})
         write(artifact/"rank8/assessment/private-independent-rosters/hidden.json", [{"prompt": "secret"}])

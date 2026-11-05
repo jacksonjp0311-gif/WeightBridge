@@ -1,0 +1,136 @@
+{
+  "exact_total_cpu_seconds": null,
+  "limitation": "Observed process-tree CPU is a lower bound; short-lived unobserved processes are not ruled out. Additional scopes must be disjoint enclosing actions, never nested workers.",
+  "schema": "weightbridge.phase_iiir.public_compute.v1",
+  "scope": "Each smoke aggregate, main-training tree, and explicitly listed enclosing assessment/qualification/replay tree once. Child receipts excluded from sums. Software tests, reporting and unlisted preflight costs excluded.",
+  "scopes": [
+    {
+      "name": "rank8-smoke",
+      "receipt": "rank8/smoke/smoke-gate.json",
+      "resources": {
+        "cpu_seconds": 2680.171875,
+        "host_cpu_seconds": 201.5,
+        "observed_tree_cpu_seconds": 2478.671875,
+        "peak_rss_bytes": 7038115840,
+        "wall_seconds": 518.8203085999703
+      },
+      "sha256": "2ba879362d6c7503f27348d714e10d8437979d6d5206d3a2fa2c56706c27ea09",
+      "status": "PASS"
+    },
+    {
+      "name": "rank4-smoke",
+      "receipt": "rank4/smoke/smoke-gate.json",
+      "resources": {
+        "cpu_seconds": 2654.421875,
+        "host_cpu_seconds": 212.609375,
+        "observed_tree_cpu_seconds": 2441.8125,
+        "peak_rss_bytes": 6993960960,
+        "wall_seconds": 515.8277356000035
+      },
+      "sha256": "b94f0424a9d1727b63a113eab02e7a724d461389b14f77484de55b629327a57d",
+      "status": "PASS"
+    },
+    {
+      "name": "rank8-training",
+      "receipt": "rank8/training-process.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 19433.96875,
+        "host_cpu_seconds": 1232.59375,
+        "observed_tree_cpu_seconds": 18201.375,
+        "peak_rss_bytes": 7291002880,
+        "wall_seconds": 3123.877223299991
+      },
+      "sha256": "84df6692af0de08343d7358e044804537963b254212ea140d41d2aa9e92a6275",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "rank4-training",
+      "receipt": "rank4/training-process.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 19431.59375,
+        "host_cpu_seconds": 1276.046875,
+        "observed_tree_cpu_seconds": 18155.546875,
+        "peak_rss_bytes": 7211921408,
+        "wall_seconds": 3106.7092085999902
+      },
+      "sha256": "f208aa95a1aa8f2caa09d1dd26a029b2e5cd3a781ddff430bae35d70f3657d2f",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "rank8-assess",
+      "receipt": "execution/rank8-assess.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 6408.703125,
+        "host_cpu_seconds": 725.0625,
+        "observed_tree_cpu_seconds": 5683.640625,
+        "peak_rss_bytes": 15731875840,
+        "wall_seconds": 1090.6489970000111
+      },
+      "sha256": "1ddb63c17854cbbace4fcf357756fb5e36a6b136edf83074f1a49025d3d703ba",
+      "status": "RECORDED"
+    },
+    {
+      "name": "rank8-qualify",
+      "receipt": "execution/rank8-qualify.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 8927.25,
+        "host_cpu_seconds": 1110.40625,
+        "observed_tree_cpu_seconds": 7816.84375,
+        "peak_rss_bytes": 25673211904,
+        "wall_seconds": 1518.4987920999993
+      },
+      "sha256": "50ee5e32ff48d9ecbf5cc0e08ab3cb84bb3c7543732f14ad3824eb8e5c55ad0b",
+      "status": "RECORDED"
+    },
+    {
+      "name": "rank8-verify",
+      "receipt": "execution/rank8-verify.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 6486.796875,
+        "host_cpu_seconds": 783.890625,
+        "observed_tree_cpu_seconds": 5702.90625,
+        "peak_rss_bytes": 17925668864,
+        "wall_seconds": 1048.4206424999866
+      },
+      "sha256": "d51700ae5183969dcb8e726eebaebebf621052b93615f9c02eadc06f03ed70a0",
+      "status": "RECORDED"
+    },
+    {
+      "name": "rank4-assess",
+      "receipt": "execution/rank4-assess.json",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 6369.75,
+        "host_cpu_seconds": 720.15625,
+        "observed_tree_cpu_seconds": 5649.59375,
+        "peak_rss_bytes": 15716814848,
+        "wall_seconds": 1089.1113441000343
+      },
+      "sha256": "2c691dc121a7d81940019846fd6b4a6ae0143bb06fba2e8ea3553cf13bfb210a",
+      "status": "RECORDED"
+    },
+    {
+      "name": "rank4-qualify",
+      "receipt": "execution/rank4-qualify.json",
+      "resources": null,
+      "status": "UNMEASURED"
+    },
+    {
+      "name": "rank4-verify",
+      "receipt": "execution/rank4-verify.json",
+      "resources": null,
+      "status": "UNMEASURED"
+    }
+  ],
+  "totals": {
+    "cpu_seconds_observed_scope_sum": 72392.65625,
+    "maximum_observed_conservative_peak_rss_bytes": 25673211904,
+    "wall_seconds_observed_scope_sum": 12011.914251799986
+  },
+  "unmeasured_scope_count": 2
+}

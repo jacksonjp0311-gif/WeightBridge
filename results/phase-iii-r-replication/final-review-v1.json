@@ -1,0 +1,95 @@
+{
+  "bank_b_outcomes": null,
+  "candidate_screening": [
+    {
+      "arm": "rank8",
+      "development_families": 31,
+      "development_parent_correct_lost": 2,
+      "development_parent_valid_lost": 1,
+      "development_passed": false,
+      "development_strict": 63,
+      "development_target_correct": 255,
+      "eligible": false,
+      "practice_passed": false,
+      "step": 64
+    },
+    {
+      "arm": "rank8",
+      "development_families": 32,
+      "development_parent_correct_lost": 0,
+      "development_parent_valid_lost": 0,
+      "development_passed": true,
+      "development_strict": 64,
+      "development_target_correct": 256,
+      "eligible": true,
+      "practice_passed": true,
+      "step": 128
+    },
+    {
+      "arm": "rank4",
+      "development_families": 29,
+      "development_parent_correct_lost": 1,
+      "development_parent_valid_lost": 1,
+      "development_passed": false,
+      "development_strict": 61,
+      "development_target_correct": 252,
+      "eligible": false,
+      "practice_passed": true,
+      "step": 64
+    },
+    {
+      "arm": "rank4",
+      "development_families": 31,
+      "development_parent_correct_lost": 1,
+      "development_parent_valid_lost": 2,
+      "development_passed": false,
+      "development_strict": 63,
+      "development_target_correct": 254,
+      "eligible": false,
+      "practice_passed": true,
+      "step": 128
+    }
+  ],
+  "export_manifest_sha256": "bea238b5c1355a0c82720502d932fc570b061f2a2473cc034ba19018d827f268",
+  "frozen_source_files_verified": 141,
+  "historical_source_or_archive_changes": [],
+  "model_execution": false,
+  "passed": true,
+  "private_rosters_read": false,
+  "public_commitments_verified": 422,
+  "rank4_merged_representation": null,
+  "rank4_status": "NO_ELIGIBLE_DEVELOPMENT_FINALIST",
+  "rank8_qualification_basis": "Published aggregate private gate receipts plus completed enclosing process budget gate; private raw predictions were not opened for this audit.",
+  "rank8_status": "VERIFIED_REPLICATION_PASS",
+  "recorded_software_validation": {
+    "frozen_runtime": {
+      "errors": 0,
+      "failed": 0,
+      "passed": 889,
+      "receipt_sha256": "716be99616d802d25573b879352d4c7eccd2194a5ce0e42ac3dfd3a71c45b0ee",
+      "skipped": 2,
+      "tests": 891
+    },
+    "optional_mcp": {
+      "errors": 0,
+      "failed": 0,
+      "passed": 23,
+      "receipt_sha256": "ad0c0475368b6f94d6cff248f291d767ce1e58a7f2f3c24f082e1f811f206597",
+      "skipped": 0,
+      "tests": 23
+    }
+  },
+  "report_cautions": [
+    "Rank-four improved practice and development averages but failed frozen correctness/validity preservation; no Bank B or merged performance can be claimed.",
+    "Both runs share one initialization seed and matched exposure; no claim across seeds or population-wide equivalence.",
+    "Reported first-line correctness does not assert full EOS completion or all-token adapter/merged equivalence."
+  ],
+  "resources": {
+    "cpu_seconds": 0.1875,
+    "scope": "This public audit only; no experiment compute included.",
+    "wall_seconds": 0.2981419999850914
+  },
+  "review_scope": "Independent read-only public artifact and scientific-claim audit. No model rerun, checkpoint byte audit or protected raw scoring.",
+  "schema": "weightbridge.phase_iiir.final_scientific_review.v1",
+  "unpublished_weight_or_bank_boundaries_passed": true
+}

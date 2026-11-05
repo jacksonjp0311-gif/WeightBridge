@@ -1,0 +1,1332 @@
+{
+  "rank4": {
+    "adapter_development_retention": null,
+    "adapter_vs_merged_continuations": {
+      "development": null,
+      "practice": null
+    },
+    "alpha": 8,
+    "checkpoints": {
+      "128": {
+        "BF16_preview_changed_entries": 409100536,
+        "BF16_preview_norm": 3.1432009865554598,
+        "adapter_bytes": 10927792,
+        "adapter_sha256": "4d6e2fdb097caadc4ffb9a8fc8078520e446e5bf15f6ae9581aa97a7cb7722ba",
+        "development": {
+          "candidate": {
+            "comparisons": 64,
+            "complete_families": 31,
+            "complete_family_ids_count": 31,
+            "completed_first_lines": 336,
+            "correct": 334,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 128,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 126,
+                "presentations": 128,
+                "valid": 126
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 63,
+            "strict_comparisons": 63,
+            "valid_completed_first_lines": 334
+          },
+          "complete_family_gain": 31,
+          "correct_response_gain": 219,
+          "lost_valid_presentations_count": 2,
+          "newly_complete_families_count": 31,
+          "parent": {
+            "comparisons": 64,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 336,
+            "correct": 115,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 34,
+                "presentations": 128,
+                "valid": 128
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 336
+          },
+          "passed": false,
+          "prohibited_regressions_count": 1,
+          "repeatable_comparisons_corrected_count": 34,
+          "strict_comparison_gain": 63
+        },
+        "effective_unrounded_norm": 3.105897193598584,
+        "eligible": false,
+        "practice": {
+          "candidate": {
+            "comparisons": 32,
+            "complete_families": 16,
+            "complete_family_ids_count": 16,
+            "completed_first_lines": 208,
+            "correct": 208,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 32,
+            "strict_comparisons": 32,
+            "valid_completed_first_lines": 208
+          },
+          "complete_family_gain": 16,
+          "correct_response_gain": 115,
+          "lost_valid_presentations_count": 0,
+          "newly_complete_families_count": 16,
+          "parent": {
+            "comparisons": 32,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 208,
+            "correct": 93,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 12,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 208
+          },
+          "passed": true,
+          "prohibited_regressions_count": 0,
+          "repeatable_comparisons_corrected_count": 21,
+          "strict_comparison_gain": 32
+        },
+        "receipt_sha256": "8768fd2f4b2612c8f944a1f0cba7477e8488a6ce5b176563e9679089857919e3",
+        "rounding_residual_norm": 0.5115080704999243,
+        "step": 128,
+        "trainable_parameters": 2705664,
+        "training_counts": {
+          "answer_tokens": 17308,
+          "backward_calls": 512,
+          "examples_seen": 2048,
+          "forward_calls": 512,
+          "input_tokens": 172678,
+          "optimizer_steps": 128,
+          "padded_input_token_positions": 188932
+        },
+        "training_loss": 4.698891726323767e-06
+      },
+      "64": {
+        "BF16_preview_changed_entries": 408587695,
+        "BF16_preview_norm": 3.1161350043966634,
+        "adapter_bytes": 10927792,
+        "adapter_sha256": "c7e42ad1673fedda46ada5a42fa81c0511d2a5debf5bda60c89fede39f1ecdcc",
+        "development": {
+          "candidate": {
+            "comparisons": 64,
+            "complete_families": 29,
+            "complete_family_ids_count": 29,
+            "completed_first_lines": 336,
+            "correct": 332,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 127,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 125,
+                "presentations": 128,
+                "valid": 127
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 61,
+            "strict_comparisons": 61,
+            "valid_completed_first_lines": 335
+          },
+          "complete_family_gain": 29,
+          "correct_response_gain": 217,
+          "lost_valid_presentations_count": 1,
+          "newly_complete_families_count": 29,
+          "parent": {
+            "comparisons": 64,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 336,
+            "correct": 115,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 34,
+                "presentations": 128,
+                "valid": 128
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 336
+          },
+          "passed": false,
+          "prohibited_regressions_count": 1,
+          "repeatable_comparisons_corrected_count": 33,
+          "strict_comparison_gain": 61
+        },
+        "effective_unrounded_norm": 3.078569365978217,
+        "eligible": false,
+        "practice": {
+          "candidate": {
+            "comparisons": 32,
+            "complete_families": 16,
+            "complete_family_ids_count": 16,
+            "completed_first_lines": 208,
+            "correct": 208,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 32,
+            "strict_comparisons": 32,
+            "valid_completed_first_lines": 208
+          },
+          "complete_family_gain": 16,
+          "correct_response_gain": 115,
+          "lost_valid_presentations_count": 0,
+          "newly_complete_families_count": 16,
+          "parent": {
+            "comparisons": 32,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 208,
+            "correct": 93,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 12,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 208
+          },
+          "passed": true,
+          "prohibited_regressions_count": 0,
+          "repeatable_comparisons_corrected_count": 21,
+          "strict_comparison_gain": 32
+        },
+        "receipt_sha256": "7775e6fc478fc2956dc2a521d8d70a542d0afc277bced6c2a7279ee33dbfa1df",
+        "rounding_residual_norm": 0.5113713091722696,
+        "step": 64,
+        "trainable_parameters": 2705664,
+        "training_counts": {
+          "answer_tokens": 8613,
+          "backward_calls": 256,
+          "examples_seen": 1024,
+          "forward_calls": 256,
+          "input_tokens": 86032,
+          "optimizer_steps": 64,
+          "padded_input_token_positions": 94456
+        },
+        "training_loss": 6.0652704302232125e-06
+      }
+    },
+    "independent_stages": {
+      "hidden": null,
+      "preservation-validation": null,
+      "selection": null
+    },
+    "merged": null,
+    "rank": 4,
+    "selected_checkpoint": null,
+    "trainable_parameters": 2705664,
+    "training_body_resources": {
+      "cpu_seconds": 18151.453125,
+      "peak_rss_bytes": 7199006720,
+      "wall_seconds": 3102.168502000044
+    },
+    "training_counts": {
+      "answer_tokens": 17308,
+      "backward_calls": 512,
+      "examples_seen": 2048,
+      "forward_calls": 512,
+      "input_tokens": 172678,
+      "optimizer_steps": 128,
+      "padded_input_token_positions": 188932
+    },
+    "training_status": "COMPLETED"
+  },
+  "rank8": {
+    "adapter_development_retention": null,
+    "adapter_vs_merged_continuations": {
+      "development": {
+        "adapter_measurement_sha256": "6671df8008c5f169d456750eba28bb903814b1c832a726ab6be841a0e9999560",
+        "full_text_differences": 17,
+        "merged_measurement_sha256": "3a8089fd08c939292355f0b4096487abe8a8f124fbeffb2d8250e25db71f8256",
+        "presentations": 336,
+        "raw_first_line_differences": 0,
+        "scope": "Adapter versus independently loaded merged checkpoint on the same authorized practice/development presentations. Identical scored first lines do not imply identical full continuations.",
+        "semantic_correctness_differences": 0,
+        "stop_reason_differences": 0,
+        "token_sequence_differences": 17,
+        "validity_differences": 0
+      },
+      "practice": {
+        "adapter_measurement_sha256": "54703b1427305af44bb722204257bae571a9822f4964a285377977eecd9f2262",
+        "full_text_differences": 24,
+        "merged_measurement_sha256": "c86ff7b20242f0013c6a1016019b424c89edcfc55b406f1f5959805cefda73d2",
+        "presentations": 208,
+        "raw_first_line_differences": 0,
+        "scope": "Adapter versus independently loaded merged checkpoint on the same authorized practice/development presentations. Identical scored first lines do not imply identical full continuations.",
+        "semantic_correctness_differences": 0,
+        "stop_reason_differences": 0,
+        "token_sequence_differences": 24,
+        "validity_differences": 0
+      }
+    },
+    "alpha": 16,
+    "checkpoints": {
+      "128": {
+        "BF16_preview_changed_entries": 430288456,
+        "BF16_preview_norm": 4.156839644102188,
+        "adapter_bytes": 21750832,
+        "adapter_sha256": "798ed00453e94e20e6dcd69a9899ff9d6acd3d9b584a4494822c444d500ad0c4",
+        "development": {
+          "candidate": {
+            "comparisons": 64,
+            "complete_families": 32,
+            "complete_family_ids_count": 32,
+            "completed_first_lines": 336,
+            "correct": 336,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 128,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 128,
+                "presentations": 128,
+                "valid": 128
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 64,
+            "strict_comparisons": 64,
+            "valid_completed_first_lines": 336
+          },
+          "complete_family_gain": 32,
+          "correct_response_gain": 221,
+          "lost_valid_presentations_count": 0,
+          "newly_complete_families_count": 32,
+          "parent": {
+            "comparisons": 64,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 336,
+            "correct": 115,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 34,
+                "presentations": 128,
+                "valid": 128
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 336
+          },
+          "passed": true,
+          "prohibited_regressions_count": 0,
+          "repeatable_comparisons_corrected_count": 34,
+          "strict_comparison_gain": 64
+        },
+        "effective_unrounded_norm": 4.126247257943652,
+        "eligible": true,
+        "practice": {
+          "candidate": {
+            "comparisons": 32,
+            "complete_families": 16,
+            "complete_family_ids_count": 16,
+            "completed_first_lines": 208,
+            "correct": 208,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 32,
+            "strict_comparisons": 32,
+            "valid_completed_first_lines": 208
+          },
+          "complete_family_gain": 16,
+          "correct_response_gain": 115,
+          "lost_valid_presentations_count": 0,
+          "newly_complete_families_count": 16,
+          "parent": {
+            "comparisons": 32,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 208,
+            "correct": 93,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 12,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 208
+          },
+          "passed": true,
+          "prohibited_regressions_count": 0,
+          "repeatable_comparisons_corrected_count": 21,
+          "strict_comparison_gain": 32
+        },
+        "receipt_sha256": "b2940a52b0d8697d8cec7493dab0c8e15bddf1baed267ac7ecd195b5e3b1372f",
+        "rounding_residual_norm": 0.5179038208402077,
+        "step": 128,
+        "trainable_parameters": 5411328,
+        "training_counts": {
+          "answer_tokens": 17308,
+          "backward_calls": 512,
+          "examples_seen": 2048,
+          "forward_calls": 512,
+          "input_tokens": 172678,
+          "optimizer_steps": 128,
+          "padded_input_token_positions": 188932
+        },
+        "training_loss": 1.8126226556376745e-06
+      },
+      "64": {
+        "BF16_preview_changed_entries": 428408668,
+        "BF16_preview_norm": 4.028752126743124,
+        "adapter_bytes": 21750832,
+        "adapter_sha256": "9fd922a6c692db372fa69e310f235321b462fe827e166486874e506f3ff3aefd",
+        "development": {
+          "candidate": {
+            "comparisons": 64,
+            "complete_families": 31,
+            "complete_family_ids_count": 31,
+            "completed_first_lines": 336,
+            "correct": 333,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 14,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 128,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 127,
+                "presentations": 128,
+                "valid": 127
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 63,
+            "strict_comparisons": 63,
+            "valid_completed_first_lines": 335
+          },
+          "complete_family_gain": 31,
+          "correct_response_gain": 218,
+          "lost_valid_presentations_count": 1,
+          "newly_complete_families_count": 31,
+          "parent": {
+            "comparisons": 64,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 336,
+            "correct": 115,
+            "decode_termination": {
+              "token_budget": 336
+            },
+            "families": 32,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 128,
+                "valid": 128
+              },
+              "negative-far": {
+                "correct": 34,
+                "presentations": 128,
+                "valid": 128
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 336,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 336
+          },
+          "passed": false,
+          "prohibited_regressions_count": 2,
+          "repeatable_comparisons_corrected_count": 34,
+          "strict_comparison_gain": 63
+        },
+        "effective_unrounded_norm": 3.9973416915361146,
+        "eligible": false,
+        "practice": {
+          "candidate": {
+            "comparisons": 32,
+            "complete_families": 15,
+            "complete_family_ids_count": 15,
+            "completed_first_lines": 208,
+            "correct": 205,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 14,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 64,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 63,
+                "presentations": 64,
+                "valid": 63
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 31,
+            "strict_comparisons": 31,
+            "valid_completed_first_lines": 207
+          },
+          "complete_family_gain": 15,
+          "correct_response_gain": 112,
+          "lost_valid_presentations_count": 1,
+          "newly_complete_families_count": 15,
+          "parent": {
+            "comparisons": 32,
+            "complete_families": 0,
+            "complete_family_ids_count": 0,
+            "completed_first_lines": 208,
+            "correct": 93,
+            "decode_termination": {
+              "token_budget": 208
+            },
+            "families": 16,
+            "groups": {
+              "copy": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-add": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "integer-successor": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "mixed-sign": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              },
+              "negative-close": {
+                "correct": 1,
+                "presentations": 64,
+                "valid": 64
+              },
+              "negative-far": {
+                "correct": 12,
+                "presentations": 64,
+                "valid": 64
+              },
+              "positive-far": {
+                "correct": 16,
+                "presentations": 16,
+                "valid": 16
+              }
+            },
+            "presentations": 208,
+            "strict_comparison_ids_count": 0,
+            "strict_comparisons": 0,
+            "valid_completed_first_lines": 208
+          },
+          "passed": false,
+          "prohibited_regressions_count": 2,
+          "repeatable_comparisons_corrected_count": 20,
+          "strict_comparison_gain": 31
+        },
+        "receipt_sha256": "26611851145de48c43a05630dc5632795932308d172a8b80a0a0a1aa0878d75a",
+        "rounding_residual_norm": 0.5175408635037962,
+        "step": 64,
+        "trainable_parameters": 5411328,
+        "training_counts": {
+          "answer_tokens": 8613,
+          "backward_calls": 256,
+          "examples_seen": 1024,
+          "forward_calls": 256,
+          "input_tokens": 86032,
+          "optimizer_steps": 64,
+          "padded_input_token_positions": 94456
+        },
+        "training_loss": 1.7240403083035433e-05
+      }
+    },
+    "independent_stages": {
+      "hidden": {
+        "authorization_sha256": "768cb2ec4f21a2c66cd72e7559442af61430b552fbf6a316f5fe41ae09b28df1",
+        "candidate": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "complete_family_ids_count": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 64,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        },
+        "complete_family_gain": 32,
+        "correct_response_gain": 219,
+        "lost_valid_presentations_count": 0,
+        "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+        "newly_complete_families_count": 32,
+        "parent": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 256,
+          "correct": 37,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 36,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        },
+        "passed": true,
+        "prohibited_regressions_count": 0,
+        "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+        "repeatable_comparisons_corrected_count": 35,
+        "representation_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+        "strict_comparison_gain": 64
+      },
+      "preservation-validation": {
+        "authorization_sha256": "71dcfc4de7f55fa3ce1bfcebfcd731bf03971223bd3436041a2fc902a14d7c12",
+        "candidate": {
+          "comparisons": 0,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 320,
+          "correct": 320,
+          "decode_termination": {
+            "token_budget": 320
+          },
+          "families": 0,
+          "groups": {
+            "copy": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-add": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-successor": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "mixed-sign": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "positive-far": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            }
+          },
+          "presentations": 320,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 320
+        },
+        "complete_family_gain": 0,
+        "correct_response_gain": 0,
+        "lost_valid_presentations_count": 0,
+        "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+        "newly_complete_families_count": 0,
+        "parent": {
+          "comparisons": 0,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 320,
+          "correct": 320,
+          "decode_termination": {
+            "token_budget": 320
+          },
+          "families": 0,
+          "groups": {
+            "copy": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-add": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "integer-successor": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "mixed-sign": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            },
+            "positive-far": {
+              "correct": 64,
+              "presentations": 64,
+              "valid": 64
+            }
+          },
+          "presentations": 320,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 320
+        },
+        "passed": true,
+        "prohibited_regressions_count": 0,
+        "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+        "repeatable_comparisons_corrected_count": 0,
+        "representation_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+        "strict_comparison_gain": 0
+      },
+      "selection": {
+        "authorization_sha256": "b44f2b97e92da8dbcb66859bdabd921e55b49aa0b38373ad0910d8e375f0cbac",
+        "candidate": {
+          "comparisons": 64,
+          "complete_families": 32,
+          "complete_family_ids_count": 32,
+          "completed_first_lines": 256,
+          "correct": 256,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 128,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 64,
+          "strict_comparisons": 64,
+          "valid_completed_first_lines": 256
+        },
+        "complete_family_gain": 32,
+        "correct_response_gain": 222,
+        "lost_valid_presentations_count": 0,
+        "manifest_sha256": "bf74d9de43ea7757933adbee819cd6ab4323916545f70f386185c3b343b84f57",
+        "newly_complete_families_count": 32,
+        "parent": {
+          "comparisons": 64,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 256,
+          "correct": 34,
+          "decode_termination": {
+            "token_budget": 256
+          },
+          "families": 32,
+          "groups": {
+            "negative-close": {
+              "correct": 1,
+              "presentations": 128,
+              "valid": 128
+            },
+            "negative-far": {
+              "correct": 33,
+              "presentations": 128,
+              "valid": 128
+            }
+          },
+          "presentations": 256,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 256
+        },
+        "passed": true,
+        "prohibited_regressions_count": 0,
+        "protocol_sha256": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+        "repeatable_comparisons_corrected_count": 38,
+        "representation_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+        "strict_comparison_gain": 64
+      }
+    },
+    "merged": {
+      "base_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "candidate_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "changed_entries": 430288456,
+      "factor_sha256": "8b4afe43957909acd0356e46f8f0e2cfa311b188006e5073e1e1a06492a7206a",
+      "proposed_update_norm": 4.126247257943652,
+      "receipt_sha256": "09f5b8481c4d14b18893451d68c9d2a2095d1f8467ee41643a872fbd1a6cbd18",
+      "rounding_residual_norm": 0.5179038208402077,
+      "stored_update_norm": 4.156839644102188
+    },
+    "rank": 8,
+    "selected_checkpoint": "run-0-step-0128",
+    "trainable_parameters": 5411328,
+    "training_body_resources": {
+      "cpu_seconds": 18197.03125,
+      "peak_rss_bytes": 7278145536,
+      "wall_seconds": 3119.1241168999695
+    },
+    "training_counts": {
+      "answer_tokens": 17308,
+      "backward_calls": 512,
+      "examples_seen": 2048,
+      "forward_calls": 512,
+      "input_tokens": 172678,
+      "optimizer_steps": 128,
+      "padded_input_token_positions": 188932
+    },
+    "training_status": "COMPLETED"
+  }
+}
