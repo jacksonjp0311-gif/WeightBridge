@@ -20,6 +20,10 @@ optimizer steps. I's merged norm exceeded its frozen limit and received no
 generation evaluation. J stayed within its separate projected envelope but
 lost a strict target comparison and caused two presentation regressions. Those
 results are preserved; they did not test this broader conventional recipe.
+Phase III-P's local full-block lower bounds also exceeded the 0.025 edit cap
+in its authorized region. That result concerns the sampled linear constraints,
+not global trainability. Its separate external repetition edit is not used
+here, either as a parent or a source of training examples.
 
 ## Frozen recipe
 
@@ -29,7 +33,8 @@ Runtime inspection found 186 supported text attention and MLP linear modules
 across 24 layers. The explicit allowlist excludes vision, embeddings, the
 output head, tied tensors, normalization and non-linear/custom operations.
 
-Each eligible matrix receives the standard additive adapter
+Each eligible matrix receives the additive adapter from
+[Hu et al., LoRA (v2)](https://arxiv.org/abs/2106.09685v2):
 
 \[
 W_{\mathrm{effective}}=W+\frac{16}{8}BA,
@@ -49,6 +54,12 @@ prefix exactly. Prompt and padding labels are masked. Logits at position t
 predict the label at t+1. Cross-entropy covers every answer token and the
 delimiter. Restricted output-head computation is checked against full logits;
 it does not constrain the vocabulary or greedy generation.
+
+For prompt \(x_i\) and complete supervised continuation \(y_i\), the batch
+loss is the negative sum of \(\log P(y_{i,t}\mid x_i,y_{i,<t})\), divided by
+the number of unmasked continuation tokens. The two sources have equal
+example exposure; longer answers contribute more token terms. No loss term
+sees a development, selection or hidden example.
 
 Fresh data contain 128 target training families (1,024 presentations) and
 1,024 equally weighted preservation-replay presentations. Targets contain both
@@ -149,14 +160,34 @@ upper bound of 3,461.10 seconds, below the 4,500-second smoke limit. Exact total
 CPU is unknown. Known lifetime peak RSS is 7,020,761,088 bytes. The main runs
 use process-tree monitoring. No behavioral threshold was changed.
 
-The two separately authorized main runs have not yet supplied development or
-independent evidence. Unopened stages remain null. The accepted lineage is
-unchanged. Main results will be added after execution.
+The first main launch omitted the required smoke-admission argument and was
+refused before model load. The corrected launch used the unchanged frozen
+training configuration. Windows then entered idle Modern Standby. Seventeen
+optimizer steps were recorded before the original wall-time guard stopped
+the owned process tree on resume. No scheduled checkpoint was reached. The
+observed process tree used 3,054.625 CPU seconds; its 22,020.967 elapsed wall
+seconds include standby and are not active compute. At least 68 training
+forward/backward calls were completed. Partial work beyond the last journal
+entry is unmeasured. The original model hash was verified again after the stop.
+
+The resource interruption consumed the authorized `1e-4` arm. It was not
+retrained. A [prospective resource continuation](../results/phase-iii-q-baseline/baseline-v1/resource-continuation.json)
+keeps the remaining `3e-4` recipe, checkpoint steps, populations and every
+behavioral threshold unchanged. Its two checkpoints may be assessed only if
+the run completes. The lower-rate arm has no behavioral observation, so the
+study cannot compare learning rates. The temporary Windows sleep request
+is cleared on exit; no persistent power setting is changed.
+
+Development and independent stages remain unopened while the surviving run
+trains. The accepted lineage remains unchanged.
 
 Receipts: [smoke report](../results/phase-iii-q-baseline/smoke-report.json),
 [raw gate](../results/phase-iii-q-baseline/baseline-v1/smoke/smoke-gate.json),
 [independent admission and cost audit](../results/phase-iii-q-baseline/baseline-v1/smoke-admission.json),
 [frozen-source tests](../results/phase-iii-q-baseline/tests/frozen-v1/tests.json).
+
+The [interruption archive](../results/phase-iii-q-baseline/baseline-v1/interruptions)
+preserves both failed launch attempts and the relevant Windows power events.
 
 The full protocol is
 [`experiments/phase_iiiq_baseline/protocol.json`](../experiments/phase_iiiq_baseline/protocol.json).
@@ -164,3 +195,44 @@ Training curves are diagnostic; only actual complete generated answers can
 establish behavioral improvement. A baseline pass would establish one
 bounded learning result, not a universal adaptation algorithm or a success
 of the earlier custom editor.
+
+## Reproduction
+
+Use an existing local checkpoint with the exact pinned directory hash and the
+recorded Windows runtime. The host utilities do not download a model. Set
+`$wbPython` to that runtime's `python.exe`, `$wbBase` to the immutable checkpoint,
+and `$wbStudy` to a new private directory outside the checkout and checkpoint.
+In PowerShell, from the branch checkout:
+
+```powershell
+$wbInventory = 'results/phase-iii-q-baseline/preflight/inventory-v1/architecture-inventory.json'
+& $wbPython -m experiments.phase_iiiq_baseline.initialize freeze `
+  --base $wbBase --inventory $wbInventory --out $wbStudy
+& $wbPython -m experiments.phase_iiiq_baseline.execute_smoke `
+  --base $wbBase --protocol "$wbStudy/protocol.json" `
+  --authorization "$wbStudy/smoke-authorization.json" --bundle "$wbStudy/smoke-bundle.json" `
+  --rows "$wbStudy/material/smoke.json" --out "$wbStudy/smoke"
+```
+
+Replay the smoke evidence with `experiments.phase_iiiq_baseline.admit_smoke`
+before `initialize authorize-main`. Use the resulting `smoke-admission.json`
+as the `--smoke-gate` for both main authorization and `run_training`. Main
+training receives only `training-bundle.json`; it does not receive the
+material directory. The host chooses a new output directory for each attempt.
+For the surviving recipe, the command is:
+
+```powershell
+& $wbPython -m experiments.phase_iiiq_baseline.run_training `
+  --base $wbBase --protocol "$wbStudy/protocol.json" `
+  --authorization "$wbStudy/main-authorization.json" --bundle "$wbStudy/training-bundle.json" `
+  --smoke-gate "$wbStudy/smoke-admission.json" --run-index 1 --out "$wbStudy/run-1"
+```
+
+The ordinary `study assess` command expects both completed runs. The separate
+`resource_limited_assessment` command exists for the recorded standby cutoff;
+it binds the published continuation and both process receipts while reusing
+the same evaluation and gates. It cannot convert another kind of failure
+into an eligible checkpoint. No public command opens selection or hidden
+without the host's frozen inputs and prior receipts. Reproducing a private
+qualification score requires that operator-held material; the public archive
+contains commitments and permitted evidence, not private rosters or weights.

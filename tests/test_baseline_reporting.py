@@ -75,6 +75,28 @@ def test_independent_smoke_audit_has_priority_and_raw_hash_binding(protocol, tmp
         analyze.summarize(protocol, smoke_root=raw.parent)
 
 
+def test_main_attempt_process_tree_supersedes_nested_body_cost(protocol, tmp_path):
+    complete = put(tmp_path/"run-1/completed.json", {"status": "COMPLETED", "run_index": 1,
+        "resources": {"cpu_seconds": 30, "wall_seconds": 7, "peak_rss_bytes": 500}})
+    for name, complete_sha, index, status, cpu, wall, rss in (
+        ("run-0", None, 0, "HOLD", 5, 2, 150),
+        ("run-1", file_hash(complete), 1, "COMPLETED", 40, 10, 700),
+    ):
+        log = tmp_path/f"{name}.log"
+        log.write_text("fixture", encoding="utf-8")
+        put(tmp_path/f"{name}-process.json", {"schema": "weightbridge.supervised_baseline.training_process_tree.v1",
+            "status": status, "run_index": index, "protocol_sha256": file_hash(protocol),
+            "log_sha256": file_hash(log), "training_completed_receipt_sha256": complete_sha,
+            "execution": {"resources": {"cpu_seconds": cpu, "wall_seconds": wall, "peak_rss_bytes": rss,
+                "cpu_accounting_complete_for_observed_processes": True}}})
+    report = analyze.summarize(protocol, run_roots=[tmp_path/"run-0", tmp_path/"run-1"])
+    assert [row["status"] for row in report["main_runs"]] == ["HOLD", "COMPLETED"]
+    assert report["measured_cost_totals"]["known_cpu_lower_bound_seconds"] == 45
+    assert report["measured_cost_totals"]["wall_seconds"] == 12
+    assert report["measured_cost_totals"]["peak_rss_bytes"] == 700
+    assert report["measured_cost_totals"]["cpu_seconds"] is None
+
+
 def test_checkpoint_effective_norms_and_hash_tampering(protocol, tmp_path):
     checkpoint = tmp_path/"run/checkpoints/step-0064"
     checkpoint.mkdir(parents=True)

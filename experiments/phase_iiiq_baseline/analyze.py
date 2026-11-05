@@ -34,7 +34,7 @@ def summarize(protocol_path, *, smoke_root=None, smoke_admission=None, run_roots
         inputs[f"{label}/{name}"] = file_hash(path)
         return value
 
-    def training(root, label):
+    def training(root, label, *, process_tree=False):
         completed = receipt(root, "completed.json", label)
         failed = receipt(root, "failed.json", label)
         final = completed or failed
@@ -52,8 +52,31 @@ def summarize(protocol_path, *, smoke_root=None, smoke_admission=None, run_roots
                 "factor_sha256": saved.get("factor_sha256"), "artifact_verified": digest is not None,
                 **{key: effective.get(key) for key in ("proposed_update_norm", "stored_update_norm", "changed_entries",
                     "parent_selected_weight_norm", "relative_stored_update_norm", "rounding_residual_norm")}})
-        return {"status": final.get("status") if final else "UNMEASURED_OR_INCOMPLETE",
-            "smoke": final.get("smoke") if final else None, "run_index": final.get("run_index") if final else None,
+        process = receipt(root.parent, f"{root.name}-process.json", label) if process_tree else None
+        cost = None
+        if process:
+            if (process.get("schema") != "weightbridge.supervised_baseline.training_process_tree.v1"
+                    or process.get("attempt_directory", root.name) != root.name
+                    or process.get("training_completed_receipt_sha256") != (file_hash(root/"completed.json") if completed else None)
+                    or process.get("log_sha256") != file_hash(root.parent/f"{root.name}.log")):
+                raise ValueError("Training process resource receipt differs from its owned attempt")
+            observed = process["execution"]["resources"]
+            cost = {"wall_seconds": observed.get("wall_seconds"), "cpu_seconds": None,
+                "known_cpu_lower_bound_seconds": observed.get("cpu_seconds"),
+                "conservative_cpu_upper_bound_seconds": None,
+                "peak_rss_bytes": max(observed.get("peak_rss_bytes") or 0, observed.get("known_peak_rss_floor_bytes") or 0),
+                "cpu_accounting_complete_for_observed_processes": observed.get("cpu_accounting_complete_for_observed_processes"),
+                "source": "owned_process_tree", "coverage_scope": process["execution"].get("coverage_scope"),
+                "memory_scope": process["execution"].get("memory_scope")}
+        elif process_tree and final and final.get("resources"):
+            body = final["resources"]
+            cost = {"wall_seconds": body.get("wall_seconds"), "cpu_seconds": None,
+                "known_cpu_lower_bound_seconds": body.get("cpu_seconds"), "conservative_cpu_upper_bound_seconds": None,
+                "peak_rss_bytes": body.get("peak_rss_bytes"), "source": "training_worker_body_only"}
+        state = process.get("status") if process else final.get("status") if final else "UNMEASURED_OR_INCOMPLETE"
+        return {"status": state, "attempt_directory": root.name, "process_receipt": process, "process_cost": cost,
+            "smoke": final.get("smoke") if final else None,
+            "run_index": final.get("run_index") if final else (process or {}).get("run_index"),
             "counts": final.get("counts") if final else (steps[-1].get("counts") if steps else None),
             "resources": final.get("resources") if final else None, "base_unchanged": final.get("base_unchanged") if final else None,
             "all_factors_changed": final.get("all_factors_changed") if final else None,
@@ -107,7 +130,7 @@ def summarize(protocol_path, *, smoke_root=None, smoke_admission=None, run_roots
         smoke["work"] = {key: sum(row.get(key, 0) for row in [zero, *fresh] if row is not None)
             if zero is not None and all(fresh) else None for key in
             ("explicit_forward_calls", "backward_calls", "batched_decode_steps", "generated_response_records")}
-    runs = [training(Path(root), f"run-{i}") for i, root in enumerate(run_roots)]
+    runs = [training(Path(root), f"training-attempt-{i}", process_tree=True) for i, root in enumerate(run_roots)]
     assessment = independent = None
     evaluation_costs, evaluation_work = [], []
     if assessment_root is not None:
@@ -132,11 +155,12 @@ def summarize(protocol_path, *, smoke_root=None, smoke_admission=None, run_roots
     costs = []
     if smoke_cost:
         costs.append({"phase": "disposable_smoke", **smoke_cost})
-    costs += [{"phase": f"main_training_{i}", **row["resources"]} for i, row in enumerate(runs) if row["resources"]]
+    costs += [{"phase": row["attempt_directory"], **row["process_cost"]} for row in runs if row["process_cost"]]
     if assessment:
         host = assessment.get("resources", {})
         costs.append({"phase": "practice_development_assessment", "wall_seconds": host.get("host_wall_seconds_including_workers"),
-            "cpu_seconds": host.get("host_cpu_seconds", 0)+sum(row.get("cpu_seconds", 0) for row in evaluation_costs),
+            "cpu_seconds": None, "known_cpu_lower_bound_seconds": host.get("host_cpu_seconds", 0)+sum(
+                row.get("cpu_seconds", 0) for row in evaluation_costs), "conservative_cpu_upper_bound_seconds": None,
             "peak_rss_bytes": max((row.get("peak_rss_bytes", 0) for row in evaluation_costs), default=None),
             "cpu_accounting_complete": False})
     work = [{"phase": f"main_training_{i}", **row["counts"]} for i, row in enumerate(runs) if row["counts"]]
@@ -164,7 +188,7 @@ def summarize(protocol_path, *, smoke_root=None, smoke_admission=None, run_roots
             "conservative_cpu_upper_bound_seconds": sum(row.get("conservative_cpu_upper_bound_seconds", row.get("cpu_seconds"))
                 for row in costs) if costs and all(row.get("conservative_cpu_upper_bound_seconds", row.get("cpu_seconds")) is not None for row in costs) else None,
             "peak_rss_bytes": max((row.get("peak_rss_bytes") or 0 for row in costs), default=None)},
-        "cost_scope": "Recorded research components only; smoke uses the independent resource audit or distinct worker-body lower bounds, never the invalid venv-launcher aggregate. Smoke training is not added twice. Main training uses final run resources; assessment adds host CPU to distinct practice/development workers. Steps/checkpoints are nested. CPU exact totals remain null where startup/teardown is unmeasured. Protected independent workers, tests, setup and incomplete processes are excluded; measured subtotals are not complete study cost."}
+        "cost_scope": "Recorded research components only. Smoke uses audited bounds or worker-body lower bounds. Main attempts use their owned process trees where available, including measured failed attempts, with no added inner training cost. Assessment adds host CPU to distinct practice/development workers. CPU exact totals remain null when process coverage is incomplete. Protected independent workers, tests and setup are excluded. No total concurrent-RSS claim."}
 
 
 if __name__ == "__main__":
