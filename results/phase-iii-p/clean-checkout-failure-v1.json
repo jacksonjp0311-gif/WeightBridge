@@ -1,0 +1,19 @@
+{
+  "cause": "Windows checkout translated a hash-bound attribution document to CRLF. Original scientific artifacts and ledger expectations retained.",
+  "checked_commit": "c55d3e4",
+  "full_model_inference": false,
+  "mismatches": [
+    {
+      "CRLF_count": 25,
+      "expected_sha256": "243fc3c1e7a63a35deb9ea3af7499e5bd32ed06b9e0163f4aad5034a09eec380",
+      "observed_sha256": "e67c7649e65564bd59ea6122ef401d73168a623c38a18ebf3b40a44c45d42b4d",
+      "path": "results\\phase-iii-p\\reference-v1\\ATTRIBUTION.md"
+    }
+  ],
+  "resolution": "Pin this evidence document as -text, then use a new clean checkout. No hash tolerance, scientific gate or measured result changed.",
+  "schema": "weightbridge.phase_iiip.clean_checkout_failure.v1",
+  "scope": "Release validation failure, not a new research trial.",
+  "stage": "ledger byte identity after scientific analyses replayed exactly",
+  "status": "FAIL",
+  "tests_ran": 0
+}

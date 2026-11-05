@@ -233,6 +233,8 @@ p50c reports, manifest, NPZ, `apply_edit.py` and its `st_numpy.py` helper. The
 external code was inspected but never executed. Its scripts use MIT; the
 authors' data, logs and patch use CC BY 4.0. Complete notices, source URLs,
 byte hashes and attribution are retained in the reference archive.
+The pinned base-model Apache-2.0 license is also included for the sparse
+before/after values in the reconstruction receipt. No full model is distributed.
 
 The authors report 579 rescues and five losses on 1,152 held-out **practice**
 problems under long sampled thinking-enabled evaluation. Those are their
@@ -367,6 +369,12 @@ The final full runtime suite passed **708 tests**, with one skip for the
 reference environment's absent optional MCP package, in 74.17 seconds. The
 separate MCP environment passed **23 tests**. These overlap and are not summed
 as unique cases. The receipts bind the tested code and JUnit hashes.
+
+A fresh Git checkout independently replays the source-bound analyses and
+receipts; its detailed regression totals are recorded in `clean-checkout.json`.
+The first checkout exposed a CRLF conversion of the hash-bound attribution
+document. The failed receipt is preserved; pinning that document's exact bytes
+fixes packaging without changing a ledger hash, scientific result or threshold.
 
 Pre-model integration tests exposed and corrected config-path/resource-helper
 mistakes, incomplete repeated-sampling call accounting and reference-factor

@@ -26,3 +26,6 @@ included: the authors' scripts use MIT; their logs, data and patch use CC BY
 These files are excluded from WeightBridge's original-code MIT grant. The
 reconstructed full model is not redistributed. See that archive's
 `ATTRIBUTION.md` and `docs/PHASE_III_P.md` for provenance and scope.
+The pinned base-model Apache-2.0 license is retained as
+`results/phase-iii-p/reference-v1/LICENSE-QWEN.txt`, including provenance for
+the sparse original/edited values recorded in the reconstruction receipt.
