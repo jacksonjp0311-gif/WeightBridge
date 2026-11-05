@@ -1,6 +1,7 @@
 """Host-only accounting regressions. No pretrained model is loaded."""
 from pathlib import Path
 import os
+import subprocess
 import sys
 
 import pytest
@@ -93,4 +94,45 @@ def test_body_resources_exceeding_capture_refuse_complete_accounting(bound_input
     assert not result["passed"] and result["status"] == "HOLD"
     assert not result["checks"]["worker_cpu_covered"] and not result["checks"]["worker_peak_covered"]
     assert result["execution"]["resources"]["known_peak_rss_floor_bytes"] == 1000
-    assert (out.parent/"run-0-process.json").is_file()
+    assert (out.parent/f"{out.name}-process.json").is_file()
+
+
+def test_real_child_receives_required_smoke_admission_args_and_retry_evidence_stays_separate(bound_inputs, monkeypatch):
+    base, protocol, authorization, bundle, old_out, gate = bound_inputs
+    out = old_out.parent/"run-0-retry1"
+    old_out.parent.mkdir()
+    (old_out.parent/"run-0.log").write_bytes(b"Preserved failed first-attempt log")
+    (old_out.parent/"run-0-process.json").write_bytes(b"Preserved failed first-attempt receipt")
+    previous = {path.name: path.read_bytes() for path in old_out.parent.iterdir()}
+    received = []
+    def launch(argv, log, **_):
+        # A real isolated child parses the exact arguments intended for the
+        # frozen trainer and verifies the transported admission identity. No
+        # model is loaded. Missing --smoke-gate fails argparse before this check.
+        checker = '''import argparse,json,hashlib,pathlib
+p=argparse.ArgumentParser()
+for name in ('base','protocol','authorization','bundle','out','run-index','smoke-gate'):
+ p.add_argument('--'+name,required=True)
+a=p.parse_args()
+assert a.run_index=='0'
+assert json.loads(pathlib.Path(a.smoke_gate).read_bytes())['protocol_sha256']==hashlib.sha256(pathlib.Path(a.protocol).read_bytes()).hexdigest()
+'''
+        subprocess.run([sys.executable, "-c", checker, *argv[3:]], check=True)
+        received.append(argv)
+        out.mkdir()
+        Path(log).write_bytes(b"New retry fixture log")
+        completed = {"status": "COMPLETED", "smoke": False, "parent_sha256": wrapper.PARENT,
+            "protocol_sha256": file_hash(protocol), "authorization_sha256": file_hash(authorization),
+            "bundle_sha256": file_hash(bundle), "run_index": 0,
+            "resources": {"cpu_seconds": .5, "peak_rss_bytes": 1000}}
+        json_dump_atomic(out/"completed.json", completed)
+        return {"exit_code": 0, "budget_failure": None, "resources": {"observed_tree_cpu_seconds": 1.,
+            "cpu_seconds": 1., "wall_seconds": 1., "peak_rss_bytes": 2000,
+            "cpu_accounting_complete_for_observed_processes": True}}
+    monkeypatch.setattr(wrapper, "launch_owned_tree", launch)
+    result = wrapper.run(base, protocol, authorization, bundle, out, run_index=0, smoke_gate=gate)
+    assert result["passed"] and result["attempt_directory"] == "run-0-retry1"
+    assert len(received) == 1 and "--smoke-gate" in received[0]
+    assert (out.parent/"run-0-retry1.log").is_file()
+    assert (out.parent/"run-0-retry1-process.json").is_file()
+    assert all((out.parent/name).read_bytes() == raw for name, raw in previous.items())

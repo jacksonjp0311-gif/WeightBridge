@@ -191,7 +191,9 @@ def run(base, protocol, authorization, bundle, out, *, run_index, smoke_gate):
     base, protocol, authorization, bundle, out, smoke_gate = map(Path, (base, protocol, authorization, bundle, out, smoke_gate))
     if out.resolve().is_relative_to(base.resolve()) or out.resolve().is_relative_to(ROOT):
         raise ValueError("Training output must be outside original checkpoint and checkout")
-    log, receipt = out.parent/f"run-{run_index}.log", out.parent/f"run-{run_index}-process.json"
+    # An explicitly fresh retry keeps the same frozen run index but receives
+    # separate evidence paths. The failed attempt's log and receipt stay intact.
+    log, receipt = out.parent/f"{out.name}.log", out.parent/f"{out.name}-process.json"
     if any(path.exists() for path in (out, log, receipt)):
         raise FileExistsError("Training, log and process receipt paths must all be fresh")
     config, binding, training, gate = read(protocol), read(authorization), read(bundle), read(smoke_gate)
@@ -212,10 +214,11 @@ def run(base, protocol, authorization, bundle, out, *, run_index, smoke_gate):
     out.parent.mkdir(parents=True, exist_ok=True)
     identity = {"protocol_sha256": file_hash(protocol), "authorization_sha256": file_hash(authorization),
         "bundle_sha256": file_hash(bundle), "smoke_gate_sha256": file_hash(smoke_gate), "parent_sha256": PARENT,
-        "run_index": run_index, "host_wrapper_sha256": file_hash(__file__)}
+        "run_index": run_index, "attempt_directory": out.name, "host_wrapper_sha256": file_hash(__file__)}
     command = [sys.executable, "-m", "experiments.phase_iiiq_baseline.train", "--base", str(base.resolve()),
         "--protocol", str(protocol.resolve()), "--authorization", str(authorization.resolve()),
-        "--bundle", str(bundle.resolve()), "--out", str(out.resolve()), "--run-index", str(run_index)]
+        "--bundle", str(bundle.resolve()), "--out", str(out.resolve()), "--run-index", str(run_index),
+        "--smoke-gate", str(smoke_gate.resolve())]
     observed = launch_owned_tree(command, log, wall_limit=wall_limit, cpu_limit=cpu_limit, memory_limit=memory_limit)
     checks = {"worker_exit_success": observed["exit_code"] == 0, "no_tree_budget_refusal": observed["budget_failure"] is None,
         "complete_observed_process_cpu": observed["resources"]["cpu_accounting_complete_for_observed_processes"]}
