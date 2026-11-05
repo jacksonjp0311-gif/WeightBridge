@@ -372,6 +372,10 @@ as unique cases. The receipts bind the tested code and JUnit hashes.
 
 A fresh Git checkout independently replays the source-bound analyses and
 receipts; its detailed regression totals are recorded in `clean-checkout.json`.
+The clean checkout at `29991a0` passed **145 Phase III-P regression tests** and
+exactly replayed K through O, both P analyses, cost accounting, ledger hashes,
+raw external source pins, model-license identity and figure hashes. Its working
+tree remained clean; no new full-model inference or private evaluation ran.
 The first checkout exposed a CRLF conversion of the hash-bound attribution
 document. The failed receipt is preserved; pinning that document's exact bytes
 fixes packaging without changing a ledger hash, scientific result or threshold.
@@ -439,3 +443,11 @@ fresh paths. No replacement base is downloaded by these commands. Private
 candidate directories and unopened host rosters are intentionally absent from
 the public archive. Published evaluation data are disclosed and cannot become
 new hidden confirmation data for later optimization.
+
+Primary receipts: [A analysis](../results/phase-iii-p/optimized-v1/analysis.json),
+[A computation](../results/phase-iii-p/optimized-v1/compute.json),
+[B analysis](../results/phase-iii-p/reference-v1/analysis.json),
+[B reconstruction](../results/phase-iii-p/reference-v1/reconstruction.json),
+[test results](../results/phase-iii-p/tests.json),
+[clean checkout](../results/phase-iii-p/clean-checkout.json), and
+[machine-readable status](../results/phase-iii-p/status.json).

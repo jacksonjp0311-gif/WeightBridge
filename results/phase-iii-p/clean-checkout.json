@@ -1,0 +1,41 @@
+{
+  "checked_commit": "29991a0cc914e442537b990afc2341e237cfd577",
+  "full_model_inference": false,
+  "historical_K_to_O_exact": true,
+  "ledger_artifact_hashes_exact": true,
+  "model_license_and_figure_hashes_exact": true,
+  "prior_release_failure": "clean-checkout-failure-v1.json",
+  "raw_external_source_pins_preserved": true,
+  "resources": {
+    "cpu_seconds": 40.46875,
+    "wall_seconds": 40.55997770000249
+  },
+  "schema": "weightbridge.phase_iiip.clean_checkout.v1",
+  "scope": "New fresh git clone after exact-byte attribute fix. Model-free scientific replay and deterministic P regression subset, no private evaluation access/new Qwen observation. Analyst/test cost separate from experiment.",
+  "test_files": [
+    "tests/test_phase_iiip_bounds.py",
+    "tests/test_phase_iiip_compute.py",
+    "tests/test_phase_iiip_reporting.py",
+    "tests/test_phase_iiip_roster.py",
+    "tests/test_phase_iiip_runner.py",
+    "tests/test_phase_iiip_verification.py",
+    "tests/test_reference_analysis.py",
+    "tests/test_reference_import.py",
+    "tests/test_reference_study.py",
+    "tests/test_right_factor_geometry.py",
+    "tests/test_selected_block.py"
+  ],
+  "tests": {
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "passed": 145,
+    "skipped": 0,
+    "tests": 145,
+    "xml_sha256": "f3c668187b4f2e8960553719a89e67211439fbe92102c1b339d5f4b03e434a1a"
+  },
+  "track_A_analysis_and_compute_exact": true,
+  "track_B_analysis_exact": true,
+  "unopened_track_A_rosters_absent": true,
+  "working_tree_clean": true
+}
