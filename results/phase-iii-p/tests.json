@@ -1,0 +1,92 @@
+{
+  "mcp": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 5.134,
+    "passed": 23,
+    "skip_details": [],
+    "skipped": 0,
+    "tests": 23,
+    "xml_sha256": "1d206e31979b6d97359f3aa11c1fb216847453cf05f264bc87b5943254130a1d"
+  },
+  "pre_model_runtime": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 64.999,
+    "passed": 645,
+    "skip_details": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ],
+    "skipped": 1,
+    "tests": 646,
+    "xml_sha256": "be6d558a48d3ccd39ada2e697ca01b1ac6443ab5e274d14b1e595513a8ecae5e"
+  },
+  "pre_model_runtime_process": {
+    "exit_code": 0,
+    "resources": {
+      "cpu_seconds": 74.859375,
+      "peak_rss_bytes": 380170240,
+      "wall_seconds": 65.7015266000526
+    },
+    "scope": "Pre-model full runtime suite, Torch-only6 threads, BLAS defaults. Child process CPU separate."
+  },
+  "runtime": {
+    "errors": 0,
+    "failures": 0,
+    "junit_wall_seconds": 74.158,
+    "passed": 708,
+    "skip_details": [
+      {
+        "name": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools",
+        "reason": "could not import 'mcp': No module named 'mcp'"
+      }
+    ],
+    "skipped": 1,
+    "tests": 709,
+    "xml_sha256": "be994dfbbeb4814a92a2a2bcede36bf5b1d3d2116af7eb65a7b5bac466aa9871"
+  },
+  "runtime_process": {
+    "exit_code": 0,
+    "resources": {
+      "cpu_seconds": 83.234375,
+      "peak_rss_bytes": 512114688,
+      "wall_seconds": 74.86495890002698
+    },
+    "scope": "Final full runtime suite; Torch-only6 initial threads; original BLAS environment; test main process CPU only."
+  },
+  "schema": "weightbridge.phase_iiip.tests.v1",
+  "scope": "Whole runtime and separate optional MCP suite. MCP subset overlaps the runtime suite; counts must not be summed as unique cases. No unit fixture is real-model efficacy evidence. Test main-process costs are separate from study costs.",
+  "tested_source_sha256": {
+    "experiments/phase_iiip/analyze.py": "d45722762b0116c38f011df39285b8983fbab42e37099b312d1d76129bf09c1b",
+    "experiments/phase_iiip/archive_trial.py": "215b4a2e477068329765f1162243a734bc708436b2c7d3c46cc262dba72c4dec",
+    "experiments/phase_iiip/compute.py": "645101d2304b3ccbb249c71a7260129e519de01cd363563c724be2337bae7716",
+    "experiments/phase_iiip/execute.py": "b0d30ffaf20e27bf6591272dc72717c33a854a616ac89fb1f59e069351a7fbae",
+    "experiments/phase_iiip/figures.py": "3456f9b46c4e465d8c0e528255feee6e85bb3ca13c435d0298aa4c378123439c",
+    "experiments/phase_iiip/independent_bounds.py": "3173e912f807b3a7921b370e268a1066c0cee2a859254b268fbb40a5ddcb68ef",
+    "experiments/phase_iiip/reference_analysis.py": "5b9f49eab12e9423933394ed1e353a23e1ab14172f833089ffc336999b3a2981",
+    "experiments/phase_iiip/reference_execute.py": "9e6e65cbacc4f11e0e047dc0345e6478de3045c1b6b458678ae490e414f0d46c",
+    "experiments/phase_iiip/reference_import.py": "f9abbda54aff00058d5e69cffeb0e8aa4860f60998c5d3488a5b480064e4d9f0",
+    "experiments/phase_iiip/reference_study.py": "9a29460f404b09bd96e7d99d46e82ba401ae81a7e32d1776b2575b8bb2583e84",
+    "experiments/phase_iiip/run_right.py": "1ce485175efd1427612aad6573f2c58efcd6f1096df5004b60c938ab24bc9c80",
+    "experiments/phase_iiip/semantic_metrics.py": "7577872d8a42b1b77914702c4c551f01bb5b631c471e52d01f10dad93b1a5918",
+    "experiments/phase_iiip/semantic_roster.py": "60becae70889c3da915a6fa1bbbd2b32ea9917b3015cc0d0bdda06c18b500068",
+    "experiments/phase_iiip/source_manifest.py": "48877a1e8bc1f639f6c348893c8264f71cfc8104ecc9a3bdea0e8a415d94cbdd",
+    "experiments/phase_iiip/verification.py": "940873c663d3cd40a1624ca4113463fde2460e6c15e05b594961f232245b7a2b",
+    "tests/test_phase_iiip_bounds.py": "42f1cfdcf5634571057754aa5b2eb8467128d0a5b3a0a92fb7e0568ea4538478",
+    "tests/test_phase_iiip_compute.py": "49a5bedee9aa98ef4feb894729a54ebc59e090403807861967616c503d9f3d9a",
+    "tests/test_phase_iiip_reporting.py": "197113e43586f5c15de446ff510ec97162d0facd7af210dff3c0ca36db9738df",
+    "tests/test_phase_iiip_roster.py": "02754b82a00e486695b036a8475d8616c0580a17b2b0afd336682a567edc85b9",
+    "tests/test_phase_iiip_runner.py": "41b59d245ea9b1d8dd1d2619f508917c9e7bfef62d1b8570a1148054ac15a80d",
+    "tests/test_phase_iiip_verification.py": "0d587da20b089fc48c07844cdca5ad91787da9f84b91218924dedfa37da44810",
+    "tests/test_reference_analysis.py": "2a6ec8ed2bfefde27747a86ec0e5f59f51a6cdfcdca9174fa96a7af9cbfbe7a0",
+    "tests/test_reference_import.py": "a978946a90903462ec04af999c9e279a9a82ac41d5a124c9f9aad74e09673ece",
+    "tests/test_reference_study.py": "50838a23b9301388ac4d0b66bc8c12c9856bed972ab8851c1c7c24a79cdbe6b9",
+    "tests/test_right_factor_geometry.py": "fb0fa64a2b83e248251efe30f3564956d005a97e29c3d9c408e239d57757e646",
+    "tests/test_selected_block.py": "eb34fc1df83486155954be067d84739cdfa328fcc097a416731da85c49ff606d",
+    "weightbridge/adaptation/right_factor_geometry.py": "d7b7c103ea6c81007696e19322a3d2ccf9b6d42c30ba735ac23044598d2c2643",
+    "weightbridge/adaptation/selected_block.py": "7352580fde0634209cb12e0b8abf57ed25bf35b527c5a4b41e2faee3c235f85a"
+  }
+}

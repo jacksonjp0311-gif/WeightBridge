@@ -560,3 +560,24 @@ This does not establish general neural or rank-one unreachability. The next
 recommended test changes the fixed right factor under a separately frozen
 rank-one study while keeping the layer, columns, cap and behavioral gates.
 [Report and raw numerical evidence](PHASE_III_O.md)
+
+## Full-block preflight and a separate external reference
+
+On fresh Phase III-P fitting families, the target-only selected-block minimum
+is about 0.04284; the protected minimum is 0.04415. Both numerical lower bounds
+exceed 0.025. The fixed-right minima are 0.04736 and 0.05047. The larger relaxed
+space already excludes the cap, so the prospective gate correctly runs zero
+orientation searches and zero candidate generations. This is stronger than
+trying one direction unsuccessfully, while still only a finite local statement.
+
+A separate pinned reconstruction of the authors' repetition edit matches both
+edited tensor hashes and changes 130,188 actual BF16 entries. Under a fresh
+short greedy decimal endpoint, it changes target correctness from 3/48 to 8/48
+presentations with six corrections and one regression. Both models score 0/12
+strict comparisons and 0/6 complete families. Format validity remains 72/72.
+The external effect is real but does not establish zero-regression adaptation,
+complete rule transfer or the article's long thinking-mode gains.
+
+The evidence supports changing the selected region in a new controlled study,
+rather than adding rank inside the same block or importing the repetition
+directions into the finished decimal trial. [Phase III-P](PHASE_III_P.md)

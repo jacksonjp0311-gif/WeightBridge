@@ -90,6 +90,13 @@ The study held with zero candidate generation probes. These numerical bounds
 apply to the frozen local update space, not the model's general ability to
 learn. [Phase III-O findings and reproduction](docs/PHASE_III_O.md)
 
+Phase III-P adds selected-block derivatives and bounded right-factor search.
+The fresh Qwen study stops before orientation search: even the relaxed block
+needs a local norm above 0.025. A separate exact reconstruction of the published
+repetition edit improves six decimal presentations and regresses one, with no
+strict comparison or complete-family gain. Neither track qualifies a new
+zero-regression learning result. [Phase III-P code and evidence](docs/PHASE_III_P.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

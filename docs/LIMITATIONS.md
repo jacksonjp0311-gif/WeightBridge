@@ -250,3 +250,24 @@ improvements. No candidate target-precision failure, generation failure,
 independent regression or new persistent success can be inferred from this
 numerical HOLD. The average-constrained QP diagnostic is distinct from the
 historical mean-direction proposal. [Phase III-O](PHASE_III_O.md)
+
+Phase III-P's real-model right-factor search is unperformed because the
+preregistered relaxed bound blocks it. Synthetic free-right successes validate
+implementation paths, not Qwen improvement. The full-block numerical bound
+covers every rank within these sixteen columns under the recorded linear
+approximation; it does not cover nonlinear changes, other columns, another
+layer, or every valid output trajectory. Numerical padding is not interval
+arithmetic. Native AD and BF16 execution remain approximations to a local
+behavioral model. The fourteen wrong fitted presentations are not independent
+semantic samples; they belong to two families.
+
+The external reference has different layers, support and intervention norm,
+and its test numbers use a disjoint magnitude range. It cannot isolate the
+causal effect of optimizing the right factor. Six reference families are a
+small exploratory cohort. Six gains and one loss still violate zero-regression
+qualification, and no strict comparison or complete family is gained. The
+authors' held-out-practice and published benchmark results are separate from
+our short greedy measurements. No full benchmark, newly learned semantic rule,
+accepted checkpoint or continual-learning result follows. Preliminary source
+inspection and assistant costs are not completely metered; recorded CPU totals
+are scoped, not an exhaustive cost claim. [Phase III-P](PHASE_III_P.md)

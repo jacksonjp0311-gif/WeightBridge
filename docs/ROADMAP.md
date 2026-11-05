@@ -144,3 +144,25 @@ guard. Test whether a new unit right factor lowers joint individual-target cost
 and survives BF16 plus full decoding with zero prohibited regressions. Do not
 raise the norm cap or expand rank in the completed O study. A numerical witness
 alone remains insufficient for retention. [Phase III-O](PHASE_III_O.md)
+
+## After Phase III-P
+
+Completed: full authorized block derivatives, bounded Gram relaxation,
+independent Frobenius/spectral bound checks, tested right-factor search and
+the real-model preflight. Its relaxed target-only bound already exceeds the
+unchanged cap, so orientation and candidate generation correctly remain unused.
+A separately authorized external patch is exactly reconstructed and evaluated
+in two fresh processes on a reference-only roster.
+
+HOLD: selective decimal-rule correction, fresh complete-family transfer,
+independent qualification, new lineage admission and sequential learning.
+The external edit's isolated gains include a prohibited loss.
+
+Next falsifiable experiment: choose a different authorized sixteen-column
+region using joint target/preservation evidence, retaining layer, rank, support
+budget, norm cap and endpoint. Compare with the inherited region on fresh
+families. Require a below-cap local witness followed by BF16, full generation
+and the unchanged independent gates. Rank two inside the unchanged block is
+not the first justified response to an all-rank local relaxation failure.
+Exclude all disclosed P rosters from new hidden confirmation. No such follow-up
+is silently included in the completed trial. [Phase III-P](PHASE_III_P.md)

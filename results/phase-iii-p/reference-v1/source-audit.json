@@ -1,0 +1,55 @@
+{
+  "article": "https://rikiyat.github.io/blog/weight-space-programming/",
+  "authors_report_not_independently_reproduced": {
+    "held_out_practice": 1152,
+    "losses": 5,
+    "maximum_generated_tokens": 32768,
+    "presence_penalty": 1.5,
+    "purpose": "Repair repetition/truncation during long thinking",
+    "rescues": 579,
+    "runtime": "vLLM on text-only export",
+    "temperature": 0.6,
+    "thinking_enabled": true,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "compatibility_receipt_sha256": "4cba25af0bcf3e74082c35d4d0c030d0d410131e90762b138e85bb014cba922b",
+  "external_code_audited": {
+    "exp8_math/code/apply_edit.py": [
+      "hashlib",
+      "json",
+      "os",
+      "sys",
+      "numpy",
+      "st_numpy"
+    ],
+    "exp8_math/code/st_numpy.py": [
+      "json",
+      "struct",
+      "numpy"
+    ]
+  },
+  "external_code_executed": false,
+  "metadata_source_receipt_sha256": "823270a8653eefd39be0168a5bbfe3296e8d615dca7cea17259db858b674ecfa",
+  "our_reference_endpoint_scope": "Short greedy exact-Decimal comparison, unchanged base and separately reconstructed external candidate. No long-form benchmark reproduction and no zero-regression guarantee.",
+  "reconstruction_receipt_sha256": "4006062002bbf92940219a5694da7274c627d194e63702644c6fd2a903860e08",
+  "reference_artifact_licensing": {
+    "patch/logs": "CC-BY-4.0 with attribution to Rikiya Takehi, Jayden Teoh, Alex Zhang, Omar Khattab",
+    "python": "MIT",
+    "quoted_benchmark_data": "Retains original licenses; not redistributed here"
+  },
+  "required_prose_reviewed": [
+    "README.md",
+    "LICENSE",
+    "exp8_math/README.md",
+    "exp8_math/runs/p50c/final_answer.md",
+    "exp8_math/runs/p50c/work_notes/final_report.md"
+  ],
+  "schema": "weightbridge.phase_iiip.reference_source_audit.v1",
+  "source_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "source_download_receipt_sha256": "a849657762f813d880aa3d26017d299c653104bb84f2adc8c10662451a9f6642",
+  "track": "B",
+  "track_A_data_accessed": false,
+  "track_A_outputs_used_for_fitting_or_ranking": false,
+  "upstream_import_chain": "apply_edit imports local st_numpy only; that helper imports json,struct,numpy. No imported upstream code was run."
+}

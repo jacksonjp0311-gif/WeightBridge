@@ -1,0 +1,30 @@
+{
+  "measurements": {
+    "original": {
+      "completed_first_lines": 72,
+      "generated_token_length_counts": {
+        "12": 72
+      },
+      "response_count": 72,
+      "source_sha256": "362436c3c80a101743bcf42d58371a36c54a89817954d126ce3ff63f05c6eede",
+      "stop_reason_counts": {
+        "token_budget": 72
+      },
+      "valid_first_lines": 72
+    },
+    "reference": {
+      "completed_first_lines": 72,
+      "generated_token_length_counts": {
+        "12": 72
+      },
+      "response_count": 72,
+      "source_sha256": "677fcc15ecfc7ab29e346b2fcec22dd79a4cfcfe527c1fda34c21bb965116708",
+      "stop_reason_counts": {
+        "token_budget": 72
+      },
+      "valid_first_lines": 72
+    }
+  },
+  "schema": "weightbridge.phase_iiip.reference_completion_diagnostics.v1",
+  "scope": "Same completed external study, not a new observation. Completed first answer line is distinct from model EOS termination. No long-generation benchmark reproduced."
+}

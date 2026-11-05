@@ -1,0 +1,1860 @@
+{
+  "lineage_accepted": false,
+  "long_benchmark_reproduction": false,
+  "new_weightbridge_learning_claimed": false,
+  "original_summary": {
+    "all_four_repeatable_errors": [
+      "semantic-decimal/reference-evaluation/target/00/variant-0",
+      "semantic-decimal/reference-evaluation/target/00/variant-1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0",
+      "semantic-decimal/reference-evaluation/target/02/variant-0",
+      "semantic-decimal/reference-evaluation/target/03/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0",
+      "semantic-decimal/reference-evaluation/target/05/variant-1"
+    ],
+    "by_order": {
+      "0": {
+        "competing_operand": 22,
+        "completed": 24,
+        "correct": 2,
+        "first_operand": 10,
+        "longer_operand": 14,
+        "presentations": 24,
+        "second_operand": 14,
+        "shorter_operand": 10,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      },
+      "1": {
+        "competing_operand": 23,
+        "completed": 24,
+        "correct": 1,
+        "first_operand": 11,
+        "longer_operand": 11,
+        "presentations": 24,
+        "second_operand": 13,
+        "shorter_operand": 13,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      }
+    },
+    "by_wording": {
+      "0": {
+        "competing_operand": 24,
+        "completed": 24,
+        "correct": 0,
+        "first_operand": 12,
+        "longer_operand": 12,
+        "presentations": 24,
+        "second_operand": 12,
+        "shorter_operand": 12,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      },
+      "1": {
+        "competing_operand": 21,
+        "completed": 24,
+        "correct": 3,
+        "first_operand": 9,
+        "longer_operand": 13,
+        "presentations": 24,
+        "second_operand": 15,
+        "shorter_operand": 11,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      }
+    },
+    "comparisons": {
+      "semantic-decimal/reference-evaluation/target/00/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/00/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-close/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/01/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/01/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 1,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/02/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/02/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 1,
+        "counterfactual": 1,
+        "group": "negative-close/shorter",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/03/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/03/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 1,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/04/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/04/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/05/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/05/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      }
+    },
+    "completed_presentations": 72,
+    "controls": {
+      "copy": {
+        "correct": 8,
+        "items": 4,
+        "presentations": 8,
+        "solved": 4,
+        "valid": 8
+      },
+      "mixed-sign": {
+        "correct": 8,
+        "items": 2,
+        "presentations": 8,
+        "solved": 2,
+        "valid": 8
+      },
+      "positive-far": {
+        "correct": 8,
+        "items": 2,
+        "presentations": 8,
+        "solved": 2,
+        "valid": 8
+      }
+    },
+    "eligible_fit_items": {
+      "semantic-decimal/reference-evaluation/target/00/variant-0": [
+        "semantic-decimal/reference-evaluation/target/00/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/00/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/00/variant-1": [
+        "semantic-decimal/reference-evaluation/target/00/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/00/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/01/variant-0": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/01/variant-1": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/02/variant-0": [
+        "semantic-decimal/reference-evaluation/target/02/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/02/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/02/variant-1": [
+        "semantic-decimal/reference-evaluation/target/02/variant-1/order-0"
+      ],
+      "semantic-decimal/reference-evaluation/target/03/variant-0": [
+        "semantic-decimal/reference-evaluation/target/03/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/03/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/03/variant-1": [
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/04/variant-0": [
+        "semantic-decimal/reference-evaluation/target/04/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/04/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/04/variant-1": [
+        "semantic-decimal/reference-evaluation/target/04/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/04/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/05/variant-0": [
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/05/variant-1": [
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1"
+      ]
+    },
+    "families": {
+      "semantic-decimal/reference-evaluation/target/00": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/00/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/00/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/01": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/01/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/01/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/02": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/02/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/02/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/03": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/03/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/03/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/04": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/04/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/04/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/05": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/05/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/05/variant-0",
+        "status": "neither_correct"
+      }
+    },
+    "fork_token_kinds": {},
+    "order_consistent": 9,
+    "pair_families": 6,
+    "presentations": 72,
+    "repeatable_errors": [
+      "semantic-decimal/reference-evaluation/target/00/variant-0",
+      "semantic-decimal/reference-evaluation/target/00/variant-1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0",
+      "semantic-decimal/reference-evaluation/target/01/variant-1",
+      "semantic-decimal/reference-evaluation/target/02/variant-0",
+      "semantic-decimal/reference-evaluation/target/02/variant-1",
+      "semantic-decimal/reference-evaluation/target/03/variant-0",
+      "semantic-decimal/reference-evaluation/target/03/variant-1",
+      "semantic-decimal/reference-evaluation/target/04/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0",
+      "semantic-decimal/reference-evaluation/target/05/variant-1"
+    ],
+    "status_counts": {
+      "correct": 27,
+      "incorrect": 45
+    },
+    "subgroups": {
+      "negative-close/longer": {
+        "competing_operand": 12,
+        "completed": 12,
+        "correct": 0,
+        "first_operand": 6,
+        "longer_operand": 0,
+        "presentations": 12,
+        "second_operand": 6,
+        "shorter_operand": 12,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-close/shorter": {
+        "competing_operand": 11,
+        "completed": 12,
+        "correct": 1,
+        "first_operand": 5,
+        "longer_operand": 11,
+        "presentations": 12,
+        "second_operand": 7,
+        "shorter_operand": 1,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-far/longer": {
+        "competing_operand": 10,
+        "completed": 12,
+        "correct": 2,
+        "first_operand": 4,
+        "longer_operand": 2,
+        "presentations": 12,
+        "second_operand": 8,
+        "shorter_operand": 10,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-far/shorter": {
+        "competing_operand": 12,
+        "completed": 12,
+        "correct": 0,
+        "first_operand": 6,
+        "longer_operand": 12,
+        "presentations": 12,
+        "second_operand": 6,
+        "shorter_operand": 0,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      }
+    },
+    "target_comparisons": 12,
+    "target_correct": 0,
+    "target_observations": [
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1090.2574",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1045.7",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1042.2401",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1045.7",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1045.7",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      }
+    ],
+    "truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "valid_presentations": 72,
+    "wording_consistent": 9
+  },
+  "paired": {
+    "candidate_complete_families": 0,
+    "candidate_target_correct": 0,
+    "candidate_truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "complete_family_gain": 0,
+    "corrected_repeatable_target_comparisons": [],
+    "corrected_target_comparisons": [],
+    "family_gain_interval": {
+      "clusters": 6,
+      "estimand": "paired target accuracy change",
+      "high": 0.0,
+      "low": 0.0,
+      "resamples": 4000
+    },
+    "local_corrected_target_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+      "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+    ],
+    "lost_complete_families": [],
+    "lost_target_comparisons": [],
+    "lost_valid": [],
+    "newly_completed_families": [],
+    "parent_complete_families": 0,
+    "parent_target_correct": 0,
+    "parent_truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "passed": false,
+    "regressions": [
+      "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+    ],
+    "target_comparisons": 12,
+    "target_gain": 0
+  },
+  "protocol_sha256": "21387ae9fa13806707222103cbc5d1209ab7f67629423a9a0e3225016c0f5f6b",
+  "reconstruction_receipt_sha256": "4006062002bbf92940219a5694da7274c627d194e63702644c6fd2a903860e08",
+  "reference_model": "6cb1d9fd8d6df43db6c9c5d8b87e6ddd489295333d4f65867660ea3393c9e556",
+  "reference_summary": {
+    "all_four_repeatable_errors": [
+      "semantic-decimal/reference-evaluation/target/00/variant-0",
+      "semantic-decimal/reference-evaluation/target/00/variant-1",
+      "semantic-decimal/reference-evaluation/target/01/variant-1",
+      "semantic-decimal/reference-evaluation/target/02/variant-0",
+      "semantic-decimal/reference-evaluation/target/03/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-1"
+    ],
+    "by_order": {
+      "0": {
+        "competing_operand": 20,
+        "completed": 24,
+        "correct": 4,
+        "first_operand": 14,
+        "longer_operand": 10,
+        "presentations": 24,
+        "second_operand": 10,
+        "shorter_operand": 14,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      },
+      "1": {
+        "competing_operand": 20,
+        "completed": 24,
+        "correct": 4,
+        "first_operand": 12,
+        "longer_operand": 12,
+        "presentations": 24,
+        "second_operand": 12,
+        "shorter_operand": 12,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      }
+    },
+    "by_wording": {
+      "0": {
+        "competing_operand": 23,
+        "completed": 24,
+        "correct": 1,
+        "first_operand": 13,
+        "longer_operand": 11,
+        "presentations": 24,
+        "second_operand": 11,
+        "shorter_operand": 13,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      },
+      "1": {
+        "competing_operand": 17,
+        "completed": 24,
+        "correct": 7,
+        "first_operand": 13,
+        "longer_operand": 11,
+        "presentations": 24,
+        "second_operand": 11,
+        "shorter_operand": 13,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 24
+      }
+    },
+    "comparisons": {
+      "semantic-decimal/reference-evaluation/target/00/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/00/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-close/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/01/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 2,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/01/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/02/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/02/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 1,
+        "counterfactual": 1,
+        "group": "negative-close/shorter",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/03/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/03/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 2,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      },
+      "semantic-decimal/reference-evaluation/target/04/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 0,
+        "group": "negative-close/shorter",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/04/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 0,
+        "counterfactual": 1,
+        "group": "negative-close/longer",
+        "order_consistent": true,
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/05/variant-0": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 2,
+        "counterfactual": 0,
+        "group": "negative-far/shorter",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/1"
+        ],
+        "wording_consistent": true
+      },
+      "semantic-decimal/reference-evaluation/target/05/variant-1": {
+        "all_correct": false,
+        "all_valid": true,
+        "correct_presentations": 1,
+        "counterfactual": 1,
+        "group": "negative-far/longer",
+        "order_consistent": false,
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "response_ids": [
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/1",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/0",
+          "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+        ],
+        "wording_consistent": false
+      }
+    },
+    "completed_presentations": 72,
+    "controls": {
+      "copy": {
+        "correct": 8,
+        "items": 4,
+        "presentations": 8,
+        "solved": 4,
+        "valid": 8
+      },
+      "mixed-sign": {
+        "correct": 8,
+        "items": 2,
+        "presentations": 8,
+        "solved": 2,
+        "valid": 8
+      },
+      "positive-far": {
+        "correct": 8,
+        "items": 2,
+        "presentations": 8,
+        "solved": 2,
+        "valid": 8
+      }
+    },
+    "eligible_fit_items": {
+      "semantic-decimal/reference-evaluation/target/00/variant-0": [
+        "semantic-decimal/reference-evaluation/target/00/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/00/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/00/variant-1": [
+        "semantic-decimal/reference-evaluation/target/00/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/00/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/01/variant-1": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/02/variant-0": [
+        "semantic-decimal/reference-evaluation/target/02/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/02/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/02/variant-1": [
+        "semantic-decimal/reference-evaluation/target/02/variant-1/order-0"
+      ],
+      "semantic-decimal/reference-evaluation/target/03/variant-0": [
+        "semantic-decimal/reference-evaluation/target/03/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/03/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/04/variant-0": [
+        "semantic-decimal/reference-evaluation/target/04/variant-0/order-0",
+        "semantic-decimal/reference-evaluation/target/04/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/04/variant-1": [
+        "semantic-decimal/reference-evaluation/target/04/variant-1/order-0",
+        "semantic-decimal/reference-evaluation/target/04/variant-1/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/05/variant-0": [
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-1"
+      ],
+      "semantic-decimal/reference-evaluation/target/05/variant-1": [
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-0"
+      ]
+    },
+    "families": {
+      "semantic-decimal/reference-evaluation/target/00": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/00/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/00/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/01": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/01/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/01/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/02": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/02/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/02/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/03": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/03/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/03/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/04": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/04/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/04/variant-0",
+        "status": "neither_correct"
+      },
+      "semantic-decimal/reference-evaluation/target/05": {
+        "counterfactual": "semantic-decimal/reference-evaluation/target/05/variant-1",
+        "original": "semantic-decimal/reference-evaluation/target/05/variant-0",
+        "status": "neither_correct"
+      }
+    },
+    "fork_token_kinds": {},
+    "order_consistent": 9,
+    "pair_families": 6,
+    "presentations": 72,
+    "repeatable_errors": [
+      "semantic-decimal/reference-evaluation/target/00/variant-0",
+      "semantic-decimal/reference-evaluation/target/00/variant-1",
+      "semantic-decimal/reference-evaluation/target/01/variant-1",
+      "semantic-decimal/reference-evaluation/target/02/variant-0",
+      "semantic-decimal/reference-evaluation/target/02/variant-1",
+      "semantic-decimal/reference-evaluation/target/03/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-0",
+      "semantic-decimal/reference-evaluation/target/04/variant-1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0",
+      "semantic-decimal/reference-evaluation/target/05/variant-1"
+    ],
+    "status_counts": {
+      "correct": 32,
+      "incorrect": 40
+    },
+    "subgroups": {
+      "negative-close/longer": {
+        "competing_operand": 12,
+        "completed": 12,
+        "correct": 0,
+        "first_operand": 6,
+        "longer_operand": 0,
+        "presentations": 12,
+        "second_operand": 6,
+        "shorter_operand": 12,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-close/shorter": {
+        "competing_operand": 11,
+        "completed": 12,
+        "correct": 1,
+        "first_operand": 5,
+        "longer_operand": 11,
+        "presentations": 12,
+        "second_operand": 7,
+        "shorter_operand": 1,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-far/longer": {
+        "competing_operand": 9,
+        "completed": 12,
+        "correct": 3,
+        "first_operand": 7,
+        "longer_operand": 3,
+        "presentations": 12,
+        "second_operand": 5,
+        "shorter_operand": 9,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      },
+      "negative-far/shorter": {
+        "competing_operand": 8,
+        "completed": 12,
+        "correct": 4,
+        "first_operand": 8,
+        "longer_operand": 8,
+        "presentations": 12,
+        "second_operand": 4,
+        "shorter_operand": 4,
+        "teacher_correct": 0,
+        "teacher_greedy_disagreements": 0,
+        "teacher_preferences": 0,
+        "valid": 12
+      }
+    },
+    "target_comparisons": 12,
+    "target_correct": 0,
+    "target_observations": [
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1050.2644",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/00",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.2574",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1094.2",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/01",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6601",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1018.6",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/02",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1048.2401",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1045.7",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1042.2401",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1045.7",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1042.2401",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/03",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3605",
+        "group": "negative-close/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1011.3",
+        "group": "negative-close/longer",
+        "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/04",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "correct",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1098.3448",
+        "group": "negative-far/shorter",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1095.8",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/0",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "incorrect",
+        "teacher_choice": null
+      },
+      {
+        "fork": null,
+        "generated_choice": "-1092.3448",
+        "group": "negative-far/longer",
+        "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1",
+        "pair_id": "semantic-decimal/reference-evaluation/target/05",
+        "status": "correct",
+        "teacher_choice": null
+      }
+    ],
+    "truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "valid_presentations": 72,
+    "wording_consistent": 8
+  },
+  "resources": {
+    "host": {
+      "cpu_seconds": 5.53125,
+      "peak_rss_bytes": 138788864,
+      "wall_seconds": 117.21664200001396
+    },
+    "workers": {
+      "original": {
+        "cpu_seconds": 233.140625,
+        "peak_rss_bytes": 2561482752,
+        "wall_seconds": 53.96795279998332
+      },
+      "reference": {
+        "cpu_seconds": 232.84375,
+        "peak_rss_bytes": 2570231808,
+        "wall_seconds": 54.0203892000136
+      }
+    }
+  },
+  "roster_sha256": "c75553fd4b36d6ace1771721370b84041ab6ae010087b0bffbc28077cfd670e9",
+  "schema": "weightbridge.phase_iiip.reference_comparison.v1",
+  "scope": "External published repetition intervention under our short greedy decimal endpoint. Not a reproduction of MATH-500, GSM8K, IFEval or long sampled thinking-mode benchmarks; not evidence that WeightBridge discovered or learned a decimal rule.",
+  "source_model": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "source_parent_restored_exactly": true,
+  "status": "BENCHMARK_COMPLETED",
+  "track": "B",
+  "worker_sha256": {
+    "original": "362436c3c80a101743bcf42d58371a36c54a89817954d126ce3ff63f05c6eede",
+    "reference": "677fcc15ecfc7ab29e346b2fcec22dd79a4cfcfe527c1fda34c21bb965116708"
+  }
+}

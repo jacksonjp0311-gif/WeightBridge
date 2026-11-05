@@ -126,3 +126,26 @@ infrastructure without modifying historical fitters or evaluator namespaces.
 The capacity decision recommends a subsequent experiment; it cannot authorize
 broader geometry, hidden-data access, lineage promotion or production changes.
 [Phase III-O](PHASE_III_O.md)
+
+## Selected-block and optimized-right compilation
+
+Phase III-P retains full authorized gradient blocks through
+`adaptation/selected_block.py`. It binds native prefixes, original diagnostic
+packing, individual semantic decisions, accepted tokens and immutable tensor
+identity. The common numerical backend `right_factor_geometry.py` solves a
+bounded small-Gram relaxation before considering rank-one orientation search.
+An independently recomputed dual bound can refuse the search. Otherwise a
+frozen multistart sphere procedure reuses the existing convex inner solver.
+It never installs the higher-rank relaxed witness.
+
+Candidate construction reuses the native BF16, complete-generation,
+preservation, hash and host verification gates. Minimum-witness and matched-
+norm comparisons are separate. A numerical admission refusal does not become
+an invented candidate behavioral score.
+
+The published-edit importer is an isolated research utility under a separate
+exact-artifact authorization. It reconstructs two pinned tensors through the
+existing checkpoint engine and cannot modify Track A's parent, intent, policy,
+selection or lineage. Its independently loaded endpoint comparison reports
+external effects without claiming WeightBridge learned the task.
+[Phase III-P](PHASE_III_P.md)

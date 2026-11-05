@@ -315,3 +315,42 @@ changing the current layer, columns, cap or endpoint gates. This run is counted
 once. Evidence key:
 `4a07fec76d0f23ff647fecff578ac7d4626ee7d605922f72deacba27416f5267`.
 [Report and raw evidence](PHASE_III_O.md)
+
+### Phase III-P: optimized-right admission and an external reference
+
+**Observation.** The new full selected-block target minimum is 0.04284 and the
+protected minimum is 0.04415, both above 0.025. The fixed-right minima are
+larger. A separate published edit changes six fresh decimal responses correctly
+and loses one, with no complete comparison/family gain.
+
+**Hypotheses.** Optimizing the right factor may relieve the earlier geometric
+restriction. Separately, the published repetition repair may affect our short
+decimal endpoint; it is not presumed to teach ordering.
+
+**Interventions.** Fourteen individual target blocks and eight protection
+blocks supply bounded relaxations and checked dual certificates. The numerical
+gate refuses orientation search. After that finished, an isolated exact-artifact
+policy reconstructs the external layers-15/19 edit and scores two independently
+loaded models on six fresh reference-only families.
+
+**Results.** A has zero candidate probes and no later evaluation. B changes
+target presentation correctness from 3/48 to 8/48, with six corrections and one
+regression; strict comparisons remain 0/12 and families 0/6. No new lineage
+admission occurs.
+
+**Interpretation.** This local block cannot satisfy the recorded linear target
+conditions under the cap even with unrestricted matrix rank. That warrants
+testing another column region, not a global neural-impossibility claim. External
+partial gains do not meet the task-rule or preservation contract.
+
+**Limitations.** Two fitted families, approximate local/native derivatives,
+six external test families, different intervention support and norms, and no
+newly learned or independently qualified semantic rule. These are two distinct
+studies, counted once each, not replicated learning successes.
+
+**Next experiment.** Prospectively compare another same-sized column region
+at the same cap and unchanged behavioral gates. Track A evidence key:
+`35beb45846cc68e014d4a3b83fa66484d310b75b93c43378d2bb21523b014f11`.
+Track B comparison key:
+`61610828500c431240ad1ff0d5e937e34d72bdf1441a14c19aedcc08389b172f`.
+[Report and raw evidence](PHASE_III_P.md)

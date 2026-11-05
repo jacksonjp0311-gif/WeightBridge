@@ -16,3 +16,13 @@ The Qwen model is not included; its model card declares Apache-2.0. The
 MATH-500, GSM8K, and IFEval benchmark files were not downloaded or included.
 The recorded synthetic experiment inputs and results are described in the
 research findings and experiment ledger.
+
+Phase III-P's separate external-reference archive at
+`results/phase-iii-p/reference-v1/source/` preserves selected public files from
+`RikiyaT/lm_understand-logs`, commit
+`4d09ba6d6a7e891dd8063974dfe81b3d78e3494f`. Its complete upstream LICENSE is
+included: the authors' scripts use MIT; their logs, data and patch use CC BY
+4.0; any quoted third-party benchmark material retains its original license.
+These files are excluded from WeightBridge's original-code MIT grant. The
+reconstructed full model is not redistributed. See that archive's
+`ATTRIBUTION.md` and `docs/PHASE_III_P.md` for provenance and scope.

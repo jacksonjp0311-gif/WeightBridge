@@ -1,0 +1,49 @@
+{
+  "acceptance_thresholds_changed": false,
+  "actual_model_attempts_refitted": false,
+  "historical_evidence_modified": false,
+  "items": [
+    {
+      "issue": "Nonexistent checkpoint_hash import",
+      "resolution": "Used existing load_checkpoint(...).checkpoint_sha256(); checkpoint and runtime unchanged; recorded in preflight receipt.",
+      "stage": "environment preflight"
+    },
+    {
+      "issue": "One attempted collection named the runner test file before the parallel implementation created it; no tests ran.",
+      "resolution": "Waited for completed file and reran the targeted and complete suites.",
+      "stage": "pre-model targeted tests"
+    },
+    {
+      "issue": "Five numeric-cell cases exposed a two-argument resource helper called with four arguments.",
+      "resolution": "Separated existing model-call resource helper from whole-process timing helper; all eight runner cases subsequently passed.",
+      "stage": "mocked runner tests"
+    },
+    {
+      "issue": "Protocol paths, repeated-sampling call accounting, matched-norm metadata and canonical reference-factor sign needed synchronization.",
+      "resolution": "Corrected before commit/freeze/inference; canonical factor changes preserve the exact proposed matrix.",
+      "stage": "pre-model integration review"
+    },
+    {
+      "issue": "A missing numerical lower bound could be None; exact zero-block contradictions also need an explicit admission barrier.",
+      "resolution": "Handled before frozen execution; no easier family, threshold or geometry substituted.",
+      "stage": "pre-model numerical review"
+    },
+    {
+      "issue": "Optional optimized convolution/delta-rule kernels unavailable.",
+      "resolution": "Used the existing supported PyTorch fallback implementation throughout; no dependency substitution.",
+      "stage": "runtime environment"
+    },
+    {
+      "issue": "Serialized fitting counts omit the inherited runtime capability probe.",
+      "resolution": "Retained raw fit evidence and explicitly included source-derived one forward/backward in complete accounting; no timing double count.",
+      "stage": "post-fit reporting"
+    },
+    {
+      "issue": "Every short reference decode reached twelve tokens despite a valid completed first answer line.",
+      "resolution": "Retained stop reasons and separate completion diagnostics. Did not change the frozen parser or claim EOS/long-benchmark completion.",
+      "stage": "external endpoint interpretation"
+    }
+  ],
+  "schema": "weightbridge.phase_iiip.engineering_adjustments.v1",
+  "scope": "Development/preflight fixes before real execution, not additional research trials or altered scientific gates. Actual Track A and Track B execution receipts both record COMPLETED with no exception."
+}

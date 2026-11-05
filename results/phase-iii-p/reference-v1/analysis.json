@@ -1,0 +1,1681 @@
+{
+  "all_presentations": {
+    "corrected_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+      "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+    ],
+    "gain": 5,
+    "parent_completed": 72,
+    "parent_correct": 27,
+    "parent_valid": 72,
+    "presentations": 72,
+    "reference_completed": 72,
+    "reference_correct": 32,
+    "reference_valid": 72,
+    "regressed_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+    ]
+  },
+  "analysis_source_sha256": "5b9f49eab12e9423933394ed1e353a23e1ab14172f833089ffc336999b3a2981",
+  "comparison_sha256": "61610828500c431240ad1ff0d5e937e34d72bdf1441a14c19aedcc08389b172f",
+  "compute": {
+    "ai_token_tool_cost": null,
+    "all_phase_costs_fully_accounted": false,
+    "components": {
+      "compatibility_inspection": {
+        "cpu_seconds": 5.1875,
+        "peak_rss_bytes": 166297600,
+        "wall_seconds": 5.2295631999731995
+      },
+      "reconstruction_execution": {
+        "cpu_seconds": 23.90625,
+        "peak_rss_bytes": 431951872,
+        "wall_seconds": 25.061851399950683
+      },
+      "reference_execution_host": {
+        "cpu_seconds": 8.15625,
+        "peak_rss_bytes": 138788864,
+        "wall_seconds": 119.86428480001632
+      },
+      "worker_original": {
+        "cpu_seconds": 233.140625,
+        "peak_rss_bytes": 2561482752,
+        "wall_seconds": 53.96795279998332
+      },
+      "worker_reference": {
+        "cpu_seconds": 232.84375,
+        "peak_rss_bytes": 2570231808,
+        "wall_seconds": 54.0203892000136
+      }
+    },
+    "generated_native_tokens": 1728,
+    "generated_responses": 144,
+    "largest_recorded_peak_rss_bytes": 2570231808,
+    "model_backward_calls": 0,
+    "model_forward_calls": 216,
+    "model_work": {
+      "original": {
+        "backward_calls": 0,
+        "batched_decode_steps": 108,
+        "forward_calls": 108,
+        "generated_native_tokens": 864,
+        "responses": 72
+      },
+      "reference": {
+        "backward_calls": 0,
+        "batched_decode_steps": 108,
+        "forward_calls": 108,
+        "generated_native_tokens": 864,
+        "responses": 72
+      }
+    },
+    "preliminary_source_inspection_cpu_seconds": null,
+    "recorded_cpu_seconds_lower_bound": 503.234375,
+    "recorded_serial_wall_seconds": 150.1556993999402,
+    "scope": "Count compatibility once, reconstruction wrapper once (not nested function again), evaluation host wrapper once plus two worker CPUs once. Host wall already includes worker wall. Preliminary fetching/manual asset/hash/norm inspections lack exact CPU totals; tests, analyst replay and assistant costs are separate, not zero."
+  },
+  "controls": {
+    "corrected_presentations": [],
+    "gain": 0,
+    "parent_completed": 24,
+    "parent_correct": 24,
+    "parent_valid": 24,
+    "presentations": 24,
+    "reference_completed": 24,
+    "reference_correct": 24,
+    "reference_valid": 24,
+    "regressed_presentations": []
+  },
+  "families": {
+    "semantic-decimal/reference-evaluation/target/00": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 0,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 0,
+      "reference_valid": 8,
+      "regressed_presentations": [],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/0",
+          "operands": [
+            "-1050.2",
+            "-1050.1644"
+          ],
+          "oracle_answer": "-1050.1644",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1050.2",
+          "parent_text": " -1050.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1050.2",
+          "reference_text": " -1050.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-0/1",
+          "operands": [
+            "-1050.2",
+            "-1050.1644"
+          ],
+          "oracle_answer": "-1050.1644",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1050.2",
+          "parent_text": " -1050.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1050.2",
+          "reference_text": " -1050.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/0",
+          "operands": [
+            "-1050.1644",
+            "-1050.2"
+          ],
+          "oracle_answer": "-1050.1644",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1050.2",
+          "parent_text": " -1050.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1050.2",
+          "reference_text": " -1050.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-0/order-1/1",
+          "operands": [
+            "-1050.1644",
+            "-1050.2"
+          ],
+          "oracle_answer": "-1050.1644",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1050.2",
+          "parent_text": " -1050.2\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1050.2",
+          "reference_text": " -1050.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/0",
+          "operands": [
+            "-1050.2",
+            "-1050.2644"
+          ],
+          "oracle_answer": "-1050.2",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1050.2644",
+          "parent_text": " -1050.2644\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1050.2644",
+          "reference_text": " -1050.2644\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-0/1",
+          "operands": [
+            "-1050.2",
+            "-1050.2644"
+          ],
+          "oracle_answer": "-1050.2",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1050.2644",
+          "parent_text": " -1050.2644\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1050.2644",
+          "reference_text": " -1050.2644\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/0",
+          "operands": [
+            "-1050.2644",
+            "-1050.2"
+          ],
+          "oracle_answer": "-1050.2",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1050.2644",
+          "parent_text": " -1050.2644\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1050.2644",
+          "reference_text": " -1050.2644\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/00/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/00/variant-1/order-1/1",
+          "operands": [
+            "-1050.2644",
+            "-1050.2"
+          ],
+          "oracle_answer": "-1050.2",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1050.2644",
+          "parent_text": " -1050.2644\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1050.2644",
+          "reference_text": " -1050.2644\nValues",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    },
+    "semantic-decimal/reference-evaluation/target/01": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1"
+      ],
+      "gain": 1,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 1,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 2,
+      "reference_valid": 8,
+      "regressed_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+      ],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/0",
+          "operands": [
+            "-1094.2",
+            "-1098.2574"
+          ],
+          "oracle_answer": "-1094.2",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1098.2574",
+          "parent_text": " -1098.2574\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1098.2574",
+          "reference_text": " -1098.2574\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+          "operands": [
+            "-1094.2",
+            "-1098.2574"
+          ],
+          "oracle_answer": "-1094.2",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 23,
+          "parent_semantic_answer": "-1098.2574",
+          "parent_text": " -1098.2574\nValues",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 19,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/0",
+          "operands": [
+            "-1098.2574",
+            "-1094.2"
+          ],
+          "oracle_answer": "-1094.2",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1098.2574",
+          "parent_text": " -1098.2574\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1098.2574",
+          "reference_text": " -1098.2574\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+          "operands": [
+            "-1098.2574",
+            "-1094.2"
+          ],
+          "oracle_answer": "-1094.2",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 23,
+          "parent_semantic_answer": "-1098.2574",
+          "parent_text": " -1098.2574\nValues",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 19,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 7,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/0",
+          "operands": [
+            "-1094.2",
+            "-1090.2574"
+          ],
+          "oracle_answer": "-1090.2574",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 198,
+          "parent_semantic_answer": "-1094.2",
+          "parent_text": " -1094.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 271,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\n\n<think>\nThe user",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1",
+          "operands": [
+            "-1094.2",
+            "-1090.2574"
+          ],
+          "oracle_answer": "-1090.2574",
+          "order": 0,
+          "parent_correct": true,
+          "parent_divergent_token_id": 15,
+          "parent_semantic_answer": "-1090.2574",
+          "parent_text": " -1090.2574\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 19,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/0",
+          "operands": [
+            "-1090.2574",
+            "-1094.2"
+          ],
+          "oracle_answer": "-1090.2574",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1094.2",
+          "parent_text": " -1094.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/01/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/01/variant-1/order-1/1",
+          "operands": [
+            "-1090.2574",
+            "-1094.2"
+          ],
+          "oracle_answer": "-1090.2574",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1094.2",
+          "parent_text": " -1094.2\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1094.2",
+          "reference_text": " -1094.2\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    },
+    "semantic-decimal/reference-evaluation/target/02": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 1,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 1,
+      "reference_valid": 8,
+      "regressed_presentations": [],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/0",
+          "operands": [
+            "-1018.6",
+            "-1018.5601"
+          ],
+          "oracle_answer": "-1018.5601",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6",
+          "parent_text": " -1018.6\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6",
+          "reference_text": " -1018.6\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-0/1",
+          "operands": [
+            "-1018.6",
+            "-1018.5601"
+          ],
+          "oracle_answer": "-1018.5601",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6",
+          "parent_text": " -1018.6\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6",
+          "reference_text": " -1018.6\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/0",
+          "operands": [
+            "-1018.5601",
+            "-1018.6"
+          ],
+          "oracle_answer": "-1018.5601",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6",
+          "parent_text": " -1018.6\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6",
+          "reference_text": " -1018.6\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-0/order-1/1",
+          "operands": [
+            "-1018.5601",
+            "-1018.6"
+          ],
+          "oracle_answer": "-1018.5601",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1018.6",
+          "parent_text": " -1018.6\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1018.6",
+          "reference_text": " -1018.6\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/0",
+          "operands": [
+            "-1018.6",
+            "-1018.6601"
+          ],
+          "oracle_answer": "-1018.6",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6601",
+          "parent_text": " -1018.6601\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6601",
+          "reference_text": " -1018.6601\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-0/1",
+          "operands": [
+            "-1018.6",
+            "-1018.6601"
+          ],
+          "oracle_answer": "-1018.6",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6601",
+          "parent_text": " -1018.6601\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6601",
+          "reference_text": " -1018.6601\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/0",
+          "operands": [
+            "-1018.6601",
+            "-1018.6"
+          ],
+          "oracle_answer": "-1018.6",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1018.6601",
+          "parent_text": " -1018.6601\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1018.6601",
+          "reference_text": " -1018.6601\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/02/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/02/variant-1/order-1/1",
+          "operands": [
+            "-1018.6601",
+            "-1018.6"
+          ],
+          "oracle_answer": "-1018.6",
+          "order": 1,
+          "parent_correct": true,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1018.6",
+          "parent_text": " -1018.6\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1018.6",
+          "reference_text": " -1018.6\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    },
+    "semantic-decimal/reference-evaluation/target/03": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1"
+      ],
+      "gain": 1,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 1,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 2,
+      "reference_valid": 8,
+      "regressed_presentations": [],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/0",
+          "operands": [
+            "-1045.7",
+            "-1048.2401"
+          ],
+          "oracle_answer": "-1045.7",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1048.2401",
+          "parent_text": " -1048.2401\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1048.2401",
+          "reference_text": " -1048.2401\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-0/1",
+          "operands": [
+            "-1045.7",
+            "-1048.2401"
+          ],
+          "oracle_answer": "-1045.7",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1048.2401",
+          "parent_text": " -1048.2401\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1048.2401",
+          "reference_text": " -1048.2401\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/0",
+          "operands": [
+            "-1048.2401",
+            "-1045.7"
+          ],
+          "oracle_answer": "-1045.7",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1048.2401",
+          "parent_text": " -1048.2401\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1048.2401",
+          "reference_text": " -1048.2401\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-0/order-1/1",
+          "operands": [
+            "-1048.2401",
+            "-1045.7"
+          ],
+          "oracle_answer": "-1045.7",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1048.2401",
+          "parent_text": " -1048.2401\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1048.2401",
+          "reference_text": " -1048.2401\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/0",
+          "operands": [
+            "-1045.7",
+            "-1042.2401"
+          ],
+          "oracle_answer": "-1042.2401",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1045.7",
+          "parent_text": " -1045.7\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1045.7",
+          "reference_text": " -1045.7\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-0/1",
+          "operands": [
+            "-1045.7",
+            "-1042.2401"
+          ],
+          "oracle_answer": "-1042.2401",
+          "order": 0,
+          "parent_correct": true,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1042.2401",
+          "parent_text": " -1042.2401\nValues",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1042.2401",
+          "reference_text": " -1042.2401\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/0",
+          "operands": [
+            "-1042.2401",
+            "-1045.7"
+          ],
+          "oracle_answer": "-1042.2401",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1045.7",
+          "parent_text": " -1045.7\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1045.7",
+          "reference_text": " -1045.7\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/03/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+          "operands": [
+            "-1042.2401",
+            "-1045.7"
+          ],
+          "oracle_answer": "-1042.2401",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 20,
+          "parent_semantic_answer": "-1045.7",
+          "parent_text": " -1045.7\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 17,
+          "reference_semantic_answer": "-1042.2401",
+          "reference_text": " -1042.2401\nValues",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    },
+    "semantic-decimal/reference-evaluation/target/04": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 0,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 0,
+      "reference_valid": 8,
+      "regressed_presentations": [],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/0",
+          "operands": [
+            "-1011.3",
+            "-1011.3605"
+          ],
+          "oracle_answer": "-1011.3",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3605",
+          "parent_text": " -1011.3605\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3605",
+          "reference_text": " -1011.3605\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-0/1",
+          "operands": [
+            "-1011.3",
+            "-1011.3605"
+          ],
+          "oracle_answer": "-1011.3",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3605",
+          "parent_text": " -1011.3605\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3605",
+          "reference_text": " -1011.3605\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/0",
+          "operands": [
+            "-1011.3605",
+            "-1011.3"
+          ],
+          "oracle_answer": "-1011.3",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3605",
+          "parent_text": " -1011.3605\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3605",
+          "reference_text": " -1011.3605\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-0/order-1/1",
+          "operands": [
+            "-1011.3605",
+            "-1011.3"
+          ],
+          "oracle_answer": "-1011.3",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3605",
+          "parent_text": " -1011.3605\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3605",
+          "reference_text": " -1011.3605\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 7,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/0",
+          "operands": [
+            "-1011.3",
+            "-1011.2605"
+          ],
+          "oracle_answer": "-1011.2605",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 198,
+          "parent_semantic_answer": "-1011.3",
+          "parent_text": " -1011.3\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 271,
+          "reference_semantic_answer": "-1011.3",
+          "reference_text": " -1011.3\n\n<think>\nThe user",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-0/1",
+          "operands": [
+            "-1011.3",
+            "-1011.2605"
+          ],
+          "oracle_answer": "-1011.2605",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3",
+          "parent_text": " -1011.3\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3",
+          "reference_text": " -1011.3\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/0",
+          "operands": [
+            "-1011.2605",
+            "-1011.3"
+          ],
+          "oracle_answer": "-1011.2605",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1011.3",
+          "parent_text": " -1011.3\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1011.3",
+          "reference_text": " -1011.3\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/04/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/04/variant-1/order-1/1",
+          "operands": [
+            "-1011.2605",
+            "-1011.3"
+          ],
+          "oracle_answer": "-1011.2605",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1011.3",
+          "parent_text": " -1011.3\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1011.3",
+          "reference_text": " -1011.3\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    },
+    "semantic-decimal/reference-evaluation/target/05": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+      ],
+      "gain": 3,
+      "parent_complete": false,
+      "parent_completed": 8,
+      "parent_correct": 0,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_complete": false,
+      "reference_completed": 8,
+      "reference_correct": 3,
+      "reference_valid": 8,
+      "regressed_presentations": [],
+      "rows": [
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+          "operands": [
+            "-1095.8",
+            "-1098.3448"
+          ],
+          "oracle_answer": "-1095.8",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 23,
+          "parent_semantic_answer": "-1098.3448",
+          "parent_text": " -1098.3448\nValues",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 20,
+          "reference_semantic_answer": "-1095.8",
+          "reference_text": " -1095.8\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+          "operands": [
+            "-1095.8",
+            "-1098.3448"
+          ],
+          "oracle_answer": "-1095.8",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": 23,
+          "parent_semantic_answer": "-1098.3448",
+          "parent_text": " -1098.3448\nValues",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 20,
+          "reference_semantic_answer": "-1095.8",
+          "reference_text": " -1095.8\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/0",
+          "operands": [
+            "-1098.3448",
+            "-1095.8"
+          ],
+          "oracle_answer": "-1095.8",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1098.3448",
+          "parent_text": " -1098.3448\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1098.3448",
+          "reference_text": " -1098.3448\nValues",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-0",
+          "counterfactual": 0,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-0/order-1/1",
+          "operands": [
+            "-1098.3448",
+            "-1095.8"
+          ],
+          "oracle_answer": "-1095.8",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1098.3448",
+          "parent_text": " -1098.3448\nValues",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1098.3448",
+          "reference_text": " -1098.3448\nValues",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/0",
+          "operands": [
+            "-1095.8",
+            "-1092.3448"
+          ],
+          "oracle_answer": "-1092.3448",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1095.8",
+          "parent_text": " -1095.8\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1095.8",
+          "reference_text": " -1095.8\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": null,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-0/1",
+          "operands": [
+            "-1095.8",
+            "-1092.3448"
+          ],
+          "oracle_answer": "-1092.3448",
+          "order": 0,
+          "parent_correct": false,
+          "parent_divergent_token_id": null,
+          "parent_semantic_answer": "-1095.8",
+          "parent_text": " -1095.8\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": null,
+          "reference_semantic_answer": "-1095.8",
+          "reference_text": " -1095.8\nValues: 1",
+          "reference_valid": true,
+          "wording": 1
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 11,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/0",
+          "operands": [
+            "-1092.3448",
+            "-1095.8"
+          ],
+          "oracle_answer": "-1092.3448",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 17,
+          "parent_semantic_answer": "-1095.8",
+          "parent_text": " -1095.8\nValues: 2",
+          "parent_valid": true,
+          "reference_correct": false,
+          "reference_divergent_token_id": 16,
+          "reference_semantic_answer": "-1095.8",
+          "reference_text": " -1095.8\nValues: 1",
+          "reference_valid": true,
+          "wording": 0
+        },
+        {
+          "comparison_id": "semantic-decimal/reference-evaluation/target/05/variant-1",
+          "counterfactual": 1,
+          "first_divergent_native_token_position": 4,
+          "id": "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1",
+          "operands": [
+            "-1092.3448",
+            "-1095.8"
+          ],
+          "oracle_answer": "-1092.3448",
+          "order": 1,
+          "parent_correct": false,
+          "parent_divergent_token_id": 20,
+          "parent_semantic_answer": "-1095.8",
+          "parent_text": " -1095.8\nValues: 1",
+          "parent_valid": true,
+          "reference_correct": true,
+          "reference_divergent_token_id": 17,
+          "reference_semantic_answer": "-1092.3448",
+          "reference_text": " -1092.3448\nValues",
+          "reference_valid": true,
+          "wording": 1
+        }
+      ]
+    }
+  },
+  "final_importer_source_sha256": "f9abbda54aff00058d5e69cffeb0e8aa4860f60998c5d3488a5b480064e4d9f0",
+  "interpretation": "External repetition edit changes some completed decimal answers, including a prohibited loss. Presentation gain is not strict-comparison or complete-family transfer and cannot qualify zero-regression adaptation.",
+  "lineage_accepted": false,
+  "long_benchmark_reproduction": false,
+  "new_weightbridge_learning_claimed": false,
+  "patch_receipt_replay": {
+    "declarative_patch_hash_exact": true,
+    "every_exported_value_matches_pinned_npz": true,
+    "host_before_after_delta_norm_replayed": 2.2394522487131594,
+    "scope": "Before values and source tensor identity remain hash-bound host measurements; this analysis does not load the original model."
+  },
+  "preliminary_importer_source_sha256": "636f8040bad56008c4302a0930e88cdab341329a07f8c7228aef1d3091204b04",
+  "preliminary_source_version_note": "Preflight inspection predates final authorization/restoration guards; preserve its original receipt. Final reconstruction and evaluation bind the final importer source.",
+  "presentation_gain_interval": {
+    "clusters": 6,
+    "confidence_level": 0.95,
+    "estimand": "Paired target presentation-accuracy change, not strict-comparison or complete-family accuracy",
+    "family_mean_changes": {
+      "semantic-decimal/reference-evaluation/target/00": 0.0,
+      "semantic-decimal/reference-evaluation/target/01": 0.125,
+      "semantic-decimal/reference-evaluation/target/02": 0.0,
+      "semantic-decimal/reference-evaluation/target/03": 0.125,
+      "semantic-decimal/reference-evaluation/target/04": 0.0,
+      "semantic-decimal/reference-evaluation/target/05": 0.375
+    },
+    "high": 0.22916666666666666,
+    "low": 0.020833333333333332,
+    "method": "Exploratory percentile bootstrap over underlying target families; all eight correlated renderings stay together",
+    "point_estimate": 0.10416666666666667,
+    "postfit_reporting_only": true,
+    "resamples": 4000,
+    "scope": "Six designed families do not establish population-level improvement. This interval does not qualify a candidate or remove observed regressions.",
+    "seed": 1996,
+    "used_for_candidate_selection": false
+  },
+  "protocol_sha256": "21387ae9fa13806707222103cbc5d1209ab7f67629423a9a0e3225016c0f5f6b",
+  "reconstruction_receipt_sha256": "4006062002bbf92940219a5694da7274c627d194e63702644c6fd2a903860e08",
+  "reference_model": "6cb1d9fd8d6df43db6c9c5d8b87e6ddd489295333d4f65867660ea3393c9e556",
+  "roster_sha256": "c75553fd4b36d6ace1771721370b84041ab6ae010087b0bffbc28077cfd670e9",
+  "schema": "weightbridge.phase_iiip.reference_analysis.v1",
+  "scope": "External published repetition intervention under our short greedy decimal endpoint. Not a reproduction of MATH-500, GSM8K, IFEval or long sampled thinking-mode benchmarks; not evidence that WeightBridge discovered or learned a decimal rule.",
+  "source_artifacts": {
+    "LICENSE": "395f7febedfda6b5498ca36cfe3344d3986659ce4385dd8b03d2d75604250a8e",
+    "README.md": "b1c51eeb9b9e2935ff227fdc7796c2a67bd3a55014cf99291224f9cc7b93d342",
+    "exp8_math/README.md": "473e386ade21ff52240103003b6b125e4362d9fa11010916c1b770ddb0edcbbd",
+    "exp8_math/base_model/Qwen3.5-0.8B-text/chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "exp8_math/base_model/Qwen3.5-0.8B-text/config.json": "3f56b6210db3c52e0bafb50da005eb52b6d340ab4ad980091879b397743675fc",
+    "exp8_math/base_model/Qwen3.5-0.8B-text/generation_config.json": "62153eb6c69f2e1f426beaa8002b7186437e949c7588167085df14e10e9c0a73",
+    "exp8_math/base_model/Qwen3.5-0.8B-text/tokenizer_config.json": "66e427c470fe580fe8c7b5725d857af23d8417e37fae62667ec698306a19987b",
+    "exp8_math/code/apply_edit.py": "d2b627a6cf344f309cca4bcab4ff6ccc6ad1c8f29cabda78d11f99c19d1b1c5d",
+    "exp8_math/code/st_numpy.py": "3c4e532fb8edf374e1a4636aa806a04d062f824943eaf4bca0d3af5b0e7dca40",
+    "exp8_math/runs/p50c/edit/edit.npz": "e92a92aafd1f1068b4fd94aa0fbe081ba3ddea2047ee7bcac7161d861be299e7",
+    "exp8_math/runs/p50c/edit/manifest.json": "83185c1db46e3dafb34af645f8c5ce033c09cc99d4512b9e1b8e3aba9d269225",
+    "exp8_math/runs/p50c/final_answer.md": "497ea024210e9bbc10826756997ef41b454dd524390fff1b2d4cdec6782c30d1",
+    "exp8_math/runs/p50c/work_notes/final_report.md": "d74088bc1ebe81aa00ebbef148dc40c446a99ec89c731b61b68a49061d452178"
+  },
+  "source_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "source_model": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "status": "BENCHMARK_COMPLETED",
+  "strata": {
+    "correct_length/longer": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+      ],
+      "gain": 1,
+      "parent_completed": 24,
+      "parent_correct": 2,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 3,
+      "reference_valid": 24,
+      "regressed_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+      ]
+    },
+    "correct_length/shorter": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1"
+      ],
+      "gain": 4,
+      "parent_completed": 24,
+      "parent_correct": 1,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 5,
+      "reference_valid": 24,
+      "regressed_presentations": []
+    },
+    "group/copy": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_completed": 8,
+      "parent_correct": 8,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_completed": 8,
+      "reference_correct": 8,
+      "reference_valid": 8,
+      "regressed_presentations": []
+    },
+    "group/mixed-sign": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_completed": 8,
+      "parent_correct": 8,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_completed": 8,
+      "reference_correct": 8,
+      "reference_valid": 8,
+      "regressed_presentations": []
+    },
+    "group/negative-close/longer": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_completed": 12,
+      "parent_correct": 0,
+      "parent_valid": 12,
+      "presentations": 12,
+      "reference_completed": 12,
+      "reference_correct": 0,
+      "reference_valid": 12,
+      "regressed_presentations": []
+    },
+    "group/negative-close/shorter": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_completed": 12,
+      "parent_correct": 1,
+      "parent_valid": 12,
+      "presentations": 12,
+      "reference_completed": 12,
+      "reference_correct": 1,
+      "reference_valid": 12,
+      "regressed_presentations": []
+    },
+    "group/negative-far/longer": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+      ],
+      "gain": 1,
+      "parent_completed": 12,
+      "parent_correct": 2,
+      "parent_valid": 12,
+      "presentations": 12,
+      "reference_completed": 12,
+      "reference_correct": 3,
+      "reference_valid": 12,
+      "regressed_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+      ]
+    },
+    "group/negative-far/shorter": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1"
+      ],
+      "gain": 4,
+      "parent_completed": 12,
+      "parent_correct": 0,
+      "parent_valid": 12,
+      "presentations": 12,
+      "reference_completed": 12,
+      "reference_correct": 4,
+      "reference_valid": 12,
+      "regressed_presentations": []
+    },
+    "group/positive-far": {
+      "corrected_presentations": [],
+      "gain": 0,
+      "parent_completed": 8,
+      "parent_correct": 8,
+      "parent_valid": 8,
+      "presentations": 8,
+      "reference_completed": 8,
+      "reference_correct": 8,
+      "reference_valid": 8,
+      "regressed_presentations": []
+    },
+    "order/0": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1"
+      ],
+      "gain": 2,
+      "parent_completed": 24,
+      "parent_correct": 2,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 4,
+      "reference_valid": 24,
+      "regressed_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+      ]
+    },
+    "order/1": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+      ],
+      "gain": 3,
+      "parent_completed": 24,
+      "parent_correct": 1,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 4,
+      "reference_valid": 24,
+      "regressed_presentations": []
+    },
+    "wording/0": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0"
+      ],
+      "gain": 1,
+      "parent_completed": 24,
+      "parent_correct": 0,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 1,
+      "reference_valid": 24,
+      "regressed_presentations": []
+    },
+    "wording/1": {
+      "corrected_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+        "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+        "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+      ],
+      "gain": 4,
+      "parent_completed": 24,
+      "parent_correct": 3,
+      "parent_valid": 24,
+      "presentations": 24,
+      "reference_completed": 24,
+      "reference_correct": 7,
+      "reference_valid": 24,
+      "regressed_presentations": [
+        "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+      ]
+    }
+  },
+  "strict_and_family_gate": {
+    "candidate_complete_families": 0,
+    "candidate_target_correct": 0,
+    "candidate_truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "complete_family_gain": 0,
+    "corrected_repeatable_target_comparisons": [],
+    "corrected_target_comparisons": [],
+    "family_gain_interval": {
+      "clusters": 6,
+      "estimand": "paired target accuracy change",
+      "high": 0.0,
+      "low": 0.0,
+      "resamples": 4000
+    },
+    "local_corrected_target_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+      "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+    ],
+    "lost_complete_families": [],
+    "lost_target_comparisons": [],
+    "lost_valid": [],
+    "newly_completed_families": [],
+    "parent_complete_families": 0,
+    "parent_target_correct": 0,
+    "parent_truth_flip_matrix": {
+      "both_correct": 0,
+      "neither_correct": 6,
+      "only_counterfactual_correct": 0,
+      "only_original_correct": 0
+    },
+    "passed": false,
+    "regressions": [
+      "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+    ],
+    "target_comparisons": 12,
+    "target_gain": 0
+  },
+  "strict_comparison_gain_interval": {
+    "clusters": 6,
+    "estimand": "Paired strict-comparison accuracy change, clustered by underlying family",
+    "high": 0.0,
+    "low": 0.0,
+    "resamples": 4000,
+    "scope": "Degenerate observed zero changes do not establish zero population uncertainty."
+  },
+  "target_presentations": {
+    "corrected_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/01/variant-0/order-1/1",
+      "semantic-decimal/reference-evaluation/target/03/variant-1/order-1/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/0",
+      "semantic-decimal/reference-evaluation/target/05/variant-0/order-0/1",
+      "semantic-decimal/reference-evaluation/target/05/variant-1/order-1/1"
+    ],
+    "gain": 5,
+    "parent_completed": 48,
+    "parent_correct": 3,
+    "parent_valid": 48,
+    "presentations": 48,
+    "reference_completed": 48,
+    "reference_correct": 8,
+    "reference_valid": 48,
+    "regressed_presentations": [
+      "semantic-decimal/reference-evaluation/target/01/variant-1/order-0/1"
+    ]
+  },
+  "track": "B",
+  "update_norms": {
+    "absolute_update_norm": 2.2394522487131594,
+    "changed_entries": 130188,
+    "max_abs_delta": 0.21484375,
+    "relative_affected_full_matrices_update_norm": 0.09395607254131742,
+    "relative_norm_scope": "The two full modified matrices, not total-model parameter fraction or Track A norm authorization",
+    "source_affected_full_matrices_norm": 23.83509855340489,
+    "tensor_details": [
+      {
+        "absolute_update_norm": 1.7488876203552048,
+        "changed_columns": 64,
+        "changed_entries": 65260,
+        "dtype": "BF16",
+        "edited_sha256": "82e2d733ea64feaeb4af93a1e065641d3df98b494a8b7576ef2f52e90fe2ee53",
+        "relative_full_matrix_update_norm": 0.106361810515083,
+        "shape": [
+          1024,
+          3584
+        ],
+        "source_full_matrix_norm": 16.44281544179993,
+        "source_sha256": "ef60d2c687bab19464dca9c8bfd7777e46ad226df0c9e25643b0bab04b5a1cca",
+        "sparse_payload_entries": 65260,
+        "tensor": "model.language_model.layers.15.mlp.down_proj.weight"
+      },
+      {
+        "absolute_update_norm": 1.3987631914068717,
+        "changed_columns": 64,
+        "changed_entries": 64928,
+        "dtype": "BF16",
+        "edited_sha256": "8ef3c61bc36af113ad58e89dbb0a4a14dcba5a45cb750c15ab515c82ddd12eb2",
+        "relative_full_matrix_update_norm": 0.08106276525634826,
+        "shape": [
+          1024,
+          3584
+        ],
+        "source_full_matrix_norm": 17.255310585365585,
+        "source_sha256": "638eedeb701b94aa861f4438e615c07ec6c60ee703db1bfee2de577bb6498c3e",
+        "sparse_payload_entries": 64928,
+        "tensor": "model.language_model.layers.19.mlp.down_proj.weight"
+      }
+    ]
+  }
+}
