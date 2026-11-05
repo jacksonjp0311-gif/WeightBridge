@@ -1,0 +1,35 @@
+Loading weights:   0%|          | 0/473 [00:00<?, ?it/s]Loading weights:   7%|7         | 34/473 [00:00<00:01, 317.54it/s]Loading weights:  14%|#3        | 66/473 [00:00<00:01, 254.11it/s]Loading weights:  22%|##1       | 102/473 [00:00<00:01, 260.78it/s]Loading weights:  27%|##7       | 130/473 [00:00<00:01, 241.62it/s]Loading weights:  36%|###5      | 169/473 [00:00<00:01, 281.11it/s]Loading weights:  43%|####2     | 202/473 [00:00<00:00, 287.29it/s]Loading weights:  49%|####9     | 232/473 [00:00<00:00, 257.94it/s]Loading weights:  55%|#####5    | 261/473 [00:00<00:00, 261.48it/s]Loading weights: 100%|##########| 473/473 [00:01<00:00, 472.99it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+step=1/32 loss=0.17510 wall=28.6s
+step=2/32 loss=0.39639 wall=36.1s
+step=3/32 loss=0.34550 wall=43.5s
+step=4/32 loss=0.06573 wall=50.9s
+step=5/32 loss=0.03170 wall=58.3s
+step=6/32 loss=0.06454 wall=65.4s
+step=7/32 loss=0.18953 wall=72.4s
+step=8/32 loss=0.57525 wall=79.6s
+step=9/32 loss=0.05018 wall=86.9s
+step=10/32 loss=0.01352 wall=93.8s
+step=11/32 loss=0.00576 wall=101.1s
+step=12/32 loss=0.00092 wall=108.4s
+step=13/32 loss=0.00725 wall=115.8s
+step=14/32 loss=0.00025 wall=122.9s
+step=15/32 loss=0.00005 wall=129.8s
+step=16/32 loss=0.00012 wall=136.9s
+step=17/32 loss=0.00006 wall=143.9s
+step=18/32 loss=0.00002 wall=150.9s
+step=19/32 loss=0.00007 wall=158.2s
+step=20/32 loss=0.00000 wall=165.4s
+step=21/32 loss=0.00001 wall=172.4s
+step=22/32 loss=0.00000 wall=179.6s
+step=23/32 loss=0.00002 wall=186.9s
+step=24/32 loss=0.00007 wall=193.9s
+step=25/32 loss=0.00006 wall=200.8s
+step=26/32 loss=0.00000 wall=208.0s
+step=27/32 loss=0.00000 wall=215.0s
+step=28/32 loss=0.00001 wall=221.9s
+step=29/32 loss=0.00002 wall=229.1s
+step=30/32 loss=0.00000 wall=236.0s
+step=31/32 loss=0.00001 wall=243.1s
+step=32/32 loss=0.00001 wall=250.3s

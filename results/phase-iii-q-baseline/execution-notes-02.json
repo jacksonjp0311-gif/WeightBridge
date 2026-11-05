@@ -1,0 +1,11 @@
+{
+  "schema": "weightbridge.phase_iiiq_baseline.execution_notes.v1",
+  "sequence": 2,
+  "events": [
+    {"kind": "host_admission_interface_mismatch", "cause": "Frozen smoke execution stores protocol SHA under identity; main authorization expects a top-level protocol SHA.", "adjustment": "A new host-only admit_smoke module independently replays the raw receipts and emits a flat, hash-bound admission. Frozen code and raw measurements are unchanged.", "threshold_changed": false, "model_rerun": false},
+    {"kind": "resource_accounting_correction", "cause": "Windows venv launcher process statistics excluded the real model child. The raw aggregate incorrectly reported 1.875 CPU seconds and about 5 MB peak RSS.", "adjustment": "Preserved the raw gate and appended an independent worker-receipt audit: known CPU lower bound 2881.0 seconds, conservative upper bound 3461.0985568 seconds, exact total null, known peak RSS 7020761088 bytes. A new process-tree monitor is used for the main runs.", "raw_receipt_changed": false, "behavioral_result_changed": false, "budget_changed": false}
+  ],
+  "frozen_protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "main_training_criteria_changed": false,
+  "column_search_executed": false
+}

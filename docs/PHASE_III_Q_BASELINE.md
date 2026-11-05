@@ -117,11 +117,46 @@ answers. Both discarded their adapters and verified unchanged parent bytes.
 
 ## Execution status
 
-Implementation and preregistration are being verified. No learning result is
-claimed by this initial document. Measured smoke, training, development and
-conditional independent outcomes will replace this status with evidence
-paths and exact identities after execution. Unopened stages will remain
-null, not zero or PASS.
+The disposable smoke passed. The unchanged parent answered 2/32 completed
+presentations correctly; the trained adapter answered 32/32, including all
+eight strict comparisons and four complete opposing families. Two fresh
+processes reproduced the exact generated token sequences. Disabling the
+adapter restored the parent predictions exactly, and original checkpoint
+bytes stayed unchanged. Every A and B factor received nonzero gradients and
+changed. The same-population token NLL fell from 0.1758512 to 0.00000876256.
+All 32 decodes still reached the sixteen-token budget rather than EOS; their
+first answer lines were completed and correct. This is training-set fit,
+not independent semantic transfer.
+
+The smoke used 32 optimizer steps, 32 forward/backward training calls and
+1,216 supervised answer-token exposures. The adapter artifact SHA-256 is
+`119f2375044a26c723befa23000897c8be81c507bd760e692bcb73c5c34a19d6`.
+Its unrounded effective update norm was 8.52609. The BF16 merge preview norm
+was 8.54197, with 463,949,792 changed entries and rounding residual norm
+0.522482. This preview was measured without installing or exporting a merged
+smoke checkpoint. These are conventional-training magnitudes, not authorized
+edits under the older direct-edit policy.
+
+Two host integration issues were found before main training. The raw smoke
+gate stores protocol identity under `identity`, while the main admission API
+expects a top-level field. A separate host bridge independently replays the
+raw checks and provides that binding without changing the frozen files.
+Also, the Windows venv launcher spawned the real model process, so the raw
+launcher CPU/RSS aggregate undercounted work. That receipt is retained and
+flagged. An append-only audit uses actual worker-body/cleanup measurements:
+586.716 wall seconds, a CPU lower bound of 2,881.0 seconds and a conservative
+upper bound of 3,461.10 seconds, below the 4,500-second smoke limit. Exact total
+CPU is unknown. Known lifetime peak RSS is 7,020,761,088 bytes. The main runs
+use process-tree monitoring. No behavioral threshold was changed.
+
+The two separately authorized main runs have not yet supplied development or
+independent evidence. Unopened stages remain null. The accepted lineage is
+unchanged. Main results will be added after execution.
+
+Receipts: [smoke report](../results/phase-iii-q-baseline/smoke-report.json),
+[raw gate](../results/phase-iii-q-baseline/baseline-v1/smoke/smoke-gate.json),
+[independent admission and cost audit](../results/phase-iii-q-baseline/baseline-v1/smoke-admission.json),
+[frozen-source tests](../results/phase-iii-q-baseline/tests/frozen-v1/tests.json).
 
 The full protocol is
 [`experiments/phase_iiiq_baseline/protocol.json`](../experiments/phase_iiiq_baseline/protocol.json).
