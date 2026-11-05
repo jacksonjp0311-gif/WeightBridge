@@ -1,0 +1,89 @@
+{
+  "clone_method": "Fresh GitHub HTTPS shallow clone, single published branch; --no-hardlinks, core.autocrlf=true",
+  "core_autocrlf": "true",
+  "frozen_task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+  "git_clean_before_and_after": true,
+  "model_execution": false,
+  "new_s_tracked_files_checked": 43,
+  "new_weights_or_private_rosters_present": false,
+  "passed": true,
+  "private_behavioral_replay": false,
+  "protected_roster_access": false,
+  "public_export_artifacts_verified": 16,
+  "public_validators": {
+    "preflight-v1": {
+      "artifacts": 10,
+      "export_manifest_sha256": "08ddda59f2208a835d394230b8e8a4eedaade9012dc670d8af8bdacb478ff79e",
+      "passed": true,
+      "scope": "Public archive integrity only; no model execution or private replay",
+      "self_test": {
+        "hash_tampering": "PASS",
+        "null_preservation": "PASS",
+        "raw_refusal": "PASS",
+        "redaction": "PASS"
+      },
+      "validator_sha256": "59566f314efdc5b5085ed4532ca8c6f7b972278adcf786056d08703dfa46f52d"
+    },
+    "preregistration-v1": {
+      "artifacts": 6,
+      "export_manifest_sha256": "e9852fa4fef1eb23ce7b0895ce041989fa36fbe6659939b83370921095bb7189",
+      "frozen_study_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+      "model_execution": false,
+      "passed": true,
+      "self_test": {
+        "count_preservation": "PASS",
+        "raw_roster_refusal": "PASS",
+        "redaction": "PASS"
+      },
+      "validator_sha256": "0d61909269b1090699163b9ef7869396b2b74c73496f7b04efa6c1b40354ce3a"
+    }
+  },
+  "published_commit": "8da222677cbd7c34b6da630652d4a7fdb9e56158",
+  "recorded_tests_not_rerun": {
+    "host-forecast.xml": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 11,
+      "sha256": "d584d8f56965194ad60479a4eb812d254ec1ec41191e1a64de422839ba6c1e12",
+      "skipped": 0,
+      "tests": 11
+    },
+    "mcp.xml": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 23,
+      "sha256": "751085e1aa663a59e88420678035f6aabb8d749b5966fbf1bf29c9e638f87691",
+      "skipped": 0,
+      "tests": 23
+    },
+    "population-serialization.xml": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 42,
+      "sha256": "857fa57cfaffceb934881dfd5b6ea2408529c32324ff7d777157e41fb546a7a1",
+      "skipped": 0,
+      "tests": 42
+    },
+    "runtime.xml": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 1000,
+      "sha256": "d1f407895b543c6a0f4f6961b946e85e86871326cd5cdcacab1ecebbcce49907",
+      "skipped": 2,
+      "tests": 1002
+    }
+  },
+  "remote_branch": "dev/phase-iii-s-tool-transfer",
+  "resources": {
+    "audit_cpu_seconds": 0.25,
+    "audit_peak_memory_bytes": null,
+    "audit_wall_seconds": 0.9471198000246659,
+    "clone_cpu_seconds": null,
+    "clone_wall_seconds": null,
+    "scope": "Python audit scope; git child CPU and prior network clone/checkout cost unmeasured. No model compute."
+  },
+  "schema": "weightbridge.phase_iiis.clean_public_checkout_review.v1",
+  "scope": "Public archive/check-out integrity and published validator self-tests only. Does not establish neural improvement, private checkpoint replay, or completed main training.",
+  "source_files_verified": 162,
+  "source_manifest_sha256": "ae205d4caa639c349d7876e7599a0c8f53f5a39af81347a4dbf9fb43b2a28195"
+}

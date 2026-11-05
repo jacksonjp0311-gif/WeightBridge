@@ -1,15 +1,27 @@
 # Phase III-S: grounded tool transfer after a verified decimal improvement
 
-**Preflight snapshot: calibration and numerical timing completed; main training
-has not run. No Phase S adapter, merged model or independently qualified tool
-improvement is reported.** The planned sequential and original-parent arms use
-the same new curriculum and fixed rank-eight recipe. Formal gates remain strict.
+**Preregistration milestone: formal populations, protocols and 162 source files
+are frozen. Calibration and numerical timing completed; baseline development
+measurement has started, and main training has not run. No Phase S adapter,
+merged model or independently qualified tool improvement is reported.** The
+sequential and original-parent arms use the same new curriculum and fixed
+rank-eight recipe. Formal gates remain strict.
 
 This work starts from `baa336e7c517139876a1a5d6309af7199ea1e661` on an isolated
 `dev/phase-iii-s-tool-transfer` branch. Main, original and R checkpoint bytes,
 historical evidence, deployed models and accepted lineage remain unchanged.
 It builds on the [verified Phase III-R replication](PHASE_III_R_REPLICATION.md),
 not its rejected rank-four reduction.
+
+The prospective scientific source commit is
+`22ca0b3bf21500b811e61ca7088fe39404ca4738`. The frozen study manifest SHA-256 is
+`ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a`.
+The sequential protocol is
+`17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9`;
+the original-joint protocol is
+`9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154`.
+The [public preregistration](../results/phase-iii-s-tool-transfer/preregistration-v1/export-manifest.json)
+records those original byte identities and separately hashed redacted projections.
 
 ## Question and comparison
 
@@ -131,7 +143,7 @@ historical result.
 These are fresh disposable measurements of unchanged parents, not a Phase S
 learning result, independent confirmation or a population-level competence claim.
 
-## Training implementation and prospective population
+## Training implementation and frozen population
 
 The implementation reuses the existing LoRA factors, parent inspection, complete
 answer loss, Decimal generator, checkpoint merger, resource monitor and replay
@@ -139,7 +151,7 @@ machinery. New code consists of the grounded task contract and simulator, mixed
 completion preparation, explicit-parent bindings, data builders and staged host
 verification. Historical loaders, protocols and endpoints are preserved.
 
-Both arms are planned to use 186 supported text attention/MLP matrices across
+Both arms are authorized to use 186 supported text attention/MLP matrices across
 24 layers, rank eight, alpha sixteen, no dropout and 5,411,328 trainable FP32
 factor entries over frozen BF16 parents. Embeddings, output head, tokenizer and
 vision components remain outside the adapter. The fresh adapter is initialized
@@ -166,6 +178,12 @@ addition and 64 successor presentations. Every row has unit sampling weight.
 Training loss is the sum of supervised-token losses divided by supervised
 tokens in the effective batch, not an equal mean of unequal microbatch means.
 The 50/25/25 row mixture therefore does not imply a 50/25/25 loss mixture.
+The frozen training roster contains 208 clarify actions and 204 of each other
+action; 1,024 presentations cannot divide exactly into five equal groups.
+Tokenization commits 28,932 supervised tokens and 471,134 unpadded input tokens
+per main run. Tools contribute 20,208 supervised tokens, negative decimals
+4,824, and the five general categories 3,900. Those are prospective exact
+exposures for one completed epoch, not measurements of already executed training.
 
 Tool supervision covers the complete canonical JSON and native terminator.
 Decimal supervision remains leading space, canonical exact answer and newline.
@@ -241,12 +259,25 @@ Windows sleep prevention was released for every recorded action.
 
 The longest measured microbatch had shape 4 by 415 tokens. Its forward and
 backward work required about nineteen wall seconds; short legacy batches were
-substantially cheaper. This is a timing observation, not proof that both full
-runs and every verification stage fit. The operator ceilings are four hours
-per main attempt, eighteen cumulative model-execution hours and 32 GiB under
-the conservative monitor. Tighter stage budgets and exposure ceilings must be
-committed from these measurements before a main run begins. Exhaustion remains
-a resource outcome, not evidence that the task is unlearnable.
+substantially cheaper. The frozen training population reaches 426 tokens.
+The forecast explicitly extrapolates forward/backward work by the squared
+426/415 length ratio, then charges each microbatch at that longer worst-case
+rate. This extrapolation is not a measured 426-token batch.
+
+The committed two-arm forecast is 58,571.484 model-execution seconds, or
+64,428.633 seconds with a 10% allowance: **17.897 hours**, only **371.367 seconds**
+below the eighteen-hour global ceiling. It includes both successful arms,
+formal-bank evaluations, reconstruction, exact replay, rollback and a bounded
+demo. The narrow forecast margin is a material feasibility risk. The actual
+cumulative ledger remains authoritative and may refuse later stages even when
+an individual stage would fit its own cap.
+
+The tighter frozen main limit is 13,200 wall seconds, 84,000 observed CPU
+seconds and 24 GiB conservative memory. A smoke is limited to 3,000 wall and
+20,000 CPU seconds. Evaluation workers have 1,800 wall seconds, 12,000 CPU
+seconds and 8 GiB; merge workers have 900 wall seconds, 6,000 CPU seconds and
+24 GiB. These stage caps do not add permission beyond the global eighteen-hour
+limit. Exhaustion is a resource outcome, not evidence that the task is unlearnable.
 
 ## Tests, evidence and reproduction
 
@@ -271,6 +302,7 @@ Public preflight evidence contains only schemas, commitments, aggregates and
 resource receipts:
 
 - [Export manifest](../results/phase-iii-s-tool-transfer/preflight-v1/export-manifest.json)
+- [Frozen source identities and redacted protocols](../results/phase-iii-s-tool-transfer/preregistration-v1/export-manifest.json)
 - [Calibration measurements and headroom](../results/phase-iii-s-tool-transfer/preflight-v1/calibration-summary.json)
 - [Numerical timing and gradient equivalence](../results/phase-iii-s-tool-transfer/preflight-v1/training-timing.json)
 - [Compute accounting](../results/phase-iii-s-tool-transfer/preflight-v1/compute-accounting.json)
@@ -285,6 +317,8 @@ weights are published. Recheck public evidence from the repository root with:
 python results/phase-iii-s-tool-transfer/export_preflight.py --self-test
 python results/phase-iii-s-tool-transfer/export_preflight.py `
   --verify results/phase-iii-s-tool-transfer/preflight-v1
+python results/phase-iii-s-tool-transfer/export_preregistration.py `
+  --verify results/phase-iii-s-tool-transfer/preregistration-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction
@@ -293,3 +327,10 @@ calibration commitments and host authorization. The pure population builder
 does not authorize training or open protected stages. No Phase S learning,
 merged-model demo, retention pass or continual-learning success is claimed at
 this preflight milestone.
+
+Frozen source hashes describe actual checked-out bytes. The Windows checkout
+uses `core.autocrlf=true` for inherited files; they were not normalized during
+this study. The explicit `-text` exception for the new measurement source
+preserves its already committed calibration bytes. A source-integrity replay
+must reproduce these line-ending rules rather than rewriting old manifests to
+match another checkout representation.
