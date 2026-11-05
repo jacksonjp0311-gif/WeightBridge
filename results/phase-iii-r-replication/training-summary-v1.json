@@ -1,0 +1,201 @@
+{
+  "adapted_modules": 186,
+  "all_128_learning_rates_exact": true,
+  "all_factor_tensors_changed": true,
+  "all_factors_nonzero_gradient": true,
+  "arm": "rank8",
+  "base_unchanged": true,
+  "checkpoints": {
+    "128": {
+      "adapter_bytes": 21750832,
+      "affected_affine_modules": 186,
+      "counts": {
+        "answer_tokens": 17308,
+        "backward_calls": 512,
+        "examples_seen": 2048,
+        "forward_calls": 512,
+        "input_tokens": 172678,
+        "optimizer_steps": 128,
+        "padded_input_token_positions": 188932
+      },
+      "effective_update": {
+        "changed_entries": 430288456,
+        "merge_math": "float64_factor_product_then_round_once_into_BF16",
+        "parent_selected_weight_norm": 315.25779977949935,
+        "proposed_update_norm": 4.126247257943652,
+        "relative_norm_scope": "Full adapted attention/MLP weight matrices only; excludes head, embeddings, vision and other frozen parameters",
+        "relative_stored_update_norm": 0.013185525138504439,
+        "rounding_residual_norm": 0.5179038208402077,
+        "schema": "weightbridge.supervised_lora_update.v1",
+        "scope": "Conventional adapter baseline; no inherited sparse-edit 0.025 cap. Native merged weights may differ from unmerged adapter execution.",
+        "stored_update_norm": 4.156839644102188,
+        "trainable_parameters": 5411328
+      },
+      "factor_sha256": "8b4afe43957909acd0356e46f8f0e2cfa311b188006e5073e1e1a06492a7206a",
+      "receipt_sha256": "b2940a52b0d8697d8cec7493dab0c8e15bddf1baed267ac7ecd195b5e3b1372f",
+      "sha256": "798ed00453e94e20e6dcd69a9899ff9d6acd3d9b584a4494822c444d500ad0c4",
+      "step": 128,
+      "trainable_parameters": 5411328,
+      "training_loss": 1.8126226556376745e-06
+    },
+    "64": {
+      "adapter_bytes": 21750832,
+      "affected_affine_modules": 186,
+      "counts": {
+        "answer_tokens": 8613,
+        "backward_calls": 256,
+        "examples_seen": 1024,
+        "forward_calls": 256,
+        "input_tokens": 86032,
+        "optimizer_steps": 64,
+        "padded_input_token_positions": 94456
+      },
+      "effective_update": {
+        "changed_entries": 428408668,
+        "merge_math": "float64_factor_product_then_round_once_into_BF16",
+        "parent_selected_weight_norm": 315.25779977949935,
+        "proposed_update_norm": 3.9973416915361146,
+        "relative_norm_scope": "Full adapted attention/MLP weight matrices only; excludes head, embeddings, vision and other frozen parameters",
+        "relative_stored_update_norm": 0.012779230615581765,
+        "rounding_residual_norm": 0.5175408635037962,
+        "schema": "weightbridge.supervised_lora_update.v1",
+        "scope": "Conventional adapter baseline; no inherited sparse-edit 0.025 cap. Native merged weights may differ from unmerged adapter execution.",
+        "stored_update_norm": 4.028752126743124,
+        "trainable_parameters": 5411328
+      },
+      "factor_sha256": "dfd03ac41328df347381b0f13dfa1725a3ceebdae0335fa6d7ce2e9197b00ec3",
+      "receipt_sha256": "26611851145de48c43a05630dc5632795932308d172a8b80a0a0a1aa0878d75a",
+      "sha256": "9fd922a6c692db372fa69e310f235321b462fe827e166486874e506f3ff3aefd",
+      "step": 64,
+      "trainable_parameters": 5411328,
+      "training_loss": 1.7240403083035433e-05
+    }
+  },
+  "data_order_sha256": "a8ce00975c4117ceb924a3174eef969dd549a2416a0b41246291a3952061ca9d",
+  "factor_entries_changed": 5411215,
+  "loss_first_step": 0.12442890536040067,
+  "loss_last_step": 1.8126226556376745e-06,
+  "lr_step_1": 4.285714285714285e-05,
+  "lr_step_128": 2.4793388429752066e-06,
+  "lr_step_7": 0.0003,
+  "lr_step_8": 0.0003,
+  "main_execution_passed": true,
+  "minimum_nonzero_gradient_steps": 127,
+  "no_lineage_authority": true,
+  "no_model_execution": true,
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "process_count": 3,
+  "schema": "weightbridge.phase_iiir.public_training_summary.v1",
+  "scope": "Rank-eight training and disposable smoke receipts only; no practice, development, or confirmation results read. Stored-update statistics below are BF16 merge previews, not independently evaluated merged models.",
+  "settings": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "checkpoint_steps": [
+      64,
+      128
+    ],
+    "data_order": "independent Python random.Random(f\"{606117}/epoch-{epoch}\"); exact ordered row identities equal between arms",
+    "effective_batch_size": 16,
+    "epochs": 1,
+    "epsilon": 1e-08,
+    "gradient_clip": 1.0,
+    "initialization": "unchanged SupervisedLoRA private Torch Generator; fresh seeded A, zero B; differently shaped factors are not identical random initializations",
+    "learning_rates": [
+      0.0003
+    ],
+    "logits_mode": "tail",
+    "micro_batch_size": 4,
+    "norm_measurement_interval": 8,
+    "optimizer": "AdamW",
+    "optimizer_steps": 128,
+    "scheduler": "linear warmup then linear decay",
+    "seed": 606117,
+    "warmup_fraction": 0.05,
+    "weight_decay": 0.01
+  },
+  "sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  },
+  "smoke": {
+    "accounting_scope": "Outer host plus each sequential owned process tree once; unobserved short-lived descendants cannot be excluded by polling. Peak is maximum of each tree's conservative summed process peaks.",
+    "checks": {
+      "adapter_artifact_unchanged": true,
+      "aggregate_cpu_budget": true,
+      "aggregate_wall_budget": true,
+      "all_adapter_factors_changed": true,
+      "all_workers_completed": true,
+      "base_unchanged": true,
+      "complete_family_gain": true,
+      "completed_correct_rate": true,
+      "disabled_parent_identical": true,
+      "fresh_reload_predictions_identical": true,
+      "matched_loss_finite": true,
+      "matched_loss_reduced": true,
+      "observed_peak_memory_budget": true,
+      "process_tree_cpu_complete_for_observed_processes": true,
+      "second_disabled_parent_identical": true,
+      "second_matched_loss_identical": true,
+      "strict_comparison_gain": true,
+      "temporary_sleep_request_acquired_and_released": true,
+      "training_completed": true,
+      "zero_init_parent_identical": true
+    },
+    "complete_family_gain": 4,
+    "correct_completed_presentations": 32,
+    "disposition": "PASS",
+    "matched_loss_ratio": 0.0013487869175816578,
+    "passed": true,
+    "resources": {
+      "cpu_seconds": 2680.171875,
+      "host_cpu_seconds": 201.5,
+      "observed_tree_cpu_seconds": 2478.671875,
+      "peak_rss_bytes": 7038115840,
+      "wall_seconds": 518.8203085999703
+    },
+    "strict_comparison_gain": 8,
+    "total_presentations": 32
+  },
+  "source_sha256": {
+    "main-execution.json": "2504b350c20765d88a56a1cffe2072c086f4201c091b9c7a596ea36a467fd5d5",
+    "protocol.json": "aa23f28c15fddc9978674c2a40892664b7116f91f5f07ea4651c51953dfc99b0",
+    "smoke/smoke-gate.json": "2ba879362d6c7503f27348d714e10d8437979d6d5206d3a2fa2c56706c27ea09",
+    "training-process.json": "84df6692af0de08343d7358e044804537963b254212ea140d41d2aa9e92a6275",
+    "training/completed.json": "5972be9bee18a0696fa24a6f5a497531df045e768ff75f58a603d6d694be99a3",
+    "training/inventory.json": "c3f8baa4c43fc05fa16ea8e62884507d94d7553551165edcd398f0e8a84b66c8"
+  },
+  "status": "COMPLETED",
+  "total_parent_parameters": 852985920,
+  "trainable_factor_tensors": 372,
+  "trainable_fraction": 0.006343982793995005,
+  "trainable_parameters": 5411328,
+  "training_counts": {
+    "answer_tokens": 17308,
+    "backward_calls": 512,
+    "examples_seen": 2048,
+    "forward_calls": 512,
+    "input_tokens": 172678,
+    "optimizer_steps": 128,
+    "padded_input_token_positions": 188932
+  },
+  "training_process_tree_resources": {
+    "cpu_accounting_complete_for_observed_processes": true,
+    "cpu_seconds": 19433.96875,
+    "host_cpu_seconds": 1232.59375,
+    "observed_tree_cpu_seconds": 18201.375,
+    "peak_rss_bytes": 7291002880,
+    "wall_seconds": 3123.877223299991
+  },
+  "training_worker_body_resources": {
+    "cpu_seconds": 18197.03125,
+    "peak_rss_bytes": 7278145536,
+    "wall_seconds": 3119.1241168999695
+  },
+  "warmup_steps": 7
+}
