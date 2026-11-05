@@ -1,0 +1,2294 @@
+[
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-nectar-harbor-9190.md\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-nectar-harbor-9190.md",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0000/0/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-nectar-harbor-9190.md\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-nectar-harbor-9190.md",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0000/0/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-nectar-harbor-9190.md\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-nectar-harbor-9190.md",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0000/0/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-nectar-harbor-9190.md\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-nectar-harbor-9190.md",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0000/0/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 1,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-nectar-harbor-9190 search pagination.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-nectar-harbor-9190.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0000/1/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\",\"content\":\"Reference for public-demo-nectar-harbor-9190 search pagination.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 1,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-nectar-harbor-9190 search pagination.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-nectar-harbor-9190.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0000/1/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\",\"content\":\"Reference for public-demo-nectar-harbor-9190 search pagination.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 1,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-nectar-harbor-9190 search pagination.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-nectar-harbor-9190.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0000/1/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\",\"content\":\"Reference for public-demo-nectar-harbor-9190 search pagination.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 1,
+    "family_id": "1133a8a01c302c9927065563ffc93dabbb7a2291cf98097f5502096b197f9600",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-nectar-harbor-9190 search pagination notes.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-nectar-harbor-9190 search pagination.",
+          "path": "workspace/docs/public-demo-nectar-harbor-9190.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-nectar-harbor-9190.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-nectar-harbor-9190 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-nectar-harbor-9190-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-nectar-harbor-9190.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0000/1/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190.md\",\"content\":\"Reference for public-demo-nectar-harbor-9190 search pagination.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-nectar-harbor-9190-legacy.md\",\"content\":\"Legacy public-demo-nectar-harbor-9190 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-nectar-harbor-9190-legacy\",\"component\":\"public-demo-nectar-harbor-9190 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-nectar-harbor-9190.md\".",
+    "scenario": "file_location_known",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-pebble-willow-9526\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        },
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh",
+          "result": "PASS",
+          "target": "tests/public-demo-pebble-willow-9526"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-pebble-willow-9526"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0001/0/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-pebble-willow-9526\",\"component\":\"public-demo-pebble-willow-9526 index refresh\",\"result\":\"PASS\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-pebble-willow-9526 index refresh\".",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-pebble-willow-9526\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        },
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh",
+          "result": "PASS",
+          "target": "tests/public-demo-pebble-willow-9526"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-pebble-willow-9526"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0001/0/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526\",\"component\":\"public-demo-pebble-willow-9526 index refresh\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-pebble-willow-9526 index refresh\".",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-pebble-willow-9526\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        },
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh",
+          "result": "PASS",
+          "target": "tests/public-demo-pebble-willow-9526"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-pebble-willow-9526"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0001/0/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-pebble-willow-9526\",\"component\":\"public-demo-pebble-willow-9526 index refresh\",\"result\":\"PASS\"}]}\nRequested root: null\nRequest: Verify \"public-demo-pebble-willow-9526 index refresh\" using its unambiguous target mapping.",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-pebble-willow-9526\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        },
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh",
+          "result": "PASS",
+          "target": "tests/public-demo-pebble-willow-9526"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-pebble-willow-9526"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0001/0/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526\",\"component\":\"public-demo-pebble-willow-9526 index refresh\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-pebble-willow-9526 index refresh\" using its unambiguous target mapping.",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0001/1/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-pebble-willow-9526 index refresh\".",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0001/1/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-pebble-willow-9526 index refresh\".",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0001/1/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-pebble-willow-9526 index refresh\" using its unambiguous target mapping.",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "fb4ef2e30fdec62602e4c4a24b5958e46b7f00c0d1ac1f270f1456ef9970268d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-pebble-willow-9526 index refresh notes.",
+          "path": "workspace/docs/public-demo-pebble-willow-9526-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-pebble-willow-9526 index refresh"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-pebble-willow-9526 index refresh legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-pebble-willow-9526-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0001/1/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-pebble-willow-9526-legacy.md\",\"content\":\"Legacy public-demo-pebble-willow-9526 index refresh notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-pebble-willow-9526-legacy\",\"component\":\"public-demo-pebble-willow-9526 index refresh legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-pebble-willow-9526 index refresh\" using its unambiguous target mapping.",
+    "scenario": "missing_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-garnet-fable-4179 cache recovery\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "workspace",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-garnet-fable-4179 cache recovery",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0002/0/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Use the requested root to locate files matching exactly \"public-demo-garnet-fable-4179 cache recovery\".",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-garnet-fable-4179 cache recovery\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "workspace",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-garnet-fable-4179 cache recovery",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0002/0/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Use the requested root to locate files matching exactly \"public-demo-garnet-fable-4179 cache recovery\".",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-garnet-fable-4179 cache recovery\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "workspace",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-garnet-fable-4179 cache recovery",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0002/0/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve search matches for the literal query \"public-demo-garnet-fable-4179 cache recovery\" from the requested root.",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"query\":\"public-demo-garnet-fable-4179 cache recovery\",\"root\":\"workspace\"},\"tool\":\"search_files\"}",
+    "counterfactual": 0,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "workspace",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "query": "public-demo-garnet-fable-4179 cache recovery",
+        "root": "workspace"
+      },
+      "tool": "search_files"
+    },
+    "id": "tool/public-demo-v1/0002/0/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve search matches for the literal query \"public-demo-garnet-fable-4179 cache recovery\" from the requested root.",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "search_files",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "remote",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0002/1/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"remote\"\nRequest: Use the requested root to locate files matching exactly \"public-demo-garnet-fable-4179 cache recovery\".",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "remote",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0002/1/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"remote\"\nRequest: Use the requested root to locate files matching exactly \"public-demo-garnet-fable-4179 cache recovery\".",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "remote",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0002/1/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"remote\"\nRequest: Retrieve search matches for the literal query \"public-demo-garnet-fable-4179 cache recovery\" from the requested root.",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "a7f132803840aaae2f626c851c523139ac1728ed754ed691f44b140da3f18b2d",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-garnet-fable-4179 cache recovery notes.",
+          "path": "workspace/docs/public-demo-garnet-fable-4179-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "search",
+        "root": "remote",
+        "value": "public-demo-garnet-fable-4179 cache recovery"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-garnet-fable-4179 cache recovery legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-garnet-fable-4179-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0002/1/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-garnet-fable-4179-legacy.md\",\"content\":\"Legacy public-demo-garnet-fable-4179 cache recovery notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-garnet-fable-4179-legacy\",\"component\":\"public-demo-garnet-fable-4179 cache recovery legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"remote\"\nRequest: Retrieve search matches for the literal query \"public-demo-garnet-fable-4179 cache recovery\" from the requested root.",
+    "scenario": "unsupported_search_root",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 0,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-juniper-opal-3289.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0003/0/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 0,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-juniper-opal-3289.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0003/0/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 0,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-juniper-opal-3289.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0003/0/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\"},\"tool\":\"read_file\"}",
+    "counterfactual": 0,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "path": "workspace/docs/public-demo-juniper-opal-3289.md"
+      },
+      "tool": "read_file"
+    },
+    "id": "tool/public-demo-v1/0003/0/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "read_file",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": false
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0003/1/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":false}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": false
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0003/1/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":false},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Retrieve the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": false
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0003/1/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":false}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{},\"tool\":\"no_action\"}",
+    "counterfactual": 1,
+    "family_id": "2cec098a3268e3ecdbc08ca015c1a10315ee882a55e487280ce13e6b8abb6562",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-juniper-opal-3289 token rotation notes.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289-legacy.md",
+          "readable": true
+        },
+        {
+          "content": "Reference for public-demo-juniper-opal-3289 token rotation.",
+          "path": "workspace/docs/public-demo-juniper-opal-3289.md",
+          "readable": false
+        }
+      ],
+      "request": {
+        "kind": "contents",
+        "root": "workspace",
+        "value": "public-demo-juniper-opal-3289.md"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-juniper-opal-3289 token rotation legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-juniper-opal-3289-legacy"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {},
+      "tool": "no_action"
+    },
+    "id": "tool/public-demo-v1/0003/1/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-juniper-opal-3289.md\",\"content\":\"Reference for public-demo-juniper-opal-3289 token rotation.\",\"readable\":false},{\"path\":\"workspace/docs/public-demo-juniper-opal-3289-legacy.md\",\"content\":\"Legacy public-demo-juniper-opal-3289 token rotation notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-juniper-opal-3289-legacy\",\"component\":\"public-demo-juniper-opal-3289 token rotation legacy\",\"result\":\"FAIL\"}]}\nRequested root: \"workspace\"\nRequest: Find the contents of the file named \"public-demo-juniper-opal-3289.md\".",
+    "scenario": "unsupported_file_type",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "no_action",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-spruce-kestrel-3506\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-spruce-kestrel-3506"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0004/0/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-spruce-kestrel-3506 search pagination\".",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-spruce-kestrel-3506\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-spruce-kestrel-3506"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0004/0/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-spruce-kestrel-3506 search pagination\".",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-spruce-kestrel-3506\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-spruce-kestrel-3506"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0004/0/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"}]}\nRequested root: null\nRequest: Verify \"public-demo-spruce-kestrel-3506 search pagination\" using its unambiguous target mapping.",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"target\":\"tests/public-demo-spruce-kestrel-3506\"},\"tool\":\"run_tests\"}",
+    "counterfactual": 0,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "target": "tests/public-demo-spruce-kestrel-3506"
+      },
+      "tool": "run_tests"
+    },
+    "id": "tool/public-demo-v1/0004/0/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-spruce-kestrel-3506 search pagination\" using its unambiguous target mapping.",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "run_tests",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "FAIL",
+          "target": "integration/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0004/1/0/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"integration/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-spruce-kestrel-3506 search pagination\".",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "FAIL",
+          "target": "integration/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0004/1/0/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"integration/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Perform the test-target check associated with \"public-demo-spruce-kestrel-3506 search pagination\".",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 0,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "FAIL",
+          "target": "integration/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0004/1/1/0",
+    "ordering": 0,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nsearch_files(root,query): search a supported listed local root for the exact literal query\nread_file(path): return the contents of an exact listed readable file\nrun_tests(target): return the result of the exact test target mapped to the requested component\nclarify(field): request a missing or ambiguous required field: root, path, or target\nno_action(): the request, scope, or file type is explicitly unsupported\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"workspace\",\"supported\":true},{\"path\":\"remote\",\"supported\":false}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"integration/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-spruce-kestrel-3506 search pagination\" using its unambiguous target mapping.",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  },
+  {
+    "category": "tool",
+    "completion": "{\"arguments\":{\"field\":\"target\"},\"tool\":\"clarify\"}",
+    "counterfactual": 1,
+    "family_id": "f886729fa40be384221842c3b5cc07fa02d9b5cb21e5abf1ba3f8066843533a8",
+    "fixture": {
+      "documents": [
+        {
+          "content": "Legacy public-demo-spruce-kestrel-3506 search pagination notes.",
+          "path": "workspace/docs/public-demo-spruce-kestrel-3506-legacy.md",
+          "readable": true
+        }
+      ],
+      "request": {
+        "kind": "test",
+        "root": null,
+        "value": "public-demo-spruce-kestrel-3506 search pagination"
+      },
+      "roots": [
+        {
+          "path": "workspace",
+          "supported": true
+        },
+        {
+          "path": "remote",
+          "supported": false
+        }
+      ],
+      "tests": [
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination legacy",
+          "result": "FAIL",
+          "target": "tests/public-demo-spruce-kestrel-3506-legacy"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "PASS",
+          "target": "tests/public-demo-spruce-kestrel-3506"
+        },
+        {
+          "component": "public-demo-spruce-kestrel-3506 search pagination",
+          "result": "FAIL",
+          "target": "integration/public-demo-spruce-kestrel-3506"
+        }
+      ]
+    },
+    "gold_action": {
+      "arguments": {
+        "field": "target"
+      },
+      "tool": "clarify"
+    },
+    "id": "tool/public-demo-v1/0004/1/1/1",
+    "ordering": 1,
+    "prompt": "Select exactly one next local action. All facts are listed; similar names are distractors.\nReturn only one JSON object: {\"tool\":\"name\",\"arguments\":{...}}. No extra fields or text.\nFormat example (unrelated disposable fixture): {\"arguments\":{\"path\":\"workspace/docs/format-example.md\"},\"tool\":\"read_file\"}\nRegistry:\nno_action(): the request, scope, or file type is explicitly unsupported\nclarify(field): request a missing or ambiguous required field: root, path, or target\nrun_tests(target): return the result of the exact test target mapped to the requested component\nread_file(path): return the contents of an exact listed readable file\nsearch_files(root,query): search a supported listed local root for the exact literal query\nFor requested file contents: read a unique matching listed path; clarify path if ambiguous; if not located, search its literal name in the requested root.\nInventory: {\"roots\":[{\"path\":\"remote\",\"supported\":false},{\"path\":\"workspace\",\"supported\":true}],\"documents\":[{\"path\":\"workspace/docs/public-demo-spruce-kestrel-3506-legacy.md\",\"content\":\"Legacy public-demo-spruce-kestrel-3506 search pagination notes.\",\"readable\":true}],\"tests\":[{\"target\":\"integration/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"FAIL\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination\",\"result\":\"PASS\"},{\"target\":\"tests/public-demo-spruce-kestrel-3506-legacy\",\"component\":\"public-demo-spruce-kestrel-3506 search pagination legacy\",\"result\":\"FAIL\"}]}\nRequested root: null\nRequest: Verify \"public-demo-spruce-kestrel-3506 search pagination\" using its unambiguous target mapping.",
+    "scenario": "ambiguous_test_target",
+    "schema": "weightbridge.phase_iiis.tool_data.v1",
+    "stratum": "clarify",
+    "task": "tool",
+    "training_weight": 1.0,
+    "wording": 1,
+    "wording_familiarity": "unseen",
+    "wording_group": "confirmation"
+  }
+]

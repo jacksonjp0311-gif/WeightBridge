@@ -1,0 +1,60 @@
+{
+  "automatic_promotion": false,
+  "execution_limits": {
+    "cpu_seconds": 2000,
+    "memory_bytes": 8589934592,
+    "wall_seconds": 300
+  },
+  "format_example_sha256": "8d47af5676a90aea6378bc0a193d249f885cc949b925578775ddacfdc0050837",
+  "generator_sha256": "dc862f97a2f5aa1ba8349c7fd77a02c0dcd9425c83f0ade04a886a52fc9ca32a",
+  "inference_status": "NOT_EXECUTED",
+  "model_execution": false,
+  "model_result": null,
+  "population": {
+    "families": 5,
+    "rows": 40,
+    "scenarios": {
+      "ambiguous_test_target": 8,
+      "file_location_known": 8,
+      "missing_test_target": 8,
+      "unsupported_file_type": 8,
+      "unsupported_search_root": 8
+    },
+    "strata": {
+      "clarify": 8,
+      "no_action": 8,
+      "read_file": 8,
+      "run_tests": 8,
+      "search_files": 8
+    },
+    "wording_groups": {
+      "confirmation": 40
+    }
+  },
+  "private_rosters_accessed": false,
+  "public_generation_seed": "weightbridge-phase-iii-s-public-demo-v1-2026-11-05",
+  "public_identifier_namespace": "public-demo-",
+  "reused_source_sha256": {
+    "experiments/phase_iiis_tool_transfer/data.py": "7dcde8976e2404b0b9916569160a6ff3ebd5f4f11acf88e98cdf3f798e81df32",
+    "experiments/phase_iiis_tool_transfer/evaluate.py": "9899791cc8ea37999d7c01b307a3a0e35f2d47a2d68e1960b816ef0c264a45ca",
+    "experiments/phase_iiis_tool_transfer/measurement.py": "52d765ca52ec69ccc78f8c46b3ce5173501d44847df1f93c9bf785bafecd6850",
+    "experiments/phase_iiis_tool_transfer/populations.py": "f5588c68888ab6142b21c8be1ba6f1d4a7980d2afcd2503f56e819246f8c85b9",
+    "experiments/phase_iiis_tool_transfer/verification.py": "b39419f0f4c7e32c975645070855064d344cb96b893e578b25cb1e2117255adb",
+    "weightbridge/adaptation/task_completion.py": "da71d938d3568a15c018ced796737c78e07a5f01c907e60a72d4ab3be032c525",
+    "weightbridge/adaptation/tool_task.py": "5de7726d569ba685f53b5ac11be11f07b8027237a3f201b5011881e6b71ac606"
+  },
+  "rows_sha256": "9cf02001f5e202d76c2befc64f37ba7a23412ce6212d7988bdf21bc09ecdc8f9",
+  "schema": "weightbridge.phase_iiis.public_demo_fixtures.v1",
+  "scope": "Public illustrative cases only. Existing confirmation phrasing with new explicitly public identifiers; not a new linguistic-transfer test, qualification bank, training population or independent evidence.",
+  "tokenization": {
+    "generation_limit": 96,
+    "maximum_answer_with_terminator_tokens": 30,
+    "maximum_prompt_tokens": 425,
+    "minimum_prompt_tokens": 336,
+    "model_execution": false,
+    "native_end_token": 248046,
+    "native_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "prompt_limit": 512,
+    "tokenization_only": true
+  }
+}
