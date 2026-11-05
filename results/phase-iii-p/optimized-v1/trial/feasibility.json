@@ -1,0 +1,2267 @@
+{
+  "all_rhs": [
+    2.3125,
+    1.8125,
+    1.8125,
+    1.3125,
+    1.0625,
+    0.4375,
+    0.9375,
+    0.6875,
+    1.3125,
+    0.3125,
+    0.8125,
+    0.4375,
+    0.4375,
+    0.3125,
+    -0.0625,
+    -0.6875,
+    -7.1875,
+    -6.4375,
+    -1.5625,
+    -0.5625,
+    -7.3125,
+    -6.3125
+  ],
+  "preservation_floor": 0.0625,
+  "preservation_margins": [
+    0.125,
+    0.75,
+    7.25,
+    6.5,
+    1.625,
+    0.625,
+    7.375,
+    6.375
+  ],
+  "row_ids": [
+    "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+    "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+    "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+    "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+    "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+    "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+    "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+    "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+    "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+    "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+    "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+    "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+    "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+    "semantic-decimal/adaptation/positive/00/order-0/0:1",
+    "semantic-decimal/preservation-fit/positive/03/order-0/1:7",
+    "semantic-decimal/preservation-fit/preserve/02/1:9",
+    "semantic-decimal/preservation-fit/target/03/variant-1/order-1/0:0",
+    "semantic-decimal/adaptation/positive/00/order-1/1:1",
+    "semantic-decimal/preservation-fit/positive/03/order-1/0:7",
+    "semantic-decimal/preservation-fit/preserve/02/0:9"
+  ],
+  "schema": "weightbridge.phase_iiip.feasibility.v1",
+  "source_block_sha256": "fd58b33f69f1747ff8e14cd18446a9c56db92318204c2d030ee0cf8f2d9f9670",
+  "target_margins": [
+    -2.25,
+    -1.75,
+    -1.75,
+    -1.25,
+    -1.0,
+    -0.375,
+    -0.875,
+    -0.625,
+    -1.25,
+    -0.25,
+    -0.75,
+    -0.375,
+    -0.375,
+    -0.25
+  ],
+  "target_only": {
+    "fixed_right": {
+      "active_constraint_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+      ],
+      "algorithm": "Hildreth cyclic nonnegative dual coordinate ascent on row-normalized Gram matrix",
+      "best_primal_norm": 0.047358908818589125,
+      "bounded_search_failure_proves_infeasibility": false,
+      "certificate": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "certified_norm_lower_bound": 0.047358908833084364,
+        "constraint_slacks": [
+          4.307460166330657e-09,
+          0.6564157929577057,
+          0.5889470745647643,
+          1.211930426832092,
+          1.1782574915741861e-10,
+          0.6498541947429981,
+          0.3852241847684068,
+          0.6272610229088684,
+          -2.037988444669736e-09,
+          1.0216712791624214,
+          0.6620972172444446,
+          1.0441779710783512,
+          -4.996003610813204e-16,
+          0.13192337406316557
+        ],
+        "dual_direction_denominator": 0.047358908818589125,
+        "dual_direction_norm_lower_bound": 0.04735890883306981,
+        "dual_direction_numerator": 0.002242866245188176,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.4883865287893472e-14,
+          "numerator": 1.4242727761558002e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0011214331229444565,
+        "dual_objective_norm_lower_bound": 0.047358908833084364,
+        "dual_roundoff_padding": 1.4258664284731024e-14,
+        "duality_gap": -7.007369944717068e-13,
+        "maximum_complementarity_residual": 1.363430990723604e-12,
+        "maximum_normalized_primal_violation": 4.1394707106512385e-11,
+        "maximum_primal_violation": 2.037988444669736e-09,
+        "normalized_dual_multipliers": [
+          0.015644589886967247,
+          0.0,
+          0.0,
+          0.0,
+          0.02885029624790974,
+          0.0,
+          0.0,
+          0.0,
+          0.032937326678393226,
+          0.0,
+          0.0,
+          0.0,
+          0.01924225302757156,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.0001313159021428856,
+          0.0,
+          0.0,
+          0.0,
+          0.000823727984746215,
+          0.0,
+          0.0,
+          0.0,
+          0.0006690083413298775,
+          0.0,
+          0.0,
+          0.0,
+          0.00042494580501585116,
+          0.0
+        ],
+        "primal_norm": 0.047358908818589125,
+        "primal_objective": 0.0011214331222437195,
+        "projected_dual_residual": 4.1394707106512385e-11,
+        "stationarity_residual_norm": 6.648360685712655e-18
+      },
+      "certificates_are_numerical_not_formal_intervals": true,
+      "certified_norm_lower_bound": 0.047358908833084364,
+      "constraint_slacks": [
+        4.307460166330657e-09,
+        0.6564157929577057,
+        0.5889470745647643,
+        1.211930426832092,
+        1.1782574915741861e-10,
+        0.6498541947429981,
+        0.3852241847684068,
+        0.6272610229088684,
+        -2.037988444669736e-09,
+        1.0216712791624214,
+        0.6620972172444446,
+        1.0441779710783512,
+        -4.996003610813204e-16,
+        0.13192337406316557
+      ],
+      "converged": true,
+      "dimension": 1024,
+      "individual_minimum_norms": [
+        0.019410417652328118,
+        0.014252771909859817,
+        0.01465843643035279,
+        0.010096538136197876,
+        0.030336291047835053,
+        0.012206169581863442,
+        0.021507780943041576,
+        0.015864287241031734,
+        0.02665891669257655,
+        0.006236020026441942,
+        0.014683438285876555,
+        0.007863559066778011,
+        0.009661747479780327,
+        0.006802834520387845
+      ],
+      "individual_norm_bound_failures": [
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+      ],
+      "input_sha256": {
+        "rhs": "80736a154e205e080d1c8e3b3dd1299a129cda62c13e14dbe60811d444dddd99",
+        "rows": "864ef6c5075b260ec4bce0293a440026af34d3d19400e9328bcb6f66b97dd8fd"
+      },
+      "maximum_sweeps": 4096,
+      "minimum_norm": 0.047358908818589125,
+      "minimum_norm_certified_to_numerical_tolerance": true,
+      "numerical_failure": null,
+      "objective": "minimize one half squared unrounded update norm subject to every supplied inequality",
+      "pair_radius_separators": [
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035488651634277765,
+          "roundoff_padding": 1.5422122037512638e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.014258057065885406,
+          "summed_axis_norm": 1.4195460653711105,
+          "summed_required_change": 0.04974670870016317
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03548808790939998,
+          "roundoff_padding": 1.5296653352049385e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0054301106859697135,
+          "summed_axis_norm": 1.4195235163759992,
+          "summed_required_change": 0.040918198595369694
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037690232698463964,
+          "roundoff_padding": 1.540114975346354e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0083791016464407,
+          "summed_axis_norm": 1.5076093079385584,
+          "summed_required_change": 0.046069334344904664
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035490944244741904,
+          "roundoff_padding": 1.5348860063148163e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009098118712952963,
+          "summed_axis_norm": 1.419637769789676,
+          "summed_required_change": 0.04458906295769487
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03549042785164423,
+          "roundoff_padding": 1.522339205030996e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0002701250012571571,
+          "summed_axis_norm": 1.4196171140657692,
+          "summed_required_change": 0.03576055285290139
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03768945425920038,
+          "roundoff_padding": 1.532784413685756e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0032222343432359857,
+          "summed_axis_norm": 1.5075781703680151,
+          "summed_required_change": 0.040911688602436366
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493516730851576,
+          "roundoff_padding": 1.5354661459938364e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009501210747336265,
+          "summed_axis_norm": 1.419740669234063,
+          "summed_required_change": 0.04499472747818784
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0354930084662969,
+          "roundoff_padding": 1.5229193562613706e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0006732089070974612,
+          "summed_axis_norm": 1.4197203386518762,
+          "summed_required_change": 0.036166217373394365
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037691732645494525,
+          "roundoff_padding": 1.5333641354238012e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.003625620477434817,
+          "summed_axis_norm": 1.507669305819781,
+          "summed_required_change": 0.04131735312292934
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493153145491584,
+          "roundoff_padding": 1.5289827819195873e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.004939676038541348,
+          "summed_axis_norm": 1.4197261258196634,
+          "summed_required_change": 0.04043282918403293
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.04999989887365349,
+          "roundoff_padding": 1.5658144588777105e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0018441731172231385,
+          "summed_axis_norm": 1.9999959549461395,
+          "summed_required_change": 0.05184407199087663
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471618708970406,
+          "roundoff_padding": 1.5514152022861308e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.02227902065070754,
+          "summed_axis_norm": 1.3886474835881624,
+          "summed_required_change": 0.0569952077404116
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471280299967377,
+          "roundoff_padding": 1.522387711466352e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/1"
+          ],
+          "separating_excess": 0.0018595080746032291,
+          "summed_axis_norm": 1.3885121199869508,
+          "summed_required_change": 0.036572311074277
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0347151106936635,
+          "roundoff_padding": 1.5343954942570903e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.010304618640048106,
+          "summed_axis_norm": 1.38860442774654,
+          "summed_required_change": 0.04501972933371161
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471377264884394,
+          "roundoff_padding": 1.5247019615052537e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/1"
+          ],
+          "separating_excess": 0.003486077465769122,
+          "summed_axis_norm": 1.3885509059537575,
+          "summed_required_change": 0.03819985011461306
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03762333127464749,
+          "roundoff_padding": 1.531392072425693e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0023747072529678934,
+          "summed_axis_norm": 1.5049332509858995,
+          "summed_required_change": 0.03999803852761538
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034715611884613126,
+          "roundoff_padding": 1.5256499326583437e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0041494743898268655,
+          "summed_axis_norm": 1.388624475384525,
+          "summed_required_change": 0.03886508627443999
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034718145615419034,
+          "roundoff_padding": 1.5388719180734784e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.013448552020199088,
+          "summed_axis_norm": 1.3887258246167613,
+          "summed_required_change": 0.04816669763561812
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471711361383909,
+          "roundoff_padding": 1.5218522731327612e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.0014741056150790396,
+          "summed_axis_norm": 1.3886845445535636,
+          "summed_required_change": 0.03619121922891813
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471439875156131,
+          "roundoff_padding": 1.5308467065511444e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.007808805182046977,
+          "summed_axis_norm": 1.3885759500624522,
+          "summed_required_change": 0.04252320393360828
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.02776022719302892,
+          "roundoff_padding": 1.5121498952416145e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.008560436979327953,
+          "summed_axis_norm": 1.1104090877211568,
+          "summed_required_change": 0.036320664172356874
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.027762058304550776,
+          "roundoff_padding": 1.5080897377366615e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+          ],
+          "separating_excess": 0.005699692908413618,
+          "summed_axis_norm": 1.110482332182031,
+          "summed_required_change": 0.033461751212964394
+        }
+      ],
+      "primal_feasible": true,
+      "primal_witness": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "certified_norm_lower_bound": 0.047358908833084364,
+        "constraint_slacks": [
+          4.307460166330657e-09,
+          0.6564157929577057,
+          0.5889470745647643,
+          1.211930426832092,
+          1.1782574915741861e-10,
+          0.6498541947429981,
+          0.3852241847684068,
+          0.6272610229088684,
+          -2.037988444669736e-09,
+          1.0216712791624214,
+          0.6620972172444446,
+          1.0441779710783512,
+          -4.996003610813204e-16,
+          0.13192337406316557
+        ],
+        "dual_direction_denominator": 0.047358908818589125,
+        "dual_direction_norm_lower_bound": 0.04735890883306981,
+        "dual_direction_numerator": 0.002242866245188176,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.4883865287893472e-14,
+          "numerator": 1.4242727761558002e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0011214331229444565,
+        "dual_objective_norm_lower_bound": 0.047358908833084364,
+        "dual_roundoff_padding": 1.4258664284731024e-14,
+        "duality_gap": -7.007369944717068e-13,
+        "maximum_complementarity_residual": 1.363430990723604e-12,
+        "maximum_normalized_primal_violation": 4.1394707106512385e-11,
+        "maximum_primal_violation": 2.037988444669736e-09,
+        "normalized_dual_multipliers": [
+          0.015644589886967247,
+          0.0,
+          0.0,
+          0.0,
+          0.02885029624790974,
+          0.0,
+          0.0,
+          0.0,
+          0.032937326678393226,
+          0.0,
+          0.0,
+          0.0,
+          0.01924225302757156,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.0001313159021428856,
+          0.0,
+          0.0,
+          0.0,
+          0.000823727984746215,
+          0.0,
+          0.0,
+          0.0,
+          0.0006690083413298775,
+          0.0,
+          0.0,
+          0.0,
+          0.00042494580501585116,
+          0.0
+        ],
+        "primal_norm": 0.047358908818589125,
+        "primal_objective": 0.0011214331222437195,
+        "projected_dual_residual": 4.1394707106512385e-11,
+        "stationarity_residual_norm": 6.648360685712655e-18
+      },
+      "radius": 0.025,
+      "required_changes": [
+        2.3125,
+        1.8125,
+        1.8125,
+        1.3125,
+        1.0625,
+        0.4375,
+        0.9375,
+        0.6875,
+        1.3125,
+        0.3125,
+        0.8125,
+        0.4375,
+        0.4375,
+        0.3125
+      ],
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.015625,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.0033949000062420964
+      },
+      "row_count": 14,
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+      ],
+      "row_kinds": [
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target"
+      ],
+      "row_norms": [
+        119.13705523603893,
+        127.16824569023969,
+        123.64893135852539,
+        129.9950519965309,
+        35.024057434200586,
+        35.842530047268895,
+        43.58887615987692,
+        43.336330813642554,
+        49.23305830973541,
+        50.112090512047594,
+        55.334451249167785,
+        55.63638503694229,
+        45.28166368615827,
+        45.93673402806566
+      ],
+      "schema": "weightbridge.joint_linear_feasibility.v1",
+      "scope": "Numerical minimum-norm analysis of the supplied finite local linear inequalities in fixed update coordinates. No BF16, nonlinear behavior, hidden evaluation or promotion authority. Numerical certificates use floating-point residuals and conservative roundoff padding, not formally verified interval arithmetic.",
+      "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+      "sweeps": 11,
+      "tolerance": 1e-08,
+      "within_radius": false
+    },
+    "independent_bound_check": {
+      "block_radius_excluded": true,
+      "certified_norm_lower_bound": 0.042842756448377865,
+      "checked_by": "explicit weighted sum plus Gram-eigenvalue spectral norm",
+      "dual_cauchy_norm_lower_bound": 0.04284275644836335,
+      "dual_matrix_frobenius_norm": 0.04284275643857159,
+      "dual_matrix_norm_padding": 1.481968690254933e-14,
+      "dual_matrix_spectral_norm": 0.04182025984347244,
+      "dual_numerator": 0.0018355017796891453,
+      "dual_numerator_padding": 1.423693876432266e-14,
+      "dual_objective": 0.0009177508900617614,
+      "dual_objective_norm_lower_bound": 0.042842756448377865,
+      "dual_roundoff_padding": 1.4249980788879904e-14,
+      "dual_spectral_padding": 1.5175359388210514e-11,
+      "formal_interval_proof": false,
+      "local_linear_scope_only": true,
+      "model_backward_calls": 0,
+      "model_forward_calls": 0,
+      "rank_one_norm_lower_bound": 0.043890252855407694,
+      "rank_one_radius_excluded": true,
+      "status": "NUMERICAL_DUAL_ARITHMETIC_CHECKED"
+    },
+    "optimized_right": {
+      "global_rank_one_optimum_claimed": false,
+      "initial_right": [
+        0.19246323141345328,
+        -0.1991661512930887,
+        0.3975692037458096,
+        0.20481126660444124,
+        0.19203400775437596,
+        -0.21764468858848846,
+        0.2775231624712161,
+        -0.24638775302962576,
+        -0.2809158644531508,
+        0.2760305924816161,
+        -0.20722599107944567,
+        -0.2495012422785915,
+        0.28327337856166934,
+        0.24295981810692585,
+        -0.24529645389175153,
+        0.20387691926503945
+      ],
+      "inner_calls": 0,
+      "input_sha256": {
+        "blocks": "f946e92f8e8d70c8a0039b84f4101660d0d539a2b3e5a97a22d6afe6d595a95c",
+        "rhs": "80736a154e205e080d1c8e3b3dd1299a129cda62c13e14dbe60811d444dddd99"
+      },
+      "maximum_inner_calls": 132,
+      "production_authority": false,
+      "radius": 0.025,
+      "relaxation": {
+        "best_primal_norm": 0.04284275643857159,
+        "block_shape": [
+          1024,
+          16
+        ],
+        "bounded_search_failure_proves_infeasibility": false,
+        "certificate": {
+          "active_constraint_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "certified_norm_lower_bound": 0.042842756448377865,
+          "constraint_slacks": [
+            2.7955340264895767e-09,
+            0.6505524594308483,
+            0.5687580501322005,
+            1.1886908047965692,
+            1.0148060169967721e-10,
+            0.6368120591681428,
+            0.34203825133427657,
+            0.5951933244200034,
+            -1.6544563496978526e-09,
+            0.9956236002041083,
+            0.61083225512986,
+            0.9838065009722512,
+            0.0,
+            0.13137638553009073
+          ],
+          "dual_cauchy_norm_lower_bound": 0.04284275644836335,
+          "dual_matrix_frobenius_norm": 0.04284275643857159,
+          "dual_matrix_norm_padding": 1.481968690254933e-14,
+          "dual_matrix_spectral_norm": 0.04182025984347244,
+          "dual_nonnegative": true,
+          "dual_numerator": 0.0018355017796891453,
+          "dual_numerator_padding": 1.423693876432266e-14,
+          "dual_objective": 0.0009177508900617614,
+          "dual_objective_norm_lower_bound": 0.042842756448377865,
+          "dual_roundoff_padding": 1.4249980788879904e-14,
+          "dual_spectral_padding": 1.5175359388210514e-11,
+          "duality_gap": -4.343776857304582e-13,
+          "maximum_normalized_primal_violation": 2.9752610097855126e-11,
+          "maximum_primal_violation": 1.6544563496978526e-09,
+          "normalized_dual_multipliers": [
+            0.015924209192394564,
+            0.0,
+            0.0,
+            0.0,
+            0.025846991961213327,
+            0.0,
+            0.0,
+            0.0,
+            0.029049840906044063,
+            0.0,
+            0.0,
+            0.0,
+            0.017105437518744188,
+            0.0
+          ],
+          "original_dual_multipliers": [
+            0.00012982024142803327,
+            0.0,
+            0.0,
+            0.0,
+            0.0006603645896329024,
+            0.0,
+            0.0,
+            0.0,
+            0.000522412508320996,
+            0.0,
+            0.0,
+            0.0,
+            0.0003382598348126913,
+            0.0
+          ],
+          "primal_norm": 0.04284275643857159,
+          "projected_dual_residual": 2.9752610097855126e-11,
+          "rank_one_norm_lower_bound": 0.043890252855407694,
+          "zero_spectral_denominator": false
+        },
+        "certificates_are_numerical_not_formal_intervals": true,
+        "certified_norm_lower_bound": 0.042842756448377865,
+        "converged": true,
+        "input_sha256": {
+          "blocks": "f946e92f8e8d70c8a0039b84f4101660d0d539a2b3e5a97a22d6afe6d595a95c",
+          "rhs": "80736a154e205e080d1c8e3b3dd1299a129cda62c13e14dbe60811d444dddd99"
+        },
+        "matrix_installation_authorized": false,
+        "maximum_sweeps": 4096,
+        "minimum_norm": 0.04284275643857159,
+        "numerical_failure": null,
+        "primal_witness": {
+          "active_constraint_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "certified_norm_lower_bound": 0.042842756448377865,
+          "constraint_slacks": [
+            2.7955340264895767e-09,
+            0.6505524594308483,
+            0.5687580501322005,
+            1.1886908047965692,
+            1.0148060169967721e-10,
+            0.6368120591681428,
+            0.34203825133427657,
+            0.5951933244200034,
+            -1.6544563496978526e-09,
+            0.9956236002041083,
+            0.61083225512986,
+            0.9838065009722512,
+            0.0,
+            0.13137638553009073
+          ],
+          "dual_cauchy_norm_lower_bound": 0.04284275644836335,
+          "dual_matrix_frobenius_norm": 0.04284275643857159,
+          "dual_matrix_norm_padding": 1.481968690254933e-14,
+          "dual_matrix_spectral_norm": 0.04182025984347244,
+          "dual_nonnegative": true,
+          "dual_numerator": 0.0018355017796891453,
+          "dual_numerator_padding": 1.423693876432266e-14,
+          "dual_objective": 0.0009177508900617614,
+          "dual_objective_norm_lower_bound": 0.042842756448377865,
+          "dual_roundoff_padding": 1.4249980788879904e-14,
+          "dual_spectral_padding": 1.5175359388210514e-11,
+          "duality_gap": -4.343776857304582e-13,
+          "maximum_normalized_primal_violation": 2.9752610097855126e-11,
+          "maximum_primal_violation": 1.6544563496978526e-09,
+          "normalized_dual_multipliers": [
+            0.015924209192394564,
+            0.0,
+            0.0,
+            0.0,
+            0.025846991961213327,
+            0.0,
+            0.0,
+            0.0,
+            0.029049840906044063,
+            0.0,
+            0.0,
+            0.0,
+            0.017105437518744188,
+            0.0
+          ],
+          "original_dual_multipliers": [
+            0.00012982024142803327,
+            0.0,
+            0.0,
+            0.0,
+            0.0006603645896329024,
+            0.0,
+            0.0,
+            0.0,
+            0.000522412508320996,
+            0.0,
+            0.0,
+            0.0,
+            0.0003382598348126913,
+            0.0
+          ],
+          "primal_norm": 0.04284275643857159,
+          "projected_dual_residual": 2.9752610097855126e-11,
+          "rank_one_norm_lower_bound": 0.043890252855407694,
+          "zero_spectral_denominator": false
+        },
+        "radius": 0.025,
+        "resources": {
+          "backward_calls": 0,
+          "cpu_seconds": 0.171875,
+          "forward_calls": 0,
+          "generated_response_count": 0,
+          "wall_seconds": 0.02890619996469468
+        },
+        "row_count": 14,
+        "row_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+          "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+          "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+          "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+          "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+        ],
+        "schema": "weightbridge.block_relaxation.v1",
+        "scope": "Finite local linear selected-block system, unrounded arithmetic. Numerical padding is not formally verified interval arithmetic. Relaxed matrices must never be installed as model updates.",
+        "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+        "sweeps": 11,
+        "tolerance": 1e-08,
+        "within_radius": false
+      },
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.0,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.0069500000099651515
+      },
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+      ],
+      "schema": "weightbridge.optimized_right_search.v1",
+      "scope": "Finite local linear selected-block system, unrounded arithmetic. Numerical padding is not formally verified interval arithmetic. Relaxed matrices must never be installed as model updates.",
+      "settings": {
+        "initial_step": 0.25,
+        "inner_max_sweeps": 4096,
+        "iterations": 8,
+        "line_steps": 4,
+        "starts": 4,
+        "tolerance": 1e-08
+      },
+      "starts": [],
+      "status": "BLOCK_RELAXATION_REFUSAL"
+    },
+    "relaxation": {
+      "best_primal_norm": 0.04284275643857159,
+      "block_shape": [
+        1024,
+        16
+      ],
+      "bounded_search_failure_proves_infeasibility": false,
+      "certificate": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "certified_norm_lower_bound": 0.042842756448377865,
+        "constraint_slacks": [
+          2.7955340264895767e-09,
+          0.6505524594308483,
+          0.5687580501322005,
+          1.1886908047965692,
+          1.0148060169967721e-10,
+          0.6368120591681428,
+          0.34203825133427657,
+          0.5951933244200034,
+          -1.6544563496978526e-09,
+          0.9956236002041083,
+          0.61083225512986,
+          0.9838065009722512,
+          0.0,
+          0.13137638553009073
+        ],
+        "dual_cauchy_norm_lower_bound": 0.04284275644836335,
+        "dual_matrix_frobenius_norm": 0.04284275643857159,
+        "dual_matrix_norm_padding": 1.481968690254933e-14,
+        "dual_matrix_spectral_norm": 0.04182025984347244,
+        "dual_nonnegative": true,
+        "dual_numerator": 0.0018355017796891453,
+        "dual_numerator_padding": 1.423693876432266e-14,
+        "dual_objective": 0.0009177508900617614,
+        "dual_objective_norm_lower_bound": 0.042842756448377865,
+        "dual_roundoff_padding": 1.4249980788879904e-14,
+        "dual_spectral_padding": 1.5175359388210514e-11,
+        "duality_gap": -4.343776857304582e-13,
+        "maximum_normalized_primal_violation": 2.9752610097855126e-11,
+        "maximum_primal_violation": 1.6544563496978526e-09,
+        "normalized_dual_multipliers": [
+          0.015924209192394564,
+          0.0,
+          0.0,
+          0.0,
+          0.025846991961213327,
+          0.0,
+          0.0,
+          0.0,
+          0.029049840906044063,
+          0.0,
+          0.0,
+          0.0,
+          0.017105437518744188,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00012982024142803327,
+          0.0,
+          0.0,
+          0.0,
+          0.0006603645896329024,
+          0.0,
+          0.0,
+          0.0,
+          0.000522412508320996,
+          0.0,
+          0.0,
+          0.0,
+          0.0003382598348126913,
+          0.0
+        ],
+        "primal_norm": 0.04284275643857159,
+        "projected_dual_residual": 2.9752610097855126e-11,
+        "rank_one_norm_lower_bound": 0.043890252855407694,
+        "zero_spectral_denominator": false
+      },
+      "certificates_are_numerical_not_formal_intervals": true,
+      "certified_norm_lower_bound": 0.042842756448377865,
+      "converged": true,
+      "input_sha256": {
+        "blocks": "f946e92f8e8d70c8a0039b84f4101660d0d539a2b3e5a97a22d6afe6d595a95c",
+        "rhs": "80736a154e205e080d1c8e3b3dd1299a129cda62c13e14dbe60811d444dddd99"
+      },
+      "matrix_installation_authorized": false,
+      "maximum_sweeps": 4096,
+      "minimum_norm": 0.04284275643857159,
+      "numerical_failure": null,
+      "primal_witness": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+        ],
+        "certified_norm_lower_bound": 0.042842756448377865,
+        "constraint_slacks": [
+          2.7955340264895767e-09,
+          0.6505524594308483,
+          0.5687580501322005,
+          1.1886908047965692,
+          1.0148060169967721e-10,
+          0.6368120591681428,
+          0.34203825133427657,
+          0.5951933244200034,
+          -1.6544563496978526e-09,
+          0.9956236002041083,
+          0.61083225512986,
+          0.9838065009722512,
+          0.0,
+          0.13137638553009073
+        ],
+        "dual_cauchy_norm_lower_bound": 0.04284275644836335,
+        "dual_matrix_frobenius_norm": 0.04284275643857159,
+        "dual_matrix_norm_padding": 1.481968690254933e-14,
+        "dual_matrix_spectral_norm": 0.04182025984347244,
+        "dual_nonnegative": true,
+        "dual_numerator": 0.0018355017796891453,
+        "dual_numerator_padding": 1.423693876432266e-14,
+        "dual_objective": 0.0009177508900617614,
+        "dual_objective_norm_lower_bound": 0.042842756448377865,
+        "dual_roundoff_padding": 1.4249980788879904e-14,
+        "dual_spectral_padding": 1.5175359388210514e-11,
+        "duality_gap": -4.343776857304582e-13,
+        "maximum_normalized_primal_violation": 2.9752610097855126e-11,
+        "maximum_primal_violation": 1.6544563496978526e-09,
+        "normalized_dual_multipliers": [
+          0.015924209192394564,
+          0.0,
+          0.0,
+          0.0,
+          0.025846991961213327,
+          0.0,
+          0.0,
+          0.0,
+          0.029049840906044063,
+          0.0,
+          0.0,
+          0.0,
+          0.017105437518744188,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00012982024142803327,
+          0.0,
+          0.0,
+          0.0,
+          0.0006603645896329024,
+          0.0,
+          0.0,
+          0.0,
+          0.000522412508320996,
+          0.0,
+          0.0,
+          0.0,
+          0.0003382598348126913,
+          0.0
+        ],
+        "primal_norm": 0.04284275643857159,
+        "projected_dual_residual": 2.9752610097855126e-11,
+        "rank_one_norm_lower_bound": 0.043890252855407694,
+        "zero_spectral_denominator": false
+      },
+      "radius": 0.025,
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.171875,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.02890619996469468
+      },
+      "row_count": 14,
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+      ],
+      "schema": "weightbridge.block_relaxation.v1",
+      "scope": "Finite local linear selected-block system, unrounded arithmetic. Numerical padding is not formally verified interval arithmetic. Relaxed matrices must never be installed as model updates.",
+      "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+      "sweeps": 11,
+      "tolerance": 1e-08,
+      "within_radius": false
+    }
+  },
+  "target_rhs": [
+    2.3125,
+    1.8125,
+    1.8125,
+    1.3125,
+    1.0625,
+    0.4375,
+    0.9375,
+    0.6875,
+    1.3125,
+    0.3125,
+    0.8125,
+    0.4375,
+    0.4375,
+    0.3125
+  ],
+  "with_preservation": {
+    "fixed_right": {
+      "active_constraint_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+        "semantic-decimal/adaptation/positive/00/order-1/1:1"
+      ],
+      "algorithm": "Hildreth cyclic nonnegative dual coordinate ascent on row-normalized Gram matrix",
+      "best_primal_norm": 0.05046529566021495,
+      "bounded_search_failure_proves_infeasibility": false,
+      "certificate": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.050465295996761084,
+        "constraint_slacks": [
+          -7.373237576047131e-09,
+          0.655515740147953,
+          0.5878552574092013,
+          1.2098864232549928,
+          -8.10238365289706e-09,
+          0.6497765002089944,
+          0.38527947409429397,
+          0.62715414444078,
+          3.040049989522231e-09,
+          1.0229164421335812,
+          0.662848277012253,
+          1.0455225828540036,
+          -8.17430534372221e-09,
+          0.13198879199067642,
+          -2.4831353223619956e-09,
+          0.14990948073473787,
+          5.039392496998973,
+          4.560185820514231,
+          1.011056709599886,
+          5.551115123125783e-16,
+          5.184503102727736,
+          4.415881464812145
+        ],
+        "dual_direction_denominator": 0.05046529566021495,
+        "dual_direction_norm_lower_bound": 0.05046529599674652,
+        "dual_direction_numerator": 0.0025467460830710838,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.4928009699989033e-14,
+          "numerator": 1.4255605584713166e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0012733730500346287,
+        "dual_objective_norm_lower_bound": 0.050465295996761084,
+        "dual_roundoff_padding": 1.4273701303883904e-14,
+        "duality_gap": -1.6998173701932018e-11,
+        "maximum_complementarity_residual": 1.1358866774382242e-11,
+        "maximum_normalized_primal_violation": 2.3133765736371714e-10,
+        "maximum_primal_violation": 8.17430534372221e-09,
+        "normalized_dual_multipliers": [
+          0.02234072751386804,
+          0.0,
+          0.0,
+          0.0,
+          0.04910081179098064,
+          0.0,
+          0.0,
+          0.0,
+          0.0259376010089908,
+          0.0,
+          0.0,
+          0.0,
+          0.024142275796587172,
+          0.0,
+          0.024410663722910057,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.02189244051907867,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00018752123316801586,
+          0.0,
+          0.0,
+          0.0,
+          0.0014019167220481504,
+          0.0,
+          0.0,
+          0.0,
+          0.000526833024383981,
+          0.0,
+          0.0,
+          0.0,
+          0.0005331578796202005,
+          0.0,
+          0.0006041040244806214,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0004682696908691321,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.05046529566021495,
+        "primal_objective": 0.001273373033036455,
+        "projected_dual_residual": 2.3133765736371714e-10,
+        "stationarity_residual_norm": 8.733037027753047e-18
+      },
+      "certificates_are_numerical_not_formal_intervals": true,
+      "certified_norm_lower_bound": 0.050465295996761084,
+      "constraint_slacks": [
+        -7.373237576047131e-09,
+        0.655515740147953,
+        0.5878552574092013,
+        1.2098864232549928,
+        -8.10238365289706e-09,
+        0.6497765002089944,
+        0.38527947409429397,
+        0.62715414444078,
+        3.040049989522231e-09,
+        1.0229164421335812,
+        0.662848277012253,
+        1.0455225828540036,
+        -8.17430534372221e-09,
+        0.13198879199067642,
+        -2.4831353223619956e-09,
+        0.14990948073473787,
+        5.039392496998973,
+        4.560185820514231,
+        1.011056709599886,
+        5.551115123125783e-16,
+        5.184503102727736,
+        4.415881464812145
+      ],
+      "converged": true,
+      "dimension": 1024,
+      "individual_minimum_norms": [
+        0.019410417652328118,
+        0.014252771909859817,
+        0.01465843643035279,
+        0.010096538136197876,
+        0.030336291047835053,
+        0.012206169581863442,
+        0.021507780943041576,
+        0.015864287241031734,
+        0.02665891669257655,
+        0.006236020026441942,
+        0.014683438285876555,
+        0.007863559066778011,
+        0.009661747479780327,
+        0.006802834520387845,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "individual_norm_bound_failures": [
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+      ],
+      "input_sha256": {
+        "rhs": "0aa674e1bb7b768f9fc93620778b211ec023eead7d401a2f3d5e6f8cba0f58e6",
+        "rows": "2487a482938393ee9ba54a76431383b023d0bfddf8245593ad22b9477552c758"
+      },
+      "maximum_sweeps": 4096,
+      "minimum_norm": 0.05046529566021495,
+      "minimum_norm_certified_to_numerical_tolerance": true,
+      "numerical_failure": null,
+      "objective": "minimize one half squared unrounded update norm subject to every supplied inequality",
+      "pair_radius_separators": [
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035488651634277765,
+          "roundoff_padding": 1.5422122037512638e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.014258057065885406,
+          "summed_axis_norm": 1.4195460653711105,
+          "summed_required_change": 0.04974670870016317
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03548808790939998,
+          "roundoff_padding": 1.5296653352049385e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0054301106859697135,
+          "summed_axis_norm": 1.4195235163759992,
+          "summed_required_change": 0.040918198595369694
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037690232698463964,
+          "roundoff_padding": 1.540114975346354e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0083791016464407,
+          "summed_axis_norm": 1.5076093079385584,
+          "summed_required_change": 0.046069334344904664
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035490944244741904,
+          "roundoff_padding": 1.5348860063148163e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009098118712952963,
+          "summed_axis_norm": 1.419637769789676,
+          "summed_required_change": 0.04458906295769487
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03549042785164423,
+          "roundoff_padding": 1.522339205030996e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0002701250012571571,
+          "summed_axis_norm": 1.4196171140657692,
+          "summed_required_change": 0.03576055285290139
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03768945425920038,
+          "roundoff_padding": 1.532784413685756e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0032222343432359857,
+          "summed_axis_norm": 1.5075781703680151,
+          "summed_required_change": 0.040911688602436366
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493516730851576,
+          "roundoff_padding": 1.5354661459938364e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009501210747336265,
+          "summed_axis_norm": 1.419740669234063,
+          "summed_required_change": 0.04499472747818784
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0354930084662969,
+          "roundoff_padding": 1.5229193562613706e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0006732089070974612,
+          "summed_axis_norm": 1.4197203386518762,
+          "summed_required_change": 0.036166217373394365
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037691732645494525,
+          "roundoff_padding": 1.5333641354238012e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.003625620477434817,
+          "summed_axis_norm": 1.507669305819781,
+          "summed_required_change": 0.04131735312292934
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493153145491584,
+          "roundoff_padding": 1.5289827819195873e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.004939676038541348,
+          "summed_axis_norm": 1.4197261258196634,
+          "summed_required_change": 0.04043282918403293
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.04999989887365349,
+          "roundoff_padding": 1.5658144588777105e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0018441731172231385,
+          "summed_axis_norm": 1.9999959549461395,
+          "summed_required_change": 0.05184407199087663
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471618708970406,
+          "roundoff_padding": 1.5514152022861308e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.02227902065070754,
+          "summed_axis_norm": 1.3886474835881624,
+          "summed_required_change": 0.0569952077404116
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471280299967377,
+          "roundoff_padding": 1.522387711466352e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/1"
+          ],
+          "separating_excess": 0.0018595080746032291,
+          "summed_axis_norm": 1.3885121199869508,
+          "summed_required_change": 0.036572311074277
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0347151106936635,
+          "roundoff_padding": 1.5343954942570903e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.010304618640048106,
+          "summed_axis_norm": 1.38860442774654,
+          "summed_required_change": 0.04501972933371161
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471377264884394,
+          "roundoff_padding": 1.5247019615052537e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/1"
+          ],
+          "separating_excess": 0.003486077465769122,
+          "summed_axis_norm": 1.3885509059537575,
+          "summed_required_change": 0.03819985011461306
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03762333127464749,
+          "roundoff_padding": 1.531392072425693e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0023747072529678934,
+          "summed_axis_norm": 1.5049332509858995,
+          "summed_required_change": 0.03999803852761538
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.026849716585993135,
+          "roundoff_padding": 1.5045496997766797e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2"
+          ],
+          "separating_excess": 0.0019398528340066473,
+          "summed_axis_norm": 1.0739886634397253,
+          "summed_required_change": 0.028789569419999782
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034715611884613126,
+          "roundoff_padding": 1.5256499326583437e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0041494743898268655,
+          "summed_axis_norm": 1.388624475384525,
+          "summed_required_change": 0.03886508627443999
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034718145615419034,
+          "roundoff_padding": 1.5388719180734784e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.013448552020199088,
+          "summed_axis_norm": 1.3887258246167613,
+          "summed_required_change": 0.04816669763561812
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471711361383909,
+          "roundoff_padding": 1.5218522731327612e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.0014741056150790396,
+          "summed_axis_norm": 1.3886845445535636,
+          "summed_required_change": 0.03619121922891813
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471439875156131,
+          "roundoff_padding": 1.5308467065511444e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.007808805182046977,
+          "summed_axis_norm": 1.3885759500624522,
+          "summed_required_change": 0.04252320393360828
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.02776022719302892,
+          "roundoff_padding": 1.5121498952416145e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.008560436979327953,
+          "summed_axis_norm": 1.1104090877211568,
+          "summed_required_change": 0.036320664172356874
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.027762058304550776,
+          "roundoff_padding": 1.5080897377366615e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+          ],
+          "separating_excess": 0.005699692908413618,
+          "summed_axis_norm": 1.110482332182031,
+          "summed_required_change": 0.033461751212964394
+        }
+      ],
+      "primal_feasible": true,
+      "primal_witness": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.050465295996761084,
+        "constraint_slacks": [
+          -7.373237576047131e-09,
+          0.655515740147953,
+          0.5878552574092013,
+          1.2098864232549928,
+          -8.10238365289706e-09,
+          0.6497765002089944,
+          0.38527947409429397,
+          0.62715414444078,
+          3.040049989522231e-09,
+          1.0229164421335812,
+          0.662848277012253,
+          1.0455225828540036,
+          -8.17430534372221e-09,
+          0.13198879199067642,
+          -2.4831353223619956e-09,
+          0.14990948073473787,
+          5.039392496998973,
+          4.560185820514231,
+          1.011056709599886,
+          5.551115123125783e-16,
+          5.184503102727736,
+          4.415881464812145
+        ],
+        "dual_direction_denominator": 0.05046529566021495,
+        "dual_direction_norm_lower_bound": 0.05046529599674652,
+        "dual_direction_numerator": 0.0025467460830710838,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.4928009699989033e-14,
+          "numerator": 1.4255605584713166e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0012733730500346287,
+        "dual_objective_norm_lower_bound": 0.050465295996761084,
+        "dual_roundoff_padding": 1.4273701303883904e-14,
+        "duality_gap": -1.6998173701932018e-11,
+        "maximum_complementarity_residual": 1.1358866774382242e-11,
+        "maximum_normalized_primal_violation": 2.3133765736371714e-10,
+        "maximum_primal_violation": 8.17430534372221e-09,
+        "normalized_dual_multipliers": [
+          0.02234072751386804,
+          0.0,
+          0.0,
+          0.0,
+          0.04910081179098064,
+          0.0,
+          0.0,
+          0.0,
+          0.0259376010089908,
+          0.0,
+          0.0,
+          0.0,
+          0.024142275796587172,
+          0.0,
+          0.024410663722910057,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.02189244051907867,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00018752123316801586,
+          0.0,
+          0.0,
+          0.0,
+          0.0014019167220481504,
+          0.0,
+          0.0,
+          0.0,
+          0.000526833024383981,
+          0.0,
+          0.0,
+          0.0,
+          0.0005331578796202005,
+          0.0,
+          0.0006041040244806214,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0004682696908691321,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.05046529566021495,
+        "primal_objective": 0.001273373033036455,
+        "projected_dual_residual": 2.3133765736371714e-10,
+        "stationarity_residual_norm": 8.733037027753047e-18
+      },
+      "radius": 0.025,
+      "required_changes": [
+        2.3125,
+        1.8125,
+        1.8125,
+        1.3125,
+        1.0625,
+        0.4375,
+        0.9375,
+        0.6875,
+        1.3125,
+        0.3125,
+        0.8125,
+        0.4375,
+        0.4375,
+        0.3125,
+        -0.0625,
+        -0.6875,
+        -7.1875,
+        -6.4375,
+        -1.5625,
+        -0.5625,
+        -7.3125,
+        -6.3125
+      ],
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.09375,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.013416600006166846
+      },
+      "row_count": 22,
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+        "semantic-decimal/adaptation/positive/00/order-0/0:1",
+        "semantic-decimal/preservation-fit/positive/03/order-0/1:7",
+        "semantic-decimal/preservation-fit/preserve/02/1:9",
+        "semantic-decimal/preservation-fit/target/03/variant-1/order-1/0:0",
+        "semantic-decimal/adaptation/positive/00/order-1/1:1",
+        "semantic-decimal/preservation-fit/positive/03/order-1/0:7",
+        "semantic-decimal/preservation-fit/preserve/02/0:9"
+      ],
+      "row_kinds": [
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target"
+      ],
+      "row_norms": [
+        119.13705523603893,
+        127.16824569023969,
+        123.64893135852539,
+        129.9950519965309,
+        35.024057434200586,
+        35.842530047268895,
+        43.58887615987692,
+        43.336330813642554,
+        49.23305830973541,
+        50.112090512047594,
+        55.334451249167785,
+        55.63638503694229,
+        45.28166368615827,
+        45.93673402806566,
+        40.408046849045796,
+        44.67027035909279,
+        113.89742944853997,
+        96.03760998596108,
+        81.0217162793736,
+        46.75177775961797,
+        112.85646258953719,
+        97.04718929793452
+      ],
+      "schema": "weightbridge.joint_linear_feasibility.v1",
+      "scope": "Numerical minimum-norm analysis of the supplied finite local linear inequalities in fixed update coordinates. No BF16, nonlinear behavior, hidden evaluation or promotion authority. Numerical certificates use floating-point residuals and conservative roundoff padding, not formally verified interval arithmetic.",
+      "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+      "sweeps": 54,
+      "tolerance": 1e-08,
+      "within_radius": false
+    },
+    "independent_bound_check": {
+      "block_radius_excluded": true,
+      "certified_norm_lower_bound": 0.04415018883437776,
+      "checked_by": "explicit weighted sum plus Gram-eigenvalue spectral norm",
+      "dual_cauchy_norm_lower_bound": 0.044150188834363245,
+      "dual_matrix_frobenius_norm": 0.044150188431285986,
+      "dual_matrix_norm_padding": 1.4838266628647802e-14,
+      "dual_matrix_spectral_norm": 0.042508931259619354,
+      "dual_numerator": 0.001949239156328891,
+      "dual_numerator_padding": 1.4240202402039574e-14,
+      "dual_objective": 0.0009746195870698615,
+      "dual_objective_norm_lower_bound": 0.04415018883437776,
+      "dual_roundoff_padding": 1.4254052579140907e-14,
+      "dual_spectral_padding": 1.519438502773535e-11,
+      "formal_interval_proof": false,
+      "local_linear_scope_only": true,
+      "model_backward_calls": 0,
+      "model_forward_calls": 0,
+      "rank_one_norm_lower_bound": 0.0458548144556521,
+      "rank_one_radius_excluded": true,
+      "status": "NUMERICAL_DUAL_ARITHMETIC_CHECKED"
+    },
+    "optimized_right": {
+      "inner_calls": 0,
+      "reason": "Previously checked target-only bound excludes the entire protected rank-one system",
+      "resources": {
+        "backward_calls": 0,
+        "forward_calls": 0
+      },
+      "status": "TARGET_BLOCK_BOUND_REFUSAL"
+    },
+    "relaxation": {
+      "best_primal_norm": 0.044150188646947953,
+      "block_shape": [
+        1024,
+        16
+      ],
+      "bounded_search_failure_proves_infeasibility": false,
+      "certificate": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.04415018883437777,
+        "constraint_slacks": [
+          -1.4749686361170689e-08,
+          0.6432679524732237,
+          0.5832087574297127,
+          1.1997727745127853,
+          -1.53999646368419e-08,
+          0.6333895710436368,
+          0.3359503084297317,
+          0.5897324995567716,
+          3.3243809927085977e-09,
+          0.9968967447840538,
+          0.6157846952203596,
+          0.9884809643629648,
+          -1.0758031132596102e-08,
+          0.13170480790460215,
+          -3.787134772448297e-09,
+          0.14329550880034314,
+          5.54906912021307,
+          4.638267241525246,
+          1.1105986552357956,
+          5.551115123125783e-16,
+          5.751262487051264,
+          4.489201243473834
+        ],
+        "dual_cauchy_norm_lower_bound": 0.04415018883436324,
+        "dual_matrix_frobenius_norm": 0.04415018843128599,
+        "dual_matrix_norm_padding": 1.4838266628647802e-14,
+        "dual_matrix_spectral_norm": 0.042508931259619374,
+        "dual_nonnegative": true,
+        "dual_numerator": 0.001949239156328891,
+        "dual_numerator_padding": 1.4240202402039574e-14,
+        "dual_objective": 0.0009746195870698616,
+        "dual_objective_norm_lower_bound": 0.04415018883437777,
+        "dual_roundoff_padding": 1.4254052579140907e-14,
+        "dual_spectral_padding": 1.519438502773535e-11,
+        "duality_gap": -1.781083180246723e-11,
+        "maximum_normalized_primal_violation": 3.934535648675297e-10,
+        "maximum_primal_violation": 1.53999646368419e-08,
+        "normalized_dual_multipliers": [
+          0.01887722112925997,
+          0.0,
+          0.0,
+          0.0,
+          0.03259811848833077,
+          0.0,
+          0.0,
+          0.0,
+          0.026845399891569886,
+          0.0,
+          0.0,
+          0.0,
+          0.015347755207594908,
+          0.0,
+          0.013002683949228265,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0038551428684130036,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00015389432372323606,
+          0.0,
+          0.0,
+          0.0,
+          0.0008328490669496365,
+          0.0,
+          0.0,
+          0.0,
+          0.000482769345952505,
+          0.0,
+          0.0,
+          0.0,
+          0.00030350168685120056,
+          0.0,
+          0.0002785540662321996,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          7.20901801522341e-05,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.04415018843128599,
+        "projected_dual_residual": 3.934535648675297e-10,
+        "rank_one_norm_lower_bound": 0.04585481445565208,
+        "zero_spectral_denominator": false
+      },
+      "certificates_are_numerical_not_formal_intervals": true,
+      "certified_norm_lower_bound": 0.04415018883437777,
+      "converged": true,
+      "input_sha256": {
+        "blocks": "5c442b53f136bc7c17436ea5878c3b20682e6f57c73ef24d362991a8575bbd37",
+        "rhs": "0aa674e1bb7b768f9fc93620778b211ec023eead7d401a2f3d5e6f8cba0f58e6"
+      },
+      "matrix_installation_authorized": false,
+      "maximum_sweeps": 4096,
+      "minimum_norm": 0.044150188646947953,
+      "numerical_failure": null,
+      "primal_witness": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.04415018883437777,
+        "constraint_slacks": [
+          -6.8645871209582765e-09,
+          0.6432679607194736,
+          0.5832087658842147,
+          1.1997727833167788,
+          -7.1672612289575e-09,
+          0.6333895792295192,
+          0.3359503180420127,
+          0.5897325092664139,
+          1.5471555148138805e-09,
+          0.9968967430456588,
+          0.6157846935785072,
+          0.9884809626896833,
+          -5.0068841850325896e-09,
+          0.13170481370702303,
+          -1.762564913465603e-09,
+          0.14329550822990955,
+          5.549069111831432,
+          4.638267236048667,
+          1.1105986542468647,
+          3.3306690738754696e-16,
+          5.751262479143274,
+          4.489201237866895
+        ],
+        "dual_cauchy_norm_lower_bound": 0.044150188834363245,
+        "dual_matrix_frobenius_norm": 0.044150188646947953,
+        "dual_matrix_norm_padding": 1.4838266631712542e-14,
+        "dual_matrix_spectral_norm": 0.04250893144834576,
+        "dual_nonnegative": true,
+        "dual_numerator": 0.0019492391658504076,
+        "dual_numerator_padding": 1.424020240226631e-14,
+        "dual_objective": 0.0009746195870698618,
+        "dual_objective_norm_lower_bound": 0.04415018883437777,
+        "dual_roundoff_padding": 1.4254052579502953e-14,
+        "dual_spectral_padding": 1.5194385030873643e-11,
+        "duality_gap": -8.289315848314383e-12,
+        "maximum_normalized_primal_violation": 1.8311630337053408e-10,
+        "maximum_primal_violation": 7.1672612289575e-09,
+        "normalized_dual_multipliers": [
+          0.018877221249505055,
+          0.0,
+          0.0,
+          0.0,
+          0.032598118880979875,
+          0.0,
+          0.0,
+          0.0,
+          0.02684539983048383,
+          0.0,
+          0.0,
+          0.0,
+          0.015347755352605453,
+          0.0,
+          0.013002684188880259,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.003855143143738098,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00015389432470351997,
+          0.0,
+          0.0,
+          0.0,
+          0.0008328490769814253,
+          0.0,
+          0.0,
+          0.0,
+          0.00048276934485397505,
+          0.0,
+          0.0,
+          0.0,
+          0.0003035016897187825,
+          0.0,
+          0.00027855407136621944,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          7.209018530074255e-05,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.044150188646947953,
+        "projected_dual_residual": 1.8311630337053408e-10,
+        "rank_one_norm_lower_bound": 0.04585481447605963,
+        "zero_spectral_denominator": false
+      },
+      "radius": 0.025,
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.265625,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.05224759998964146
+      },
+      "row_count": 22,
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+        "semantic-decimal/adaptation/positive/00/order-0/0:1",
+        "semantic-decimal/preservation-fit/positive/03/order-0/1:7",
+        "semantic-decimal/preservation-fit/preserve/02/1:9",
+        "semantic-decimal/preservation-fit/target/03/variant-1/order-1/0:0",
+        "semantic-decimal/adaptation/positive/00/order-1/1:1",
+        "semantic-decimal/preservation-fit/positive/03/order-1/0:7",
+        "semantic-decimal/preservation-fit/preserve/02/0:9"
+      ],
+      "schema": "weightbridge.block_relaxation.v1",
+      "scope": "Finite local linear selected-block system, unrounded arithmetic. Numerical padding is not formally verified interval arithmetic. Relaxed matrices must never be installed as model updates.",
+      "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+      "sweeps": 22,
+      "tolerance": 1e-08,
+      "within_radius": false
+    },
+    "scope": "Unrounded local system only; relaxed matrix is diagnostic and never a patch."
+  }
+}

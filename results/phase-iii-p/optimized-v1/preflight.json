@@ -1,0 +1,31 @@
+{
+  "O_analysis_exact": true,
+  "RAM_bytes": 132766306304,
+  "adjustments": [
+    "Initial preflight used nonexistent checkpoint_hash import; corrected to existing load_checkpoint().checkpoint_sha256() before inference."
+  ],
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "external_compute_charges": 0,
+  "free_disk_bytes": 189188538368,
+  "gpu_used": false,
+  "inference_threads": 6,
+  "matches": true,
+  "model_downloads": 0,
+  "model_exists": true,
+  "os": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "psutil": "7.2.2",
+    "pytest": "9.2.0",
+    "safetensors": "0.8.0",
+    "torch": "2.15.0",
+    "transformers": "5.22.1"
+  },
+  "prior_audit_exact": true,
+  "python": "3.12.10",
+  "resources": {
+    "cpu_seconds": 9.984375,
+    "wall_seconds": 10.21229699999094
+  },
+  "schema": "weightbridge.phase_iiip.preflight.v1"
+}

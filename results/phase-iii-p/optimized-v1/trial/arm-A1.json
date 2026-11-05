@@ -1,0 +1,839 @@
+{
+  "arm": "A1",
+  "matched_cell": false,
+  "numerical": {
+    "calibration_passes": [],
+    "reason": "CERTIFIED_NORM_BOUND_EXCEEDED",
+    "resources": {
+      "backward_calls": 0,
+      "cpu_seconds": 0.015625,
+      "forward_calls": 0,
+      "peak_rss_bytes": 2747469824,
+      "wall_seconds": 0.014613800041843206
+    },
+    "solver": {
+      "active_constraint_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+        "semantic-decimal/adaptation/positive/00/order-1/1:1"
+      ],
+      "algorithm": "Hildreth cyclic nonnegative dual coordinate ascent on row-normalized Gram matrix",
+      "best_primal_norm": 0.05046536941003871,
+      "bounded_search_failure_proves_infeasibility": false,
+      "certificate": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.050465369746588475,
+        "constraint_slacks": [
+          -1.0109188153251125e-08,
+          0.6555158009590742,
+          0.5878552877346206,
+          1.209886502813829,
+          -1.1108892694622341e-08,
+          0.6497765179346368,
+          0.38527971477612766,
+          0.6271543750466796,
+          4.1681063045473365e-09,
+          1.0229164682481802,
+          0.6628484067086285,
+          1.0455227223224264,
+          -1.1207501593446523e-08,
+          0.1319888045398192,
+          -3.4045388452863534e-09,
+          0.14990943658327271,
+          5.039388345777312,
+          4.560183963219544,
+          1.0110552835773832,
+          1.1102230246251565e-16,
+          5.184498974508597,
+          4.415879601987068
+        ],
+        "dual_direction_denominator": 0.05046536928505585,
+        "dual_direction_norm_lower_bound": 0.05046536974657391,
+        "dual_direction_numerator": 0.0025467535203827466,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.492801074626095e-14,
+          "numerator": 1.4255605730342326e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0012733767718442173,
+        "dual_objective_norm_lower_bound": 0.050465369746588475,
+        "dual_roundoff_padding": 1.4273701502313522e-14,
+        "duality_gap": -2.3305687891703175e-11,
+        "maximum_complementarity_residual": 1.557379329052828e-11,
+        "maximum_normalized_primal_violation": 3.1717891854632363e-10,
+        "maximum_primal_violation": 1.1207501593446523e-08,
+        "normalized_dual_multipliers": [
+          0.022340766653079536,
+          0.0,
+          0.0,
+          0.0,
+          0.04910097229004123,
+          0.0,
+          0.0,
+          0.0,
+          0.025937586428308384,
+          0.0,
+          0.0,
+          0.0,
+          0.024142374447612074,
+          0.0,
+          0.02441078525372312,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.021892630819276594,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00018752156169058525,
+          0.0,
+          0.0,
+          0.0,
+          0.0014019213045857644,
+          0.0,
+          0.0,
+          0.0,
+          0.0005268327282276398,
+          0.0,
+          0.0,
+          0.0,
+          0.0005331600582288661,
+          0.0,
+          0.0006041070320700135,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0004682737613068147,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.05046536928505586,
+        "primal_objective": 0.0012733767485385294,
+        "projected_dual_residual": 3.1717891854632363e-10,
+        "stationarity_residual_norm": 9.62464480839587e-18
+      },
+      "certificates_are_numerical_not_formal_intervals": true,
+      "certified_norm_lower_bound": 0.050465369746588475,
+      "constraint_slacks": [
+        -7.373298416268881e-09,
+        0.6555158038738493,
+        0.5878552905662946,
+        1.2098865057837156,
+        -8.102451376501563e-09,
+        0.6497765210066985,
+        0.38527971851723597,
+        0.627154378761425,
+        3.0400755246517974e-09,
+        1.0229164671123696,
+        0.6628484054487546,
+        1.0455227210620084,
+        -8.174373955505132e-09,
+        0.13198880761920317,
+        -2.4831560557769805e-09,
+        0.14990943658367095,
+        5.039388339234708,
+        4.56018396091708,
+        1.011055283234164,
+        5.551115123125783e-16,
+        5.184498968013774,
+        4.415879599666442
+      ],
+      "converged": true,
+      "dimension": 1024,
+      "individual_minimum_norms": [
+        0.01941042604602224,
+        0.014252779773458112,
+        0.014658444517765991,
+        0.01009654582879836,
+        0.03033631959963839,
+        0.012206197481679629,
+        0.021507803884674583,
+        0.015864310316358633,
+        0.026658937004132122,
+        0.006236039981706027,
+        0.0146834563578006,
+        0.007863577040627307,
+        0.009661769563774568,
+        0.00680285628945831,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "individual_norm_bound_failures": [
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+      ],
+      "input_sha256": {
+        "rhs": "4edeceeab6ce9fb1c7ce4a7d55709b81a7b154f11b0086d4d06ab2e74ee0135d",
+        "rows": "2487a482938393ee9ba54a76431383b023d0bfddf8245593ad22b9477552c758"
+      },
+      "maximum_sweeps": 4096,
+      "minimum_norm": 0.05046536941003871,
+      "minimum_norm_certified_to_numerical_tolerance": true,
+      "numerical_failure": null,
+      "objective": "minimize one half squared unrounded update norm subject to every supplied inequality",
+      "pair_radius_separators": [
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035488651634277765,
+          "roundoff_padding": 1.5422122562539733e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.014258094011382866,
+          "summed_axis_norm": 1.4195460653711105,
+          "summed_required_change": 0.04974674564566063
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03548808790939998,
+          "roundoff_padding": 1.5296653797351164e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.005430142021296845,
+          "summed_axis_norm": 1.4195235163759992,
+          "summed_required_change": 0.040918229930696826
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037690232698463964,
+          "roundoff_padding": 1.540115016138967e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.008379130351690398,
+          "summed_axis_norm": 1.5076093079385584,
+          "summed_required_change": 0.04606936305015436
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035490944244741904,
+          "roundoff_padding": 1.5348860580642148e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009098155128354601,
+          "summed_axis_norm": 1.419637769789676,
+          "summed_required_change": 0.044589099373096505
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03549042785164423,
+          "roundoff_padding": 1.522339248807863e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.00027015580648846044,
+          "summed_axis_norm": 1.4196171140657692,
+          "summed_required_change": 0.03576058365813269
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03768945425920038,
+          "roundoff_padding": 1.532784453725058e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0032222625183898554,
+          "summed_axis_norm": 1.5075781703680151,
+          "summed_required_change": 0.040911716777590236
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493516730851576,
+          "roundoff_padding": 1.5354661980612947e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.009501247386552808,
+          "summed_axis_norm": 1.419740669234063,
+          "summed_required_change": 0.044994764117404384
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0354930084662969,
+          "roundoff_padding": 1.5229194003562974e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0006732399361436686,
+          "summed_axis_norm": 1.4197203386518762,
+          "summed_required_change": 0.03616624840244057
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.037691732645494525,
+          "roundoff_padding": 1.5333641757811627e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.0036256488764035907,
+          "summed_axis_norm": 1.507669305819781,
+          "summed_required_change": 0.041317381521898115
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.035493153145491584,
+          "roundoff_padding": 1.5289828334259828e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0"
+          ],
+          "separating_excess": 0.004939712282945166,
+          "summed_axis_norm": 1.4197261258196634,
+          "summed_required_change": 0.04043286542843675
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.04999989887365349,
+          "roundoff_padding": 1.565814532054285e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.0018442246106594798,
+          "summed_axis_norm": 1.9999959549461395,
+          "summed_required_change": 0.05184412348431297
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471618708970406,
+          "roundoff_padding": 1.5514152717251402e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.022279069514066455,
+          "summed_axis_norm": 1.3886474835881624,
+          "summed_required_change": 0.056995256603770514
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471280299967377,
+          "roundoff_padding": 1.5223877803990408e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/1"
+          ],
+          "separating_excess": 0.0018595565816706475,
+          "summed_axis_norm": 1.3885121199869508,
+          "summed_required_change": 0.036572359581344416
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.0347151106936635,
+          "roundoff_padding": 1.534395560513392e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.010304665263775485,
+          "summed_axis_norm": 1.38860442774654,
+          "summed_required_change": 0.04501977595743899
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471377264884394,
+          "roundoff_padding": 1.5247020276221828e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/1"
+          ],
+          "separating_excess": 0.003486123991421758,
+          "summed_axis_norm": 1.3885509059537575,
+          "summed_required_change": 0.0381998966402657
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03762333127464749,
+          "roundoff_padding": 1.5313921443834893e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.002374757888765469,
+          "summed_axis_norm": 1.5049332509858995,
+          "summed_required_change": 0.03999808916341296
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.026849716585993135,
+          "roundoff_padding": 1.5045497051828546e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+            "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2"
+          ],
+          "separating_excess": 0.0019399061333560293,
+          "summed_axis_norm": 1.0739886634397253,
+          "summed_required_change": 0.028789622719349164
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034715611884613126,
+          "roundoff_padding": 1.5256500011708237e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.004149522601198621,
+          "summed_axis_norm": 1.388624475384525,
+          "summed_required_change": 0.03886513448581175
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.034718145615419034,
+          "roundoff_padding": 1.5388719795399563e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.013448595273387674,
+          "summed_axis_norm": 1.3887258246167613,
+          "summed_required_change": 0.04816674088880671
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471711361383909,
+          "roundoff_padding": 1.5218523314165315e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+            "semantic-decimal/adaptation/target/09/variant-0/order-1/0"
+          ],
+          "separating_excess": 0.0014741466286360902,
+          "summed_axis_norm": 1.3886845445535636,
+          "summed_required_change": 0.03619126024247518
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.03471439875156131,
+          "roundoff_padding": 1.530846768207613e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0"
+          ],
+          "separating_excess": 0.007808848568929452,
+          "summed_axis_norm": 1.3885759500624522,
+          "summed_required_change": 0.04252324732049076
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.02776022719302892,
+          "roundoff_padding": 1.5121499554893143e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/0"
+          ],
+          "separating_excess": 0.008560479374877767,
+          "summed_axis_norm": 1.1104090877211568,
+          "summed_required_change": 0.03632070656790669
+        },
+        {
+          "nonnegative_normalized_weights": [
+            1.0,
+            1.0
+          ],
+          "radius_support_upper": 0.027762058304550776,
+          "roundoff_padding": 1.5080897975368276e-14,
+          "row_ids": [
+            "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+            "semantic-decimal/adaptation/target/09/variant-1/order-1/1"
+          ],
+          "separating_excess": 0.005699734989039657,
+          "summed_axis_norm": 1.110482332182031,
+          "summed_required_change": 0.03346179329359043
+        }
+      ],
+      "primal_feasible": true,
+      "primal_witness": {
+        "active_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "active_dual_constraint_ids": [
+          "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+          "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+          "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+          "semantic-decimal/adaptation/positive/00/order-1/1:1"
+        ],
+        "certified_norm_lower_bound": 0.05046536974658847,
+        "constraint_slacks": [
+          -7.373298416268881e-09,
+          0.6555158038738493,
+          0.5878552905662946,
+          1.2098865057837156,
+          -8.102451376501563e-09,
+          0.6497765210066985,
+          0.38527971851723597,
+          0.627154378761425,
+          3.0400755246517974e-09,
+          1.0229164671123696,
+          0.6628484054487546,
+          1.0455227210620084,
+          -8.174373955505132e-09,
+          0.13198880761920317,
+          -2.4831560557769805e-09,
+          0.14990943658367095,
+          5.039388339234708,
+          4.56018396091708,
+          1.011055283234164,
+          5.551115123125783e-16,
+          5.184498968013774,
+          4.415879599666442
+        ],
+        "dual_direction_denominator": 0.05046536941003871,
+        "dual_direction_norm_lower_bound": 0.0504653697465739,
+        "dual_direction_numerator": 0.0025467535266900524,
+        "dual_direction_roundoff_padding": {
+          "denominator": 1.4928010748037064e-14,
+          "numerator": 1.4255605730556764e-14
+        },
+        "dual_nonnegative": true,
+        "dual_objective": 0.0012733767718442171,
+        "dual_objective_norm_lower_bound": 0.05046536974658847,
+        "dual_roundoff_padding": 1.4273701502617593e-14,
+        "duality_gap": -1.6998381868749135e-11,
+        "maximum_complementarity_residual": 1.1358999545242331e-11,
+        "maximum_normalized_primal_violation": 2.313396037234572e-10,
+        "maximum_primal_violation": 8.174373955505132e-09,
+        "normalized_dual_multipliers": [
+          0.022340766737932997,
+          0.0,
+          0.0,
+          0.0,
+          0.04910097260657908,
+          0.0,
+          0.0,
+          0.0,
+          0.025937586343411267,
+          0.0,
+          0.0,
+          0.0,
+          0.024142374624819923,
+          0.0,
+          0.024410785466985798,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.021892631156833417,
+          0.0,
+          0.0
+        ],
+        "original_dual_multipliers": [
+          0.00018752156240281923,
+          0.0,
+          0.0,
+          0.0,
+          0.0014019213136234909,
+          0.0,
+          0.0,
+          0.0,
+          0.0005268327265032474,
+          0.0,
+          0.0,
+          0.0,
+          0.0005331600621423233,
+          0.0,
+          0.0006041070373477415,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0004682737685270069,
+          0.0,
+          0.0
+        ],
+        "primal_norm": 0.05046536941003871,
+        "primal_objective": 0.0012733767548458353,
+        "projected_dual_residual": 2.313396037234572e-10,
+        "stationarity_residual_norm": 9.017644353526593e-18
+      },
+      "radius": 0.025,
+      "required_changes": [
+        2.312501,
+        1.812501,
+        1.812501,
+        1.312501,
+        1.062501,
+        0.43750100000000003,
+        0.937501,
+        0.687501,
+        1.312501,
+        0.31250100000000003,
+        0.812501,
+        0.43750100000000003,
+        0.43750100000000003,
+        0.31250100000000003,
+        -0.062499,
+        -0.687499,
+        -7.187499,
+        -6.437499,
+        -1.562499,
+        -0.562499,
+        -7.312499,
+        -6.312499
+      ],
+      "resources": {
+        "backward_calls": 0,
+        "cpu_seconds": 0.015625,
+        "forward_calls": 0,
+        "generated_response_count": 0,
+        "wall_seconds": 0.014119100000243634
+      },
+      "row_count": 22,
+      "row_ids": [
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-0/1",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/00/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-0/1",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-0/order-1/1",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/0",
+        "semantic-decimal/adaptation/target/09/variant-1/order-1/1",
+        "semantic-decimal/adaptation/target/01/variant-0/order-0/1:2",
+        "semantic-decimal/adaptation/positive/00/order-0/0:1",
+        "semantic-decimal/preservation-fit/positive/03/order-0/1:7",
+        "semantic-decimal/preservation-fit/preserve/02/1:9",
+        "semantic-decimal/preservation-fit/target/03/variant-1/order-1/0:0",
+        "semantic-decimal/adaptation/positive/00/order-1/1:1",
+        "semantic-decimal/preservation-fit/positive/03/order-1/0:7",
+        "semantic-decimal/preservation-fit/preserve/02/0:9"
+      ],
+      "row_kinds": [
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target",
+        "target"
+      ],
+      "row_norms": [
+        119.13705523603893,
+        127.16824569023969,
+        123.64893135852539,
+        129.9950519965309,
+        35.024057434200586,
+        35.842530047268895,
+        43.58887615987692,
+        43.336330813642554,
+        49.23305830973541,
+        50.112090512047594,
+        55.334451249167785,
+        55.63638503694229,
+        45.28166368615827,
+        45.93673402806566,
+        40.408046849045796,
+        44.67027035909279,
+        113.89742944853997,
+        96.03760998596108,
+        81.0217162793736,
+        46.75177775961797,
+        112.85646258953719,
+        97.04718929793452
+      ],
+      "schema": "weightbridge.joint_linear_feasibility.v1",
+      "scope": "Numerical minimum-norm analysis of the supplied finite local linear inequalities in fixed update coordinates. No BF16, nonlinear behavior, hidden evaluation or promotion authority. Numerical certificates use floating-point residuals and conservative roundoff padding, not formally verified interval arithmetic.",
+      "status": "CERTIFIED_NORM_BOUND_EXCEEDED",
+      "sweeps": 54,
+      "tolerance": 1e-08,
+      "within_radius": false
+    },
+    "status": "LOCAL_WITNESS_REFUSED"
+  },
+  "plan": {
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "eligible_methods": [
+      "constrained"
+    ],
+    "family": "qwen3_5",
+    "intent": {
+      "evaluation_data_id": "iiip-right-hidden-v1",
+      "limits": {
+        "max_backward_calls": 96,
+        "max_candidates": 4,
+        "max_forward_calls": 480,
+        "max_memory_bytes": 10737418240,
+        "max_rank": 1,
+        "max_update_entries": 16384,
+        "max_update_norm": 0.025
+      },
+      "methods": [
+        "constrained"
+      ],
+      "objective": {
+        "family": "larger-decimal",
+        "metric": "exact_answer",
+        "min_gain": 2
+      },
+      "practice_data_id": "iiip-right-development-v1",
+      "preserve": [
+        "larger-decimal-easy",
+        "copy"
+      ],
+      "risk": {
+        "max_harm_probability": 0.12,
+        "max_regressions": 0
+      },
+      "verify": {
+        "checkpoint_reload": true,
+        "compare_baselines": true,
+        "fresh_evaluation": true,
+        "persistent": true
+      }
+    },
+    "limits": {
+      "max_backward_calls": 96,
+      "max_candidates": 4,
+      "max_forward_calls": 480,
+      "max_memory_bytes": 10737418240,
+      "max_rank": 1,
+      "max_update_entries": 16384,
+      "max_update_norm": 0.025
+    },
+    "max_columns": 16,
+    "method": "constrained",
+    "region": {
+      "dtype": "BF16",
+      "layer_index": 23,
+      "module_name": "model.language_model.layers.23.mlp.down_proj",
+      "role": "ffn_output",
+      "shape": [
+        1024,
+        3584
+      ],
+      "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+    },
+    "schema": "weightbridge.execution_plan.v1"
+  },
+  "probe": {
+    "reason": "no_admissible_local_witness"
+  }
+}

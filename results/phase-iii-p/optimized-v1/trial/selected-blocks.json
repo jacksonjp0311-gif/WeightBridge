@@ -1,0 +1,53 @@
+{
+  "arrays": {
+    "calibration": {
+      "array_sha256": "1d3b44928cfba2dca3f04da35906c8785fa0154b7a9d12a2bf4f6bca49401528",
+      "dtype": "float64",
+      "shape": [
+        8,
+        1024,
+        16
+      ]
+    },
+    "preservation": {
+      "array_sha256": "1c10b9f2cb34411d077f53c3ffc2c14fcfb96ee5252a4de2f4a05c6a13883a98",
+      "dtype": "float64",
+      "shape": [
+        8,
+        1024,
+        16
+      ]
+    },
+    "targets": {
+      "array_sha256": "35948c84622837249ee39a541a1f27a31e542fddae18d4ad44e9c7f99f848173",
+      "dtype": "float64",
+      "shape": [
+        14,
+        1024,
+        16
+      ]
+    }
+  },
+  "columns": [
+    2,
+    9,
+    11,
+    12,
+    22,
+    24,
+    26,
+    28,
+    43,
+    46,
+    57,
+    72,
+    84,
+    104,
+    125,
+    580
+  ],
+  "file_sha256": "fd58b33f69f1747ff8e14cd18446a9c56db92318204c2d030ee0cf8f2d9f9670",
+  "schema": "weightbridge.phase_iiip.blocks.v1",
+  "source_checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "tensor_name": "model.language_model.layers.23.mlp.down_proj.weight"
+}

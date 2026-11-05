@@ -1,0 +1,141 @@
+{
+  "AI_token_tool_cost": "unavailable",
+  "backward_calls": 47,
+  "components": {
+    "assessment_host": {
+      "cpu_seconds": 3.703125,
+      "peak_rss_bytes": 44236800,
+      "wall_seconds": 3.7802440999657847
+    },
+    "completed_fitting": {
+      "cpu_seconds": 1788.640625,
+      "peak_rss_bytes": 2747469824,
+      "wall_seconds": 335.6146868999931
+    }
+  },
+  "compute_per_verified_improvement": null,
+  "explicit_forward_calls": 79,
+  "fit_and_assessment_wall_seconds": 339.3949309999589,
+  "generated_native_tokens": 3168,
+  "generated_response_records": 264,
+  "greedy_batched_steps": 396,
+  "maximum_peak_rss_bytes": 2747469824,
+  "model_work_by_stage": {
+    "arm-A1/numerical": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 0,
+      "generated_examples": 0
+    },
+    "arm-A2/numerical": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 0,
+      "generated_examples": 0
+    },
+    "calibration-block-metadata": {
+      "backward_calls": 8,
+      "batched_decode_steps": 0,
+      "forward_calls": 1,
+      "generated_examples": 0
+    },
+    "calibration-pool": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 4,
+      "generated_examples": 0
+    },
+    "calibration-sensitivities/0": {
+      "backward_calls": 8,
+      "batched_decode_steps": 0,
+      "forward_calls": 1,
+      "generated_examples": 0
+    },
+    "fork-diagnosis": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 14,
+      "generated_examples": 0
+    },
+    "native-parent-targets": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 3,
+      "generated_examples": 0
+    },
+    "parent-adaptation": {
+      "backward_calls": 0,
+      "batched_decode_steps": 228,
+      "forward_calls": 0,
+      "generated_examples": 152
+    },
+    "parent-calibration": {
+      "backward_calls": 0,
+      "batched_decode_steps": 84,
+      "forward_calls": 0,
+      "generated_examples": 56
+    },
+    "parent-preservation-fit": {
+      "backward_calls": 0,
+      "batched_decode_steps": 84,
+      "forward_calls": 0,
+      "generated_examples": 56
+    },
+    "preservation-block-metadata": {
+      "backward_calls": 8,
+      "batched_decode_steps": 0,
+      "forward_calls": 1,
+      "generated_examples": 0
+    },
+    "preservation-decisions": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 10,
+      "generated_examples": 0
+    },
+    "preservation-sensitivities/0": {
+      "backward_calls": 8,
+      "batched_decode_steps": 0,
+      "forward_calls": 1,
+      "generated_examples": 0
+    },
+    "runtime-capability-probe-source-derived": {
+      "backward_calls": 1,
+      "batched_decode_steps": 0,
+      "forward_calls": 1,
+      "generated_examples": 0
+    },
+    "secant/A": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 20,
+      "generated_examples": 0
+    },
+    "secant/target_preview": {
+      "backward_calls": 0,
+      "batched_decode_steps": 0,
+      "forward_calls": 20,
+      "generated_examples": 0
+    },
+    "target-block-metadata": {
+      "backward_calls": 14,
+      "batched_decode_steps": 0,
+      "forward_calls": 3,
+      "generated_examples": 0
+    }
+  },
+  "recorded_cpu_seconds": 1792.34375,
+  "runtime_discovery_work": {
+    "backward_calls": 1,
+    "evidence_type": "source_derived_from_successful_constrained_plan",
+    "forward_calls": 1,
+    "scope": "Inherited _open(gradient_probe=True) and adapter._runtime; finite nonzero gradient required by compiled plan. No separate runtime-probe timing retained; whole-fit CPU includes it."
+  },
+  "saved_candidates": 0,
+  "schema": "weightbridge.phase_iiip.compute.v1",
+  "scope": "Fit wrapper once plus assessment host CPU and independent worker CPU once. Host wall already includes its workers. Nested numerical resources and duplicate metadata are not extra CPU costs. Preflight, tests, model-free analysis, orchestrator and unavailable AI costs are separate. Interrupted execution receipts must be reported separately, never silently zeroed.",
+  "source_sha256": "645101d2304b3ccbb249c71a7260129e519de01cd363563c724be2337bae7716",
+  "total_model_forward_calls": 475,
+  "track": "A",
+  "unique_complete_candidate_practice_probes": 0
+}

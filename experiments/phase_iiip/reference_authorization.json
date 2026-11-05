@@ -1,0 +1,27 @@
+{
+  "schema": "weightbridge.phase_iiip.reference_authorization.v1",
+  "track": "B",
+  "authority": "Operator's Phase III-P directive explicitly permits isolated reconstruction and evaluation of this exact published external artifact. No production or lineage authority.",
+  "base_checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "source_commit": "4d09ba6d6a7e891dd8063974dfe81b3d78e3494f",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "manifest_sha256": "83185c1db46e3dafb34af645f8c5ce033c09cc99d4512b9e1b8e3aba9d269225",
+  "edit_sha256": "e92a92aafd1f1068b4fd94aa0fbe081ba3ddea2047ee7bcac7161d861be299e7",
+  "expected_changed_entries": 130188,
+  "patch_policy": {
+    "schema": "weightbridge.policy.v1",
+    "allow_tensors": [
+      "model.language_model.layers.15.mlp.down_proj.weight",
+      "model.language_model.layers.19.mlp.down_proj.weight"
+    ],
+    "max_entries": 131072,
+    "max_fraction": 0.001,
+    "max_abs_delta": 1.0,
+    "max_tensor_bytes": 16777216,
+    "max_total_tensor_bytes": 33554432,
+    "max_rank": 1
+  },
+  "scope": "Exact source/edited tensor hashes and pinned NPZ/manifest are mandatory. This authorizes a distinct external-reference checkpoint only; it neither changes nor bypasses Track A's 0.025 norm and 16384-entry limits. No combined patch, base replacement or automatic promotion.",
+  "production_authority": false,
+  "lineage_authority": false
+}
