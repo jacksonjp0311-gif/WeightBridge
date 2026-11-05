@@ -1,0 +1,339 @@
+{
+  "arms": {
+    "original-joint": {
+      "decimal": {
+        "source_sha256": "e9603503f6895aa1a7c128b11b400e88b2aad1f1641c4d69c117bf1fe9f9b2ab",
+        "status": "MEASURED",
+        "summary": {
+          "comparisons": 8,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed_first_lines": 72,
+          "correct": 44,
+          "decode_termination": {
+            "token_budget": 72
+          },
+          "families": 4,
+          "groups": {
+            "copy": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "integer-add": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "integer-successor": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "mixed-sign": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "negative-close": {
+              "correct": 0,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-far": {
+              "correct": 4,
+              "presentations": 16,
+              "valid": 16
+            },
+            "positive-far": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            }
+          },
+          "presentations": 72,
+          "strict_comparison_ids_count": 0,
+          "strict_comparisons": 0,
+          "valid_completed_first_lines": 72
+        },
+        "worker_resources": {
+          "cpu_seconds": 230.78125,
+          "peak_rss_bytes": 2569916416,
+          "wall_seconds": 49.04371860000538
+        }
+      },
+      "tool": {
+        "headroom": {
+          "checks": {
+            "competent_schema": true,
+            "incomplete_family_opportunities": true,
+            "semantic_action_errors": true,
+            "semantic_error_action_diversity": true,
+            "semantic_error_family_diversity": true,
+            "ten_point_gain_possible": true
+          },
+          "plausible": true,
+          "real_action_types": [
+            "run_tests",
+            "search_files"
+          ],
+          "schema_valid_semantic_errors": 38,
+          "semantic_error_families": 10
+        },
+        "source_sha256": "884589607dc5e2a9fc4c8b32c76055cb10b59b2b536449fee1c86e0ba66fe10b",
+        "status": "MEASURED",
+        "summary": {
+          "arguments_correct": 16,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed": 80,
+          "decode_termination": {
+            "eos": 80
+          },
+          "families": 10,
+          "presentations": 80,
+          "schema_valid": 54,
+          "schema_valid_without_completion": 54,
+          "semantic_correct": 16,
+          "simulator_success": 16,
+          "strata": {
+            "clarify": {
+              "presentations": 16,
+              "schema_valid": 9,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "no_action": {
+              "presentations": 16,
+              "schema_valid": 14,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "read_file": {
+              "presentations": 16,
+              "schema_valid": 16,
+              "semantic_correct": 16,
+              "strict_correct": 16
+            },
+            "run_tests": {
+              "presentations": 16,
+              "schema_valid": 5,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "search_files": {
+              "presentations": 16,
+              "schema_valid": 10,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            }
+          },
+          "strict_accuracy": 0.2,
+          "strict_correct": 16,
+          "tool_correct": 16,
+          "whole_json_valid": 71,
+          "wording_familiarity": {
+            "unseen": {
+              "complete_families": 0,
+              "families": 10,
+              "presentations": 80,
+              "schema_valid": 54,
+              "semantic_correct": 16,
+              "strict_correct": 16
+            }
+          },
+          "wording_groups": {
+            "calibration": {
+              "presentations": 80,
+              "schema_valid": 54,
+              "semantic_correct": 16,
+              "strict_correct": 16
+            }
+          }
+        },
+        "worker_resources": {
+          "cpu_seconds": 706.4375,
+          "peak_rss_bytes": 2970718208,
+          "wall_seconds": 130.32607650000136
+        }
+      }
+    },
+    "sequential": {
+      "decimal": {
+        "source_sha256": "bdb048398705dea4d1d15aa69a8290feffc35a2b1868cdf152b355506c162cf3",
+        "status": "MEASURED",
+        "summary": {
+          "comparisons": 8,
+          "complete_families": 4,
+          "complete_family_ids_count": 4,
+          "completed_first_lines": 72,
+          "correct": 72,
+          "decode_termination": {
+            "token_budget": 72
+          },
+          "families": 4,
+          "groups": {
+            "copy": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "integer-add": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "integer-successor": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "mixed-sign": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            },
+            "negative-close": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "negative-far": {
+              "correct": 16,
+              "presentations": 16,
+              "valid": 16
+            },
+            "positive-far": {
+              "correct": 8,
+              "presentations": 8,
+              "valid": 8
+            }
+          },
+          "presentations": 72,
+          "strict_comparison_ids_count": 8,
+          "strict_comparisons": 8,
+          "valid_completed_first_lines": 72
+        },
+        "worker_resources": {
+          "cpu_seconds": 231.390625,
+          "peak_rss_bytes": 2576277504,
+          "wall_seconds": 49.10789929999737
+        }
+      },
+      "tool": {
+        "headroom": {
+          "checks": {
+            "competent_schema": false,
+            "incomplete_family_opportunities": true,
+            "semantic_action_errors": true,
+            "semantic_error_action_diversity": false,
+            "semantic_error_family_diversity": true,
+            "ten_point_gain_possible": true
+          },
+          "plausible": false,
+          "real_action_types": [
+            "search_files"
+          ],
+          "schema_valid_semantic_errors": 11,
+          "semantic_error_families": 4
+        },
+        "source_sha256": "f2eaa022b2c5d67f0bd0cc4cb71d595df4a4eac614c8bdc2ef5e05401fa34d31",
+        "status": "MEASURED",
+        "summary": {
+          "arguments_correct": 6,
+          "complete_families": 0,
+          "complete_family_ids_count": 0,
+          "completed": 17,
+          "decode_termination": {
+            "eos": 17,
+            "token_budget": 63
+          },
+          "families": 10,
+          "presentations": 80,
+          "schema_valid": 17,
+          "schema_valid_without_completion": 17,
+          "semantic_correct": 6,
+          "simulator_success": 6,
+          "strata": {
+            "clarify": {
+              "presentations": 16,
+              "schema_valid": 1,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "no_action": {
+              "presentations": 16,
+              "schema_valid": 1,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "read_file": {
+              "presentations": 16,
+              "schema_valid": 6,
+              "semantic_correct": 6,
+              "strict_correct": 6
+            },
+            "run_tests": {
+              "presentations": 16,
+              "schema_valid": 0,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            },
+            "search_files": {
+              "presentations": 16,
+              "schema_valid": 9,
+              "semantic_correct": 0,
+              "strict_correct": 0
+            }
+          },
+          "strict_accuracy": 0.075,
+          "strict_correct": 6,
+          "tool_correct": 6,
+          "whole_json_valid": 17,
+          "wording_familiarity": {
+            "unseen": {
+              "complete_families": 0,
+              "families": 10,
+              "presentations": 80,
+              "schema_valid": 17,
+              "semantic_correct": 6,
+              "strict_correct": 6
+            }
+          },
+          "wording_groups": {
+            "calibration": {
+              "presentations": 80,
+              "schema_valid": 17,
+              "semantic_correct": 6,
+              "strict_correct": 6
+            }
+          }
+        },
+        "worker_resources": {
+          "cpu_seconds": 1477.984375,
+          "peak_rss_bytes": 2977828864,
+          "wall_seconds": 261.57487419998506
+        }
+      }
+    }
+  },
+  "original_to_r8": {
+    "completed": {
+      "gained": 0,
+      "lost": 63
+    },
+    "schema_valid": {
+      "gained": 2,
+      "lost": 39
+    },
+    "semantic_correct": {
+      "gained": 0,
+      "lost": 10
+    },
+    "strict_correct": {
+      "gained": 0,
+      "lost": 10
+    }
+  },
+  "scope": "Disposable unchanged-parent measurement only; not learning or independent qualification"
+}

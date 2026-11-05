@@ -1,0 +1,139 @@
+{
+  "conservative_peak_bytes": 14084444160,
+  "missing_scopes": [],
+  "observed_cpu_seconds": 3295.546875,
+  "observed_wall_seconds": 599.6735035001184,
+  "scope": "Five enclosing execution receipts only. Nested worker resources are not summed again. Excludes tests, reporting and unlisted preflight work.",
+  "scopes": {
+    "calibration-original-decimal": {
+      "budget_failure": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "passed": true,
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 256.203125,
+        "host_cpu_seconds": 21.1875,
+        "observed_tree_cpu_seconds": 235.015625,
+        "peak_rss_bytes": 2582654976,
+        "wall_seconds": 53.60916680004448
+      },
+      "temporary_sleep_request": {
+        "acquisition_error": null,
+        "api": "SetThreadExecutionState",
+        "release_error": null,
+        "released": true,
+        "requested": true,
+        "succeeded": true
+      }
+    },
+    "calibration-original-tool": {
+      "budget_failure": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "passed": true,
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 765.921875,
+        "host_cpu_seconds": 55.234375,
+        "observed_tree_cpu_seconds": 710.6875,
+        "peak_rss_bytes": 2983460864,
+        "wall_seconds": 135.03489900002023
+      },
+      "temporary_sleep_request": {
+        "acquisition_error": null,
+        "api": "SetThreadExecutionState",
+        "release_error": null,
+        "released": true,
+        "requested": true,
+        "succeeded": true
+      }
+    },
+    "calibration-sequential-decimal": {
+      "budget_failure": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "passed": true,
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 257.484375,
+        "host_cpu_seconds": 21.703125,
+        "observed_tree_cpu_seconds": 235.78125,
+        "peak_rss_bytes": 2589024256,
+        "wall_seconds": 53.85991500003729
+      },
+      "temporary_sleep_request": {
+        "acquisition_error": null,
+        "api": "SetThreadExecutionState",
+        "release_error": null,
+        "released": true,
+        "requested": true,
+        "succeeded": true
+      }
+    },
+    "calibration-sequential-tool": {
+      "budget_failure": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "passed": true,
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1587.15625,
+        "host_cpu_seconds": 104.625,
+        "observed_tree_cpu_seconds": 1482.53125,
+        "peak_rss_bytes": 2990567424,
+        "wall_seconds": 266.36953530000756
+      },
+      "temporary_sleep_request": {
+        "acquisition_error": null,
+        "api": "SetThreadExecutionState",
+        "release_error": null,
+        "released": true,
+        "requested": true,
+        "succeeded": true
+      }
+    },
+    "timing-sequential": {
+      "budget_failure": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 8000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1200.0
+      },
+      "passed": true,
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 428.78125,
+        "host_cpu_seconds": 37.390625,
+        "observed_tree_cpu_seconds": 391.390625,
+        "peak_rss_bytes": 14084444160,
+        "wall_seconds": 90.79998740000883
+      },
+      "temporary_sleep_request": {
+        "acquisition_error": null,
+        "api": "SetThreadExecutionState",
+        "release_error": null,
+        "released": true,
+        "requested": true,
+        "succeeded": true
+      }
+    }
+  }
+}

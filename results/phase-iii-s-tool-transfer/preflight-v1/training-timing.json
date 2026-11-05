@@ -1,0 +1,228 @@
+{
+  "authorization_sha256": "e496e5520613dc31cb4e8d92d30a6a47de667a7c4a7974ea8dcae05627a0d8a0",
+  "base_unchanged": true,
+  "batches": [
+    {
+      "backward": {
+        "cpu_seconds": 70.890625,
+        "wall_seconds": 12.057008400035556
+      },
+      "batch": 0,
+      "category_accounting": false,
+      "counts": {
+        "backward_calls": 0,
+        "causal_shift": "logits[t] predicts labels[t+1]",
+        "effective_logits_mode": "all",
+        "forward_calls": 1,
+        "full_sequence_length": 415,
+        "padded_input_token_positions": 1660,
+        "requested_logits_mode": "all",
+        "returned_logit_positions_per_row": 415,
+        "supervised_prediction_positions": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413
+        ],
+        "supervised_tokens": 48,
+        "unmasked_input_tokens": 1018,
+        "weighted_supervised_tokens": 48.0
+      },
+      "forward": {
+        "cpu_seconds": 36.015625,
+        "wall_seconds": 6.108647099987138
+      },
+      "input_shape": [
+        4,
+        415
+      ],
+      "loss": 1.1987115144729614,
+      "mode": "all"
+    },
+    {
+      "backward": {
+        "cpu_seconds": 68.703125,
+        "wall_seconds": 11.674912299960852
+      },
+      "batch": 1,
+      "category_accounting": false,
+      "counts": {
+        "backward_calls": 0,
+        "causal_shift": "logits[t] predicts labels[t+1]",
+        "effective_logits_mode": "tail",
+        "forward_calls": 1,
+        "full_sequence_length": 415,
+        "padded_input_token_positions": 1660,
+        "requested_logits_mode": "tail",
+        "returned_logit_positions_per_row": 14,
+        "supervised_prediction_positions": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413
+        ],
+        "supervised_tokens": 48,
+        "unmasked_input_tokens": 1018,
+        "weighted_supervised_tokens": 48.0
+      },
+      "forward": {
+        "cpu_seconds": 42.375,
+        "wall_seconds": 7.212730499973986
+      },
+      "input_shape": [
+        4,
+        415
+      ],
+      "loss": 1.1987115144729614,
+      "mode": "tail"
+    },
+    {
+      "backward": {
+        "cpu_seconds": 68.21875,
+        "wall_seconds": 11.61307309998665
+      },
+      "batch": 2,
+      "category_accounting": true,
+      "counts": {
+        "backward_calls": 0,
+        "by_category": {
+          "tool": {
+            "examples": 4,
+            "supervised_tokens": 52,
+            "weighted_supervised_tokens": 52.0,
+            "weighted_token_nll_sum": 117.66595458984375
+          }
+        },
+        "causal_shift": "logits[t] predicts labels[t+1]",
+        "effective_logits_mode": "tail",
+        "forward_calls": 1,
+        "full_sequence_length": 415,
+        "padded_input_token_positions": 1660,
+        "requested_logits_mode": "tail",
+        "returned_logit_positions_per_row": 14,
+        "supervised_prediction_positions": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413
+        ],
+        "supervised_tokens": 52,
+        "unmasked_input_tokens": 1656,
+        "weighted_supervised_tokens": 52.0
+      },
+      "forward": {
+        "cpu_seconds": 42.5,
+        "wall_seconds": 7.213309400016442
+      },
+      "input_shape": [
+        4,
+        415
+      ],
+      "loss": 2.2628066539764404,
+      "mode": "tail"
+    },
+    {
+      "backward": {
+        "cpu_seconds": 8.609375,
+        "wall_seconds": 1.4754013000056148
+      },
+      "batch": 3,
+      "category_accounting": true,
+      "counts": {
+        "backward_calls": 0,
+        "by_category": {
+          "integer-successor": {
+            "examples": 4,
+            "supervised_tokens": 18,
+            "weighted_supervised_tokens": 18.0,
+            "weighted_token_nll_sum": 0.000392061956517864
+          }
+        },
+        "causal_shift": "logits[t] predicts labels[t+1]",
+        "effective_logits_mode": "tail",
+        "forward_calls": 1,
+        "full_sequence_length": 50,
+        "padded_input_token_positions": 200,
+        "requested_logits_mode": "tail",
+        "returned_logit_positions_per_row": 6,
+        "supervised_prediction_positions": [
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "supervised_tokens": 18,
+        "unmasked_input_tokens": 198,
+        "weighted_supervised_tokens": 18.0
+      },
+      "forward": {
+        "cpu_seconds": 15.84375,
+        "wall_seconds": 2.7031939000007696
+      },
+      "input_shape": [
+        4,
+        50
+      ],
+      "loss": 2.1781219402328134e-05,
+      "mode": "tail"
+    }
+  ],
+  "bundle_sha256": "1f174e99c0f27abc47432eb42cea79430ca02643736cbe4b773af1cd566e254c",
+  "counts": {
+    "answer_tokens": 166,
+    "backward_calls": 4,
+    "forward_calls": 4,
+    "input_tokens": 3890,
+    "optimizer_steps": 0
+  },
+  "equivalence": {
+    "all_loss": 1.1987115144729614,
+    "atol": 1e-06,
+    "loss_absolute_error": 0.0,
+    "max_gradient_absolute_error": 0.0,
+    "passed": true,
+    "rtol": 0.0002,
+    "tail_loss": 1.1987115144729614
+  },
+  "factors_unchanged": true,
+  "initial_factor_sha256": "b53573886f33a22719b03d7a16f8b1c76f7b28534d6d3bf084812b16422edbca",
+  "optimizer_steps": 0,
+  "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+  "passed": true,
+  "protocol_sha256": "aa3090eb25361420e0b3a909862beeb79641df9b47b38facd1beb6fe70a399bd",
+  "resources": {
+    "cpu_seconds": 387.3125,
+    "peak_rss_bytes": 14071590912,
+    "wall_seconds": 86.32122689997777
+  },
+  "schema": "weightbridge.phase_iiis.training_timing.v1",
+  "scope": "Training runtime feasibility only; no model accuracy or learning claim."
+}

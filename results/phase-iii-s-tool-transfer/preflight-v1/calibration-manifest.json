@@ -1,0 +1,55 @@
+{
+  "decimal_population": {
+    "addition_controls": 4,
+    "comparison_controls": 4,
+    "copy_controls": 4,
+    "successor_controls": 4,
+    "target_families": 4
+  },
+  "protected_formal_data_created": false,
+  "role": "Disposable calibration only; exclude every family and wording template from formal data",
+  "schema": "weightbridge.phase_iiis.disposable_manifest.v1",
+  "splits": {
+    "decimal": {
+      "rows": 72,
+      "seed_commitment": "8c466fb32dee06fc9c9483d4ee1fe35eb5fa065bef5e3fd179b02541d73d9871",
+      "sha256": "736ea0f0d6b0637e1608c2a2d4292ec113efe13a61c9d627efff3fa6d4a089b6"
+    },
+    "tool": {
+      "rows": 80,
+      "seed_commitment": "7a44177888c1c623c013c0fcf448e3d37d79140872d60fb26474746376e4047e",
+      "sha256": "26e1a476ae34f183f25ac081ee9fd8e7aee49d77cc691c2b332bc1fbedc19573"
+    }
+  },
+  "tool_native_tokens": {
+    "maximum_answer_including_terminator": 27,
+    "maximum_prompt": 402,
+    "minimum_prompt": 257
+  },
+  "tool_population": {
+    "families": 10,
+    "rows": 80,
+    "scenarios": {
+      "ambiguous_file_path": 8,
+      "ambiguous_test_target": 8,
+      "explicit_unreadable_file": 8,
+      "file_location_known": 8,
+      "irrelevant_request": 8,
+      "missing_search_root": 8,
+      "missing_test_target": 8,
+      "requested_operation": 8,
+      "unsupported_file_type": 8,
+      "unsupported_search_root": 8
+    },
+    "strata": {
+      "clarify": 16,
+      "no_action": 16,
+      "read_file": 16,
+      "run_tests": 16,
+      "search_files": 16
+    },
+    "wording_groups": {
+      "calibration": 80
+    }
+  }
+}
