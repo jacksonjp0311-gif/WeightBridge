@@ -1,0 +1,13 @@
+{
+  "cause": "The v1 timing preparer received the native tokenizer, so existing build_prefix applied its chat template. The required bare endpoint wrapper was omitted.",
+  "followup": "timing-bare-v2",
+  "followup_authorization": "Parent authorized a separate fresh-zero-adapter bare preflight with at most4forwards/2backwards,120wallseconds,24GiB,6threads,zero generation.",
+  "historical_experiments_modified": false,
+  "observed_v1_prompt_representation": "native_chat_template",
+  "original_source_snapshot_sha256": "34ce1e6b535953423dcc5c95feb172459814696def5d36ff30f2045ff77d93ef",
+  "original_timing_receipt_sha256": "ef4ca54410fd7f7116fa443f6f136c1e79768e3ffd7828befa1331de1a60f5d8",
+  "planned_training_prompt_representation": "bare",
+  "schema": "weightbridge.phase_iiiq_baseline.timing_format_audit.v1",
+  "scope": "Original v1 measures actual real-model training cost, but does not qualify the bare endpoint or establish efficacy. Its weights were discarded and all base parameter bytes and checkpoint hashes restored/unchanged. Raw evidence is retained.",
+  "status": "FORMAT_MISMATCH_CORRECTED_IN_SEPARATE_PREFLIGHT"
+}

@@ -1,0 +1,195 @@
+{
+  "batch_measurements": [
+    {
+      "LoRA_alpha": 16,
+      "LoRA_rank": 8,
+      "dropout": 0,
+      "estimate_scope": "Extrapolation from1 timed F/B microbatches plus one optimizer update; excludes full-training reload, checkpoint, evaluation and orchestration costs. Not an accuracy estimate.",
+      "estimated_effective_batch16_step_cpu_seconds": 162.8125,
+      "estimated_effective_batch16_step_wall_seconds": 27.48277370003052,
+      "estimated_three_epoch384step_run_cpu_seconds": 62520.0,
+      "estimated_three_epoch384step_run_wall_seconds": 10553.38510081172,
+      "input_shape": [
+        4,
+        93
+      ],
+      "measured_optimizer": {
+        "cpu_seconds": 1.125,
+        "wall_seconds": 0.18513290002010763
+      },
+      "microbatch_size": 4,
+      "samples": [
+        {
+          "backward_cpu_seconds": 20.09375,
+          "backward_wall_seconds": 3.5964483999996446,
+          "counts": {
+            "backward_calls": 0,
+            "causal_shift": "logits[t] predicts labels[t+1]",
+            "effective_logits_mode": "tail",
+            "forward_calls": 1,
+            "full_sequence_length": 93,
+            "padded_input_token_positions": 372,
+            "requested_logits_mode": "tail",
+            "returned_logit_positions_per_row": 12,
+            "supervised_prediction_positions": [
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91
+            ],
+            "supervised_tokens": 36,
+            "unmasked_input_tokens": 362,
+            "weighted_supervised_tokens": 36.0
+          },
+          "forward_cpu_seconds": 22.203125,
+          "forward_wall_seconds": 3.920125000004191,
+          "stage": "warmup"
+        },
+        {
+          "backward_cpu_seconds": 19.5,
+          "backward_wall_seconds": 3.2735587999923155,
+          "counts": {
+            "backward_calls": 0,
+            "causal_shift": "logits[t] predicts labels[t+1]",
+            "effective_logits_mode": "tail",
+            "forward_calls": 1,
+            "full_sequence_length": 93,
+            "padded_input_token_positions": 372,
+            "requested_logits_mode": "tail",
+            "returned_logit_positions_per_row": 12,
+            "supervised_prediction_positions": [
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91
+            ],
+            "supervised_tokens": 36,
+            "unmasked_input_tokens": 362,
+            "weighted_supervised_tokens": 36.0
+          },
+          "forward_cpu_seconds": 20.921875,
+          "forward_wall_seconds": 3.5508514000102878,
+          "stage": "timed"
+        }
+      ],
+      "seed": 472019,
+      "temporary_adapter_hash_after": "82fbf8925c47cb11be61af157b829f2086af4e011776e5909e2a8a2c0cb60a18",
+      "temporary_adapter_hash_before": "184363618c7692c3942d4b36c119896db7eeab58f11b1526adf7c15580c5c471",
+      "trainable_parameter_count": 5411328,
+      "trainable_parameters_finite": true,
+      "warmup_optimizer": {
+        "cpu_seconds": 1.109375,
+        "wall_seconds": 0.1799868000089191
+      }
+    }
+  ],
+  "checkpoint_identity_after": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "efficacy_evaluations": 0,
+  "generation_calls": 0,
+  "input_sha256": "ff2efc57f19ed669406d75128ba73c949910c376cfb969fd27bad3e8611bcad0",
+  "maximum_backward_calls": 2,
+  "maximum_forward_calls": 4,
+  "maximum_native_target_tokens": 11,
+  "maximum_wall_seconds": 110,
+  "model_backward_calls": 2,
+  "model_forward_calls": 4,
+  "native_full_vs_tail": {
+    "absolute_difference": 0.0,
+    "full_counts": {
+      "backward_calls": 0,
+      "causal_shift": "logits[t] predicts labels[t+1]",
+      "effective_logits_mode": "all",
+      "forward_calls": 1,
+      "full_sequence_length": 93,
+      "padded_input_token_positions": 186,
+      "requested_logits_mode": "all",
+      "returned_logit_positions_per_row": 93,
+      "supervised_prediction_positions": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "supervised_tokens": 19,
+      "unmasked_input_tokens": 184,
+      "weighted_supervised_tokens": 19.0
+    },
+    "full_loss": 0.1584542840719223,
+    "scope": "Native numerical comparison only; no generated-answer accuracy or model selection.",
+    "tail_counts": {
+      "backward_calls": 0,
+      "causal_shift": "logits[t] predicts labels[t+1]",
+      "effective_logits_mode": "tail",
+      "forward_calls": 1,
+      "full_sequence_length": 93,
+      "padded_input_token_positions": 186,
+      "requested_logits_mode": "tail",
+      "returned_logit_positions_per_row": 12,
+      "supervised_prediction_positions": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "supervised_tokens": 19,
+      "unmasked_input_tokens": 184,
+      "weighted_supervised_tokens": 19.0
+    },
+    "tail_loss": 0.1584542840719223
+  },
+  "native_target_token_lengths": [
+    11,
+    8,
+    10,
+    7
+  ],
+  "optimizer_steps": 2,
+  "original_live_parameter_digest_after": "ece59c2acad44f8e36bf6f705f723cb74d720b839e21d478c2cd1efac3c7e9e1",
+  "original_live_parameter_digest_before": "ece59c2acad44f8e36bf6f705f723cb74d720b839e21d478c2cd1efac3c7e9e1",
+  "prompt_representation": "bare",
+  "resources": {
+    "cpu_seconds": 127.3125,
+    "peak_rss_bytes": 6909911040,
+    "wall_seconds": 43.842673900013324
+  },
+  "retained_adapter_candidates": 0,
+  "schema": "weightbridge.phase_iiiq_baseline.training_cost.v1",
+  "scope": "Real pinned-model supervised training cost only on four disclosed timing inputs. No practice, development, selection or hidden efficacy decision; temporary adapters discarded.",
+  "source_checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "source_sha256": "72136d74301e47bde138e4082be1681b94a1b36841976661b7054e5f1a0f7ab0",
+  "status": "PASS",
+  "target_modules": 186,
+  "tokenized_inputs_sha256": "5dbc2eabc2d7dab546d1f37855ef89f318cbc9482d4f081a4ec8872e478779b2",
+  "training_implementation_sha256": {
+    "weightbridge/adaptation/completion_training.py": "f6bca12b30bcdc1297600bf21ceedea3b3105ee0f461abb281d3226e7704f427",
+    "weightbridge/adaptation/supervised_lora.py": "de6c37b37b59696ddd4c9610c5198bd4efee6d15f3027f38fb4d8542df368e63"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "absolute_difference": 0.0,
+  "full_counts": {
+    "backward_calls": 0,
+    "causal_shift": "logits[t] predicts labels[t+1]",
+    "effective_logits_mode": "all",
+    "forward_calls": 1,
+    "full_sequence_length": 93,
+    "padded_input_token_positions": 186,
+    "requested_logits_mode": "all",
+    "returned_logit_positions_per_row": 93,
+    "supervised_prediction_positions": [
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "supervised_tokens": 19,
+    "unmasked_input_tokens": 184,
+    "weighted_supervised_tokens": 19.0
+  },
+  "full_loss": 0.1584542840719223,
+  "scope": "Native numerical comparison only; no generated-answer accuracy or model selection.",
+  "tail_counts": {
+    "backward_calls": 0,
+    "causal_shift": "logits[t] predicts labels[t+1]",
+    "effective_logits_mode": "tail",
+    "forward_calls": 1,
+    "full_sequence_length": 93,
+    "padded_input_token_positions": 186,
+    "requested_logits_mode": "tail",
+    "returned_logit_positions_per_row": 12,
+    "supervised_prediction_positions": [
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "supervised_tokens": 19,
+    "unmasked_input_tokens": 184,
+    "weighted_supervised_tokens": 19.0
+  },
+  "tail_loss": 0.1584542840719223
+}

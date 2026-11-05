@@ -1,0 +1,41 @@
+{
+  "schema": "weightbridge.supervised_baseline.test_process.v1",
+  "phase": "implementation_preflight",
+  "exit_code": 0,
+  "torch_initial_threads": 6,
+  "resources": {
+    "wall_seconds": 80.56055419996846,
+    "cpu_seconds": 88.59375,
+    "peak_rss_bytes": 516575232
+  },
+  "source_sha256_at_start": {
+    "experiments/phase_iiiq_baseline/data.py": "d5becdf7c5e07866d0ccf5d73d261b542b9537b22d2076f02d4e2c2b117609d7",
+    "experiments/phase_iiiq_baseline/evaluate.py": "a0b20facea3770899f1d32a1f22f4f2bc905c5b7b35d741cda5c67776b9dd538",
+    "experiments/phase_iiiq_baseline/integrity.py": "8aa352de3125d91a4ce516afdcb41c3eac1e176c55c42129d43cbd989754e5a0",
+    "experiments/phase_iiiq_baseline/measurement.py": "6f49dcc23e1db23218389152ba75684b89333515f2d44fb8c725fbeaff425256",
+    "experiments/phase_iiiq_baseline/preflight.py": "72136d74301e47bde138e4082be1681b94a1b36841976661b7054e5f1a0f7ab0",
+    "experiments/phase_iiiq_baseline/smoke_checks.py": "4ec013f444395be805faf09869e870ceeff090c0883a2acec78569910249228e",
+    "experiments/phase_iiiq_baseline/study.py": "4d9fcdfa88063085b2838f4536787ec40470ac3ec2eb762ecc1f3850c2320892",
+    "experiments/phase_iiiq_baseline/train.py": "61bc411c32ddccbcfcc732eca1abed5adfe43eb0cb7a18ca01af139aceef0531",
+    "weightbridge/adaptation/supervised_lora.py": "7b273daef19d85f324704fd6fc80462ee55e77dcb73645e2bfb88f849adf0ae2",
+    "weightbridge/adaptation/completion_training.py": "e9e42237fe69b20e26cbec16ce899aeceb9307e719400e8938593158e0f5df2f",
+    "weightbridge/adaptation/training_policy.py": "1a56e3336da9c6c9108817096d554ffdea574c469a2a9b1cc214c259f36738a2"
+  },
+  "source_sha256_at_end": {
+    "experiments/phase_iiiq_baseline/data.py": "d5becdf7c5e07866d0ccf5d73d261b542b9537b22d2076f02d4e2c2b117609d7",
+    "experiments/phase_iiiq_baseline/evaluate.py": "a0b20facea3770899f1d32a1f22f4f2bc905c5b7b35d741cda5c67776b9dd538",
+    "experiments/phase_iiiq_baseline/integrity.py": "8aa352de3125d91a4ce516afdcb41c3eac1e176c55c42129d43cbd989754e5a0",
+    "experiments/phase_iiiq_baseline/measurement.py": "6f49dcc23e1db23218389152ba75684b89333515f2d44fb8c725fbeaff425256",
+    "experiments/phase_iiiq_baseline/preflight.py": "72136d74301e47bde138e4082be1681b94a1b36841976661b7054e5f1a0f7ab0",
+    "experiments/phase_iiiq_baseline/smoke_checks.py": "4ec013f444395be805faf09869e870ceeff090c0883a2acec78569910249228e",
+    "experiments/phase_iiiq_baseline/study.py": "f406f6edbfd6ef55ff4cdf57bb0df2bbe25aaa02b5c38b976d14ae839f684d41",
+    "experiments/phase_iiiq_baseline/train.py": "61bc411c32ddccbcfcc732eca1abed5adfe43eb0cb7a18ca01af139aceef0531",
+    "weightbridge/adaptation/supervised_lora.py": "7b273daef19d85f324704fd6fc80462ee55e77dcb73645e2bfb88f849adf0ae2",
+    "weightbridge/adaptation/completion_training.py": "e9e42237fe69b20e26cbec16ce899aeceb9307e719400e8938593158e0f5df2f",
+    "weightbridge/adaptation/training_policy.py": "1a56e3336da9c6c9108817096d554ffdea574c469a2a9b1cc214c259f36738a2"
+  },
+  "source_changed_during_tests": [
+    "experiments/phase_iiiq_baseline/study.py"
+  ],
+  "scope": "Pytest main process and tiny fixtures; no full-model job. Source snapshots distinguish preflight implementation checks from the later frozen-source final suite. Test CPU separate from research compute."
+}

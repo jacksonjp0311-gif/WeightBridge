@@ -1,0 +1,131 @@
+# Phase III-Q: working learning baseline
+
+This study supersedes the unrun column-selection proposal. It does not run a
+column search. It starts from published Phase III-P commit
+`3b925f4485c7708e87d9a898eb308d8b6688b3a5` on the isolated
+`dev/phase-iii-q-baseline` branch. Historical evidence, accepted lineage and the
+original checkpoint remain unchanged.
+
+## Question and scope
+
+Can conventional supervised LoRA training produce a persistent improvement in
+complete greedy decimal-comparison answers, with no prohibited regressions on
+the frozen measured suites? This is a practical baseline. It changes data
+volume, editable capacity and training method together and cannot attribute
+the failures of earlier custom editors to any one restriction.
+
+The I and J controls were earlier adapter experiments. Both used rank four in
+one affine matrix, 18,432 trainable parameters, 32 training paths and four
+optimizer steps. I's merged norm exceeded its frozen limit and received no
+generation evaluation. J stayed within its separate projected envelope but
+lost a strict target comparison and caused two presentation regressions. Those
+results are preserved; they did not test this broader conventional recipe.
+
+## Frozen recipe
+
+The parent is the original Qwen3.5-0.8B checkpoint with SHA-256
+`7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8`.
+Runtime inspection found 186 supported text attention and MLP linear modules
+across 24 layers. The explicit allowlist excludes vision, embeddings, the
+output head, tied tensors, normalization and non-linear/custom operations.
+
+Each eligible matrix receives the standard additive adapter
+
+\[
+W_{\mathrm{effective}}=W+\frac{16}{8}BA,
+\qquad A\in\mathbb{R}^{8\times d_{in}},\quad
+B\in\mathbb{R}^{d_{out}\times8}.
+\]
+
+Both factors train in FP32. A is deterministically randomized and B starts at
+zero. All original BF16 parameters stay frozen. The adapter has 5,411,328
+parameters. No previous 0.025 norm, sixteen-column or single-layer restriction
+applies. A separate, exact-module and exact-data training authorization leaves
+the historical patch policy untouched.
+
+The supervised target is one leading space, the canonical correct decimal,
+and a newline. Native tokenization must preserve the bare frozen prompt
+prefix exactly. Prompt and padding labels are masked. Logits at position t
+predict the label at t+1. Cross-entropy covers every answer token and the
+delimiter. Restricted output-head computation is checked against full logits;
+it does not constrain the vocabulary or greedy generation.
+
+Fresh data contain 128 target training families (1,024 presentations) and
+1,024 equally weighted preservation-replay presentations. Targets contain both
+opposing outcomes, both operand orders and both wordings. Replay includes
+positive/mixed-sign comparisons, decimal copying, integer addition and
+successor controls. Exact Decimal arithmetic supplies labels; inference has
+no oracle. No training example is selected by parent error. A prospectively
+declared wider integer bank supplies enough disjoint families; the domain is
+10 through 9,999 in magnitude. Historical and timing-preflight identities are
+excluded. All relatives remain in one partition.
+
+Development, selection and hidden evaluation each contain 32 fresh target
+families. A separate preservation-validation population has 320
+presentations. Selection/hidden seeds and rosters remain host-private.
+
+After a disposable four-family pipeline smoke passes, two fresh runs use
+AdamW, learning rates 1e-4 and 3e-4, one preregistered seed, effective batch 16,
+microbatch four, clipping 1.0, 5% warmup and linear decay. Each run has one
+epoch and 128 optimizer steps. Checkpoints 64 and 128 are evaluated, at most
+two per run. The one-epoch limit was chosen from CPU timing before candidate
+accuracy. It is below the permitted three-epoch maximum and limits the
+conclusions of a failure. Each run is bounded by 5,400 wall seconds, 30,000
+process CPU seconds and 24 GiB RSS.
+
+## Measurement and gates
+
+All parent, adapter and merged-model comparisons use the same bare prompts,
+native tokenizer, unrestricted greedy decoding, sixteen-token budget and
+exact completed-first-line parser. Individual correct responses, all-four
+strict comparisons and all-eight complete counterfactual families are
+reported separately. Newline completion does not imply that the entire
+decode reached EOS; EOS and budget stops are recorded separately.
+
+The practice probe uses sixteen complete training families and eighty replay
+presentations. Development uses its 32 fresh families and the same declared
+replay probe. Practice requires a corrected repeatable error and positive
+strict gain. Development requires positive strict gain and a newly complete
+family. Both reject every lost parent-correct response or lost parent-valid
+completion. Finalist ordering is frozen in the protocol; all four evaluated
+checkpoints remain in the record.
+
+Only a locked qualifying finalist can be merged under a separate
+authorization. Fresh-process adapter loading, BF16 merging, merged practice
+and development checks precede preservation validation. Selection requires
+positive strict gain and no prohibited losses. Hidden verification requires
+at least two strict-comparison gains, at least one complete-family gain and
+no prohibited losses. Failed or incomplete stages cannot authorize later
+ones. Exact reconstruction and rollback precede a verified-baseline claim.
+Lineage admission and deployment remain operator-controlled.
+
+## Preflight evidence
+
+The historical K–N numerical archive and Phase III-P analysis replayed
+without modifying their files. The pinned runtime is Python 3.12.10, PyTorch
+2.15.0, Transformers 5.22.1, NumPy 2.5.4 and safetensors 0.8.0. No package was
+installed or changed, and no replacement checkpoint was downloaded.
+
+The initial cost-only pass accidentally used the native chat template.
+Its immutable receipt is retained as a format mismatch. A separately bounded
+repeat used the correct bare prompt. This measured 6.824 seconds for a
+microbatch-four forward/backward and estimated 27.483 seconds per effective
+batch-sixteen optimizer step, about 59 minutes for 128 steps. This is one
+timed microbatch, not a precise runtime promise. It excludes evaluation,
+checkpoint statistics and startup. Neither timing pass scored generated
+answers. Both discarded their adapters and verified unchanged parent bytes.
+
+## Execution status
+
+Implementation and preregistration are being verified. No learning result is
+claimed by this initial document. Measured smoke, training, development and
+conditional independent outcomes will replace this status with evidence
+paths and exact identities after execution. Unopened stages will remain
+null, not zero or PASS.
+
+The full protocol is
+[`experiments/phase_iiiq_baseline/protocol.json`](../experiments/phase_iiiq_baseline/protocol.json).
+Training curves are diagnostic; only actual complete generated answers can
+establish behavioral improvement. A baseline pass would establish one
+bounded learning result, not a universal adaptation algorithm or a success
+of the earlier custom editor.

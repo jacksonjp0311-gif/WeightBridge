@@ -1,0 +1,10 @@
+{
+  "schema": "weightbridge.phase_iiiq_baseline.execution_notes.v1",
+  "events": [
+    {"kind": "audit_invocation_failure", "operation": "Phase III-P archive replay", "cause": "Initial command used nonexistent results/phase-iii-p/right-v1 instead of the documented optimized-v1 directory.", "adjustment": "Reran the unchanged analyzer with optimized-v1; replay succeeded.", "scientific_effect": "None. No model or historical artifact changed."},
+    {"kind": "preflight_prompt_mismatch", "operation": "Initial training cost-only timing", "cause": "Native tokenizer chat template was used instead of the frozen bare endpoint.", "adjustment": "Retained v1 receipts and ran separately bounded bare-v2 timing before freezing the main study.", "scientific_effect": "No generated-answer efficacy was measured in either timing pass. Both temporary adapters were discarded."},
+    {"kind": "unit_fixture_failure", "operation": "Data manifest round-trip test", "cause": "A tuple-valued exclusion disclosure did not round-trip through JSON as the same Python type.", "adjustment": "Used explicit JSON lists and reran the tests; no expected behavioral outcome changed.", "scientific_effect": "Implementation-only; before data freeze and model training."}
+  ],
+  "column_search_executed": false,
+  "historical_acceptance_changed": false
+}

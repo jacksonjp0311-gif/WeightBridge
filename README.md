@@ -97,6 +97,13 @@ repetition edit improves six decimal presentations and regresses one, with no
 strict comparison or complete-family gain. Neither track qualifies a new
 zero-regression learning result. [Phase III-P code and evidence](docs/PHASE_III_P.md)
 
+Phase III-Q introduces a separately authorized conventional supervised LoRA
+baseline with complete-answer training and frozen original weights. It tests
+broader text-backbone adapters before further custom optimization. The old
+direct-edit norm and column limits remain unchanged. Model improvement is
+unproven until actual generation and independent preservation gates pass.
+[Phase III-Q baseline protocol and results](docs/PHASE_III_Q_BASELINE.md)
+
 ## Install and try it
 
 Use Python 3.10 or later. Clone the repository, install the CLI, and run the

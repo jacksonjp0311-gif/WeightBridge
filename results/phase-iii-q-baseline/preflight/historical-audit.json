@@ -1,0 +1,41 @@
+{
+  "interpretation": "The old four-step, single-affine comparator is not an adequate substitute for the newly proposed multi-layer supervised completion baseline. A failure under that old constraint does not establish conventional LoRA incapacity. Comparison must report geometry, training data, steps, parameter count and numerical envelope separately.",
+  "phase_i": {
+    "cap": 0.35,
+    "generation_status": "NOT_RUN_NORM_REFUSAL",
+    "method": "additive LoRA with AdamW",
+    "original_restored": true,
+    "rank": 4,
+    "realized_merge_norm": 0.3864764251874927,
+    "region": "model.language_model.layers.23.mlp.down_proj.weight",
+    "steps": 4,
+    "trainable_parameters": 18432,
+    "training_rows": 32
+  },
+  "phase_j": {
+    "cap": 0.35,
+    "method": "norm-projected full-width single-layer LoRA",
+    "original_restored": true,
+    "practice_prohibited_presentation_regressions": 2,
+    "practice_target_item_gain": -1,
+    "rank": 4,
+    "realized_merge_norm": 0.30729650711071477,
+    "region": "model.language_model.layers.23.mlp.down_proj.weight",
+    "repeatable_error_corrections": 0,
+    "steps": 4,
+    "trainable_parameters": 18432,
+    "training_rows": 32
+  },
+  "phase_p_limitation": "The checked norm exclusion concerns the frozen layer23 selected sixteen-column local-linear block. It does not exclude broader conventional multi-layer LoRA, larger separately authorized training envelopes, nonlinear learning or other task objectives.",
+  "schema": "weightbridge.phase_iiiq_baseline.prior_audit.v1",
+  "scope": "Read-only inspection of published I/J/P receipts and reports; not a fresh model evaluation or independent efficacy reproduction.",
+  "source_sha256": {
+    "docs/PHASE_III_I.md": "5cdc1187c0709708b15ef9e0f76e5303c830326b042b1789be67d8ab3104f494",
+    "docs/PHASE_III_J.md": "4eb2229c670ff163c65d32028b40aa8302897392e6e2ccb72ab92fdc86ff0e27",
+    "docs/PHASE_III_P.md": "ccf1ececc3c94f82c7a14df58bade371bfd508096b7b16e582109adbc1819d85",
+    "results/phase-iii-i/causal-fork-v1/trial/arm-E.json": "1244968f904e05b8890d0deede93b72b8b8da7406baf981bb52b4fdc8fddc7f6",
+    "results/phase-iii-j/preservation-v1/trial/arm-LoRA.json": "ac55072e48255da28f171b2a2c1beef837aa5d1218a473065a440c24daf120f7",
+    "results/phase-iii-p/optimized-v1/analysis.json": "6dfd2fff367544d5413b987338ab37f89c314d758297f7c1d495c5552a1c94bb",
+    "results/phase-iii-p/optimized-v1/trial/fit-report.json": "35beb45846cc68e014d4a3b83fa66484d310b75b93c43378d2bb21523b014f11"
+  }
+}

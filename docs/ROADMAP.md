@@ -166,3 +166,14 @@ and the unchanged independent gates. Rank two inside the unchanged block is
 not the first justified response to an all-rank local relaxation failure.
 Exclude all disclosed P rosters from new hidden confirmation. No such follow-up
 is silently included in the completed trial. [Phase III-P](PHASE_III_P.md)
+
+### Phase III-Q baseline supersedes the unrun column proposal
+
+The operator has replaced that proposed column search with a conventional
+supervised LoRA baseline. The column experiment remains unrun. The new study
+uses a separate frozen-base training policy, broad text-only adapters, complete
+answer supervision and unchanged strict behavioral preservation. It will
+first test pipeline fit, then fresh transfer, merged BF16 persistence and the
+independent gates. A failed bounded run will be classified by training,
+transfer, preservation, merge or resource evidence rather than declared a
+general learning impossibility. [Phase III-Q baseline](PHASE_III_Q_BASELINE.md)
