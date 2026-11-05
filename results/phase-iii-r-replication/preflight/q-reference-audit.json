@@ -1,0 +1,26 @@
+{
+  "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "checks": {
+    "historical_final_receipt_identity": true,
+    "historical_merged_identity": true,
+    "historical_no_promotion": true,
+    "historical_protocol_identity": true,
+    "historical_reconstruction": true,
+    "historical_replay": true,
+    "historical_result": true,
+    "original_parent_identity": true
+  },
+  "final_receipt_sha256": "735807c9f56c560660004fa60bd5c110fb84afb8354544c88c646b54e56c6cdf",
+  "frozen_source_count": 127,
+  "historical_merged_sha256": "ddf9d6c72eab4cc6cbd7448a5d9c73a429881a26c721ef5726709df7ddf08191",
+  "model_inference_calls": 0,
+  "passed": true,
+  "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "resources": {
+    "cpu_seconds": 5.078125,
+    "peak_rss_bytes": 41279488,
+    "wall_seconds": 5.095622799999546
+  },
+  "schema": "weightbridge.phase_iiir.reference_audit.v1",
+  "scope": "Read-only checkpoint bytes, historical receipt consistency and frozen source replay. No fresh historical behavioral scoring; prior independent outcomes remain historical evidence."
+}

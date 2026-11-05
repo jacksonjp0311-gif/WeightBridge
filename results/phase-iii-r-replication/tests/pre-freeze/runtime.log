@@ -1,0 +1,122 @@
+......................................................s................. [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+.................................................................s...... [ 32%]
+........................................................................ [ 40%]
+........................................................................ [ 48%]
+........................................................................ [ 57%]
+........................................................................ [ 65%]
+........................................................................ [ 73%]
+........................................................................ [ 81%]
+..FFF................................................................... [ 89%]
+........................................................................ [ 97%]
+....................                                                     [100%]
+================================== FAILURES ===================================
+__________ test_assessment_refuses_incomplete_main_before_generation __________
+
+tmp_path = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_assessment_refuses_incomp0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E1F4979700>
+
+    
+    def test_assessment_refuses_incomplete_main_before_generation(tmp_path, monkeypatch):
+        fixture(tmp_path, passed=False)
+        def forbidden(*args, **kwargs):
+            raise AssertionError("An incomplete arm cannot be scored for finalist selection")
+        monkeypatch.setattr(execute.qstudy, "assess", forbidden)
+>       def incomplete(*args, **kwargs):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_replication_execute.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+base = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_assessment_refuses_incomp0/base')
+root = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_assessment_refuses_incomp0')
+arm = 'rank8', action = 'assess'
+
+    def worker(base, root, arm, action):
+        base, root = Path(base), Path(root)
+        local, other = root/arm, root/"rank8"
+        protocol, material = local/"protocol.json", local/"material"
+        assessment, merged = local/"assessment", local/"merged-checkpoint"
+        merge_receipt, merge_auth = local/"merge-receipt.json", local/"merge-authorization.json"
+        replication = root/"replication-verification.json"
+        verify_sources(read(protocol)["source_sha256"])
+>       from .training import validate_main_execution
+E       ImportError: cannot import name 'validate_main_execution' from 'experiments.phase_iiir_replication.training' (C:\Users\jacks\AppData\Local\Temp\wb-phase-iii-r-replication\experiments\phase_iiir_replication\training.py)
+
+experiments\phase_iiir_replication\execute.py:24: ImportError
+______ test_rank4_cannot_touch_confirmation_without_verified_replication ______
+
+tmp_path = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_cannot_touch_confir0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E1F4979190>
+
+        with pytest.raises(ValueError):
+            execute.worker(tmp_path / "base", tmp_path, "rank8", "assess")
+    
+    
+    def test_rank4_cannot_touch_confirmation_without_verified_replication(tmp_path, monkeypatch):
+        fixture(tmp_path, arm="rank4")
+        def refused(*args, **kwargs):
+>           raise ValueError("Replication did not qualify")
+
+tests\test_replication_execute.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+base = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_cannot_touch_confir0/base')
+root = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_cannot_touch_confir0')
+arm = 'rank4', action = 'qualify'
+
+    def worker(base, root, arm, action):
+        base, root = Path(base), Path(root)
+        local, other = root/arm, root/"rank8"
+        protocol, material = local/"protocol.json", local/"material"
+        assessment, merged = local/"assessment", local/"merged-checkpoint"
+        merge_receipt, merge_auth = local/"merge-receipt.json", local/"merge-authorization.json"
+        replication = root/"replication-verification.json"
+        verify_sources(read(protocol)["source_sha256"])
+>       from .training import validate_main_execution
+E       ImportError: cannot import name 'validate_main_execution' from 'experiments.phase_iiir_replication.training' (C:\Users\jacks\AppData\Local\Temp\wb-phase-iii-r-replication\experiments\phase_iiir_replication\training.py)
+
+experiments\phase_iiir_replication\execute.py:24: ImportError
+_____________ test_rank4_development_loss_blocks_merge_and_bank_b _____________
+
+tmp_path = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_development_loss_bl0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E1F497A9F0>
+
+        monkeypatch.setattr(training, "validate_main_execution", lambda *args: {"passed": True}, raising=False)
+        with pytest.raises(ValueError):
+            execute.worker(tmp_path / "base", tmp_path, "rank4", "qualify")
+    
+    
+    def test_rank4_development_loss_blocks_merge_and_bank_b(tmp_path, monkeypatch):
+        fixture(tmp_path, arm="rank4")
+        monkeypatch.setattr(execute.study, "validate_replication_gate", lambda *args: {"passed": True})
+        monkeypatch.setattr(execute.study, "development_retention", lambda *args: {"passed": False})
+        monkeypatch.setattr(execute.study, "prepare_merge", lambda *args: pytest.fail("merge was entered"))
+>       monkeypatch.setattr(execute.study, "qualify_bank_b", lambda *args: pytest.fail("Bank B was entered"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_replication_execute.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+base = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_development_loss_bl0/base')
+root = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-384/test_rank4_development_loss_bl0')
+arm = 'rank4', action = 'qualify'
+
+    def worker(base, root, arm, action):
+        base, root = Path(base), Path(root)
+        local, other = root/arm, root/"rank8"
+        protocol, material = local/"protocol.json", local/"material"
+        assessment, merged = local/"assessment", local/"merged-checkpoint"
+        merge_receipt, merge_auth = local/"merge-receipt.json", local/"merge-authorization.json"
+        replication = root/"replication-verification.json"
+        verify_sources(read(protocol)["source_sha256"])
+>       from .training import validate_main_execution
+E       ImportError: cannot import name 'validate_main_execution' from 'experiments.phase_iiir_replication.training' (C:\Users\jacks\AppData\Local\Temp\wb-phase-iii-r-replication\experiments\phase_iiir_replication\training.py)
+
+experiments\phase_iiir_replication\execute.py:24: ImportError
+=========================== short test summary info ===========================
+FAILED tests/test_replication_execute.py::test_assessment_refuses_incomplete_main_before_generation
+FAILED tests/test_replication_execute.py::test_rank4_cannot_touch_confirmation_without_verified_replication
+FAILED tests/test_replication_execute.py::test_rank4_development_loss_blocks_merge_and_bank_b
+3 failed, 879 passed, 2 skipped in 113.23s (0:01:53)

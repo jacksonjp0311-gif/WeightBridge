@@ -1,0 +1,76 @@
+{
+  "runs": [
+    {
+      "CPU_seconds": null,
+      "errors": 0,
+      "failures": 0,
+      "junit_wall_seconds": 106.559,
+      "path": "results/phase-iii-r-replication/tests/frozen-v1/runtime.xml",
+      "sha256": "716be99616d802d25573b879352d4c7eccd2194a5ce0e42ac3dfd3a71c45b0ee",
+      "skipped": 2,
+      "skips": [
+        {
+          "reason": "could not import 'matplotlib': No module named 'matplotlib'",
+          "test": "test_figures_only_plot_recorded_components_and_are_write_once"
+        },
+        {
+          "reason": "could not import 'mcp': No module named 'mcp'",
+          "test": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools"
+        }
+      ],
+      "tests": 891
+    },
+    {
+      "CPU_seconds": null,
+      "errors": 0,
+      "failures": 0,
+      "junit_wall_seconds": 5.497,
+      "path": "results/phase-iii-r-replication/tests/pre-freeze/mcp.xml",
+      "sha256": "ad0c0475368b6f94d6cff248f291d767ce1e58a7f2f3c24f082e1f811f206597",
+      "skipped": 0,
+      "skips": [],
+      "tests": 23
+    },
+    {
+      "CPU_seconds": null,
+      "errors": 0,
+      "failures": 3,
+      "junit_wall_seconds": 113.212,
+      "path": "results/phase-iii-r-replication/tests/pre-freeze/runtime.xml",
+      "sha256": "6c461f000f49bd068de36d167b056412f3b3b7276139ad92f61538cb735563b9",
+      "skipped": 2,
+      "skips": [
+        {
+          "reason": "could not import 'matplotlib': No module named 'matplotlib'",
+          "test": "test_figures_only_plot_recorded_components_and_are_write_once"
+        },
+        {
+          "reason": "could not import 'mcp': No module named 'mcp'",
+          "test": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools"
+        }
+      ],
+      "tests": 884
+    },
+    {
+      "CPU_seconds": null,
+      "errors": 0,
+      "failures": 1,
+      "junit_wall_seconds": 107.974,
+      "path": "results/phase-iii-r-replication/tests/ready-v1/runtime.xml",
+      "sha256": "f031d1bc6e9ef49fe8d4c6b2c66339411be4d6faefad0834c87b27f9df4313af",
+      "skipped": 2,
+      "skips": [
+        {
+          "reason": "could not import 'matplotlib': No module named 'matplotlib'",
+          "test": "test_figures_only_plot_recorded_components_and_are_write_once"
+        },
+        {
+          "reason": "could not import 'mcp': No module named 'mcp'",
+          "test": "test_stdio_mcp_protocol_lists_and_calls_bounded_tools"
+        }
+      ],
+      "tests": 891
+    }
+  ],
+  "scope": "All attempts retained; final frozen-v1 runtime889 passed2 optional dependency skips; separate MCP23 passed. Early development failures fixed before model runs. CPU of these unmonitored test launches unmeasured."
+}

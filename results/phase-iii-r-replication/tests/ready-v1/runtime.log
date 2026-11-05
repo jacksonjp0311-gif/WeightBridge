@@ -1,0 +1,67 @@
+......................................................s................. [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+.................................................................s...... [ 32%]
+........................................................................ [ 40%]
+........................................................................ [ 48%]
+........................................................................ [ 56%]
+........................................................................ [ 64%]
+........................................................................ [ 72%]
+..........F............................................................. [ 80%]
+........................................................................ [ 88%]
+........................................................................ [ 96%]
+...........................                                              [100%]
+================================== FAILURES ===================================
+_ test_rank4_replication_admission_rechecks_protocol_and_failed_exact_replay __
+
+tmp_path = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-390/test_rank4_replication_admissi0')
+
+    def test_rank4_replication_admission_rechecks_protocol_and_failed_exact_replay(tmp_path):
+        from experiments.phase_iiir_replication.study import seal_replication, validate_replication_gate
+        config8 = config(8)
+        config8.update(master_protocol_sha256="a"*64, global_data_manifest_sha256="b"*64)
+        protocol8 = write(tmp_path/"rank8-protocol.json", config8)
+        verified = read(ROOT/"results/phase-iii-q-baseline/baseline-v1/final-verification/final-verification.json")
+        verified["protocol_sha256"] = file_hash(protocol8)
+        final = write(tmp_path/"final.json", verified)
+        gate_path = tmp_path/"replication.json"
+        seal_replication(protocol8, final, gate_path)
+        config4 = {**config(4), "master_protocol_sha256": "a"*64, "global_data_manifest_sha256": "b"*64}
+>       assert validate_replication_gate(config4, gate_path)["passed"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_phase_iiir_training.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+experiments\phase_iiir_replication\study.py:88: in validate_replication_gate
+    stage = validate_stage_execution(arm_protocol.parent.parent, "rank8", "verify", arm_protocol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+experiments\phase_iiir_replication\execute.py:21: in validate_stage_execution
+    recorded = read(prefix.with_suffix(".json"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+experiments\phase_iiiq_baseline\integrity.py:15: in read
+    return json.loads(Path(path).read_bytes())
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python312\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/jacks/AppData/Local/Temp/pytest-of-jacks/pytest-390/execution/rank8-verify.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\jacks\\AppData\\Local\\Temp\\pytest-of-jacks\\pytest-390\\execution\\rank8-verify.json'
+
+..\..\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED tests/test_phase_iiir_training.py::test_rank4_replication_admission_rechecks_protocol_and_failed_exact_replay
+1 failed, 888 passed, 2 skipped in 107.99s (0:01:47)
