@@ -178,8 +178,25 @@ the run completes. The lower-rate arm has no behavioral observation, so the
 study cannot compare learning rates. The temporary Windows sleep request
 is cleared on exit; no persistent power setting is changed.
 
-Development and independent stages remain unopened while the surviving run
-trains. The accepted lineage remains unchanged.
+The surviving run completed all 128 steps. It exposed 2,048 presentations,
+17,384 supervised answer tokens and 172,804 unpadded input tokens, using 512
+training forwards and 512 backwards. All adapter factors received nonzero
+gradients and changed; the parent remained byte-identical. Observed process
+tree plus host cost was 3,216.263 wall seconds and 20,068.656 CPU seconds.
+The conservative sum of observed lifetime peak working sets was
+7,283,310,592 bytes. The temporary sleep request was released. No external
+compute was used.
+
+| Saved adapter | Effective norm | BF16 merge preview norm | Preview changed entries | Rounding residual norm |
+|---|---:|---:|---:|---:|
+| Step 64 | 3.86612 | 3.89828 | 425,661,705 | 0.516876 |
+| Step 128 | 3.92829 | 3.96006 | 426,620,449 | 0.517094 |
+
+These are round-trip BF16 previews computed from actual saved FP32 factors;
+the base weights were not changed. The [training journal](../results/phase-iii-q-baseline/baseline-v1/run-1)
+retains every step and both adapter receipts. Fresh generation screening is
+in progress. The accepted lineage and protected evaluation stages remain
+unchanged at this checkpoint in the report.
 
 Receipts: [smoke report](../results/phase-iii-q-baseline/smoke-report.json),
 [raw gate](../results/phase-iii-q-baseline/baseline-v1/smoke/smoke-gate.json),

@@ -1,0 +1,92 @@
+{
+  "attempt_directory": "run-1",
+  "authorization_sha256": "6f9bc1466743a595c08d3294d319d3f394c370ec4fc4f876d23ecc3d596866ba",
+  "bundle_sha256": "2e4fa662145316155607b448ec4d1b94d9b42de7f2a7b8005919df25e3299d86",
+  "checks": {
+    "complete_observed_process_cpu": true,
+    "completed_identity": true,
+    "completed_training": true,
+    "conservative_tree_memory_within_limit": true,
+    "frozen_sources_unchanged": true,
+    "no_tree_budget_refusal": true,
+    "temporary_sleep_request_acquired_and_released": true,
+    "whole_tree_cpu_within_limit": true,
+    "whole_tree_wall_within_limit": true,
+    "worker_cpu_covered": true,
+    "worker_exit_success": true,
+    "worker_peak_covered": true
+  },
+  "execution": {
+    "budget_failure": null,
+    "coverage_scope": "Root plus recursively observed descendants only. Retained Windows handles include observed child CPU after exit. Unobserved short-lived descendants cannot be excluded by polling alone.",
+    "exit_code": 0,
+    "memory_scope": "Conservative sum of lifetime peak working sets sampled for each observed owned process; not a simultaneous-RSS measurement.",
+    "observed_process_count": 3,
+    "processes": [
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793873253.8045115,
+        "is_root_launcher": true,
+        "maximum_sampled_rss_bytes": 5074944,
+        "parent_pid_at_discovery": 32456,
+        "peak_rss_bytes": 5074944,
+        "pid": 636
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 0.03125,
+        "create_time": 1793873253.8261557,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7782400,
+        "parent_pid_at_discovery": 636,
+        "peak_rss_bytes": 7782400,
+        "pid": 61248
+      },
+      {
+        "cpu_counter_complete": true,
+        "cpu_seconds": 18769.859375,
+        "create_time": 1793873253.8773377,
+        "is_root_launcher": false,
+        "maximum_sampled_rss_bytes": 7266836480,
+        "parent_pid_at_discovery": 636,
+        "peak_rss_bytes": 7270453248,
+        "pid": 29280
+      }
+    ],
+    "resources": {
+      "cpu_accounting_complete_for_observed_processes": true,
+      "cpu_seconds": 20068.65625,
+      "host_cpu_seconds": 1298.734375,
+      "observed_tree_cpu_seconds": 18769.921875,
+      "peak_rss_bytes": 7283310592,
+      "wall_seconds": 3216.263238100044
+    }
+  },
+  "frozen_training_sources_modified": false,
+  "host_wrapper_sha256": "76fc1201bc2940eaecb2b126520bd3fd07565472225c75d2ddc0469631ad0c23",
+  "limits": {
+    "cpu_seconds": 30000,
+    "memory_bytes": 25769803776,
+    "wall_seconds": 5400
+  },
+  "lineage_authority": false,
+  "log_sha256": "4f6fbc27ceb7937576c201239d03e7993352686e0749b2037b227a6361c8a3b7",
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "passed": true,
+  "production_authority": false,
+  "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "run_index": 1,
+  "schema": "weightbridge.supervised_baseline.training_process_tree.v1",
+  "smoke_gate_sha256": "3c8ca72f3d832151e2108cc6199ea5d2b880b03a9dc6853acb7f98ca19dbdb9b",
+  "status": "COMPLETED",
+  "temporary_sleep_request": {
+    "acquisition_error": null,
+    "api": "SetThreadExecutionState",
+    "release_error": null,
+    "released": true,
+    "requested": true,
+    "succeeded": true
+  },
+  "training_completed_receipt_sha256": "1750feabd790d7b20fa0399b9c5e913422c5271083a2fc22c759dc250a7721ee"
+}
