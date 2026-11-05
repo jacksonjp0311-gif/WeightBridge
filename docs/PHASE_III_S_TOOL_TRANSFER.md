@@ -1,9 +1,10 @@
 # Phase III-S: grounded tool transfer after a verified decimal improvement
 
-**Preregistration milestone: formal populations, protocols and 162 source files
-are frozen. Calibration and numerical timing completed; baseline development
-measurement has started, and main training has not run. No Phase S adapter,
-merged model or independently qualified tool improvement is reported.** The
+**Execution milestone: formal populations, protocols and 162 source files remain
+frozen. Both parent development baselines and the sequential disposable smoke
+have completed. Sequential main training is running; its development result is
+UNMEASURED. The original-parent main run and all protected stages are pending.
+No Phase S merged model or independently qualified tool improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -142,6 +143,84 @@ historical result.
 
 These are fresh disposable measurements of unchanged parents, not a Phase S
 learning result, independent confirmation or a population-level competence claim.
+
+## Parent development and disposable pipeline check
+
+Both immutable parents have now completed the frozen development population.
+These measurements were made before candidate development evaluation and do
+not change either arm's recipe or admission rules. All 128 tool presentations
+use independently authored wording absent from training.
+
+| Development endpoint | Original parent | Verified R8 parent |
+|---|---:|---:|
+| Whole-response JSON syntax valid | 113/128 | 65/128 |
+| Registered schema valid | 99/128 | 45/128 |
+| Correct tool and exact arguments | 24/128 | 23/128 |
+| Strict completed actions | 24/128 | 23/128 |
+| Complete eight-presentation tool families | 0/16 | 0/16 |
+| Natural tool EOS termination | 128/128 | 65/128 |
+| Tool output budget reached | 0/128 | 63/128 |
+| Negative-decimal correct responses | 19/128 | 128/128 |
+| Strict decimal comparisons | 0/32 | 32/32 |
+| Complete opposing decimal families | 0/16 | 16/16 |
+| General control correct responses | 80/80 | 80/80 |
+| Valid completed legacy first lines | 208/208 | 208/208 |
+| Full legacy decode reached EOS | 0/208 | 0/208 |
+
+All strict tool successes remain reads. The original has 75 schema-valid
+semantic errors across fifteen families, including search and tests. R8 has
+22 across seven families, but search is again its only represented real-action
+error type. This preserves the calibration warning: better formatting alone
+would not meet the separately frozen semantic correction requirement. The
+formal banks must supply their own headroom evidence; they cannot be redrawn
+if that evidence is insufficient.
+
+Original-to-R8 development tool behavior loses one strict/semantic success,
+54 schema-valid responses and 63 natural completions, with no gains in those
+three measures. The paired-family 95% percentile interval for strict accuracy
+change is [-2.34375, 0] percentage points, from 2,000 resamples of sixteen
+families. This small, conditional sample does not justify a population-wide
+harm estimate. A later recovery of the lost original success must be reported
+separately from correcting behavior the original model never solved.
+
+The parent audit's private byte commitment is
+`e9b3e7bf81b7884c94c4a6041708013823ac23854b7908c9b34f00cc58108887`.
+The report exporter retains its aggregate projection and source commitment,
+without publishing per-row outputs. Its four disjoint enclosing workers used
+848.334 wall seconds, 4,996.563 observed CPU seconds and a maximum conservative
+peak of 3,020,677,120 bytes.
+
+The sequential disposable smoke passed all eleven pipeline checks: exact
+zero-adapter behavior, exact parent restoration after disabling the adapter,
+finite learning, changed factors, nonzero gradients, unchanged base and saved
+adapter reload. Its matched supervised-token loss fell from 0.5974557452 to
+0.0460563386. Sixteen optimizer steps made 64 forward and 64 backward calls,
+with 256 example visits, 4,154 answer tokens and 72,346 input tokens. Every one
+of the 372 factors changed and received a nonzero gradient. This is a disposable
+training-pipeline result, not independent skill or preservation evidence.
+
+The smoke gate commitment is
+`0ee29d2cbe8954e58b1f4ebf5dbaf1b64df8ea3d4886a53b602aee4372cf430e`;
+its training completion commitment is
+`41f07b90dc6f6e780751370c3dc71cb2f7ba98934ec4a1e4a9c76eec7a032611`.
+The three enclosing smoke workers together used 2,343.973 wall seconds and
+14,239.828 CPU seconds, with maximum conservative peak 14,951,276,544 bytes.
+Those totals include zero-state generation and fresh reload; the nested
+training-worker costs must not be added again. Main training starts with fresh
+factors, optimizer, schedule and random state rather than these learned factors.
+
+| Candidate stage | Sequential arm | Original-parent joint arm |
+|---|---|---|
+| Main training | RUNNING | NOT STARTED |
+| Step-64 diagnostic development | UNMEASURED | UNMEASURED |
+| Fixed step-128 development | UNMEASURED | UNMEASURED |
+| Merged development and exact reconstruction | UNMEASURED | UNMEASURED |
+| Old R locked battery | UNOPENED | UNOPENED |
+| Independent qualification | UNOPENED | UNOPENED |
+| Sealed confirmation and exact replay | UNOPENED | UNOPENED |
+
+These statuses describe this reporting milestone. Missing observations are not
+zeros or passes, and no training-loss change fills an unmeasured behavioral cell.
 
 ## Training implementation and frozen population
 
@@ -324,9 +403,10 @@ python results/phase-iii-s-tool-transfer/export_preregistration.py `
 That validates archive integrity, not private behavioral replay. Reproduction
 of actual inference requires the recorded local checkpoints, runtime, private
 calibration commitments and host authorization. The pure population builder
-does not authorize training or open protected stages. No Phase S learning,
-merged-model demo, retention pass or continual-learning success is claimed at
-this preflight milestone.
+does not authorize training or open protected stages. No independently qualified
+Phase S learning, merged-model demo, retention pass or continual-learning success
+is claimed at this execution milestone. The preflight exports remain immutable
+records of the earlier preregistration stage.
 
 Frozen source hashes describe actual checked-out bytes. The Windows checkout
 uses `core.autocrlf=true` for inherited files; they were not normalized during

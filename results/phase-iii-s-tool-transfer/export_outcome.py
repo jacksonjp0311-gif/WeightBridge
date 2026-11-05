@@ -32,6 +32,7 @@ GATE_SCHEMAS = {
     "weightbridge.phase_iiis.final_verification.v1",
     "weightbridge.supervised_lora_merge_receipt.v1",
     "weightbridge.phase_iiis.reconstruction.v1",
+    "weightbridge.phase_iiis.public_worker_counters.v1",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
     "text", "fixture", "scenario", "gold_action", "parsed_action", "operands", "request",
@@ -40,10 +41,10 @@ FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", 
     "command", "message", "workers", "ledger", "path", "protocol_path", "checkpoints",
     "tensor_values", "weights", "state_dict", "optimizer_state", "adapter_factors"}
 STRING_FIELDS = {"schema", "status", "disposition", "stage", "mode", "arm", "representation",
-    "error", "type", "name", "task", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
-    "base_dtype", "merge_math", "method", "failed_stage", "terminal_kind", "budget_failure"}
+    "error", "type", "name", "label", "task", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
+    "base_dtype", "merge_math", "relative_norm_scope", "method", "failed_stage", "terminal_kind", "budget_failure"}
 SAFE_DICT_LISTS = {"parameter_changes", "trainable_tensors", "modules", "tensor_receipts",
-    "reference_gates", "required_retention", "required_comparator_retention", "scopes"}
+    "reference_gates", "required_retention", "required_comparator_retention", "scopes", "selected_workers"}
 IDENTITY = ("schema", "status", "protocol_sha256", "authorization_sha256", "bundle_sha256",
     "manifest_sha256", "task_manifest_sha256", "parent_sha256", "checkpoint_sha256", "adapter_sha256",
     "representation_sha256", "initial_factor_sha256", "factor_sha256", "run_index", "mode", "smoke")
@@ -89,7 +90,7 @@ def project(value):
         if isinstance(item, dict):
             result[key] = project(item)
         elif isinstance(item, list):
-            if key in ("real_actions", "corrected_real_actions"):
+            if key in ("real_actions", "corrected_real_actions", "semantic_error_real_actions"):
                 if not set(item) <= TOOLS:
                     raise ValueError("Unknown tool name in aggregate metadata")
                 result[key] = item
@@ -202,6 +203,101 @@ def training(reader, prefix):
         "steps": steps if steps else None, "saved_checkpoints": checkpoints if checkpoints else None}
 
 
+def category_exposure(steps):
+    """Token shares are measured per-step sums, never assumed from row sampling."""
+    if not steps:
+        return None
+    totals = {}
+    for step in steps:
+        if not isinstance(step.get("by_category"), dict):
+            return None
+        for category, values in step["by_category"].items():
+            target = totals.setdefault(category, {})
+            for key, value in values.items():
+                if type(value) not in (int, float) or not math.isfinite(value):
+                    raise ValueError("Nonnumerical training category aggregate")
+                target[key] = target.get(key, 0) + value
+    denominator = {key: sum(v[key] for v in totals.values()) if all(key in v for v in totals.values()) else None for key in
+        ("examples", "supervised_tokens", "weighted_supervised_tokens", "weighted_token_nll_sum")}
+    for values in totals.values():
+        for metric, base in (("row_fraction", "examples"), ("supervised_token_fraction", "supervised_tokens"),
+                             ("weighted_token_fraction", "weighted_supervised_tokens")):
+            values[metric] = values[base]/denominator[base] if base in values and denominator[base] else None
+        tokens = values.get("weighted_supervised_tokens")
+        values["measured_mean_token_nll"] = values["weighted_token_nll_sum"]/tokens if tokens and "weighted_token_nll_sum" in values else None
+    return {"measured_steps": len(steps), "categories": totals, "totals": denominator,
+        "scope": "Sums over completed optimizer-step receipts only. Token loss shares need not equal row sampling shares."}
+
+
+def legacy_sections(summary):
+    if summary is None:
+        return {"negative_decimal": None, "general": None, "combined_decode_termination": None}
+    groups = summary.get("groups", {})
+    target = {k: v for k, v in groups.items() if k in ("negative-close", "negative-far")}
+    general = {k: v for k, v in groups.items() if k not in target}
+    def counts(rows):
+        return {key: sum(v[key] for v in rows.values()) for key in ("presentations", "correct", "valid")} if rows else None
+    negative = counts(target)
+    if negative is not None:
+        negative.update({key: summary.get(key) for key in ("strict_comparisons", "comparisons", "complete_families", "families")})
+    return {"negative_decimal": negative, "general": counts(general),
+        "combined_decode_termination": summary.get("decode_termination")}
+
+
+def results_tables(artifacts):
+    """Derive a compact matrix only from already-redacted public aggregates."""
+    def bundle(tool, decimal, *, representation, identity, source):
+        if tool is None and decimal is None:
+            return None
+        return {"representation": representation, "representation_sha256": identity,
+            "tool": tool, **legacy_sections(decimal), "source_artifact": source}
+    stored, adapters, exposures = {}, {}, {}
+    for parent in ("original", "r8"):
+        item = artifacts["baselines.json"][parent]
+        tool, decimal = item["tool"], item["decimal"]
+        stored[parent] = bundle(tool.get("summary") if tool else None, decimal.get("summary") if decimal else None,
+            representation="stored_checkpoint", identity=(tool or decimal or {}).get("checkpoint_sha256"), source="baselines.json")
+    for arm in ARMS:
+        stored[arm+"-merged"] = None
+        adapters[arm] = {}
+        for step, item in artifacts[f"{arm}-development.json"].items():
+            tool, decimal, gate = item["tool"], item["decimal"], item["host_gate"]
+            measured = bundle(tool.get("summary") if tool else None, decimal.get("summary") if decimal else None,
+                representation="fp32_adapter_on_bf16_parent", identity=(tool or decimal or {}).get("adapter_sha256"),
+                source=f"{arm}-development.json")
+            adapters[arm][step] = {"endpoint_summary": measured, "diagnostic_only": step == "64", "host_gate": gate}
+        exposures[arm] = {"main": category_exposure(artifacts[f"{arm}-training.json"]["steps"]),
+            "smoke": category_exposure(artifacts[f"{arm}-smoke-training.json"]["steps"]),
+            "inherited_r_main_cost": artifacts[f"{arm}-metadata.json"]["inherited_r_main_cost"]}
+    for name, gate in artifacts.items():
+        if not name.startswith("gate-") or not isinstance(gate, dict) or gate.get("stage") != "merged-development":
+            continue
+        arm = gate["arm"]
+        if stored[arm+"-merged"] is not None:
+            raise ValueError("Multiple merged-development states cannot share one matrix row")
+        decimal = gate["decimal"]["reference_gates"][0]["candidate"]
+        general = gate["general"]["reference_gates"][0]["candidate"]
+        stored[arm+"-merged"] = {"representation": "stored_checkpoint", "representation_sha256": gate["representation_sha256"],
+            "tool": gate["tool"]["own_parent_retention"]["candidate"], "negative_decimal": decimal, "general": general,
+            "host_gate_passed": gate["passed"], "disposition": gate["disposition"], "source_artifact": name}
+    evidence = {}
+    for name, value in artifacts.items():
+        candidates = [(name, value)] if name.startswith("gate-") else []
+        if name.endswith("-development.json"):
+            candidates.extend((f"{name}:{step}", row["host_gate"]) for step, row in value.items())
+        for label, gate in candidates:
+            if not isinstance(gate, dict) or gate.get("schema") != "weightbridge.phase_iiis.behavior_gate.v1":
+                continue
+            evidence[label] = {key: gate.get(key) for key in ("arm", "stage", "step", "passed", "disposition",
+                "tool_recovery", "inherited_decimal", "tool_uncertainty")}
+            evidence[label]["tool_gain_and_retention"] = gate.get("tool")
+            evidence[label]["decimal_retention"] = gate.get("decimal")
+            evidence[label]["general_retention"] = gate.get("general")
+    return {"schema": "weightbridge.phase_iiis.public_results_matrix.v1", "development_stored_models": stored,
+        "development_adapter_checkpoints": adapters, "token_exposure": exposures, "host_gain_evidence": evidence,
+        "interpretation": "Merged-model rows remain null until a merged-development receipt exists. Adapter observations cannot fill stored-model rows. Recovery, new semantic corrections, family uncertainty and retention use the host's separate counters; repeated comparator losses are not summed into unique harms."}
+
+
 def ledger_summary(reader, ledger):
     ledger = Path(ledger)
     scopes, unfinished = [], []
@@ -232,6 +328,99 @@ def ledger_summary(reader, ledger):
         "accounting": "Disjoint owned worker scopes, including monitor cost; inner training and evaluation costs are not added again. Peak is the maximum conservative process-tree measurement, not a sum across stages."}
 
 
+def aggregate_worker_counters(specs, out):
+    """Explicit completed WorkerSpecs only; no roster reads or path discovery.
+
+    Each entry requires label, worker_spec, worker_sha256 and execution_sha256.
+    worker_spec is the existing host object with path, rows, protocol,
+    authorization, stage and execution. Its rows path is only compared to the
+    recorded command; the roster is never opened. Root must supply these inputs
+    only after the associated host stage was authorized and completed.
+    """
+    out = Path(out)
+    if out.exists():
+        raise FileExistsError("Counter summaries are write-once")
+    counters = ("generate_batches", "generated_examples", "batched_decode_steps", "padded_prompt_token_positions")
+    records, used_results, used_executions, labels = [], set(), set(), set()
+    def read_checked(path, expected):
+        payload = Path(path).read_bytes()
+        if not re.fullmatch(r"[0-9a-f]{64}", expected) or sha(payload) != expected:
+            raise ValueError("Explicit worker input hash mismatch")
+        return json.loads(payload)
+    def argument(command, flag):
+        if command.count(flag) != 1 or command.index(flag)+1 >= len(command):
+            raise ValueError("Ambiguous worker command binding")
+        return command[command.index(flag)+1]
+    for entry in specs:
+        if set(entry) != {"label", "worker_spec", "worker_sha256", "execution_sha256"}:
+            raise ValueError("Unknown explicit counter input fields")
+        label, spec = entry["label"], entry["worker_spec"]
+        if not re.fullmatch(r"[a-z0-9_-]+", label) or label in labels:
+            raise ValueError("Invalid or duplicate counter label")
+        if set(spec) != {"path", "rows", "protocol", "authorization", "stage", "execution"}:
+            raise ValueError("Counter collection needs the complete explicit WorkerSpec")
+        result_path, execution_path = Path(spec["path"]).resolve(), Path(spec["execution"]).resolve()
+        if result_path in used_results or execution_path in used_executions:
+            raise ValueError("Repeated worker scopes would duplicate counts")
+        labels.add(label); used_results.add(result_path); used_executions.add(execution_path)
+        result = read_checked(result_path, entry["worker_sha256"])
+        execution = read_checked(execution_path, entry["execution_sha256"])
+        process, limits = execution.get("execution") or {}, execution.get("limits") or {}
+        resource, sleep = process.get("resources") or {}, execution.get("temporary_sleep_request") or {}
+        command = execution.get("command") or []
+        checks = {"worker_schema": result.get("schema") == "weightbridge.phase_iiis.evaluation.v1",
+            "worker_stage": result.get("stage") == spec["stage"],
+            "frozen_manifest": result.get("task_manifest_sha256") == MANIFEST_SHA,
+            "execution_schema": execution.get("schema") == "weightbridge.phase_iiis.execution.v1",
+            "successful_execution": execution.get("passed") is True and execution.get("error") is None
+                and process.get("exit_code") == 0 and process.get("budget_failure") is None,
+            "module": argument(command, "-m") == "experiments.phase_iiis_tool_transfer.evaluate",
+            "protocol_hash": sha(Path(spec["protocol"]).read_bytes()) == result.get("protocol_sha256"),
+            "authorization_hash": sha(Path(spec["authorization"]).read_bytes()) == result.get("authorization_sha256"),
+            "task_binding": argument(command, "--task") == result.get("task"),
+            "stage_binding": argument(command, "--stage") == spec["stage"],
+            "checkpoint_binding": argument(command, "--expected-checkpoint") == result.get("checkpoint_sha256"),
+            "roster_commitment_binding": argument(command, "--expected-rows") == result.get("roster_sha256"),
+            "cpu_accounting": resource.get("cpu_accounting_complete_for_observed_processes") is True,
+            "sleep_release": sleep.get("requested") is False or sleep.get("requested") is True
+                and sleep.get("succeeded") is True and sleep.get("released") is True}
+        for flag, key in (("--out", "path"), ("--rows", "rows"), ("--protocol", "protocol"), ("--authorization", "authorization")):
+            checks[key+"_binding"] = Path(argument(command, flag)).resolve() == Path(spec[key]).resolve()
+        adapter = result.get("adapter_sha256")
+        checks["adapter_binding"] = argument(command, "--expected-adapter") == adapter if adapter else "--adapter" not in command
+        processes = process.get("processes") or []
+        checks["resource_arithmetic"] = bool(processes) and (
+            math.isclose(sum(p["cpu_seconds"] for p in processes), resource.get("observed_tree_cpu_seconds", -1), abs_tol=1e-7)
+            and math.isclose(resource.get("host_cpu_seconds", -1)+resource.get("observed_tree_cpu_seconds", -1), resource.get("cpu_seconds", -3), abs_tol=1e-7)
+            and sum(p["peak_rss_bytes"] for p in processes) == resource.get("peak_rss_bytes"))
+        for key, limit in (("wall_seconds", "wall_limit"), ("cpu_seconds", "cpu_limit"), ("peak_rss_bytes", "memory_limit")):
+            value, cap = resource.get(key), limits.get(limit)
+            checks[key] = type(value) in (int, float) and type(cap) in (int, float) and math.isfinite(value) and 0 <= value <= cap
+        if not all(checks.values()):
+            raise ValueError("Counter input failed completed-worker bindings: "+", ".join(k for k, v in checks.items() if not v))
+        measured = (result.get("measurement") or {}).get("resources") or {}
+        counts = {key: measured.get(key) for key in counters}
+        if any(value is not None and (type(value) is not int or value < 0) for value in counts.values()):
+            raise ValueError("Decode counter is not a nonnegative integer")
+        records.append({"label": label, "task": result["task"], "stage": spec["stage"],
+            "worker_sha256": entry["worker_sha256"], "execution_sha256": entry["execution_sha256"],
+            "protocol_sha256": result["protocol_sha256"], "authorization_sha256": result["authorization_sha256"],
+            "task_manifest_sha256": result["task_manifest_sha256"],
+            "roster_sha256": result["roster_sha256"], "checkpoint_sha256": result["checkpoint_sha256"],
+            "adapter_sha256": adapter, "checks": checks, "counts": counts})
+    totals = {key: sum(r["counts"][key] for r in records) if records and all(r["counts"][key] is not None for r in records) else None for key in counters}
+    output = {"schema": "weightbridge.phase_iiis.public_worker_counters.v1", "passed": True if records else None,
+        "status": "AGGREGATED_COMPLETED_WORKERS" if records else "NOT_EXECUTED",
+        "selected_worker_count": len(records), "selected_workers": records, "selected_worker_totals": totals,
+        "raw_roster_access": False, "model_execution": False, "scientific_outcomes_reverified": False,
+        "scope": "Only explicitly supplied completed workers. Resource counters and byte/command bindings were checked; no raw roster or prediction was scored. These counters are not extra wall/CPU costs and must not be added to enclosing scopes."}
+    assert_public(output)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("xb") as stream:
+        stream.write(dumps(output))
+    return {"passed": True, "sha256": sha(out.read_bytes()), "selected_worker_count": len(records), "model_execution": False}
+
+
 def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
     out = Path(out)
     if out.exists():
@@ -259,12 +448,14 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
             "protocol_sha256": reader.inputs[f"{arm}/protocol.json"],
             "parent_sha256": protocol.get("checkpoint_sha256"),
             "recipe": selected(protocol, ("adapter", "training", "resources")),
+            "inherited_r_main_cost": project(protocol.get("inherited_r_main_cost")) if arm == "sequential" else None,
             "data_order": project(reader.read(f"{arm}/prospective-data-order.json")),
             "main_authorization": project(reader.read(f"{arm}/main-authorization.json")),
             "main_admission": project(reader.read(f"{arm}/main-admission.json")),
             "main_claim": project(reader.read(f"{arm}/main-launch-claim.json")),
             "smoke_gate": project(reader.read(f"{arm}/smoke-gate.json")),
             "main_training_validation": project(reader.read(f"{arm}/main-training-validation.json")),
+            "assessment": project(reader.read(f"{arm}/assessment.json")),
             "execution": selected(reader.read(f"{arm}/run-arm.json"), (*IDENTITY, "arm", "completed", "status",
                 "failed_stage", "protected_evaluation_opened", "behavioral_qualification", "production_authority", "lineage_authority"))}
         artifacts[f"{arm}-development.json"] = {str(step): {"diagnostic_only": step == 64,
@@ -296,6 +487,7 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
     artifacts["execution.json"] = ledger_summary(reader, ledger)
     artifacts["stage-availability.json"] = {**availability, "lineage_admission": False,
         "interpretation": "No result is inferred from a missing stage. Explicit host gate artifacts, when supplied, are authoritative for measured later stages. This exporter does not grant evaluation or lineage authority."}
+    artifacts["results-matrix.json"] = results_tables(artifacts)
     for value in artifacts.values():
         assert_public(value)
     out.mkdir(parents=True)
@@ -343,6 +535,21 @@ def self_test():
     assert_public(clean)
     assert clean["lost_schema_valid_count"] == clean["complete_family_ids_count"] == 1
     assert clean["never_measured"] is None and "PRIVATE" not in json.dumps(clean)
+    gate = project({"tool_recovery": {"recovered_original_successes": ["PRIVATE1"],
+        "corrected_beyond_original": ["PRIVATE2", "PRIVATE3"]}, "tool_uncertainty": {
+        "families": 16, "seed": 123, "confidence": .95, "strict_accuracy_gain_interval": [.1, .2]},
+        "tool": {"corrected_real_actions": ["search_files", "run_tests"], "candidate": {
+            "wording_familiarity": {"unseen": {"presentations": 128, "strict_correct": 100}}}}})
+    assert gate["tool_recovery"]["recovered_original_successes_count"] == 1
+    assert gate["tool_recovery"]["corrected_beyond_original_count"] == 2
+    assert gate["tool_uncertainty"]["strict_accuracy_gain_interval"] == [.1, .2]
+    assert "seed" not in gate["tool_uncertainty"]
+    assert gate["tool"]["candidate"]["wording_familiarity"]["unseen"]["strict_correct"] == 100
+    exposure = category_exposure([{"by_category": {
+        "tool": {"examples": 1, "supervised_tokens": 9, "weighted_supervised_tokens": 9., "weighted_token_nll_sum": 18.},
+        "general": {"examples": 1, "supervised_tokens": 1, "weighted_supervised_tokens": 1., "weighted_token_nll_sum": 1.}}}])
+    assert exposure["categories"]["tool"]["row_fraction"] == .5
+    assert exposure["categories"]["tool"]["supervised_token_fraction"] == .9
     for bad in ({"records": []}, {"rows": []}, {"seed": 1}, {"where": "C:/private/model"}):
         try:
             assert_public(bad)
@@ -381,6 +588,49 @@ def self_test():
         assert cost["all_recorded_scope_totals"] is None and cost["unfinished_scope_names"] == ["active"]
         assert cost["completed_scope_totals"]["cpu_seconds"] == 6.  # Not 6+inner 5.
         assert all("PRIVATE" not in p.read_text() for p in out.glob("*.json"))
+        matrix = json.loads((out/"results-matrix.json").read_bytes())
+        assert all(v is None for v in matrix["development_stored_models"].values())
+        exposure = matrix["token_exposure"]["sequential"]["main"]
+        assert exposure["categories"]["tool"]["supervised_token_fraction"] == 1.
+        # Counter collection deliberately references a nonexistent roster.
+        # Its absence proves the reporter does not open a bank to count work.
+        protocol_path, authorization_path = root/"counter-protocol.json", root/"counter-auth.json"
+        protocol_path.write_bytes(b"{}"); authorization_path.write_bytes(b"{}")
+        worker_path, process_path = root/"counter-worker.json", root/"counter-process.json"
+        roster_path = root/"NEVER_OPEN_THIS_ROSTER.json"
+        worker = {"schema": "weightbridge.phase_iiis.evaluation.v1", "task": "tool", "stage": "qualification",
+            "task_manifest_sha256": MANIFEST_SHA,
+            "protocol_sha256": sha(b"{}"), "authorization_sha256": sha(b"{}"),
+            "roster_sha256": "c"*64, "checkpoint_sha256": "d"*64, "adapter_sha256": None,
+            "measurement": {"rows": [{"prompt": "PRIVATE_ROW", "text": "PRIVATE_RESPONSE"}],
+                "resources": {"generate_batches": 2, "generated_examples": 8, "batched_decode_steps": 20,
+                    "padded_prompt_token_positions": 100}}}
+        command = ["python", "-m", "experiments.phase_iiis_tool_transfer.evaluate", "--out", str(worker_path),
+            "--rows", str(roster_path), "--protocol", str(protocol_path), "--authorization", str(authorization_path),
+            "--stage", "qualification", "--task", "tool", "--expected-rows", "c"*64, "--expected-checkpoint", "d"*64]
+        process = {"schema": "weightbridge.phase_iiis.execution.v1", "passed": True, "error": None,
+            "command": command, "limits": {"wall_limit": 10, "cpu_limit": 20, "memory_limit": 1000},
+            "temporary_sleep_request": {"requested": False}, "execution": {"exit_code": 0, "budget_failure": None,
+                "processes": [{"cpu_seconds": 5., "peak_rss_bytes": 200}], "resources": {"wall_seconds": 3.,
+                    "cpu_seconds": 6., "host_cpu_seconds": 1., "observed_tree_cpu_seconds": 5.,
+                    "peak_rss_bytes": 200, "cpu_accounting_complete_for_observed_processes": True}}}
+        worker_path.write_bytes(dumps(worker)); process_path.write_bytes(dumps(process))
+        spec = {"label": "one", "worker_spec": {"path": str(worker_path), "rows": str(roster_path),
+            "protocol": str(protocol_path), "authorization": str(authorization_path), "stage": "qualification",
+            "execution": str(process_path)}, "worker_sha256": sha(worker_path.read_bytes()),
+            "execution_sha256": sha(process_path.read_bytes())}
+        counter_out = root/"counters.json"
+        assert aggregate_worker_counters([spec], counter_out)["passed"]
+        published = json.loads(counter_out.read_bytes())
+        assert published["selected_worker_totals"]["generated_examples"] == 8 and not roster_path.exists()
+        assert "PRIVATE" not in counter_out.read_text()
+        for inputs in ([spec, {**spec, "label": "two"}], [{**spec, "worker_sha256": "e"*64}]):
+            try:
+                aggregate_worker_counters(inputs, root/"refused.json")
+            except ValueError:
+                assert not (root/"refused.json").exists()
+            else:
+                raise AssertionError("Duplicate scope or wrong source hash admitted")
         try:
             export(study, ledger, out, expected_manifest=expected)
         except FileExistsError:
@@ -396,7 +646,10 @@ def self_test():
             raise AssertionError("Artifact tampering accepted")
     return {"redaction": "PASS", "sensitive_field_refusal": "PASS", "missing_stages_null": "PASS",
         "partial_snapshot": "PASS", "category_token_preservation": "PASS", "non_nested_accounting": "PASS",
-        "interrupted_scope_unknown": "PASS", "write_once": "PASS", "hash_tamper_refusal": "PASS", "model_execution": False}
+        "interrupted_scope_unknown": "PASS", "write_once": "PASS", "hash_tamper_refusal": "PASS",
+        "matrix_unknowns": "PASS", "token_share_derivation": "PASS", "explicit_worker_binding": "PASS",
+        "recovery_vs_new_gain": "PASS", "family_uncertainty_and_unseen_wording": "PASS",
+        "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS", "model_execution": False}
 
 
 if __name__ == "__main__":
@@ -407,9 +660,13 @@ if __name__ == "__main__":
     parser.add_argument("--gate", action="append", default=[], metavar="LABEL=RELATIVE.json")
     parser.add_argument("--verify", type=Path)
     parser.add_argument("--self-test", action="store_true")
+    parser.add_argument("--worker-specs", type=Path, help="Private JSON list of explicitly authorized completed WorkerSpecs and expected hashes")
+    parser.add_argument("--counter-out", type=Path, help="New aggregate-only receipt, with no paths or raw observations")
     args = parser.parse_args()
     if args.self_test:
         print(json.dumps(self_test()))
+    elif args.worker_specs and args.counter_out:
+        print(json.dumps(aggregate_worker_counters(json.loads(args.worker_specs.read_bytes()), args.counter_out)))
     elif args.verify:
         print(json.dumps(verify(args.verify)))
     elif args.study and args.ledger and args.out:
