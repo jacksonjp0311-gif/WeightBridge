@@ -136,3 +136,37 @@ assert json.loads(pathlib.Path(a.smoke_gate).read_bytes())['protocol_sha256']==h
     assert (out.parent/"run-0-retry1.log").is_file()
     assert (out.parent/"run-0-retry1-process.json").is_file()
     assert all((out.parent/name).read_bytes() == raw for name, raw in previous.items())
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows execution state API")
+def test_temporary_request_is_cleared_when_the_worker_raises(monkeypatch):
+    requested = []
+    monkeypatch.setattr(wrapper, "_set_thread_execution_state", lambda flags: requested.append(flags) or 1)
+    with pytest.raises(RuntimeError, match="worker failed"):
+        with wrapper._temporary_sleep_request() as state:
+            assert state["succeeded"] is True and state["released"] is None
+            raise RuntimeError("worker failed")
+    assert requested == [wrapper._ES_CONTINUOUS | wrapper._ES_SYSTEM_REQUIRED, wrapper._ES_CONTINUOUS]
+    assert state["released"] is True
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows execution state API")
+def test_declined_sleep_request_refuses_before_model_launch_and_retains_receipt(bound_inputs, monkeypatch):
+    base, protocol, authorization, bundle, out, gate = bound_inputs
+    monkeypatch.setattr(wrapper, "_set_thread_execution_state", lambda _: 0)
+    monkeypatch.setattr(wrapper, "launch_owned_tree", lambda *args, **kwargs: pytest.fail("Worker launched after refusal"))
+    result = wrapper.run(base, protocol, authorization, bundle, out, run_index=0, smoke_gate=gate)
+    assert result["status"] == "HOLD"
+    assert result["execution"]["observed_process_count"] == 0
+    assert result["temporary_sleep_request"]["requested"] is True
+    assert result["temporary_sleep_request"]["succeeded"] is False
+    assert result["temporary_sleep_request"]["released"] is None
+    assert (out.parent/f"{out.name}-process.json").is_file()
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows execution state API")
+def test_real_windows_api_accepts_and_releases_short_system_request():
+    with wrapper._temporary_sleep_request() as state:
+        assert state["requested"] is True
+        assert state["succeeded"] is True
+    assert state["released"] is True

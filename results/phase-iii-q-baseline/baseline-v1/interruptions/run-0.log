@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\jacks\AppData\Local\Temp\wb-phase-iii-q-baseline\experiments\phase_iiiq_baseline\train.py", line 254, in <module>
+    run(args.base, args.protocol, args.authorization, args.bundle, args.out,
+  File "C:\Users\jacks\AppData\Local\Temp\wb-phase-iii-q-baseline\experiments\phase_iiiq_baseline\train.py", line 66, in run
+    raise ValueError("Main training requires the exact host-admitted pipeline smoke")
+ValueError: Main training requires the exact host-admitted pipeline smoke

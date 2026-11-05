@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/473 [00:00<?, ?it/s]Loading weights:   6%|6         | 30/473 [00:00<00:01, 262.30it/s]Loading weights:  12%|#2        | 57/473 [00:00<00:01, 229.54it/s]Loading weights:  17%|#7        | 81/473 [00:00<00:02, 194.64it/s]Loading weights:  21%|##1       | 101/473 [00:00<00:02, 159.72it/s]Loading weights:  25%|##4       | 118/473 [00:00<00:02, 157.55it/s]Loading weights:  30%|##9       | 140/473 [00:00<00:01, 172.80it/s]Loading weights: 100%|##########| 473/473 [00:00<00:00, 544.93it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+step=1/128 loss=0.12961 wall=49.3s
+step=2/128 loss=0.10327 wall=76.6s
+step=3/128 loss=0.11619 wall=104.4s
+step=4/128 loss=0.07989 wall=131.3s
+step=5/128 loss=0.05489 wall=159.6s
+step=6/128 loss=0.03444 wall=188.8s
+step=7/128 loss=0.01097 wall=217.8s
+step=8/128 loss=0.00590 wall=247.2s
+step=9/128 loss=0.00321 wall=275.8s
+step=10/128 loss=0.00026 wall=302.4s
+step=11/128 loss=0.00010 wall=330.2s
+step=12/128 loss=0.00007 wall=356.9s
+step=13/128 loss=0.00005 wall=383.8s
+step=14/128 loss=0.00002 wall=410.9s
+step=15/128 loss=0.00004 wall=437.8s
+step=16/128 loss=0.00001 wall=465.2s
+step=17/128 loss=0.00002 wall=498.6s

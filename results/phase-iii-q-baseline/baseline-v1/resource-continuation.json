@@ -1,0 +1,75 @@
+{
+  "active_run_index": 1,
+  "authorization_sha256": "6f9bc1466743a595c08d3294d319d3f394c370ec4fc4f876d23ecc3d596866ba",
+  "behavior_gates": {
+    "all_behavioral_stages": {
+      "max_parent_valid_lost": 0,
+      "max_prohibited_regressions": 0
+    },
+    "development": {
+      "min_family_gain": 1,
+      "min_strict_gain": 1
+    },
+    "finalist_order": [
+      "passes practice and development",
+      "maximum complete-family gain",
+      "maximum strict-comparison gain",
+      "earlier checkpoint step",
+      "smaller measured stored update norm",
+      "lower learning-rate run index"
+    ],
+    "hidden": {
+      "min_family_gain": 1,
+      "min_strict_gain": 2
+    },
+    "lineage_admission": "operator-only, never automatic",
+    "no_finalist": "HOLD; preservation-validation, independent selection and hidden remain unopened",
+    "practice": {
+      "min_family_gain": 0,
+      "min_repeatable_corrections": 1,
+      "min_strict_gain": 1
+    },
+    "preservation-validation": {
+      "max_parent_correct_lost": 0,
+      "max_parent_valid_lost": 0
+    },
+    "selection": {
+      "min_family_gain": 0,
+      "min_strict_gain": 1
+    },
+    "smoke": {
+      "all_adapter_factors_changed": true,
+      "disabled_parent_identical": true,
+      "fresh_reload_predictions_identical": true,
+      "max_final_to_initial_loss_ratio": 0.5,
+      "min_complete_family_gain": 1,
+      "min_correct_rate": 0.9,
+      "min_strict_gain": 1,
+      "zero_init_parent_identical": true
+    }
+  },
+  "bundle_sha256": "2e4fa662145316155607b448ec4d1b94d9b42de7f2a7b8005919df25e3299d86",
+  "checkpoint_steps": [
+    64,
+    128
+  ],
+  "data_and_behavior_gates_changed": false,
+  "failed_attempt_directory": "run-0-retry1",
+  "failed_completed_optimizer_steps": 17,
+  "failed_last_step_sha256": "ba59c1d1aa345d01314195e31f4eeeff8d43124d4404a0e9d546e83e872d4dc3",
+  "failed_process_sha256": "38aaf326cabbf8ffbd7c13191d7f8cfc9163c2e0110c24e054e84f1f92bce5e1",
+  "failed_run_index": 0,
+  "failure": "whole_tree_wall_budget",
+  "independent_populations_opened": false,
+  "learning_rate": 0.0003,
+  "material_manifest_sha256": "42d340dd49a5acbba37cbfdb448a7d644ee6aeaca4ede9a4b1b3a472f54f42db",
+  "new_training_attempt_index0_authorized": false,
+  "optimizer_steps": 128,
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "prospective_no_development_accuracy_seen": true,
+  "protocol_sha256": "7ab914faefc6df8f869e46940f8c5341aa4304a1bc1aad5d00380409d318cca3",
+  "schema": "weightbridge.supervised_baseline.resource_continuation.v1",
+  "scope": "Resource-only restriction to the remaining originally authorized run. Evaluate both of its frozen checkpoints with every original behavioral gate. The aborted arm remains unmeasured and cannot supply a candidate. No claim about learning-rate effects.",
+  "system_interruption": "Windows Modern Standby Idle Timeout; no checkpoint at step 17",
+  "two_rate_comparison_available": false
+}

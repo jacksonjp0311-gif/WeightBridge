@@ -8,6 +8,7 @@ are closed. No frozen training or evaluation source is modified here.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import os
 from pathlib import Path
 import subprocess
@@ -19,6 +20,46 @@ import psutil
 from weightbridge.adaptation.training_policy import TrainingAuthorization
 from weightbridge.core import file_hash, json_dump_atomic
 from .integrity import PARENT, ROOT, read, verify_sources
+
+
+_ES_CONTINUOUS = 0x80000000
+_ES_SYSTEM_REQUIRED = 0x00000001
+
+
+def _set_thread_execution_state(flags):
+    import ctypes
+    from ctypes import wintypes
+
+    request = ctypes.WinDLL("kernel32").SetThreadExecutionState
+    request.argtypes = [wintypes.DWORD]
+    request.restype = wintypes.DWORD
+    return request(flags)
+
+
+@contextmanager
+def _temporary_sleep_request():
+    """Keep the owning Windows thread active for the bounded worker's lifetime."""
+    state = {"api": "SetThreadExecutionState", "requested": os.name == "nt",
+        "succeeded": None, "released": None, "acquisition_error": None, "release_error": None}
+    if state["requested"]:
+        try:
+            state["succeeded"] = bool(_set_thread_execution_state(_ES_CONTINUOUS | _ES_SYSTEM_REQUIRED))
+            if not state["succeeded"]:
+                state["acquisition_error"] = "Windows declined the temporary system-required state"
+        except (OSError, AttributeError) as error:
+            state["succeeded"] = False
+            state["acquisition_error"] = str(error)
+    try:
+        yield state
+    finally:
+        if state["succeeded"]:
+            try:
+                state["released"] = bool(_set_thread_execution_state(_ES_CONTINUOUS))
+                if not state["released"]:
+                    state["release_error"] = "Windows declined to clear the system-required state"
+            except (OSError, AttributeError) as error:
+                state["released"] = False
+                state["release_error"] = str(error)
 
 
 class ObservedTree:
@@ -219,9 +260,23 @@ def run(base, protocol, authorization, bundle, out, *, run_index, smoke_gate):
         "--protocol", str(protocol.resolve()), "--authorization", str(authorization.resolve()),
         "--bundle", str(bundle.resolve()), "--out", str(out.resolve()), "--run-index", str(run_index),
         "--smoke-gate", str(smoke_gate.resolve())]
-    observed = launch_owned_tree(command, log, wall_limit=wall_limit, cpu_limit=cpu_limit, memory_limit=memory_limit)
+    sleep_wall, sleep_cpu = time.perf_counter(), time.process_time()
+    with _temporary_sleep_request() as sleep_request:
+        if sleep_request["requested"] and not sleep_request["succeeded"]:
+            with log.open("x", encoding="utf-8") as stream:
+                stream.write(f"Training launch refused before model load. {sleep_request['acquisition_error']}\n")
+            host_cpu = time.process_time()-sleep_cpu
+            observed = {"exit_code": None, "budget_failure": "windows_sleep_request_refused",
+                "processes": [], "observed_process_count": 0,
+                "resources": {"wall_seconds": time.perf_counter()-sleep_wall, "cpu_seconds": host_cpu,
+                    "host_cpu_seconds": host_cpu, "observed_tree_cpu_seconds": 0., "peak_rss_bytes": 0,
+                    "cpu_accounting_complete_for_observed_processes": False}}
+        else:
+            observed = launch_owned_tree(command, log, wall_limit=wall_limit, cpu_limit=cpu_limit, memory_limit=memory_limit)
     checks = {"worker_exit_success": observed["exit_code"] == 0, "no_tree_budget_refusal": observed["budget_failure"] is None,
-        "complete_observed_process_cpu": observed["resources"]["cpu_accounting_complete_for_observed_processes"]}
+        "complete_observed_process_cpu": observed["resources"]["cpu_accounting_complete_for_observed_processes"],
+        "temporary_sleep_request_acquired_and_released": not sleep_request["requested"] or (
+            sleep_request["succeeded"] is True and sleep_request["released"] is True)}
     completed_path = out/"completed.json"
     completed = read(completed_path) if completed_path.is_file() else None
     if completed:
@@ -248,7 +303,8 @@ def run(base, protocol, authorization, bundle, out, *, run_index, smoke_gate):
     result = {"schema": "weightbridge.supervised_baseline.training_process_tree.v1", **identity,
         "passed": all(checks.values()), "status": "COMPLETED" if all(checks.values()) else "HOLD",
         "checks": checks, "limits": {"wall_seconds": wall_limit, "cpu_seconds": cpu_limit, "memory_bytes": memory_limit},
-        "execution": observed, "training_completed_receipt_sha256": file_hash(completed_path) if completed else None,
+        "execution": observed, "temporary_sleep_request": sleep_request,
+        "training_completed_receipt_sha256": file_hash(completed_path) if completed else None,
         "log_sha256": file_hash(log), "frozen_training_sources_modified": False,
         "production_authority": False, "lineage_authority": False}
     json_dump_atomic(receipt, result)
