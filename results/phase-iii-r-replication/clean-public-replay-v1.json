@@ -1,0 +1,84 @@
+{
+  "artifact_count": 422,
+  "disposition": "PUBLIC_ARCHIVE_REPLAY_PASS",
+  "export_manifest_sha256": "bea238b5c1355a0c82720502d932fc570b061f2a2473cc034ba19018d827f268",
+  "frozen_source_count": 141,
+  "independent_confirmation_raw_replay": false,
+  "model_execution": false,
+  "outcomes": {
+    "rank4": {
+      "independent_stages": {
+        "hidden": null,
+        "preservation-validation": null,
+        "selection": null
+      },
+      "screening": {
+        "candidates": {
+          "run-0-step-0064": {
+            "adapter_sha256": "c7e42ad1673fedda46ada5a42fa81c0511d2a5debf5bda60c89fede39f1ecdcc",
+            "development_passed": false,
+            "eligible": false,
+            "practice_passed": true
+          },
+          "run-0-step-0128": {
+            "adapter_sha256": "4d6e2fdb097caadc4ffb9a8fc8078520e446e5bf15f6ae9581aa97a7cb7722ba",
+            "development_passed": false,
+            "eligible": false,
+            "practice_passed": true
+          }
+        },
+        "complete_assessment": true,
+        "status": "PUBLIC_SCREENING_REPLAY_PASS",
+        "winner": null,
+        "worker_count": 6
+      }
+    },
+    "rank8": {
+      "independent_stages": {
+        "hidden": {
+          "evidence_type": "Published aggregate; private rows not independently replayed here",
+          "passed": true
+        },
+        "preservation-validation": {
+          "evidence_type": "Published aggregate; private rows not independently replayed here",
+          "passed": true
+        },
+        "selection": {
+          "evidence_type": "Published aggregate; private rows not independently replayed here",
+          "passed": true
+        }
+      },
+      "screening": {
+        "candidates": {
+          "run-0-step-0064": {
+            "adapter_sha256": "9fd922a6c692db372fa69e310f235321b462fe827e166486874e506f3ff3aefd",
+            "development_passed": false,
+            "eligible": false,
+            "practice_passed": false
+          },
+          "run-0-step-0128": {
+            "adapter_sha256": "798ed00453e94e20e6dcd69a9899ff9d6acd3d9b584a4494822c444d500ad0c4",
+            "development_passed": true,
+            "eligible": true,
+            "practice_passed": true
+          }
+        },
+        "complete_assessment": true,
+        "status": "PUBLIC_SCREENING_REPLAY_PASS",
+        "winner": "run-0-step-0128",
+        "worker_count": 6
+      }
+    }
+  },
+  "paired_adapter_development": null,
+  "passed": true,
+  "private_roster_access": false,
+  "protocol_sha256": "112fe555cad092d3dc89b42eff188fc865f8830ca01776ad6e611e7f8116cdfd",
+  "resources": {
+    "cpu_seconds": 0.734375,
+    "wall_seconds": 0.7423024000017904
+  },
+  "schema": "weightbridge.phase_iiir.public_replay.v1",
+  "scope": "Public screening and artifact replay only; no new neural learning claim.",
+  "verifier_sha256": "f655c7e95c547dc1e26326cc90b44593315a69385031b525446bf0e3ff04489c"
+}
