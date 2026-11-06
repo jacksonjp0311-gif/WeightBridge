@@ -1,0 +1,142 @@
+{
+  "calibration_sources": {
+    "original-joint": {
+      "passed": true,
+      "protocol_sha256": "cd1c087b05e8a1bb1bbfdb102f1d471fbaad4bc16095e00cd8eae1e8c4d73f3c",
+      "source_files": 151
+    },
+    "sequential": {
+      "passed": true,
+      "protocol_sha256": "3f4f58924530949c7f76d8ecf3ac2d7bce02cea9673cef8ce33be2eb3f9f7613",
+      "source_files": 151
+    }
+  },
+  "clone_method": "Fresh local git clone --no-hardlinks of the published branch; GitHub ls-remote independently matched this exact commit. core.autocrlf=true.",
+  "core_autocrlf": "true",
+  "git_clean_before_and_after": true,
+  "historical_q_r_source_and_evidence_unchanged": true,
+  "model_execution": false,
+  "new_changed_tracked_files_checked": 105,
+  "new_weights_or_private_roster_files_present": false,
+  "passed": true,
+  "private_behavioral_replay": false,
+  "protected_roster_access": false,
+  "public_demo_fixture_check": {
+    "families": 5,
+    "fixture_oracle_validation_only": true,
+    "model_execution": false,
+    "passed": true,
+    "presentations": 40,
+    "rows_sha256": "9cf02001f5e202d76c2befc64f37ba7a23412ce6212d7988bdf21bc09ecdc8f9",
+    "scope": "Explicit public illustrative fixture/oracle check, not model output or a protected roster.",
+    "validator_sha256": "dc862f97a2f5aa1ba8349c7fd77a02c0dcd9425c83f0ade04a886a52fc9ca32a"
+  },
+  "public_validators": {
+    "preflight-v1": {
+      "artifacts": 10,
+      "export_manifest_sha256": "08ddda59f2208a835d394230b8e8a4eedaade9012dc670d8af8bdacb478ff79e",
+      "passed": true,
+      "scope": "Public archive integrity only; no model execution or private replay",
+      "self_test": {
+        "hash_tampering": "PASS",
+        "null_preservation": "PASS",
+        "raw_refusal": "PASS",
+        "redaction": "PASS"
+      },
+      "validator_sha256": "59566f314efdc5b5085ed4532ca8c6f7b972278adcf786056d08703dfa46f52d"
+    },
+    "preregistration-v1": {
+      "artifacts": 6,
+      "export_manifest_sha256": "e9852fa4fef1eb23ce7b0895ce041989fa36fbe6659939b83370921095bb7189",
+      "frozen_study_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+      "model_execution": false,
+      "passed": true,
+      "self_test": {
+        "count_preservation": "PASS",
+        "raw_roster_refusal": "PASS",
+        "redaction": "PASS"
+      },
+      "validator_sha256": "0d61909269b1090699163b9ef7869396b2b74c73496f7b04efa6c1b40354ce3a"
+    },
+    "sequential-development-v1": {
+      "artifacts": 15,
+      "export_manifest_sha256": "cc945812a73ba49b4a8a9bed14a918f9f43f776be954c54573b6ac9d1bc80092",
+      "model_execution": false,
+      "passed": true,
+      "scientific_outcomes_reverified": false,
+      "self_test": {
+        "adapter_merge_endpoint_vs_native_identity": "PASS",
+        "category_token_preservation": "PASS",
+        "diagnostic_counter_tamper_refusal": "PASS",
+        "duplicate_counter_scope_refusal": "PASS",
+        "explicit_worker_binding": "PASS",
+        "family_uncertainty_and_unseen_wording": "PASS",
+        "hash_tamper_refusal": "PASS",
+        "interrupted_scope_unknown": "PASS",
+        "matrix_unknowns": "PASS",
+        "missing_stages_null": "PASS",
+        "model_execution": false,
+        "no_roster_open_for_counters": "PASS",
+        "non_nested_accounting": "PASS",
+        "partial_snapshot": "PASS",
+        "recovery_vs_new_gain": "PASS",
+        "redaction": "PASS",
+        "sensitive_field_refusal": "PASS",
+        "token_share_derivation": "PASS",
+        "write_once": "PASS"
+      },
+      "study_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+      "validator_sha256": "ac4231a22d530dd2e85ec57c2c9d9e0f2cc0d17251dcaac2368114768779afee"
+    }
+  },
+  "published_commit": "3750911dd6f0e368346b98d5c3ea3c97661b269b",
+  "redaction_scope": "Existing validators inspect public aggregate JSON and reject sensitive row/prompt/output/path fields. Explicit public-demo-v1 rows are separately identified illustrative fixtures, never held-out model evidence.",
+  "remote_branch": "dev/phase-iii-s-tool-transfer",
+  "remote_sha_observed": "3750911dd6f0e368346b98d5c3ea3c97661b269b",
+  "resources": {
+    "audit_cpu_seconds": 1.046875,
+    "audit_peak_memory_bytes": null,
+    "audit_wall_seconds": 1.9064112000050955,
+    "clone_cpu_seconds": null,
+    "clone_wall_seconds": 9.9218978,
+    "scope": "Audit host Python clock; git child CPU and network ls-remote cost unmeasured. Clone wall is the tool-observed call duration. No model work."
+  },
+  "schema": "weightbridge.phase_iiis.clean_public_checkout_review.v2",
+  "scientific_outcomes_reverified": false,
+  "scientific_source_files_verified": 162,
+  "source_line_endings": {
+    "crlf_only": 22,
+    "lf_only": 139,
+    "mixed": 1,
+    "scope": "Actual 162 scientific file bytes. Respect .gitattributes; measurement.py preserves its original mixed bytes."
+  },
+  "source_manifest_sha256": "ae205d4caa639c349d7876e7599a0c8f53f5a39af81347a4dbf9fb43b2a28195",
+  "supplemental_packages": {
+    "host_tools": {
+      "files": 5,
+      "manifest_sha256": "17e979b6170a33033ba1523deb370eaa1f26fcc30211cca95358230c9285a2e6",
+      "passed": true,
+      "scope": "Supplemental host package bytes, separate from frozen scientific sources."
+    },
+    "protected-v1": {
+      "files": 4,
+      "manifest_sha256": "8a5b8c2780f87ea1fca8338a497d95e2c08dc4f456f904fca0d69caba60a757c",
+      "passed": true,
+      "scope": "Supplemental host package bytes, separate from frozen scientific sources."
+    },
+    "protected-v2": {
+      "files": 4,
+      "manifest_sha256": "0b8361dfd9e1877067df3fe5591fb9996d173e37e93521b271ee7466ab3dc44d",
+      "passed": true,
+      "scope": "Supplemental host package bytes, separate from frozen scientific sources."
+    },
+    "protected-v3": {
+      "files": 5,
+      "manifest_sha256": "a6cc444bf3562ae9f7004153f355b3c5183c2b1e7004117248eb588c046378f4",
+      "passed": true,
+      "recorded_synthetic_assertions_not_rerun": 26,
+      "scope": "Supplemental host package bytes, separate from frozen scientific sources."
+    }
+  },
+  "unique_source_files_hashed": 162
+}

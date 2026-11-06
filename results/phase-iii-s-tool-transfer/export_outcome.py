@@ -33,6 +33,7 @@ GATE_SCHEMAS = {
     "weightbridge.supervised_lora_merge_receipt.v1",
     "weightbridge.phase_iiis.reconstruction.v1",
     "weightbridge.phase_iiis.merge_verification.v1",
+    "weightbridge.phase_iiis.host_exact_reconstruction.v1",
     "weightbridge.phase_iiis.public_worker_counters.v1",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
@@ -45,7 +46,7 @@ STRING_FIELDS = {"schema", "status", "disposition", "stage", "mode", "arm", "rep
     "error", "type", "name", "label", "task", "tensor", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
     "base_dtype", "merge_math", "relative_norm_scope", "method", "failed_stage", "terminal_kind", "budget_failure"}
 SAFE_DICT_LISTS = {"parameter_changes", "trainable_tensors", "modules", "tensor_receipts",
-    "reference_gates", "required_retention", "required_comparator_retention", "scopes", "selected_workers"}
+    "reference_gates", "required_retention", "required_comparator_retention", "scopes", "selected_workers", "changed_tensors"}
 IDENTITY = ("schema", "status", "protocol_sha256", "authorization_sha256", "bundle_sha256",
     "manifest_sha256", "task_manifest_sha256", "parent_sha256", "checkpoint_sha256", "adapter_sha256",
     "representation_sha256", "initial_factor_sha256", "factor_sha256", "run_index", "mode", "smoke")
@@ -268,8 +269,21 @@ def category_exposure(steps):
             values[metric] = values[base]/denominator[base] if base in values and denominator[base] else None
         tokens = values.get("weighted_supervised_tokens")
         values["measured_mean_token_nll"] = values["weighted_token_nll_sum"]/tokens if tokens and "weighted_token_nll_sum" in values else None
+    for category, values in totals.items():
+        per_step = []
+        for step in steps:
+            observed = step["by_category"]
+            if not all("weighted_supervised_tokens" in v for v in observed.values()):
+                per_step = []
+                break
+            denominator_step = sum(v["weighted_supervised_tokens"] for v in observed.values())
+            if denominator_step <= 0:
+                per_step = []
+                break
+            per_step.append(observed.get(category, {}).get("weighted_supervised_tokens", 0)/denominator_step)
+        values["mean_per_step_objective_weight"] = sum(per_step)/len(per_step) if per_step else None
     return {"measured_steps": len(steps), "categories": totals, "totals": denominator,
-        "scope": "Sums over completed optimizer-step receipts only. Token loss shares need not equal row sampling shares."}
+        "scope": "Exposure fractions sum tokens across completed steps. Mean objective weights average each category's token fraction within each separately normalized effective batch; they need not equal global token fractions. Neither quantity measures its share of parameter-gradient influence."}
 
 
 def legacy_sections(summary):
@@ -465,6 +479,73 @@ def aggregate_worker_counters(specs, out):
     return {"passed": True, "sha256": sha(out.read_bytes()), "selected_worker_count": len(records), "model_execution": False}
 
 
+def publish_snapshot(artifacts, reader, out, expected_manifest, scope):
+    out = Path(out)
+    if out.exists():
+        raise FileExistsError("Outcome snapshots are write-once")
+    for value in artifacts.values():
+        assert_public(value)
+    out.mkdir(parents=True)
+    hashes = {}
+    for name, value in artifacts.items():
+        payload = dumps(value)
+        (out/name).write_bytes(payload)
+        hashes[name] = sha(payload)
+    receipt = {"schema": "weightbridge.phase_iiis.public_outcome.v1", "study_manifest_sha256": expected_manifest,
+        "input_sha256": reader.inputs, "missing_inputs": reader.missing, "artifacts": hashes,
+        "exporter_sha256": sha(Path(__file__).read_bytes()), "raw_rosters_published": False,
+        "private_outputs_published": False, "model_weights_published": False, "model_execution": False,
+        "scope": scope}
+    assert_public(receipt)
+    (out/"export-manifest.json").write_bytes(dumps(receipt))
+    return verify(out)
+
+
+def development_supplement(study, out, arm):
+    """Fixed completed development metadata only; no banks or live training reads."""
+    if arm not in ARMS:
+        raise ValueError("Unknown development arm")
+    reader = Reader(study)
+    manifest = reader.read("manifest.json")
+    protocol = reader.read(f"{arm}/protocol.json")
+    if reader.inputs.get("manifest.json") != MANIFEST_SHA or protocol.get("task_manifest_sha256") != MANIFEST_SHA:
+        raise ValueError("Development supplement differs from frozen study")
+    sources = manifest["source_sha256"]
+    if protocol.get("source_sha256") != sources:
+        raise ValueError("Development supplement protocol source mismatch")
+    specs = {"merge-receipt": ("merge-receipt.json", "weightbridge.supervised_lora_merge_receipt.v1"),
+        "merge-verification": ("merge-receipt.verification.json", "weightbridge.phase_iiis.merge_verification.v1"),
+        "reconstruction-verification": ("reconstruction-merge.verification.json", "weightbridge.phase_iiis.merge_verification.v1"),
+        "exact-reconstruction-gate": ("exact-reconstruction-gate.json", "weightbridge.phase_iiis.host_exact_reconstruction.v1"),
+        "merged-development-gate": ("merged-development-gate.json", "weightbridge.phase_iiis.behavior_gate.v1"),
+        "postdevelopment-completed": ("completed.json", "weightbridge.phase_iiis.private_postdevelopment.v1")}
+    artifacts = {"source-manifest.json": sources}
+    for label, (name, schema) in specs.items():
+        record = reader.read(f"{arm}/post-development-v1/{name}")
+        if (record is None or record.get("schema") != schema
+                or record.get("task_manifest_sha256", MANIFEST_SHA) != MANIFEST_SHA
+                or record.get("protocol_sha256", reader.inputs[f"{arm}/protocol.json"]) != reader.inputs[f"{arm}/protocol.json"]
+                or record.get("source_sha256", sources) != sources):
+            raise ValueError("Missing or mismatched completed development receipt")
+        artifacts[label+".json"] = project(record)
+    review = reader.read(f"{arm}-postdevelopment-integrity-audit-v1.json", root=reader.study.parent,
+        label=f"diagnostics/{arm}-postdevelopment-integrity-audit-v1.json")
+    if (review is None or review.get("schema") != "weightbridge.phase_iiis.closed_postdevelopment_review.v1"
+            or review.get("task_manifest_sha256") != MANIFEST_SHA or review.get("source_sha256") != sources
+            or review.get("protected_data_access_by_reviewer") is not False):
+        raise ValueError("Missing or mismatched closed development integrity review")
+    artifacts["postdevelopment-integrity.json"] = project(review)
+    artifacts["adapter-merged-diagnostic.json"] = adapter_merged_diagnostic(reader.read(
+        f"{arm}-adapter-merged-development-diagnostic-v1.json", root=reader.study.parent,
+        label=f"diagnostics/{arm}-adapter-merged-development-diagnostic-v1.json"),
+        manifest_sha256=MANIFEST_SHA, source_sha256=sources, protocol_sha256=reader.inputs[f"{arm}/protocol.json"], arm=arm)
+    artifacts["stage-availability.json"] = {"independent_qualification": None, "sealed_confirmation": None,
+        "historical_retention": None, "independent_replay": None, "lineage_admission": False,
+        "interpretation": "This supplement reports completed development only. Exact development replay is not independent qualification. No protected stage was opened by this exporter."}
+    return publish_snapshot(artifacts, reader, out, MANIFEST_SHA,
+        "Fixed closed development metadata only; no raw rosters, observations, model tensors or changing training records. Endpoint and exact native equality remain separate. All projections bind original private receipt bytes; public hash verification is not private scientific replay.")
+
+
 def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
     out = Path(out)
     if out.exists():
@@ -537,22 +618,8 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
     artifacts["stage-availability.json"] = {**availability, "lineage_admission": False,
         "interpretation": "No result is inferred from a missing stage. Explicit host gate artifacts, when supplied, are authoritative for measured later stages. This exporter does not grant evaluation or lineage authority."}
     artifacts["results-matrix.json"] = results_tables(artifacts)
-    for value in artifacts.values():
-        assert_public(value)
-    out.mkdir(parents=True)
-    hashes = {}
-    for name, value in artifacts.items():
-        payload = dumps(value)
-        (out/name).write_bytes(payload)
-        hashes[name] = sha(payload)
-    receipt = {"schema": "weightbridge.phase_iiis.public_outcome.v1", "study_manifest_sha256": expected_manifest,
-        "input_sha256": reader.inputs, "missing_inputs": reader.missing, "artifacts": hashes,
-        "exporter_sha256": sha(Path(__file__).read_bytes()), "raw_rosters_published": False,
-        "private_outputs_published": False, "model_weights_published": False, "model_execution": False,
-        "scope": "Redacted aggregate projections with original private receipt byte hashes. Public hash checks do not replace host scientific verification or reproduce private predictions."}
-    assert_public(receipt)
-    (out/"export-manifest.json").write_bytes(dumps(receipt))
-    return verify(out)
+    return publish_snapshot(artifacts, reader, out, expected_manifest,
+        "Redacted aggregate projections with original private receipt byte hashes. Public hash checks do not replace host scientific verification or reproduce private predictions.")
 
 
 def verify(out):
@@ -599,6 +666,11 @@ def self_test():
         "general": {"examples": 1, "supervised_tokens": 1, "weighted_supervised_tokens": 1., "weighted_token_nll_sum": 1.}}}])
     assert exposure["categories"]["tool"]["row_fraction"] == .5
     assert exposure["categories"]["tool"]["supervised_token_fraction"] == .9
+    varying = category_exposure([{"by_category": {"tool": {"weighted_supervised_tokens": 9},
+        "general": {"weighted_supervised_tokens": 1}}}, {"by_category": {
+        "tool": {"weighted_supervised_tokens": 1}, "general": {"weighted_supervised_tokens": 1}}}])
+    assert math.isclose(varying["categories"]["tool"]["weighted_token_fraction"], 10/12)
+    assert math.isclose(varying["categories"]["tool"]["mean_per_step_objective_weight"], .7)
     diagnostic = {"schema": "weightbridge.phase_iiis.adapter_merged_development_diagnostic.v1",
         "arm": "sequential", "step": 128, "task_manifest_sha256": "a"*64, "source_sha256": {},
         "protocol_sha256": "b"*64, "diagnostic_only": True, "additional_acceptance_gate": False,
@@ -734,6 +806,7 @@ if __name__ == "__main__":
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--worker-specs", type=Path, help="Private JSON list of explicitly authorized completed WorkerSpecs and expected hashes")
     parser.add_argument("--counter-out", type=Path, help="New aggregate-only receipt, with no paths or raw observations")
+    parser.add_argument("--development-supplement", choices=ARMS, help="Publish only the selected arm's fixed closed stored-development metadata")
     args = parser.parse_args()
     if args.self_test:
         print(json.dumps(self_test()))
@@ -741,6 +814,8 @@ if __name__ == "__main__":
         print(json.dumps(aggregate_worker_counters(json.loads(args.worker_specs.read_bytes()), args.counter_out)))
     elif args.verify:
         print(json.dumps(verify(args.verify)))
+    elif args.development_supplement and args.study and args.out:
+        print(json.dumps(development_supplement(args.study, args.out, args.development_supplement)))
     elif args.study and args.ledger and args.out:
         gates = [value.split("=", 1) for value in args.gate]
         if any(len(pair) != 2 for pair in gates):

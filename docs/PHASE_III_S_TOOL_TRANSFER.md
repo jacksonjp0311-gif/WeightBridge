@@ -2,10 +2,11 @@
 
 **Execution milestone: formal populations, protocols and 162 source files remain
 frozen. Both parent development baselines and the sequential disposable smoke
-have completed. The sequential main run completed, and its fixed step-128 adapter
-passed development: all 128 tool responses and 208 legacy responses were correct.
-The original-parent main run, merged-model measurements and all protected stages
-remain unmeasured. No independently qualified Phase S improvement is reported.** The
+have completed. The sequential step-128 adapter and its stored BF16 merge passed
+development: all 128 tool responses and 208 legacy responses were correct. Exact
+stored reconstruction, native development replay and actual-parent rollback
+also passed. Original-parent main training is running; all protected stages
+remain unopened. No independently qualified Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -212,10 +213,10 @@ factors, optimizer, schedule and random state rather than these learned factors.
 
 | Candidate stage | Sequential arm | Original-parent joint arm |
 |---|---|---|
-| Main training | COMPLETED | NOT STARTED |
+| Main training | COMPLETED | RUNNING |
 | Step-64 diagnostic development | PASS, diagnostic only | UNMEASURED |
 | Fixed step-128 development | DEVELOPMENT_QUALIFIED | UNMEASURED |
-| Merged development and exact reconstruction | UNMEASURED | UNMEASURED |
+| Merged development and exact reconstruction | PASS | UNMEASURED |
 | Old R locked battery | UNOPENED | UNOPENED |
 | Independent qualification | UNOPENED | UNOPENED |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
@@ -293,14 +294,18 @@ These identify saved adapters, not merged checkpoints.
 These are numerical merge previews computed from the trained factors. They do
 not establish a materialized merged checkpoint or identical BF16 generations.
 The relative denominator is the full adapted attention/MLP matrices, whose
-parent norm is 315.2841010366, rather than the entire model. Cumulative
-original-to-final norms and stored-model behavior remain unmeasured.
+parent norm is 315.2841010366, rather than the entire model. The subsequent
+stored-checkpoint measurements below now test these previews directly.
 
-Observed supervision matches the frozen exposure. Tool tokens contribute
-69.8465% of the token-normalized objective's exposure, negative-decimal tokens
-16.6736%, and general replay 13.4799%, despite a 50/25/25 row mixture. Category
-token counts and accumulated loss sums are published without changing weights
-after the result.
+Observed supervision matches the frozen exposure. Of 28,932 total supervised
+tokens, tools supply 20,208 (69.8465%), negative decimals 4,824 (16.6736%), and
+general replay 3,900 (13.4799%), despite a 50/25/25 row mixture. These are global
+token-exposure fractions. The loss is normalized separately within every
+effective batch. Averaging those 128 per-step objective coefficients instead
+gives 68.6525% tools, 17.3030% negative decimals and 14.0445% general replay.
+The two quantities differ because batches have different lengths and mixtures;
+neither is an attribution of parameter-gradient influence. Both are computed
+from the same observed step logs, without post-result reweighting.
 
 | Additional enclosing model work | Wall seconds | Observed CPU seconds | Conservative peak bytes |
 |---|---:|---:|---:|
@@ -322,8 +327,88 @@ field is null because that version looked at a different metadata location;
 both actual step gates and their source commitments are present. Numerical
 preview tensor hashes are retained, with tensor names supplied by the separate
 inventory. These report-only omissions are corrected for subsequent exports;
-this snapshot is preserved unchanged. Merged-model and independent fields
-remain null. Original-parent joint training has not yet run.
+this snapshot is preserved unchanged. Its merged-model and independent fields
+remain null because those measurements had not occurred at that snapshot.
+Original-parent joint training had not started then.
+
+## Sequential stored development and exact reconstruction
+
+The isolated BF16 checkpoint now has identity
+`ce2ddca3dfdf0438aef401a33200a03d08b95c1988ee5c131da59a4a95036838`.
+It was merged from the actual immutable R8 parent and the fixed step-128
+adapter, then independently reconstructed to the same checkpoint identity.
+Stored development again reached 128/128 strict tool actions, 16/16 complete
+tool families, 128/128 negative-decimal responses and 80/80 general controls,
+with zero prohibited development losses. No independent bank supplied these
+decisions.
+
+| Measured stored change | R8 to S increment | Original to final S checkpoint |
+|---|---:|---:|
+| Changed stored entries | 420,829,239 | 448,916,686 |
+| Changed weight tensors | 186 | 186 |
+| Absolute stored norm | 3.6782808892 | 5.5501063556 |
+| Reference norm | 315.2841010366 | 941.2584608475 |
+| Relative stored norm | 0.0116665600 | 0.0058964743 |
+| Reference scope | Full adapted attention/MLP matrices | All stored floating tensors |
+
+The original-to-final comparison inspected 873,438,784 stored entries; the norm
+denominator includes floating tensors only. It is not interchangeable with the
+incremental adapted-matrix denominator. The actual merged delta matches its
+preview; its rounding residual relative to the unrounded S update is
+0.5157644719. The original and R8 checkpoint identities remain unchanged.
+
+Recorded provenance binds the prior original-to-R8 BF16 merge and the new
+R8-to-S BF16 merge. The fresh S reconstruction starts from that verified R8
+checkpoint and reproduces the same final bytes. This preserves the two distinct
+rounding stages; it does not sum two deltas and round once. The cumulative
+original-to-S transformation is not described as one rank-eight adapter.
+
+Adapter and merged execution must still be distinguished:
+
+| Adapter versus merged development | Tools | Legacy decimal/general |
+|---|---:|---:|
+| Presentations | 128 | 208 |
+| Identical endpoint correctness/validity/completion flags | 128 | 208 |
+| Identical complete native token/text streams | 128 | 184 |
+| Different complete native streams | 0 | 24 |
+| Changed stop reasons | 0 | 0 |
+
+Thus merged endpoint success does not mean every unrestricted continuation
+matches the FP32 adapter. All legacy streams still reached the token budget;
+all tools ended naturally. The 24 differing legacy continuations are preserved
+as a numerical-execution distinction, not hidden by first-line accuracy.
+
+By contrast, exact replay compares each representation with its **own** recorded
+outputs. The reconstructed stored candidate reproduced all 336 of its merged
+development streams exactly. A fresh process using the actual R8 parent
+reproduced all 336 parent streams exactly. These four task/representation replay
+checks cover 672 responses, including incorrect parent answers and their full
+continuations. They verify persistence and rollback on development; they do not
+establish generalization or replace later independent replay.
+
+The closed postdevelopment audit passed all recorded identity, source,
+reconstruction, physical-base and no-promotion checks. It binds eight enclosing
+model workers, which used 1,446.256 wall seconds and 7,435.719 observed CPU
+seconds, with maximum conservative process-tree peak 3,017,097,216 bytes.
+These are additional postdevelopment scopes, not nested measurements to add a
+second time. Scientific review and publication consumed no additional model
+calls.
+
+The new write-once [stored-development supplement](../results/phase-iii-s-tool-transfer/sequential-stored-development-v1/export-manifest.json)
+contains ten redacted metadata artifacts: numerical merge receipts, reconstruction
+and development gates, the adapter/merged diagnostic and the closed integrity
+audit. Its adapter/merged input commitment is
+`8c5ab55680af8c4ba300ad93115f905c9375c9486848b0ca56b55dce7620ef56`;
+the closed-audit input commitment is
+`8c07a2c43698fd9f7e6b9d112898d733a1e7fffe47f7b8a120751439321df100`.
+The previous adapter-only snapshot is unchanged. No raw responses, private
+rosters, model weights or adapter tensors are published in either snapshot.
+
+The sequential disposition is **FINALIST_LOCKED_PENDING_INDEPENDENT**, not a
+verified scientific pass. The formal requirement for qualifying semantic
+corrections in two real action types is still unresolved. Original-parent
+training is running, and the old R battery, independent qualification and sealed
+confirmation remain unopened at this milestone.
 
 ## Training implementation and frozen population
 
@@ -339,6 +424,13 @@ factor entries over frozen BF16 parents. Embeddings, output head, tokenizer and
 vision components remain outside the adapter. The fresh adapter is initialized
 from seed 606118; matched initialization and row-order hashes must be verified.
 The sequential model must not attach the original R adapter a second time.
+
+The recorded main-run inventories now confirm equal ordered module names,
+tensor shapes, dtypes and mathematical roles across all 186 adapted regions,
+along with identical fresh-factor initialization, data-order and tokenization
+hashes. All 186 parent-module source hashes differ, as intended: the sequential
+arm starts from R's changed weights, while the control starts from the original
+weights. Matching architecture and initialization does not mean matching parents.
 
 The fixed recipe is AdamW at 3e-4, betas (0.9, 0.999), epsilon 1e-8, weight decay
 0.01, clipping 1.0, microbatch four and effective batch sixteen. One epoch gives
@@ -511,6 +603,8 @@ python results/phase-iii-s-tool-transfer/export_preregistration.py `
   --verify results/phase-iii-s-tool-transfer/preregistration-v1
 python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/sequential-development-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/sequential-stored-development-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction
