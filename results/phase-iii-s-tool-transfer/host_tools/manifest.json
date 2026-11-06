@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "model_efficacy": null,
+    "positive_path_execution": null,
+    "preaccess_and_path_fixtures_passed": 5,
+    "syntax_compile": true
+  },
+  "files": {
+    "README.md": {
+      "bytes": 5251,
+      "sha256": "f527ac56e416e6ce34818481c1bc82d00d6a28e8c47aa3ab3f72834ca65d8bb8"
+    },
+    "bridge-preaccess-tests.json": {
+      "bytes": 851,
+      "sha256": "ad565bb929e71afb55f46106bbb5ac96fd512e69c84372b3702a12ed6a6cc3ca"
+    },
+    "host_stage_bridge_v1.py": {
+      "bytes": 18767,
+      "sha256": "258ee4e5b20992895588f072f6e0d42659e73cb847b06398f07e6104d5ddf67c"
+    },
+    "post_development_host_v1.py": {
+      "bytes": 16404,
+      "sha256": "2f8efb976c16b6b93a07894bbc446fe3eb6fb81b87a23aea3c085b7f24f5bde5"
+    },
+    "postdevelopment-preaccess-tests.json": {
+      "bytes": 846,
+      "sha256": "7b9c302b242b04ed1743dc0d2229612abe0318a8d06a18da3078517704c34011"
+    }
+  },
+  "frozen_task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+  "positive_model_or_protected_path_executed_by_reviewer": false,
+  "publication_includes_private_requests": false,
+  "publication_includes_private_seeds_rosters_or_outputs": false,
+  "publication_includes_weights_or_adapters": false,
+  "schema": "weightbridge.phase_iiis.supplemental_host_source_manifest.v1",
+  "scientific_source_manifest_files": 162,
+  "scope": "Supplemental private-host orchestration, outside the frozen 162-file scientific manifest. Sources copied byte-for-byte before positive post-development/protected execution."
+}

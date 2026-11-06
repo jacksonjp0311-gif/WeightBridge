@@ -1,0 +1,23 @@
+{
+  "schema": "weightbridge.phase_iiis.host_bridge_preaccess_review.v1",
+  "passed": true,
+  "bridge_sha256": "258ee4e5b20992895588f072f6e0d42659e73cb847b06398f07e6104d5ddf67c",
+  "tests": {
+    "missing-lock-blocks-before-roster": {
+      "passed": true,
+      "exit_code": 1,
+      "protected_rows_opened": false
+    },
+    "source-hash-mismatch-refused": {
+      "passed": true,
+      "exit_code": 1,
+      "protected_rows_opened": false
+    }
+  },
+  "syntax_compile_passed": true,
+  "frozen_source_files_verified": 162,
+  "model_execution": false,
+  "protected_roster_access": false,
+  "limitations": "Real reconstruction/historical receipt checks remain unexecuted until actual qualified artifacts and both arm locks exist. These two negative tests do not establish model efficacy.",
+  "wall_seconds": 1.4707327000214718
+}

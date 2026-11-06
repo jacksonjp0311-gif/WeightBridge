@@ -1,0 +1,19 @@
+{
+  "schema": "weightbridge.phase_iiis.private_postdevelopment_review.v1",
+  "passed": true,
+  "driver_sha256": "2f8efb976c16b6b93a07894bbc446fe3eb6fb81b87a23aea3c085b7f24f5bde5",
+  "bridge_sha256": "258ee4e5b20992895588f072f6e0d42659e73cb847b06398f07e6104d5ddf67c",
+  "tests": {
+    "physical_reconstructed_path_accept": true,
+    "different_physical_base_refused": true,
+    "incomplete_main_blocks_before_checkpoint": true
+  },
+  "syntax_compile_passed": true,
+  "scientific_sources_verified": 162,
+  "scientific_source_edits": false,
+  "model_execution": false,
+  "protected_data_access": false,
+  "wall_seconds": 0.23436590004712343,
+  "cpu_seconds": 0.234375,
+  "limitations": "Only syntax and preaccess/path-binding fixtures executed. Positive model stages remain unexecuted and require actual completed development."
+}
