@@ -356,10 +356,15 @@ def results_tables(artifacts):
         "interpretation": "Merged-model rows remain null until a merged-development receipt exists. Adapter observations cannot fill stored-model rows. Recovery, new semantic corrections, family uncertainty and retention use the host's separate counters; repeated comparator losses are not summed into unique harms."}
 
 
-def ledger_summary(reader, ledger):
+def ledger_summary(reader, ledger, *, defer_postdevelopment=()):
     ledger = Path(ledger)
-    scopes, unfinished = [], []
+    scopes, unfinished, omitted = [], [], set()
+    def deferred(name):
+        return any(name.startswith(arm + '-post-') for arm in defer_postdevelopment)
     for path in sorted(ledger.glob("*.receipt.json")):
+        if deferred(path.name[:-13]):
+            omitted.add(path.name[:-13])
+            continue
         record = reader.read(path.name, root=ledger, label="execution/"+path.name)
         if record.get("schema") != "weightbridge.phase_iiis.execution.v1" or record.get("name") != path.name[:-13]:
             raise ValueError("Unknown or mismatched outer execution receipt")
@@ -371,6 +376,9 @@ def ledger_summary(reader, ledger):
             "log_sha256": record.get("log_sha256"), "error": selected(record.get("error"), ("type",))})
     for path in sorted(ledger.glob("*.started.json")):
         name = path.name[:-13]
+        if deferred(name):
+            omitted.add(name)
+            continue
         if not (ledger/(name+".receipt.json")).exists():
             reader.read(path.name, root=ledger, label="execution/"+path.name)
             unfinished.append(name)
@@ -380,8 +388,10 @@ def ledger_summary(reader, ledger):
         totals = {"wall_seconds": sum(s["resources"]["wall_seconds"] for s in scopes),
             "cpu_seconds": sum(s["resources"]["cpu_seconds"] for s in scopes),
             "peak_rss_bytes": max(s["resources"]["peak_rss_bytes"] for s in scopes)}
-    return {"scopes": scopes, "unfinished_scope_names": unfinished, "complete_accounting": complete,
-        "completed_scope_totals": totals, "all_recorded_scope_totals": totals if complete else None,
+    return {"scopes": scopes, "unfinished_scope_names": unfinished, "complete_accounting": complete and not defer_postdevelopment,
+        "completed_scope_totals": totals, "all_recorded_scope_totals": totals if complete and not defer_postdevelopment else None,
+        "deferred_postdevelopment_arms": list(defer_postdevelopment), "omitted_scope_names": sorted(omitted),
+        "deferred_scope_cost": None,
         "study_execution_complete": None,
         "accounting": "Disjoint owned worker scopes, including monitor cost; inner training and evaluation costs are not added again. Peak is the maximum conservative process-tree measurement, not a sum across stages."}
 
@@ -546,10 +556,12 @@ def development_supplement(study, out, arm):
         "Fixed closed development metadata only; no raw rosters, observations, model tensors or changing training records. Endpoint and exact native equality remain separate. All projections bind original private receipt bytes; public hash verification is not private scientific replay.")
 
 
-def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
+def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA, defer_postdevelopment=()):
     out = Path(out)
     if out.exists():
         raise FileExistsError("Outcome snapshots are write-once")
+    if len(set(defer_postdevelopment)) != len(defer_postdevelopment) or any(arm not in ARMS for arm in defer_postdevelopment):
+        raise ValueError("Unknown or repeated deferred postdevelopment arm")
     reader = Reader(study)
     frozen = reader.read("manifest.json")
     if frozen is None or reader.inputs["manifest.json"] != expected_manifest:
@@ -581,7 +593,7 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
             "smoke_gate": project(reader.read(f"{arm}/smoke-gate.json")),
             "main_training_validation": project(reader.read(f"{arm}/main-training-validation.json")),
             "assessment": project(reader.read(f"{arm}/assessment/assessment.json")),
-            "adapter_merged_diagnostic": adapter_merged_diagnostic(reader.read(
+            "adapter_merged_diagnostic": None if arm in defer_postdevelopment else adapter_merged_diagnostic(reader.read(
                 f"{arm}-adapter-merged-development-diagnostic-v1.json", root=reader.study.parent,
                 label=f"diagnostics/{arm}-adapter-merged-development-diagnostic-v1.json"),
                 manifest_sha256=expected_manifest, source_sha256=frozen["source_sha256"],
@@ -614,7 +626,7 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
                 availability[stage] = availability[stage] or {}
                 availability[stage][value["arm"]] = {"passed": value.get("passed"),
                     "disposition": value.get("disposition"), "public_gate_artifact": f"gate-{label}.json"}
-    artifacts["execution.json"] = ledger_summary(reader, ledger)
+    artifacts["execution.json"] = ledger_summary(reader, ledger, defer_postdevelopment=defer_postdevelopment)
     artifacts["stage-availability.json"] = {**availability, "lineage_admission": False,
         "interpretation": "No result is inferred from a missing stage. Explicit host gate artifacts, when supplied, are authoritative for measured later stages. This exporter does not grant evaluation or lineage authority."}
     artifacts["results-matrix.json"] = results_tables(artifacts)
@@ -735,6 +747,17 @@ def self_test():
         assert all(v is None for v in matrix["development_stored_models"].values())
         exposure = matrix["token_exposure"]["sequential"]["main"]
         assert exposure["categories"]["tool"]["supervised_token_fraction"] == 1.
+        # An active deferred branch is not read, even if its files are incomplete.
+        (ledger/"original-joint-post-merge.receipt.json").write_bytes(b"INCOMPLETE")
+        (ledger/"original-joint-post-merge.started.json").write_bytes(b"INCOMPLETE")
+        (root/"original-joint-adapter-merged-development-diagnostic-v1.json").write_bytes(b"INCOMPLETE")
+        deferred_out = root/"deferred-public"
+        assert export(study, ledger, deferred_out, expected_manifest=expected,
+            defer_postdevelopment=("original-joint",))["passed"]
+        deferred = json.loads((deferred_out/"execution.json").read_bytes())
+        assert deferred["omitted_scope_names"] == ["original-joint-post-merge"]
+        assert deferred["all_recorded_scope_totals"] is None and deferred["deferred_scope_cost"] is None
+        assert json.loads((deferred_out/"original-joint-metadata.json").read_bytes())["adapter_merged_diagnostic"] is None
         # Counter collection deliberately references a nonexistent roster.
         # Its absence proves the reporter does not open a bank to count work.
         protocol_path, authorization_path = root/"counter-protocol.json", root/"counter-auth.json"
@@ -793,7 +816,8 @@ def self_test():
         "matrix_unknowns": "PASS", "token_share_derivation": "PASS", "explicit_worker_binding": "PASS",
         "recovery_vs_new_gain": "PASS", "family_uncertainty_and_unseen_wording": "PASS",
         "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS",
-        "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS", "model_execution": False}
+        "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS",
+        "active_postdevelopment_exclusion": "PASS", "model_execution": False}
 
 
 if __name__ == "__main__":
@@ -807,6 +831,7 @@ if __name__ == "__main__":
     parser.add_argument("--worker-specs", type=Path, help="Private JSON list of explicitly authorized completed WorkerSpecs and expected hashes")
     parser.add_argument("--counter-out", type=Path, help="New aggregate-only receipt, with no paths or raw observations")
     parser.add_argument("--development-supplement", choices=ARMS, help="Publish only the selected arm's fixed closed stored-development metadata")
+    parser.add_argument("--defer-postdevelopment", action="append", choices=ARMS, default=[], help="Leave an active arm's postdevelopment metadata and costs unmeasured in this immutable snapshot")
     args = parser.parse_args()
     if args.self_test:
         print(json.dumps(self_test()))
@@ -820,6 +845,6 @@ if __name__ == "__main__":
         gates = [value.split("=", 1) for value in args.gate]
         if any(len(pair) != 2 for pair in gates):
             parser.error("Each --gate must be LABEL=RELATIVE.json")
-        print(json.dumps(export(args.study, args.ledger, args.out, gates)))
+        print(json.dumps(export(args.study, args.ledger, args.out, gates, defer_postdevelopment=args.defer_postdevelopment)))
     else:
         parser.error("Choose --self-test, --verify, or --study/--ledger/--out")

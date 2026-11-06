@@ -1,0 +1,357 @@
+{
+  "original": {
+    "decimal": {
+      "adapter_sha256": null,
+      "authorization_sha256": "a0c5d3678a1b7d8cd258f916a64bf9cb60e152aaee8864bfaee0c5936766ab7b",
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "decoding_work": {
+        "resources": {
+          "batched_decode_steps": 416,
+          "cpu_seconds": 636.34375,
+          "generate_batches": 26,
+          "generated_examples": 208,
+          "padded_prompt_token_positions": 15856,
+          "peak_rss_bytes": 2580856832,
+          "wall_seconds": 108.43271179997828
+        }
+      },
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+      "representation": "stored_checkpoint",
+      "resources": {
+        "cpu_seconds": 648.96875,
+        "peak_rss_bytes": 2580856832,
+        "wall_seconds": 120.45281899999827
+      },
+      "schema": "weightbridge.phase_iiis.evaluation.v1",
+      "summary": {
+        "comparisons": 32,
+        "complete_families": 0,
+        "complete_family_ids_count": 0,
+        "completed_first_lines": 208,
+        "correct": 99,
+        "decode_termination": {
+          "token_budget": 208
+        },
+        "families": 16,
+        "groups": {
+          "copy": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "integer-add": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "integer-successor": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "mixed-sign": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "negative-close": {
+            "correct": 1,
+            "presentations": 64,
+            "valid": 64
+          },
+          "negative-far": {
+            "correct": 18,
+            "presentations": 64,
+            "valid": 64
+          },
+          "positive-far": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          }
+        },
+        "presentations": 208,
+        "strict_comparison_ids_count": 0,
+        "strict_comparisons": 0,
+        "valid_completed_first_lines": 208
+      },
+      "task": "decimal",
+      "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+    },
+    "tool": {
+      "adapter_sha256": null,
+      "authorization_sha256": "ab153c7b9c532f4b5e9ee64c7302f157abccfcb6c2fcb483927e633a887b1b30",
+      "checkpoint_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "decoding_work": {
+        "resources": {
+          "batched_decode_steps": 438,
+          "cpu_seconds": 1152.484375,
+          "generate_batches": 16,
+          "generated_examples": 128,
+          "padded_prompt_token_positions": 46480,
+          "peak_rss_bytes": 3007819776,
+          "wall_seconds": 196.4939550999552
+        }
+      },
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+      "representation": "stored_checkpoint",
+      "resources": {
+        "cpu_seconds": 1164.734375,
+        "peak_rss_bytes": 3007819776,
+        "wall_seconds": 208.5000452999957
+      },
+      "schema": "weightbridge.phase_iiis.evaluation.v1",
+      "summary": {
+        "arguments_correct": 24,
+        "complete_families": 0,
+        "complete_family_ids_count": 0,
+        "completed": 128,
+        "decode_termination": {
+          "eos": 128
+        },
+        "families": 16,
+        "presentations": 128,
+        "schema_valid": 99,
+        "schema_valid_without_completion": 99,
+        "semantic_correct": 24,
+        "simulator_success": 24,
+        "strata": {
+          "clarify": {
+            "presentations": 28,
+            "schema_valid": 18,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "no_action": {
+            "presentations": 24,
+            "schema_valid": 23,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "read_file": {
+            "presentations": 24,
+            "schema_valid": 24,
+            "semantic_correct": 24,
+            "strict_correct": 24
+          },
+          "run_tests": {
+            "presentations": 24,
+            "schema_valid": 6,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "search_files": {
+            "presentations": 28,
+            "schema_valid": 28,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          }
+        },
+        "strict_accuracy": 0.1875,
+        "strict_correct": 24,
+        "tool_correct": 24,
+        "whole_json_valid": 113,
+        "wording_familiarity": {
+          "unseen": {
+            "complete_families": 0,
+            "families": 16,
+            "presentations": 128,
+            "schema_valid": 99,
+            "semantic_correct": 24,
+            "strict_correct": 24
+          }
+        },
+        "wording_groups": {
+          "development": {
+            "presentations": 128,
+            "schema_valid": 99,
+            "semantic_correct": 24,
+            "strict_correct": 24
+          }
+        }
+      },
+      "task": "tool",
+      "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+    }
+  },
+  "r8": {
+    "decimal": {
+      "adapter_sha256": null,
+      "authorization_sha256": "e0056795b2cec1d4c5f154c47358cfa3daae8eacd1b7501c1b2d474ffb18a68d",
+      "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "decoding_work": {
+        "resources": {
+          "batched_decode_steps": 416,
+          "cpu_seconds": 641.21875,
+          "generate_batches": 26,
+          "generated_examples": 208,
+          "padded_prompt_token_positions": 15856,
+          "peak_rss_bytes": 2586378240,
+          "wall_seconds": 108.98447450000094
+        }
+      },
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+      "representation": "stored_checkpoint",
+      "resources": {
+        "cpu_seconds": 653.9375,
+        "peak_rss_bytes": 2586378240,
+        "wall_seconds": 121.02980780001963
+      },
+      "schema": "weightbridge.phase_iiis.evaluation.v1",
+      "summary": {
+        "comparisons": 32,
+        "complete_families": 16,
+        "complete_family_ids_count": 16,
+        "completed_first_lines": 208,
+        "correct": 208,
+        "decode_termination": {
+          "token_budget": 208
+        },
+        "families": 16,
+        "groups": {
+          "copy": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "integer-add": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "integer-successor": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "mixed-sign": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          },
+          "negative-close": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "negative-far": {
+            "correct": 64,
+            "presentations": 64,
+            "valid": 64
+          },
+          "positive-far": {
+            "correct": 16,
+            "presentations": 16,
+            "valid": 16
+          }
+        },
+        "presentations": 208,
+        "strict_comparison_ids_count": 32,
+        "strict_comparisons": 32,
+        "valid_completed_first_lines": 208
+      },
+      "task": "decimal",
+      "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+    },
+    "tool": {
+      "adapter_sha256": null,
+      "authorization_sha256": "1294ab44d9a4fd3d594746aff80ef12c12ee423174fa44b9e3de8a9912337c9c",
+      "checkpoint_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "decoding_work": {
+        "resources": {
+          "batched_decode_steps": 1325,
+          "cpu_seconds": 2165.109375,
+          "generate_batches": 16,
+          "generated_examples": 128,
+          "padded_prompt_token_positions": 46480,
+          "peak_rss_bytes": 3002433536,
+          "wall_seconds": 367.66558680002345
+        }
+      },
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+      "representation": "stored_checkpoint",
+      "resources": {
+        "cpu_seconds": 2177.703125,
+        "peak_rss_bytes": 3002433536,
+        "wall_seconds": 379.84485950000817
+      },
+      "schema": "weightbridge.phase_iiis.evaluation.v1",
+      "summary": {
+        "arguments_correct": 23,
+        "complete_families": 0,
+        "complete_family_ids_count": 0,
+        "completed": 65,
+        "decode_termination": {
+          "eos": 65,
+          "token_budget": 63
+        },
+        "families": 16,
+        "presentations": 128,
+        "schema_valid": 45,
+        "schema_valid_without_completion": 45,
+        "semantic_correct": 23,
+        "simulator_success": 23,
+        "strata": {
+          "clarify": {
+            "presentations": 28,
+            "schema_valid": 4,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "no_action": {
+            "presentations": 24,
+            "schema_valid": 9,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "read_file": {
+            "presentations": 24,
+            "schema_valid": 23,
+            "semantic_correct": 23,
+            "strict_correct": 23
+          },
+          "run_tests": {
+            "presentations": 24,
+            "schema_valid": 0,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          },
+          "search_files": {
+            "presentations": 28,
+            "schema_valid": 9,
+            "semantic_correct": 0,
+            "strict_correct": 0
+          }
+        },
+        "strict_accuracy": 0.1796875,
+        "strict_correct": 23,
+        "tool_correct": 23,
+        "whole_json_valid": 65,
+        "wording_familiarity": {
+          "unseen": {
+            "complete_families": 0,
+            "families": 16,
+            "presentations": 128,
+            "schema_valid": 45,
+            "semantic_correct": 23,
+            "strict_correct": 23
+          }
+        },
+        "wording_groups": {
+          "development": {
+            "presentations": 128,
+            "schema_valid": 45,
+            "semantic_correct": 23,
+            "strict_correct": 23
+          }
+        }
+      },
+      "task": "tool",
+      "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+    }
+  }
+}

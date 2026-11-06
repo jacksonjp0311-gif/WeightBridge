@@ -1,0 +1,747 @@
+{
+  "accounting": "Disjoint owned worker scopes, including monitor cost; inner training and evaluation costs are not added again. Peak is the maximum conservative process-tree measurement, not a sum across stages.",
+  "all_recorded_scope_totals": null,
+  "complete_accounting": false,
+  "completed_scope_totals": {
+    "cpu_seconds": 169788.796875,
+    "peak_rss_bytes": 16580399104,
+    "wall_seconds": 27970.742028200068
+  },
+  "deferred_postdevelopment_arms": [
+    "original-joint"
+  ],
+  "deferred_scope_cost": null,
+  "omitted_scope_names": [
+    "original-joint-post-merge"
+  ],
+  "scopes": [
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "ac04773e1c7c10d34bddd7bc0a6f0b615202faf94b2c7ded1f48c48d592fec6c",
+      "name": "calibration-original-decimal",
+      "passed": true,
+      "receipt_sha256": "50775ee7f298d82ef49286531cf15e3c38c25bb6cabef699660272bcd0b1d74a",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 256.203125,
+        "host_cpu_seconds": 21.1875,
+        "observed_tree_cpu_seconds": 235.015625,
+        "peak_rss_bytes": 2582654976,
+        "wall_seconds": 53.60916680004448
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "a043e6678d1e14d42caadf6ff1dc95bece214487315b330268891856dcb5b677",
+      "name": "calibration-original-tool",
+      "passed": true,
+      "receipt_sha256": "54e460191ac922ec485900186af34377f599fbae50b39761c686cd2e2e80f065",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 765.921875,
+        "host_cpu_seconds": 55.234375,
+        "observed_tree_cpu_seconds": 710.6875,
+        "peak_rss_bytes": 2983460864,
+        "wall_seconds": 135.03489900002023
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "fa38acdea450e8f36c2881f498e487dde747b29c3c93fd1d5512567426d1f0df",
+      "name": "calibration-sequential-decimal",
+      "passed": true,
+      "receipt_sha256": "67f423871f37496857e140fce5152031908a3f9a8d33a5aeaf2b87501b7752e1",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 257.484375,
+        "host_cpu_seconds": 21.703125,
+        "observed_tree_cpu_seconds": 235.78125,
+        "peak_rss_bytes": 2589024256,
+        "wall_seconds": 53.85991500003729
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "13aff01558b05d2f67a85424a0f3cb4b36b833b77228501b16f0f012f5af5665",
+      "name": "calibration-sequential-tool",
+      "passed": true,
+      "receipt_sha256": "a6cd3e1d899cfd4ac8a44cabdee5a981a87a846f8329458a6640fced6d18e7ad",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1587.15625,
+        "host_cpu_seconds": 104.625,
+        "observed_tree_cpu_seconds": 1482.53125,
+        "peak_rss_bytes": 2990567424,
+        "wall_seconds": 266.36953530000756
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "31775364c3404233bc4ca60e16b4140f394a0e012e97d9e859e28675aef198b1",
+      "name": "development-parent-original-decimal",
+      "passed": true,
+      "receipt_sha256": "836899831d3cb15c4b8bf685b682c6c0b8d1f753ea62fd527166e93f9d715fb3",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 701.5,
+        "host_cpu_seconds": 48.265625,
+        "observed_tree_cpu_seconds": 653.234375,
+        "peak_rss_bytes": 2593595392,
+        "wall_seconds": 125.00343659997452
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "759f26ebc06f6939d944610c9b81f036500c55930e45dcc25918115cdb7ef8b8",
+      "name": "development-parent-original-tool",
+      "passed": true,
+      "receipt_sha256": "218724949ee64f39dbdc74a8caa0d0af9d57a93f276942ff2e1906dfd9d6f88d",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1255.375,
+        "host_cpu_seconds": 86.3125,
+        "observed_tree_cpu_seconds": 1169.0625,
+        "peak_rss_bytes": 3020677120,
+        "wall_seconds": 213.1253061000025
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "d381e821ea9f984a798199e3d6eef9cc2b05ce5f9107136b3b7a4f4a48a4d79c",
+      "name": "development-parent-r8-decimal",
+      "passed": true,
+      "receipt_sha256": "8845b9acf46874cdc59c27a627a7d14c580db51b0e8108f5b95d46c4ff250c89",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 707.40625,
+        "host_cpu_seconds": 49.1875,
+        "observed_tree_cpu_seconds": 658.21875,
+        "peak_rss_bytes": 2599124992,
+        "wall_seconds": 125.6510390000185
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "98e49a53e2d90cf16ae761bb4f139fb115999b7e3ac99121f1de48c015e1cc68",
+      "name": "development-parent-r8-tool",
+      "passed": true,
+      "receipt_sha256": "a8cb7d4bf3b291153b733bdadca212fa61bd8263455cb67593b92140918e12d0",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 2332.28125,
+        "host_cpu_seconds": 150.125,
+        "observed_tree_cpu_seconds": 2182.15625,
+        "peak_rss_bytes": 3015311360,
+        "wall_seconds": 384.55415440001525
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "d51e93d2492766fd502027df63fe5fca7d3198cfb436cfa4c7cb810487da6480",
+      "name": "original-joint-development-128-decimal",
+      "passed": true,
+      "receipt_sha256": "ebd582074e77c623e8746f1b981504e9e196c50c3436c735637c5eb42f2486fe",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 813.625,
+        "host_cpu_seconds": 60.671875,
+        "observed_tree_cpu_seconds": 752.953125,
+        "peak_rss_bytes": 2652041216,
+        "wall_seconds": 152.2486695999978
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "9d66a58b6271c2bd8ddd32db7adc1dbf6cc75f8b28230be63dc04c5f0571b290",
+      "name": "original-joint-development-128-tool",
+      "passed": true,
+      "receipt_sha256": "f3c921bebfafbe42dcb3d44ad9396bfb65a48b390e56bd0f49eb00159d958781",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1485.296875,
+        "host_cpu_seconds": 108.265625,
+        "observed_tree_cpu_seconds": 1377.03125,
+        "peak_rss_bytes": 3053965312,
+        "wall_seconds": 258.2311047000112
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "f52b3ee75fa08684898e269156e6d3a1f6bbfc805266f8b36094976fe845e9c9",
+      "name": "original-joint-development-64-decimal",
+      "passed": true,
+      "receipt_sha256": "582897d9fc7884d4ca913d579ae23bf268479da42048bc1dd2c51d5aa5b010d8",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 821.328125,
+        "host_cpu_seconds": 64.109375,
+        "observed_tree_cpu_seconds": 757.21875,
+        "peak_rss_bytes": 2626064384,
+        "wall_seconds": 153.59505099995295
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "b15879be225346fcc8a67e05a1fceb73534f0c9572052bd336b69e1ca73af678",
+      "name": "original-joint-development-64-tool",
+      "passed": true,
+      "receipt_sha256": "4c5e83a8f98b69682022cc9a4e9a7214b6c63535f074be4a9546cee580ae13a7",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1471.296875,
+        "host_cpu_seconds": 107.71875,
+        "observed_tree_cpu_seconds": 1363.578125,
+        "peak_rss_bytes": 3081162752,
+        "wall_seconds": 256.0270485000219
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 84000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 13200.0
+      },
+      "log_sha256": "44c75a40dd92ca65e89f6c49f1f32e03bef91900ad7f4092acb1b363d7d523a3",
+      "name": "original-joint-main-train",
+      "passed": true,
+      "receipt_sha256": "3f55ee0dcb2b3e98db0a58ffc61efe44c847f6c24e5bf53959a1e2f68d556db2",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 61242.140625,
+        "host_cpu_seconds": 4322.109375,
+        "observed_tree_cpu_seconds": 56920.03125,
+        "peak_rss_bytes": 16579567616,
+        "wall_seconds": 9863.389952700003
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "b89c8830f6a81fe7a2840b2fa3f001ad25fc31dbea65f71522becaad6c96df9a",
+      "name": "original-joint-smoke-reload",
+      "passed": true,
+      "receipt_sha256": "b1e08b70ced0c807915acddbdf709f9467e4a697a69b71daefc2fa0018437b75",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 2464.71875,
+        "host_cpu_seconds": 168.734375,
+        "observed_tree_cpu_seconds": 2295.984375,
+        "peak_rss_bytes": 4743110656,
+        "wall_seconds": 413.04473130003316
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "670359b3746573511c960224735423904589f471a9d8a3f537155850d49b5961",
+      "name": "original-joint-smoke-train",
+      "passed": true,
+      "receipt_sha256": "d2d25a9fa1fce0be9c0626da8f22095c3604213636c465176afcbcb62ebb9811",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 8128.21875,
+        "host_cpu_seconds": 541.984375,
+        "observed_tree_cpu_seconds": 7586.234375,
+        "peak_rss_bytes": 14948958208,
+        "wall_seconds": 1329.1186346000177
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "68aefd477120f9c43e5b241ecb08f42c627ae697fac6f749680f6bc0379d53e4",
+      "name": "original-joint-smoke-zero",
+      "passed": true,
+      "receipt_sha256": "824d5ca799d715516912b083bdeda0c8b698114dc74910c78a55596ba48b9cbe",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 2082.9375,
+        "host_cpu_seconds": 143.015625,
+        "observed_tree_cpu_seconds": 1939.921875,
+        "peak_rss_bytes": 3193155584,
+        "wall_seconds": 354.04095679998863
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "aaef354be334b229eb10eb2ddcdfcdbd3e69eb582401ba7166a631860ac29b82",
+      "name": "sequential-development-128-decimal",
+      "passed": true,
+      "receipt_sha256": "d0b1b5b93d5e8f0115c2b09f4f99a54a32ce95e941356a8b7cffb7e3b9c85917",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 904.140625,
+        "host_cpu_seconds": 68.359375,
+        "observed_tree_cpu_seconds": 835.78125,
+        "peak_rss_bytes": 2631241728,
+        "wall_seconds": 166.16529209999135
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "02cd03f2b2b87d73b37595273aa9fe85fdbfc9e293e32140a2647f4c4a45f0b4",
+      "name": "sequential-development-128-tool",
+      "passed": true,
+      "receipt_sha256": "fa2b84ab64af279d0d86d7a3f4f62dd9b9de3ac4dde787980226809f7765ea83",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1480.40625,
+        "host_cpu_seconds": 100.90625,
+        "observed_tree_cpu_seconds": 1379.5,
+        "peak_rss_bytes": 3072778240,
+        "wall_seconds": 258.20689550001407
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "02a59b75b5f9a7fdfe9a010030ff86c13be6d86631458a9dc957dd32bef920ae",
+      "name": "sequential-development-64-decimal",
+      "passed": true,
+      "receipt_sha256": "94f4d791689e378e0e15abc8e5d2a50aea21a78da5d1865cd0d10cb65c0db13f",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 814.71875,
+        "host_cpu_seconds": 59.796875,
+        "observed_tree_cpu_seconds": 754.921875,
+        "peak_rss_bytes": 2625105920,
+        "wall_seconds": 153.03318259998923
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "b5d0d7226a093d964a10dcd3007ee59d39edcc939588efc63d40849aac5f6e21",
+      "name": "sequential-development-64-tool",
+      "passed": true,
+      "receipt_sha256": "3efa5ac8465f53253af0752ddfd62af5d0933c5c0805f65e10a9f01dd359e109",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1439.40625,
+        "host_cpu_seconds": 98.890625,
+        "observed_tree_cpu_seconds": 1340.515625,
+        "peak_rss_bytes": 3064623104,
+        "wall_seconds": 252.65789310005493
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 84000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 13200.0
+      },
+      "log_sha256": "2e4b4f678834d02a961fb7a273ce214d37b4d3f7afa1c006825471e1061c9165",
+      "name": "sequential-main-train",
+      "passed": true,
+      "receipt_sha256": "f3b861a12afa9d3f2e7073f9d1695203f2f4837c396d84505a4c255b9c12af36",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 56672.90625,
+        "host_cpu_seconds": 3560.15625,
+        "observed_tree_cpu_seconds": 53112.75,
+        "peak_rss_bytes": 16580399104,
+        "wall_seconds": 9122.745941100002
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 6000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 900.0
+      },
+      "log_sha256": "2165a5120666d8f99c049738c198842d04e377304944c4b6391dfd14056c737b",
+      "name": "sequential-post-merge",
+      "passed": true,
+      "receipt_sha256": "68a79e4c480f3680be4fed34c306d0c618a4f797ad55a2bb0d951efe389ce4b4",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 208.578125,
+        "host_cpu_seconds": 49.1875,
+        "observed_tree_cpu_seconds": 159.390625,
+        "peak_rss_bytes": 2286198784,
+        "wall_seconds": 127.5405317999539
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "29b561b0243ee87cd21dc7a4883649f1f2c377382c09c9286ffe2158a56513d4",
+      "name": "sequential-post-merged-decimal",
+      "passed": true,
+      "receipt_sha256": "a1b953c9fa50b23bc54454e7fbdec77d1f138e515a5e161b81ce2a8c7b6c736e",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 716.390625,
+        "host_cpu_seconds": 52.3125,
+        "observed_tree_cpu_seconds": 664.078125,
+        "peak_rss_bytes": 2607828992,
+        "wall_seconds": 127.44172129995422
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "42869340365cc285298403db7ea01aadef3f4ae3cbca2ed8fc92c8780a7d9f81",
+      "name": "sequential-post-merged-tool",
+      "passed": true,
+      "receipt_sha256": "4690462888f3bd69cc1f78f7874ea720bb151f517f85561c14e3877e9dc80224",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1233.390625,
+        "host_cpu_seconds": 85.859375,
+        "observed_tree_cpu_seconds": 1147.53125,
+        "peak_rss_bytes": 3017097216,
+        "wall_seconds": 209.4434186000144
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 6000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 900.0
+      },
+      "log_sha256": "dc6aa8b094d9243c02e3ed9c7754a1379ef2912a1bfcc3b481bfad06e663a907",
+      "name": "sequential-post-reconstruct",
+      "passed": true,
+      "receipt_sha256": "78abcd45a1b89251a1d210b1aa8ceb4c2142e33c82c01e1bd35db0d0ba3d0634",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 204.59375,
+        "host_cpu_seconds": 47.578125,
+        "observed_tree_cpu_seconds": 157.015625,
+        "peak_rss_bytes": 2286120960,
+        "wall_seconds": 125.04020749998745
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "ccfe7c29a26c099e802659cc13f8df5cfed7348f53cd99d3dfd1f9ac458c0d89",
+      "name": "sequential-post-replay-candidate-decimal",
+      "passed": true,
+      "receipt_sha256": "d3b8fca6533488022e203d5d13c85151a17ac67360ac1153c594465cce85eb4a",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 706.34375,
+        "host_cpu_seconds": 51.03125,
+        "observed_tree_cpu_seconds": 655.3125,
+        "peak_rss_bytes": 2597629952,
+        "wall_seconds": 125.32701109995833
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "42bb9061391986d5af670232553a3cebe301726aa8fe16e9f864c79cab1d21f3",
+      "name": "sequential-post-replay-candidate-tool",
+      "passed": true,
+      "receipt_sha256": "794d569215abebf730ef67f43ef3de2acb791880e50e4c9fde9440ad6c1c793b",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1277.484375,
+        "host_cpu_seconds": 87.359375,
+        "observed_tree_cpu_seconds": 1190.125,
+        "peak_rss_bytes": 3010174976,
+        "wall_seconds": 216.02293639996788
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "7af54b6569af42d19d1af83f7a601b51fb6ce79cb0f8be66b4711a0b4d92c477",
+      "name": "sequential-post-replay-parent-decimal",
+      "passed": true,
+      "receipt_sha256": "daa8e3c212cddad4260e348e3ca416dcfc0ea7ad2c9047bcc61aa44c93053696",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 712.46875,
+        "host_cpu_seconds": 50.546875,
+        "observed_tree_cpu_seconds": 661.921875,
+        "peak_rss_bytes": 2606931968,
+        "wall_seconds": 125.67706379998708
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "8cbd8f2a5a81218d5778382fc1e05f03777070908e2caccc19f86cd5b0919e4b",
+      "name": "sequential-post-replay-parent-tool",
+      "passed": true,
+      "receipt_sha256": "e7ee7269f1a2784f4719c1bfabcd5f6062e62d591b11477df4aebc88df169288",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 2376.46875,
+        "host_cpu_seconds": 159.765625,
+        "observed_tree_cpu_seconds": 2216.703125,
+        "peak_rss_bytes": 3001376768,
+        "wall_seconds": 389.76346059999196
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "b2e6f18749d9b353d514e26bae3d915f2afd7b558808236b07fef9ba8975b91d",
+      "name": "sequential-smoke-reload",
+      "passed": true,
+      "receipt_sha256": "cab0c1168e8b3c2e87d817a9ce281ef9487df41a4f8c5fb549b460df8a427ba6",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 3073.140625,
+        "host_cpu_seconds": 209.609375,
+        "observed_tree_cpu_seconds": 2863.53125,
+        "peak_rss_bytes": 4771495936,
+        "wall_seconds": 511.23104510002304
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "4411bd2b802843a48037cc73ea437983672e8a0e875c6c293f2b4ab9f90921b7",
+      "name": "sequential-smoke-train",
+      "passed": true,
+      "receipt_sha256": "c10a0d877a9bb861e5edcdc4e97f7635c286786d5e78c5dc3519f04ccd7c4705",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 7673.484375,
+        "host_cpu_seconds": 512.859375,
+        "observed_tree_cpu_seconds": 7160.625,
+        "peak_rss_bytes": 14951276544,
+        "wall_seconds": 1255.0655182999908
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "f2ff5f9991ac6d0ef0fac4bb62f90ff9e08642c302d6b42a4fcbc49397eeb961",
+      "name": "sequential-smoke-zero",
+      "passed": true,
+      "receipt_sha256": "71ac0f5b88a7fe4610c59ddc2258e05162f3ff14fb5bdc47ca1770bda5a0895d",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 3493.203125,
+        "host_cpu_seconds": 237.421875,
+        "observed_tree_cpu_seconds": 3255.78125,
+        "peak_rss_bytes": 3190329344,
+        "wall_seconds": 577.6763205000316
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 8000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1200.0
+      },
+      "log_sha256": "b8fdc4c5fdae3f2a30bf42e81fa9f8e45689209ea31ea6c55b640e8f020ccbc8",
+      "name": "timing-sequential",
+      "passed": true,
+      "receipt_sha256": "bd8b4a1df8ef14eae846fccb8e270fb56e58aa63741d177b29a8b83a554bf085",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 428.78125,
+        "host_cpu_seconds": 37.390625,
+        "observed_tree_cpu_seconds": 391.390625,
+        "peak_rss_bytes": 14084444160,
+        "wall_seconds": 90.79998740000883
+      }
+    }
+  ],
+  "study_execution_complete": null,
+  "unfinished_scope_names": []
+}

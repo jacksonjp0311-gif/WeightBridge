@@ -1,12 +1,13 @@
 # Phase III-S: grounded tool transfer after a verified decimal improvement
 
 **Execution milestone: formal populations, protocols and 162 source files remain
-frozen. Both parent development baselines and the sequential disposable smoke
-have completed. The sequential step-128 adapter and its stored BF16 merge passed
-development: all 128 tool responses and 208 legacy responses were correct. Exact
-stored reconstruction, native development replay and actual-parent rollback
-also passed. Original-parent main training is running; all protected stages
-remain unopened. No independently qualified Phase S improvement is reported.** The
+frozen. Both parent baselines, disposable smokes, main training runs and adapter
+development evaluations have completed. Both fixed step-128 adapters passed
+development: all 128 tool responses and 208 legacy responses were correct. The
+sequential stored BF16 merge, exact reconstruction, native development replay
+and actual-parent rollback also passed. Original-parent stored verification is
+in progress; all protected stages remain unopened. No independently qualified
+Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -213,10 +214,10 @@ factors, optimizer, schedule and random state rather than these learned factors.
 
 | Candidate stage | Sequential arm | Original-parent joint arm |
 |---|---|---|
-| Main training | COMPLETED | RUNNING |
-| Step-64 diagnostic development | PASS, diagnostic only | UNMEASURED |
-| Fixed step-128 development | DEVELOPMENT_QUALIFIED | UNMEASURED |
-| Merged development and exact reconstruction | PASS | UNMEASURED |
+| Main training | COMPLETED | COMPLETED |
+| Step-64 diagnostic development | PASS, diagnostic only | FAIL: seven schema regressions |
+| Fixed step-128 development | DEVELOPMENT_QUALIFIED | DEVELOPMENT_QUALIFIED |
+| Merged development and exact reconstruction | PASS | IN PROGRESS; outcome unmeasured |
 | Old R locked battery | UNOPENED | UNOPENED |
 | Independent qualification | UNOPENED | UNOPENED |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
@@ -331,6 +332,105 @@ this snapshot is preserved unchanged. Its merged-model and independent fields
 remain null because those measurements had not occurred at that snapshot.
 Original-parent joint training had not started then.
 
+## Original-parent adapter development and matched comparison
+
+The original-parent run completed the same 128 steps, 512 forward and backward
+calls, 2,048 example visits, 28,932 answer tokens, 471,134 input tokens and
+757,236 padded positions. All 372 factors changed and received gradients; the
+base remained frozen. Its first/final minibatch losses were 0.4171076373 and
+0.0002170235. These different minibatches are diagnostics, not a fixed validation
+loss comparison. The fresh initialization, example order and token exposures
+match the sequential arm. All 186 adapted source-matrix hashes differ between
+the parents, as expected from the prior R update; module names and shapes match.
+
+| Development measurement | Original parent | Joint adapter, step 64 | Joint adapter, step 128 |
+|---|---:|---:|---:|
+| Strict completed tool actions | 24/128 | 120/128 | 128/128 |
+| Correct tool identity / exact arguments / simulator | 24/128 | 120/128 | 128/128 |
+| Whole-response JSON syntax valid | 113/128 | 128/128 | 128/128 |
+| Schema-valid responses | 99/128 | 121/128 | 128/128 |
+| Complete eight-presentation tool families | 0/16 | 14/16 | 16/16 |
+| Tool EOS termination | 128/128 | 128/128 | 128/128 |
+| Previously correct or semantic tool responses lost | — | 0 | 0 |
+| Previously schema-valid responses lost | — | **7** | 0 |
+| Negative-decimal correct responses | 19/128 | 128/128 | 128/128 |
+| Strict decimal comparisons / complete families | 0/32; 0/16 | 32/32; 16/16 | 32/32; 16/16 |
+| General controls correct | 80/80 | 80/80 | 80/80 |
+| Valid completed legacy first lines | 208/208 | 208/208 | 208/208 |
+| Legacy EOS termination | 0/208 | 0/208 | 0/208 |
+| Development gate | Reference | **FAIL** | **PASS** |
+
+At step 64, high correctness and syntactically valid JSON did not compensate
+for seven previously schema-valid responses becoming invalid under the action
+schema. That checkpoint failed the gate and was diagnostic only. Ordinary
+training continued under the predeclared schedule. The fixed step-128 checkpoint
+retained all required schema/semantic successes and passed. No alternative
+checkpoint or new hyperparameter was selected using this recovery.
+
+The final original-parent adapter corrected 104 previously incorrect strict
+tool responses and 75 schema-valid semantic errors across fifteen families,
+including both `run_tests` and `search_files`. Its own-parent strict-action gain
+is 81.25 percentage points, with paired-family 95% bootstrap interval
+[68.75, 93.75]. All sixteen families became complete; the empirical family-rate
+interval [1, 1] has the same finite-sample limitation described above. These
+are fresh development observations, not the independent or sealed tests.
+
+Both arms reach the same final development endpoint scores. The sequential
+arm's corrected schema-valid semantic subset contains only `search_files`
+among real-action types, whereas the original-parent arm's includes two types.
+That difference reflects distinct parent deficiencies. It does not waive the
+formal headroom requirements or establish either arm's independent advantage.
+
+Both original-parent adapter artifacts contain 5,411,328 trainable values and
+occupy 21,750,848 bytes. Step-64 SHA-256 is
+`bc81ad8bdbeed6415c72383d0bcf00af27a21a74bb8596f03229183d31ffcf62`;
+step-128 SHA-256 is
+`67c182798539249ce1bbb69f903c365eb19657a95fa3a70efdc23b6dcd9833e4`.
+
+| Original-parent numerical preview | Step 64 | Step 128 |
+|---|---:|---:|
+| Unrounded effective norm | 3.5596374246 | 3.7688531464 |
+| BF16 merged-delta norm | 3.5938456144 | 3.8015831587 |
+| Changed BF16 entries | 419,115,205 | 422,789,713 |
+| Rounding residual norm | 0.5154287970 | 0.5163171841 |
+| Relative norm on full adapted matrices | 0.0113997040 | 0.0120586490 |
+
+The reference adapted-matrix norm is 315.2577997795. These are factor-derived
+previews. Original-parent merged generations and exact reconstruction remain
+outside this adapter snapshot until their host transaction closes.
+
+| Completed original-parent model scope | Wall seconds | Observed CPU seconds | Conservative peak bytes |
+|---|---:|---:|---:|
+| Disposable smoke, three enclosing workers | 2,096.204 | 12,675.875 | 14,948,958,208 |
+| Main training | 9,863.390 | 61,242.141 | 16,579,567,616 |
+| Four adapter development workers | 820.102 | 4,591.547 | 3,081,162,752 |
+
+The new [both-arm adapter snapshot](../results/phase-iii-s-tool-transfer/both-adapter-development-v1/export-manifest.json)
+contains sixteen public aggregate artifacts. Its export commitment is
+`3f84e6e46621f9abe50e6db00ea84d99387bfc2d7dea30536f0a0a6a0dc26ad9`.
+It includes all 256 main training-step records and four development checkpoints,
+plus the already closed sequential stored-development gate. Active original
+postdevelopment records are deliberately deferred. Included completed scopes
+sum to 27,970.742 wall seconds and 169,788.797 CPU seconds, with peak
+16,580,399,104 bytes; these are a scoped subtotal, not complete final study cost.
+The deferred cost and formal outcomes remain null. Earlier snapshots are unchanged.
+
+![Actual unsmoothed training losses](../results/phase-iii-s-tool-transfer/development-figures-v1/training-loss.png)
+
+![Development correctness and schema regressions](../results/phase-iii-s-tool-transfer/development-figures-v1/adapter-development.png)
+
+In this chart, blue **R8** labels denote the Phase S sequential arm starting
+from R8; orange **Original** labels denote the Phase S original-parent joint
+arm. Both show newly trained Phase S adapters, not unmodified parents or
+historical Phase R checkpoints.
+
+The [figure manifest](../results/phase-iii-s-tool-transfer/development-figures-v1/manifest.json)
+binds public input hashes, plotting source and Matplotlib 3.11.2. The same
+directory contains SVGs and [raw curve data with sixteen-step summaries](../results/phase-iii-s-tool-transfer/development-figures-v1/curve-data.json).
+Plots use actual unsmoothed losses and explicitly show the failed step-64 gate;
+they contain no synthetic formal results. The existing plotting environment
+required no new dependency or model execution.
+
 ## Sequential stored development and exact reconstruction
 
 The isolated BF16 checkpoint now has identity
@@ -407,8 +507,9 @@ rosters, model weights or adapter tensors are published in either snapshot.
 The sequential disposition is **FINALIST_LOCKED_PENDING_INDEPENDENT**, not a
 verified scientific pass. The formal requirement for qualifying semantic
 corrections in two real action types is still unresolved. Original-parent
-training is running, and the old R battery, independent qualification and sealed
-confirmation remain unopened at this milestone.
+adapter development has passed and stored verification is in progress. The old
+R battery, independent qualification and sealed confirmation remain unopened
+at this milestone.
 
 ## Training implementation and frozen population
 

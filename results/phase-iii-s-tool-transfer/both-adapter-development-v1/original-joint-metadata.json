@@ -1,0 +1,254 @@
+{
+  "adapter_merged_diagnostic": null,
+  "assessment": {
+    "arm": "original-joint",
+    "fixed_finalist_step": 128,
+    "gates": {
+      "128": {
+        "disposition": "DEVELOPMENT_QUALIFIED",
+        "finalist_eligible": true,
+        "passed": true,
+        "sha256": "77c99a26713f04496c71228f14ecbc7fe04f1bddf602943e1518a78fa217b95b"
+      },
+      "64": {
+        "disposition": "NO_QUALIFIED_CANDIDATE",
+        "finalist_eligible": false,
+        "passed": false,
+        "sha256": "7b542e07c812946e42318f90220a1a876514f69e9b2f22efbdbb2c1540aeaf0d"
+      }
+    },
+    "lineage_authority": false,
+    "passed": true,
+    "production_authority": false,
+    "protected_banks_opened": false,
+    "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+    "schema": "weightbridge.phase_iiis.development_assessment.v1",
+    "selected_step": 128,
+    "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+  },
+  "data_order": {
+    "data_order_sha256": "d0eb3fb7cb012935d89f952347f62e1cda1df65f12dd47fab186177bfb9d65a8",
+    "examples_seen": 2048,
+    "microbatches": 512,
+    "optimizer_steps": 128,
+    "ordered_row_ids_sha256": "6c9a30cd82fe9aeeece90d361a2464460cc25628fcd8f698a1e16847f6850fcb",
+    "schema": "weightbridge.phase_iiis.prospective_order.v1"
+  },
+  "execution": {
+    "arm": "original-joint",
+    "behavioral_qualification": null,
+    "completed": true,
+    "lineage_authority": false,
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "production_authority": false,
+    "protected_evaluation_opened": false,
+    "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+    "schema": "weightbridge.phase_iiis.arm_execution.v1",
+    "status": "DEVELOPMENT_MEASURED"
+  },
+  "inherited_r_main_cost": null,
+  "main_admission": {
+    "outer_executions": {
+      "reload": {
+        "sha256": "b1e08b70ced0c807915acddbdf709f9467e4a697a69b71daefc2fa0018437b75"
+      },
+      "train": {
+        "sha256": "d2d25a9fa1fce0be9c0626da8f22095c3604213636c465176afcbcb62ebb9811"
+      },
+      "zero": {
+        "sha256": "824d5ca799d715516912b083bdeda0c8b698114dc74910c78a55596ba48b9cbe"
+      }
+    },
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "passed": true,
+    "planned_authorization": {
+      "allow_merge": true,
+      "allowed_modules_count": 186,
+      "alpha": 16.0,
+      "base_frozen": true,
+      "dropout": 0.0,
+      "learning_rates_count": 1,
+      "max_answer_tokens_per_run": 28932,
+      "max_cpu_seconds_per_run": 84000.0,
+      "max_development_checkpoints_per_run": 2,
+      "max_input_tokens_per_run": 471134,
+      "max_memory_bytes": 25769803776,
+      "max_runs": 1,
+      "max_steps_per_run": 128,
+      "max_trainable_parameters": 5411328,
+      "max_wall_seconds_per_run": 13200.0,
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "production_deployment": false,
+      "rank": 8,
+      "schema": "weightbridge.supervised_training_authorization.v1",
+      "smoke_gate_sha256": "aac855313a807bd50ee5067513399d50e09e2101a38db59ea2817883a8b643ad",
+      "training_bundle_sha256": "c721a218be3932febe94f358da56a5f155dca39a9c9de5ae61160fbd5bd247a1"
+    },
+    "production_authority": false,
+    "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+    "retries_authorized": false,
+    "schema": "weightbridge.phase_iiis.main_admission.v1",
+    "smoke_gate_sha256": "aac855313a807bd50ee5067513399d50e09e2101a38db59ea2817883a8b643ad",
+    "smoke_resources": {
+      "cpu_seconds": 12675.875,
+      "peak_rss_bytes": 14948958208,
+      "wall_seconds": 2096.2043227000395
+    }
+  },
+  "main_authorization": {
+    "allow_merge": true,
+    "allowed_modules_count": 186,
+    "alpha": 16.0,
+    "base_frozen": true,
+    "dropout": 0.0,
+    "learning_rates_count": 1,
+    "max_answer_tokens_per_run": 28932,
+    "max_cpu_seconds_per_run": 84000.0,
+    "max_development_checkpoints_per_run": 2,
+    "max_input_tokens_per_run": 471134,
+    "max_memory_bytes": 25769803776,
+    "max_runs": 1,
+    "max_steps_per_run": 128,
+    "max_trainable_parameters": 5411328,
+    "max_wall_seconds_per_run": 13200.0,
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "production_deployment": false,
+    "rank": 8,
+    "schema": "weightbridge.supervised_training_authorization.v1",
+    "smoke_gate_sha256": "aac855313a807bd50ee5067513399d50e09e2101a38db59ea2817883a8b643ad",
+    "training_bundle_sha256": "c721a218be3932febe94f358da56a5f155dca39a9c9de5ae61160fbd5bd247a1"
+  },
+  "main_claim": {
+    "authorization_sha256": "5c209d94c6dad7b5a333249a2b855a1237dbcddcd67be1deabcf2371caa57fbf",
+    "bundle_sha256": "c721a218be3932febe94f358da56a5f155dca39a9c9de5ae61160fbd5bd247a1",
+    "mode": "main",
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "production_authority": false,
+    "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+    "resume_implemented": false,
+    "retries_authorized": false,
+    "run_index": 0,
+    "schema": "weightbridge.phase_iiis.optimizer_launch_claim.v1"
+  },
+  "main_training_validation": {
+    "adapter_sha256": "67c182798539249ce1bbb69f903c365eb19657a95fa3a70efdc23b6dcd9833e4",
+    "checks": {
+      "admitted_parent": true,
+      "all_factor_changes": true,
+      "all_factor_gradients": true,
+      "artifact": true,
+      "authorization_sha256": true,
+      "base_unchanged": true,
+      "bundle_sha256": true,
+      "complete_exposure": true,
+      "completed": true,
+      "configuration": true,
+      "enclosing_process": true,
+      "fixed_final_step": true,
+      "full_steps": true,
+      "host_binding": true,
+      "initial_factors": true,
+      "inventory": true,
+      "measured_factor_updates": true,
+      "parent": true,
+      "protocol": true,
+      "recorded_checkpoint": true
+    },
+    "input_sha256": {
+      "adapter": {
+        "sha256": "67c182798539249ce1bbb69f903c365eb19657a95fa3a70efdc23b6dcd9833e4"
+      },
+      "checkpoint_receipt": {
+        "sha256": "80ca0b76086531cff4f2bd71acd49257e99ac677d9e491410ba0e69d4dea83f1"
+      },
+      "execution": {
+        "sha256": "3f55ee0dcb2b3e98db0a58ffc61efe44c847f6c24e5bf53959a1e2f68d556db2"
+      },
+      "inventory": {
+        "sha256": "b11f81c4f881c2530d837fecaa0387543ccd37ad8489d5d9015fdb744b1590c7"
+      }
+    },
+    "main_admission": {
+      "input_sha256": {},
+      "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+      "passed": true,
+      "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+      "schema": "weightbridge.phase_iiis.main_admission_replay.v1"
+    },
+    "matched_training": {
+      "data_order_sha256": "d0eb3fb7cb012935d89f952347f62e1cda1df65f12dd47fab186177bfb9d65a8",
+      "initial_factor_sha256": "b53573886f33a22719b03d7a16f8b1c76f7b28534d6d3bf084812b16422edbca",
+      "ordered_row_ids_sha256": "6c9a30cd82fe9aeeece90d361a2464460cc25628fcd8f698a1e16847f6850fcb",
+      "tokenization_sha256": "62cdd94ee45bb81b718ffb3bbe9268cccf896bb20ec9b984017ddcc53569664f"
+    },
+    "passed": true
+  },
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+  "recipe": {
+    "resources": {
+      "cumulative_model_wall_seconds": 64800,
+      "evaluation_limits": {
+        "max_cpu_seconds": 12000.0,
+        "max_memory_bytes": 8589934592,
+        "max_wall_seconds": 1800.0
+      },
+      "max_memory_bytes": 25769803776,
+      "merge_limits": {
+        "max_cpu_seconds": 6000.0,
+        "max_memory_bytes": 25769803776,
+        "max_wall_seconds": 900.0
+      },
+      "mode_limits": {
+        "main": {
+          "max_answer_tokens": 28932,
+          "max_cpu_seconds": 84000.0,
+          "max_input_tokens": 471134,
+          "max_wall_seconds": 13200.0
+        },
+        "smoke": {
+          "max_answer_tokens": 24576,
+          "max_cpu_seconds": 20000.0,
+          "max_input_tokens": 155648,
+          "max_wall_seconds": 3000.0
+        }
+      }
+    },
+    "training": {
+      "betas_count": 2,
+      "checkpoint_steps_count": 2,
+      "effective_batch_size": 16,
+      "epochs": 1,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rates_count": 1,
+      "micro_batch_size": 4,
+      "norm_measurement_interval": 8,
+      "optimizer_steps": 128,
+      "warmup_fraction": 0.05,
+      "weight_decay": 0.01
+    }
+  },
+  "smoke_gate": {
+    "checks": {
+      "all_factor_gradients": true,
+      "all_factors_changed": true,
+      "base_unchanged": true,
+      "disabled_parent_exact": true,
+      "loss_decreased": true,
+      "measured_factor_changes": true,
+      "same_initial_factors": true,
+      "smoke_steps_bounded": true,
+      "training_completed": true,
+      "worker_checks_passed": true,
+      "zero_initialization_exact": true
+    },
+    "loss_after": 0.03823135629586738,
+    "loss_before": 0.3900052776434724,
+    "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+    "passed": true,
+    "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+    "schema": "weightbridge.phase_iiis.smoke_gate.v1",
+    "source_receipts": {}
+  }
+}
