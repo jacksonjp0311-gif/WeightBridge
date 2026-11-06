@@ -1,0 +1,53 @@
+{
+  "action": "historical-retention",
+  "all_arms_lock_sha256": "7dbff1f2cf46a4dfbeea31c7d35dede4c7d990433d454f78170fe2ed00571b9d",
+  "arm": "sequential",
+  "base_command_checks_count": 9,
+  "bridge_sha256": "258ee4e5b20992895588f072f6e0d42659e73cb847b06398f07e6104d5ddf67c",
+  "completed": true,
+  "disposition": "HISTORICAL_RETENTION_PASS",
+  "driver_sha256": "3dcbac8004832ee90199e4ad46970f9b0f100f718ce68bdca0f33a5a054dbb0f",
+  "exact_replays_passed": true,
+  "gate_sha256": "90af42866306f98edcf85f742f0b1618ba68de36bf2740a48b7eb10365fde3e5",
+  "input_sha256": {
+    "all_arms_lock": {
+      "sha256": "7dbff1f2cf46a4dfbeea31c7d35dede4c7d990433d454f78170fe2ed00571b9d"
+    },
+    "gate": {
+      "sha256": "90af42866306f98edcf85f742f0b1618ba68de36bf2740a48b7eb10365fde3e5"
+    },
+    "host_request": {
+      "sha256": "bac46950be06cb737cd3058dd0ad314cf147fae716922cd395a6ce7c254c2e87"
+    },
+    "host_source": {
+      "sha256": "3dcbac8004832ee90199e4ad46970f9b0f100f718ce68bdca0f33a5a054dbb0f"
+    },
+    "lock": {
+      "sha256": "fcdf0bb0f88b4423b35758629d7879e350ae0ce46339596022ecc249dd3d6b0e"
+    },
+    "protocol": {
+      "sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9"
+    },
+    "started": {
+      "sha256": "5b3e8f2b910c9f942fa75f1fc80877c641c18f936f85f9f17e8b1a4b48996019"
+    }
+  },
+  "lineage_authority": false,
+  "lock_sha256": "fcdf0bb0f88b4423b35758629d7879e350ae0ce46339596022ecc249dd3d6b0e",
+  "model_workers_count": 9,
+  "no_refit": true,
+  "no_retry": true,
+  "passed": true,
+  "production_authority": false,
+  "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+  "r_bank_b_access": false,
+  "replay_receipt_sha256": null,
+  "representation_sha256": "ce2ddca3dfdf0438aef401a33200a03d08b95c1988ee5c131da59a4a95036838",
+  "request_sha256": "bac46950be06cb737cd3058dd0ad314cf147fae716922cd395a6ce7c254c2e87",
+  "resources": {
+    "host_cpu_seconds": 849.40625,
+    "host_wall_seconds": 1795.2172676000046
+  },
+  "schema": "weightbridge.phase_iiis.private_protected_execution.v3",
+  "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+}

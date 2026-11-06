@@ -206,3 +206,15 @@ Check the new public snapshot without reading private evidence:
 & $Python results/phase-iii-s-tool-transfer/export_outcome.py --self-test
 & $Python results/phase-iii-s-tool-transfer/export_outcome.py --verify $NewPublicSnapshot
 ```
+
+For a smaller historical-only supplement, the completed gate, transaction and
+matching closed metadata review must already exist. This command does not read
+training logs, worker responses, rosters or later banks:
+
+```powershell
+& $Python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --study $Study --historical-supplement sequential --out $NewPublicSnapshot
+```
+
+Use `original-joint` only after that arm's separate historical transaction and
+audit close. A failed or absent binding is refused before publication.

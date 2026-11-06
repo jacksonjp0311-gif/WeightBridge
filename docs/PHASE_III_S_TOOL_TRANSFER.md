@@ -8,8 +8,9 @@ sequential stored BF16 merge, exact reconstruction, native development replay
 and actual-parent rollback also passed. The original-parent stored model scores
 127/128 tool responses and 15/16 tool families after losing one adapter-learned
 answer during BF16 merging; its frozen development and reconstruction gates
-still pass. Both finalist decisions are locked. Historical retention is in
-progress; fresh qualification and sealed confirmation remain unopened. No
+still pass. Both finalist decisions are locked. The sequential model retained
+all 832 historical R responses; original-parent historical evaluation is in
+progress. Fresh qualification and sealed confirmation remain unopened. No
 independently qualified Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
@@ -221,7 +222,7 @@ factors, optimizer, schedule and random state rather than these learned factors.
 | Step-64 diagnostic development | PASS, diagnostic only | FAIL: seven schema regressions |
 | Fixed step-128 development | DEVELOPMENT_QUALIFIED | DEVELOPMENT_QUALIFIED |
 | Merged development and exact reconstruction | PASS | PASS; one adapter-to-merge loss |
-| Old R locked battery | IN PROGRESS; outcome unmeasured | UNOPENED |
+| Old R locked battery | PASS: 832/832 retained | IN PROGRESS; outcome unmeasured |
 | Independent qualification | UNOPENED | UNOPENED |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
 
@@ -270,8 +271,9 @@ headroom and qualification remain separately gated, with no redraw or relaxation
 
 All 109 original-wrong/R8-correct decimal responses and all sixteen newly
 completed R decimal families on this fresh development population survived.
-Preservation is limited to these measured populations; the historical R battery
-and independent banks have not yet been evaluated.
+Preservation in this adapter-only snapshot is limited to those measured
+populations. The historical R battery and independent banks were then unopened;
+later historical retention evidence is reported separately below.
 
 Relative to R8, the final development strict-action gain is 82.03125 percentage
 points, with paired-family 95% bootstrap interval [69.53125, 93.75]. Complete
@@ -510,7 +512,7 @@ rosters, model weights or adapter tensors are published in either snapshot.
 The sequential disposition is **FINALIST_LOCKED_PENDING_INDEPENDENT**, not a
 verified scientific pass. The formal requirement for qualifying semantic
 corrections in two real action types is still unresolved. Original-parent
-stored verification has also passed. Historical retention has begun after both
+stored verification has also passed. Historical retention began after both
 decisions locked; independent qualification and sealed confirmation remain
 unopened at this milestone.
 
@@ -576,6 +578,50 @@ contains ten redacted aggregate artifacts and has export commitment
 `b6ba1ea985ed4c8bee8ff8bbccd0dd5f0a339a294cb08fb1b8f96d7d517b8783`.
 Previous adapter and sequential snapshots are unchanged. This publication did
 not open a protected bank or run a model.
+
+## Sequential historical retention
+
+The sequential stored candidate retained every required response on the locked
+**832-presentation Phase R Bank A battery**. These previously disclosed examples
+measure preservation, not fresh generalization. R Bank B was not accessed.
+
+| Historical population | R8 parent correct | Sequential S correct | Prohibited losses | Valid completed first lines |
+|---|---:|---:|---:|---:|
+| R preservation validation | 320/320 | 320/320 | 0 | 320/320 |
+| R independent selection, now historical | 256/256 | 256/256 | 0 | 256/256 |
+| R hidden verification, now historical | 256/256 | 256/256 | 0 | 256/256 |
+
+Both decimal target populations retain all 64 strict comparisons and 32 complete
+families each. The preservation population also satisfies the original/R8
+general-control union. Every decode reaches the token budget; valid first-line
+completion is not being reported as EOS termination.
+
+The rebuilt candidate reproduced its own 832 native responses exactly, and
+actual-parent rollback reproduced its own 832 recorded responses. The three
+populations therefore have six passing native replay checks. The nine enclosing
+workers generated 2,496 responses in total and used **1,440.668 wall seconds**,
+**8,331.313 CPU seconds**, and **2,601,758,720 bytes** conservative peak memory.
+These worker scopes are counted once; enclosing host waiting time is not added.
+
+The completed gate commitment is
+`90af42866306f98edcf85f742f0b1618ba68de36bf2740a48b7eb10365fde3e5`;
+the closed transaction is
+`bf05c10b21bc9a5be32f16044189223c2efe97aeb01bf023cabc68d0818826b8`.
+A separate metadata review passed 21 checks with commitment
+`09fa648d9337486310d8b19d28f47b471427399d7b81c163c9f48216ec5ab78a`.
+That review rechecked receipt bindings, closure, resources and aggregate
+consistency without reopening raw responses or rosters. Behavioral correctness
+and exact native equality were computed by the bound model workers and host
+bridge, not recreated by the publication script.
+
+The six-artifact [historical retention supplement](../results/phase-iii-s-tool-transfer/sequential-historical-retention-v1/export-manifest.json)
+has export commitment
+`083dc650b9ce0389074c1997e86034adcfda8cf57617dbf65515144af0510351`.
+It contains only explicitly selected closed metadata and source commitments;
+training logs and active original-parent stages were not re-exported. Original
+historical evaluation remains in progress, and fresh qualification/confirmation
+outcomes remain null. This retention PASS is not an independent Phase S learning
+or continual-learning qualification.
 
 ## Training implementation and frozen population
 
@@ -782,14 +828,17 @@ python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/both-adapter-development-v1
 python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/original-stored-development-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/sequential-historical-retention-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction
 of actual inference requires the recorded local checkpoints, runtime, private
 calibration commitments and host authorization. The pure population builder
 does not authorize training or open protected stages. No independently qualified
-Phase S learning, merged-model demo, retention pass or continual-learning success
-is claimed at this execution milestone. The preflight exports remain immutable
+Phase S learning, merged-model demo or continual-learning success is claimed
+at this execution milestone. The separately measured historical retention PASS
+has the limited scope reported above. The preflight exports remain immutable
 records of the earlier preregistration stage.
 
 Frozen source hashes describe actual checked-out bytes. The Windows checkout

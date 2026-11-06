@@ -39,6 +39,7 @@ GATE_SCHEMAS = {
     "weightbridge.phase_iiis.private_stage_replay.v1",
     "weightbridge.phase_iiis.private_protected_execution.v3",
     "weightbridge.phase_iiis.formal_stage_closure.v3",
+    "weightbridge.phase_iiis.closed_historical_metadata_review.v1",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
     "text", "fixture", "scenario", "gold_action", "parsed_action", "operands", "request",
@@ -560,6 +561,44 @@ def development_supplement(study, out, arm):
         "Fixed closed development metadata only; no raw rosters, observations, model tensors or changing training records. Endpoint and exact native equality remain separate. All projections bind original private receipt bytes; public hash verification is not private scientific replay.")
 
 
+def historical_supplement(study, out, arm, *, expected_manifest=MANIFEST_SHA):
+    """Only an explicitly selected closed historical transaction; no bank reads."""
+    if arm not in ARMS or Path(out).exists():
+        raise ValueError("Historical supplement needs a supported arm and new output directory")
+    reader = Reader(study)
+    manifest, protocol = reader.read("manifest.json"), reader.read(f"{arm}/protocol.json")
+    prefix = f"{arm}/protected-v3/historical-retention"
+    gate, transaction = reader.read(prefix+"/gate.json"), reader.read(prefix+"/completed.json")
+    review = reader.read(f"{arm}-historical-metadata-audit-v1.json", root=reader.study.parent,
+        label=f"diagnostics/{arm}-historical-metadata-audit-v1.json")
+    if (reader.inputs.get("manifest.json") != expected_manifest
+            or protocol.get("task_manifest_sha256") != expected_manifest
+            or protocol.get("source_sha256") != manifest["source_sha256"]
+            or not gate or gate.get("schema") != "weightbridge.phase_iiis.host_historical_retention.v1"
+            or gate.get("task_manifest_sha256") != expected_manifest
+            or not transaction or transaction.get("schema") != "weightbridge.phase_iiis.private_protected_execution.v3"
+            or transaction.get("completed") is not True or transaction.get("action") != "historical-retention"
+            or transaction.get("arm") != arm or transaction.get("task_manifest_sha256") != expected_manifest
+            or transaction.get("gate_sha256") != reader.inputs[prefix+"/gate.json"]
+            or not review or review.get("schema") != "weightbridge.phase_iiis.closed_historical_metadata_review.v1"
+            or review.get("arm") != arm or review.get("task_manifest_sha256") != expected_manifest
+            or review.get("gate_sha256") != reader.inputs[prefix+"/gate.json"]
+            or review.get("completed_sha256") != reader.inputs[prefix+"/completed.json"]
+            or review.get("raw_outputs_read_by_reviewer") is not False
+            or review.get("raw_rosters_read_by_reviewer") is not False):
+        raise ValueError("Historical metadata does not bind its closed reviewed transaction")
+    artifacts = {"source-manifest.json": manifest["source_sha256"],
+        "protocol-identity.json": {"protocol_sha256": reader.inputs[f"{arm}/protocol.json"],
+            **selected(protocol, ("schema", "arm", "checkpoint_sha256", "task_manifest_sha256"))},
+        "historical-gate.json": project(gate), "historical-transaction.json": project(transaction),
+        "closed-metadata-review.json": project(review),
+        "stage-availability.json": {"historical_retention": {arm: {"reported_transaction_passed": transaction.get("passed"),
+            "completed": True, "exact_replays_passed": transaction.get("exact_replays_passed")}},
+            "independent_qualification": None, "sealed_confirmation": None, "lineage_admission": False}}
+    return publish_snapshot(artifacts, reader, out, expected_manifest,
+        "Explicit closed historical metadata only. The previously disclosed R battery measures retention, not fresh transfer. This publication neither reads raw outputs/rosters nor recomputes behavioral or replay claims; the bound host workers and audit supply that evidence.")
+
+
 def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA, defer_postdevelopment=()):
     out = Path(out)
     if out.exists():
@@ -802,6 +841,28 @@ def self_test():
         assert available["protected_transactions"]["qualification"]["sequential"]["passed"] is False
         assert available["sealed_confirmation"] is None and available["final_replay"] is None
         assert all("PRIVATE" not in p.read_text() for p in protected_out.glob("*.json"))
+        history_dir = study/"sequential/protected-v3/historical-retention"
+        history_dir.mkdir(parents=True)
+        historical_gate = {"schema": "weightbridge.phase_iiis.host_historical_retention.v1", "passed": True,
+            "task_manifest_sha256": expected}
+        (history_dir/"gate.json").write_bytes(dumps(historical_gate))
+        transaction = {"schema": "weightbridge.phase_iiis.private_protected_execution.v3", "completed": True,
+            "passed": True, "action": "historical-retention", "arm": "sequential", "task_manifest_sha256": expected,
+            "gate_sha256": sha(dumps(historical_gate)), "exact_replays_passed": True}
+        (history_dir/"completed.json").write_bytes(dumps(transaction))
+        audit_path = root/"sequential-historical-metadata-audit-v1.json"
+        review = {"schema": "weightbridge.phase_iiis.closed_historical_metadata_review.v1", "passed": True,
+            "arm": "sequential", "task_manifest_sha256": expected, "gate_sha256": sha(dumps(historical_gate)),
+            "completed_sha256": sha(dumps(transaction)), "raw_outputs_read_by_reviewer": False, "raw_rosters_read_by_reviewer": False}
+        audit_path.write_bytes(dumps(review))
+        assert historical_supplement(study, root/"historical-public", "sequential", expected_manifest=expected)["passed"]
+        audit_path.write_bytes(dumps({**review, "gate_sha256": "f"*64}))
+        try:
+            historical_supplement(study, root/"historical-refused", "sequential", expected_manifest=expected)
+        except ValueError:
+            assert not (root/"historical-refused").exists()
+        else:
+            raise AssertionError("Unbound historical review accepted")
         # Counter collection deliberately references a nonexistent roster.
         # Its absence proves the reporter does not open a bank to count work.
         protocol_path, authorization_path = root/"counter-protocol.json", root/"counter-auth.json"
@@ -862,6 +923,7 @@ def self_test():
         "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS",
         "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS",
         "active_postdevelopment_exclusion": "PASS", "protected_metadata_redaction_and_incomplete_gate": "PASS",
+        "closed_historical_metadata_binding": "PASS",
         "model_execution": False}
 
 
@@ -876,6 +938,7 @@ if __name__ == "__main__":
     parser.add_argument("--worker-specs", type=Path, help="Private JSON list of explicitly authorized completed WorkerSpecs and expected hashes")
     parser.add_argument("--counter-out", type=Path, help="New aggregate-only receipt, with no paths or raw observations")
     parser.add_argument("--development-supplement", choices=ARMS, help="Publish only the selected arm's fixed closed stored-development metadata")
+    parser.add_argument("--historical-supplement", choices=ARMS, help="Publish only an explicitly selected closed historical gate, transaction and metadata audit")
     parser.add_argument("--defer-postdevelopment", action="append", choices=ARMS, default=[], help="Leave an active arm's postdevelopment metadata and costs unmeasured in this immutable snapshot")
     args = parser.parse_args()
     if args.self_test:
@@ -886,6 +949,8 @@ if __name__ == "__main__":
         print(json.dumps(verify(args.verify)))
     elif args.development_supplement and args.study and args.out:
         print(json.dumps(development_supplement(args.study, args.out, args.development_supplement)))
+    elif args.historical_supplement and args.study and args.out:
+        print(json.dumps(historical_supplement(args.study, args.out, args.historical_supplement)))
     elif args.study and args.ledger and args.out:
         gates = [value.split("=", 1) for value in args.gate]
         if any(len(pair) != 2 for pair in gates):
