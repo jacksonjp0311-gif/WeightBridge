@@ -1,0 +1,90 @@
+{
+  "aggregate_summary": {
+    "hidden": {
+      "original_general_union": null,
+      "own_parent_retention_count": 1,
+      "passed": true,
+      "recorded_exact_native_replays": {
+        "candidate": true,
+        "parent": true
+      }
+    },
+    "preservation-validation": {
+      "original_general_union": null,
+      "own_parent_retention_count": 1,
+      "passed": true,
+      "recorded_exact_native_replays": {
+        "candidate": true,
+        "parent": true
+      }
+    },
+    "selection": {
+      "original_general_union": null,
+      "own_parent_retention_count": 1,
+      "passed": true,
+      "recorded_exact_native_replays": {
+        "candidate": true,
+        "parent": true
+      }
+    }
+  },
+  "arm": "original-joint",
+  "both_locks_sha256": "7dbff1f2cf46a4dfbeea31c7d35dede4c7d990433d454f78170fe2ed00571b9d",
+  "checkpoint_sha256": "0a8ec938d0ebfaa4b77a4d244307978038ebaebcd0d8d8baa1fffbe8657bcc72",
+  "checks": {
+    "aggregate_retention": true,
+    "both_locks": true,
+    "bridge": true,
+    "bridge_request": true,
+    "candidate": true,
+    "closed_unfailed": true,
+    "disposition": true,
+    "driver": true,
+    "gate": true,
+    "historical_scope": true,
+    "lock": true,
+    "manifest": true,
+    "metadata_commitments": true,
+    "nine_workers": true,
+    "no_promotion": true,
+    "physical_base_commands": true,
+    "prerequisites": true,
+    "protocol": true,
+    "six_native_flags": true,
+    "source162": true,
+    "started_closed": true
+  },
+  "completed_sha256": "7fe10e25ca7862b26492d597bd7beb74d93d7e6928aff33567dd48277b42efca",
+  "driver_sha256": "3dcbac8004832ee90199e4ad46970f9b0f100f718ce68bdca0f33a5a054dbb0f",
+  "fresh_confirmation": null,
+  "fresh_qualification": null,
+  "gate_sha256": "f41ba259dc3f47b43a4b1e3af5ee760fad2dd37dc33af3c87133052ba667056c",
+  "lineage_accepted": false,
+  "lock_sha256": "05b77c2506c0bb5824ba141f896c2ae127b412480558752addb89ff2182b34a6",
+  "model_calls_by_reviewer": 0,
+  "owned_model_work": {
+    "conservative_peak_memory_bytes": 2596728832,
+    "cpu_seconds": 9239.515625,
+    "wall_seconds": 1579.0117519999621
+  },
+  "owned_worker_count": 9,
+  "passed": true,
+  "presentations": 832,
+  "production_authority": false,
+  "r_bank_b_access": false,
+  "raw_outputs_read_by_reviewer": false,
+  "raw_rosters_read_by_reviewer": false,
+  "review_resources": {
+    "cpu_seconds": 0.359375,
+    "peak_memory_bytes": null,
+    "wall_seconds": 0.35235539998393506
+  },
+  "schema": "weightbridge.phase_iiis.closed_historical_metadata_review.v1",
+  "source_files_verified": 162,
+  "stage": "historical-retention",
+  "stage_host_clock": {
+    "host_cpu_seconds": 956.59375,
+    "host_wall_seconds": 1906.7983379999641
+  },
+  "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+}

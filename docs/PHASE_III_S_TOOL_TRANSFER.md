@@ -8,9 +8,10 @@ sequential stored BF16 merge, exact reconstruction, native development replay
 and actual-parent rollback also passed. The original-parent stored model scores
 127/128 tool responses and 15/16 tool families after losing one adapter-learned
 answer during BF16 merging; its frozen development and reconstruction gates
-still pass. Both finalist decisions are locked. The sequential model retained
-all 832 historical R responses; original-parent historical evaluation is in
-progress. Fresh qualification and sealed confirmation remain unopened. No
+still pass. Both finalist decisions are locked. Both stored candidates score
+832/832 on the historical R battery with no required parent-behavior loss.
+Sequential fresh qualification is in progress, with no reported outcome;
+original-parent qualification and both sealed confirmations remain unopened. No
 independently qualified Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
@@ -222,8 +223,8 @@ factors, optimizer, schedule and random state rather than these learned factors.
 | Step-64 diagnostic development | PASS, diagnostic only | FAIL: seven schema regressions |
 | Fixed step-128 development | DEVELOPMENT_QUALIFIED | DEVELOPMENT_QUALIFIED |
 | Merged development and exact reconstruction | PASS | PASS; one adapter-to-merge loss |
-| Old R locked battery | PASS: 832/832 retained | IN PROGRESS; outcome unmeasured |
-| Independent qualification | UNOPENED | UNOPENED |
+| Old R locked battery | PASS: 832/832 retained | PASS: 832/832; zero own-parent losses |
+| Independent qualification | IN PROGRESS; outcome unmeasured | UNOPENED |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
 
 These statuses describe this reporting milestone. Missing observations are not
@@ -513,8 +514,8 @@ The sequential disposition is **FINALIST_LOCKED_PENDING_INDEPENDENT**, not a
 verified scientific pass. The formal requirement for qualifying semantic
 corrections in two real action types is still unresolved. Original-parent
 stored verification has also passed. Historical retention began after both
-decisions locked; independent qualification and sealed confirmation remain
-unopened at this milestone.
+decisions locked and has since passed for both arms. Independent stages have
+no reported outcome at this milestone.
 
 ## Original-parent stored development and the BF16 merge loss
 
@@ -603,6 +604,33 @@ workers generated 2,496 responses in total and used **1,440.668 wall seconds**,
 **8,331.313 CPU seconds**, and **2,601,758,720 bytes** conservative peak memory.
 These worker scopes are counted once; enclosing host waiting time is not added.
 
+Compute coverage is narrower than total end-to-end execution. The completed
+protected-host receipt also records 1,795.217 wall seconds and 849.406 CPU
+seconds. These are **nonadditive** with the model ledger: the same host process
+performs monitoring, and 573.21875 of its CPU seconds are already included in
+the ledger's 8,331.3125 CPU seconds. Subtracting that measured overlap gives
+276.1875 additional timed host CPU seconds. Separately timed bridge processes
+record 41.250 CPU seconds, and the later metadata audit records 0.40625 CPU
+seconds. Bridge wall time is already inside the host's elapsed clock.
+
+| Sequential historical compute scope | Wall seconds | CPU seconds | Accounting treatment |
+|---|---:|---:|---|
+| Nine model-worker scopes, including monitors | 1,440.668 | 8,331.313 | Primary disjoint model-work ledger |
+| Enclosing timed protected-host scope | 1,795.217 | 849.406 | Nonadditive; overlaps workers and monitoring |
+| Exclusive timed host CPU | — | 276.1875 | Derived by subtracting recorded monitor overlap |
+| Separately timed bridge CPU | — | 41.250 | Measured partial process time |
+| Later metadata audit | 0.411 | 0.40625 | Separate review; no model calls |
+| Pre-clock/startup, post-clock and unmeasured child verification work | UNMEASURED | UNMEASURED | Must not be filled with zero |
+
+The known CPU subtotal is 8,649.15625 seconds, but it is **incomplete**. The host
+clock starts after initial context/prerequisite validation and excludes its
+final serialization. Bridge process clocks do not cover all startup work or
+the historical-release child source-check CPU. No authoritative full-command
+timestamps supply those gaps, and filesystem modification times are not a CPU
+measurement. Later formal-stage reports must keep model-ledger work, overlapping
+host clocks and unmeasured overhead separate in the same way. These reporting
+limits do not retroactively change the frozen resource authorization.
+
 The completed gate commitment is
 `90af42866306f98edcf85f742f0b1618ba68de36bf2740a48b7eb10365fde3e5`;
 the closed transaction is
@@ -618,10 +646,58 @@ The six-artifact [historical retention supplement](../results/phase-iii-s-tool-t
 has export commitment
 `083dc650b9ce0389074c1997e86034adcfda8cf57617dbf65515144af0510351`.
 It contains only explicitly selected closed metadata and source commitments;
-training logs and active original-parent stages were not re-exported. Original
-historical evaluation remains in progress, and fresh qualification/confirmation
-outcomes remain null. This retention PASS is not an independent Phase S learning
+training logs and then-active original-parent stages were not re-exported. Fresh
+qualification/confirmation outcomes remain null in this supplement. This
+retention PASS is not an independent Phase S learning
 or continual-learning qualification.
+
+## Original-parent historical comparison
+
+The original-joint stored candidate also scores **832/832** on the old R battery.
+Its required comparator is its **own unchanged original parent**, not R8. The
+following improvements are on a previously disclosed historical population and
+must not be counted as fresh independent Phase S transfer.
+
+| Historical population | Original parent correct | Original-joint S correct | Prohibited own-parent losses | Valid completed first lines |
+|---|---:|---:|---:|---:|
+| R preservation validation | 320/320 | 320/320 | 0 | 320/320 |
+| R selection, now historical | 34/256 | 256/256 | 0 | 256/256 |
+| R hidden verification, now historical | 37/256 | 256/256 | 0 | 256/256 |
+
+Each negative-decimal population goes from zero to 64/64 strict comparisons and
+from zero to 32/32 complete families. Previously correct original responses and
+all first-line validity are retained. All 832 complete decodes reach the token
+budget; none is represented as EOS termination. The regenerated candidate and
+actual original parent each pass their own 832-response native replay, giving
+six passing replay checks across the three populations.
+
+The gate commitment is
+`f41ba259dc3f47b43a4b1e3af5ee760fad2dd37dc33af3c87133052ba667056c`;
+the completed transaction is
+`7fe10e25ca7862b26492d597bd7beb74d93d7e6928aff33567dd48277b42efca`.
+The separate 21-check closed metadata review has commitment
+`42743e63fa98a61a961600176ff3e4a373061d71bfcba74feb0716853b889ff2`.
+The six-artifact [original historical supplement](../results/phase-iii-s-tool-transfer/original-historical-retention-v1/export-manifest.json)
+has export commitment
+`43397cf8713122dd59239d2d3617da3fb0906572cf8cb9260e5fdcdd474bccd9`.
+It contains no raw bank observations, rosters, model weights or later-bank results.
+
+Nine distinct model-worker scopes used **1,579.012 wall seconds** and
+**9,239.516 CPU seconds**, with **2,596,728,832 bytes** conservative peak memory.
+The enclosing host clock is 1,906.798 wall seconds and 956.594 CPU seconds,
+which is nonadditive: 668.953125 monitor CPU seconds already appear in the model
+ledger. The remaining timed host CPU is 287.640625 seconds. Separately measured
+bridge checking adds 33.890625 CPU seconds and the later metadata audit records
+0.359375 CPU seconds. The one-time historical-release bridge was already
+accounted for in the sequential stage and is not charged again. Startup,
+pre-clock and post-clock gaps remain UNMEASURED; these observations are not a
+complete end-to-end CPU total.
+
+Both historical gates have now passed under their declared comparators. Fresh
+qualification and sealed confirmation remain separate: the sequential
+qualification is active but unreported, and the control's qualification has not
+opened at this reporting milestone. No published retention result fills those
+unmeasured cells or changes their acceptance thresholds.
 
 ## Training implementation and frozen population
 
@@ -830,6 +906,8 @@ python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/original-stored-development-v1
 python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/sequential-historical-retention-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/original-historical-retention-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction
