@@ -218,3 +218,13 @@ training logs, worker responses, rosters or later banks:
 
 Use `original-joint` only after that arm's separate historical transaction and
 audit close. A failed or absent binding is refused before publication.
+
+A small qualification-only supplement likewise requires the explicitly selected
+closed gate, native replay receipt, completed transaction and matching metadata
+audit. It accepts a reviewed scientific failure without turning it into PASS;
+other-arm, confirmation and finalization outcomes stay outside this snapshot:
+
+```powershell
+& $Python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --study $Study --qualification-supplement sequential --out $NewPublicSnapshot
+```

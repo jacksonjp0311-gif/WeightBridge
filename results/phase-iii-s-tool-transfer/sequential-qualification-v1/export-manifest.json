@@ -1,0 +1,28 @@
+{
+  "artifacts": {
+    "closed-metadata-review.json": "e965d27a64e5c213af7ec4d3a51b8df945df360de5f0d133b96602f3674a826e",
+    "protocol-identity.json": "5a8414ef1a4afea1ef15c5fe1b7a119c968e1599e7532e2c044b4972fdb10996",
+    "qualification-gate.json": "57ec297d0e7fed627fac64b7dc84abd32859903d5f7c7e23a4e88478ad801fcb",
+    "qualification-replays.json": "92333c2d5894f0f88f5d41217ef55fbf8861964f4ce1b6ca4dc6554e8572849c",
+    "qualification-transaction.json": "f31c8ffcc7c39e23f3ee94afb01b22d04555cce7402294d107e5fcf8c668c229",
+    "source-manifest.json": "ae205d4caa639c349d7876e7599a0c8f53f5a39af81347a4dbf9fb43b2a28195",
+    "stage-availability.json": "d1ae50bbb1f3c21bab397401955101d295701e8fc1dbd724b90b42e3404bb373"
+  },
+  "exporter_sha256": "e6441d26d63d6e7a9a6e7fd25c1c7caa3b6d05b3ad402571b7a6246a6d8e4102",
+  "input_sha256": {
+    "diagnostics/sequential-qualification-metadata-audit-v1.json": "c14d08b21888cda6404c9ce70f600fc963ecac1ed15c5bd8ac4643d4c8073744",
+    "manifest.json": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+    "sequential/protected-v3/qualification/completed.json": "115f33f9053818a696066f91e4d6fea87530ad5edb7876bed243b7dec944c194",
+    "sequential/protected-v3/qualification/gate.json": "146f373f5a4a053daab35f10edebe0b2082a5c4cc863082c097ba5ab8387b281",
+    "sequential/protected-v3/qualification/replays.json": "720ed9def75f9c90838f6d99cb1a9d440ce1447aa605b77fd23c1f3cc9a7a7fc",
+    "sequential/protocol.json": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9"
+  },
+  "missing_inputs": [],
+  "model_execution": false,
+  "model_weights_published": false,
+  "private_outputs_published": false,
+  "raw_rosters_published": false,
+  "schema": "weightbridge.phase_iiis.public_outcome.v1",
+  "scope": "Explicit closed qualification gate, replay and transaction metadata only. Other-arm qualification, confirmation and finalization are outside this snapshot. No raw observations, protected rosters or model tensors were read. Hash validation is not a replacement for host scientific replay.",
+  "study_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+}

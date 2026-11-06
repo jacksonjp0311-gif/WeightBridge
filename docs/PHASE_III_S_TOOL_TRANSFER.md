@@ -10,9 +10,12 @@ and actual-parent rollback also passed. The original-parent stored model scores
 answer during BF16 merging; its frozen development and reconstruction gates
 still pass. Both finalist decisions are locked. Both stored candidates score
 832/832 on the historical R battery with no required parent-behavior loss.
-Sequential fresh qualification is in progress, with no reported outcome;
-original-parent qualification and both sealed confirmations remain unopened. No
-independently qualified Phase S improvement is reported.** The
+Sequential fresh qualification has completed: 256/256 tool responses and all
+32 families pass, but its formal gate fails for insufficient semantic improvement
+headroom across two real-action types. All four measured qualification replays
+pass. Original-parent qualification is in progress with no reported outcome;
+both sealed confirmations remain unopened. No independently qualified Phase S
+improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -224,7 +227,7 @@ factors, optimizer, schedule and random state rather than these learned factors.
 | Fixed step-128 development | DEVELOPMENT_QUALIFIED | DEVELOPMENT_QUALIFIED |
 | Merged development and exact reconstruction | PASS | PASS; one adapter-to-merge loss |
 | Old R locked battery | PASS: 832/832 retained | PASS: 832/832; zero own-parent losses |
-| Independent qualification | IN PROGRESS; outcome unmeasured | UNOPENED |
+| Independent qualification | FAIL: insufficient two-action semantic headroom; four exact replays PASS | IN PROGRESS; outcome unmeasured |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
 
 These statuses describe this reporting milestone. Missing observations are not
@@ -693,11 +696,89 @@ accounted for in the sequential stage and is not charged again. Startup,
 pre-clock and post-clock gaps remain UNMEASURED; these observations are not a
 complete end-to-end CPU total.
 
-Both historical gates have now passed under their declared comparators. Fresh
-qualification and sealed confirmation remain separate: the sequential
-qualification is active but unreported, and the control's qualification has not
-opened at this reporting milestone. No published retention result fills those
-unmeasured cells or changes their acceptance thresholds.
+Both historical gates passed under their declared comparators. They do not
+substitute for fresh qualification or sealed confirmation. The sequential fresh
+result below is now closed; the original-parent control is still in progress
+with no reported fresh result. No retention observation changes the independent
+acceptance thresholds.
+
+## Sequential fresh qualification: observed transfer, formal headroom failure
+
+The locked sequential BF16 model completed the fresh qualification transaction
+with **256/256 strict tool responses and 32/32 complete eight-presentation
+families**. All responses were schema-valid, semantically correct and terminated
+at native EOS. This is measured transfer under the fixed endpoint. The formal
+result is nevertheless **INSUFFICIENT_IMPROVEMENT_HEADROOM**, not a qualified
+Phase S pass: the R8 parent supplied eligible schema-valid semantic errors in
+only `search_files`, while the frozen gate requires opportunities and corrections
+across at least two real-action types.
+
+| Fresh qualification measure | R8 parent | Sequential stored candidate |
+|---|---:|---:|
+| Strict tool responses | 31/256 | 256/256 |
+| Schema-valid tool responses | 59/256 | 256/256 |
+| Native completed tool responses | 75/256 | 256/256 |
+| Complete tool families | 0/32 | 32/32 |
+| Eligible schema-valid semantic errors | 28 in 16 families | All 28 corrected |
+| Eligible/corrected real-action types | `search_files` only | `search_files` only |
+| Previously correct/schema-valid tool responses lost | not applicable | 0 |
+| Negative-decimal correct responses | 256/256 | 256/256 |
+| Negative-decimal strict comparisons / complete families | 64/64 / 32/32 | 64/64 / 32/32 |
+| General-control correct responses | 319/320 | 320/320 |
+
+The general-control gate also uses the original checkpoint, which was correct
+on all 320 presentations; every one survives. All 576 legacy responses have
+valid correct first lines, while their unrestricted decodes reach the token
+budget rather than EOS. This is different from the 256 tool responses, which
+complete the full JSON response at native EOS.
+
+The tool gain is 225 responses, or 87.890625 percentage points. The paired-family
+percentile bootstrap gives a 95% gain interval of 83.984375 to 91.40625 points over
+these 32 generated families. Complete-family gain is 32/32; its empirical
+bootstrap interval is [1, 1]. That degenerate interval reflects this finite
+all-correct sample, not certainty about all future tasks. The original-to-R8
+comparison had lost 36 tool successes and gained nine; this candidate recovers
+all 36 losses. It is correct on 198 responses the original model missed,
+including the nine already gained by R8. Those counts use different reference
+sets and must not be added to the 225-response S gain.
+
+On the fresh decimal bank, the inherited-gain denominator is **216 responses
+that the original model missed and R8 corrected**. All 216 remain correct, and
+all 32 newly completed R8 decimal families remain complete. This supports
+retention on the measured fresh population, not preservation of every model
+capability. No population was redrawn to obtain more tool-error types and no
+acceptance threshold was relaxed.
+
+All four measured fresh-process replay checks pass: tool and decimal candidate
+outputs match reconstruction, and tool and decimal parent outputs match the
+actual-parent replay. The closed transaction binds gate SHA-256
+`146f373f5a4a053daab35f10edebe0b2082a5c4cc863082c097ba5ab8387b281`
+and replay receipt
+`720ed9def75f9c90838f6d99cb1a9d440ce1447aa605b77fd23c1f3cc9a7a7fc`.
+Its completed receipt is
+`115f33f9053818a696066f91e4d6fea87530ad5edb7876bed243b7dec944c194`.
+A separate closed metadata audit has commitment
+`c14d08b21888cda6404c9ce70f600fc963ecac1ed15c5bd8ac4643d4c8073744`.
+
+Ten distinct enclosing model-worker scopes used **5,258.915 wall seconds**,
+**32,596.188 CPU seconds**, and a maximum conservative peak of **3,095,932,928
+bytes**. The enclosing timed protected-host scope records 5,625.178 wall seconds
+and 2,699.078 CPU seconds. These are nonadditive: 2,338.3125 monitor CPU seconds
+already belong to the model-worker totals. Its separately derived additional
+host CPU is 360.765625 seconds; the metadata audit adds 0.328125 CPU seconds and
+0.333489 wall seconds. Nested wall clocks are not summed. Untimed startup,
+pre-clock/post-clock work and any separately unreported bridge CPU remain
+UNMEASURED; this is not a claim of complete end-to-end CPU accounting.
+
+The seven-artifact [qualification milestone](../results/phase-iii-s-tool-transfer/sequential-qualification-v1/export-manifest.json)
+has export commitment
+`10107aaebf6bf5eee959d092e6a88df01940b9c6a5b9789cd24cae7cce608797`.
+It contains only the explicitly closed gate, replays, transaction, protocol/source
+identities and aggregate audit. It excludes raw protected rows, outputs, control
+qualification and finalization metadata. Confirmation remains unopened and null;
+there is no sealed outcome or lineage admission. The independent semantic
+transfer observation therefore remains distinct from the failed formal
+multi-action headroom requirement.
 
 ## Training implementation and frozen population
 
@@ -908,6 +989,8 @@ python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/sequential-historical-retention-v1
 python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/original-historical-retention-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/sequential-qualification-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction

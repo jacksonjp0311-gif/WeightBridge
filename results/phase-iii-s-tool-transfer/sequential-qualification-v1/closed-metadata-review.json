@@ -1,0 +1,174 @@
+{
+  "aggregate_summary": {
+    "complete_family_gain": 32,
+    "corrected_real_actions": [
+      "search_files"
+    ],
+    "corrected_schema_valid_semantic_errors": 28,
+    "corrected_semantic_families": 16,
+    "decimal_count": 1,
+    "general_count": 2,
+    "headroom": {
+      "checks": {
+        "semantic_error_families": true,
+        "semantic_error_real_actions": false,
+        "semantic_errors": true,
+        "six_family_headroom": true,
+        "ten_point_headroom": true
+      },
+      "error_families": 16,
+      "passed": false,
+      "real_actions": [
+        "search_files"
+      ],
+      "schema_valid_semantic_errors": 28
+    },
+    "inherited_decimal": {
+      "family_denominator": 32,
+      "new_r8_complete_families": 32,
+      "new_r8_families_retained": 32,
+      "original_wrong_r8_correct_responses": 216,
+      "response_denominator": 216,
+      "responses_retained": 216,
+      "retained_fraction": 1.0
+    },
+    "strict_accuracy_gain": 0.87890625,
+    "strict_response_gain": 225,
+    "tool_candidate": {
+      "complete_families": 32,
+      "completed": 256,
+      "decode_termination": {
+        "eos": 256
+      },
+      "presentations": 256,
+      "schema_valid": 256,
+      "semantic_correct": 256,
+      "strict_correct": 256
+    },
+    "tool_checks": {
+      "accuracy": true,
+      "eight_semantic_corrections": true,
+      "four_corrected_semantic_families": true,
+      "frozen_formal_population": true,
+      "own_parent_retention": true,
+      "required_comparator_retention": true,
+      "six_new_complete_families": true,
+      "ten_percentage_point_gain": true,
+      "two_corrected_real_actions": false
+    },
+    "tool_lost_counts": {
+      "lost_complete_families": 0,
+      "lost_schema_valid": 0,
+      "lost_schema_valid_without_completion": 0,
+      "lost_semantic_correct": 0,
+      "lost_strict_correct": 0
+    },
+    "tool_parent": {
+      "complete_families": 0,
+      "completed": 75,
+      "decode_termination": {
+        "eos": 75,
+        "token_budget": 181
+      },
+      "presentations": 256,
+      "schema_valid": 59,
+      "semantic_correct": 31,
+      "strict_correct": 31
+    },
+    "tool_recovery": {
+      "corrected_beyond_original": 198,
+      "final_losses_relative_original": 0,
+      "original_to_r8_gains": 9,
+      "original_to_r8_losses": 36,
+      "recovered_original_successes": 36
+    },
+    "tool_uncertainty": {
+      "complete_family_rate_gain": 1.0,
+      "complete_family_rate_gain_interval": [
+        1.0,
+        1.0
+      ],
+      "confidence": 0.95,
+      "draws": 2000,
+      "families": 32,
+      "method": "paired_family_percentile_bootstrap",
+      "strict_accuracy_gain": 0.87890625,
+      "strict_accuracy_gain_interval": [
+        0.83984375,
+        0.9140625
+      ]
+    }
+  },
+  "arm": "sequential",
+  "behavioral_gate_passed": false,
+  "both_locks_sha256": "7dbff1f2cf46a4dfbeea31c7d35dede4c7d990433d454f78170fe2ed00571b9d",
+  "checkpoint_sha256": "ce2ddca3dfdf0438aef401a33200a03d08b95c1988ee5c131da59a4a95036838",
+  "checks": {
+    "both_locks": true,
+    "confirmation_unopened": true,
+    "driver_pin": true,
+    "failure_classification": true,
+    "four_recorded_native_replays": true,
+    "gate_hash": true,
+    "lock": true,
+    "manifest": true,
+    "metadata_hashes": true,
+    "no_promotion": true,
+    "physical_base_commands": true,
+    "prerequisites_closed_and_bound": true,
+    "preservation_passes": true,
+    "protocol": true,
+    "replay_hash": true,
+    "representation": true,
+    "separate_replay_bindings": true,
+    "source162": true,
+    "started_closed": true,
+    "ten_owned_completed_workers": true,
+    "transaction_closed_unfailed": true
+  },
+  "confirmation": null,
+  "disposition": "INSUFFICIENT_IMPROVEMENT_HEADROOM",
+  "driver_sha256": "3dcbac8004832ee90199e4ad46970f9b0f100f718ce68bdca0f33a5a054dbb0f",
+  "gate_sha256": "146f373f5a4a053daab35f10edebe0b2082a5c4cc863082c097ba5ab8387b281",
+  "host_cpu_accounting": {
+    "additional_recorded_host_cpu_seconds": 360.765625,
+    "host_cpu_already_inside_worker_scopes": 2338.3125
+  },
+  "lineage_accepted": false,
+  "lock_sha256": "fcdf0bb0f88b4423b35758629d7879e350ae0ce46339596022ecc249dd3d6b0e",
+  "model_calls_by_reviewer": 0,
+  "owned_model_work": {
+    "conservative_peak_memory_bytes": 3095932928,
+    "cpu_seconds": 32596.1875,
+    "wall_seconds": 5258.914763899869
+  },
+  "passed": true,
+  "production_authority": false,
+  "r_bank_b_access": false,
+  "raw_outputs_read_by_reviewer": false,
+  "raw_rosters_read_by_reviewer": false,
+  "recorded_exact_native_replays": {
+    "qualification/candidate/decimal": true,
+    "qualification/candidate/tool": true,
+    "qualification/parent/decimal": true,
+    "qualification/parent/tool": true
+  },
+  "replay_receipt_sha256": "720ed9def75f9c90838f6d99cb1a9d440ce1447aa605b77fd23c1f3cc9a7a7fc",
+  "review_resources": {
+    "cpu_seconds": 0.328125,
+    "peak_memory_bytes": null,
+    "wall_seconds": 0.3334889999823645
+  },
+  "schema": "weightbridge.phase_iiis.closed_qualification_metadata_review.v1",
+  "source_files_verified": 162,
+  "stage": "qualification",
+  "stage_host_clock": {
+    "host_cpu_seconds": 2699.078125,
+    "host_wall_seconds": 5625.178294100042
+  },
+  "started_sha256": "902b9d0f784b61e7b0f564af0bd954bf8a85db55a7b1afe7b3471ed2441c85cf",
+  "task_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+  "transaction_completed": true,
+  "transaction_passed": false,
+  "transaction_sha256": "115f33f9053818a696066f91e4d6fea87530ad5edb7876bed243b7dec944c194"
+}

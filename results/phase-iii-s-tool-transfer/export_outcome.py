@@ -40,6 +40,7 @@ GATE_SCHEMAS = {
     "weightbridge.phase_iiis.private_protected_execution.v3",
     "weightbridge.phase_iiis.formal_stage_closure.v3",
     "weightbridge.phase_iiis.closed_historical_metadata_review.v1",
+    "weightbridge.phase_iiis.closed_qualification_metadata_review.v1",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
     "text", "fixture", "scenario", "gold_action", "parsed_action", "operands", "request",
@@ -599,6 +600,63 @@ def historical_supplement(study, out, arm, *, expected_manifest=MANIFEST_SHA):
         "Explicit closed historical metadata only. The previously disclosed R battery measures retention, not fresh transfer. This publication neither reads raw outputs/rosters nor recomputes behavioral or replay claims; the bound host workers and audit supply that evidence.")
 
 
+
+def qualification_supplement(study, out, arm, *, expected_manifest=MANIFEST_SHA):
+    """Explicit closed qualification metadata, never raw bank observations."""
+    if arm not in ARMS or Path(out).exists():
+        raise ValueError("Qualification supplement needs a supported arm and new output directory")
+    reader = Reader(study)
+    manifest, protocol = reader.read("manifest.json"), reader.read(f"{arm}/protocol.json")
+    prefix = f"{arm}/protected-v3/qualification"
+    gate = reader.read(prefix+"/gate.json")
+    replay = reader.read(prefix+"/replays.json")
+    transaction = reader.read(prefix+"/completed.json")
+    review = reader.read(f"{arm}-qualification-metadata-audit-v1.json", root=reader.study.parent,
+        label=f"diagnostics/{arm}-qualification-metadata-audit-v1.json")
+    if (reader.inputs.get("manifest.json") != expected_manifest
+            or not protocol or protocol.get("task_manifest_sha256") != expected_manifest
+            or protocol.get("source_sha256") != manifest["source_sha256"]
+            or not gate or gate.get("schema") != "weightbridge.phase_iiis.behavior_gate.v1"
+            or gate.get("task_manifest_sha256") != expected_manifest or gate.get("arm") != arm
+            or gate.get("stage") != "qualification" or gate.get("source_sha256") != manifest["source_sha256"]
+            or gate.get("protocol_sha256") != reader.inputs[f"{arm}/protocol.json"]
+            or not replay or replay.get("schema") != "weightbridge.phase_iiis.private_stage_replay.v1"
+            or replay.get("gate_sha256") != reader.inputs[prefix+"/gate.json"]
+            or replay.get("source_sha256") != manifest["source_sha256"]
+            or not transaction or transaction.get("schema") != "weightbridge.phase_iiis.private_protected_execution.v3"
+            or transaction.get("completed") is not True or transaction.get("action") != "qualification"
+            or transaction.get("arm") != arm or transaction.get("task_manifest_sha256") != expected_manifest
+            or transaction.get("protocol_sha256") != reader.inputs[f"{arm}/protocol.json"]
+            or transaction.get("gate_sha256") != reader.inputs[prefix+"/gate.json"]
+            or transaction.get("replay_receipt_sha256") != reader.inputs[prefix+"/replays.json"]
+            or transaction.get("exact_replays_passed") is not replay.get("passed")
+            or transaction.get("passed") is not (gate.get("passed") is True and replay.get("passed") is True)
+            or not review or review.get("schema") != "weightbridge.phase_iiis.closed_qualification_metadata_review.v1"
+            or review.get("passed") is not True or review.get("arm") != arm
+            or review.get("task_manifest_sha256") != expected_manifest
+            or review.get("gate_sha256") != reader.inputs[prefix+"/gate.json"]
+            or review.get("transaction_sha256") != reader.inputs[prefix+"/completed.json"]
+            or review.get("replay_receipt_sha256") != reader.inputs[prefix+"/replays.json"]
+            or review.get("transaction_completed") is not True
+            or review.get("transaction_passed") is not transaction.get("passed")
+            or review.get("behavioral_gate_passed") is not gate.get("passed")
+            or review.get("raw_outputs_read_by_reviewer") is not False
+            or review.get("raw_rosters_read_by_reviewer") is not False):
+        raise ValueError("Qualification metadata does not bind its closed reviewed transaction")
+    artifacts = {"source-manifest.json": manifest["source_sha256"],
+        "protocol-identity.json": {"protocol_sha256": reader.inputs[f"{arm}/protocol.json"],
+            **selected(protocol, ("schema", "arm", "checkpoint_sha256", "task_manifest_sha256"))},
+        "qualification-gate.json": project(gate), "qualification-replays.json": project(replay),
+        "qualification-transaction.json": project(transaction), "closed-metadata-review.json": project(review),
+        "stage-availability.json": {"independent_qualification": {arm: {
+            "reported_transaction_passed": transaction.get("passed"), "completed": True,
+            "disposition": transaction.get("disposition"), "exact_replays_passed": replay.get("passed")}},
+            "other_arm_qualification": None, "sealed_confirmation": None, "finalization": None,
+            "lineage_admission": False}}
+    return publish_snapshot(artifacts, reader, out, expected_manifest,
+        "Explicit closed qualification gate, replay and transaction metadata only. Other-arm qualification, confirmation and finalization are outside this snapshot. No raw observations, protected rosters or model tensors were read. Hash validation is not a replacement for host scientific replay.")
+
+
 def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA, defer_postdevelopment=()):
     out = Path(out)
     if out.exists():
@@ -863,6 +921,49 @@ def self_test():
             assert not (root/"historical-refused").exists()
         else:
             raise AssertionError("Unbound historical review accepted")
+        qualification_dir = study/"sequential/protected-v3/qualification"
+        qualification_dir.mkdir(parents=True)
+        proto_hash = sha((study/"sequential/protocol.json").read_bytes())
+        sources = json.loads((study/"manifest.json").read_bytes())["source_sha256"]
+        qualification_gate = {"schema": "weightbridge.phase_iiis.behavior_gate.v1", "arm": "sequential",
+            "stage": "qualification", "passed": False, "disposition": "INSUFFICIENT_IMPROVEMENT_HEADROOM",
+            "task_manifest_sha256": expected, "protocol_sha256": proto_hash, "source_sha256": sources,
+            "tool": {"strict_correct": 256, "headroom": {"passed": False, "real_actions": ["search_files"]}},
+            "rows": [{"prompt": "NEVER_PUBLISH_PRIVATE_QUALIFICATION", "text": "PRIVATE_ANSWER"}]}
+        (qualification_dir/"gate.json").write_bytes(dumps(qualification_gate))
+        replay = {"schema": "weightbridge.phase_iiis.private_stage_replay.v1", "passed": True,
+            "gate_sha256": sha(dumps(qualification_gate)), "source_sha256": sources,
+            "exact_native": {"candidate/tool": True, "candidate/decimal": True, "parent/tool": True, "parent/decimal": True}}
+        (qualification_dir/"replays.json").write_bytes(dumps(replay))
+        qualification_tx = {"schema": "weightbridge.phase_iiis.private_protected_execution.v3", "arm": "sequential",
+            "action": "qualification", "completed": True, "passed": False, "exact_replays_passed": True,
+            "task_manifest_sha256": expected, "protocol_sha256": proto_hash,
+            "disposition": "INSUFFICIENT_IMPROVEMENT_HEADROOM", "gate_sha256": sha(dumps(qualification_gate)),
+            "replay_receipt_sha256": sha(dumps(replay))}
+        (qualification_dir/"completed.json").write_bytes(dumps(qualification_tx))
+        qualification_review = {"schema": "weightbridge.phase_iiis.closed_qualification_metadata_review.v1",
+            "passed": True, "arm": "sequential", "task_manifest_sha256": expected,
+            "gate_sha256": sha(dumps(qualification_gate)), "transaction_sha256": sha(dumps(qualification_tx)),
+            "replay_receipt_sha256": sha(dumps(replay)), "transaction_completed": True,
+            "transaction_passed": False, "behavioral_gate_passed": False,
+            "raw_outputs_read_by_reviewer": False, "raw_rosters_read_by_reviewer": False}
+        qualification_review_path = root/"sequential-qualification-metadata-audit-v1.json"
+        qualification_review_path.write_bytes(dumps(qualification_review))
+        qual_out = root/"qualification-public"
+        assert qualification_supplement(study, qual_out, "sequential", expected_manifest=expected)["passed"]
+        assert "PRIVATE" not in "".join(p.read_text() for p in qual_out.glob("*.json"))
+        availability = json.loads((qual_out/"stage-availability.json").read_bytes())
+        assert availability["sealed_confirmation"] is None and availability["finalization"] is None
+        assert availability["independent_qualification"]["sequential"]["reported_transaction_passed"] is False
+        for mutation in ({**qualification_review, "transaction_sha256": "f"*64},
+                         {**qualification_review, "behavioral_gate_passed": True}):
+            qualification_review_path.write_bytes(dumps(mutation))
+            try:
+                qualification_supplement(study, root/"qualification-refused", "sequential", expected_manifest=expected)
+            except ValueError:
+                assert not (root/"qualification-refused").exists()
+            else:
+                raise AssertionError("Unbound or contradictory qualification review admitted")
         # Counter collection deliberately references a nonexistent roster.
         # Its absence proves the reporter does not open a bank to count work.
         protocol_path, authorization_path = root/"counter-protocol.json", root/"counter-auth.json"
@@ -924,6 +1025,8 @@ def self_test():
         "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS",
         "active_postdevelopment_exclusion": "PASS", "protected_metadata_redaction_and_incomplete_gate": "PASS",
         "closed_historical_metadata_binding": "PASS",
+        "closed_failed_qualification_and_unopened_stages": "PASS",
+        "qualification_hash_and_status_binding": "PASS",
         "model_execution": False}
 
 
@@ -939,6 +1042,7 @@ if __name__ == "__main__":
     parser.add_argument("--counter-out", type=Path, help="New aggregate-only receipt, with no paths or raw observations")
     parser.add_argument("--development-supplement", choices=ARMS, help="Publish only the selected arm's fixed closed stored-development metadata")
     parser.add_argument("--historical-supplement", choices=ARMS, help="Publish only an explicitly selected closed historical gate, transaction and metadata audit")
+    parser.add_argument("--qualification-supplement", choices=ARMS, help="Publish only an explicitly selected closed qualification gate, replay, transaction and metadata audit")
     parser.add_argument("--defer-postdevelopment", action="append", choices=ARMS, default=[], help="Leave an active arm's postdevelopment metadata and costs unmeasured in this immutable snapshot")
     args = parser.parse_args()
     if args.self_test:
@@ -951,6 +1055,8 @@ if __name__ == "__main__":
         print(json.dumps(development_supplement(args.study, args.out, args.development_supplement)))
     elif args.historical_supplement and args.study and args.out:
         print(json.dumps(historical_supplement(args.study, args.out, args.historical_supplement)))
+    elif args.qualification_supplement and args.study and args.out:
+        print(json.dumps(qualification_supplement(args.study, args.out, args.qualification_supplement)))
     elif args.study and args.ledger and args.out:
         gates = [value.split("=", 1) for value in args.gate]
         if any(len(pair) != 2 for pair in gates):
