@@ -1,0 +1,231 @@
+{
+  "assessment": null,
+  "data_order": {
+    "data_order_sha256": "d0eb3fb7cb012935d89f952347f62e1cda1df65f12dd47fab186177bfb9d65a8",
+    "examples_seen": 2048,
+    "microbatches": 512,
+    "optimizer_steps": 128,
+    "ordered_row_ids_sha256": "6c9a30cd82fe9aeeece90d361a2464460cc25628fcd8f698a1e16847f6850fcb",
+    "schema": "weightbridge.phase_iiis.prospective_order.v1"
+  },
+  "execution": {
+    "arm": "sequential",
+    "behavioral_qualification": null,
+    "completed": true,
+    "lineage_authority": false,
+    "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "production_authority": false,
+    "protected_evaluation_opened": false,
+    "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+    "schema": "weightbridge.phase_iiis.arm_execution.v1",
+    "status": "DEVELOPMENT_MEASURED"
+  },
+  "inherited_r_main_cost": {
+    "cpu_seconds": 19433.96875,
+    "wall_seconds": 3123.8772233
+  },
+  "main_admission": {
+    "outer_executions": {
+      "reload": {
+        "sha256": "cab0c1168e8b3c2e87d817a9ce281ef9487df41a4f8c5fb549b460df8a427ba6"
+      },
+      "train": {
+        "sha256": "c10a0d877a9bb861e5edcdc4e97f7635c286786d5e78c5dc3519f04ccd7c4705"
+      },
+      "zero": {
+        "sha256": "71ac0f5b88a7fe4610c59ddc2258e05162f3ff14fb5bdc47ca1770bda5a0895d"
+      }
+    },
+    "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "passed": true,
+    "planned_authorization": {
+      "allow_merge": true,
+      "allowed_modules_count": 186,
+      "alpha": 16.0,
+      "base_frozen": true,
+      "dropout": 0.0,
+      "learning_rates_count": 1,
+      "max_answer_tokens_per_run": 28932,
+      "max_cpu_seconds_per_run": 84000.0,
+      "max_development_checkpoints_per_run": 2,
+      "max_input_tokens_per_run": 471134,
+      "max_memory_bytes": 25769803776,
+      "max_runs": 1,
+      "max_steps_per_run": 128,
+      "max_trainable_parameters": 5411328,
+      "max_wall_seconds_per_run": 13200.0,
+      "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "production_deployment": false,
+      "rank": 8,
+      "schema": "weightbridge.supervised_training_authorization.v1",
+      "smoke_gate_sha256": "0ee29d2cbe8954e58b1f4ebf5dbaf1b64df8ea3d4886a53b602aee4372cf430e",
+      "training_bundle_sha256": "5d07f4321f7a0032916c47d785643247bfe27ec55d7da1260789fe738751f394"
+    },
+    "production_authority": false,
+    "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+    "retries_authorized": false,
+    "schema": "weightbridge.phase_iiis.main_admission.v1",
+    "smoke_gate_sha256": "0ee29d2cbe8954e58b1f4ebf5dbaf1b64df8ea3d4886a53b602aee4372cf430e",
+    "smoke_resources": {
+      "cpu_seconds": 14239.828125,
+      "peak_rss_bytes": 14951276544,
+      "wall_seconds": 2343.9728839000454
+    }
+  },
+  "main_authorization": {
+    "allow_merge": true,
+    "allowed_modules_count": 186,
+    "alpha": 16.0,
+    "base_frozen": true,
+    "dropout": 0.0,
+    "learning_rates_count": 1,
+    "max_answer_tokens_per_run": 28932,
+    "max_cpu_seconds_per_run": 84000.0,
+    "max_development_checkpoints_per_run": 2,
+    "max_input_tokens_per_run": 471134,
+    "max_memory_bytes": 25769803776,
+    "max_runs": 1,
+    "max_steps_per_run": 128,
+    "max_trainable_parameters": 5411328,
+    "max_wall_seconds_per_run": 13200.0,
+    "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "production_deployment": false,
+    "rank": 8,
+    "schema": "weightbridge.supervised_training_authorization.v1",
+    "smoke_gate_sha256": "0ee29d2cbe8954e58b1f4ebf5dbaf1b64df8ea3d4886a53b602aee4372cf430e",
+    "training_bundle_sha256": "5d07f4321f7a0032916c47d785643247bfe27ec55d7da1260789fe738751f394"
+  },
+  "main_claim": {
+    "authorization_sha256": "cf4dbc41657f3ba7bfe3d315b466bafa481746071c05708cb130f9f6eec58488",
+    "bundle_sha256": "5d07f4321f7a0032916c47d785643247bfe27ec55d7da1260789fe738751f394",
+    "mode": "main",
+    "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "production_authority": false,
+    "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+    "resume_implemented": false,
+    "retries_authorized": false,
+    "run_index": 0,
+    "schema": "weightbridge.phase_iiis.optimizer_launch_claim.v1"
+  },
+  "main_training_validation": {
+    "adapter_sha256": "610b482e070552d3fec75140f6e3a3ca724caaa7ebb994666322a5ad3c8205ee",
+    "checks": {
+      "admitted_parent": true,
+      "all_factor_changes": true,
+      "all_factor_gradients": true,
+      "artifact": true,
+      "authorization_sha256": true,
+      "base_unchanged": true,
+      "bundle_sha256": true,
+      "complete_exposure": true,
+      "completed": true,
+      "configuration": true,
+      "enclosing_process": true,
+      "fixed_final_step": true,
+      "full_steps": true,
+      "host_binding": true,
+      "initial_factors": true,
+      "inventory": true,
+      "measured_factor_updates": true,
+      "parent": true,
+      "protocol": true,
+      "recorded_checkpoint": true
+    },
+    "input_sha256": {
+      "adapter": {
+        "sha256": "610b482e070552d3fec75140f6e3a3ca724caaa7ebb994666322a5ad3c8205ee"
+      },
+      "checkpoint_receipt": {
+        "sha256": "75896f1238ee2f612d18c5a0833ce693d361aa67dc5260ecc6c5f2208ebd6144"
+      },
+      "execution": {
+        "sha256": "f3b861a12afa9d3f2e7073f9d1695203f2f4837c396d84505a4c255b9c12af36"
+      },
+      "inventory": {
+        "sha256": "14f877582f22dd3c7fcbb6f460183d98c05e6a556a632a2634ed8efd0ebd41b9"
+      }
+    },
+    "main_admission": {
+      "input_sha256": {},
+      "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+      "passed": true,
+      "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+      "schema": "weightbridge.phase_iiis.main_admission_replay.v1"
+    },
+    "matched_training": {
+      "data_order_sha256": "d0eb3fb7cb012935d89f952347f62e1cda1df65f12dd47fab186177bfb9d65a8",
+      "initial_factor_sha256": "b53573886f33a22719b03d7a16f8b1c76f7b28534d6d3bf084812b16422edbca",
+      "ordered_row_ids_sha256": "6c9a30cd82fe9aeeece90d361a2464460cc25628fcd8f698a1e16847f6850fcb",
+      "tokenization_sha256": "62cdd94ee45bb81b718ffb3bbe9268cccf896bb20ec9b984017ddcc53569664f"
+    },
+    "passed": true
+  },
+  "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+  "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+  "recipe": {
+    "resources": {
+      "cumulative_model_wall_seconds": 64800,
+      "evaluation_limits": {
+        "max_cpu_seconds": 12000.0,
+        "max_memory_bytes": 8589934592,
+        "max_wall_seconds": 1800.0
+      },
+      "max_memory_bytes": 25769803776,
+      "merge_limits": {
+        "max_cpu_seconds": 6000.0,
+        "max_memory_bytes": 25769803776,
+        "max_wall_seconds": 900.0
+      },
+      "mode_limits": {
+        "main": {
+          "max_answer_tokens": 28932,
+          "max_cpu_seconds": 84000.0,
+          "max_input_tokens": 471134,
+          "max_wall_seconds": 13200.0
+        },
+        "smoke": {
+          "max_answer_tokens": 24576,
+          "max_cpu_seconds": 20000.0,
+          "max_input_tokens": 155648,
+          "max_wall_seconds": 3000.0
+        }
+      }
+    },
+    "training": {
+      "betas_count": 2,
+      "checkpoint_steps_count": 2,
+      "effective_batch_size": 16,
+      "epochs": 1,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rates_count": 1,
+      "micro_batch_size": 4,
+      "norm_measurement_interval": 8,
+      "optimizer_steps": 128,
+      "warmup_fraction": 0.05,
+      "weight_decay": 0.01
+    }
+  },
+  "smoke_gate": {
+    "checks": {
+      "all_factor_gradients": true,
+      "all_factors_changed": true,
+      "base_unchanged": true,
+      "disabled_parent_exact": true,
+      "loss_decreased": true,
+      "measured_factor_changes": true,
+      "same_initial_factors": true,
+      "smoke_steps_bounded": true,
+      "training_completed": true,
+      "worker_checks_passed": true,
+      "zero_initialization_exact": true
+    },
+    "loss_after": 0.04605633864445042,
+    "loss_before": 0.5974557451849469,
+    "parent_sha256": "2d9102982dc0f0fdf3397308cd397bc2d5239eeb99ef6297e5f09f6f6deba158",
+    "passed": true,
+    "protocol_sha256": "17907f42b9c32dba0446ec71244b58bb0cbcf2f3a8d303bd300c9f1bfb4256d9",
+    "schema": "weightbridge.phase_iiis.smoke_gate.v1",
+    "source_receipts": {}
+  }
+}

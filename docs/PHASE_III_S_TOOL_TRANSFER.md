@@ -2,9 +2,10 @@
 
 **Execution milestone: formal populations, protocols and 162 source files remain
 frozen. Both parent development baselines and the sequential disposable smoke
-have completed. Sequential main training is running; its development result is
-UNMEASURED. The original-parent main run and all protected stages are pending.
-No Phase S merged model or independently qualified tool improvement is reported.** The
+have completed. The sequential main run completed, and its fixed step-128 adapter
+passed development: all 128 tool responses and 208 legacy responses were correct.
+The original-parent main run, merged-model measurements and all protected stages
+remain unmeasured. No independently qualified Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -211,9 +212,9 @@ factors, optimizer, schedule and random state rather than these learned factors.
 
 | Candidate stage | Sequential arm | Original-parent joint arm |
 |---|---|---|
-| Main training | RUNNING | NOT STARTED |
-| Step-64 diagnostic development | UNMEASURED | UNMEASURED |
-| Fixed step-128 development | UNMEASURED | UNMEASURED |
+| Main training | COMPLETED | NOT STARTED |
+| Step-64 diagnostic development | PASS, diagnostic only | UNMEASURED |
+| Fixed step-128 development | DEVELOPMENT_QUALIFIED | UNMEASURED |
 | Merged development and exact reconstruction | UNMEASURED | UNMEASURED |
 | Old R locked battery | UNOPENED | UNOPENED |
 | Independent qualification | UNOPENED | UNOPENED |
@@ -221,6 +222,108 @@ factors, optimizer, schedule and random state rather than these learned factors.
 
 These statuses describe this reporting milestone. Missing observations are not
 zeros or passes, and no training-loss change fills an unmeasured behavioral cell.
+
+## Sequential adapter development result
+
+The one authorized sequential run completed all 128 optimizer steps: 512
+forward calls, 512 backward calls, 2,048 example visits, 28,932 supervised tokens,
+471,134 unpadded input tokens and 757,236 padded input positions. All 372 factor
+tensors changed and received nonzero gradients. The frozen parent remained
+unchanged. The first and final optimizer-batch losses were 0.5950803449 and
+0.0000876359; these are different minibatches, not a matched held-out loss
+comparison. Every recorded step is retained in the public snapshot.
+
+| Development measurement | R8 parent | Sequential adapter, step 64 | Sequential adapter, step 128 |
+|---|---:|---:|---:|
+| Strict completed tool actions | 23/128 | 116/128 | 128/128 |
+| Correct tool identity | 23/128 | 118/128 | 128/128 |
+| Correct exact arguments and simulated result | 23/128 | 116/128 | 128/128 |
+| Schema-valid responses | 45/128 | 128/128 | 128/128 |
+| Complete eight-presentation tool families | 0/16 | 9/16 | 16/16 |
+| Natural tool EOS termination | 65/128 | 128/128 | 128/128 |
+| Previously correct/semantic tool responses lost | — | 0 | 0 |
+| Previously schema-valid tool responses lost | — | 0 | 0 |
+| Negative-decimal correct responses | 128/128 | 128/128 | 128/128 |
+| Strict decimal comparisons / complete families | 32/32; 16/16 | 32/32; 16/16 | 32/32; 16/16 |
+| General controls correct | 80/80 | 80/80 | 80/80 |
+| Valid completed legacy first lines | 208/208 | 208/208 | 208/208 |
+| Legacy decode reached EOS | 0/208 | 0/208 | 0/208 |
+
+All legacy decodes reached their sixteen-token budget, despite correct completed
+first lines. All 128 development tool prompts use wording absent from training.
+Step 64 passes the applicable development gate but remains diagnostic. The
+precommitted sole candidate is step 128; no checkpoint search selected it.
+
+The final adapter recovered one original-model tool success that R had lost
+and corrected 104 responses the original model answered incorrectly. These
+are separate from the 105 gains over its actual R8 parent. It corrected all
+22 parent-schema-valid semantic errors across seven families. However, only
+`search_files` is represented among qualifying real-action corrections; other
+corrections in this subset are clarify/no-action. Thus the development result
+does not itself establish the formal two-real-action requirement. Formal
+headroom and qualification remain separately gated, with no redraw or relaxation.
+
+All 109 original-wrong/R8-correct decimal responses and all sixteen newly
+completed R decimal families on this fresh development population survived.
+Preservation is limited to these measured populations; the historical R battery
+and independent banks have not yet been evaluated.
+
+Relative to R8, the final development strict-action gain is 82.03125 percentage
+points, with paired-family 95% bootstrap interval [69.53125, 93.75]. Complete
+family gain is 16/16; the empirical family-rate interval is [1, 1] because every
+observed family improved. That degenerate finite-sample interval is not a claim
+of certainty on new tasks, wordings or models. Development supplied the gate;
+it is not independent confirmation.
+
+The adapter artifacts each occupy 21,750,848 bytes and contain 5,411,328
+trainable values. Step-64 SHA-256 is
+`84f9cc671a2924eec55e1b1af724bff9e86fca154351858f009c8e44f07a0f22`;
+the fixed step-128 SHA-256 is
+`610b482e070552d3fec75140f6e3a3ca724caaa7ebb994666322a5ad3c8205ee`.
+These identify saved adapters, not merged checkpoints.
+
+| Numerical diagnostic | Step 64 | Step 128 |
+|---|---:|---:|
+| Unrounded effective update norm | 3.5147371891 | 3.6446136515 |
+| Previewed BF16 merged-delta norm | 3.5492954578 | 3.6782808892 |
+| Previewed changed BF16 entries | 418,443,658 | 420,829,239 |
+| Previewed rounding residual norm | 0.5152060731 | 0.5157644719 |
+| Previewed relative norm on adapted matrices | 0.0112574514 | 0.0116665600 |
+
+These are numerical merge previews computed from the trained factors. They do
+not establish a materialized merged checkpoint or identical BF16 generations.
+The relative denominator is the full adapted attention/MLP matrices, whose
+parent norm is 315.2841010366, rather than the entire model. Cumulative
+original-to-final norms and stored-model behavior remain unmeasured.
+
+Observed supervision matches the frozen exposure. Tool tokens contribute
+69.8465% of the token-normalized objective's exposure, negative-decimal tokens
+16.6736%, and general replay 13.4799%, despite a 50/25/25 row mixture. Category
+token counts and accumulated loss sums are published without changing weights
+after the result.
+
+| Additional enclosing model work | Wall seconds | Observed CPU seconds | Conservative peak bytes |
+|---|---:|---:|---:|
+| Sequential main training | 9,122.746 | 56,672.906 | 16,580,399,104 |
+| Four adapter development workers | 830.063 | 4,638.672 | 3,072,778,240 |
+| All recorded S scopes through this snapshot | 13,744.790 | 83,843.516 | 16,580,399,104 |
+
+The last row includes calibration, timing, both parent baselines, disposable
+smoke, sequential main and development. It excludes software tests and report
+generation. Inner-worker measurements are included in their enclosing scopes,
+not added again. The inherited R main cost, 3,123.877 wall and 19,433.969 CPU
+seconds, is separate from this additional S total.
+
+The write-once [sequential development snapshot](../results/phase-iii-s-tool-transfer/sequential-development-v1/export-manifest.json)
+contains 15 hash-verified aggregate artifacts, including all training-step
+records, both full projected development gates, the untouched-parent summaries,
+factor identities and non-nested cost. Its optional top-level assessment-summary
+field is null because that version looked at a different metadata location;
+both actual step gates and their source commitments are present. Numerical
+preview tensor hashes are retained, with tensor names supplied by the separate
+inventory. These report-only omissions are corrected for subsequent exports;
+this snapshot is preserved unchanged. Merged-model and independent fields
+remain null. Original-parent joint training has not yet run.
 
 ## Training implementation and frozen population
 
@@ -367,6 +470,14 @@ whole-response rejection, exact arguments, actual search effects, irrelevant
 requests, completion separation, eight-form scoring, mixed counts and split
 isolation. Software passes do not demonstrate a learned model improvement.
 
+After the sequential development result, the unchanged frozen-source runtime
+suite completed with **1,013 passed and two skips** (Matplotlib and MCP absent
+from that runtime). The separately configured MCP suite again passed all
+**23 tests**. Their exact case counts and recorded durations are retained in
+the [frozen runtime XML](../results/phase-iii-s-tool-transfer/tests/frozen-runtime.xml)
+and [frozen MCP XML](../results/phase-iii-s-tool-transfer/tests/frozen-mcp.xml).
+These later receipts do not replace or revise the pre-freeze test evidence.
+
 The first formal-freeze attempt stopped before writing populations: sorted-key
 JSON serialization changed inventory-object insertion order, while the frozen
 calibration renderer reproduces its original construction order. All eighty
@@ -398,6 +509,8 @@ python results/phase-iii-s-tool-transfer/export_preflight.py `
   --verify results/phase-iii-s-tool-transfer/preflight-v1
 python results/phase-iii-s-tool-transfer/export_preregistration.py `
   --verify results/phase-iii-s-tool-transfer/preregistration-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/sequential-development-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction

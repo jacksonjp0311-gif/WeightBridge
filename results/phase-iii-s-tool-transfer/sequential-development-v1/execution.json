@@ -1,0 +1,392 @@
+{
+  "accounting": "Disjoint owned worker scopes, including monitor cost; inner training and evaluation costs are not added again. Peak is the maximum conservative process-tree measurement, not a sum across stages.",
+  "all_recorded_scope_totals": {
+    "cpu_seconds": 83843.515625,
+    "peak_rss_bytes": 16580399104,
+    "wall_seconds": 13744.789527900226
+  },
+  "complete_accounting": true,
+  "completed_scope_totals": {
+    "cpu_seconds": 83843.515625,
+    "peak_rss_bytes": 16580399104,
+    "wall_seconds": 13744.789527900226
+  },
+  "scopes": [
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "ac04773e1c7c10d34bddd7bc0a6f0b615202faf94b2c7ded1f48c48d592fec6c",
+      "name": "calibration-original-decimal",
+      "passed": true,
+      "receipt_sha256": "50775ee7f298d82ef49286531cf15e3c38c25bb6cabef699660272bcd0b1d74a",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 256.203125,
+        "host_cpu_seconds": 21.1875,
+        "observed_tree_cpu_seconds": 235.015625,
+        "peak_rss_bytes": 2582654976,
+        "wall_seconds": 53.60916680004448
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "a043e6678d1e14d42caadf6ff1dc95bece214487315b330268891856dcb5b677",
+      "name": "calibration-original-tool",
+      "passed": true,
+      "receipt_sha256": "54e460191ac922ec485900186af34377f599fbae50b39761c686cd2e2e80f065",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 765.921875,
+        "host_cpu_seconds": 55.234375,
+        "observed_tree_cpu_seconds": 710.6875,
+        "peak_rss_bytes": 2983460864,
+        "wall_seconds": 135.03489900002023
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "fa38acdea450e8f36c2881f498e487dde747b29c3c93fd1d5512567426d1f0df",
+      "name": "calibration-sequential-decimal",
+      "passed": true,
+      "receipt_sha256": "67f423871f37496857e140fce5152031908a3f9a8d33a5aeaf2b87501b7752e1",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 257.484375,
+        "host_cpu_seconds": 21.703125,
+        "observed_tree_cpu_seconds": 235.78125,
+        "peak_rss_bytes": 2589024256,
+        "wall_seconds": 53.85991500003729
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "13aff01558b05d2f67a85424a0f3cb4b36b833b77228501b16f0f012f5af5665",
+      "name": "calibration-sequential-tool",
+      "passed": true,
+      "receipt_sha256": "a6cd3e1d899cfd4ac8a44cabdee5a981a87a846f8329458a6640fced6d18e7ad",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1587.15625,
+        "host_cpu_seconds": 104.625,
+        "observed_tree_cpu_seconds": 1482.53125,
+        "peak_rss_bytes": 2990567424,
+        "wall_seconds": 266.36953530000756
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "31775364c3404233bc4ca60e16b4140f394a0e012e97d9e859e28675aef198b1",
+      "name": "development-parent-original-decimal",
+      "passed": true,
+      "receipt_sha256": "836899831d3cb15c4b8bf685b682c6c0b8d1f753ea62fd527166e93f9d715fb3",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 701.5,
+        "host_cpu_seconds": 48.265625,
+        "observed_tree_cpu_seconds": 653.234375,
+        "peak_rss_bytes": 2593595392,
+        "wall_seconds": 125.00343659997452
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "759f26ebc06f6939d944610c9b81f036500c55930e45dcc25918115cdb7ef8b8",
+      "name": "development-parent-original-tool",
+      "passed": true,
+      "receipt_sha256": "218724949ee64f39dbdc74a8caa0d0af9d57a93f276942ff2e1906dfd9d6f88d",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1255.375,
+        "host_cpu_seconds": 86.3125,
+        "observed_tree_cpu_seconds": 1169.0625,
+        "peak_rss_bytes": 3020677120,
+        "wall_seconds": 213.1253061000025
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "d381e821ea9f984a798199e3d6eef9cc2b05ce5f9107136b3b7a4f4a48a4d79c",
+      "name": "development-parent-r8-decimal",
+      "passed": true,
+      "receipt_sha256": "8845b9acf46874cdc59c27a627a7d14c580db51b0e8108f5b95d46c4ff250c89",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 707.40625,
+        "host_cpu_seconds": 49.1875,
+        "observed_tree_cpu_seconds": 658.21875,
+        "peak_rss_bytes": 2599124992,
+        "wall_seconds": 125.6510390000185
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "98e49a53e2d90cf16ae761bb4f139fb115999b7e3ac99121f1de48c015e1cc68",
+      "name": "development-parent-r8-tool",
+      "passed": true,
+      "receipt_sha256": "a8cb7d4bf3b291153b733bdadca212fa61bd8263455cb67593b92140918e12d0",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 2332.28125,
+        "host_cpu_seconds": 150.125,
+        "observed_tree_cpu_seconds": 2182.15625,
+        "peak_rss_bytes": 3015311360,
+        "wall_seconds": 384.55415440001525
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "aaef354be334b229eb10eb2ddcdfcdbd3e69eb582401ba7166a631860ac29b82",
+      "name": "sequential-development-128-decimal",
+      "passed": true,
+      "receipt_sha256": "d0b1b5b93d5e8f0115c2b09f4f99a54a32ce95e941356a8b7cffb7e3b9c85917",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 904.140625,
+        "host_cpu_seconds": 68.359375,
+        "observed_tree_cpu_seconds": 835.78125,
+        "peak_rss_bytes": 2631241728,
+        "wall_seconds": 166.16529209999135
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "02cd03f2b2b87d73b37595273aa9fe85fdbfc9e293e32140a2647f4c4a45f0b4",
+      "name": "sequential-development-128-tool",
+      "passed": true,
+      "receipt_sha256": "fa2b84ab64af279d0d86d7a3f4f62dd9b9de3ac4dde787980226809f7765ea83",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1480.40625,
+        "host_cpu_seconds": 100.90625,
+        "observed_tree_cpu_seconds": 1379.5,
+        "peak_rss_bytes": 3072778240,
+        "wall_seconds": 258.20689550001407
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "02a59b75b5f9a7fdfe9a010030ff86c13be6d86631458a9dc957dd32bef920ae",
+      "name": "sequential-development-64-decimal",
+      "passed": true,
+      "receipt_sha256": "94f4d791689e378e0e15abc8e5d2a50aea21a78da5d1865cd0d10cb65c0db13f",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 814.71875,
+        "host_cpu_seconds": 59.796875,
+        "observed_tree_cpu_seconds": 754.921875,
+        "peak_rss_bytes": 2625105920,
+        "wall_seconds": 153.03318259998923
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 12000.0,
+        "memory_limit": 8589934592,
+        "wall_limit": 1800.0
+      },
+      "log_sha256": "b5d0d7226a093d964a10dcd3007ee59d39edcc939588efc63d40849aac5f6e21",
+      "name": "sequential-development-64-tool",
+      "passed": true,
+      "receipt_sha256": "3efa5ac8465f53253af0752ddfd62af5d0933c5c0805f65e10a9f01dd359e109",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 1439.40625,
+        "host_cpu_seconds": 98.890625,
+        "observed_tree_cpu_seconds": 1340.515625,
+        "peak_rss_bytes": 3064623104,
+        "wall_seconds": 252.65789310005493
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 84000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 13200.0
+      },
+      "log_sha256": "2e4b4f678834d02a961fb7a273ce214d37b4d3f7afa1c006825471e1061c9165",
+      "name": "sequential-main-train",
+      "passed": true,
+      "receipt_sha256": "f3b861a12afa9d3f2e7073f9d1695203f2f4837c396d84505a4c255b9c12af36",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 56672.90625,
+        "host_cpu_seconds": 3560.15625,
+        "observed_tree_cpu_seconds": 53112.75,
+        "peak_rss_bytes": 16580399104,
+        "wall_seconds": 9122.745941100002
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "b2e6f18749d9b353d514e26bae3d915f2afd7b558808236b07fef9ba8975b91d",
+      "name": "sequential-smoke-reload",
+      "passed": true,
+      "receipt_sha256": "cab0c1168e8b3c2e87d817a9ce281ef9487df41a4f8c5fb549b460df8a427ba6",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 3073.140625,
+        "host_cpu_seconds": 209.609375,
+        "observed_tree_cpu_seconds": 2863.53125,
+        "peak_rss_bytes": 4771495936,
+        "wall_seconds": 511.23104510002304
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "4411bd2b802843a48037cc73ea437983672e8a0e875c6c293f2b4ab9f90921b7",
+      "name": "sequential-smoke-train",
+      "passed": true,
+      "receipt_sha256": "c10a0d877a9bb861e5edcdc4e97f7635c286786d5e78c5dc3519f04ccd7c4705",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 7673.484375,
+        "host_cpu_seconds": 512.859375,
+        "observed_tree_cpu_seconds": 7160.625,
+        "peak_rss_bytes": 14951276544,
+        "wall_seconds": 1255.0655182999908
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 20000.0,
+        "memory_limit": 25769803776,
+        "wall_limit": 3000.0
+      },
+      "log_sha256": "f2ff5f9991ac6d0ef0fac4bb62f90ff9e08642c302d6b42a4fcbc49397eeb961",
+      "name": "sequential-smoke-zero",
+      "passed": true,
+      "receipt_sha256": "71ac0f5b88a7fe4610c59ddc2258e05162f3ff14fb5bdc47ca1770bda5a0895d",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 3493.203125,
+        "host_cpu_seconds": 237.421875,
+        "observed_tree_cpu_seconds": 3255.78125,
+        "peak_rss_bytes": 3190329344,
+        "wall_seconds": 577.6763205000316
+      }
+    },
+    {
+      "budget_failure": null,
+      "error": null,
+      "exit_code": 0,
+      "limits": {
+        "cpu_limit": 8000.0,
+        "memory_limit": 34359738368,
+        "wall_limit": 1200.0
+      },
+      "log_sha256": "b8fdc4c5fdae3f2a30bf42e81fa9f8e45689209ea31ea6c55b640e8f020ccbc8",
+      "name": "timing-sequential",
+      "passed": true,
+      "receipt_sha256": "bd8b4a1df8ef14eae846fccb8e270fb56e58aa63741d177b29a8b83a554bf085",
+      "resources": {
+        "cpu_accounting_complete_for_observed_processes": true,
+        "cpu_seconds": 428.78125,
+        "host_cpu_seconds": 37.390625,
+        "observed_tree_cpu_seconds": 391.390625,
+        "peak_rss_bytes": 14084444160,
+        "wall_seconds": 90.79998740000883
+      }
+    }
+  ],
+  "study_execution_complete": null,
+  "unfinished_scope_names": []
+}

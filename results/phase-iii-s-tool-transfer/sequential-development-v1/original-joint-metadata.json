@@ -1,0 +1,64 @@
+{
+  "assessment": null,
+  "data_order": {
+    "data_order_sha256": "d0eb3fb7cb012935d89f952347f62e1cda1df65f12dd47fab186177bfb9d65a8",
+    "examples_seen": 2048,
+    "microbatches": 512,
+    "optimizer_steps": 128,
+    "ordered_row_ids_sha256": "6c9a30cd82fe9aeeece90d361a2464460cc25628fcd8f698a1e16847f6850fcb",
+    "schema": "weightbridge.phase_iiis.prospective_order.v1"
+  },
+  "execution": null,
+  "inherited_r_main_cost": null,
+  "main_admission": null,
+  "main_authorization": null,
+  "main_claim": null,
+  "main_training_validation": null,
+  "parent_sha256": "7d4532858cf839d05ec34da088114df47238322f86f5e6e5c6693594a21a03b8",
+  "protocol_sha256": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154",
+  "recipe": {
+    "resources": {
+      "cumulative_model_wall_seconds": 64800,
+      "evaluation_limits": {
+        "max_cpu_seconds": 12000.0,
+        "max_memory_bytes": 8589934592,
+        "max_wall_seconds": 1800.0
+      },
+      "max_memory_bytes": 25769803776,
+      "merge_limits": {
+        "max_cpu_seconds": 6000.0,
+        "max_memory_bytes": 25769803776,
+        "max_wall_seconds": 900.0
+      },
+      "mode_limits": {
+        "main": {
+          "max_answer_tokens": 28932,
+          "max_cpu_seconds": 84000.0,
+          "max_input_tokens": 471134,
+          "max_wall_seconds": 13200.0
+        },
+        "smoke": {
+          "max_answer_tokens": 24576,
+          "max_cpu_seconds": 20000.0,
+          "max_input_tokens": 155648,
+          "max_wall_seconds": 3000.0
+        }
+      }
+    },
+    "training": {
+      "betas_count": 2,
+      "checkpoint_steps_count": 2,
+      "effective_batch_size": 16,
+      "epochs": 1,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rates_count": 1,
+      "micro_batch_size": 4,
+      "norm_measurement_interval": 8,
+      "optimizer_steps": 128,
+      "warmup_fraction": 0.05,
+      "weight_decay": 0.01
+    }
+  },
+  "smoke_gate": null
+}

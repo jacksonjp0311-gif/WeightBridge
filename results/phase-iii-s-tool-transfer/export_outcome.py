@@ -32,6 +32,7 @@ GATE_SCHEMAS = {
     "weightbridge.phase_iiis.final_verification.v1",
     "weightbridge.supervised_lora_merge_receipt.v1",
     "weightbridge.phase_iiis.reconstruction.v1",
+    "weightbridge.phase_iiis.merge_verification.v1",
     "weightbridge.phase_iiis.public_worker_counters.v1",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
@@ -41,7 +42,7 @@ FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", 
     "command", "message", "workers", "ledger", "path", "protocol_path", "checkpoints",
     "tensor_values", "weights", "state_dict", "optimizer_state", "adapter_factors"}
 STRING_FIELDS = {"schema", "status", "disposition", "stage", "mode", "arm", "representation",
-    "error", "type", "name", "label", "task", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
+    "error", "type", "name", "label", "task", "tensor", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
     "base_dtype", "merge_math", "relative_norm_scope", "method", "failed_stage", "terminal_kind", "budget_failure"}
 SAFE_DICT_LISTS = {"parameter_changes", "trainable_tensors", "modules", "tensor_receipts",
     "reference_gates", "required_retention", "required_comparator_retention", "scopes", "selected_workers"}
@@ -455,7 +456,7 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
             "main_claim": project(reader.read(f"{arm}/main-launch-claim.json")),
             "smoke_gate": project(reader.read(f"{arm}/smoke-gate.json")),
             "main_training_validation": project(reader.read(f"{arm}/main-training-validation.json")),
-            "assessment": project(reader.read(f"{arm}/assessment.json")),
+            "assessment": project(reader.read(f"{arm}/assessment/assessment.json")),
             "execution": selected(reader.read(f"{arm}/run-arm.json"), (*IDENTITY, "arm", "completed", "status",
                 "failed_stage", "protected_evaluation_opened", "behavioral_qualification", "production_authority", "lineage_authority"))}
         artifacts[f"{arm}-development.json"] = {str(step): {"diagnostic_only": step == 64,
