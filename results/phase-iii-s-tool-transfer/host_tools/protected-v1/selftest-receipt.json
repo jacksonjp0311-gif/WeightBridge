@@ -1,0 +1,25 @@
+{
+  "model_calls": 0,
+  "passed": true,
+  "protected_roster_reads": 0,
+  "resources": {
+    "cpu_seconds": 0.40625,
+    "peak_memory_bytes": null,
+    "wall_seconds": 0.40886310004862025
+  },
+  "schema": "weightbridge.phase_iiis.private_protected_host_selftest.v1",
+  "scope": "Mocked negative authorization/cache/replay fixtures. No positive model or protected-stage execution is established.",
+  "selftest_sha256": "4aef01c93e24ea199ccf6e38a676237e54a3832be4aac32bb350045abf79fc64",
+  "source_sha256": "5e962d1e0eacc053661a94d1e0aa0ebffbeefe11530cce43ff310c1a028b412f",
+  "tests": {
+    "both_arm_decisions_required_before_access": true,
+    "confirmation_refuses_failed_behavior": true,
+    "confirmation_refuses_failed_replay": true,
+    "foreign_parent_cache_refused_before_scoring": true,
+    "no_directory_created_failed_behavior": true,
+    "no_directory_created_failed_replay": true,
+    "replay_from_wrong_physical_directory_refused": true,
+    "rewritten_replay_pass_refused": true
+  },
+  "training_or_scientific_source_changes": false
+}

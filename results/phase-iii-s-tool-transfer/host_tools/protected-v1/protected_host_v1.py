@@ -1,0 +1,324 @@
+"""Prospective private Phase S protected-stage orchestration; explicit actions only.
+
+Every action replays both arm decisions and its own prior gates before any bank
+is read. All model work uses frozen S evaluation and the shared bounded ledger.
+No fitting, alternate finalist selection, redraw, checkpoint editing or promotion.
+"""
+from __future__ import annotations
+import argparse
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+S = Path('C:/Users/jacks/AppData/Local/Temp/wb-phase-iii-s-tool-transfer')
+PRIVATE = Path('C:/Users/jacks/AppData/Local/Temp/wb-iiis-tool-transfer')
+BRIDGE = PRIVATE/'host_stage_bridge_v1.py'
+BRIDGE_SHA = '258ee4e5b20992895588f072f6e0d42659e73cb847b06398f07e6104d5ddf67c'
+SELF = Path(__file__).resolve()
+sys.path.insert(0, str(S))
+
+from experiments.phase_iiis_tool_transfer import execute, host, study
+from experiments.phase_iiis_tool_transfer.integrity import ORIGINAL, DECIMAL_PARENT, PARENTS, read, write_once
+from experiments.phase_iiis_tool_transfer.verification import authorize_evaluation, validate_worker, exact_native_replay
+from weightbridge.core import file_hash
+
+
+def commitment(paths):
+    return {key: {'path': str(Path(path).resolve()), 'sha256': file_hash(path)} for key, path in paths.items()}
+
+
+def check_base(spec, expected):
+    actual = study._command_value(read(spec['execution'])['command'], '--base')
+    if Path(actual).resolve() != Path(expected).resolve():
+        raise ValueError('Worker did not load the exact declared physical checkpoint directory')
+    return {'passed': True, 'execution_sha256': file_hash(spec['execution']), 'base': str(Path(expected).resolve())}
+
+
+def context(request, *, required_stage=None):
+    root, _, manifest = host._initialized(request['study'])
+    arm = request['arm']
+    if root != (PRIVATE/'study-v1').resolve() or arm not in PARENTS:
+        raise ValueError('Only the existing two-arm frozen Phase S study is supported')
+    ledger = Path(request['ledger']).resolve()
+    if ledger != (PRIVATE/'execution').resolve() or file_hash(BRIDGE) != BRIDGE_SHA:
+        raise ValueError('Shared ledger or reviewed host bridge identity differs')
+    # Both decisions are checked before loading even a candidate-specific stage.
+    both = root/'locks/both-arms.json'
+    study.validate_arm_locks(both)
+    local, pp = root/arm, root/arm/'protocol.json'
+    protocol = study._protocol(pp)
+    lockpath = root/'locks'/f'{arm}.json'
+    lock = study.validate_arm_lock(lockpath)
+    if lock['status'] != 'FINALIST_LOCKED' or not lock['passed']:
+        raise ValueError('A terminal arm cannot consume protected evaluation')
+    post = local/'post-development-v1'
+    rebuild_request = read(post/'reconstruction-host-request.json')
+    rebuild_gate = read(post/'exact-reconstruction-gate.json')
+    study._assert_hashes(rebuild_gate['input_sha256'])
+    if (rebuild_gate['candidate_sha256'] != lock['representation_sha256']
+            or rebuild_gate['passed'] is not True or rebuild_gate['exact_reconstruction'] is not True):
+        raise ValueError('Locked candidate lacks its completed pre-bank reconstruction and replay')
+    prerequisites = {'merged-development': str(post/'merged-development-gate.json'),
+        'exact-reconstruction': str(post/'exact-reconstruction-gate.json'), 'both-arms-locked': str(both)}
+    if required_stage in ('qualification', 'confirmation'):
+        prerequisites['historical-retention'] = str(local/'protected-v1/historical-retention/gate.json')
+    if required_stage == 'confirmation':
+        prerequisites['qualification'] = str(local/'protected-v1/qualification/gate.json')
+    if required_stage is not None:
+        study.validate_prerequisites(pp, required_stage, lockpath, prerequisites)
+    return {'root': root, 'local': local, 'protocol': protocol, 'protocol_path': pp, 'manifest': manifest,
+        'ledger': ledger, 'lock': lock, 'lock_path': lockpath, 'prerequisites': prerequisites,
+        'original': Path(request['original']).resolve(), 'r8': Path(request['decimal_parent']).resolve(),
+        'candidate': Path(rebuild_request['candidate_directory']).resolve(),
+        'reconstructed': Path(rebuild_request['reconstructed_directory']).resolve(),
+        'actual_parent': Path(rebuild_request['actual_parent_directory']).resolve(),
+        'reconstruction_gate': post/'exact-reconstruction-gate.json'}
+
+
+def check_worker(ctx, spec, expected_sha, expected_base, task, stage):
+    if spec['stage'] != stage:
+        raise ValueError('Cached worker belongs to a different protected bank')
+    wp = read(spec['protocol'])
+    if any(wp.get(k) != ctx['protocol'].get(k) for k in ('source_sha256','task_manifest_sha256','endpoints','tool_completion')):
+        raise ValueError('A cached parent changed the population, endpoint or scientific source')
+    result = validate_worker(spec['path'], spec['rows'], spec['protocol'], expected_sha, None, stage, task,
+        authorization=spec['authorization'])
+    study.validate_execution(spec['execution'], module='experiments.phase_iiis_tool_transfer.evaluate',
+        out=spec['path'], protocol_path=spec['protocol'])
+    base = check_base(spec, expected_base)
+    return result, base
+
+
+def worker(ctx, *, model, sha, rows, row_sha, task, stage, name, directory, specifications,
+           attempts, base_checks, worker_protocol=None):
+    pp = Path(worker_protocol or ctx['protocol_path'])
+    # Authorization for a cached-parent replay remains bound to its recorded
+    # protocol and corresponding arm lock, even when another arm uses the cache.
+    auth_arm = read(pp)['arm']
+    auth_local = ctx['root']/auth_arm
+    auth_lock = ctx['root']/'locks'/f'{auth_arm}.json'
+    auth_prerequisites = {'merged-development': str(auth_local/'post-development-v1/merged-development-gate.json'),
+        'exact-reconstruction': str(auth_local/'post-development-v1/exact-reconstruction-gate.json'),
+        'both-arms-locked': str(ctx['root']/'locks/both-arms.json')}
+    if stage in ('qualification','confirmation'):
+        auth_prerequisites['historical-retention'] = str(auth_local/'protected-v1/historical-retention/gate.json')
+    if stage == 'confirmation':
+        auth_prerequisites['qualification'] = str(auth_local/'protected-v1/qualification/gate.json')
+    study.validate_prerequisites(pp, stage, auth_lock, auth_prerequisites)
+    if file_hash(rows) != row_sha:
+        raise ValueError('Protected roster changed after its prospective commitment')
+    directory = Path(directory)
+    directory.mkdir(parents=True, exist_ok=True)
+    out, auth = directory/f'{task}.json', directory/f'{task}-authorization.json'
+    if out.exists() or auth.exists():
+        raise FileExistsError('No implicit protected-worker retry or record replacement')
+    authorize_evaluation(auth, pp, stage=stage, task=task, roster_sha256=row_sha,
+        representation_sha256=sha, finalist_lock_path=auth_lock, prerequisite_paths=auth_prerequisites)
+    args = ['--base', str(model), '--protocol', str(pp), '--rows', str(rows), '--out', str(out),
+        '--expected-checkpoint', sha, '--expected-rows', row_sha, '--stage', stage, '--task', task,
+        '--authorization', str(auth)]
+    limits = ctx['protocol']['resources']['evaluation_limits']
+    process_path = ctx['ledger']/f'{name}.receipt.json'
+    result = execute.run(ctx['ledger'], name, 'experiments.phase_iiis_tool_transfer.evaluate', args,
+        wall_limit=limits['max_wall_seconds'], cpu_limit=limits['max_cpu_seconds'], memory_limit=limits['max_memory_bytes'])
+    attempts.append({'path': str(process_path), 'sha256': file_hash(process_path), 'passed': result['passed']})
+    if not result['passed']:
+        raise RuntimeError('Protected worker or enclosing resource scope failed')
+    spec = {'path': str(out), 'rows': str(rows), 'authorization': str(auth), 'protocol': str(pp),
+        'stage': stage, 'execution': str(process_path)}
+    _, base = check_worker(ctx, spec, sha, model, task, stage)
+    base_checks.append(base)
+    specifications.append(spec)
+    return spec
+
+
+def historical(ctx, out, attempts, bases, specs):
+    release = ctx['root']/'historical-release-v1.json'
+    if not release.exists():
+        request_path = ctx['root']/'historical-release-request-v1.json'
+        write_once(request_path, {'schema':'weightbridge.phase_iiis.host_bridge_request.v1',
+            'bridge_sha256':BRIDGE_SHA,'action':'release-historical','out':str(release),
+            'protocol':str(ctx['protocol_path']),'lock':str(ctx['lock_path']),
+            'prerequisites':ctx['prerequisites'],
+            'historical_root':'C:/Users/jacks/AppData/Local/Temp/wb-iiir-replication/replication-v1'})
+        subprocess.run([sys.executable,str(BRIDGE),'--request',str(request_path)],cwd=S,check=True)
+    released = read(release)
+    if (released.get('passed') is not True or released.get('presentations') != 832
+            or released.get('r_bank_b_access') is not False or released.get('bridge_sha256') != BRIDGE_SHA):
+        raise ValueError('Historical source release did not validate the fixed R battery')
+    study._assert_hashes(released['input_sha256'])
+    workers = {}
+    for old_stage in ('preservation-validation','selection','hidden'):
+        entry = released['stages'][old_stage]
+        workers[old_stage] = {}
+        for role, model, sha in (('candidate',ctx['candidate'],ctx['lock']['representation_sha256']),
+                ('reconstructed',ctx['reconstructed'],ctx['lock']['representation_sha256']),
+                ('parent',ctx['actual_parent'],ctx['protocol']['checkpoint_sha256'])):
+            workers[old_stage][role] = worker(ctx,model=model,sha=sha,rows=entry['rows'],row_sha=entry['roster_sha256'],
+                task='decimal',stage='historical-retention',name=f"{ctx['protocol']['arm']}-historical-{old_stage}-{role}",
+                directory=out/old_stage/role,specifications=specs,attempts=attempts,base_checks=bases)
+    request_path = out/'host-request.json'
+    write_once(request_path, {'schema':'weightbridge.phase_iiis.host_bridge_request.v1','bridge_sha256':BRIDGE_SHA,
+        'action':'historical-retention','out':str(out/'gate.json'),'protocol':str(ctx['protocol_path']),
+        'lock':str(ctx['lock_path']),'prerequisites':ctx['prerequisites'],'release':str(release),'workers':workers})
+    subprocess.run([sys.executable,str(BRIDGE),'--request',str(request_path)],cwd=S,check=True)
+    gate = read(out/'gate.json')
+    study._assert_hashes(gate['input_sha256'])
+    return gate
+
+
+def formal(ctx, stage, out, attempts, bases, specs):
+    workers = {'original':{},'r8':{},'candidate':{}}
+    # Only this committed bank; no redraw or borrowing from the other bank.
+    for task in ('tool','decimal'):
+        entry = ctx['manifest']['splits'][stage]['files'][task]
+        rows = Path(entry['path']).resolve()
+        expected_path = (PRIVATE/'study-v1-host'/stage/f'{task}.json').resolve()
+        if rows != expected_path or file_hash(rows) != entry['sha256']:
+            raise ValueError('Bank path/hash differs from the prospectively frozen manifest')
+        for role, sha in (('original',ORIGINAL),('r8',DECIMAL_PARENT)):
+            cache = ctx['root']/'formal-parent-cache-v1'/stage/role
+            cached_spec = cache/f'{task}-spec.json'
+            if cached_spec.exists():
+                spec = read(cached_spec)
+                if file_hash(spec['rows']) != entry['sha256'] or Path(spec['rows']).resolve() != rows:
+                    raise ValueError('Cached parent used another exact bank roster')
+                _, checked = check_worker(ctx,spec,sha,ctx[role],task,stage)
+                bases.append({**checked,'cached_parent':True})
+            else:
+                spec = worker(ctx,model=ctx[role],sha=sha,rows=rows,row_sha=entry['sha256'],task=task,stage=stage,
+                    name=f"{ctx['protocol']['arm']}-{stage}-reference-{role}-{task}",directory=cache,
+                    specifications=specs,attempts=attempts,base_checks=bases)
+                write_once(cached_spec,spec)
+            workers[role][task] = spec
+        workers['candidate'][task] = worker(ctx,model=ctx['candidate'],sha=ctx['lock']['representation_sha256'],
+            rows=rows,row_sha=entry['sha256'],task=task,stage=stage,name=f"{ctx['protocol']['arm']}-{stage}-candidate-{task}",
+            directory=out/'candidate',specifications=specs,attempts=attempts,base_checks=bases)
+    gate = study.record_stage(out/'gate.json',ctx['protocol_path'],stage=stage,workers=workers,
+        candidate_checkpoint=ctx['lock']['representation_sha256'],step=128,lock_path=ctx['lock_path'],
+        prerequisite_paths=ctx['prerequisites'])
+    # Replay each already opened stage even when its behavioral gate fails.
+    # A failed gate still prevents opening the later bank.
+    replays, native = {}, {}
+    for role in ('candidate','parent'):
+        reference_role = 'candidate' if role=='candidate' else 'r8' if ctx['protocol']['arm']=='sequential' else 'original'
+        model = ctx['reconstructed'] if role=='candidate' else ctx['actual_parent']
+        sha = ctx['lock']['representation_sha256'] if role=='candidate' else ctx['protocol']['checkpoint_sha256']
+        for task in ('tool','decimal'):
+            recorded = workers[reference_role][task]
+            replayed = worker(ctx,model=model,sha=sha,rows=recorded['rows'],row_sha=file_hash(recorded['rows']),
+                task=task,stage=stage,name=f"{ctx['protocol']['arm']}-{stage}-replay-{role}-{task}",
+                directory=out/f'replay-{role}',specifications=specs,attempts=attempts,base_checks=bases,
+                worker_protocol=recorded['protocol'])
+            a,_ = check_worker(ctx,recorded,sha,ctx['candidate'] if role=='candidate' else ctx['actual_parent'],task,stage)
+            b,_ = check_worker(ctx,replayed,sha,model,task,stage)
+            key=f'{stage}/{role}/{task}'
+            native[key]=exact_native_replay(a['measurement'],b['measurement'])
+            replays[key]={'recorded':recorded,'replayed':replayed}
+    write_once(out/'replays.json',{'schema':'weightbridge.phase_iiis.private_stage_replay.v1',
+        'passed':all(native.values()),'exact_native':native,'replays':replays,
+        'source_sha256':ctx['protocol']['source_sha256'],'gate_sha256':file_hash(out/'gate.json')})
+    return {**gate,'enclosing_exact_replay_passed':all(native.values())}
+
+
+def validate_formal_replays(ctx, stage):
+    """Recompute the closed stage, including physical replay sources, before access."""
+    directory=ctx['local']/'protected-v1'/stage
+    gate=study.replay_stage(directory/'gate.json')
+    record=read(directory/'replays.json')
+    expected={f'{stage}/{role}/{task}' for role in ('candidate','parent') for task in ('tool','decimal')}
+    if (set(record.get('replays',{}))!=expected or record.get('source_sha256')!=ctx['protocol']['source_sha256']
+            or record.get('gate_sha256')!=file_hash(directory/'gate.json')):
+        raise ValueError('Closed formal replay population or source binding changed')
+    native={}
+    for key,pair in record['replays'].items():
+        _,role,task=key.split('/')
+        reference_role='candidate' if role=='candidate' else 'r8' if ctx['protocol']['arm']=='sequential' else 'original'
+        if set(pair)!={'recorded','replayed'} or pair['recorded']!=gate['workers'][reference_role][task]:
+            raise ValueError('Replay reference differs from the exact independently scored worker')
+        a,b=pair['recorded'],pair['replayed']
+        if (Path(a['path']).resolve()==Path(b['path']).resolve() or Path(a['execution']).resolve()==Path(b['execution']).resolve()
+                or file_hash(a['rows'])!=file_hash(b['rows']) or file_hash(a['protocol'])!=file_hash(b['protocol'])):
+            raise ValueError('Replay was not a separate worker on its own frozen protocol and cases')
+        sha=ctx['lock']['representation_sha256'] if role=='candidate' else ctx['protocol']['checkpoint_sha256']
+        before,_=check_worker(ctx,a,sha,ctx['candidate'] if role=='candidate' else ctx['actual_parent'],task,stage)
+        after,_=check_worker(ctx,b,sha,ctx['reconstructed'] if role=='candidate' else ctx['actual_parent'],task,stage)
+        native[key]=exact_native_replay(before['measurement'],after['measurement'])
+    if record.get('exact_native')!=native or record.get('passed')!=all(native.values()):
+        raise ValueError('Recorded formal replay pass does not reproduce from actual full outputs')
+    return gate,record
+
+
+def run(request, request_path):
+    action=request['action']
+    if action not in ('historical-retention','qualification','confirmation','finalize'):
+        raise ValueError('Unknown fixed host action')
+    ctx=context(request,required_stage=action if action!='finalize' else None)
+    out=ctx['local']/'protected-v1'/action
+    if out.exists():raise FileExistsError('Protected stage attempts are write-once and cannot be silently resumed')
+    # Confirmation additionally requires a successful replay of qualification,
+    # not merely a behavioral gate written before an interrupted replay worker.
+    if action=='confirmation':
+        previous=read(ctx['local']/'protected-v1/qualification/completed.json')
+        previous_gate,previous_replay=validate_formal_replays(ctx,'qualification')
+        if (previous.get('passed') is not True or previous.get('exact_replays_passed') is not True
+                or previous.get('driver_sha256')!=file_hash(SELF)
+                or previous.get('gate_sha256')!=file_hash(ctx['local']/'protected-v1/qualification/gate.json')
+                or not previous_gate['passed'] or not previous_replay['passed']):
+            raise ValueError('Confirmation refused after incomplete or failed qualification/replay')
+    out.mkdir(parents=True)
+    started={'schema':'weightbridge.phase_iiis.private_protected_execution.v1','action':action,'arm':ctx['protocol']['arm'],
+        'driver_sha256':file_hash(SELF),'bridge_sha256':BRIDGE_SHA,'request_sha256':file_hash(request_path),
+        'protocol_sha256':file_hash(ctx['protocol_path']),'task_manifest_sha256':ctx['protocol']['task_manifest_sha256'],
+        'representation_sha256':ctx['lock']['representation_sha256'],'no_retry':True,'no_refit':True,
+        'r_bank_b_access':False,'production_authority':False,'lineage_authority':False}
+    write_once(out/'started.json',started)
+    wall,cpu=time.perf_counter(),time.process_time();attempts=[];bases=[];specs=[]
+    try:
+        if action=='historical-retention':gate=historical(ctx,out,attempts,bases,specs)
+        elif action in ('qualification','confirmation'):gate=formal(ctx,action,out,attempts,bases,specs)
+        else:
+            stages={};replays={}
+            for stage in ('qualification','confirmation'):
+                directory=ctx['local']/'protected-v1'/stage
+                stages[stage]=directory/'gate.json' if (directory/'gate.json').exists() else None
+                if (directory/'replays.json').exists():
+                    _,saved=validate_formal_replays(ctx,stage)
+                    replays.update(saved['replays'])
+            gate=study.finalize(out/'final-verification.json',ctx['protocol_path'],ctx['lock_path'],
+                qualification_path=stages['qualification'],confirmation_path=stages['confirmation'],
+                reconstruction_path=ctx['reconstruction_gate'],replays=replays,
+                original=ctx['original'],actual_parent=ctx['actual_parent'])
+        if action=='historical-retention':
+            exact=len(gate.get('gates',{}))==3 and all(all(g['exact_native_replays'].values()) for g in gate['gates'].values())
+        elif action=='finalize':
+            exact=gate['checks']['all_native_replays']
+        else:
+            exact=gate['enclosing_exact_replay_passed']
+        result={**started,'completed':True,'passed':gate['passed'] and exact,'exact_replays_passed':exact,
+            'disposition':gate.get('disposition','HISTORICAL_RETENTION_PASS' if gate['passed'] else 'HISTORICAL_RETENTION_FAILURE'),
+            'gate_sha256':file_hash(out/('final-verification.json' if action=='finalize' else 'gate.json')),
+            'model_workers':attempts,'base_command_checks':bases,
+            'resources':{'host_wall_seconds':time.perf_counter()-wall,'host_cpu_seconds':time.process_time()-cpu,
+                'scope':'Host elapsed includes waiting; disjoint model costs remain exclusively in the shared execution ledger.'}}
+        write_once(out/'completed.json',result)
+        return result
+    except BaseException as error:
+        write_once(out/'failed.json',{**started,'completed':False,'passed':False,'error':{'type':type(error).__name__,'message':str(error)},
+            'model_workers':attempts,'base_command_checks':bases,'unmeasured_stages_are_not_passes':True})
+        raise
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--request',type=Path,required=True)
+    args=parser.parse_args();request=read(args.request)
+    if (request.get('schema')!='weightbridge.phase_iiis.protected_host_request.v1'
+            or request.get('driver_sha256')!=file_hash(SELF)):
+        raise ValueError('Protected host execution requires its prospectively pinned reviewed source')
+    result=run(request,args.request)
+    print({k:result.get(k) for k in ('action','arm','completed','passed','disposition')})
+
+
+if __name__=='__main__':main()

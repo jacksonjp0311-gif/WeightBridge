@@ -137,6 +137,48 @@ def selected(record, names):
     return project({name: record[name] for name in names if name in record}) if record is not None else None
 
 
+def adapter_merged_diagnostic(record, *, manifest_sha256, source_sha256, protocol_sha256, arm):
+    """Keep endpoint agreement distinct from exact full native output identity."""
+    if record is None:
+        return None
+    expected = {"schema": "weightbridge.phase_iiis.adapter_merged_development_diagnostic.v1",
+        "arm": arm, "step": 128, "task_manifest_sha256": manifest_sha256,
+        "source_sha256": source_sha256, "protocol_sha256": protocol_sha256,
+        "diagnostic_only": True, "additional_acceptance_gate": False,
+        "evidence_validation_passed": True, "protected_banks_opened": False,
+        "model_execution_by_reviewer": False}
+    if any(record.get(key) != value for key, value in expected.items()):
+        raise ValueError("Adapter/merged diagnostic differs from its frozen development binding")
+    if set(record.get("suites", {})) != {"tool", "decimal"}:
+        raise ValueError("Adapter/merged diagnostic needs both declared endpoint suites")
+    result = selected(record, (*expected, "adapter_parent_checkpoint_sha256", "adapter_sha256",
+        "merged_checkpoint_sha256", "scientific_sources_verified", "input_sha256", "resources",
+        "production_authority", "lineage_authority"))
+    names = {"generated_token_ids": "generated_tokens_equal", "native_end_token_id": "native_terminator_equal",
+        "prefix_token_ids": "native_prefix_tokens_equal", "prefix_tokens": "prefix_length_equal",
+        "stop_reason": "stop_reason_equal", "text": "complete_text_equal",
+        "unexpected_special_token_ids": "unexpected_special_tokens_equal"}
+    result["suites"] = {}
+    for task, suite in record["suites"].items():
+        n, equal = suite.get("presentations"), suite.get("complete_native_rows_equal")
+        fields = suite.get("native_field_equal_counts") or {}
+        if (type(n) is not int or n <= 0 or type(equal) is not int or not 0 <= equal <= n
+                or set(fields) != set(names) or any(type(v) is not int or not 0 <= v <= n for v in fields.values())
+                or suite.get("complete_native_replay_equal") != (equal == n)
+                or equal > min(fields.values())):
+            raise ValueError("Malformed adapter/merged native equality counters")
+        retained = selected(suite, ("presentations", "endpoint_contract_identical", "retention_passed",
+            "behavioral_observation_flags_identical", "behavioral_flag_changes", "adapter_summary", "merged_summary",
+            "strict_metric_gain_over_adapter", "complete_family_gain_over_adapter", "complete_native_replay_equal",
+            "complete_native_rows_equal"))
+        retained["native_field_equal_counts"] = {names[k]: v for k, v in fields.items()}
+        retained["complete_native_streams_different"] = n-equal
+        result["suites"][task] = retained
+    result["interpretation"] = "Endpoint agreement does not imply identical unrestricted continuation. This diagnostic creates no additional acceptance rule; exact replay must compare each representation with its own recorded outputs."
+    assert_public(result)
+    return result
+
+
 class Reader:
     def __init__(self, study):
         self.study, self.inputs, self.missing = Path(study).resolve(), {}, []
@@ -296,6 +338,7 @@ def results_tables(artifacts):
             evidence[label]["general_retention"] = gate.get("general")
     return {"schema": "weightbridge.phase_iiis.public_results_matrix.v1", "development_stored_models": stored,
         "development_adapter_checkpoints": adapters, "token_exposure": exposures, "host_gain_evidence": evidence,
+        "adapter_merged_development_diagnostics": {arm: artifacts[f"{arm}-metadata.json"].get("adapter_merged_diagnostic") for arm in ARMS},
         "interpretation": "Merged-model rows remain null until a merged-development receipt exists. Adapter observations cannot fill stored-model rows. Recovery, new semantic corrections, family uncertainty and retention use the host's separate counters; repeated comparator losses are not summed into unique harms."}
 
 
@@ -457,6 +500,11 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA):
             "smoke_gate": project(reader.read(f"{arm}/smoke-gate.json")),
             "main_training_validation": project(reader.read(f"{arm}/main-training-validation.json")),
             "assessment": project(reader.read(f"{arm}/assessment/assessment.json")),
+            "adapter_merged_diagnostic": adapter_merged_diagnostic(reader.read(
+                f"{arm}-adapter-merged-development-diagnostic-v1.json", root=reader.study.parent,
+                label=f"diagnostics/{arm}-adapter-merged-development-diagnostic-v1.json"),
+                manifest_sha256=expected_manifest, source_sha256=frozen["source_sha256"],
+                protocol_sha256=reader.inputs[f"{arm}/protocol.json"], arm=arm),
             "execution": selected(reader.read(f"{arm}/run-arm.json"), (*IDENTITY, "arm", "completed", "status",
                 "failed_stage", "protected_evaluation_opened", "behavioral_qualification", "production_authority", "lineage_authority"))}
         artifacts[f"{arm}-development.json"] = {str(step): {"diagnostic_only": step == 64,
@@ -551,6 +599,28 @@ def self_test():
         "general": {"examples": 1, "supervised_tokens": 1, "weighted_supervised_tokens": 1., "weighted_token_nll_sum": 1.}}}])
     assert exposure["categories"]["tool"]["row_fraction"] == .5
     assert exposure["categories"]["tool"]["supervised_token_fraction"] == .9
+    diagnostic = {"schema": "weightbridge.phase_iiis.adapter_merged_development_diagnostic.v1",
+        "arm": "sequential", "step": 128, "task_manifest_sha256": "a"*64, "source_sha256": {},
+        "protocol_sha256": "b"*64, "diagnostic_only": True, "additional_acceptance_gate": False,
+        "evidence_validation_passed": True, "protected_banks_opened": False, "model_execution_by_reviewer": False,
+        "suites": {task: {"presentations": 4, "complete_native_rows_equal": 3,
+            "complete_native_replay_equal": False, "behavioral_observation_flags_identical": True,
+            "native_field_equal_counts": {"generated_token_ids": 3, "text": 3,
+                "native_end_token_id": 4, "prefix_token_ids": 4, "prefix_tokens": 4,
+                "stop_reason": 4, "unexpected_special_token_ids": 4}} for task in ("tool", "decimal")}}
+    identity = dict(manifest_sha256="a"*64, source_sha256={}, protocol_sha256="b"*64, arm="sequential")
+    preserved = adapter_merged_diagnostic(diagnostic, **identity)
+    assert preserved["suites"]["decimal"]["behavioral_observation_flags_identical"] is True
+    assert preserved["suites"]["decimal"]["complete_native_replay_equal"] is False
+    assert preserved["suites"]["decimal"]["complete_native_streams_different"] == 1
+    assert preserved["suites"]["decimal"]["native_field_equal_counts"]["complete_text_equal"] == 3
+    diagnostic["suites"]["tool"]["complete_native_replay_equal"] = True
+    try:
+        adapter_merged_diagnostic(diagnostic, **identity)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Endpoint agreement was allowed to masquerade as native identity")
     for bad in ({"records": []}, {"rows": []}, {"seed": 1}, {"where": "C:/private/model"}):
         try:
             assert_public(bad)
@@ -650,7 +720,8 @@ def self_test():
         "interrupted_scope_unknown": "PASS", "write_once": "PASS", "hash_tamper_refusal": "PASS",
         "matrix_unknowns": "PASS", "token_share_derivation": "PASS", "explicit_worker_binding": "PASS",
         "recovery_vs_new_gain": "PASS", "family_uncertainty_and_unseen_wording": "PASS",
-        "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS", "model_execution": False}
+        "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS",
+        "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS", "model_execution": False}
 
 
 if __name__ == "__main__":
