@@ -35,6 +35,10 @@ GATE_SCHEMAS = {
     "weightbridge.phase_iiis.merge_verification.v1",
     "weightbridge.phase_iiis.host_exact_reconstruction.v1",
     "weightbridge.phase_iiis.public_worker_counters.v1",
+    "weightbridge.phase_iiis.host_historical_retention.v1",
+    "weightbridge.phase_iiis.private_stage_replay.v1",
+    "weightbridge.phase_iiis.private_protected_execution.v3",
+    "weightbridge.phase_iiis.formal_stage_closure.v3",
 }
 FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", "completion",
     "text", "fixture", "scenario", "gold_action", "parsed_action", "operands", "request",
@@ -42,7 +46,7 @@ FORBIDDEN = {"rows", "records", "outputs", "prompt", "answer", "oracle_answer", 
     "generated_token_ids", "prefix_token_ids", "input_ids", "target_ids", "tokenization",
     "command", "message", "workers", "ledger", "path", "protocol_path", "checkpoints",
     "tensor_values", "weights", "state_dict", "optimizer_state", "adapter_factors"}
-STRING_FIELDS = {"schema", "status", "disposition", "stage", "mode", "arm", "representation",
+STRING_FIELDS = {"schema", "status", "disposition", "stage", "action", "mode", "arm", "representation",
     "error", "type", "name", "label", "task", "tensor", "tensor_name", "module_name", "role", "dtype", "factor_dtype",
     "base_dtype", "merge_math", "relative_norm_scope", "method", "failed_stage", "terminal_kind", "budget_failure"}
 SAFE_DICT_LISTS = {"parameter_changes", "trainable_tensors", "modules", "tensor_receipts",
@@ -605,7 +609,8 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA, defe
             "decimal": evaluation(reader, f"{arm}/development/step-{step:04d}/decimal.json"),
             "host_gate": project(reader.read(f"{arm}/assessment/step-{step:04d}.json"))}
             for step in (64, 128)}
-    availability = {"independent_qualification": None, "sealed_confirmation": None, "final_replay": None}
+    availability = {"independent_qualification": None, "sealed_confirmation": None, "final_replay": None,
+        "protected_transactions": None}
     for label, name in gates:
         if not re.fullmatch(r"[a-z0-9_-]+", label) or f"gate-{label}.json" in artifacts:
             raise ValueError("Invalid or duplicate gate label")
@@ -624,11 +629,21 @@ def export(study, ledger, out, gates=(), *, expected_manifest=MANIFEST_SHA, defe
                 stage = "final_replay"
             if stage:
                 availability[stage] = availability[stage] or {}
-                availability[stage][value["arm"]] = {"passed": value.get("passed"),
+                availability[stage][value["arm"]] = {"scored_gate_passed": value.get("passed"),
                     "disposition": value.get("disposition"), "public_gate_artifact": f"gate-{label}.json"}
+            if value.get("schema") == "weightbridge.phase_iiis.private_protected_execution.v3":
+                action, arm = value.get("action"), value.get("arm")
+                if action not in ("historical-retention", "qualification", "confirmation", "finalize") or arm not in ARMS:
+                    raise ValueError("Unknown protected transaction action or arm")
+                availability["protected_transactions"] = availability["protected_transactions"] or {}
+                transactions = availability["protected_transactions"].setdefault(action, {})
+                if arm in transactions:
+                    raise ValueError("Multiple transaction receipts cannot silently replace one another")
+                transactions[arm] = {**selected(value, ("completed", "passed", "exact_replays_passed", "disposition", "error")),
+                    "public_transaction_artifact": f"gate-{label}.json"}
     artifacts["execution.json"] = ledger_summary(reader, ledger, defer_postdevelopment=defer_postdevelopment)
     artifacts["stage-availability.json"] = {**availability, "lineage_admission": False,
-        "interpretation": "No result is inferred from a missing stage. Explicit host gate artifacts, when supplied, are authoritative for measured later stages. This exporter does not grant evaluation or lineage authority."}
+        "interpretation": "No result is inferred from a missing stage. scored_gate_passed describes only the supplied scientific gate, not completed enclosing execution. Protected transaction completion, failure and exact-replay flags are reported separately from explicitly supplied host receipts; an incomplete transaction cannot be credited as a verified pass. This exporter does not rerun private verification or grant evaluation/lineage authority."}
     artifacts["results-matrix.json"] = results_tables(artifacts)
     return publish_snapshot(artifacts, reader, out, expected_manifest,
         "Redacted aggregate projections with original private receipt byte hashes. Public hash checks do not replace host scientific verification or reproduce private predictions.")
@@ -758,6 +773,35 @@ def self_test():
         assert deferred["omitted_scope_names"] == ["original-joint-post-merge"]
         assert deferred["all_recorded_scope_totals"] is None and deferred["deferred_scope_cost"] is None
         assert json.loads((deferred_out/"original-joint-metadata.json").read_bytes())["adapter_merged_diagnostic"] is None
+        # A scored PASS followed by an interrupted host transaction remains distinct.
+        for name, record in {
+            "scored.json": {"schema": "weightbridge.phase_iiis.behavior_gate.v1", "stage": "qualification",
+                "arm": "sequential", "passed": True, "disposition": "SCORED_PASS"},
+            "failed-transaction.json": {"schema": "weightbridge.phase_iiis.private_protected_execution.v3",
+                "action": "qualification", "arm": "sequential", "completed": False, "passed": False,
+                "error": {"type": "InterruptedError", "message": "PRIVATE_OUTPUT"},
+                "model_workers": ["C:/PRIVATE/worker.json"]},
+            "history.json": {"schema": "weightbridge.phase_iiis.host_historical_retention.v1", "passed": False,
+                "presentations": 832, "gates": {"hidden": {"lost_correct": ["PRIVATE_ID"]}},
+                "input_sha256": {"hidden": {"path": "C:/PRIVATE/bank.json", "sha256": "c"*64}}},
+            "replays.json": {"schema": "weightbridge.phase_iiis.private_stage_replay.v1", "passed": False,
+                "exact_native": {"qualification/candidate/tool": False},
+                "replays": {"qualification/candidate/tool": {"recorded": {"path": "C:/PRIVATE/worker.json", "rows": "PRIVATE_ROWS"}}}},
+            "closure.json": {"schema": "weightbridge.phase_iiis.formal_stage_closure.v3", "passed": False,
+                "ready_for_final_pass": False, "stages": {"confirmation": {"completed_valid": False,
+                    "passed": False, "disposition": "UNOPENED", "gate_path": None}}, "seed": "PRIVATE_SEED"},
+        }.items():
+            (study/name).write_bytes(dumps({**record, "task_manifest_sha256": expected}))
+        protected_out = root/"protected-public"
+        assert export(study, ledger, protected_out,
+            gates=[(n.removesuffix('.json'), n) for n in ("scored.json", "failed-transaction.json", "history.json", "replays.json", "closure.json")],
+            expected_manifest=expected, defer_postdevelopment=("original-joint",))["passed"]
+        available = json.loads((protected_out/"stage-availability.json").read_bytes())
+        assert available["independent_qualification"]["sequential"]["scored_gate_passed"] is True
+        assert available["protected_transactions"]["qualification"]["sequential"]["completed"] is False
+        assert available["protected_transactions"]["qualification"]["sequential"]["passed"] is False
+        assert available["sealed_confirmation"] is None and available["final_replay"] is None
+        assert all("PRIVATE" not in p.read_text() for p in protected_out.glob("*.json"))
         # Counter collection deliberately references a nonexistent roster.
         # Its absence proves the reporter does not open a bank to count work.
         protocol_path, authorization_path = root/"counter-protocol.json", root/"counter-auth.json"
@@ -817,7 +861,8 @@ def self_test():
         "recovery_vs_new_gain": "PASS", "family_uncertainty_and_unseen_wording": "PASS",
         "no_roster_open_for_counters": "PASS", "duplicate_counter_scope_refusal": "PASS",
         "adapter_merge_endpoint_vs_native_identity": "PASS", "diagnostic_counter_tamper_refusal": "PASS",
-        "active_postdevelopment_exclusion": "PASS", "model_execution": False}
+        "active_postdevelopment_exclusion": "PASS", "protected_metadata_redaction_and_incomplete_gate": "PASS",
+        "model_execution": False}
 
 
 if __name__ == "__main__":

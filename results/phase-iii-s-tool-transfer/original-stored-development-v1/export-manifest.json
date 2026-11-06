@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "adapter-merged-diagnostic.json": "2ef8aa3f60e5300cfe258449c82d4aba466b517f2e7761bad5b674abb5918855",
+    "exact-reconstruction-gate.json": "1eab4a6b3859b62cff937eaeaf9e7dc1679529e0b5b8ba3d5be983f5aea51285",
+    "merge-receipt.json": "11b1b131f20de6c307700f490644c4e2c62ffed50a987fe75863026975a712d4",
+    "merge-verification.json": "8dd86d300e040f44326688218dfa0f4372f6f2a22dbdf2e352d2a333f0c76039",
+    "merged-development-gate.json": "7695aff4244600ae87ecbf95b440cac31ca6dcfc302108b2b14d2a134d1b4cfe",
+    "postdevelopment-completed.json": "7a1d5a78b76f2df6e0d7cd7bd28416a97744012c401992a0f1e3d493d357fbfd",
+    "postdevelopment-integrity.json": "8388f5dec3c61b955c33698cecb5996bb8e1612d01047723e90ccf49ac8b8cb5",
+    "reconstruction-verification.json": "2f2ed0aa8366ec35b2d196fe10c80a9ae1724a2a0c61e9b8e29f29575cfd49c3",
+    "source-manifest.json": "ae205d4caa639c349d7876e7599a0c8f53f5a39af81347a4dbf9fb43b2a28195",
+    "stage-availability.json": "1c547251fe68df07d7b6127afdb93816c31eaa8de5d93edefe76a50623fc6dec"
+  },
+  "exporter_sha256": "99a380651538ac3fccfb61ef584b6cb3da92c853808c34ff2c02bce1456d42f1",
+  "input_sha256": {
+    "diagnostics/original-joint-adapter-merged-development-diagnostic-v1.json": "f4b37a461b48b2e2b4217238cf4a789f97ad46bec0fbb0c199cfd4c92e4007a2",
+    "diagnostics/original-joint-postdevelopment-integrity-audit-v1.json": "2f235afaf571ba3472850a0d42501148dc10fc09c555460423a1c89e0353075d",
+    "manifest.json": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a",
+    "original-joint/post-development-v1/completed.json": "378e46320db102709f760b8c05d6b87b01b508d7dfb0a8302283a67663fbb1a1",
+    "original-joint/post-development-v1/exact-reconstruction-gate.json": "2d349ad8d51f92230a217cfd3c4a4e0a0957a2e43a6a56b18120f4fa8ff31149",
+    "original-joint/post-development-v1/merge-receipt.json": "c7cec86f4bf24ff897fe192244ae21e00e87ef5f052b4ee5dcb3fe64eb138382",
+    "original-joint/post-development-v1/merge-receipt.verification.json": "b79b3f4826b08fb6b0bbcd29f5718a3d653bb18111b67b18e7233fde363c2371",
+    "original-joint/post-development-v1/merged-development-gate.json": "a25196f7fcd11ad2d75f34c2dfb19cc1e268057a33d5b6b3b7465aadfbbaadea",
+    "original-joint/post-development-v1/reconstruction-merge.verification.json": "2440f0017630734753149856184fff4bffdd149c8c588376d67f75f0a5cb2bde",
+    "original-joint/protocol.json": "9642caa3e997cfee363f3192512aaf7bcafb4749342819414f6a182972cb9154"
+  },
+  "missing_inputs": [],
+  "model_execution": false,
+  "model_weights_published": false,
+  "private_outputs_published": false,
+  "raw_rosters_published": false,
+  "schema": "weightbridge.phase_iiis.public_outcome.v1",
+  "scope": "Fixed closed development metadata only; no raw rosters, observations, model tensors or changing training records. Endpoint and exact native equality remain separate. All projections bind original private receipt bytes; public hash verification is not private scientific replay.",
+  "study_manifest_sha256": "ccc217d9139d214ecb241acb3099006a9cc35a0b3f85a6f49784adc3de9a813a"
+}

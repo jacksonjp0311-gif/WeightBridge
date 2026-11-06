@@ -5,9 +5,12 @@ frozen. Both parent baselines, disposable smokes, main training runs and adapter
 development evaluations have completed. Both fixed step-128 adapters passed
 development: all 128 tool responses and 208 legacy responses were correct. The
 sequential stored BF16 merge, exact reconstruction, native development replay
-and actual-parent rollback also passed. Original-parent stored verification is
-in progress; all protected stages remain unopened. No independently qualified
-Phase S improvement is reported.** The
+and actual-parent rollback also passed. The original-parent stored model scores
+127/128 tool responses and 15/16 tool families after losing one adapter-learned
+answer during BF16 merging; its frozen development and reconstruction gates
+still pass. Both finalist decisions are locked. Historical retention is in
+progress; fresh qualification and sealed confirmation remain unopened. No
+independently qualified Phase S improvement is reported.** The
 sequential and original-parent arms use the same new curriculum and fixed
 rank-eight recipe. Formal gates remain strict.
 
@@ -217,8 +220,8 @@ factors, optimizer, schedule and random state rather than these learned factors.
 | Main training | COMPLETED | COMPLETED |
 | Step-64 diagnostic development | PASS, diagnostic only | FAIL: seven schema regressions |
 | Fixed step-128 development | DEVELOPMENT_QUALIFIED | DEVELOPMENT_QUALIFIED |
-| Merged development and exact reconstruction | PASS | IN PROGRESS; outcome unmeasured |
-| Old R locked battery | UNOPENED | UNOPENED |
+| Merged development and exact reconstruction | PASS | PASS; one adapter-to-merge loss |
+| Old R locked battery | IN PROGRESS; outcome unmeasured | UNOPENED |
 | Independent qualification | UNOPENED | UNOPENED |
 | Sealed confirmation and exact replay | UNOPENED | UNOPENED |
 
@@ -396,8 +399,8 @@ step-128 SHA-256 is
 | Relative norm on full adapted matrices | 0.0113997040 | 0.0120586490 |
 
 The reference adapted-matrix norm is 315.2577997795. These are factor-derived
-previews. Original-parent merged generations and exact reconstruction remain
-outside this adapter snapshot until their host transaction closes.
+previews. Original-parent merged generations and exact reconstruction are
+reported separately below; they remain outside the immutable adapter snapshot.
 
 | Completed original-parent model scope | Wall seconds | Observed CPU seconds | Conservative peak bytes |
 |---|---:|---:|---:|
@@ -507,9 +510,72 @@ rosters, model weights or adapter tensors are published in either snapshot.
 The sequential disposition is **FINALIST_LOCKED_PENDING_INDEPENDENT**, not a
 verified scientific pass. The formal requirement for qualifying semantic
 corrections in two real action types is still unresolved. Original-parent
-adapter development has passed and stored verification is in progress. The old
-R battery, independent qualification and sealed confirmation remain unopened
-at this milestone.
+stored verification has also passed. Historical retention has begun after both
+decisions locked; independent qualification and sealed confirmation remain
+unopened at this milestone.
+
+## Original-parent stored development and the BF16 merge loss
+
+The original-parent merged checkpoint is
+`0a8ec938d0ebfaa4b77a4d244307978038ebaebcd0d8d8baa1fffbe8657bcc72`.
+It scores **127/128** strict tool actions and **15/16** complete tool families,
+compared with 128/128 and 16/16 for its FP32 adapter. One newly learned semantic
+answer is lost during merging. All 128 responses remain schema-valid and reach
+native EOS. This is a measured adapter-to-merge failure of equivalence, even
+though the stored model still passes the frozen development gate against its
+unchanged original parent, with zero prohibited parent-behavior losses. No
+acceptance rule was changed to admit it.
+
+| Stored development representation | Strict tool actions | Complete tool families | Schema-valid tools | Tool EOS | Negative decimals | General controls |
+|---|---:|---:|---:|---:|---:|---:|
+| Original parent | 24/128 | 0/16 | 99/128 | 128/128 | 19/128 | 80/80 |
+| Verified R8 parent | 23/128 | 0/16 | 45/128 | 65/128 | 128/128 | 80/80 |
+| Sequential S merged | 128/128 | 16/16 | 128/128 | 128/128 | 128/128 | 80/80 |
+| Original-joint S merged | 127/128 | 15/16 | 128/128 | 128/128 | 128/128 | 80/80 |
+
+The two final stored models retain 32/32 strict decimal comparisons and 16/16
+complete decimal families. All 208 legacy first lines are valid and correct;
+all full legacy decodes still reach the sixteen-token budget rather than EOS.
+These are development measurements under the same endpoint, not independent
+qualification or proof of general tool competence.
+
+The original-joint merged change has norm **3.8015831587**, affects 422,789,713
+stored entries in 186 matrices, and has rounding residual 0.5163171841 relative
+to the unrounded adapter update. Relative to the full adapted matrices its norm
+is 0.0120586490, with reference norm 315.2577997795. Relative to all original
+stored floating tensors it is 0.0040388303, with reference norm 941.2584608475.
+Unlike the sequential chain, the original-to-candidate change is this same
+single training-and-merge intervention.
+
+Adapter-versus-merged native equality holds for 127/128 tool streams and 189/208
+legacy streams. The one tool difference changes semantic correctness and
+removes one complete family. The nineteen legacy differences change full
+continuations while preserving every recorded endpoint flag and stop reason.
+The original-parent diagnostic commitment is
+`f4b37a461b48b2e2b4217238cf4a789f97ad46bec0fbb0c199cfd4c92e4007a2`.
+It must not be described as the same behavior as the FP32 adapter.
+
+Separate fresh-process reconstruction reproduced the exact stored checkpoint
+and all **336 of its own** development streams, including its remaining tool
+error. Actual-parent rollback reproduced all **336 original-parent** streams.
+These are exact self-replays, not equality to the adapter or gold answers.
+The host exact-reconstruction gate commitment is
+`2d349ad8d51f92230a217cfd3c4a4e0a0957a2e43a6a56b18120f4fa8ff31149`.
+Its eight enclosing postdevelopment model workers used 1,242.328 wall seconds
+and 6,148.500 CPU seconds, with peak 3,020,541,952 bytes. Host waiting time is
+not added to those already enclosed model costs.
+
+Both stored finalists are now **FINALIST_LOCKED_PENDING_INDEPENDENT**. Their
+development evidence differs, and formal outcomes remain unmeasured. The
+separate closed integrity audit passed all eighteen checks, including both arm
+locks, 162 source identities, physical checkpoint bindings and exact native
+replays. Its commitment is
+`2f235afaf571ba3472850a0d42501148dc10fc09c555460423a1c89e0353075d`.
+The write-once [original stored-development supplement](../results/phase-iii-s-tool-transfer/original-stored-development-v1/export-manifest.json)
+contains ten redacted aggregate artifacts and has export commitment
+`b6ba1ea985ed4c8bee8ff8bbccd0dd5f0a339a294cb08fb1b8f96d7d517b8783`.
+Previous adapter and sequential snapshots are unchanged. This publication did
+not open a protected bank or run a model.
 
 ## Training implementation and frozen population
 
@@ -712,6 +778,10 @@ python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/sequential-development-v1
 python results/phase-iii-s-tool-transfer/export_outcome.py `
   --verify results/phase-iii-s-tool-transfer/sequential-stored-development-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/both-adapter-development-v1
+python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --verify results/phase-iii-s-tool-transfer/original-stored-development-v1
 ```
 
 That validates archive integrity, not private behavioral replay. Reproduction

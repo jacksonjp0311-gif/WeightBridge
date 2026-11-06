@@ -159,3 +159,50 @@ For an offline illustration after study finalization, the separate
 [public demo](public-demo-v1/README.md) prepares the same bounded evaluator at
 `stage=demo` against an already merged, reconstructed artifact. It accepts no
 adapter-only fallback and is not independent qualification.
+
+## Publish only explicitly released host metadata
+
+After the host closes a protected action, publish a new aggregate snapshot.
+Never pass a protected roster, model worker output or private request to the
+reporter. The following shows one completed qualification transaction; the host
+chooses the exact arm and already authorized receipt paths:
+
+```powershell
+$Arm = 'sequential'  # Or 'original-joint'; no automatic bank discovery.
+$GateRoot = "$Arm/protected-v3"
+$NewPublicSnapshot = '<new versioned public output directory>'
+& $Python results/phase-iii-s-tool-transfer/export_outcome.py `
+  --study $Study --ledger $Ledger --out $NewPublicSnapshot `
+  --gate "$Arm-history=$GateRoot/historical-retention/gate.json" `
+  --gate "$Arm-history-transaction=$GateRoot/historical-retention/completed.json" `
+  --gate "$Arm-qualification=$GateRoot/qualification/gate.json" `
+  --gate "$Arm-qualification-replays=$GateRoot/qualification/replays.json" `
+  --gate "$Arm-qualification-transaction=$GateRoot/qualification/completed.json"
+```
+
+Additional explicitly named metadata follows the same `--gate LABEL=RELATIVE`
+interface. All paths below are relative to `$GateRoot`:
+
+| Observed outcome | Metadata paths to include |
+|---|---|
+| Interrupted/failed host action | `<action>/failed.json`; include an already scored `gate.json` and `replays.json` only if they actually exist |
+| Completed confirmation | `confirmation/gate.json`, `confirmation/replays.json`, `confirmation/completed.json` |
+| Finalization | `finalize/final-verification.json`, `finalize/formal-stage-closure.json`, `finalize/completed.json` |
+| Interrupted finalization | `finalize/failed.json`; no completed-final claim |
+
+Use `failed.json` instead of `completed.json` for an interrupted transaction,
+not a manufactured completion receipt. A completed transaction can also report
+a scientific FAIL. A behavioral gate's `scored_gate_passed` is separate from
+the enclosing transaction's `completed`, `passed` and `exact_replays_passed`.
+Unopened confirmation remains null. The reporter preserves those distinctions,
+redacts private paths/outputs/IDs, and does not independently rerun the scientific
+verifier. For two arms, explicitly add the second arm's existing metadata with
+different labels; no protected content is auto-discovered. Costs come once from
+the shared execution ledger, not from adding host elapsed time to worker time.
+
+Check the new public snapshot without reading private evidence:
+
+```powershell
+& $Python results/phase-iii-s-tool-transfer/export_outcome.py --self-test
+& $Python results/phase-iii-s-tool-transfer/export_outcome.py --verify $NewPublicSnapshot
+```
