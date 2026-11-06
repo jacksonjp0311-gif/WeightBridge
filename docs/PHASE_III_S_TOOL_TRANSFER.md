@@ -555,6 +555,12 @@ limit. Exhaustion is a resource outcome, not evidence that the task is unlearnab
 
 ## Tests, evidence and reproduction
 
+The [implemented command path](../results/phase-iii-s-tool-transfer/REPRODUCTION.md)
+shows the versioned completion/task specification, explicit parent binding,
+freeze and training commands, stored-checkpoint evaluator, and the required
+host stage order through protected-host v3. It distinguishes runnable authorized
+workflows from public hash checks and from authoring a new task oracle.
+
 The current pre-freeze runtime receipt records **1,000 passed and two skips**
 (Matplotlib and MCP unavailable in that runtime). The separately configured MCP
 suite records **23 passed**. Forty-two focused simulator/population tests cover
